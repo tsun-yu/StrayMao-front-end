@@ -6,6 +6,7 @@
 .pnp.js
 yarn.lock
 .prettierrc
+**/DS_Store
 
 # testing
 /coverage
