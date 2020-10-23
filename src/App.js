@@ -12,7 +12,7 @@ function App() {
         <MyNavbar />
         <MainContent>
           <Switch>
-            {/* 注意：要加上網址參數 */}
+            
             <Route exact path="/">
               
             </Route>
