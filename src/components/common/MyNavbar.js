@@ -14,17 +14,20 @@ function MyNavbar(props) {
         variant="dark"
         fixed="top"
       >
-        <Navbar.Brand href="#home">React測試站</Navbar.Brand>
+        <Navbar.Brand href="#home" style={{color:"#FFF1E6",fontFamily:"Roboto"}}>Stray Mao</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             {/* 把Nav.Link作為NavLink來使用 */}
             {/* 一定要加上exact，不然首頁會一直點亮(active) */}
-            <Nav.Link as={NavLink} to="/" exact>
-              計數器
+            <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
+              領養<i className="fas fa-caret-down"></i>
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/cart">
-              沒用的項目
+            <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
+             商城
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
+             社群
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

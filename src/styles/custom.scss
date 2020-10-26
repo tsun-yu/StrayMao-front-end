@@ -1,5 +1,5 @@
 // 預設變數覆蓋需要在導入Bootstrap之前
-$primary: #2f8b0b;
+$primary: #a5a58d;
 $secondary: #131010;
 
 // Import Bootstrap and its default variables
@@ -11,5 +11,17 @@ main > .container {
 }
 
 .footer {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
+}
+.navbar {
+  height: 100px;
+}
+
+.navbar-brand {
+  font-size: 60px;
+  font-weight: lighter;
+}
+
+.nav-link {
+  font-size: 20px;
 }
