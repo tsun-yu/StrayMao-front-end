@@ -5,7 +5,6 @@ import { pervPage, gotoPage, nextPage } from "../../actions/common/index";
 function PageBar(props) {
   return (
     <>
-      <h5>112332</h5>
       <ul className="pageBar">
         {/* left arrow */}
         <li>
