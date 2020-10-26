@@ -4,7 +4,7 @@ function PageBar(props) {
   const obj = { color: "#A5A58D" };
   return (
     <>
-      <ul>
+      <ul className="pageBar">
         <li>
           <a>
             <i style={obj} class="fas fa-caret-left fa-2x"></i>
