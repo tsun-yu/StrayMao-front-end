@@ -14,7 +14,7 @@ function MyNavbar(props) {
         variant="dark"
         fixed="top"
       >
-        <Navbar.Brand href="#home" style={{color:"#FFF1E6",fontFamily:"Roboto"}}>Stray Mao</Navbar.Brand>
+        <Navbar.Brand href="#home" className="logo" style={{color:"#FFF1E6",fontFamily:"Roboto ",fontSize: "60px"}}>Stray Mao</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
@@ -30,6 +30,7 @@ function MyNavbar(props) {
              社群
             </Nav.Link>
             <input className="input-brown" type="text" placeholder="商品搜尋" style={{color:"#d1d1d1"}}></input>
+            <i class="fas fa-search"></i>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
