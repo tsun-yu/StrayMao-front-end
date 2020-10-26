@@ -1,0 +1,87 @@
+// 預設變數覆蓋需要在導入Bootstrap之前
+
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+
+.footer_bg {
+  background-color: #ddbea9;
+}
+
+.footer_subtitle {
+  padding-right: 0;
+  text-align: right;
+}
+
+.footer_icon {
+  margin-left: 0.625rem;
+}
+
+.footer_icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.ftImgAll {
+  position: relative;
+}
+
+.ftImgBg {
+  position: absolute;
+  margin-top: -30px;
+  width: 100%;
+  z-index: 1;
+}
+
+.ftImgBgItem {
+  margin-top: 40px;
+  max-width: 600px;
+  max-height: 350px;
+}
+
+.ftImgs {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.move {
+  transform: translate(80px);
+}
+
+.ftImgItem {
+  max-width: 470px;
+  max-height: 235px;
+  min-width: 200px;
+  min-height: 100px;
+}
+
+.bottomText {
+  position: absolute;
+  bottom: 0;
+}
+
+.title6-NC {
+  font-size: 1.25rem;
+  line-height: 2.75rem;
+  color: #555555;
+  font-family: "Arbutus Slab", serif;
+}
+
+.footerText {
+  font: {
+    size: 12px;
+    family: $fontType1;
+  }
+  font-size: 0.75rem;
+  line-height: 1.875rem;
+  color: #555555;
+  font-family: "Arbutus Slab", serif;
+}
+
+.link-title7 {
+  font-size: 0.75rem;
+  color: #555555;
+  font-family: "Arbutus Slab", serif;
+}
