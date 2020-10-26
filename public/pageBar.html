@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>直角分頁頁碼-有圖示的情況</title>
+
+    <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/public/fontawesome/css/all.css" />
+    <style type="text/css">
+      /*設定共有的的樣式佈局，主要是進行程式碼優化，提高執行效率*/
+      a {
+        padding: 4px 10px 5px;
+        font-size: 14px; /*修復行內元素之間空隙間隔*/
+        margin-right: 10px;
+      }
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+      }
+      ul li {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+      }
+      ul li a svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      ul > li > a {
+        position: relative;
+      }
+      ul > li > a > svg {
+        position: absolute;
+        bottom: 3px;
+        left: -3px;
+      }
+      ul > li > a > span {
+        position: absolute;
+        z-index: 1;
+        color: rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+
+  <body>
+    <hr />
+    <hr />
+    <hr />
+    <ul>
+      <li>
+        <a>
+          <i class="fas fa-caret-left"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="34.635"
+            height="32.394"
+            viewBox="0 0 34.635 32.394"
+          >
+            <g
+              id="Group_611"
+              data-name="Group 611"
+              transform="translate(-705.734 -509.813)"
+            >
+              <circle
+                id="Ellipse_14"
+                data-name="Ellipse 14"
+                cx="11.34"
+                cy="11.34"
+                r="11.34"
+                transform="translate(712.152 519.526)"
+                fill="#ed8f8f"
+              />
+              <circle
+                id="Ellipse_15"
+                data-name="Ellipse 15"
+                cx="3.692"
+                cy="3.692"
+                r="3.692"
+                transform="translate(714.789 509.813)"
+                fill="#ed8f8f"
+              />
+              <circle
+                id="Ellipse_16"
+                data-name="Ellipse 16"
+                cx="3.692"
+                cy="3.692"
+                r="3.692"
+                transform="translate(724.986 509.813)"
+                fill="#ed8f8f"
+              />
+              <circle
+                id="Ellipse_17"
+                data-name="Ellipse 17"
+                cx="4"
+                cy="4"
+                r="4"
+                transform="translate(705.734 517.197)"
+                fill="#ed8f8f"
+              />
+              <circle
+                id="Ellipse_18"
+                data-name="Ellipse 18"
+                cx="4"
+                cy="4"
+                r="4"
+                transform="translate(732.37 517.197)"
+                fill="#ed8f8f"
+              />
+            </g>
+          </svg>
+          <span> 1 </span>
+        </a>
+      </li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a>
+          <i class="fas fa-caret-right"></i>
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>

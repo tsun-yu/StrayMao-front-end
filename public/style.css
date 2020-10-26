@@ -1,0 +1,36 @@
+/*設定共有的的樣式佈局，主要是進行程式碼優化，提高執行效率*/
+a {
+  padding: 4px 10px 5px;
+  font-size: 14px; /*修復行內元素之間空隙間隔*/
+  margin-right: 10px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+ul li {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+ul li a svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul > li > a {
+  position: relative;
+}
+ul > li > a > svg {
+  position: absolute;
+  bottom: 3px;
+  left: -3px;
+}
+ul > li > a > span {
+  position: absolute;
+  bottom: 2px;
+  z-index: 1;
+  color: rgb(255, 255, 255);
+}
