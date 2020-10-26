@@ -21,7 +21,7 @@ function MyNavbar(props) {
             {/* 把Nav.Link作為NavLink來使用 */}
             {/* 一定要加上exact，不然首頁會一直點亮(active) */}
             <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
-              領養<i className="fas fa-caret-down"></i>
+              領養
             </Nav.Link>
             <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
              商城
@@ -29,6 +29,7 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
              社群
             </Nav.Link>
+            <input className="input-brown" type="text" placeholder="商品搜尋" style={{color:"#d1d1d1"}}></input>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
