@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 
+import { pervPage, gotoPage, nextPage } from "../../actions/common/index";
 function PageBar(props) {
-  const obj = { color: "#A5A58D" };
   return (
     <>
+      <h5>112332</h5>
       <ul className="pageBar">
+        {/* left arrow */}
         <li>
           <a>
-            <i style={obj} class="fas fa-caret-left fa-2x"></i>
+            <i class="fas fa-caret-left fa-2x"></i>
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="15.549"
@@ -102,9 +105,10 @@ function PageBar(props) {
         <li>
           <a href="#">5</a>
         </li>
+        {/* right arrow */}
         <li>
           <a>
-            <i style={obj} class="fas fa-caret-right fa-2x"></i>
+            <i class="fas fa-caret-right fa-2x"></i>
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="15.55"
@@ -129,4 +133,13 @@ function PageBar(props) {
   );
 }
 
-export default PageBar;
+const mapStateToProps = (store) => {
+  return { total: store.page_bar };
+};
+const mapDispatchToProps = null;
+
+export default connect(mapStateToProps, {
+  pervPage,
+  gotoPage,
+  nextPage,
+})(PageBar);
