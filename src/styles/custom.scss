@@ -1,21 +1,103 @@
 // 預設變數覆蓋需要在導入Bootstrap之前
+$fontType1: "微軟正黑體";
+$fontType2: "Noto Serif TC";
 $primary: #a5a58d;
 $secondary: #131010;
 
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
+@import "./footer.scss";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 main {
   margin-top: 100px;
 }
 main > .container {
+  height: 100vh;
   padding: 60px 15px 0;
 }
 
-.footer {
-  background-color: #f5f5f5;
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 300px;
 }
+//暫設定h1-h6字體
+
+.Header1 {
+  font: {
+    family: $fontType2;
+    size: 60px;
+  }
+}
+
+.Header2 {
+  font: {
+    family: $fontType2;
+    size: 38px;
+  }
+}
+
+.Header3 {
+  font: {
+    family: $fontType2;
+    size: 34px;
+  }
+}
+
+.Header4 {
+  font: {
+    family: $fontType1;
+    size: 34px;
+  }
+}
+
+.Header5 {
+  font: {
+    family: $fontType1;
+    size: 20px;
+  }
+}
+
+.Header6 {
+  font: {
+    family: $fontType1;
+    size: 18px;
+    weight: lighter;
+  }
+}
+
+.Header7 {
+  font: {
+    family: $fontType2;
+    size: 16px;
+  }
+}
+
+.Paragraph1 {
+  font: {
+    family: $fontType1;
+    size: 16px;
+    weight: lighter;
+  }
+}
+
+.Paragraph2 {
+  font: {
+    family: $fontType1;
+    size: 14px;
+  }
+}
+
+.caption {
+  font: {
+    family: $fontType1;
+    size: 12px;
+    weight: lighter;
+  }
+}
+
 .navbar {
   height: 100px;
 }
