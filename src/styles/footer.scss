@@ -37,7 +37,7 @@
 .ftImgBgItem {
   margin-top: 40px;
   max-width: 600px;
-  max-height: 350px;
+  max-height: 300px;
 }
 
 .ftImgs {
@@ -62,26 +62,39 @@
   bottom: 0;
 }
 
-.title6-NC {
-  font-size: 1.25rem;
-  line-height: 2.75rem;
-  color: #555555;
-  font-family: "Arbutus Slab", serif;
-}
-
 .footerText {
   font: {
     size: 12px;
     family: $fontType1;
   }
-  font-size: 0.75rem;
-  line-height: 1.875rem;
-  color: #555555;
-  font-family: "Arbutus Slab", serif;
+  line-height: 25px;
 }
 
-.link-title7 {
-  font-size: 0.75rem;
+.linkItemTitle {
+  font: {
+    size: 12px;
+    family: $fontType1;
+  }
   color: #555555;
-  font-family: "Arbutus Slab", serif;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin-right: 10px;
+}
+
+.ftSlogan {
+  font: {
+    size: 20px;
+    family: $fontType2;
+  }
+  color: #555555;
+  padding-top: 25px;
+}
+
+.linkItem {
+  position: relative;
+  margin-top: 35px;
+  bottom: 0;
 }

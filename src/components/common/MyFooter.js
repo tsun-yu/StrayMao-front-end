@@ -17,8 +17,8 @@ function MyFooter() {
         <div className="row container-fluid footer_content">
           <div className="row col-5 justify-content-start">
             <div className="col-3"></div>
-            <div className="col title6-NC">
-              <span className="Header5">寵愛有家，帶我回家</span>
+            <div className="col">
+              <div className="ftSlogan">寵愛有家，帶我回家</div>
               <br />
               <div className="footerText content_inside">
                 我需要罐罐，需要摸摸
@@ -28,17 +28,21 @@ function MyFooter() {
                 是你的關愛ヽ(=^･ω･^=)丿~
               </div>
               <br />
-              <div className="row col">
-                <div className="link-title7">聯絡我們</div>
-                <div className="col-1">
-                  <FontAwesomeIcon icon={faFacebook} />
-                </div>
-                <div className="col-1">
-                  <FontAwesomeIcon icon={faInstagram} />
-                </div>
-                <div className="col-1">
-                  <FontAwesomeIcon icon={faYoutube} />
-                </div>
+              <div className="row col linkItem">
+                <div className="linkItemTitle">聯絡我們</div>
+                <ul className="row">
+                  <li>
+                    <FontAwesomeIcon icon={faFacebook} />
+                  </li>
+                  <br />
+                  <li>
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </li>
+                  <br />
+                  <li>
+                    <FontAwesomeIcon icon={faYoutube} />
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
