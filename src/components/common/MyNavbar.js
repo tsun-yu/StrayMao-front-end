@@ -23,13 +23,13 @@ function MyNavbar(props) {
             {/* 把Nav.Link作為NavLink來使用 */}
             {/* 一定要加上exact，不然首頁會一直點亮(active) */}
             <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
-              領養<i class="fas fa-caret-down"></i>
+              領養<i className="fas fa-caret-down"></i>
             </Nav.Link>
             <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
-             商城<i class="fas fa-caret-down"></i>
+             商城<i className="fas fa-caret-down"></i>
             </Nav.Link>
             <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
-             社群<i class="fas fa-caret-down"></i>
+             社群<i className="fas fa-caret-down"></i>
             </Nav.Link>
           </Nav>
           <Nav className="mr-5">
@@ -37,10 +37,10 @@ function MyNavbar(props) {
             <input className="input-brown searchPlaceholder" type="text" placeholder="商品搜尋" style={{color:"#d1d1d1"}}></input>
             </div>
             <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
-            <i class="fas fa-search navIcon"></i>
+            <i className="fas fa-search navIcon"></i>
             </Nav.Link>
             <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
-            <i class="fas fa-user navIcon"></i>
+            <i className="fas fa-user navIcon"></i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

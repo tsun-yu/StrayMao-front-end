@@ -6,10 +6,24 @@ $secondary: #131010;
 @import '~bootstrap/scss/bootstrap.scss';
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
-main > .container {
-  padding: 60px 15px 0;
+.img {
+  width: 882px;
+  height: 700px;
+  background-color: salmon;
 }
 
-.footer {
-    background-color: #f5f5f5;
+.page1des {
+  font-size: 48px;
+  color: #a5a58d;
+  font-family: roboto;
 }
+
+.page1des2 {
+  width: 356px;
+  height: 154px;
+  font-size: 20px;
+  font-family: $fontType1;
+  background-color: #f0efeb;
+  color: #707070;
+}
+
