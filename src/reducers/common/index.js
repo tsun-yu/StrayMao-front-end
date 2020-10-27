@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
 
-import page_bar from "./page_bar";
+import { nowPage, totalPage } from "./pageBar";
 
 // //combine all reducer to a big reducer
 export const rootReducer = combineReducers({
-  page_bar,
+  nowPage,
+  totalPage,
 });

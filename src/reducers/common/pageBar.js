@@ -2,10 +2,10 @@ import {
   NEXT_PAGE,
   GOTO_PAGE,
   PERV_PAGE,
+  TOTAL_PAGE,
 } from "../../actions/common/actionTypes";
 
-//2nd write a reducer
-function page_bar(state = 1, action) {
+function nowPage(state = 13, action) {
   switch (action.type) {
     case NEXT_PAGE:
     case PERV_PAGE:
@@ -20,4 +20,16 @@ function page_bar(state = 1, action) {
   return state;
 }
 
-export default page_bar;
+function totalPage(state = 19, action) {
+  switch (action.type) {
+    case TOTAL_PAGE:
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+export { nowPage, totalPage };
+// export default totalPage;
