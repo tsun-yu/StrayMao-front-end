@@ -1,0 +1,47 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+
+.navbar {
+  height: 100px;
+}
+
+.navbar-brand {
+  font-weight: lighter;
+}
+
+.nav-link {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.input-brown {
+  border-radius: 4px;
+  font-size: 16px;
+  border: solid 1px #707070;
+  font-size: 16px;
+  height: 36px;
+  width: 230px;
+}
+
+::placeholder {
+  color: #d1d1d1;
+  font-weight: 300;
+}
+.searchPlaceholder {
+  padding-left: 20px;
+}
+
+.hmSearch {
+  // padding-left: 800px;
+}
+
+.navIcon {
+  color: #707070;
+  // font-size: 17px;
+}
+
+.navLogoCN {
+  border-bottom: 1px solid #fff1e6;
+  font-family: $fontType2;
+}
