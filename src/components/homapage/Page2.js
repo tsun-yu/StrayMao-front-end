@@ -4,8 +4,8 @@ function Page2(props) {
 return(
 <>
     <div className='d-flex'>
-        <div>
-            <img src=""></img>
+        <div className="page2">
+            {/* <img src=""></img> */}
         </div>
     </div>
 </>

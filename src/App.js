@@ -4,14 +4,7 @@ import MyNavbar from "./components/common/MyNavbar";
 import MyFooter from "./components/common/MyFooter";
 import MainContent from "./components/common/MainContent";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import PageBar from "./components/adoption/PageBar";
-<<<<<<< HEAD
-import Homapage from './components/homapage/homepage';
-=======
-import Page1 from "./components/homapage/Page1";
 import TestLink from "./components/common/TestLink";
->>>>>>> e57d5fa7be041092d4c4b7db83ae25ac95cf8878
-
 import AdoptionTest from "./components/adoption/Test";
 import CartTest from "./components/cart/Test";
 import HomeTest from "./components/homapage/Test";
@@ -28,10 +21,6 @@ function App() {
             {/* 注意：要加上網址參數 */}
             <Route exact path="/">
               {/*要連線的網頁*/}
-<<<<<<< HEAD
-              <Homapage/>
-              <PageBar />
-=======
               {/* <Page1/> */}
               {/* <PageBar /> */}
               <TestLink />
@@ -59,7 +48,6 @@ function App() {
             <Route path="/storeTest">
               {/*要連線的網頁*/}
               <StoreTest />
->>>>>>> e57d5fa7be041092d4c4b7db83ae25ac95cf8878
             </Route>
           </Switch>
         </MainContent>

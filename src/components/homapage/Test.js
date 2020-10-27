@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import Homepage from './Homepage'
 
 function Test(props) {
   return (
     <>
-      <h5>homepage</h5>
+      <Homepage/>
     </>
   );
 }
 
 const mapStateToProps = (store) => {
-  return {};
+  return {
+    
+  };
 };
 const mapDispatchToProps = null;
 

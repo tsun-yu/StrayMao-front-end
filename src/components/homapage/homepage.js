@@ -7,7 +7,7 @@ function homepage(props) {
 return(
 <>
 {/* <Page1 /> */}
-{/* <Page2 /> */}
+<Page2 />
 
 </>
 )}
