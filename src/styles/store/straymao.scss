@@ -17,23 +17,22 @@
   
   .storeP1Background {
     background-image: url(/image/store/background.jpg);
-    // background-repeat: no-repeat;
-    // background-position: bottom;
-    // background-size: cover;
-    // width: 100vw;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    width: 100vw;
     height: 100vh;
-    // position: relative;
+    position: relative;
   }
   
   #storeP1BackgroundTop {
     width: 100vw;
-    // height: calc(100vh - 12vw);
+    height: calc(100vh - 12vw);
   }
   
   #storeP1BackgroundMouse {
     min-width: 50px;
-    height: 10vh;
-    width: 10vw;
+    width: 5vw;
     position: absolute;
     bottom: 4%;
     left: 50%;

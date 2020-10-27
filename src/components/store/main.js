@@ -9,7 +9,7 @@ return(
       <section className="d-flex storeP1Background">
         <div id="storeP1BackgroundTop">
           <img id="storeP1BackgroundMouse" src="./image/store/mouse.png" alt="" />
-          {/* <img id="storeP1BackgroundCat" src="./image/store/cat_PNG113.png" alt="" />
+           <img id="storeP1BackgroundCat" src="./image/store/cat_PNG113.png" alt="" />
           <img id="storeP1BackgroundDog" src="./image/store/未命名-2.png" alt="" />
           <img
             id="storeP1BackgroundCatTower"
@@ -26,13 +26,13 @@ return(
             src="./image/store/343-3432319_low-carb-pet-food-manhaten-cat.png"
             alt=""
           />
-          <img id="storeP1BackgroundBall" src="./image/store/ball.png" alt="" /> */}
+          <img id="storeP1BackgroundBall" src="./image/store/ball.png" alt="" />
         {/* 牆 */}
-          {/* <img id="storeP1BackgroundMoon" src="./image/store/cat_tree01.png" alt="" />
+          <img id="storeP1BackgroundMoon" src="./image/store/cat_tree01.png" alt="" />
           <img id="storeP1BackgroundAngle" src="./image/store/cat_tree02.png" alt="" />
           <img id="storeP1BackgroundStep1" src="./image/store/cat_tree03.png" alt="" />
           <img id="storeP1BackgroundStep2" src="./image/store/cat_tree03.png" alt="" />
-          <img id="storeP1BackgroundStep3" src="./image/store/cat_tree03.png" alt="" /> */}
+          <img id="storeP1BackgroundStep3" src="./image/store/cat_tree03.png" alt="" />
         </div>      
       </section>
 
