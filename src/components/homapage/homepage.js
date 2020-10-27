@@ -6,7 +6,7 @@ import Page2 from './Page2'
 function homepage(props) {
 return(
 <>
-<Page1 />
+{/* <Page1 /> */}
 {/* <Page2 /> */}
 
 </>

@@ -10,6 +10,7 @@ $secondary: #131010;
   width: 882px;
   height: 700px;
   object-fit: cover;
+  opacity: 0.8;
 }
 
 .page1des {
@@ -30,11 +31,7 @@ $secondary: #131010;
   margin-left: 30px;
 }
 
-img {
-  opacity: 0.8;
-}
-
-.page2{
+.page2 {
   height: 400px;
   background-color: salmon;
 }

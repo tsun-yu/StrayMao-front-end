@@ -6,8 +6,7 @@ import {
   faInstagram,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import footerCarBg from "../../images/footerCar_bg.svg";
-import footerCar from "../../images/footerCar.svg";
+import FooterImgs from "./footerItem/FooterImgs";
 
 function MyFooter() {
   return (
@@ -29,16 +28,14 @@ function MyFooter() {
               </div>
               <br />
               <div className="row col linkItem">
-                <div className="linkItemTitle">聯絡我們</div>
-                <ul className="row">
+                <span className="linkItemTitle">追蹤我們</span>
+                <ul className="linkList">
                   <li>
                     <FontAwesomeIcon icon={faFacebook} />
                   </li>
-                  <br />
                   <li>
                     <FontAwesomeIcon icon={faInstagram} />
                   </li>
-                  <br />
                   <li>
                     <FontAwesomeIcon icon={faYoutube} />
                   </li>
@@ -47,18 +44,7 @@ function MyFooter() {
             </div>
           </div>
           <div className="row col justify-content-end">
-            <div className="col-8 ftImgAll">
-              <div className="ftImgBg">
-                <img
-                  className="ftImgBgItem"
-                  src={footerCarBg}
-                  alt="footerCarBg"
-                />
-              </div>
-              <div className="ftImgs">
-                <img className="ftImgItem" src={footerCar} alt="footerCar" />
-              </div>
-            </div>
+            <FooterImgs />
             <div className="row col justify-content-end">
               <span className="bottomText">
                 <br />

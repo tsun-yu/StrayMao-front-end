@@ -65,8 +65,9 @@
 .footerText {
   font: {
     size: 12px;
-    family: $fontType1;
+    family: $fontType2;
   }
+  color: #555555;
   line-height: 25px;
 }
 
@@ -78,12 +79,15 @@
   color: #555555;
 }
 
-ul,
-li {
-  list-style-type: none;
-  margin-right: 10px;
+.linkList {
+  padding-left:20px;
+  margin-bottom: 0;
+  > li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 10px;
+  }
 }
-
 .ftSlogan {
   font: {
     size: 20px;
@@ -94,7 +98,9 @@ li {
 }
 
 .linkItem {
+  display: flex;
   position: relative;
   margin-top: 35px;
   bottom: 0;
+  align-items: center;
 }
