@@ -4,7 +4,14 @@ import { connect } from "react-redux";
 function Test(props) {
   return (
     <>
-      <h5>adoption</h5>
+      <div className="adopTitleMain">
+        <h5 className="adopTitle">ADOPT</h5>
+        <div className="adopTitleLine" />
+      </div>
+      <div className="adopRecommand">
+        <div className="col p-1">aaa</div>
+        <div className="col">bbb</div>
+      </div>
     </>
   );
 }
