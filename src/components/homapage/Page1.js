@@ -16,7 +16,7 @@ return(
         </div>
     </div>
     <div className="imgDiv">
-        <img src="/image/homepage/homepage-1.jpg"/>
+        <img className="bigImg" src="/image/homepage/homepage-1.jpg"/>
     </div>
 </div>
 </>

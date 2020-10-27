@@ -6,7 +6,7 @@ $secondary: #131010;
 @import '~bootstrap/scss/bootstrap.scss';
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
-img {
+.bigImg {
   width: 882px;
   height: 700px;
   object-fit: cover;
@@ -26,6 +26,15 @@ img {
   background-color: #f0efeb;
   color: #707070;
 }
-.imgDiv{
+.imgDiv {
   margin-left: 30px;
+}
+
+img {
+  opacity: 0.8;
+}
+
+.page2{
+  height: 400px;
+  background-color: salmon;
 }

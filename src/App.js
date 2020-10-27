@@ -5,7 +5,7 @@ import MyFooter from "./components/common/MyFooter";
 import MainContent from "./components/common/MainContent";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import PageBar from "./components/adoption/PageBar";
-import Page1 from './components/homapage/Page1';
+import Homapage from './components/homapage/homepage';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
             {/* 注意：要加上網址參數 */}
             <Route exact path="/">
               {/*要連線的網頁*/}
-              {/* <Page1/> */}
+              <Homapage/>
               <PageBar />
             </Route>
           </Switch>
