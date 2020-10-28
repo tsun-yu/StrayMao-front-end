@@ -10,7 +10,6 @@ function MyNavbar(props) {
       <Navbar
         collapseOnSelect
         expand="lg"
-        bg="primary"
         variant="dark"
         fixed="top"
         
