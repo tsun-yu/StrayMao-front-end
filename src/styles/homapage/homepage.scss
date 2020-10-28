@@ -1,37 +1,7 @@
-// 預設變數覆蓋需要在導入Bootstrap之前
-$primary: #2f8b0b;
-$secondary: #131010;
+@import './page1';
+@import './page2';
 
-// Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
 
-// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
-.bigImg {
-  width: 882px;
-  height: 700px;
-  object-fit: cover;
-  opacity: 0.8;
-}
-
-.page1des {
-  font-size: 48px;
-  color: #a5a58d;
-  font-family: roboto;
-}
-
-.page1des2 {
-  width: 356px;
-  height: 154px;
-  font-size: 20px;
-  font-family: $fontType1;
-  background-color: #f0efeb;
-  color: #707070;
-}
-.imgDiv {
-  margin-left: 30px;
-}
-
-.page2 {
-  height: 400px;
-  background-color: salmon;
+.container_w{
+    margin: 0 150px;
 }

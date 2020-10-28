@@ -6,7 +6,7 @@ function MainContent(props) {
     <>
       <main className="flex-shrink-0">
         {/* props.children代表嵌入在其中的元件或資料內容 */}
-        <div className="container">
+        <div>
           {props.children}
           <div className="header1">標題一請自取</div>
           <div className="header2">標題二請自取</div>

@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react'
 function Page1(props) {
 return(
 <>
-<div className="d-flex">
-    <div>
+<div className="d-flex container_w">
+    <div className="page1Sec1">
         <div className="page1des">
         Love them likes <br/>
         family.
