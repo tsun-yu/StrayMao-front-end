@@ -11,16 +11,19 @@ return(
           <img id="storeP1BackgroundMouse" src="./image/store/mouse.png" alt="" />
            <img id="storeP1BackgroundCat" src="./image/store/cat_PNG113.png" alt="" />
           <img id="storeP1BackgroundDog" src="./image/store/未命名-2.png" alt="" />
+
           <img
             id="storeP1BackgroundCatTower"
             src="./image/store/cat-3953989_1280.png"
             alt=""
           />
+
           <img
             id="storeP1BackgroundDogFood"
             src="./image/store/dog-food2.png"
             alt=""
           />
+          
           <img
             id="storeP1BackgroundDogFoodBowl"
             src="./image/store/343-3432319_low-carb-pet-food-manhaten-cat.png"
@@ -692,7 +695,7 @@ return(
         {/* <!-- <div id="cartAndDonate" className="d-flex"> --> */}
         <div className="circle-s circle-cart">
           <div className="div-cart">
-            <i className="fas fa-shopping-cart"></i>
+            <i className="fas fa-shopping-cart" />
           </div>
         </div>
         <div className="circle-l circle-donate">

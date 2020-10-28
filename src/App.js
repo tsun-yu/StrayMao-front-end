@@ -19,7 +19,10 @@ function App() {
         <MainContent>
           <Switch>
             {/* 注意：要加上網址參數 */}
+
             <Route exact path="/">
+            </Route>
+            <Route path="/test">
               {/*要連線的網頁*/}
               {/* <Page1/> */}
               {/* <PageBar /> */}
