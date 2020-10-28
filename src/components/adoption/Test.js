@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-
+import AdopMainCardPic from "./AdopMainCardPic";
+import AdopMainButton from "./AdopMainButton";
 function Test(props) {
   return (
     <>
@@ -9,7 +10,11 @@ function Test(props) {
         <div className="adopTitleLine" />
       </div>
       <div className="adopRecommand">
-        <div className="col p-1">aaa</div>
+        <div className="col p-1">
+          <AdopMainCardPic>
+            <AdopMainButton />
+          </AdopMainCardPic>
+        </div>
         <div className="col">bbb</div>
       </div>
     </>
