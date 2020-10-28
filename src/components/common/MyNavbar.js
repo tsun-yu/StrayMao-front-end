@@ -12,7 +12,7 @@ function MyNavbar(props) {
         expand="lg"
         variant="dark"
         fixed="top"
-        
+        // display = "flex"
       >
         <Navbar.Brand href="#home" className="ml-5"style={{color:"#FFF1E6",fontFamily:"Roboto ",fontSize: "60px"}}>Stray Mao</Navbar.Brand>
         <Navbar.Brand href="#home" className="navLogoCN" style={{color:"#FFF1E6",fontSize: "16px"}}>寵愛有家</Navbar.Brand>
