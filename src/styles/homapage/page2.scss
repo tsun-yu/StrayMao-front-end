@@ -1,6 +1,4 @@
-.page2 {
-  margin-top: 193px;
-}
+
 .page2img {
   height: 403px;
   width: 202px;
@@ -15,12 +13,33 @@
   margin-top: 196px;
 }
 
-.page2des {
+.page2desBlock {
   margin: 310px 0 0 30px;
 }
-.page2des span {
+.adopt {
   font-size: 60px;
   font-weight: lighter;
   font-family: 'roboto';
   color: #a5a58d;
+  margin-bottom: 45px;
+}
+
+.page2des {
+  color: #707070;
+  font-size: 20px;
+  font-family: $fontType1;
+  margin: 0 0 26px 107px;
+}
+.page2des2 {
+  color: #a5a58d;
+  font-size: 16px;
+  font-family: $fontType1;
+  margin-left: 255px;
+}
+.greenarrow-right{
+  width: 4%;
+}
+
+.blank2{
+  height: 180px;
 }
