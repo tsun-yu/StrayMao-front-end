@@ -44,6 +44,51 @@ main > .container {
   margin: auto;
 }
 
+.adoptionMainCardPicture {
+  width: 395px;
+  height: 520px;
+  background-color: #fff;
+}
+.adoptionMainCardPicture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: auto;
+  border-radius: 4px;
+}
+
+.adopMainButton {
+  position: relative;
+
+  background-color: red;
+}
+.adopMainButton .buttonGroup {
+  position: absolute;
+  bottom: 0px;
+  height: 63px;
+  width: 100%;
+  // background-color: green;
+  border-radius: 4px;
+}
+.adopMainButton .buttonGroup .buttonLeft {
+  background-color: rgba(237, 143, 143, 0.7);
+  text-decoration: none;
+  border-radius: 4px 0px 0px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adopMainButton .buttonGroup .buttonRight {
+  background-color: rgba(165, 165, 141, 0.7);
+  border-radius: 0px 4px 4px 0px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adopMainButton .buttonGroup:hover() {
+  cursor: pointer;
+}
 /**page bar**/
 .pageBar {
   list-style-type: none;

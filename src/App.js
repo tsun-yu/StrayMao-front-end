@@ -24,8 +24,6 @@ function App() {
             </Route>
             <Route path="/test">
               {/*要連線的網頁*/}
-              {/* <Page1/> */}
-              {/* <PageBar /> */}
               <TestLink />
             </Route>
             <Route path="/adoptionTest">
