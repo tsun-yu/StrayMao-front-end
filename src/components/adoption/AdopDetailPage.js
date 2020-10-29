@@ -17,6 +17,14 @@ function AdopDetailPage(props) {
         </div>
       </div>
       <AdopDetailInfo />
+
+      <button
+        className="btn-green d-flex justify-content-center  align-items-center m-auto"
+        type="button"
+        value="123"
+      >
+        我要領養
+      </button>
     </>
   );
 }
