@@ -89,6 +89,26 @@ main > .container {
 .adopMainButton .buttonGroup:hover() {
   cursor: pointer;
 }
+
+.adoptReadMore {
+  text-decoration: underline;
+}
+
+.adoptListStyleNone {
+  list-style: none;
+}
+
+.adoptListCard {
+  width: 14.2rem;
+  height: 17.5rem;
+}
+.adoptListCardImg {
+  width: 14.2rem;
+  height: 13.2rem;
+  overflow: hidden;
+  object-fit: fill;
+}
+
 /**page bar**/
 .pageBar {
   list-style-type: none;
@@ -114,6 +134,7 @@ main > .container {
 .pageBar > li > a {
   text-align: center;
   text-decoration: none;
+  color: #131010;
 }
 .pageBar > li > a > span {
   position: absolute;
@@ -121,6 +142,7 @@ main > .container {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  color: #595757;
 }
 .pageBar > li > a > svg {
   position: absolute;
