@@ -71,10 +71,6 @@ function AdopDetailInfo(props) {
           </li>
         </ul>
       </div>
-
-      <button class="btn-green" type="button" value="123">
-        123
-      </button>
     </>
   );
 }
