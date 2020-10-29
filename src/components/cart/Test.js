@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import Main from "./main"
 
 function Test(props) {
   return (
     <>
-      <h5>cart</h5>
+      <Main />
     </>
   );
 }

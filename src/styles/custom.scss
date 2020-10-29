@@ -9,6 +9,7 @@ $secondary: #131010;
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./footer.scss";
 @import "./navbar.scss";
+@import "./styleGuide.scss";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 main {
@@ -108,7 +109,7 @@ footer {
     family: $fontType3;
     size: 60px;
     weight: bold;
-    letter-spacing:-1.5;
+    letter-spacing: -1.5;
   }
 }
 
@@ -117,7 +118,7 @@ footer {
     family: $fontType3;
     size: 60px;
     weight: lighter;
-    letter-spacing:-0.5;
+    letter-spacing: -0.5;
   }
 }
 
@@ -132,7 +133,7 @@ footer {
   font: {
     family: $fontType3;
     size: 34px;
-    letter-spacing:0.25;
+    letter-spacing: 0.25;
   }
 }
 
@@ -147,7 +148,7 @@ footer {
   font: {
     family: $fontType3;
     size: 20px;
-    letter-spacing:0.15;
+    letter-spacing: 0.15;
   }
 }
 

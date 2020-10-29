@@ -1,0 +1,255 @@
+@import "~bootstrap/scss/bootstrap.scss";
+body {
+  background-color: #e1e1d5;
+}
+
+.body_An {
+  background-color: #e1e1d5;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.boxBottom_An {
+  background-color: #fffffd;
+  width: 67.5rem;
+  padding: 0.625rem;
+  border-radius: 0.2rem 0.2rem 0 0;
+}
+
+.boxUpper_An {
+  background-color: #f5f5f5;
+  height: 6.8125rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  border-radius: 0.2rem;
+}
+
+.icon-018-trashUpper_An svg {
+  fill: #d1d1d1;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 2.5rem;
+}
+.icon-018-trashUpper_An svg:hover {
+  fill: #a5a58d;
+  cursor: pointer;
+}
+
+@keyframes hover-color {
+  from {
+    border-color: #b7b7a4;
+  }
+  to {
+    border-color: #777b5a;
+  }
+}
+.magic-checkbox_An {
+  position: absolute;
+  display: none;
+}
+.magic-checkbox_An + label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-top: 2.7rem;
+  margin-right: 2.7rem;
+}
+.magic-checkbox_An + label:hover:before {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-name: hover-color;
+}
+.magic-checkbox_An + label:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  content: "";
+  border: 0.15rem solid #b7b7a4;
+}
+.magic-checkbox_An + label:after {
+  position: absolute;
+  display: none;
+  content: "";
+}
+.magic-checkbox_An:checked + label:after {
+  display: block;
+}
+.magic-checkbox_An + label:before {
+  border-radius: 0.25rem;
+}
+.magic-checkbox_An + label:after {
+  top: 0.1rem;
+  left: 0.4rem;
+  box-sizing: border-box;
+  width: 0.4rem;
+  height: 0.7rem;
+  transform: rotate(45deg);
+  border-width: 0.15rem;
+  border-style: solid;
+  border-color: #fffffd;
+  border-top: 0;
+  border-left: 0;
+}
+.magic-checkbox_An:checked + label:before {
+  animation-name: none;
+}
+.magic-checkbox_An:checked + label:before {
+  background: #777b5a;
+}
+
+.goodsImg_An {
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  margin: 1rem;
+}
+
+.goodsName_An {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 1rem;
+  color: #707070;
+  position: relative;
+  margin: 2.5rem;
+}
+
+.inputbox_An {
+  margin: 2.5rem;
+}
+
+.icon-067-minus_An svg {
+  fill: #707070;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  top: 0.5rem;
+}
+.icon-067-minus_An svg:hover {
+  fill: #cb997e;
+  cursor: pointer;
+}
+
+.icon-021-plus_An svg {
+  fill: #707070;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  top: 0.0625rem;
+}
+.icon-021-plus_An svg:hover {
+  fill: #cb997e;
+  cursor: pointer;
+}
+
+.input-black_An {
+  width: 5rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  border: solid 0.08rem #707070;
+  text-align: center;
+  color: #707070;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+}
+.input-black_An:focus {
+  outline: none;
+}
+
+.goodsPrice_An {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 1rem;
+  color: #cb997e;
+  position: relative;
+  margin: 2.5rem;
+}
+
+.boxDown_An {
+  background-color: #fff1e6;
+  width: 67.5rem;
+  height: 4rem;
+  border-radius: 0 0 0.2rem 0.2rem;
+}
+
+.icon-018-trashDown_An svg {
+  fill: #d1d1d1;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 1.2rem 1rem 1rem 3rem;
+}
+.icon-018-trashDown_An svg:hover {
+  fill: #a5a58d;
+  cursor: pointer;
+}
+
+.btn-brown_An {
+  /* #CB997E*/
+  width: 3rem;
+  height: 2.5rem;
+  margin-top: 0.75rem;
+  margin-left: 0.75rem;
+  padding: 0 0.3rem;
+  border-radius: 0.2rem;
+  font-size: 0.875rem;
+  border: none;
+  color: #fffffd;
+  background-color: #cb997e;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.btn-brown_An:hover {
+  background-color: #d9ae97;
+}
+.btn-brown_An:active {
+  background-color: #bb8f78;
+}
+.btn-brown_An:focus {
+  background-color: #bb8f78;
+  outline: none;
+}
+
+.boxDownRight_An {
+  padding: 1rem;
+}
+.totalPrice_An {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 1.5rem;
+  color: #cb997e;
+}
+
+.btn-green_An {
+  /* #A5A58D*/
+  width: 67.5rem;
+  height: 2.5rem;
+  margin-top: 1.5rem;
+  /* padding: 0.7rem 2rem; */
+  border-radius: 0.2rem;
+  font-size: 0.875rem;
+  border: none;
+  color: #fffffd;
+  background-color: #a5a58d;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.btn-green_An:hover {
+  background-color: #b7b7a4;
+}
+.btn-green_An:active {
+  background-color: #777b5a;
+}
+.btn-green_An:focus {
+  background-color: #777b5a;
+  outline: none;
+}
