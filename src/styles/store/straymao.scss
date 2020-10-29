@@ -1,304 +1,314 @@
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
+
+body {
+  overflow-x: hidden;
+}
 
 * {
-    margin: 0px;
-    padding: 0px;
-  }
-  
-  p {
-    margin: 0%;
-    padding: 0%;
-  }
-  
-  img {
-    width: 100%;
-  }
-  
-  .storeP1Background {
-    background-image: url(/image/store/background.jpg);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    margin-top: -100px;
-  }
-  
-  #storeP1BackgroundTop {
-    width: 100vw;
-    height: calc(100vh - 12vw);
-  }
-  
-  #storeP1BackgroundMouse {
-    min-width: 50px;
-    width: 5vw;
-    position: absolute;
-    bottom: 4%;
-    left: 50%;
-  }
-  
-  #storeP1BackgroundCat {
-    min-width: 70px;
-    width: 7vw;
-    position: absolute;
-    bottom: 5%;
-    left: 35%;
-  }
-  
-  #storeP1BackgroundDog {
-    min-width: 400px;
-    width: 40vw;
-    position: absolute;
-    bottom: 0%;
-    left: 45%;
-  }
-  
-  #storeP1BackgroundCatTower {
-    min-width: 140px;
-    width: 15vw;
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
-  }
-  
-  #storeP1BackgroundDogFood{
-    min-width: 60px;
-    width: 6vw;
-    position: absolute;
-    bottom: 17%;
-    right: 15%;
-  }
-  
-  #storeP1BackgroundDogFoodBowl{
-    min-width: 80px;
-    width: 8vw;
-    position: absolute;
-    bottom: 0%;
-    right: 21%;
-  }
-  
-  #storeP1BackgroundBall{
-    min-width: 30px;
-    width: 3vw;
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-  }
-  
-  #storeP1BackgroundMoon{
-    min-width: 100px;
-    width: 10vw;
-    position: absolute;
-    top: 15%;
-    right: 20%;
-  }
-  
-  #storeP1BackgroundAngle{
-    min-width: 100px;
-    width: 10vw;
-    position: absolute;
-    top: 20%;
-    right: 45%;
-  }
-  
-  #storeP1BackgroundStep1{
-    min-width: 50px;
-    width: 5vw;
-    position: absolute;
-    top: 37%;
-    right: 36%;
-  }
-  
-  #storeP1BackgroundStep2{
-    min-width: 50px;
-    width: 5vw;
-    position: absolute;
-    top: 45%;
-    left: 36%;
-  }
-  
-  #storeP1BackgroundStep3{
-    min-width: 50px;
-    width: 5vw;
-    position: absolute;
-    top: 60%;
-    left: 27%;
-  }
-  
-  /* 大按鈕 */
-  #bigBtn {
-    justify-content: center;
-    width: 100vw;
-    height: 8vh;
-    margin: 15vh 0vh;
-  }
-  
-  .btn{
-    background-repeat: no-repeat;
-    background-position: right;
-  
-  
-    width: 15.5vw;
-    margin: 0 2rem;
-    padding: 0.5rem 3rem;
-    border-radius: 4px;
-    font-size: 1.5rem;
-    border: none;
-    color: #fffffd;
-    background-color: #ddbea9;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
-      monospace, serif;
-  }
-  
-  #newsBigBtn:hover {
-    /* background-color: #E8CCB9; */
-    background-image: url(/image/store/hahaDog.png),url(/image/store/news.png);
-    background-repeat: no-repeat;
-    background-position: right,left;
-  
-    color: #ddbea9;
-    background-color: #fffffd;
-    border: 1px solid #ddbea9;
-    transition: 0.3s;
-  }
-  
-  #catBigBtn:hover {
-    /* background-color: #E8CCB9; */
-    background-position: right;
-    background-image: url(/image/store/lookCat.png);
-    background-repeat: no-repeat;
-    background-position: right;
-  
-    color: #ddbea9;
-    background-color: #fffffd;
-    border: 1px solid #ddbea9;
-    transition: 0.3s;
-  }
-  
-  #dogBigBtn:hover {
-    /* background-color: #E8CCB9; */
-    background-position: right;
-    background-image: url(/image/store/hahaDog.png);
-    background-repeat: no-repeat;
-    background-position: right;
-  
-    color: #ddbea9;
-    background-color: #fffffd;
-    border: 1px solid #ddbea9;
-    transition: 0.3s;
-  }
-  
-  .btn:active {
-    background-color: #d9ae97;
-  }
-  .btn:focus {
-    background-color: #d9ae97;
-    outline: none;
-  }
-  
-  /* 左右箭頭 */
-  .storeP1Bottom {
-    margin-bottom: 15vh;
-  }
-  
-  .arrow {
-    padding-top: 15%;
-  }
-  
-  .storeP1Title {
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    display: flex;
-    margin: auto;
-  }
-  
-  .line1 {
-    margin-bottom: 5vh;
-    width: 10vw;
-    height: 2.5vh;
-    border-bottom: 1px solid #ed8f8f;
-  }
-  
-  .goodsText {
-    margin-left: 2vw;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-  }
-  
-  #number {
-    color: #ed8f8f;
-  }
-  
-  .storeP1GoodsWords {
-    font-size: 24px;
-    margin: 0px 3vw;
-  }
-  
-  .line2 {
-    /* margin-right: 0px; */
-    width: 10vw;
-    height: 2.5vh;
-    border-bottom: 1px solid #ed8f8f;
-  }
-  
-  /* card */
-  .cardsgroup_2 {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: space-around;
-  }
-  
-  #between {
-    justify-content: space-around;
-  }
-  
-  .card_new {
-    /* min-height: 30vh;
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  margin: 0%;
+  padding: 0%;
+}
+
+img {
+  width: 100%;
+}
+
+.storeP1Background {
+  background-image: url(/image/store/background.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  width: 105vw;
+  height: 100vh;
+  position: relative;
+  margin-top: -100px;
+  margin-left: -30px;
+  // transition: 0.5s;
+  overflow: hidden;
+  // background-color: #ed8f8f;
+}
+
+#storeP1BackgroundTop {
+  width: 100vw;
+  height: calc(100vh - 12vw);
+}
+
+#storeP1BackgroundMouse {
+  min-width: 50px;
+  width: 5vw;
+  position: absolute;
+  bottom: 4vh;
+  left: 50vw;
+}
+
+#storeP1BackgroundCat {
+  min-width: 70px;
+  width: 7vw;
+  position: absolute;
+  bottom: 5vh;
+  left: 35vw;
+}
+
+#storeP1BackgroundDog {
+  min-width: 90px;
+  width: 10vw;
+  position: absolute;
+  bottom: 5vh;
+  right: 30vw;
+}
+
+#storeP1BackgroundCatTower {
+  min-width: 140px;
+  width: 15vw;
+  position: absolute;
+  bottom: 10vh;
+  left: 5vw;
+}
+
+#storeP1BackgroundDogFood {
+  min-width: 60px;
+  width: 6vw;
+  position: absolute;
+  bottom: 17vh;
+  right: 15vw;
+}
+
+#storeP1BackgroundDogFoodBowl {
+  min-width: 80px;
+  width: 8vw;
+  position: absolute;
+  bottom: 0%;
+  right: 21vw;
+}
+
+#storeP1BackgroundBall {
+  min-width: 30px;
+  width: 3vw;
+  position: absolute;
+  bottom: 10vh;
+  right: 10vw;
+}
+
+#storeP1BackgroundMoon {
+  min-width: 100px;
+  width: 10vw;
+  position: absolute;
+  top: 15vh;
+  right: 20vw;
+}
+
+#storeP1BackgroundAngle {
+  min-width: 100px;
+  width: 10vw;
+  position: absolute;
+  top: 20vh;
+  right: 45vw;
+}
+
+#storeP1BackgroundStep1 {
+  min-width: 50px;
+  width: 5vw;
+  position: absolute;
+  top: 37vh;
+  right: 36vw;
+}
+
+#storeP1BackgroundStep2 {
+  min-width: 50px;
+  width: 5vw;
+  position: absolute;
+  top: 45vh;
+  left: 36vw;
+}
+
+#storeP1BackgroundStep3 {
+  min-width: 50px;
+  width: 5vw;
+  position: absolute;
+  top: 60vh;
+  left: 27vw;
+}
+
+/* 大按鈕 */
+#bigBtn {
+  justify-content: center;
+  width: 100vw;
+  height: 8vh;
+  margin: 15vh 0vh;
+}
+
+.btn {
+  background-repeat: no-repeat;
+  background-position: right;
+
+  width: 15.5vw;
+  margin: 0 2rem;
+  padding: 0.5rem 3rem;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  border: none;
+  color: #fffffd;
+  background-color: #ddbea9;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+}
+
+#newsBigBtn:hover {
+  /* background-color: #E8CCB9; */
+  background-image: url(/image/store/hahaDog.png), url(/image/store/news.png);
+  background-repeat: no-repeat;
+  background-position: right, left;
+  background-size: 5vw;
+
+  color: #ddbea9;
+  background-color: #fffffd;
+  border: 1px solid #ddbea9;
+  transition: 0.3s;
+}
+
+#catBigBtn:hover {
+  /* background-color: #E8CCB9; */
+  background-position: right;
+  background-image: url(/image/store/lookCat.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 5vw;
+
+  color: #ddbea9;
+  background-color: #fffffd;
+  border: 1px solid #ddbea9;
+  transition: 0.3s;
+}
+
+#dogBigBtn:hover {
+  /* background-color: #E8CCB9; */
+  background-position: right;
+  background-image: url(/image/store/hahaDog.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 5vw;
+
+  color: #ddbea9;
+  background-color: #fffffd;
+  border: 1px solid #ddbea9;
+  transition: 0.3s;
+}
+
+.btn:active {
+  background-color: #d9ae97;
+}
+.btn:focus {
+  background-color: #d9ae97;
+  outline: none;
+}
+
+/* 左右箭頭 */
+.storeP1Bottom {
+  margin-bottom: 15vh;
+}
+
+.arrow {
+  padding-top: 15%;
+}
+
+.storeP1Title {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  display: flex;
+  margin: auto;
+}
+
+.line1 {
+  margin-bottom: 5vh;
+  width: 10vw;
+  height: 2.5vh;
+  border-bottom: 1px solid #ed8f8f;
+}
+
+.goodsText {
+  margin-left: 2vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+#number {
+  color: #ed8f8f;
+}
+
+.storeP1GoodsWords {
+  font-size: 24px;
+  margin: 0px 3vw;
+}
+
+.line2 {
+  /* margin-right: 0px; */
+  width: 10vw;
+  height: 2.5vh;
+  border-bottom: 1px solid #ed8f8f;
+}
+
+/* card */
+.cardsgroup_2 {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+}
+
+#between {
+  justify-content: space-around;
+}
+
+.card_new {
+  /* min-height: 30vh;
     width: 30vw; */
-    /* height: 35vh; */
-    /* margin: 0px 5px 20px 2px; */
-  
-    padding: 0px;
-    border: 1px solid #ed8f8f;
-    border-radius: 4px;
-    background-color: white;
-    text-align: justify;
-    position: relative;
-    overflow: hidden;
-    transition: 0.1s;
-    box-shadow: 0px 5px 3px gray;
-  }
-  
-  .icon {
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-  }
-  
-  .icon2 {
-    position: absolute;
-    right: 2rem;
-    bottom: 2rem;
-  }
-  
-  .icon2:hover {
-    fill: salmon;
-  }
-  
-  .card_new:hover {
-    box-shadow: 0px 10px 10px gray;
-  }
-  
-  /* .sale {
+  /* height: 35vh; */
+  /* margin: 0px 5px 20px 2px; */
+
+  padding: 0px;
+  border: 1px solid #ed8f8f;
+  border-radius: 4px;
+  background-color: white;
+  text-align: justify;
+  position: relative;
+  overflow: hidden;
+  transition: 0.1s;
+  box-shadow: 0px 5px 3px gray;
+}
+
+.icon {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+
+.icon2 {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+}
+
+.icon2:hover {
+  fill: salmon;
+}
+
+.card_new:hover {
+  box-shadow: 0px 10px 10px gray;
+}
+
+/* .sale {
     position: absolute;
     width: 50px;
     height: 50px;
@@ -310,154 +320,153 @@
     position: absolute;
     margin: 12px 0px 0px 8px;
   } */
-  
-  /* 圈圈二人組 */
-  #cartAndDonate {
-    position: relative;
-  }
-  
-  /* 桌機 領養&捐款 */
-  .circle-l {
-    display: block;
-    /* float: right; */
-    position: relative;
-    width: 1.6rem;
-    height: 1.6rem;
-    display: block;
-    overflow: hidden;
-    padding: 2%;
-    margin: 0 1rem 0 auto;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
-      0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
-      0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
-      0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
-  }
-  .circle-l > div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-size: 1.2rem;
-    white-space: nowrap;
-  }
-  
-  /* 捐款(桌機) */
-  .circle-l.circle-donate {
-    background-color: #fffffd;
-    border: 0.09rem solid #cb997e;
-  }
-  .circle-l.circle-donate:hover {
-    background-color: #fffffd;
-    border: 0.18rem solid #ed8f8f;
-    color: #ed8f8f;
-    font-weight: bold;
-    transition: 0.2s;
-  }
-  .circle-l.circle-donate > div {
-    color: #cb997e;
-  }
-  .circle-l.circle-donate > div:hover {
-    color: #ed8f8f;
-    transition: 0.2s;
-  }
-  
-  /* 手機 購物車&捐款 */
-  .circle-s {
-    display: block;
-    /* float: right; */
-    position: relative;
-    width: 0.5rem;
-    height: 0.5rem;
-    display: block;
-    overflow: hidden;
-    padding: 2%;
-    margin: 0 1rem 0 auto;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
-      0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
-      0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
-      0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
-  }
-  
-  /* 捐款(手機) */
-  .circle-s > .div-donate {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-size: 0.75rem;
-    white-space: nowrap;
-  }
-  
-  .circle-s.circle-donate {
-    background-color: #fffffd;
-    border: 0.09rem solid #cb997e;
-  }
-  .circle-s.circle-donate:hover {
-    background-color: #fffffd;
-    border: 0.18rem solid #ed8f8f;
-    color: #ed8f8f;
-    font-weight: bold;
-  }
-  .circle-s.circle-donate > div {
-    color: #cb997e;
-  }
-  .circle-s.circle-donate > div:hover {
-    color: #ed8f8f;
-  }
-  
-  /* 購物車(手機) */
-  .circle-s > .div-cart {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-size: 1.2rem;
-    white-space: nowrap;
-  }
-  
-  .circle-s.circle-cart {
-    background-color: #cb997e;
-    border: 0.09rem solid #cb997e;
-  }
-  .circle-s.circle-cart:hover {
-    background-color: #ed8f8f;
-    border: 0.18rem solid #ed8f8f;
-    color: #fffffd;
-    font-weight: bold;
-    transition: 0.2s;
-  }
-  .circle-s.circle-cart > .div-cart {
-    color: #fffffd;
-  }
-  .circle-s.circle-cart > .div-cart:hover {
-    color: #fffffd;
-  }
-  
-  .icon-088-shopping_cart {
-    fill: #fffffd;
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-  
+
+/* 圈圈二人組 */
+#cartAndDonate {
+  position: relative;
+}
+
+/* 桌機 領養&捐款 */
+.circle-l {
+  display: block;
+  /* float: right; */
+  position: relative;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: block;
+  overflow: hidden;
+  padding: 2%;
+  margin: 0 1rem 0 auto;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
+    0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
+    0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
+    0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+}
+.circle-l > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+/* 捐款(桌機) */
+.circle-l.circle-donate {
+  background-color: #fffffd;
+  border: 0.09rem solid #cb997e;
+}
+.circle-l.circle-donate:hover {
+  background-color: #fffffd;
+  border: 0.18rem solid #ed8f8f;
+  color: #ed8f8f;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.circle-l.circle-donate > div {
+  color: #cb997e;
+}
+.circle-l.circle-donate > div:hover {
+  color: #ed8f8f;
+  transition: 0.2s;
+}
+
+/* 手機 購物車&捐款 */
+.circle-s {
+  display: block;
+  /* float: right; */
+  position: relative;
+  width: 0.5rem;
+  height: 0.5rem;
+  display: block;
+  overflow: hidden;
+  padding: 2%;
+  margin: 0 1rem 0 auto;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
+    0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
+    0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
+    0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+}
+
+/* 捐款(手機) */
+.circle-s > .div-donate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.circle-s.circle-donate {
+  background-color: #fffffd;
+  border: 0.09rem solid #cb997e;
+}
+.circle-s.circle-donate:hover {
+  background-color: #fffffd;
+  border: 0.18rem solid #ed8f8f;
+  color: #ed8f8f;
+  font-weight: bold;
+}
+.circle-s.circle-donate > div {
+  color: #cb997e;
+}
+.circle-s.circle-donate > div:hover {
+  color: #ed8f8f;
+}
+
+/* 購物車(手機) */
+.circle-s > .div-cart {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+.circle-s.circle-cart {
+  background-color: #cb997e;
+  border: 0.09rem solid #cb997e;
+}
+.circle-s.circle-cart:hover {
+  background-color: #ed8f8f;
+  border: 0.18rem solid #ed8f8f;
+  color: #fffffd;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.circle-s.circle-cart > .div-cart {
+  color: #fffffd;
+}
+.circle-s.circle-cart > .div-cart:hover {
+  color: #fffffd;
+}
+
+.icon-088-shopping_cart {
+  fill: #fffffd;
+  width: 1.25rem;
+  height: 1.25rem;
+}

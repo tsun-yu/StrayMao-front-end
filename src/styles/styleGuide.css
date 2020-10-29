@@ -1,11 +1,10 @@
+@charset "UTF-8";
 /* 統一設置為微軟正黑體 */
 /* body{
         font-family: Microsoft JhengHei;
     } */
-
 /* 加入字體 */
 /* 加入思源宋體 */
-
 @font-face {
   font-family: Noto_Serif_TC-Regular;
   src: url("/fonts/Noto_Serif_TC/NotoSerifTC-Regular.otf");
@@ -31,12 +30,15 @@
   font-weight: bold;
   font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",monospace, serif;
 }
+
 .btn:hover {
   background-color: #e8ccb9;
 }
+
 .btn:active {
   background-color: #d9ae97;
 }
+
 .btn:focus {
   background-color: #d9ae97;
   outline: none;
@@ -55,12 +57,15 @@
   text-align: center;
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",monospace, serif;
 }
+
 .btn-brown:hover {
   background-color: #d9ae97;
 }
+
 .btn-brown:active {
   background-color: #bb8f78;
 }
+
 .btn-brown:focus {
   background-color: #bb8f78;
   outline: none;
@@ -79,12 +84,15 @@
   text-align: center;
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular", monospace, serif;
 }
+
 .btn-red:hover {
   background-color: #f7a7a7;
 }
+
 .btn-red:active {
   background-color: #cf7b7b;
 }
+
 .btn-red:focus {
   background-color: #cf7b7b;
   outline: none;
@@ -103,12 +111,15 @@
   text-align: center;
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular", monospace, serif;
 }
+
 .btn-green:hover {
   background-color: #b7b7a4;
 }
+
 .btn-green:active {
   background-color: #777b5a;
 }
+
 .btn-green:focus {
   background-color: #777b5a;
   outline: none;
@@ -126,9 +137,11 @@
   text-align: center;
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular", monospace, serif;
 }
+
 .btn-filter:hover .filterbtn {
   background-color: #d9ae97;
 }
+
 .filterbtn:focus {
   outline: none;
 }
@@ -143,6 +156,7 @@
   position: absolute;
   background-color: #fffffd;
 }
+
 .btn-filter:hover .btn-filter-content {
   display: block;
 }
@@ -156,6 +170,7 @@
   font-size: 0.75rem;
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",   monospace, serif;
 }
+
 .btn-filter-content a:hover {
   background-color: #e0dfde;
 }
@@ -167,6 +182,7 @@
   height: 1rem;
   margin-bottom: -0.6rem;
 }
+
 .icon-067-minus:hover {
   fill: #cb997e;
   cursor: pointer;
@@ -178,6 +194,7 @@
   height: 1rem;
   margin-bottom: -0.2rem;
 }
+
 .icon-021-plus:hover {
   fill: #cb997e;
   cursor: pointer;
@@ -193,6 +210,7 @@
   color: #707070;
   font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular", monospace, serif;
 }
+
 .input-black:focus {
   outline: none;
 }
@@ -208,6 +226,7 @@
   color: #707070;
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular", monospace, serif;
 }
+
 .input-brown:focus {
   outline: none;
   border-color: #bb8f78;
@@ -224,6 +243,7 @@
   color: #707070;
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",  monospace, serif;
 }
+
 .input-green:focus {
   outline: none;
   border-color: #777b5a;
@@ -235,9 +255,11 @@
   display: inline-block;
   width: 10rem;
 }
+
 .btn-quantity:hover .btn-quantity-content {
   display: block;
 }
+
 .btn-quantity i {
   width: 1rem;
   text-align: center;
@@ -250,6 +272,7 @@
   position: absolute;
   background-color: #fffffd;
 }
+
 .btn-quantity-content a {
   color: #707070;
   padding: 0.5rem 2.6rem;
@@ -259,6 +282,7 @@
   font-size: 0.75rem;
   font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular", monospace, serif;
 }
+
 .btn-quantity-content a:hover {
   background-color: #e0dfde;
 }
@@ -273,6 +297,7 @@
   cursor: pointer;
   text-align: center;
 }
+
 .quantitybtn:focus {
   outline: none;
 }
@@ -289,6 +314,7 @@
   color: #707070;
   font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",monospace, serif;
 }
+
 .input-transparent:focus {
   outline: none;
 }
@@ -300,14 +326,17 @@
   font-size: 0.75rem;
   font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular", monospace, serif;
 }
+
 .a-readmore:hover {
   text-decoration: none;
   color: #b3d7ef;
 }
+
 .a-readmore:active {
   text-decoration: none;
   color: #b3d7ef;
 }
+
 .a-readmore:focus {
   text-decoration: none;
   color: #b3d7ef;
@@ -324,6 +353,7 @@
   font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular", monospace, serif;
   cursor: pointer;
 }
+
 .quantityselect select:focus {
   outline: none;
 }
@@ -347,12 +377,15 @@
   color: #d1d1d1;
   cursor: pointer;
 }
+
 .isntcheck .fa-square:hover {
   color: #d1d1d1;
 }
+
 .isntcheck .fa-square:focus {
   color: #a5a58d;
 }
+
 .isntcheck .fa-square:active {
   color: #a5a58d;
 }
@@ -365,12 +398,15 @@
   left: 0.3rem;
   cursor: pointer;
 }
+
 .isntcheck .fa-check:hover {
   color: #fffffd;
 }
+
 .isntcheck .fa-check:focus {
   color: #fffffd;
 }
+
 .isntcheck .fa-check:active {
   color: #fffffd;
 }
@@ -400,6 +436,7 @@
   width: 1.4rem;
   height: 1rem;
 }
+
 .icon-002-heart:hover {
   fill: #ed8f8f;
   cursor: pointer;
@@ -410,6 +447,7 @@
   width: 1.4rem;
   height: 1rem;
 }
+
 .icon-003-heart:hover {
   cursor: pointer;
 }
@@ -420,6 +458,7 @@
   width: 1rem;
   height: 1.5rem;
 }
+
 .icon-018-trash:hover {
   fill: #a5a58d;
   cursor: pointer;
@@ -431,6 +470,7 @@
   width: 0.6rem;
   height: 0.6rem;
 }
+
 .icon-014-cancel:hover {
   fill: #fffffd;
   cursor: pointer;
@@ -442,6 +482,7 @@
   width: 1.4rem;
   height: 1rem;
 }
+
 .icon-004-star:hover {
   fill: #ed8f8f;
   cursor: pointer;
@@ -452,11 +493,20 @@
   width: 1rem;
   height: 1rem;
 }
+
 .icon-005-star:hover {
   cursor: pointer;
 }
 
 /* 多選框-2&單選框 */
+@-webkit-keyframes hover-color {
+  from {
+    border-color: #b7b7a4;
+  }
+  to {
+    border-color: #777b5a;
+  }
+}
 @keyframes hover-color {
   from {
     border-color: #b7b7a4;
@@ -485,12 +535,17 @@
   cursor: pointer;
   vertical-align: middle;
 }
+
 .magic-radio + label:hover:before,
 .magic-checkbox + label:hover:before {
-  animation-duration: 0.4s;
-  animation-fill-mode: both;
-  animation-name: hover-color;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: hover-color;
+          animation-name: hover-color;
 }
+
 .magic-radio + label:before,
 .magic-checkbox + label:before {
   position: absolute;
@@ -502,6 +557,7 @@
   content: "";
   border: 0.15rem solid #b7b7a4;
 }
+
 .magic-radio + label:after,
 .magic-checkbox + label:after {
   position: absolute;
@@ -514,6 +570,7 @@
   cursor: not-allowed;
   color: #e0dfde;
 }
+
 .magic-radio[disabled] + label:hover,
 .magic-radio[disabled] + label:before,
 .magic-radio[disabled] + label:after,
@@ -522,11 +579,14 @@
 .magic-checkbox[disabled] + label:after {
   cursor: not-allowed;
 }
+
 .magic-radio[disabled] + label:hover:before,
 .magic-checkbox[disabled] + label:hover:before {
   border: 0.15rem solid #e0dfde;
-  animation-name: none;
+  -webkit-animation-name: none;
+          animation-name: none;
 }
+
 .magic-radio[disabled] + label:before,
 .magic-checkbox[disabled] + label:before {
   border-color: #e0dfde;
@@ -534,7 +594,8 @@
 
 .magic-radio:checked + label:before,
 .magic-checkbox:checked + label:before {
-  animation-name: none;
+  -webkit-animation-name: none;
+          animation-name: none;
 }
 
 .magic-radio:checked + label:after,
@@ -574,10 +635,12 @@
 .magic-checkbox + label:after {
   top: 0.1rem;
   left: 0.4rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 0.4rem;
   height: 0.7rem;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   border-width: 0.15rem;
   border-style: solid;
   border-color: #fffffd;
@@ -603,9 +666,11 @@
 .Roboto {
   font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",  monospace, serif;
 }
+
 .MicrosoftJhengHei {
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular", monospace, serif;
 }
+
 .NotoSerifTC {
   font-family: "Noto_Serif_TC-Regular", "Microsoft JhengHei", "Roboto-Regular",  monospace, serif;
 }
@@ -623,11 +688,10 @@
   margin: 1rem;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
-    0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
-    0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
-    0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+  -webkit-box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+          box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
 }
+
 .circle-l > div {
   position: absolute;
   top: 50%;
@@ -647,15 +711,18 @@
   background-color: #cb997e;
   border: 0.09rem solid #cb997e;
 }
+
 .circle-l.circle-adopt:hover {
   background-color: #ed8f8f;
   border: 0.18rem solid #ed8f8f;
   color: #fffffd;
   font-weight: bold;
 }
+
 .circle-l.circle-adopt > div {
   color: #fffffd;
 }
+
 .circle-l.circle-adopt > div:hover {
   color: #fffffd;
 }
@@ -665,15 +732,18 @@
   background-color: #fffffd;
   border: 0.09rem solid #cb997e;
 }
+
 .circle-l.circle-donate:hover {
   background-color: #fffffd;
   border: 0.18rem solid #ed8f8f;
   color: #ed8f8f;
   font-weight: bold;
 }
+
 .circle-l.circle-donate > div {
   color: #cb997e;
 }
+
 .circle-l.circle-donate > div:hover {
   color: #ed8f8f;
 }
@@ -691,10 +761,8 @@
   margin: 1rem;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
-    0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
-    0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
-    0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+  -webkit-box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+          box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
 }
 
 /* 捐款(手機) */
@@ -716,15 +784,18 @@
   background-color: #fffffd;
   border: 0.09rem solid #cb997e;
 }
+
 .circle-s.circle-donate:hover {
   background-color: #fffffd;
   border: 0.18rem solid #ed8f8f;
   color: #ed8f8f;
   font-weight: bold;
 }
+
 .circle-s.circle-donate > div {
   color: #cb997e;
 }
+
 .circle-s.circle-donate > div:hover {
   color: #ed8f8f;
 }
@@ -734,11 +805,6 @@
   position: absolute;
   top: 55%;
   left: 50%;
-  // transform: translate(-50%, -50%);
-  // -webkit-transform: translate(-50%, -50%);
-  // -moz-transform: translate(-50%, -50%);
-  // -ms-transform: translate(-50%, -50%);
-  // -o-transform: translate(-50%, -50%);
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular", monospace, serif;
   font-size: 1.2rem;
   white-space: nowrap;
@@ -748,15 +814,18 @@
   background-color: #cb997e;
   border: 0.09rem solid #cb997e;
 }
+
 .circle-s.circle-cart:hover {
   background-color: #ed8f8f;
   border: 0.18rem solid #ed8f8f;
   color: #fffffd;
   font-weight: bold;
 }
+
 .circle-s.circle-cart > .div-cart {
   color: #fffffd;
 }
+
 .circle-s.circle-cart > .div-cart:hover {
   color: #fffffd;
 }
@@ -771,6 +840,7 @@
 .menuarrow {
   width: 4%;
 }
+
 .menuarrow:hover {
   width: 4.5%;
   cursor: pointer;
@@ -779,13 +849,16 @@
 .brownarrow-left {
   width: 4%;
 }
+
 .brownarrow-left:hover {
   width: 4.5%;
   cursor: pointer;
 }
+
 .brownarrow-right {
   width: 4%;
 }
+
 .brownarrow-right:hover {
   width: 4.5%;
   cursor: pointer;
@@ -794,13 +867,16 @@
 .greenarrow-left {
   width: 4%;
 }
+
 .greenarrow-left:hover {
   width: 4.5%;
   cursor: pointer;
 }
+
 .greenarrow-right {
   width: 4%;
 }
+
 .greenarrow-right:hover {
   width: 4.5%;
   cursor: pointer;
@@ -809,13 +885,16 @@
 .grayarrow-left {
   width: 4%;
 }
+
 .grayarrow-left:hover {
   width: 4.5%;
   cursor: pointer;
 }
+
 .grayarrow-right {
   width: 4%;
 }
+
 .grayarrow-right:hover {
   width: 4.5%;
   cursor: pointer;
@@ -824,7 +903,9 @@
 .toparrow {
   width: 4%;
 }
+
 .toparrow:hover {
   width: 4.5%;
   cursor: pointer;
 }
+/*# sourceMappingURL=styleGuide.css.map */

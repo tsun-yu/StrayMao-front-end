@@ -11,8 +11,9 @@ import StoreTest from "../store/Test";
 
 function TestLink() {
   return (
+    <>
     <Router>
-      <>
+
         <Link to="/adoptionTest">adoption</Link>
         <br />
         <Link to="/homeTest">homepage</Link>
@@ -57,8 +58,9 @@ function TestLink() {
             <StoreTest />
           </Route>
         </Switch>
-      </>
+      
     </Router>
+    </>
   );
 }
 
