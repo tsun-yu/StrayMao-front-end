@@ -1,21 +1,41 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/store/straymao.scss";
 
-function storepage(props) {
+function Storepage(props) {
+// const [storeP1Background, setstoreP1Background] = useState(0);
+
+// useEffect(()=>{
+//   document.addEventListener("mousemove", function parallax(e) {
+//     this.querySelectorAll('.storeP1Background').forEach(storeP1Background => {
+//         const speed = storeP1Background.getAttribute('data-speed')
+
+//         const x = (window.innerWidth - e.pageX * speed) / 50
+//         const y = (window.innerHeight - e.pageY * speed) / 50
+
+//         storeP1Background.style.transform = `translateX(${x}px) translateY(${y}px)`;
+//         console.log(x);
+//     })});
+        
+          
+// },[])
+
+
 return(
 <>
 
       {/* 地板 */}
-      <section className="d-flex storeP1Background">
+      {/* onMouseOver={(storeP1Background)=> */}
+    <section>
+      <div className="d-flex storeP1Background">
         <div id="storeP1BackgroundTop">
-          <img id="storeP1BackgroundMouse" src="./image/store/mouse.png" alt="" />
-           <img id="storeP1BackgroundCat" src="./image/store/cat_PNG113.png" alt="" />
-          <img id="storeP1BackgroundDog" src="./image/store/未命名-2.png" alt="" />
+          <img id="storeP1BackgroundMouse" src="./image/store/mouse.png" alt=""   />
+          <img id="storeP1BackgroundCat" src="./image/store/cat_PNG113.png" alt=""   />
+          <img id="storeP1BackgroundDog" src="./image/store/未命名-2.png" alt=""   />
 
           <img
             id="storeP1BackgroundCatTower"
             src="./image/store/cat-3953989_1280.png"
-            alt=""
+            alt=""  
           />
 
           <img
@@ -29,16 +49,16 @@ return(
             src="./image/store/343-3432319_low-carb-pet-food-manhaten-cat.png"
             alt=""
           />
-          <img id="storeP1BackgroundBall" src="./image/store/ball.png" alt="" />
-        {/* 牆 */}
+          <img id="storeP1BackgroundBall" src="./image/store/ball.png" alt=""      />
+         {/* 牆 */}
           <img id="storeP1BackgroundMoon" src="./image/store/cat_tree01.png" alt="" />
           <img id="storeP1BackgroundAngle" src="./image/store/cat_tree02.png" alt="" />
           <img id="storeP1BackgroundStep1" src="./image/store/cat_tree03.png" alt="" />
           <img id="storeP1BackgroundStep2" src="./image/store/cat_tree03.png" alt="" />
           <img id="storeP1BackgroundStep3" src="./image/store/cat_tree03.png" alt="" />
         </div>      
-      </section>
-
+      </div>
+    </section>
       <div className="container">
         <div className="row">
           {/* <!-- 大按鈕 --> */}
@@ -707,4 +727,4 @@ return(
 </>
 )}
 
-export default storepage
+export default Storepage
