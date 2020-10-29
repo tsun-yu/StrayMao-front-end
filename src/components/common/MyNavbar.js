@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
+import { GrCart } from "react-icons/gr";
 
 // 選單連結要使用NavLink取代Link
 import { NavLink } from 'react-router-dom'
@@ -35,11 +36,14 @@ function MyNavbar(props) {
             <div className="hmSearch ">
             <input className="input-brown searchPlaceholder" type="text" placeholder="搜尋" style={{color:"#d1d1d1"}}></input>
             </div>
-            <Nav.Link as={NavLink} to="/" style={{color:"#FFF1E6"}}>
+            <Nav.Link as={NavLink} to="/">
             <i className="fas fa-search navIcon"></i>
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/memberTest" style={{color:"#FFF1E6"}}>
+            <Nav.Link as={NavLink} to="/memberTest">
             <i className="fas fa-user navIcon"></i>
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/cartTest">
+            <i class="fas fa-shopping-cart navIcon"></i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
