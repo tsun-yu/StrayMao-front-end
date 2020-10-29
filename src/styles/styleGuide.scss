@@ -1,0 +1,850 @@
+/* 統一設置為微軟正黑體 */
+/* body{
+        font-family: Microsoft JhengHei;
+    } */
+
+/* 加入字體 */
+/* 加入思源宋體 */
+@font-face {
+  font-family: Noto_Serif_TC-Regular;
+  src: url("/fonts/Noto_Serif_TC/NotoSerifTC-Regular.otf");
+}
+
+/* 加入Roboto */
+@font-face {
+  font-family: Roboto-Regular;
+  src: url("/fonts/Roboto/__Roboto-Regular.ttf");
+}
+
+/* 大按鈕 */
+.btn {
+  /* #DDBEA9*/
+  padding: 0.5rem 3rem;
+  border-radius: 0.4rem;
+  font-size: 1.5rem;
+  border: none;
+  color: #fffffd;
+  background-color: #ddbea9;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+}
+.btn:hover {
+  background-color: #e8ccb9;
+}
+.btn:active {
+  background-color: #d9ae97;
+}
+.btn:focus {
+  background-color: #d9ae97;
+  outline: none;
+}
+
+/* 小按鈕(棕) */
+.btn-brown {
+  /* #CB997E*/
+  padding: 0.5rem 2rem;
+  border-radius: 0.2rem;
+  font-size: 0.75rem;
+  border: none;
+  color: #fffffd;
+  background-color: #cb997e;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.btn-brown:hover {
+  background-color: #d9ae97;
+}
+.btn-brown:active {
+  background-color: #bb8f78;
+}
+.btn-brown:focus {
+  background-color: #bb8f78;
+  outline: none;
+}
+
+/* 小按鈕(紅) */
+.btn-red {
+  /* #ED8F8F*/
+  padding: 0.5rem 2rem;
+  border-radius: 0.2rem;
+  font-size: 0.75rem;
+  border: none;
+  color: #fffffd;
+  background-color: #ed8f8f;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.btn-red:hover {
+  background-color: #f7a7a7;
+}
+.btn-red:active {
+  background-color: #cf7b7b;
+}
+.btn-red:focus {
+  background-color: #cf7b7b;
+  outline: none;
+}
+
+/* 小按鈕(綠) */
+.btn-green {
+  /* #A5A58D*/
+  padding: 0.5rem 2rem;
+  border-radius: 0.2rem;
+  font-size: 0.75rem;
+  border: none;
+  color: #fffffd;
+  background-color: #a5a58d;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.btn-green:hover {
+  background-color: #b7b7a4;
+}
+.btn-green:active {
+  background-color: #777b5a;
+}
+.btn-green:focus {
+  background-color: #777b5a;
+  outline: none;
+}
+
+/* 下拉選單 */
+.filterbtn {
+  background-color: #cb997e;
+  color: #fffffd;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  font-size: 0.75rem;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.btn-filter:hover .filterbtn {
+  background-color: #d9ae97;
+}
+.filterbtn:focus {
+  outline: none;
+}
+
+.btn-filter {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-filter-content {
+  display: none;
+  position: absolute;
+  background-color: #fffffd;
+}
+.btn-filter:hover .btn-filter-content {
+  display: block;
+}
+
+.btn-filter-content a {
+  color: #707070;
+  padding: 0.5rem 0.95rem;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.btn-filter-content a:hover {
+  background-color: #e0dfde;
+}
+
+/* 數量輸入欄&加減按鈕 */
+.icon-067-minus {
+  fill: #707070;
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: -0.6rem;
+}
+.icon-067-minus:hover {
+  fill: #cb997e;
+  cursor: pointer;
+}
+
+.icon-021-plus {
+  fill: #707070;
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: -0.2rem;
+}
+.icon-021-plus:hover {
+  fill: #cb997e;
+  cursor: pointer;
+}
+
+.input-black {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  border: solid 0.08rem #707070;
+  text-align: center;
+  color: #707070;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+}
+.input-black:focus {
+  outline: none;
+}
+
+/* 輸入欄(棕) */
+.input-brown {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  border: solid 0.08rem #cb997e;
+  text-align: center;
+  color: #707070;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.input-brown:focus {
+  outline: none;
+  border-color: #bb8f78;
+}
+
+/* 輸入欄(綠) */
+.input-green {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  border: solid 0.08rem #a5a58d;
+  text-align: center;
+  color: #707070;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.input-green:focus {
+  outline: none;
+  border-color: #777b5a;
+}
+
+/* 數量下拉選單(無select) */
+.btn-quantity {
+  position: relative;
+  display: inline-block;
+  width: 10rem;
+}
+.btn-quantity:hover .btn-quantity-content {
+  display: block;
+}
+.btn-quantity i {
+  width: 1rem;
+  text-align: center;
+  padding-right: 0.5rem;
+  color: #777b5a;
+}
+
+.btn-quantity-content {
+  display: none;
+  position: absolute;
+  background-color: #fffffd;
+}
+.btn-quantity-content a {
+  color: #707070;
+  padding: 0.5rem 2.6rem;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+}
+.btn-quantity-content a:hover {
+  background-color: #e0dfde;
+}
+
+.quantitybtn {
+  background-color: #fffffd;
+  color: #707070;
+  border-radius: 0.25rem;
+  padding: 0;
+  border: solid 0.08rem #707070;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-align: center;
+}
+.quantitybtn:focus {
+  outline: none;
+}
+
+.input-transparent {
+  width: 4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  background-color: transparent;
+  border-color: transparent;
+  text-align: center;
+  color: #707070;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+}
+.input-transparent:focus {
+  outline: none;
+}
+
+/* 查看更多按鈕 */
+.a-readmore {
+  text-decoration: none;
+  color: #4fa8e3;
+  font-size: 0.75rem;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+}
+.a-readmore:hover {
+  text-decoration: none;
+  color: #b3d7ef;
+}
+.a-readmore:active {
+  text-decoration: none;
+  color: #b3d7ef;
+}
+.a-readmore:focus {
+  text-decoration: none;
+  color: #b3d7ef;
+}
+
+/* 數量下拉選單(有select) */
+.quantityselect select {
+  background-color: #fffffd;
+  color: #707070;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  border: solid 0.08rem #707070;
+  font-size: 0.75rem;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+  cursor: pointer;
+}
+.quantityselect select:focus {
+  outline: none;
+}
+
+/* 多選框-1 */
+.checkbox-box label {
+  position: relative;
+  bottom: 0.1rem;
+  color: #707070;
+  font-size: 0.75rem;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+
+/* 勾勾 */
+.isntcheck {
+  position: relative;
+  font-size: 0.75rem;
+}
+
+.isntcheck .fa-square {
+  color: #d1d1d1;
+  cursor: pointer;
+}
+.isntcheck .fa-square:hover {
+  color: #d1d1d1;
+}
+.isntcheck .fa-square:focus {
+  color: #a5a58d;
+}
+.isntcheck .fa-square:active {
+  color: #a5a58d;
+}
+
+.isntcheck .fa-check {
+  color: #d1d1d1;
+  right: 0rem;
+  bottom: 0rem;
+  top: 0.3rem;
+  left: 0.3rem;
+  cursor: pointer;
+}
+.isntcheck .fa-check:hover {
+  color: #fffffd;
+}
+.isntcheck .fa-check:focus {
+  color: #fffffd;
+}
+.isntcheck .fa-check:active {
+  color: #fffffd;
+}
+
+.ischeck {
+  position: relative;
+  font-size: 0.75rem;
+}
+
+.ischeck .fa-square {
+  color: #a5a58d;
+  cursor: pointer;
+}
+
+.ischeck .fa-check {
+  color: #fffffd;
+  right: 0rem;
+  bottom: 0rem;
+  top: 0.3rem;
+  left: 0.3rem;
+  cursor: pointer;
+}
+
+/* 愛心 */
+.icon-002-heart {
+  fill: #d1d1d1;
+  width: 1.4rem;
+  height: 1rem;
+}
+.icon-002-heart:hover {
+  fill: #ed8f8f;
+  cursor: pointer;
+}
+
+.icon-003-heart {
+  fill: #ed8f8f;
+  width: 1.4rem;
+  height: 1rem;
+}
+.icon-003-heart:hover {
+  cursor: pointer;
+}
+
+/* 垃圾桶 */
+.icon-018-trash {
+  fill: #d1d1d1;
+  width: 1rem;
+  height: 1.5rem;
+}
+.icon-018-trash:hover {
+  fill: #a5a58d;
+  cursor: pointer;
+}
+
+/* 叉叉 */
+.icon-014-cancel {
+  fill: #707070;
+  width: 0.6rem;
+  height: 0.6rem;
+}
+.icon-014-cancel:hover {
+  fill: #fffffd;
+  cursor: pointer;
+}
+
+/* 星星 */
+.icon-004-star {
+  fill: #d1d1d1;
+  width: 1.4rem;
+  height: 1rem;
+}
+.icon-004-star:hover {
+  fill: #ed8f8f;
+  cursor: pointer;
+}
+
+.icon-005-star {
+  fill: #ed8f8f;
+  width: 1rem;
+  height: 1rem;
+}
+.icon-005-star:hover {
+  cursor: pointer;
+}
+
+/* 多選框-2&單選框 */
+@keyframes hover-color {
+  from {
+    border-color: #b7b7a4;
+  }
+  to {
+    border-color: #777b5a;
+  }
+}
+
+.magic-radio,
+.magic-checkbox {
+  position: absolute;
+  display: none;
+}
+
+.magic-radio[disabled],
+.magic-checkbox[disabled] {
+  cursor: not-allowed;
+}
+
+.magic-radio + label,
+.magic-checkbox + label {
+  position: relative;
+  display: block;
+  padding-left: 2rem;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.magic-radio + label:hover:before,
+.magic-checkbox + label:hover:before {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-name: hover-color;
+}
+.magic-radio + label:before,
+.magic-checkbox + label:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  content: "";
+  border: 0.15rem solid #b7b7a4;
+}
+.magic-radio + label:after,
+.magic-checkbox + label:after {
+  position: absolute;
+  display: none;
+  content: "";
+}
+
+.magic-radio[disabled] + label,
+.magic-checkbox[disabled] + label {
+  cursor: not-allowed;
+  color: #e0dfde;
+}
+.magic-radio[disabled] + label:hover,
+.magic-radio[disabled] + label:before,
+.magic-radio[disabled] + label:after,
+.magic-checkbox[disabled] + label:hover,
+.magic-checkbox[disabled] + label:before,
+.magic-checkbox[disabled] + label:after {
+  cursor: not-allowed;
+}
+.magic-radio[disabled] + label:hover:before,
+.magic-checkbox[disabled] + label:hover:before {
+  border: 0.15rem solid #e0dfde;
+  animation-name: none;
+}
+.magic-radio[disabled] + label:before,
+.magic-checkbox[disabled] + label:before {
+  border-color: #e0dfde;
+}
+
+.magic-radio:checked + label:before,
+.magic-checkbox:checked + label:before {
+  animation-name: none;
+}
+
+.magic-radio:checked + label:after,
+.magic-checkbox:checked + label:after {
+  display: block;
+}
+
+.magic-radio + label:before {
+  border-radius: 50%;
+}
+
+.magic-radio + label:after {
+  top: 0.26rem;
+  left: 0.26rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #777b5a;
+}
+
+.magic-radio:checked + label:before {
+  border: 0.15rem solid #b7b7a4;
+}
+
+.magic-radio:checked[disabled] + label:before {
+  border: 0.15rem solid #e0dfde;
+}
+
+.magic-radio:checked[disabled] + label:after {
+  background: #e0dfde;
+}
+
+.magic-checkbox + label:before {
+  border-radius: 0.25rem;
+}
+
+.magic-checkbox + label:after {
+  top: 0.1rem;
+  left: 0.4rem;
+  box-sizing: border-box;
+  width: 0.4rem;
+  height: 0.7rem;
+  transform: rotate(45deg);
+  border-width: 0.15rem;
+  border-style: solid;
+  border-color: #fffffd;
+  border-top: 0;
+  border-left: 0;
+}
+
+.magic-checkbox:checked + label:before {
+  background: #777b5a;
+}
+
+.magic-checkbox:checked[disabled] + label:before {
+  background: #e0dfde;
+}
+
+.demo {
+  line-height: 2rem;
+  font-size: 0.75rem;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+
+/* 字體設置class */
+.Roboto {
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+}
+.MicrosoftJhengHei {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.NotoSerifTC {
+  font-family: "Noto_Serif_TC-Regular", "Microsoft JhengHei", "Roboto-Regular",
+    monospace, serif;
+}
+
+/* 桌機 領養&捐款 */
+.circle-l {
+  display: block;
+  float: left;
+  position: relative;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: block;
+  overflow: hidden;
+  padding: 2%;
+  margin: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
+    0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
+    0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
+    0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+}
+.circle-l > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+/* 領養(桌機) */
+.circle-l.circle-adopt {
+  background-color: #cb997e;
+  border: 0.09rem solid #cb997e;
+}
+.circle-l.circle-adopt:hover {
+  background-color: #ed8f8f;
+  border: 0.18rem solid #ed8f8f;
+  color: #fffffd;
+  font-weight: bold;
+}
+.circle-l.circle-adopt > div {
+  color: #fffffd;
+}
+.circle-l.circle-adopt > div:hover {
+  color: #fffffd;
+}
+
+/* 捐款(桌機) */
+.circle-l.circle-donate {
+  background-color: #fffffd;
+  border: 0.09rem solid #cb997e;
+}
+.circle-l.circle-donate:hover {
+  background-color: #fffffd;
+  border: 0.18rem solid #ed8f8f;
+  color: #ed8f8f;
+  font-weight: bold;
+}
+.circle-l.circle-donate > div {
+  color: #cb997e;
+}
+.circle-l.circle-donate > div:hover {
+  color: #ed8f8f;
+}
+
+/* 手機 購物車&捐款 */
+.circle-s {
+  display: block;
+  float: left;
+  position: relative;
+  width: 0.5rem;
+  height: 0.5rem;
+  display: block;
+  overflow: hidden;
+  padding: 2%;
+  margin: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
+    0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
+    0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
+    0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+}
+
+/* 捐款(手機) */
+.circle-s > .div-donate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.circle-s.circle-donate {
+  background-color: #fffffd;
+  border: 0.09rem solid #cb997e;
+}
+.circle-s.circle-donate:hover {
+  background-color: #fffffd;
+  border: 0.18rem solid #ed8f8f;
+  color: #ed8f8f;
+  font-weight: bold;
+}
+.circle-s.circle-donate > div {
+  color: #cb997e;
+}
+.circle-s.circle-donate > div:hover {
+  color: #ed8f8f;
+}
+
+/* 購物車(手機) */
+.circle-s > .div-cart {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+.circle-s.circle-cart {
+  background-color: #cb997e;
+  border: 0.09rem solid #cb997e;
+}
+.circle-s.circle-cart:hover {
+  background-color: #ed8f8f;
+  border: 0.18rem solid #ed8f8f;
+  color: #fffffd;
+  font-weight: bold;
+}
+.circle-s.circle-cart > .div-cart {
+  color: #fffffd;
+}
+.circle-s.circle-cart > .div-cart:hover {
+  color: #fffffd;
+}
+
+.icon-088-shopping_cart {
+  fill: #fffffd;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* 箭頭 */
+.menuarrow {
+  width: 4%;
+}
+.menuarrow:hover {
+  width: 4.5%;
+  cursor: pointer;
+}
+
+.brownarrow-left {
+  width: 4%;
+}
+.brownarrow-left:hover {
+  width: 4.5%;
+  cursor: pointer;
+}
+.brownarrow-right {
+  width: 4%;
+}
+.brownarrow-right:hover {
+  width: 4.5%;
+  cursor: pointer;
+}
+
+.greenarrow-left {
+  width: 4%;
+}
+.greenarrow-left:hover {
+  width: 4.5%;
+  cursor: pointer;
+}
+.greenarrow-right {
+  width: 4%;
+}
+.greenarrow-right:hover {
+  width: 4.5%;
+  cursor: pointer;
+}
+
+.grayarrow-left {
+  width: 4%;
+}
+.grayarrow-left:hover {
+  width: 4.5%;
+  cursor: pointer;
+}
+.grayarrow-right {
+  width: 4%;
+}
+.grayarrow-right:hover {
+  width: 4.5%;
+  cursor: pointer;
+}
+
+.toparrow {
+  width: 4%;
+}
+.toparrow:hover {
+  width: 4.5%;
+  cursor: pointer;
+}
