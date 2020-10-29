@@ -14,7 +14,6 @@ function AdopDetailPage(props) {
         </div>
         <div className="col">
           <AdopMainInfo />
-          <AdopMainReadMore />
         </div>
       </div>
       <AdopDetailInfo />
