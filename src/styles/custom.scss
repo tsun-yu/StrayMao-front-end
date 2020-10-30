@@ -165,7 +165,7 @@ footer {
 .enHeader1 {
   font: {
     family: $fontType3;
-    size: 60px;
+    size: 3.75rem;
     weight: bold;
     letter-spacing: -1.5;
   }
@@ -174,7 +174,7 @@ footer {
 .enHeader2 {
   font: {
     family: $fontType3;
-    size: 60px;
+    size: 3.75rem;
     weight: lighter;
     letter-spacing: -0.5;
   }
@@ -183,14 +183,14 @@ footer {
 .enHeader3 {
   font: {
     family: $fontType3;
-    size: 48px;
+    size: 3rem;
   }
 }
 
 .enHeader4 {
   font: {
     family: $fontType3;
-    size: 34px;
+    size: 2.125rem;
     letter-spacing: 0.25;
   }
 }
@@ -198,14 +198,14 @@ footer {
 .enHeader5 {
   font: {
     family: $fontType3;
-    size: 24px;
+    size: 1.5rem;
   }
 }
 
 .enHeader6 {
   font: {
     family: $fontType3;
-    size: 20px;
+    size: 1.25rem;
     letter-spacing: 0.15;
   }
 }
@@ -213,7 +213,7 @@ footer {
 .enParagraph {
   font: {
     family: $fontType3;
-    size: 16px;
+    size: 1rem;
     weight: lighter;
   }
 }
