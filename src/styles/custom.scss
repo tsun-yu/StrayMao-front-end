@@ -1,13 +1,15 @@
 // 預設變數覆蓋需要在導入Bootstrap之前
-$fontType1: '微軟正黑體';
-$fontType2: 'Noto Serif TC';
+$fontType1: "微軟正黑體";
+$fontType2: "Noto Serif TC";
+$fontType3: "Roboto";
 $primary: #a5a58d;
 $secondary: #131010;
 
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
-@import './footer.scss';
-@import './navbar.scss';
+@import "~bootstrap/scss/bootstrap.scss";
+@import "./footer.scss";
+@import "./navbar.scss";
+// @import "./styleGuide.scss";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 main {
@@ -26,75 +28,134 @@ footer {
 }
 //暫設定h1-h6字體
 
-.Header1 {
+//中文字形
+.header1 {
   font: {
     family: $fontType2;
-    size: 60px;
+    size: 3.75rem;
   }
 }
 
-.Header2 {
+.header2 {
   font: {
     family: $fontType2;
-    size: 38px;
+    size: 2.375rem;
   }
 }
 
-.Header3 {
+.header3 {
   font: {
     family: $fontType2;
-    size: 34px;
+    size: 2.125rem;
   }
 }
 
-.Header4 {
+.header4 {
   font: {
     family: $fontType1;
-    size: 34px;
+    size: 2.125rem;
   }
 }
 
-.Header5 {
+.header5 {
   font: {
     family: $fontType1;
-    size: 20px;
+    size: 1.25rem;
   }
 }
 
-.Header6 {
+.header6 {
   font: {
     family: $fontType1;
-    size: 18px;
+    size: 1.125rem;
     weight: lighter;
   }
 }
 
-.Header7 {
+.header7 {
   font: {
     family: $fontType2;
-    size: 16px;
+    size: 1rem;
   }
 }
 
-.Paragraph1 {
+.paragraph1 {
   font: {
     family: $fontType1;
-    size: 16px;
+    size: 1rem;
     weight: lighter;
   }
 }
 
-.Paragraph2 {
+.paragraph2 {
   font: {
     family: $fontType1;
-    size: 14px;
+    size: 0.875rem;
   }
 }
 
 .caption {
   font: {
     family: $fontType1;
-    size: 12px;
+    size: 0.75rem;
+    weight: lighter;
+  }
+}
+
+//英文字形
+
+.enHeader1 {
+  font: {
+    family: $fontType3;
+    size: 3.75rem;
+    weight: bold;
+    letter-spacing: -1.5;
+  }
+}
+
+.enHeader2 {
+  font: {
+    family: $fontType3;
+    size: 3.75rem;
+    weight: lighter;
+    letter-spacing: -0.5;
+  }
+}
+
+.enHeader3 {
+  font: {
+    family: $fontType3;
+    size: 3rem;
+  }
+}
+
+.enHeader4 {
+  font: {
+    family: $fontType3;
+    size: 2.125rem;
+    letter-spacing: 0.25;
+  }
+}
+
+.enHeader5 {
+  font: {
+    family: $fontType3;
+    size: 1.5rem;
+  }
+}
+
+.enHeader6 {
+  font: {
+    family: $fontType3;
+    size: 1.25rem;
+    letter-spacing: 0.15;
+  }
+}
+
+.enParagraph {
+  font: {
+    family: $fontType3;
+    size: 1rem;
     weight: lighter;
   }
 }

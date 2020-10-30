@@ -1,0 +1,186 @@
+// 預設變數覆蓋需要在導入Bootstrap之前
+$primary: #2f8b0b;
+$secondary: #131010;
+$wcolor: #90a38879;
+
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+@import "../custom.scss";
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+
+//------------------------------SocailTopAll------------------------------
+//socialHomeTop title
+.socialTitleMain {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.socialBTitle {
+  color: #ed8f8f;
+  z-index: 1;
+}
+
+.socialSTitle {
+  position: absolute;
+  display: inline;
+  color: #ed8f8f;
+  width: 18.75rem;
+  bottom: -0.5rem;
+  text-align: right;
+}
+
+.socialTitleLine {
+  position: absolute;
+  width: 18.75rem;
+  height: 1.0625rem;
+  background-color: #f0efeb;
+  bottom: 0.875rem;
+}
+
+//TopCard
+.topItems {
+  position: relative;
+  margin-top: 5rem;
+  justify-content: center;
+  z-index: 0;
+}
+
+.topCard {
+  margin: 2.5rem 0.9375rem;
+  background-color: #fff1e6;
+  width: 18.75rem;
+  height: 21.875rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 8px 8px #cfcfcf;
+}
+
+.topCardImg {
+  width: 17.5rem;
+  height: 17.5rem;
+  margin-top: 0.75rem;
+  padding: 0 auto;
+  opacity: 80%;
+  background-color: white;
+}
+
+//TopCard 文字們
+.topCardText {
+  color: #707070;
+  display: inline-flex;
+  margin-top: 0.3125rem;
+  text-align: center;
+  align-items: center;
+  height: 3.125rem;
+}
+.topCardTitle {
+  display: inline-block;
+  width: 5.9375rem;
+  border-right: solid #707070 1px;
+  font: {
+    family: $fontType2;
+    size: 1.75rem;
+  }
+}
+.topCardP {
+  display: inline-block;
+  width: 11.625rem;
+  color: #a5a58d;
+}
+
+//TopCard變化
+.bigTopCard {
+  margin: 0 0.9375rem;
+  background-color: #fff1e6;
+  width: 20rem;
+  height: 23.4375rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 8px 8px #cfcfcf;
+}
+
+.bigCardImg {
+  width: 18.75rem;
+  height: 18.75rem;
+  margin-top: 0.75rem;
+  padding: 0 auto;
+  opacity: 80%;
+  background-color: white;
+}
+
+//grayCoverItems
+.grayCoverItems {
+  position: absolute;
+  justify-content: center;
+  z-index: 1;
+}
+.grayCover {
+  margin: 2.5rem 1.25rem;
+  background-color: #e0dfde;
+  width: 18.75rem;
+  height: 21.875rem;
+  position: relative;
+  opacity: 90%;
+  text-align: center;
+}
+
+.coverText {
+  position: relative;
+  color: #fff1e6;
+  top: 40%;
+}
+
+//TopPageBtn
+.topBtnItems {
+  position: relative;
+  // margin-top: 0.625rem;
+  justify-content: center;
+}
+
+.topBtnBox {
+  display: flex;
+  width: 20.3125rem;
+  justify-content: space-between;
+}
+
+.topBtnW {
+  width: 9.6875rem;
+}
+//topArrow
+.grayarrowItems {
+  position: absolute;
+  z-index: 2;
+  width: 78.5rem;
+  height: 27.5rem;
+  justify-content: space-between;
+  align-content: center;
+}
+.toparrow-left {
+  display: flex;
+  width: 3.125rem;
+  height: 2.5625rem;
+  border-radius: 0.625rem 0 0 0.625rem;
+  background-color: #d1d1d1;
+  align-items: center;
+}
+
+.inlineArrow {
+  height: 1rem;
+  &:hover {
+    height: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+.toparrow-right {
+  display: flex;
+  width: 3.125rem;
+  height: 2.5625rem;
+  border-radius: 0 0.625rem 0.625rem 0;
+  background-color: #d1d1d1;
+  align-items: center;
+}
