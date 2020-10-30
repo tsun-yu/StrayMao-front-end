@@ -9,7 +9,6 @@ $secondary: #131010;
 main > .container {
   padding: 60px 15px 0;
 }
-
 .footer {
   background-color: #f5f5f5;
 }
@@ -43,7 +42,6 @@ main > .container {
   flex-direction: row;
   margin: auto;
 }
-
 .adoptionMainCardPicture {
   width: 395px;
   height: 520px;
@@ -56,7 +54,6 @@ main > .container {
   overflow: auto;
   border-radius: 4px;
 }
-
 .adopMainButton {
   position: relative;
 
@@ -89,15 +86,16 @@ main > .container {
 .adopMainButton .buttonGroup:hover() {
   cursor: pointer;
 }
-
 .adoptReadMore {
   text-decoration: underline;
 }
-
 .adoptListStyleNone {
   list-style: none;
 }
-
+.adopListContainer {
+  width: 60%;
+  margin: auto;
+}
 .adoptListCard {
   width: 14.2rem;
   height: 17.5rem;
@@ -108,7 +106,6 @@ main > .container {
   overflow: hidden;
   object-fit: fill;
 }
-
 .adopDetailInfo {
   width: 830px;
   height: 530px;
@@ -119,13 +116,48 @@ main > .container {
   flex-direction: row;
   margin: 10px auto;
 }
+.adopDetailQues {
+}
+.adopDetailAns {
+  color: #ed8f8f;
+  width: 240px;
+  border-bottom: #b7b7a4 solid 1px;
+}
+
+.adopMapCheck {
+  width: 150px;
+  height: 280px;
+  background-color: #faf;
+}
+.adopMapMain {
+  width: 540px;
+  height: 640px;
+  background-color: #fed;
+}
+.adopMapDetail {
+  width: 410px;
+  height: 505px;
+  background-color: #aed;
+}
+.adopMapDetail img {
+  width: 330px;
+  height: 180px;
+  object-fit: cover;
+  overflow: hidden;
+}
+.adopMapDetail > .adopMapDetailInfo > div {
+  width: 240px;
+  height: 55px;
+  background-color: #fffffd;
+  margin: 10px 0px;
+}
+
 /**page bar**/
 .pageBar {
   list-style-type: none;
   display: flex;
   flex-direction: row;
 }
-
 .pageBar a {
   font-size: 1.2rem; /*修復行內元素之間空隙間隔*/
 }
@@ -167,7 +199,6 @@ main > .container {
 .pageBar > li > a:hover() > span {
   color: #fff;
 }
-
 .pageBar > li .pageBarActive svg {
   opacity: 1;
 }
