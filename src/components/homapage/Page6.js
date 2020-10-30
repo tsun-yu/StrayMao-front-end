@@ -50,6 +50,9 @@ return(
                             </div>
                             
                         </div>
+                        <div className="text-center page6more mt-3">
+                            >了解更多
+                        </div>
                     </div>
                 </div>
             </div>
