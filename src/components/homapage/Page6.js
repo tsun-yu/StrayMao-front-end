@@ -6,8 +6,12 @@ return(
 <div className="page6">
     <div className="container">
         <div className="row">
-            <div className="col-lg-6"></div>
-            <div className="col-lg-6 ">
+            <div className="col-lg-6">
+                <div className="page6activityImg">
+                     <img src="/image/homepage/homepage6-1.png"></img>
+                </div>
+            </div>
+            <div className="col-lg-6 d-flex flex-column align-items-center">
                 <div className="page6des1">
                     <div className="mb-3">關於牠們,</div>
                     <div className="ml-3">最近那些活動</div>
@@ -50,7 +54,8 @@ return(
                             </div>
                             
                         </div>
-                        <div className="text-center page6more mt-3">
+                        <div className="text-right
+                         page6more mt-3">
                             >了解更多
                         </div>
                     </div>

@@ -9,8 +9,8 @@ return(
             <div className="page2img ">
             <img src="/image/homepage/homepage2-1.png"></img>
              </div>
-             <div className="page2img page2img2">
-             <img src="/image/homepage/homepage2-1.png"></img>
+            <div className="page2img page2img2">
+             <img src="/image/homepage/homepage2-2.png"></img>
             </div>
             <div className="page2img page2img3">
             <img src="/image/homepage/homepage2-1.png"></img>
