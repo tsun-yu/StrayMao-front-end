@@ -9,10 +9,10 @@ return(
         Love them likes <br/>
         family.
         </div>
-        <div className="page1des2 d-flex align-items-center">
-            <div className='mx-auto'>
-            給他們一個機會, 擁有一個家。
-            </div>
+        <div className="page1des2 page1des3 d-flex flex-column justify-content-around">
+            <div className="hide">fuck</div>
+            <div>給他們一個機會, 擁有一個家。</div>
+            <div className="page1des4 mr-2">>了解更多</div>
         </div>
     </div>
     <div className="imgDiv">
