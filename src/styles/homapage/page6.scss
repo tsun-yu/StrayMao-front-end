@@ -6,22 +6,42 @@
 .page6des1 {
   color: #555555;
   font-family: $fontType2;
-  font-size: 38px;
+  font-size: 2.3rem;
   margin-top: 100px;
 }
-.page6des2{
+.page6recent {
+  font-family: $fontType1;
+  font-size: 1.25rem;
+  color: #555555;
+}
+.page6des2 {
   border-bottom: 1px solid #707070;
   border-top: 1px solid #707070;
   width: 20vw;
 }
 
-.page6des2date{
+.page6des2date {
   border-right: solid 0.5px #707070;
+  margin: 20px 0px 20px 5px;
 }
-.page6des2topic{
 
+.page6des2dateYear {
+  font-size: 1.25rem;
+  font-family: $fontType3;
+  color: #555555;
 }
-.page6des3{
+.page6desdateDay {
+  text-align: end;
+  font-size: 1rem;
+  font-family: $fontType3;
+  color: #555555;
+}
+.page6des2topic {
+  color: #707070;
+  font-family: $fontType3;
+  font-size: 1rem;
+}
+.page6des3 {
   border-bottom: 1px solid #707070;
   width: 20vw;
 }

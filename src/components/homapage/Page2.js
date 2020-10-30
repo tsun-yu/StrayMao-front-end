@@ -6,13 +6,14 @@ return(
 <>
     <div className=' container_w page2' >
         <div className='d-flex mx-auto'>
-            <div className="page2img page2img1 ">
+            <div className="page2img ">
+            <img src="/image/homepage/homepage2-1.png"></img>
              </div>
              <div className="page2img page2img2">
-            {/* <img src=""></img> */}
+             <img src="/image/homepage/homepage2-1.png"></img>
             </div>
             <div className="page2img page2img3">
-            {/* <img src=""></img> */}
+            <img src="/image/homepage/homepage2-1.png"></img>
             </div>
             <div className="page2desBlock">
                 <div className="adopt">
