@@ -1,11 +1,25 @@
 import { func } from 'prop-types';
 import React, { useState, useEffect } from 'react'
 import "../../styles/store/straymao.scss";
+import "animate.css"
 
 function Storepage(props) {
 // const [storeP1Background, setstoreP1Background] = useState(0);
 let i =0;
 useEffect(()=>{
+
+  document.querySelector('#storeP1BackgroundMouse').addEventListener("mouseover", ()=> {
+    let storeP1BackgroundMouse = document.querySelector('#storeP1BackgroundMouse')
+        storeP1BackgroundMouse.classList.add('animate__bounce') ;    
+      });
+
+  //     document.querySelector('#storeP1BackgroundMouse').addEventListener("mouseout", ()=> {
+
+  //       let storeP1BackgroundMouse = document.querySelector('#storeP1BackgroundMouse')
+  //           storeP1BackgroundMouse.style.transform = ` translateY(0px)`;
+        
+  //         });
+
   document.addEventListener("mousemove", function parallax(e) {
     this.querySelectorAll('.storeP1Background').forEach(storeP1Background => {
         const speed = storeP1Background.getAttribute('data-speed')
@@ -22,8 +36,18 @@ useEffect(()=>{
           });
           document.querySelector('.storeP1Background').addEventListener("mouseout",function func(e){
             i=0
-                });
-},[])
+                });                
+},[]);
+
+// useEffect(()=>{
+//   document.addEventListener("mouseover", function()=>{
+//     // this.querySelector('#storeP1BackgroundMouse')
+//     storeP1BackgroundMouse.style.transform = `translateX(${x}px) translateY(${y}px)`;
+
+//   })
+// });
+
+
 
 
 return(
@@ -34,7 +58,7 @@ return(
     <section>
       <div className="d-flex storeP1Background" data-speed="1">
         <div id="storeP1BackgroundTop">
-          <img id="storeP1BackgroundMouse" src="./image/store/mouse.png" alt=""   />
+          <img id="storeP1BackgroundMouse" className="animate__animated" src="./image/store/mouse.png" alt=""   />
           <img id="storeP1BackgroundCat" src="./image/store/cat_PNG113.png" alt=""   />
           <img id="storeP1BackgroundDog" src="./image/store/未命名-2.png" alt=""   />
 
@@ -716,7 +740,6 @@ return(
         </div>
       </div>
       {/* <!-- 特價商品結束 --> */}
-
       <aside>
         {/* <!-- <div id="cartAndDonate" className="d-flex"> --> */}
         <div className="circle-s circle-cart">
