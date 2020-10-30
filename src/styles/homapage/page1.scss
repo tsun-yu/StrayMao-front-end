@@ -11,7 +11,8 @@
 .page1des {
   font-size: 48px;
   color: #a5a58d;
-  font-family: roboto;
+  font-family: $fontType3;
+  font-weight: lighter;
   margin-bottom: 30px;
   margin-top: 148px;
 }
@@ -19,14 +20,29 @@
 .page1des2 {
   width: 356px;
   height: 154px;
+  background-color: #f0efeb;
+  
+}
+.page1des3 {
   font-size: 20px;
   font-family: $fontType1;
-  background-color: #f0efeb;
   color: #707070;
+  text-align: center;
+  
+}
+.page1des4 {
+  font-size: 14px;
+  color: #A5A58D;
+  text-align: end;
 }
 .imgDiv {
   margin-left: 35px;
 }
 .blank1 {
   margin-top: 193px;
+}
+
+.hide{
+  color: rgba($color: #000000, $alpha: 0);
+  // font-size: 0px;
 }
