@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { HiArrowCircleRight } from "react-icons/hi";
 
 function Page2(props) {
 return(
 <>
-    <div className='d-flex container_w'>
-        <div className='d-flex'>
-            <div className="page2img  ">
-            {/* <img src=""></img> */}
+    <div className=' container_w page2' >
+        <div className='d-flex mx-auto'>
+            <div className="page2img page2img1 ">
              </div>
              <div className="page2img page2img2">
             {/* <img src=""></img> */}
@@ -23,6 +23,7 @@ return(
                 </div>
                 <div className="page2des2">
                     立刻前往
+                    <HiArrowCircleRight color="#a5a58d" size={16}/>
                 </div>
                 <div>
                 <img class="greenarrow-right" src="./018-greenarrow-right.svg"alt=""></img>

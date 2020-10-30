@@ -1,9 +1,15 @@
-
+.page2 {
+  background-attachment: fixed;
+}
 .page2img {
   height: 403px;
   width: 202px;
   background-color: salmon;
   margin-right: 17px;
+}
+.page2img1 {
+  background-image: url(/image/homepage/homepage2-1.png);
+  background-size: cover;
 }
 
 .page2img2 {
@@ -19,7 +25,7 @@
 .adopt {
   font-size: 60px;
   font-weight: lighter;
-  font-family: 'roboto';
+  font-family: $fontType3;
   color: #a5a58d;
   margin-bottom: 45px;
 }
@@ -36,10 +42,10 @@
   font-family: $fontType1;
   margin-left: 255px;
 }
-.greenarrow-right{
+.greenarrow-right {
   width: 4%;
 }
 
-.blank2{
+.blank2 {
   height: 180px;
 }
