@@ -551,13 +551,16 @@
   animation-name: none;
 }
 
-.magic-radio:checked + label:after,
 .magic-checkbox:checked + label:after {
   display: block;
   top: 10px;
   left: 5px;
 }
-
+.magic-radio:checked + label:after {
+  display: block;
+  top: 12px;
+  left: 2px;
+}
 .magic-radio + label:before {
   border-radius: 50%;
 }
