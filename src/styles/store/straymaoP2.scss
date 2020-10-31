@@ -1,0 +1,134 @@
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  margin: 0%;
+  padding: 0%;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.storeP2CatImg {
+  width: 110%;
+  /* height: 100%; */
+  overflow: hidden;
+  margin: -1vw -1.5vw;
+}
+
+.storeP2Background {
+  margin: 3vh auto ;
+  width: 100%;
+  overflow: hidden;
+}
+
+.storeP1Title {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  display: flex;
+  margin: 3vh auto 0vh;
+  font-size: 16px;
+}
+
+.line1 {
+  width: 10vw;
+  height: 2.5vh;
+  border-bottom: 1px solid #ed8f8f;
+}
+
+.goodsText {
+  margin-left: 2vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+#number {
+  color: #ed8f8f;
+}
+
+.storeP1GoodsWords {
+  font-size: 1.5rem;
+  margin: 0px 3vh;
+}
+
+.line2 {
+  width: 10vw;
+  height: 2.5vh;
+  border-bottom: 1px solid #ed8f8f;
+}
+
+.fliter {
+  /* background-color: rgb(181, 250, 135); */
+  position: relative;
+  height: 4rem;
+  width: 100%;
+  margin-bottom: 5vh;
+}
+
+.hotSale {
+  position: absolute;
+  background-color: #cb997e;
+  right: 0px;
+  border-radius: 4px;
+  transition: 0.3s;
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
+}
+
+.hotSale:hover {
+  border: 1px solid #cb997e;
+  color: #cb997e;
+  background-color: #fff;
+}
+
+.storeP1Bottom {
+  margin-bottom: 15vh;
+}
+
+#between {
+  justify-content: space-around;
+}
+
+.card_new {
+  min-height: 30vh;
+  width: 30vw;
+  /* height: 35vh; */
+  margin: 0px 5px 3rem 2px;
+
+  padding: 0px;
+  border: 1px solid #ed8f8f;
+  border-radius: 4px;
+  background-color: white;
+  text-align: justify;
+  position: relative;
+  overflow: hidden;
+  transition: 0.1s;
+  box-shadow: 0px 5px 3px gray;
+}
+
+.icon {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+
+.icon2 {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+}
+
+.icon2:hover {
+  fill: salmon;
+}
+
+.card_new:hover {
+  box-shadow: 0px 10px 10px gray;
+}
