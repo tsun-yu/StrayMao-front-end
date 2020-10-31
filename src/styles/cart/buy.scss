@@ -1,104 +1,35 @@
 @import "~bootstrap/scss/bootstrap.scss";
 body {
-  background-color: #fff1e6;
+  background-color: #e1e1d5;
 }
 
 .body_An {
-  background-color: #fff1e6;
+  background-color: #e1e1d5;
   padding-top: 10vh;
   padding-bottom: 10vh;
 }
 
-.classificationBox_An {
-  margin-bottom: 5rem;
-}
-
-.classification_An {
-  color: #777b5a;
-  font-size: 1.5rem;
-  text-decoration: none;
-  margin-bottom: 1rem;
-}
-.classification_An a {
-  color: #777b5a;
-  font-size: 1.5rem;
-  text-decoration: none;
-}
-.classification_An a:hover {
-  color: #a5a58d;
-  font-size: 1.5rem;
-  text-decoration: none;
-}
-
-.filterbtn_An {
-  background-color: #cb997e;
-  color: #fffffd;
-  padding: 0.5rem 1rem;
-  width: 5.875rem;
-  border-radius: 0.25rem;
-  font-size: 0.875rem;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-    monospace, serif;
-}
-.btn-filter_An:hover .filterbtn {
-  background-color: #d9ae97;
-}
-.filterbtn_An:focus {
-  outline: none;
-}
-
-.btn-filter_An {
-  position: relative;
-  display: inline-block;
-}
-
-.btn-filter-content_An {
-  width: 5.875rem;
-  display: none;
-  position: absolute;
-  background-color: #fffffd;
-}
-.btn-filter_An:hover .btn-filter-content_An {
-  display: block;
-}
-
-.btn-filter-content_An a {
-  color: #707070;
-  padding: 0.5rem 0.95rem;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  font-size: 0.75rem;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-    monospace, serif;
-}
-.btn-filter-content_An a:hover {
-  background-color: #e0dfde;
-  text-decoration: none;
-  color: #707070;
-}
-
 .box_An {
+  width: 70.625rem;
   border-radius: 0.25rem;
-  background-color: #e1e1d5;
-  padding: 1rem;
+  background-color: #fff1e6;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .boxBottom_An {
   background-color: #fffffd;
-  /* width: 64.75rem; */
+  width: 64.75rem;
   padding: 0.625rem;
   border-radius: 0.25rem;
-  margin: 2rem;
+  margin-left: 2.25rem;
 }
 
 .boxUpper_An {
   background-color: #f5f5f5;
   height: 6.8125rem;
-  margin: 1rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
   border-radius: 0.25rem;
 }
 
@@ -250,11 +181,12 @@ body {
 }
 
 .boxDown_An {
-  margin: 2rem;
-  background-color: #fffffd;
+  background-color: #fff1e6;
   /* width: 64.75rem; */
+  height: 4rem;
   border-radius: 0.25rem;
-  padding: 1rem;
+  padding-left: 2.25rem;
+  padding-right: 3.25rem;
 }
 
 .icon-018-trashDown_An svg {
@@ -318,72 +250,19 @@ body {
   color: #ed8f8f;
 }
 
-.boxStatus_An {
+.boxConsignee_An {
   background-color: #fffffd;
-  /* width: 64.75rem; */
+  width: 64.75rem;
   padding: 1rem;
   border-radius: 0.25rem;
-  /* margin-left: 1.9rem; */
+  margin-left: 2.25rem;
 }
-
-.boxStatus_An div {
+.boxConsignee_An div {
   margin: 2rem;
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
-  /* font-size: 1rem;
-    color: #777B5A; */
-}
-
-.boxConsignee_An {
-  background-color: #f5f5f5;
-  /* width: 64.75rem; */
-  padding: 2rem;
-  border-radius: 0.25rem;
-  margin: 4rem;
-}
-.boxConsignee_An span {
-  margin: 0.5rem;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-    monospace, serif;
-  font-size: 0.75rem;
-  color: #707070;
-}
-
-.borderSL_An {
-  width: 3.125rem;
-  height: 0.125rem;
-  background-color: #ed8f8f;
-}
-.titel_An {
-  font-family: "Noto_Serif_TC-Regular", "Microsoft JhengHei", "Roboto-Regular",
-    monospace, serif;
   font-size: 1rem;
-  color: #707070;
-  margin-top: 1.25rem;
-}
-.borderSR_An {
-  width: 3.125rem;
-  height: 0.125rem;
-  background-color: #ed8f8f;
-}
-
-.detailBox_An {
-  text-align: center;
-}
-
-.redSpan_An {
-  color: #ed8f8f;
-}
-
-.brownSpan_An {
-  color: #cb997e;
-}
-
-.borderL_An {
-  width: 85%;
-  height: 0.125rem;
-  background-color: #ed8f8f;
-  margin-left: 4.25rem;
+  color: #777b5a;
 }
 
 .input-green_An {
@@ -404,10 +283,10 @@ body {
 
 .boxAddress_An {
   background-color: #fffffd;
-  /* width: 64.75rem; */
+  width: 64.75rem;
   padding: 1rem;
   border-radius: 0.25rem;
-  /* margin-left: 1.9rem; */
+  margin-left: 2.25rem;
   margin-top: 2rem;
 }
 .boxAddress_An div {
@@ -481,7 +360,7 @@ body {
   width: 64.75rem;
   height: 2.5rem;
   margin-top: 1.5rem;
-  /* margin-left: 1.9rem; */
+  margin-left: 2.25rem;
   /* padding: 0.7rem 2rem; */
   border-radius: 0.25rem;
   font-size: 0.875rem;
