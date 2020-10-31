@@ -12,36 +12,31 @@ return(
                     <span> / </span>
                     <a href="#">全部訂單</a>
                 </div>
-                <div class="btn-filter_An">
-                    <button class="filterbtn_An">
-                        <span>時間 <i class="fas fa-caret-down"></i></span>
-                    </button>
-                    <div class="btn-filter-content_An">
-                      <a href="#">由新到舊</a>
-                      <a href="#">由舊到新</a>
-                    </div>
-                </div>
             </div>
             <div class="box_An mx-5">
                 <div class="boxBottom_An">
                     <div class="boxUpper_An d-flex justify-content-between">
                         <img class="goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
                         <span class="goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
+                        <span class="quantity_An">數量：1</span>
                         <span class="goodsPrice_An">2790 元</span>
                     </div>
                     <div class="boxUpper_An d-flex justify-content-between">
                         <img class="goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
                         <span class="goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
+                        <span class="quantity_An">數量：1</span>
                         <span class="goodsPrice_An">2790 元</span>
                     </div>
                     <div class="boxUpper_An d-flex justify-content-between">
                         <img class="goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
                         <span class="goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
+                        <span class="quantity_An">數量：1</span>
                         <span class="goodsPrice_An">2790 元</span>
                     </div>
                     <div class="boxUpper_An d-flex justify-content-between">
                         <img class="goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
                         <span class="goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
+                        <span class="quantity_An">數量：1</span>
                         <span class="goodsPrice_An">2790 元</span>
                     </div>
                 </div>
@@ -55,7 +50,7 @@ return(
                         <div class="detailBox_An d-flex flex-column justify-content-center">
                             <span class="redSpan_An mb-1">訂單狀態：已出貨</span>
                             <span class="brownSpan_An mb-1">總計：10,896 元</span>
-                            <span class="brownSpan_An mb-1">訂單日期：2020/7/13</span>
+                            <span class="brownSpan_An mb-1">訂單日期：2020/07/13</span>
                         </div>
                     </div>
                     <div class="borderL_An"></div>
