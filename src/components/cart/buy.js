@@ -5,7 +5,24 @@ function storepage(props) {
 return(
 <>
 <div class="body_An">
-    <div class="container box_An">
+<div class="container">
+    <div class="classificationBox_An">
+        <div class="classification_An">
+            <a href="#">近三個月內的訂單</a>
+            <span> / </span>
+            <a href="#">全部訂單</a>
+        </div>
+        <div class="btn-filter_An">
+            <button class="filterbtn_An">
+                <span>時間 <i class="fas fa-caret-down"></i></span>
+            </button>
+            <div class="btn-filter-content_An">
+              <a href="#">由新到舊</a>
+              <a href="#">由舊到新</a>
+            </div>
+        </div>
+    </div>
+    <div class="box_An mx-5">
         <div class="boxBottom_An">
             <div class="boxUpper_An d-flex justify-content-between">
                 <img class="goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
@@ -32,7 +49,7 @@ return(
             <div class="boxStatus_An">
                 <div class="titleBox_An d-flex justify-content-center">
                     <div class="borderSL_An"></div>
-                    <span class="titel">訂單詳情</span>
+                    <span class="titel_An">訂單詳情</span>
                     <div class="borderSR_An"></div>
                 </div>
                 <div class="detailBox_An d-flex flex-column justify-content-center">
@@ -50,6 +67,7 @@ return(
             </div>
         </div>
     </div>
+</div>
 </div>
 </>
 )}
