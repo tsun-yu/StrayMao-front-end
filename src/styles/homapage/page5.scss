@@ -1,4 +1,4 @@
-.page5bar{
+.page5bar {
   background-color: #f0efeb;
   width: 100vw;
   height: 40vh;
@@ -6,12 +6,11 @@
 .page5title {
   width: 400px;
   height: 144px;
-  
 }
 
 .page5Social {
   color: #a5a58d;
-  font-size: 60px;
+  font-size: 3.75rem;
   font-family: $fontType3;
   font-weight: lighter;
   margin-bottom: 10px;
@@ -22,8 +21,34 @@
   font-family: $fontType1;
   text-align: end;
 }
-.page5{
+.page5 {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   // background-color: lightsalmon;
+}
+.page5left {
+  height: 60vh;
+}
+.page5right {
+  height: 90vh;
+  background-color: #faa;
+}
+
+.page5des1 {
+  color: #555555;
+  font-size: 2.375rem;
+  font-family: $fontType2;
+  width: 60%;
+}
+
+.page5small {
+  font-size: 1.25rem;
+  color: #a5a58d;
+  font-family: $fontType1;
+}
+.a{
+  background-color: #faf;
+}
+.b{
+  background-color: #aaf;
 }
