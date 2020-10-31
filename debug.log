@@ -1,3 +1,1 @@
-[1029/142437.357:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
-[1031/022636.580:ERROR:crashpad_client_win.cc(521)] CreateProcess: 記憶體資源不足，無法處理此命令。 (0x8)
-[1031/023926.953:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
+[1016/170304.111:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系統找不到指定的路徑。 (0x3)
