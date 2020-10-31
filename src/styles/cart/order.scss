@@ -10,16 +10,19 @@ body {
 }
 
 .box_An {
+  width: 70.625rem;
+  border-radius: 0.25rem;
   background-color: #fff1e6;
-  padding: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .boxBottom_An {
   background-color: #fffffd;
-  width: 67.5rem;
+  width: 64.75rem;
   padding: 0.625rem;
-  border-radius: 0.2rem 0.2rem 0 0;
-  margin-left: 0.875rem;
+  border-radius: 0.25rem;
+  margin-left: 2.25rem;
 }
 
 .boxUpper_An {
@@ -27,7 +30,7 @@ body {
   height: 6.8125rem;
   margin-top: 0.625rem;
   margin-bottom: 0.625rem;
-  border-radius: 0.2rem;
+  border-radius: 0.25rem;
 }
 
 .icon-018-trashUpper_An svg {
@@ -179,10 +182,11 @@ body {
 
 .boxDown_An {
   background-color: #fff1e6;
-  width: 67.5rem;
+  /* width: 64.75rem; */
   height: 4rem;
-  border-radius: 0 0 0.2rem 0.2rem;
-  padding-left: 0.875rem;
+  border-radius: 0.25rem;
+  padding-left: 2.25rem;
+  padding-right: 3.25rem;
 }
 
 .icon-018-trashDown_An svg {
@@ -203,7 +207,7 @@ body {
   margin-top: 0.75rem;
   margin-left: 0.75rem;
   padding: 0 0.3rem;
-  border-radius: 0.2rem;
+  border-radius: 0.25rem;
   font-size: 0.875rem;
   border: none;
   color: #fffffd;
@@ -248,10 +252,10 @@ body {
 
 .boxConsignee_An {
   background-color: #fffffd;
-  width: 67.5rem;
+  width: 64.75rem;
   padding: 1rem;
-  border-radius: 0.2rem 0.2rem 0 0;
-  margin-left: 0.875rem;
+  border-radius: 0.25rem;
+  margin-left: 2.25rem;
 }
 .boxConsignee_An div {
   margin: 2rem;
@@ -263,8 +267,7 @@ body {
 
 .input-green_An {
   width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem;
   margin-top: 1rem;
   border-radius: 0.25rem;
   font-size: 0.875rem;
@@ -280,10 +283,10 @@ body {
 
 .boxAddress_An {
   background-color: #fffffd;
-  width: 67.5rem;
+  width: 64.75rem;
   padding: 1rem;
-  border-radius: 0.2rem 0.2rem 0 0;
-  margin-left: 0.875rem;
+  border-radius: 0.25rem;
+  margin-left: 2.25rem;
   margin-top: 2rem;
 }
 .boxAddress_An div {
@@ -354,12 +357,12 @@ body {
 
 .btn-green_An {
   /* #A5A58D*/
-  width: 67.5rem;
+  width: 64.75rem;
   height: 2.5rem;
   margin-top: 1.5rem;
-  margin-left: 0.875rem;
+  margin-left: 2.25rem;
   /* padding: 0.7rem 2rem; */
-  border-radius: 0.2rem;
+  border-radius: 0.25rem;
   font-size: 0.875rem;
   border: none;
   color: #fffffd;
