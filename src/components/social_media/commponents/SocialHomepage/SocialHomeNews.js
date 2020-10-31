@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../../../styles/social_media/custom.scss";
 
 function SocialHomeNews(props) {
   return (
