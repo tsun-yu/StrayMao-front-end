@@ -1,63 +1,60 @@
 import React, { useState, useEffect } from "react";
-import "../../../../styles/social_media/custom.scss";
-import "../../../../styles/styleGuide.scss";
 
 function SocialHomeTop(props) {
   return (
     <>
       <div className="socialTitleMain">
         <div className="socialBTitle enHeader1">SOCIAL</div>
-        <div className="socialTitleLine" />
-        <p className="socialSTitle paragraph2">社群活動一覽</p>
+        <div className="socialTitleLine">
+           <p className="socialSTitle paragraph2">社群活動一覽</p>
+        </div>
       </div>
       <div className="container-fluid">
-        <div className="row topItems d-flex">
-          <div className="row grayCoverItems">
-            <div className="coverItems">
-              <div className="grayCover">
-                <span className="header2 coverText">活動</span>
-              </div>
-            </div>
-            <div className="coverItems" style={{ visibility: "hidden" }}>
-              <div className="grayCover">
-                <span className="header2 coverText">話題</span>
-              </div>
-            </div>
-            <div className="coverItems">
+        <div className="socialtopItems no-gutters">
+          <div className="row topCardItems no-gutters">
+            <div className="topArticleItems">
               <div className="grayCover">
                 <span className="header2 coverText">知識</span>
               </div>
-            </div>
-          </div>
-          <div className="row topCardItems">
-            <div className="topCard">
-              <img
-                className="topCardImg"
-                src="/image/homepage/homepage-1.jpg"
-              />
-              <div className="topCardText">
-                <p className="topCardTitle">活動</p>
-                <p className="topCardP">>了解更多</p>
+              <div className="topCard">
+                <img
+                  className="topCardImg"
+                  src="/image/homepage/homepage-1.jpg"
+                />
+                <div className="topCardText">
+                  <p className="topCardTitle">知識</p>
+                  <p className="topCardP">>了解更多</p>
+                </div>
               </div>
             </div>
-            <div className="bigTopCard">
-              <img
-                className="bigCardImg"
-                src="/image/homepage/homepage-1.jpg"
-              />
-              <div className="topCardText">
-                <p className="topCardTitle">話題</p>
-                <p className="topCardP">>了解更多</p>
+            <div className="topTalkItems">
+              <div className="grayCover" style={{ visibility: "hidden" }}>
+                <span className="header2 coverText">話題</span>
+              </div>
+              <div className="bigTopCard">
+                <img
+                  className="bigCardImg"
+                  src="/image/homepage/homepage-1.jpg"
+                />
+                <div className="topCardText">
+                  <p className="topCardTitle">話題</p>
+                  <p className="topCardP">>了解更多</p>
+                </div>
               </div>
             </div>
-            <div className="topCard">
-              <img
-                className="topCardImg"
-                src="/image/homepage/homepage-1.jpg"
-              />
-              <div className="topCardText">
-                <p className="topCardTitle">知識</p>
-                <p className="topCardP">>了解更多</p>
+            <div className="topActivityItems">
+              <div className="grayCover">
+                <span className="header2 coverText">活動</span>
+              </div>
+              <div className="topCard">
+                <img
+                  className="topCardImg"
+                  src="/image/homepage/homepage-1.jpg"
+                />
+                <div className="topCardText">
+                  <p className="topCardTitle">活動</p>
+                  <p className="topCardP">>了解更多</p>
+                </div>
               </div>
             </div>
           </div>

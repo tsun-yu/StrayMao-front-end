@@ -1,14 +1,3 @@
-// 預設變數覆蓋需要在導入Bootstrap之前
-$primary: #2f8b0b;
-$secondary: #131010;
-$wcolor: #90a38879;
-
-// Import Bootstrap and its default variables
-@import "~bootstrap/scss/bootstrap.scss";
-@import "../custom.scss";
-
-// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
-
 //------------------------------SocailTopAll------------------------------
 //socialHomeTop title
 .socialTitleMain {
@@ -26,8 +15,8 @@ $wcolor: #90a38879;
   position: absolute;
   display: inline;
   color: #ed8f8f;
-  bottom: -0.5rem;
-  text-align: right;
+  top: 1rem;
+  right: 0;
 }
 
 .socialTitleLine {
@@ -39,22 +28,33 @@ $wcolor: #90a38879;
 }
 
 //TopCard
-.topItems {
+.socialtopItems {
   position: relative;
+  top: 12.5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 78.25rem;
+  height: 24.125rem;
   margin-top: 5rem;
-  justify-content: center;
-  z-index: 0;
+}
+
+.topCardItems {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 61.875rem;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .topCard {
-  margin: 2.5rem 0.9375rem;
   background-color: #fff1e6;
   width: 18.75rem;
   height: 21.875rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
   box-shadow: 0px 8px 8px #cfcfcf;
+  z-index: 0;
 }
 
 .topCardImg {
@@ -92,13 +92,12 @@ $wcolor: #90a38879;
 
 //TopCard變化
 .bigTopCard {
-  margin: 0 0.9375rem;
   background-color: #fff1e6;
   width: 20rem;
   height: 23.4375rem;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  top: -0.625rem;
   box-shadow: 0px 8px 8px #cfcfcf;
 }
 
@@ -112,19 +111,14 @@ $wcolor: #90a38879;
 }
 
 //grayCoverItems
-.grayCoverItems {
-  position: absolute;
-  justify-content: center;
-  z-index: 1;
-}
 .grayCover {
-  margin: 2.5rem 1.25rem;
   background-color: #e0dfde;
   width: 18.75rem;
   height: 21.875rem;
-  position: relative;
+  position: absolute;
   opacity: 90%;
   text-align: center;
+  z-index: 1;
 }
 
 .coverText {
@@ -136,7 +130,7 @@ $wcolor: #90a38879;
 //TopPageBtn
 .topBtnItems {
   position: relative;
-  // margin-top: 0.625rem;
+  margin-top: 3.4375rem;
   justify-content: center;
 }
 
@@ -151,15 +145,13 @@ $wcolor: #90a38879;
 }
 //topArrow
 .grayarrowItems {
-  position: absolute;
-  z-index: 2;
-  width: 78.5rem;
-  height: 27.5rem;
+  display: flex;
   justify-content: space-between;
-  align-content: center;
 }
 .toparrow-left {
-  display: flex;
+  position: absolute;
+  left: 0;
+  top: 50%;
   width: 3.125rem;
   height: 2.5625rem;
   border-radius: 0.625rem 0 0 0.625rem;
@@ -168,6 +160,10 @@ $wcolor: #90a38879;
 }
 
 .inlineArrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 1rem;
   &:hover {
     height: 1.5rem;
@@ -176,10 +172,11 @@ $wcolor: #90a38879;
 }
 
 .toparrow-right {
-  display: flex;
+  position: absolute;
+  right: 0;
+  top: 50%;
   width: 3.125rem;
   height: 2.5625rem;
   border-radius: 0 0.625rem 0.625rem 0;
   background-color: #d1d1d1;
-  align-items: center;
 }

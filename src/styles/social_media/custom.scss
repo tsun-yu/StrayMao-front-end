@@ -6,178 +6,77 @@ $wcolor: #90a38879;
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
 @import "../custom.scss";
-@import "./SocialHomeTop";
+@import "./socialHomeTop";
+@import "./socialHomeNews";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 
-//socialNewsTop
-.socialNewsMain {
+//------------------------------SocailHomeRank------------------------------
+
+//SocailHomeRank範圍
+.socialRankMain {
   position: relative;
-  background-color: #e1e1d5;
+  background-color: #fffffd;
   top: 3rem;
+  min-width: 100%;
   height: 43.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom:100px;
 }
 
-.socialNewsItems {
-  width: 71.25rem;
-  height: 31.25rem;
+.socialRankBg {
+  position: absolute;
+  background-color: #f5f5f5;
+  min-width: 100vw;
+  height: 292px;
+  top: 350px;
+}
+
+//寵物分類按鈕
+.socialRankType {
+  position: relative;
   border: solid red 1px;
 }
 
-.socailNewsTop {
-  position: relative;
-  width: 71.25rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.newsScrollingItems {
-  display: inline-block;
-  width: 58.25rem;
-  position: relative;
-}
-
-.socailHomeNewsTitile {
-  margin-top: -1.625rem;
-  color: #555555;
-}
-
-.socialNewsSTItems {
-  margin-top: 1rem;
-}
-.socialNewsSTitle {
-  background-color: #a5a58d;
-  border-radius: 0.625rem;
-  width: 2.5rem;
-  height: 1.4375rem;
-  text-align: center;
-  color: #fff1e6;
-  display: inline-block;
-}
-
-.socialNewsScrollP {
-  color: #ed8f8f;
-  margin-right: 4.0625rem;
-}
-
-.scrollTextItems {
-  display: inline-block;
+.rankTypeItems {
   position: absolute;
-  width: 55rem;
-  height: 2.25rem;
-  overflow: hidden;
-  right: 0;
-  padding-top: 0.625rem;
-}
-
-//newsSearchBox
-.newsSearchBox {
-  display:inline-flex;
-  text-align: justify;
-}
-
-.talkSearchBox {
-  display: inline-block;
-  justify-self: flex-start;
-  width: 39.8125rem;
-  height: 16.4375em;
-  background-color: #fffffd;
-  border-radius: 0.25rem;
-  justify-content: center;
-  padding-top: 1.875rem;
-}
-
-.actitivySearchBox {
-  display: inline-block;
-  justify-self: flex-end;
-  width: 26.0625rem;
-  height: 16.4375em;
-  background-color: #fffffd;
-  border-radius: 0.25rem;
-  justify-content: center;
-  padding-top: 1.875rem;
-  text-align: right;
-}
-
-.talkSearchTitle {
-  text-align: start;
-  padding-left: 1.5rem;
-  font: {
-    family: $fontType1;
-    size: 1.5rem;
-    weight: lighter;
-  }
-}
-
-.talkSearchType {
-  width: 33.3125rem;
-  height: 7.25rem;
-  border-top: solid #707070 0.125em;
-  border-bottom: solid #707070 0.125em;
-}
-
-.activitySearchType {
-  width: 21.875rem;
-  height: 7.25rem;
-  border-top: solid #707070 0.125em;
-  border-bottom: solid #707070 0.125em;
-}
-
-.talkPetType {
   display: flex;
-  width: 15.465rem;
+  top:120px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 890px;
+  border: solid red 1px;
   justify-content: space-between;
-  margin-top: 0.5rem;
+  text-align: center;
 }
 
-.activityArea {
-  display: flex;
-  width: 10.31rem;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-}
-
-.activityAreaR {
-  display: flex;
-  width: 10.31rem;
-  justify-content: space-between;
-}
-
-.talkContentType {
-  display: flex;
-  width: 20.625rem;
-  justify-content: space-between;
-}
-
-//分類按鈕-橘色
-.btn-orange {
-  height: 2.5rem;
-  margin: 0.25rem;
-  border-radius: 0.2rem;
+// 大按鈕
+.btn-rankType {
+  width: 250px;
+  padding: 0.6rem 3rem;
+  border-radius: 0.4rem;
   border: none;
   color: #fffffd;
   background-color: #ddbea9;
   cursor: pointer;
   text-align: center;
   font: {
-    family: $fontType1;
-    size: 0.75rem;
+    family: $fontType3;
+    size: 1.5rem;
   }
 }
 
-.newsBtnW {
-  width: 4.5625rem;
+.btn:hover {
+  background-color: #e8ccb9;
 }
 
-.talkSearchGoBtn {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 0.5rem;
+.btn:active {
+  background-color: #d9ae97;
 }
 
-.searchgoBtnW {
-  width: 6.6875rem;
+.btn:focus {
+  background-color: #d9ae97;
+  outline: none;
 }
