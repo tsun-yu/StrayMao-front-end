@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 
-import MyNavbar from "./components/common/MyNavbar";
-import MyFooter from "./components/common/MyFooter";
-import MainContent from "./components/common/MainContent";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import TestLink from "./components/common/TestLink";
-import AdoptionTest from "./components/adoption/Test";
-import CartTest from "./components/cart/Test";
-import HomeTest from "./components/homapage/Test";
-import MemberTest from "./components/membership/Test";
-import SocialTest from "./components/social_media/Test";
-import StoreTest from "./components/store/Test";
+import MyNavbar from './components/common/MyNavbar'
+import MyFooter from './components/common/MyFooter'
+import MainContent from './components/common/MainContent'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import TestLink from './components/common/TestLink'
+import AdoptionTest from './components/adoption/Test'
+import CartTest from './components/cart/Test'
+import HomeTest from './components/homapage/Test'
+import MemberTest from './components/membership/Test'
+import SocialTest from './components/social_media/Test'
+import StoreTest from './components/store/Test'
+import StrayMaoP2 from './components/store/StrayMaoP2'
+
 function App() {
   return (
     <Router>
@@ -20,8 +22,7 @@ function App() {
           <Switch>
             {/* 注意：要加上網址參數 */}
 
-            <Route exact path="/">
-            </Route>
+            <Route exact path="/"></Route>
             <Route path="/test">
               {/*要連線的網頁*/}
               <TestLink />
@@ -46,7 +47,11 @@ function App() {
               {/*要連線的網頁*/}
               <SocialTest />
             </Route>
-            <Route path="/storeTest">
+            <Route path="/storeP2">
+              {/*要連線的網頁*/}
+              <StrayMaoP2 />
+            </Route>
+            <Route path="/store">
               {/*要連線的網頁*/}
               <StoreTest />
             </Route>
@@ -55,7 +60,7 @@ function App() {
         <MyFooter />
       </>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
