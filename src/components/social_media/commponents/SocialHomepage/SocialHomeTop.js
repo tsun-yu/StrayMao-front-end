@@ -6,7 +6,7 @@ function SocialHomeTop(props) {
       <div className="socialTitleMain">
         <div className="socialBTitle enHeader1">SOCIAL</div>
         <div className="socialTitleLine">
-           <p className="socialSTitle paragraph2">社群活動一覽</p>
+          <p className="socialSTitle paragraph2">社群活動一覽</p>
         </div>
       </div>
       <div className="container-fluid">
@@ -23,7 +23,7 @@ function SocialHomeTop(props) {
                 />
                 <div className="topCardText">
                   <p className="topCardTitle">知識</p>
-                  <p className="topCardP">>了解更多</p>
+                  <a className="topCardP">>了解更多</a>
                 </div>
               </div>
             </div>
@@ -38,7 +38,7 @@ function SocialHomeTop(props) {
                 />
                 <div className="topCardText">
                   <p className="topCardTitle">話題</p>
-                  <p className="topCardP">>了解更多</p>
+                  <a className="topCardP">>了解更多</a>
                 </div>
               </div>
             </div>
@@ -53,7 +53,7 @@ function SocialHomeTop(props) {
                 />
                 <div className="topCardText">
                   <p className="topCardTitle">活動</p>
-                  <p className="topCardP">>了解更多</p>
+                  <a className="topCardP">>了解更多</a>
                 </div>
               </div>
             </div>
