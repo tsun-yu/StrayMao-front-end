@@ -4,7 +4,7 @@
 .socialFourmMain {
   background-color: #fff1e6;
   top: 3rem;
-  min-width: 100vW;
+  min-width: 100%;
   height: 43.75rem;
   display: flex;
   align-items: center;
@@ -43,7 +43,9 @@
 .socialFourmCardItems {
   position: relative;
   margin: 5rem auto;
+  height: 20rem;;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .socailFourmCard {
@@ -142,26 +144,39 @@
   display: flex;
   top: 50%;
   justify-content: space-between;
-  width: 80rem;
+  max-width: 80rem;
   z-index: 1;
 }
+
+.socialfixArrow-left{
+  position: absolute;
+  left:0;
+}
+
+.socialfixArrow-right{
+  position: absolute;
+  right:0;
+}
+
 
 //socailFourmBottom
 .socailFourmBottom {
   position: relative;
-  bottom: 1.25rem;
+  bottom: 1.8rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .socialFourmBottomline {
   display: inline-block;
-  margin-bottom: 1.15625rem;
+  // margin-bottom: 1.15625rem;
   width: 22.5rem;
   border-bottom: solid #ddbea9 3px;
 }
 
 .socialfourmBottomBtn {
   display: inline-block;
-  margin: 0 8.125rem;
+  text-align: center;
+  // margin: 0 8.125rem;
 }

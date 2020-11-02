@@ -131,7 +131,7 @@ function SocialHomeArticle(props) {
             <div className="row socailFourmBottom no-gutters">
               <div className="socialFourmBottomline" />
               <button
-                className="socialfourmBottomBtn btn-green"
+                className="socialfourmBottomBtn btn-brown"
                 type="button"
                 value="查看更多"
               >
@@ -142,12 +142,12 @@ function SocialHomeArticle(props) {
           </div>
           <span className="container-fluid socialFourmArrowItems">
             <img
-              class="greenarrow-left"
+              class="socialfixArrow-left greenarrow-left"
               src="./icomoon/SVG/_017-greenarrow-left.svg"
               alt=""
             />
             <img
-              class="greenarrow-right"
+              class="socialfixArrow-right greenarrow-right"
               src="./icomoon/SVG/_018-greenarrow-right.svg"
               alt=""
             />
