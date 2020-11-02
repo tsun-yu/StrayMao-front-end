@@ -31,7 +31,7 @@
 }
 .page5right {
   height: 90vh;
-  background-color: #faa;
+  // background-color: #faa;
 }
 
 .page5des1 {
@@ -47,13 +47,13 @@
   font-family: $fontType1;
 }
 .page5right-1 {
-  background-color: #faf;
+  // background-color: #faf;
   height: 90vh;
   width: 50%;
   margin-right: 5px;
 }
 .page5right-2 {
-  background-color: #aaf;
+  // background-color: #aaf;
   width: 50%;
   margin-left: 5px;
 }
@@ -63,6 +63,7 @@
   width: 100%;
   height: 50%;
   padding-top: 5%;
+  margin-bottom: 5%;
 }
 
 .page5cardImage {
@@ -74,12 +75,37 @@
 .page5cardDes {
   width: 90%;
   height: 20%;
-  background-color: #afa;
+  // background-color: #afa;
   margin-top: 2%;
 }
 .page5cardDate {
   width: 35%;
+  height: 80%;
   border-right: 1px solid #555555;
+  color: #555555;
+  font-family: $fontType3;
+  padding: 0 5%;
+  // margin: 5% 0;
 }
+.page5cardYear {
+  font-size: 1.5rem;
+}
+
+.page5cardContent {
+  width: 65%;
+  height: 80%;
+  padding: 0 5%;
+}
+.page5cardLabel {
+  font-size: 0.875rem;
+  width: 30%;
+  font-family: $fontType1;
+  color: #fff1e6;
+  background-color: #a5a58d;
+  border-radius: 10px;
+}
+
 .page5cardTopic {
+  font-family: $fontType1;
+  font-size: 1.125rem;
 }
