@@ -1,3 +1,6 @@
+.page4 {
+  margin-bottom: 20vh;
+}
 .page4title {
   width: 400px;
   height: 144px;
@@ -6,7 +9,7 @@
 }
 .page4Store {
   color: #a5a58d;
-  font-size: 60px;
+  font-size: 3.75rem;
   font-family: $fontType3;
   font-weight: lighter;
   margin-bottom: 10px;
@@ -18,13 +21,56 @@
   text-align: end;
 }
 .page4product {
-  // width: 275px;
   height: 400px;
-  background-color: #faf;
-  // margin:0 5px 0 5px;
-  
-  ;
+  // background-color: #faf;
+  position: relative;
 }
-.page4blank{
-  height: 100px;
+.page4label {
+  width: 15%;
+  height: 25%;
+  position: absolute;
+  background-color: #cb997e;
+  color: #fff1e6;
+  font-size: 1.25rem;
+  font-family: $fontType1;
+  writing-mode: vertical-lr;
+  z-index: 1;
+}
+.page4img {
+  padding-top: 5%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+.page4text {
+}
+.page4date {
+  border-right: 1px solid #707070;
+  width: 35%;
+}
+
+.page4year {
+  color: #555555;
+  font-size: 1.25rem;
+  font-family: $fontType3;
+}
+.pagenew {
+  color: #555555;
+  font-size: 1rem;
+  font-family: $fontType3;
+}
+.page4content {
+  width: 65%;
+}
+.page4popular {
+  color: #555555;
+  font-size: 1rem;
+  font-family: $fontType3;
+  font-weight: lighter;
+}
+
+.page4item {
+  font-size: 0.8rem;
+  color: #555;
+  font-family: $fontType3;
 }

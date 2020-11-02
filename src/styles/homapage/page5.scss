@@ -53,10 +53,17 @@
   margin-right: 5px;
   overflow: auto;
 }
+.page5right-1::-webkit-scrollbar {
+  display: none;
+}
 .page5right-2 {
   // background-color: #aaf;
   width: 50%;
   margin-left: 5px;
+  overflow: auto;
+}
+.page5right-2::-webkit-scrollbar {
+  display: none;
 }
 
 .page5card {

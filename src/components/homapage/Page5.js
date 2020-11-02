@@ -29,8 +29,16 @@ function Page5(props) {
               <div className="d-flex justify-content-between">
                 <div className=" page5right-1">
                   <Page5Card />
+                  <Page5Card />
+                  <Page5Card />
+                  <Page5Card />
                 </div>
-                <div className="page5right-2"></div>
+                <div className="page5right-2">
+                  <Page5Card />
+                  <Page5Card />
+                  <Page5Card />
+                  <Page5Card />
+                </div>
               </div>
             </div>
           </div>
