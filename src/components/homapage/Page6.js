@@ -7,9 +7,15 @@ function Page6(props) {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <div className="page6activityImg">
+              <div className="page6activityImg1">
+                {/* <img src="/image/homepage/homepage6-1.png"></img> */}
+              </div>
+              {/* <div className="page6activityImg2">
                 <img src="/image/homepage/homepage6-1.png"></img>
               </div>
+              <div className="page6activityImg3">
+                <img src="/image/homepage/homepage6-1.png"></img>
+              </div> */}
             </div>
             <div className="col-lg-6 d-flex flex-column align-items-center">
               <div className="page6des1">

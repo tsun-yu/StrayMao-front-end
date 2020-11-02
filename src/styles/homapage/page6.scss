@@ -2,10 +2,34 @@
   background-color: #f0efeb;
   width: 100vw;
   height: 100vh;
+  position: relative;
+}
+.page6activityImg1 .page6activityImg2 .page6activityImg3 {
+  background-color: #fff;
 }
 
-.page6activityImg img{
+.page6activityImg1 img {
   opacity: 0.7;
+  position: absolute;
+  width: 27.25rem;
+  height: 31.875rem;
+  bottom: 0;
+}
+.page6activityImg2 img {
+  opacity: 0.5;
+  position: absolute;
+  width: 27.25rem;
+  height: 31.875rem;
+  bottom: 1rem;
+  left: 1rem;
+}
+.page6activityImg3 img {
+  opacity: 0.3;
+  position: absolute;
+  width: 27.25rem;
+  height: 31.875rem;
+  bottom: 2rem;
+  left: 2rem;
 }
 .page6des1 {
   color: #555555;
@@ -49,8 +73,8 @@
   border-bottom: 1px solid #707070;
   width: 20vw;
 }
-.page6more{
-  color: #A5A58D;
+.page6more {
+  color: #a5a58d;
   font-size: 1rem;
   font-family: $fontType1;
 }

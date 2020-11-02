@@ -5,10 +5,7 @@ function Page1(props) {
     <>
       <div className="d-flex page1">
         <div className="page1left">
-          <div className="page1des">
-            Love them likes <br />
-            family.
-          </div>
+          <div className="page1des">Love them likes family.</div>
           <div className="page1des2 d-flex flex-column justify-content-around">
             <div className="hide">fuck</div>
             <div>給他們一個機會, 擁有一個家。</div>
