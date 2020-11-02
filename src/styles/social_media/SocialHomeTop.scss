@@ -31,6 +31,7 @@
 .socialtopItems {
   position: relative;
   margin: 0 auto;
+  max-width: 1284px;
   height: 24.125rem;
   margin-top: 5rem;
   display: flex;
@@ -147,7 +148,7 @@
 //topArrow
 .grayarrowItems {
   position: relative;
-  width: 80.25rem;
+  width: 78.25rem;
   display: flex;
   justify-content: space-between;
   z-index: 1;

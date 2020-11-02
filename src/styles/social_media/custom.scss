@@ -10,18 +10,7 @@ $wcolor: #90a38879;
 @import "./socialHomeNews";
 @import "./socialHomeRank";
 @import "./socialHomeFourm";
+@import "./socialHomeArticle.scss";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 
-//------------------------------SocailHomeArticle------------------------------
-//SocailHomeArticle範圍
-.socialArticleMain {
-  background-color: #e1e1d5;
-  top: 3rem;
-  min-width: 100%;
-  height: 43.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 12.5rem;
-}

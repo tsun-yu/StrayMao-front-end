@@ -10,16 +10,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 100px;
-  margin: 110px;
+  padding-bottom: 6.25rem;
+  margin: 6.875rem;
 }
 
 .socialRankBg {
   position: absolute;
   background-color: #f5f5f5;
   min-width: 100vw;
-  height: 292px;
-  top: 350px;
+  height: 18.25rem;
+  top: 21.875rem;
 }
 
 //寵物分類按鈕
@@ -30,17 +30,17 @@
 .rankTypeItems {
   position: absolute;
   display: flex;
-  top: 120px;
+  top: 7.5rem;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 890px;
+  width: 55.625rem;
   justify-content: space-between;
   text-align: center;
 }
 
 // 大按鈕
 .btn-rankType {
-  width: 250px;
+  width: 15.625rem;
   padding: 0.6rem 3rem;
   border-radius: 0.4rem;
   border: none;
@@ -76,10 +76,10 @@
 
 .socialRankItems {
   position: absolute;
-  width: 963px;
+  width: 60.1875rem;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: -30px;
+  margin-top: -1.875rem;
   justify-content: space-between;
 }
 
@@ -89,10 +89,10 @@
 }
 .socialRankNumber {
   position: absolute;
-  width: 73px;
-  height: 73px;
-  top: -40px;
-  left: -35px;
+  width: 4.5625rem;
+  height: 4.5625rem;
+  top: -2.5rem;
+  left: -2.1875rem;
   border: dashed #555555 2px;
   border-radius: 50%;
   display: flex;
@@ -101,16 +101,16 @@
 }
 .socailRankCard {
   background-color: #fffffd;
-  width: 265px;
-  height: 306px;
+  width: 16.5625rem;
+  height: 16.5625rem;
   box-shadow: 0px 8px 8px #cfcfcf;
-  padding: 10px;
+  padding: 0.625rem;
   text-align: center;
 }
 
 .socailRankCardImg {
-  width: 240px;
-  height: 240px;
+  width: 15rem;
+  height: 15rem;
   padding: 0 auto;
   opacity: 80%;
   background-color: white;
@@ -121,16 +121,16 @@
 
 .rankTitleBox {
   display: inline-block;
-  width: 82px;
+  width: 5.125rem;
   border-right: solid #707070 1px;
 }
 
 .socailRankTitle {
   position: relative;
-  width: 55px;
+  width: 3.4375rem;
   display: flex;
   margin: 0 auto;
-  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
   color: #555555;
   font: {
     family: $fontType3;
@@ -141,21 +141,21 @@
 .socialRankDay {
   position: absolute;
   right: 0;
-  top: 20px;
+  top: 1.25rem;
 }
 
 .rankTextBox {
   position: relative;
   display: flex;
-  width: 162px;
+  width: 10.125rem;
   justify-content: flex-start;
-  padding-left: 8px;
-  padding-bottom: 20px;
+  padding-left: 0.5rem;
+  padding-bottom: 1.25rem;
 }
 
 .rankTitleText {
   display: block;
   position: absolute;
   right: 0;
-  top: 20px;
+  top: 1.25rem;
 }

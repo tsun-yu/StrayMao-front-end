@@ -8,128 +8,85 @@ function SocialHomeArticle(props) {
           <div className="container socialFourmMainItems">
             <div className="socailFourmTop">
               <div className="header4">知識</div>
-              <div className="socailFourmTextBox">
+              <div className="socailArticleTextBox">
                 <span className="socialFourmText">
                   想知道的一切，都能在這裡找到。
                 </span>
               </div>
             </div>
-            <div className="row socialFourmCardItems no-gutters">
-              <div className="singleRankCard">
-                <div className="socailFourmCard">
-                  <span className="container fourmTitleBox">
-                    <div className="socailFourmTitle">
-                      <div className="enHeader6">2020.</div>
-                      <div className="enParagraph">9.30</div>
-                    </div>
-                    <span className="socialFourmBTitile paragraph1">
-                      用可愛的臉騙吃騙喝
-                    </span>
-                  </span>
-                  <span className="fourmCardBg" />
+            <div className="row socialArticleCardItems no-gutters">
+              <div className="singleArticleCard">
+                <div className="socailArticleCard">
                   <img
-                    className="socailFourmCardImg"
+                    className="socailArticleCardImg"
                     src="/image/homepage/homepage-1.jpg"
                     object-fit="cover"
                   />
-                  <span className="fourmTypeBox">
-                    <div className="container socailFourmType">
-                      <div className="row paragraph1 no-gutters">貓 /</div>
-                      <div className="row paragraph1 socailSType no-gutters">
-                        日常
-                      </div>
+                  <div className="container">
+                    <div className="row socailArticleTitle">
+                      <span className="socialArticleBT enHeader5">All</span>
+                      <span className="socialArticleST header6">
+                        貓咪們都會這樣，你知道嗎？
+                      </span>
                     </div>
-                    <span className="fourmTypeBg" />
-                  </span>
+                    <div className="socialArticleContent caption">
+                      貓咪們都會這樣，你知道嗎？
+                      <br />
+                      貓咪們都會這樣，你知道嗎？
+                    </div>
+                    <a className="socialArticleLink caption">more+</a>
+                  </div>
                 </div>
               </div>
-              <div className="singleRankCard">
-                <div className="socailFourmCard">
-                  <span className="fourmTitleBox">
-                    <div className="socailFourmTitle">
-                      <div className="enHeader6">2020.</div>
-                      <div className="enParagraph">9.30</div>
-                    </div>
-                    <span className="socialFourmBTitile paragraph1">
-                      用可愛的臉騙吃騙喝
-                    </span>
-                  </span>
-                  <span className="fourmCardBg" />
+              <div className="singleArticleCard">
+                <div className="socailArticleCard">
                   <img
-                    className="socailFourmCardImg"
+                    className="socailArticleCardImg"
                     src="/image/homepage/homepage-1.jpg"
                     object-fit="cover"
                   />
-                  <span className="fourmTypeBox">
-                    <div className="container socailFourmType">
-                      <div className="row paragraph1 no-gutters">貓 /</div>
-                      <div className="row paragraph1 socailSType no-gutters">
-                        日常
-                      </div>
+                  <div className="container">
+                    <div className="row socailArticleTitle">
+                      <span className="socialArticleBT enHeader5">All</span>
+                      <span className="socialArticleST header6">
+                        貓咪們都會這樣，你知道嗎？
+                      </span>
                     </div>
-                    <span className="fourmTypeBg" />
-                  </span>
+                    <div className="socialArticleContent caption">
+                      貓咪們都會這樣，你知道嗎？
+                      <br />
+                      貓咪們都會這樣，你知道嗎？
+                    </div>
+                    <a className="socialArticleLink caption">more+</a>
+                  </div>
                 </div>
               </div>
-              <div className="singleRankCard">
-                <div className="socailFourmCard">
-                  <span className="container fourmTitleBox">
-                    <div className="socailFourmTitle">
-                      <div className="enHeader6">2020.</div>
-                      <div className="enParagraph">9.30</div>
-                    </div>
-                    <span className="socialFourmBTitile paragraph1">
-                      用可愛的臉騙吃騙喝
-                    </span>
-                  </span>
-                  <span className="fourmCardBg" />
+              <div className="singleArticleCard">
+                <div className="socailArticleCard">
                   <img
-                    className="socailFourmCardImg"
+                    className="socailArticleCardImg"
                     src="/image/homepage/homepage-1.jpg"
                     object-fit="cover"
                   />
-                  <span className="fourmTypeBox">
-                    <div className="container socailFourmType">
-                      <div className="row paragraph1 no-gutters">貓 /</div>
-                      <div className="row paragraph1 socailSType no-gutters">
-                        日常
-                      </div>
+                  <div className="container">
+                    <div className="row socailArticleTitle">
+                      <span className="socialArticleBT enHeader5">All</span>
+                      <span className="socialArticleST header6">
+                        貓咪們都會這樣，你知道嗎？
+                      </span>
                     </div>
-                    <span className="fourmTypeBg" />
-                  </span>
-                </div>
-              </div>
-              <div className="singleRankCard">
-                <div className="socailFourmCard">
-                  <span className="container fourmTitleBox">
-                    <div className="socailFourmTitle">
-                      <div className="enHeader6">2020.</div>
-                      <div className="enParagraph">9.30</div>
+                    <div className="socialArticleContent caption">
+                      貓咪們都會這樣，你知道嗎？
+                      <br />
+                      貓咪們都會這樣，你知道嗎？
                     </div>
-                    <span className="socialFourmBTitile paragraph1">
-                      用可愛的臉騙吃騙喝
-                    </span>
-                  </span>
-                  <span className="fourmCardBg" />
-                  <img
-                    className="socailFourmCardImg"
-                    src="/image/homepage/homepage-1.jpg"
-                    object-fit="cover"
-                  />
-                  <span className="fourmTypeBox">
-                    <div className="container socailFourmType">
-                      <div className="row paragraph1 no-gutters">貓 /</div>
-                      <div className="row paragraph1 socailSType no-gutters">
-                        日常
-                      </div>
-                    </div>
-                    <span className="fourmTypeBg" />
-                  </span>
+                    <a className="socialArticleLink caption">more+</a>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="row socailFourmBottom no-gutters">
-              <div className="socialFourmBottomline" />
+              <div className="socialArticleBottomline" />
               <button
                 className="socialfourmBottomBtn btn-brown"
                 type="button"
@@ -137,7 +94,7 @@ function SocialHomeArticle(props) {
               >
                 查看更多
               </button>
-              <div className="socialFourmBottomline" />
+              <div className="socialArticleBottomline" />
             </div>
           </div>
           <span className="container-fluid socialFourmArrowItems">

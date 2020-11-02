@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 function SocialHomeRank(props) {
   return (
     <>
-      <div className="container socialRankMain">
+      <div className="container d-flex socialRankMain">
         <span className="row socialRankBg" />
         <div className="row socialNewsItems no-gutters">
           <div className="row socailNewsTop no-gutters">
