@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 function SocialHomeRank(props) {
   return (
     <>
-      <div className="container-fluid socialRankMain">
+      <div className="container socialRankMain">
         <span className="row socialRankBg" />
         <div className="row socialNewsItems no-gutters">
           <div className="row socailNewsTop no-gutters">

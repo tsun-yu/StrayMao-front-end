@@ -4,7 +4,7 @@ import "../../../../styles/social_media/custom.scss";
 function SocialHomeNews(props) {
   return (
     <>
-      <div className="container-fluid d-flex socialNewsMain">
+      <div className="container d-flex socialNewsMain">
         <div className="row socialNewsItems no-gutters">
           <div className="row socailNewsTop no-gutters">
             <span className="socailHomeNewsTitile enHeader3">News</span>

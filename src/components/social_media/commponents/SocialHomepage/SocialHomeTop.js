@@ -9,7 +9,7 @@ function SocialHomeTop(props) {
           <p className="socialSTitle paragraph2">社群活動一覽</p>
         </div>
       </div>
-        <div className="container-fluid socialtopItems d-flex">
+        <div className="container socialtopItems d-flex">
           <div className="row topCardItems no-gutters">
             <div className="topArticleItems">
               <div className="grayCover">

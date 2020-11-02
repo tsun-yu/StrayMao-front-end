@@ -9,111 +9,19 @@ $wcolor: #90a38879;
 @import "./socialHomeTop";
 @import "./socialHomeNews";
 @import "./socialHomeRank";
+@import "./socialHomeFourm";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 
-//------------------------------SocailHomeRank------------------------------
-
-//SocailHomeFourm範圍
-.socialFourmMain {
-  background-color: #fff1e6;
+//------------------------------SocailHomeArticle------------------------------
+//SocailHomeArticle範圍
+.socialArticleMain {
+  background-color: #e1e1d5;
   top: 3rem;
-  min-width: 100%;
+  min-width: 100vw;
   height: 43.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 200px;
-}
-
-.socialFourmItems {
-  position: relative;
-  margin: 0 auto;
-  width: 1280px;
-  border: solid red 1px;
-}
-
-.socialFourmMainItems {
-  position: relative;
-  margin: 0 auto;
-  width: 1140px;
-  height: 562px;
-  border: solid red 1px;
-}
-
-//socailFourmTop
-.socailFourmTop {
-  position: relative;
-  color: #555555;
-}
-
-.socailFourmTextBox {
-  border-bottom: solid #ddbea9 3px;
-}
-
-.socialFourmText {
-  margin-left: 150px;
-}
-
-//socialFourmCardItems
-.socialFourmCardItems {
-  position: relative;
-  margin: 80px auto;
-  justify-content: space-between;
-  border: solid red 1px;
-}
-
-.socailFourmCard {
-  position: relative;
-  width: 265px;
-  height: 306px;
-  box-shadow: 0px 8px 8px #cfcfcf;
-  overflow: hidden;
-}
-
-.socailFourmCardImg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 306px;
-  opacity: 70%;
-  z-index: 0;
-}
-
-.fourmCardBg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 75px;
-  width: 265px;
-  background-color: #b7b7a4;
-  opacity: 50%;
-  z-index: 1;
-}
-
-.fourmTitleBox {
-  position: relative;
-  height: 75px;
-  width: 265px;
-  display: flex;
-  z-index: 2;
-  align-items: center;
-  padding-left: 10px;
-}
-
-.socailFourmTitle {
-  width: 60px;
-  height: 55px;
-  border-right: solid #fffffd 2px;
-  text-align: right;
-  color: #fffffd;
-  padding-right: 10px;
-}
-
-.socialFourmBTitile {
-  width: 155px;
-  text-align: right;
-  color: #fffffd;
-  font-weight: bold;
-  margin-left:10px;
+  margin: 12.5rem;
 }
