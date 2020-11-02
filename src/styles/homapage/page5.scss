@@ -46,9 +46,40 @@
   color: #a5a58d;
   font-family: $fontType1;
 }
-.a{
+.page5right-1 {
   background-color: #faf;
+  height: 90vh;
+  width: 50%;
+  margin-right: 5px;
 }
-.b{
+.page5right-2 {
   background-color: #aaf;
+  width: 50%;
+  margin-left: 5px;
+}
+
+.page5card {
+  background-color: #fff1e6;
+  width: 100%;
+  height: 50%;
+  padding-top: 5%;
+}
+
+.page5cardImage {
+  width: 90%;
+  height: 75%;
+  background-color: #fff;
+}
+
+.page5cardDes {
+  width: 90%;
+  height: 20%;
+  background-color: #afa;
+  margin-top: 2%;
+}
+.page5cardDate {
+  width: 35%;
+  border-right: 1px solid #555555;
+}
+.page5cardTopic {
 }

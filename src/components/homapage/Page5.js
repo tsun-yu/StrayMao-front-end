@@ -25,12 +25,66 @@ function Page5(props) {
               <div className="page5small text-right">加入熱門討論</div>
             </div>
             <div className="col-7 page5right">
-            <div className="d-flex justify-content-between">
-                <div className="col-6 a">
-                    <div></div>
+              <div className="d-flex justify-content-between">
+                <div className=" page5right-1">
+                  <div className="page5card">
+                    <div className="page5cardImage mx-auto">
+                      background image
+                    </div>
+                    <div className="page5cardDes mx-auto">
+                      <div className="page5cardDate">
+                        <div className="page5cardYear">2020</div>
+                        <div className="page5cardDay">10.10</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="page5card">
+                    <div className="page5cardImage mx-auto">
+                      background image
+                    </div>
+                    <div className="page5cardDes mx-auto">
+                      <div className="page5cardDate">
+                        <div className="page5cardYear">2020</div>
+                        <div className="page5cardDay">10.10</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="page5card">
+                    <div className="page5cardImage mx-auto">
+                      background image
+                    </div>
+                    <div className="page5cardDes mx-auto">
+                      <div className="page5cardDate">
+                        <div className="page5cardYear">2020</div>
+                        <div className="page5cardDay">10.10</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="page5card">
+                    <div className="page5cardImage mx-auto">
+                      background image
+                    </div>
+                    <div className="page5cardDes mx-auto">
+                      <div className="page5cardDate">
+                        <div className="page5cardYear">2020</div>
+                        <div className="page5cardDay">10.10</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="page5card">
+                    <div className="page5cardImage mx-auto">
+                      background image
+                    </div>
+                    <div className="page5cardDes mx-auto">
+                      <div className="page5cardDate">
+                        <div className="page5cardYear">2020</div>
+                        <div className="page5cardDay">10.10</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="col-6 b">sdf</div>
-            </div>
+                <div className="page5right-2">sdf</div>
+              </div>
             </div>
           </div>
         </div>
