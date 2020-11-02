@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Page5Card from './Page5Card'
+import Page5Card from './HP-component/Page5Card'
 
 function Page5(props) {
   return (

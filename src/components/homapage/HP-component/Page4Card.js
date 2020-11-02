@@ -5,10 +5,10 @@ function Page4Card(props) {
     <>
       <div className="col-lg-3 page4product">
         <div className="page4label">
-          <div className="p-1">狗 狗 用</div>
+          <div className="p-1">{props.label}</div>
         </div>
         <div className="page4img">
-          <img src="./image/homepage/homepage4-1.png"></img>
+          <img src={props.img}></img>
         </div>
         <div className="page4text px-3 py-2 d-flex">
           <div className="page4date pr-1">

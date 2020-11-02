@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { HiArrowCircleRight } from 'react-icons/hi'
+import Page2Img from './HP-component/Page2Img'
 
 function Page2(props) {
   return (
@@ -7,15 +8,16 @@ function Page2(props) {
       <div className=" container page2">
         <div className="row">
           <div className="d-flex mx-auto">
-            <div className="page2img ">
-              <img src="/image/homepage/homepage2-1.png"></img>
-            </div>
-            <div className="page2img page2img2">
-              <img src="/image/homepage/homepage2-2.png"></img>
-            </div>
-            <div className="page2img page2img3">
-              <img src="/image/homepage/homepage2-4.png"></img>
-            </div>
+            <Page2Img img="/image/homepage/homepage2-1.png" class="page2img" />
+
+            <Page2Img
+              img="/image/homepage/homepage2-2.png"
+              class="page2img2 page2img"
+            />
+            <Page2Img
+              img="/image/homepage/homepage2-4.png"
+              class="page2img page2img3"
+            />
             <div className="page2desBlock">
               <div className="adopt">
                 <span>Adopt -</span>
