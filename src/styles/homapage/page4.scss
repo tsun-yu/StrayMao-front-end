@@ -21,13 +21,13 @@
   text-align: end;
 }
 .page4product {
-  height: 400px;
+  height: 25rem;
   // background-color: #faf;
   position: relative;
 }
 .page4label {
-  width: 15%;
-  height: 25%;
+  width: 2.5rem;
+  height: 6rem;
   position: absolute;
   background-color: #cb997e;
   color: #fff1e6;
@@ -35,6 +35,7 @@
   font-family: $fontType1;
   writing-mode: vertical-lr;
   z-index: 1;
+  border-radius: 0 0 9rem 9rem;
 }
 .page4img {
   padding-top: 5%;
