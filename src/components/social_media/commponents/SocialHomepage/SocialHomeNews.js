@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../../../../styles/social_media/custom.scss";
-import "../../../../styles/styleGuide.scss";
 
 function SocialHomeNews(props) {
   return (
     <>
-      <div className="container-fluid socialNewsMain">
-        <div className="row socialNewsItems">
-          <div className="row socailNewsTop d-flex">
+      <div className="container d-flex socialNewsMain">
+        <div className="row socialNewsItems no-gutters">
+          <div className="row socailNewsTop no-gutters">
             <span className="socailHomeNewsTitile enHeader3">News</span>
             <div className="newsScrollingItems">
               <div className="socialNewsSTItems">
@@ -40,8 +39,8 @@ function SocialHomeNews(props) {
               </div>
             </div>
           </div>
-          <div className="newsSearchBox ">
-            <div className="row talkSearchBox no-gutters">
+          <div className="newsSearchBox">
+            <div className="talkSearchBox d-flex no-gutters">
               <div className="talkSearchBoxItems">
                 <div className="talkSearchTitle">討論主題</div>
                 <div className="talkSearchType">
@@ -110,7 +109,7 @@ function SocialHomeNews(props) {
                 </div>
               </div>
             </div>
-            <div className="row actitivySearchBox no-gutters">
+            <div className="actitivySearchBox d-flex no-gutters">
               <div className="activitySearchBoxItems">
                 <div className="talkSearchTitle">活動分類</div>
                 <div className="activitySearchType">

@@ -1,4 +1,4 @@
-.page5bar{
+.page5bar {
   background-color: #f0efeb;
   width: 100vw;
   height: 40vh;
@@ -6,12 +6,11 @@
 .page5title {
   width: 400px;
   height: 144px;
-  
 }
 
 .page5Social {
   color: #a5a58d;
-  font-size: 60px;
+  font-size: 3.75rem;
   font-family: $fontType3;
   font-weight: lighter;
   margin-bottom: 10px;
@@ -22,8 +21,91 @@
   font-family: $fontType1;
   text-align: end;
 }
-.page5{
+.page5 {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   // background-color: lightsalmon;
+}
+.page5left {
+  height: 60vh;
+}
+.page5right {
+  height: 90vh;
+  // background-color: #faa;
+}
+
+.page5des1 {
+  color: #555555;
+  font-size: 2.375rem;
+  font-family: $fontType2;
+  width: 60%;
+}
+
+.page5small {
+  font-size: 1.25rem;
+  color: #a5a58d;
+  font-family: $fontType1;
+}
+.page5right-1 {
+  // background-color: #faf;
+  height: 90vh;
+  width: 50%;
+  margin-right: 5px;
+}
+.page5right-2 {
+  // background-color: #aaf;
+  width: 50%;
+  margin-left: 5px;
+}
+
+.page5card {
+  background-color: #fff1e6;
+  width: 100%;
+  height: 50%;
+  padding-top: 5%;
+  margin-bottom: 5%;
+}
+
+.page5cardImage {
+  width: 90%;
+  height: 75%;
+  background-color: #fff;
+}
+
+.page5cardDes {
+  width: 90%;
+  height: 20%;
+  // background-color: #afa;
+  margin-top: 2%;
+}
+.page5cardDate {
+  width: 35%;
+  height: 80%;
+  border-right: 1px solid #555555;
+  color: #555555;
+  font-family: $fontType3;
+  padding: 0 5%;
+  // margin: 5% 0;
+}
+.page5cardYear {
+  font-size: 1.5rem;
+}
+
+.page5cardContent {
+  width: 65%;
+  height: 80%;
+  padding: 0 5%;
+}
+.page5cardLabel {
+  font-size: 0.875rem;
+  width: 30%;
+  font-family: $fontType1;
+  color: #fff1e6;
+  background-color: #a5a58d;
+  border-radius: 10px;
+}
+
+.page5cardTopic {
+  font-family: $fontType1;
+  font-size: 1.125rem;
 }

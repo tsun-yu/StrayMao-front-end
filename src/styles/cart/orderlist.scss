@@ -81,10 +81,43 @@ body {
   color: #707070;
 }
 
+.container .box_An:nth-child(even) {
+  background-color: #fffffd;
+}
+.container .box_An:nth-child(odd) {
+  background-color: #e1e1d5;
+}
 .box_An {
   border-radius: 0.25rem;
-  background-color: #e1e1d5;
+  /* background-color: #e1e1d5; */
+  /* background-color: #FFFFFD; */
   padding: 1rem;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+
+.boxL_An {
+  color: #cb997e;
+  font-size: 1rem;
+}
+
+.boxM_An {
+  color: #707070;
+  font-size: 0.875rem;
+}
+
+.boxR_An {
+  margin-top: 12rem;
+}
+.boxR_An a {
+  color: #cb997e;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+.boxR_An a:hover {
+  color: #d9ae97;
+  font-size: 0.875rem;
+  text-decoration: none;
 }
 
 .boxBottom_An {
@@ -192,7 +225,7 @@ body {
   font-size: 1rem;
   color: #707070;
   position: relative;
-  margin: 2.5rem;
+  margin: 1rem;
 }
 
 .quantity_An {
@@ -201,7 +234,7 @@ body {
   font-size: 1rem;
   color: #707070;
   position: relative;
-  margin: 2.5rem;
+  margin: 1rem;
 }
 
 .inputbox_An {
@@ -340,7 +373,7 @@ body {
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
   /* font-size: 1rem;
-    color: #777B5A; */
+      color: #777B5A; */
 }
 
 .boxConsignee_An {

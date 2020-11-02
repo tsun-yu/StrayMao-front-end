@@ -1,0 +1,161 @@
+//------------------------------SocailHomeRank------------------------------
+
+//SocailHomeRank範圍
+.socialRankMain {
+  position: relative;
+  background-color: #fffffd;
+  top: 3rem;
+  min-width: 100%;
+  height: 43.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+  margin:110px;
+}
+
+.socialRankBg {
+  position: absolute;
+  background-color: #f5f5f5;
+  min-width: 100vw;
+  height: 292px;
+  top: 350px;
+}
+
+//寵物分類按鈕
+.socialRankType {
+  position: relative;
+}
+
+.rankTypeItems {
+  position: absolute;
+  display: flex;
+  top: 120px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 890px;
+  justify-content: space-between;
+  text-align: center;
+}
+
+// 大按鈕
+.btn-rankType {
+  width: 250px;
+  padding: 0.6rem 3rem;
+  border-radius: 0.4rem;
+  border: none;
+  color: #fffffd;
+  background-color: #ddbea9;
+  cursor: pointer;
+  text-align: center;
+  font: {
+    family: $fontType3;
+    size: 1.5rem;
+  }
+}
+
+.btn:hover {
+  background-color: #e8ccb9;
+}
+
+.btn:active {
+  background-color: #d9ae97;
+}
+
+.btn:focus {
+  background-color: #d9ae97;
+  outline: none;
+}
+
+//RankItems
+.socialRankBox {
+  position: relative;
+  width: 100vw;
+  justify-content: center;
+}
+
+.socialRankItems {
+  position: absolute;
+  width: 963px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -30px;
+  justify-content: space-between;
+}
+
+//socailRankCard
+.singleRankCard {
+  position: relative;
+}
+.socialRankNumber {
+  position: absolute;
+  width: 73px;
+  height: 73px;
+  top: -40px;
+  left: -35px;
+  border: dashed #555555 2px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.socailRankCard {
+  background-color: #fffffd;
+  width: 265px;
+  height: 306px;
+  box-shadow: 0px 8px 8px #cfcfcf;
+  padding: 10px;
+  text-align: center;
+}
+
+.socailRankCardImg {
+  width: 240px;
+  height: 240px;
+  padding: 0 auto;
+  opacity: 80%;
+  background-color: white;
+  overflow: hidden;
+}
+
+//RankCardText
+
+.rankTitleBox {
+  display: inline-block;
+  width: 82px;
+  border-right: solid #707070 1px;
+}
+
+.socailRankTitle {
+  position: relative;
+  width: 55px;
+  display: flex;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  color: #555555;
+  font: {
+    family: $fontType3;
+    size: 1rem;
+  }
+}
+
+.socialRankDay {
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+.rankTextBox {
+  position: relative;
+  display: flex;
+  width: 162px;
+  justify-content: flex-start;
+  padding-left: 8px;
+  padding-bottom: 20px;
+}
+
+.rankTitleText {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}

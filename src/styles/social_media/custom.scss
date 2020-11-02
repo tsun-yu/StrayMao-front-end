@@ -6,178 +6,114 @@ $wcolor: #90a38879;
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
 @import "../custom.scss";
-@import "./SocialHomeTop";
+@import "./socialHomeTop";
+@import "./socialHomeNews";
+@import "./socialHomeRank";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 
-//socialNewsTop
-.socialNewsMain {
-  position: relative;
-  background-color: #e1e1d5;
+//------------------------------SocailHomeRank------------------------------
+
+//SocailHomeFourm範圍
+.socialFourmMain {
+  background-color: #fff1e6;
   top: 3rem;
+  min-width: 100%;
   height: 43.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 200px;
 }
 
-.socialNewsItems {
-  width: 71.25rem;
-  height: 31.25rem;
+.socialFourmItems {
+  position: relative;
+  margin: 0 auto;
+  width: 1280px;
   border: solid red 1px;
 }
 
-.socailNewsTop {
+.socialFourmMainItems {
   position: relative;
-  width: 71.25rem;
-  display: flex;
-  justify-content: space-between;
+  margin: 0 auto;
+  width: 1140px;
+  height: 562px;
+  border: solid red 1px;
 }
 
-.newsScrollingItems {
-  display: inline-block;
-  width: 58.25rem;
+//socailFourmTop
+.socailFourmTop {
   position: relative;
-}
-
-.socailHomeNewsTitile {
-  margin-top: -1.625rem;
   color: #555555;
 }
 
-.socialNewsSTItems {
-  margin-top: 1rem;
-}
-.socialNewsSTitle {
-  background-color: #a5a58d;
-  border-radius: 0.625rem;
-  width: 2.5rem;
-  height: 1.4375rem;
-  text-align: center;
-  color: #fff1e6;
-  display: inline-block;
+.socailFourmTextBox {
+  border-bottom: solid #ddbea9 3px;
 }
 
-.socialNewsScrollP {
-  color: #ed8f8f;
-  margin-right: 4.0625rem;
+.socialFourmText {
+  margin-left: 150px;
 }
 
-.scrollTextItems {
-  display: inline-block;
-  position: absolute;
-  width: 55rem;
-  height: 2.25rem;
+//socialFourmCardItems
+.socialFourmCardItems {
+  position: relative;
+  margin: 80px auto;
+  justify-content: space-between;
+  border: solid red 1px;
+}
+
+.socailFourmCard {
+  position: relative;
+  width: 265px;
+  height: 306px;
+  box-shadow: 0px 8px 8px #cfcfcf;
   overflow: hidden;
-  right: 0;
-  padding-top: 0.625rem;
 }
 
-//newsSearchBox
-.newsSearchBox {
-  display:inline-flex;
-  text-align: justify;
+.socailFourmCardImg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 306px;
+  opacity: 70%;
+  z-index: 0;
 }
 
-.talkSearchBox {
-  display: inline-block;
-  justify-self: flex-start;
-  width: 39.8125rem;
-  height: 16.4375em;
-  background-color: #fffffd;
-  border-radius: 0.25rem;
-  justify-content: center;
-  padding-top: 1.875rem;
+.fourmCardBg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 75px;
+  width: 265px;
+  background-color: #b7b7a4;
+  opacity: 50%;
+  z-index: 1;
 }
 
-.actitivySearchBox {
-  display: inline-block;
-  justify-self: flex-end;
-  width: 26.0625rem;
-  height: 16.4375em;
-  background-color: #fffffd;
-  border-radius: 0.25rem;
-  justify-content: center;
-  padding-top: 1.875rem;
+.fourmTitleBox {
+  position: relative;
+  height: 75px;
+  width: 265px;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.socailFourmTitle {
+  width: 60px;
+  height: 55px;
+  border-right: solid #fffffd 2px;
   text-align: right;
-}
-
-.talkSearchTitle {
-  text-align: start;
-  padding-left: 1.5rem;
-  font: {
-    family: $fontType1;
-    size: 1.5rem;
-    weight: lighter;
-  }
-}
-
-.talkSearchType {
-  width: 33.3125rem;
-  height: 7.25rem;
-  border-top: solid #707070 0.125em;
-  border-bottom: solid #707070 0.125em;
-}
-
-.activitySearchType {
-  width: 21.875rem;
-  height: 7.25rem;
-  border-top: solid #707070 0.125em;
-  border-bottom: solid #707070 0.125em;
-}
-
-.talkPetType {
-  display: flex;
-  width: 15.465rem;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-}
-
-.activityArea {
-  display: flex;
-  width: 10.31rem;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-}
-
-.activityAreaR {
-  display: flex;
-  width: 10.31rem;
-  justify-content: space-between;
-}
-
-.talkContentType {
-  display: flex;
-  width: 20.625rem;
-  justify-content: space-between;
-}
-
-//分類按鈕-橘色
-.btn-orange {
-  height: 2.5rem;
-  margin: 0.25rem;
-  border-radius: 0.2rem;
-  border: none;
   color: #fffffd;
-  background-color: #ddbea9;
-  cursor: pointer;
-  text-align: center;
-  font: {
-    family: $fontType1;
-    size: 0.75rem;
-  }
+  padding-right: 10px;
 }
 
-.newsBtnW {
-  width: 4.5625rem;
-}
-
-.talkSearchGoBtn {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 0.5rem;
-}
-
-.searchgoBtnW {
-  width: 6.6875rem;
+.socialFourmBTitile {
+  width: 155px;
+  text-align: right;
+  color: #fffffd;
+  font-weight: bold;
+  margin-left:10px;
 }
