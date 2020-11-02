@@ -1,5 +1,5 @@
-//------------------------------SocailHomeArticle------------------------------
-//SocailHomeArticle範圍
+//------------------------------socialHomeArticle------------------------------
+//socialHomeArticle範圍
 .socialArticleMain {
   background-color: #e1e1d5;
   top: 3rem;
@@ -12,7 +12,7 @@
 }
 
 //線條變色
-.socailArticleTextBox {
+.socialArticleTextBox {
   border-bottom: solid #b7b7a4 3px;
 }
 
@@ -32,7 +32,7 @@
   overflow: hidden;
 }
 
-.socailArticleCard {
+.socialArticleCard {
   position: relative;
   width: 20rem;
   height: 18.75rem;
@@ -40,7 +40,7 @@
   overflow: hidden;
 }
 
-.socailArticleCardImg {
+.socialArticleCardImg {
   position: absolute;
   left: 0;
   top: 0;
@@ -48,7 +48,7 @@
   opacity: 70%;
 }
 
-.socailArticleTitle {
+.socialArticleTitle {
   position: absolute;
   bottom: 3.75rem;
   height: 2.5rem;

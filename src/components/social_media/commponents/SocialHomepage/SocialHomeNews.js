@@ -6,8 +6,8 @@ function SocialHomeNews(props) {
     <>
       <div className="container d-flex socialNewsMain">
         <div className="row socialNewsItems no-gutters">
-          <div className="row socailNewsTop no-gutters">
-            <span className="socailHomeNewsTitile enHeader3">News</span>
+          <div className="row socialNewsTop no-gutters">
+            <span className="socialHomeNewsTitile enHeader3">News</span>
             <div className="newsScrollingItems">
               <div className="socialNewsSTItems">
                 <span className="socialNewsSTitle paragraph2">話題</span>

@@ -1,6 +1,6 @@
-//------------------------------SocailHomeRank------------------------------
+//------------------------------socialHomeRank------------------------------
 
-//SocailHomeRank範圍
+//socialHomeRank範圍
 .socialRankMain {
   position: relative;
   background-color: #fffffd;
@@ -83,7 +83,7 @@
   justify-content: space-between;
 }
 
-//socailRankCard
+//socialRankCard
 .singleRankCard {
   position: relative;
 }
@@ -99,16 +99,16 @@
   align-items: center;
   justify-content: center;
 }
-.socailRankCard {
+.socialRankCard {
   background-color: #fffffd;
   width: 16.5625rem;
-  height: 16.5625rem;
+  height: 18.75rem;
   box-shadow: 0px 8px 8px #cfcfcf;
   padding: 0.625rem;
   text-align: center;
 }
 
-.socailRankCardImg {
+.socialRankCardImg {
   width: 15rem;
   height: 15rem;
   padding: 0 auto;
@@ -125,7 +125,7 @@
   border-right: solid #707070 1px;
 }
 
-.socailRankTitle {
+.socialRankTitle {
   position: relative;
   width: 3.4375rem;
   display: flex;

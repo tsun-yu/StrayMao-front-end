@@ -1,9 +1,10 @@
-//------------------------------SocailHomeRank------------------------------
+//------------------------------socialHomeRank------------------------------
 
-//SocailHomeFourm範圍
+//socialHomeFourm範圍
 .socialFourmMain {
   background-color: #fff1e6;
-  top: 3rem;
+  position: relative;
+  top:-0.625rem;
   min-width: 100%;
   height: 43.75rem;
   display: flex;
@@ -25,13 +26,13 @@
   height: 35.125rem;
 }
 
-//socailFourmTop
-.socailFourmTop {
+//socialFourmTop
+.socialFourmTop {
   position: relative;
   color: #555555;
 }
 
-.socailFourmTextBox {
+.socialFourmTextBox {
   border-bottom: solid #ddbea9 3px;
 }
 
@@ -48,7 +49,7 @@
   overflow: hidden;
 }
 
-.socailFourmCard {
+.socialFourmCard {
   position: relative;
   width: 16.5625rem;
   height: 19.125rem;
@@ -56,7 +57,7 @@
   overflow: hidden;
 }
 
-.socailFourmCardImg {
+.socialFourmCardImg {
   position: absolute;
   left: 0;
   top: 0;
@@ -86,7 +87,7 @@
   padding-left: 0.625rem;
 }
 
-.socailFourmTitle {
+.socialFourmTitle {
   width: 3.75rem;
   height: 3.4375rem;
   border-right: solid #fffffd 2px;
@@ -123,7 +124,7 @@
   z-index: 1;
 }
 
-.socailFourmType {
+.socialFourmType {
   min-width: 5.125rem;
   height: 3.75rem;
   border-left: solid #fffffd 2px;
@@ -132,7 +133,7 @@
   padding-top: 0.375rem;
 }
 
-.socailSType {
+.socialSType {
   position: absolute;
   right: 0.9375rem;
   display: inline;
@@ -159,8 +160,8 @@
 }
 
 
-//socailFourmBottom
-.socailFourmBottom {
+//socialFourmBottom
+.socialFourmBottom {
   position: relative;
   bottom: 1.8rem;
   display: flex;

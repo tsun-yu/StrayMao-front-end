@@ -6,11 +6,11 @@ function SocialHomeRank(props) {
       <div className="container d-flex socialRankMain">
         <span className="row socialRankBg" />
         <div className="row socialNewsItems no-gutters">
-          <div className="row socailNewsTop no-gutters">
-            <span className="socailHomeNewsTitile enHeader3">RANKING</span>
+          <div className="row socialNewsTop no-gutters">
+            <span className="socialHomeNewsTitile enHeader3">RANKING</span>
           </div>
-          <div classNmae="row socialRankType">
-            <div className="rankTypeItems">
+          <div classNmae="container socialRankType">
+            <div className="row rankTypeItems">
               <button className="btn-rankType" type="button" value="All">
                 All
               </button>
@@ -22,18 +22,18 @@ function SocialHomeRank(props) {
               </button>
             </div>
           </div>
-          <div className="socialRankBox">
+          <div className="row socialRankBox">
             <div className="row socialRankItems no-gutters">
               <div className="singleRankCard">
                 <span className="socialRankNumber enHeader2">1</span>
-                <div className="socailRankCard">
+                <div className="socialRankCard">
                   <img
-                    className="socailRankCardImg"
+                    className="socialRankCardImg"
                     src="/image/homepage/homepage-1.jpg"
                   />
                   <div className="topCardText">
                     <div className="rankTitleBox">
-                      <div className="socailRankTitle">
+                      <div className="socialRankTitle">
                         <div>2020.</div>
                         <div className="socialRankDay">9.30</div>
                       </div>
@@ -49,14 +49,14 @@ function SocialHomeRank(props) {
               </div>
               <div className="singleRankCard">
                 <span className="socialRankNumber enHeader2">2</span>
-                <div className="socailRankCard">
+                <div className="socialRankCard">
                   <img
-                    className="socailRankCardImg"
+                    className="socialRankCardImg"
                     src="/image/homepage/homepage-1.jpg"
                   />
                   <div className="topCardText">
                     <div className="rankTitleBox">
-                      <div className="socailRankTitle">
+                      <div className="socialRankTitle">
                         <div>2020.</div>
                         <div className="socialRankDay">9.30</div>
                       </div>
@@ -72,14 +72,14 @@ function SocialHomeRank(props) {
               </div>
               <div className="singleRankCard">
                 <span className="socialRankNumber enHeader2">3</span>
-                <div className="socailRankCard">
+                <div className="socialRankCard">
                   <img
-                    className="socailRankCardImg"
+                    className="socialRankCardImg"
                     src="/image/homepage/homepage-1.jpg"
                   />
                   <div className="topCardText">
                     <div className="rankTitleBox">
-                      <div className="socailRankTitle">
+                      <div className="socialRankTitle">
                         <div>2020.</div>
                         <div className="socialRankDay">9.30</div>
                       </div>

@@ -6,9 +6,9 @@ function SocialHomeArticle(props) {
       <div className="container d-flex socialArticleMain">
         <div className="row socialFourmItems no-gutters">
           <div className="container socialFourmMainItems">
-            <div className="socailFourmTop">
+            <div className="socialFourmTop">
               <div className="header4">知識</div>
-              <div className="socailArticleTextBox">
+              <div className="socialArticleTextBox">
                 <span className="socialFourmText">
                   想知道的一切，都能在這裡找到。
                 </span>
@@ -16,14 +16,14 @@ function SocialHomeArticle(props) {
             </div>
             <div className="row socialArticleCardItems no-gutters">
               <div className="singleArticleCard">
-                <div className="socailArticleCard">
+                <div className="socialArticleCard">
                   <img
-                    className="socailArticleCardImg"
+                    className="socialArticleCardImg"
                     src="/image/homepage/homepage-1.jpg"
                     object-fit="cover"
                   />
                   <div className="container">
-                    <div className="row socailArticleTitle">
+                    <div className="row socialArticleTitle">
                       <span className="socialArticleBT enHeader5">All</span>
                       <span className="socialArticleST header6">
                         貓咪們都會這樣，你知道嗎？
@@ -39,14 +39,14 @@ function SocialHomeArticle(props) {
                 </div>
               </div>
               <div className="singleArticleCard">
-                <div className="socailArticleCard">
+                <div className="socialArticleCard">
                   <img
-                    className="socailArticleCardImg"
+                    className="socialArticleCardImg"
                     src="/image/homepage/homepage-1.jpg"
                     object-fit="cover"
                   />
                   <div className="container">
-                    <div className="row socailArticleTitle">
+                    <div className="row socialArticleTitle">
                       <span className="socialArticleBT enHeader5">All</span>
                       <span className="socialArticleST header6">
                         貓咪們都會這樣，你知道嗎？
@@ -62,14 +62,14 @@ function SocialHomeArticle(props) {
                 </div>
               </div>
               <div className="singleArticleCard">
-                <div className="socailArticleCard">
+                <div className="socialArticleCard">
                   <img
-                    className="socailArticleCardImg"
+                    className="socialArticleCardImg"
                     src="/image/homepage/homepage-1.jpg"
                     object-fit="cover"
                   />
                   <div className="container">
-                    <div className="row socailArticleTitle">
+                    <div className="row socialArticleTitle">
                       <span className="socialArticleBT enHeader5">All</span>
                       <span className="socialArticleST header6">
                         貓咪們都會這樣，你知道嗎？
@@ -85,7 +85,7 @@ function SocialHomeArticle(props) {
                 </div>
               </div>
             </div>
-            <div className="row socailFourmBottom no-gutters">
+            <div className="row socialFourmBottom no-gutters">
               <div className="socialArticleBottomline" />
               <button
                 className="socialfourmBottomBtn btn-brown"
