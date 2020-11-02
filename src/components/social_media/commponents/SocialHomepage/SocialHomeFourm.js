@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 function SocialHomeFourm(props) {
   return (
     <>
-      <div className="container d-flex socialFourmMain">
+      <div className="container-fluid d-flex socialFourmMain">
         <div className="row socialFourmItems no-gutters">
           <div className="socialFourmMainItems">
             <div className="conatiner socailFourmTop">

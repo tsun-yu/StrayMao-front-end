@@ -30,22 +30,23 @@
 //TopCard
 .socialtopItems {
   position: relative;
-  top: 12.5rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 78.25rem;
+  margin: 0 auto;
   height: 24.125rem;
   margin-top: 5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .topCardItems {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 61.875rem;
   justify-content: space-between;
   align-items: flex-end;
+  display: flex;
+  z-index: 0;
 }
 
 .topCard {
@@ -145,8 +146,11 @@
 }
 //topArrow
 .grayarrowItems {
+  position: relative;
+  width: 78.375rem;
   display: flex;
   justify-content: space-between;
+  z-index: 1;
 }
 .toparrow-left {
   position: absolute;
