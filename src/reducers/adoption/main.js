@@ -1,4 +1,11 @@
-import { GET_RECOM } from "../../actions/adoption/actionTypes";
+import { act } from "react-dom/test-utils";
+import {
+  GET_RECOM,
+  PET_CANCLE,
+  PET_DISLIKE,
+  PET_INIT,
+  PET_LIKE,
+} from "../../actions/adoption/actionTypes";
 
 function getRecom(state = 1, action) {
   switch (action.type) {
@@ -10,5 +17,21 @@ function getRecom(state = 1, action) {
   }
   return state;
 }
-export { getRecom };
+function petHeart(state = false, action) {
+  switch (action.type) {
+    case PET_LIKE:
+      state = true;
+      break;
+    case PET_DISLIKE:
+      state = false;
+      break;
+    case PET_INIT:
+      state = action.like;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+export { getRecom, petHeart };
 // export default totalPage;

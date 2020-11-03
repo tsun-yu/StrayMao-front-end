@@ -7,14 +7,16 @@ import { homepageReducer } from "../homapage/index";
 import { membershipReducer } from "../membership/index";
 import { socialReducer } from "../social_media/index";
 import { storeReducer } from "../store/index";
+// import { getRecom } from "../adoption/main";
 // //combine all reducer to a big reducer
 export const rootReducer = combineReducers({
   nowPage,
   totalPage,
-  homepageReducer,
-  membershipReducer,
-  socialReducer,
-  storeReducer,
   adoptReducer,
-  cartReducer,
+  // homepageReducer,
+  // membershipReducer,
+  // socialReducer,
+  // storeReducer,
+  // cartReducer,
+  // getRecom,
 });

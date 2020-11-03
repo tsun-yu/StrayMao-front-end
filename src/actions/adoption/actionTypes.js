@@ -1,3 +1,5 @@
-export const PERV_PAGE = "PERV_PAGE";
-
 export const GET_RECOM = "GET_RECOM";
+export const PET_LIKE = "PET_LIKE";
+export const PET_DISLIKE = "PET_DISLIKE";
+export const PET_CANCLE = "PET_CANCLE";
+export const PET_INIT = "PET_INIT";
