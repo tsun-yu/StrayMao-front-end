@@ -1,22 +1,31 @@
 @import "~bootstrap/scss/bootstrap.scss";
-body {
-  background-color: #e1e1d5;
+.cartlistM_body_An {
+  display: none;
 }
 
-.body_An {
+@media screen and (min-width: 400px) and (max-width: 700px) {
+  .cartlistM_body_An {
+    display: block;
+  }
+  .cartlistC_body_An {
+    display: none;
+  }
+}
+
+.cartlistC_body_An {
   background-color: #e1e1d5;
   padding-top: 10vh;
   padding-bottom: 10vh;
 }
 
-.boxBottom_An {
+.cartlistC_boxBottom_An {
   background-color: #fffffd;
   width: 67.5rem;
   padding: 0.625rem;
   border-radius: 0.25rem 0.25rem 0 0;
 }
 
-.boxUpper_An {
+.cartlistC_boxUpper_An {
   background-color: #f5f5f5;
   height: 6.8125rem;
   margin-top: 0.625rem;
@@ -24,13 +33,13 @@ body {
   border-radius: 0.25rem;
 }
 
-.icon-018-trashUpper_An svg {
+.cartlistC_icon-018-trashUpper_An svg {
   fill: #d1d1d1;
   width: 1.5rem;
   height: 1.5rem;
   margin: 2.5rem;
 }
-.icon-018-trashUpper_An svg:hover {
+.cartlistC_icon-018-trashUpper_An svg:hover {
   fill: #a5a58d;
   cursor: pointer;
 }
@@ -43,11 +52,11 @@ body {
     border-color: #777b5a;
   }
 }
-.magic-checkbox_An {
+.cartlistC_magic-checkbox_An {
   position: absolute;
   display: none;
 }
-.magic-checkbox_An + label {
+.cartlistC_magic-checkbox_An + label {
   position: relative;
   display: block;
   cursor: pointer;
@@ -55,12 +64,12 @@ body {
   margin-top: 2.7rem;
   margin-right: 2.7rem;
 }
-.magic-checkbox_An + label:hover:before {
+.cartlistC_magic-checkbox_An + label:hover:before {
   animation-duration: 0.4s;
   animation-fill-mode: both;
   animation-name: hover-color;
 }
-.magic-checkbox_An + label:before {
+.cartlistC_magic-checkbox_An + label:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -70,18 +79,18 @@ body {
   content: "";
   border: 0.15rem solid #b7b7a4;
 }
-.magic-checkbox_An + label:after {
+.cartlistC_magic-checkbox_An + label:after {
   position: absolute;
   display: none;
   content: "";
 }
-.magic-checkbox_An:checked + label:after {
+.cartlistC_magic-checkbox_An:checked + label:after {
   display: block;
 }
-.magic-checkbox_An + label:before {
+.cartlistC_magic-checkbox_An + label:before {
   border-radius: 0.25rem;
 }
-.magic-checkbox_An + label:after {
+.cartlistC_magic-checkbox_An + label:after {
   top: 0.1rem;
   left: 0.4rem;
   box-sizing: border-box;
@@ -94,21 +103,21 @@ body {
   border-top: 0;
   border-left: 0;
 }
-.magic-checkbox_An:checked + label:before {
+.cartlistC_magic-checkbox_An:checked + label:before {
   animation-name: none;
 }
-.magic-checkbox_An:checked + label:before {
+.cartlistC_magic-checkbox_An:checked + label:before {
   background: #777b5a;
 }
 
-.goodsImg_An {
+.cartlistC_goodsImg_An {
   width: 5rem;
   height: 5rem;
   position: relative;
   margin: 1rem;
 }
 
-.goodsName_An {
+.cartlistC_goodsName_An {
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
   font-size: 1rem;
@@ -117,35 +126,35 @@ body {
   margin: 2.5rem;
 }
 
-.inputbox_An {
+.cartlistC_inputbox_An {
   margin: 2.5rem;
 }
 
-.icon-067-minus_An svg {
+.cartlistC_icon-067-minus_An svg {
   fill: #707070;
   width: 1rem;
   height: 1rem;
   position: relative;
   top: 0.5rem;
 }
-.icon-067-minus_An svg:hover {
+.cartlistC_icon-067-minus_An svg:hover {
   fill: #cb997e;
   cursor: pointer;
 }
 
-.icon-021-plus_An svg {
+.cartlistC_icon-021-plus_An svg {
   fill: #707070;
   width: 1rem;
   height: 1rem;
   position: relative;
   top: 0.0625rem;
 }
-.icon-021-plus_An svg:hover {
+.cartlistC_icon-021-plus_An svg:hover {
   fill: #cb997e;
   cursor: pointer;
 }
 
-.input-black_An {
+.cartlistC_input-black_An {
   width: 5rem;
   height: 2rem;
   margin-left: 0.5rem;
@@ -158,11 +167,11 @@ body {
   font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
     monospace, serif;
 }
-.input-black_An:focus {
+.cartlistC_input-black_An:focus {
   outline: none;
 }
 
-.goodsPrice_An {
+.cartlistC_goodsPrice_An {
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
   font-size: 1rem;
@@ -171,25 +180,25 @@ body {
   margin: 2.5rem;
 }
 
-.boxDown_An {
+.cartlistC_boxDown_An {
   background-color: #fff1e6;
   width: 67.5rem;
   height: 4rem;
   border-radius: 0 0 0.25rem 0.25rem;
 }
 
-.icon-018-trashDown_An svg {
+.cartlistC_icon-018-trashDown_An svg {
   fill: #d1d1d1;
   width: 1.5rem;
   height: 1.5rem;
   margin: 1.2rem 1rem 1rem 3rem;
 }
-.icon-018-trashDown_An svg:hover {
+.cartlistC_icon-018-trashDown_An svg:hover {
   fill: #a5a58d;
   cursor: pointer;
 }
 
-.btn-brown_An {
+.cartlistC_btn-brown_An {
   /* #CB997E*/
   width: 3rem;
   height: 2.5rem;
@@ -206,28 +215,28 @@ body {
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
 }
-.btn-brown_An:hover {
+.cartlistC_btn-brown_An:hover {
   background-color: #d9ae97;
 }
-.btn-brown_An:active {
+.cartlistC_btn-brown_An:active {
   background-color: #bb8f78;
 }
-.btn-brown_An:focus {
+.cartlistC_btn-brown_An:focus {
   background-color: #bb8f78;
   outline: none;
 }
 
-.boxDownRight_An {
+.cartlistC_boxDownRight_An {
   padding: 1rem;
 }
-.totalPrice_An {
+.cartlistC_totalPrice_An {
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
   font-size: 1.5rem;
   color: #cb997e;
 }
 
-.btn-green_An {
+.cartlistC_btn-green_An {
   /* #A5A58D*/
   width: 67.5rem;
   height: 2.5rem;
@@ -243,13 +252,343 @@ body {
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
 }
-.btn-green_An:hover {
+.cartlistC_btn-green_An:hover {
   background-color: #b7b7a4;
 }
-.btn-green_An:active {
+.cartlistC_btn-green_An:active {
   background-color: #777b5a;
 }
-.btn-green_An:focus {
+.cartlistC_btn-green_An:focus {
+  background-color: #777b5a;
+  outline: none;
+}
+
+.cartlistM_body_An {
+  background-color: #e1e1d5;
+  width: 25.875rem;
+}
+
+.cartlistM_boxBottom_An {
+  background-color: #fffffd;
+  width: 25.875rem;
+  padding: 0.625rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.cartlistM_boxUpper_An {
+  background-color: #f5f5f5;
+  height: 6.8125rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  border-radius: 0.25rem;
+}
+
+.cartlistM_icon-018-trashUpper_An svg {
+  fill: #d1d1d1;
+  width: 1.5rem;
+  height: 1.5rem;
+  /* margin: 1.25rem; */
+  margin-left: 0.65rem;
+  margin-bottom: 1.25rem;
+  margin-right: 0.5rem;
+}
+.cartlistM_icon-018-trashUpper_An svg:hover {
+  fill: #a5a58d;
+  cursor: pointer;
+}
+
+@keyframes hover-color {
+  from {
+    border-color: #b7b7a4;
+  }
+  to {
+    border-color: #777b5a;
+  }
+}
+.cartlistM_magic-checkbox_An {
+  position: absolute;
+  display: none;
+}
+.cartlistM_magic-checkbox_An + label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  vertical-align: middle;
+  /* margin: 1.5rem; */
+  margin-top: 1.5rem;
+  margin-left: 0.75rem;
+}
+.cartlistM_magic-checkbox_An + label:hover:before {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-name: hover-color;
+}
+.cartlistM_magic-checkbox_An + label:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  content: "";
+  border: 0.15rem solid #b7b7a4;
+}
+.cartlistM_magic-checkbox_An + label:after {
+  position: absolute;
+  display: none;
+  content: "";
+}
+.cartlistM_magic-checkbox_An:checked + label:after {
+  display: block;
+}
+.cartlistM_magic-checkbox_An + label:before {
+  border-radius: 0.25rem;
+}
+.cartlistM_magic-checkbox_An + label:after {
+  top: 0.1rem;
+  left: 0.4rem;
+  box-sizing: border-box;
+  width: 0.4rem;
+  height: 0.7rem;
+  transform: rotate(45deg);
+  border-width: 0.15rem;
+  border-style: solid;
+  border-color: #fffffd;
+  border-top: 0;
+  border-left: 0;
+}
+.cartlistM_magic-checkbox_An:checked + label:before {
+  animation-name: none;
+}
+.cartlistM_magic-checkbox_An:checked + label:before {
+  background: #777b5a;
+}
+
+.cartlistM_goodsImg_An {
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  /* margin: 1rem; */
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+}
+
+.cartlistM_goodsName_An {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 0.75rem;
+  color: #707070;
+  position: relative;
+  margin: 0.25rem;
+}
+
+.cartlistM_btn-quantity_An {
+  position: relative;
+  display: inline-block;
+  /* width: 10rem; */
+  padding-top: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 3.5rem;
+}
+.cartlistM_btn-quantity_An:hover .cartlistM_btn-quantity-content {
+  display: block;
+}
+.cartlistM_btn-quantity_An i {
+  /* width: 1rem; */
+  text-align: center;
+  padding-right: 0.5rem;
+  color: #777b5a;
+}
+
+.cartlistM_btn-quantity-content_An {
+  display: none;
+  position: absolute;
+  background-color: #fffffd;
+}
+.cartlistM_btn-quantity-content_An a {
+  color: #707070;
+  padding: 0.5rem 2.6rem;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+}
+.cartlistM_btn-quantity-content_An a:hover {
+  background-color: #e0dfde;
+}
+
+.cartlistM_quantitybtn_An {
+  background-color: #fffffd;
+  color: #707070;
+  border-radius: 0.25rem;
+  padding: 0;
+  border: solid 0.08rem #707070;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-align: center;
+}
+.cartlistM_quantitybtn_An:focus {
+  outline: none;
+}
+
+.cartlistM_input-transparent_An {
+  /* width: 4rem; */
+  /* padding-top: 0.5rem; */
+  /* padding-bottom: 0.5rem; */
+  padding-left: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  background-color: transparent;
+  border-color: transparent;
+  text-align: center;
+  color: #707070;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+}
+.cartlistM_input-transparent_An:focus {
+  outline: none;
+}
+
+.cartlistM_inputbox_An {
+  margin: 0.25rem;
+}
+
+.cartlistM_icon-067-minus_An svg {
+  fill: #707070;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  top: 0.5rem;
+}
+.cartlistM_icon-067-minus_An svg:hover {
+  fill: #cb997e;
+  cursor: pointer;
+}
+
+.cartlistM_icon-021-plus_An svg {
+  fill: #707070;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  top: 0.0625rem;
+}
+.cartlistM_icon-021-plus_An svg:hover {
+  fill: #cb997e;
+  cursor: pointer;
+}
+
+.cartlistM_input-black_An {
+  width: 5rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  border: solid 0.08rem #707070;
+  text-align: center;
+  color: #707070;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+}
+.cartlistM_input-black_An:focus {
+  outline: none;
+}
+
+.cartlistM_goodsPrice_An {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 0.75rem;
+  color: #cb997e;
+  position: relative;
+  text-align: center;
+}
+
+.cartlistM_boxDown_An {
+  background-color: #fff1e6;
+  width: 25.875rem;
+  height: 6rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.cartlistM_icon-018-trashDown_An svg {
+  fill: #d1d1d1;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 1.2rem 1rem 1rem 1rem;
+}
+.cartlistM_icon-018-trashDown_An svg:hover {
+  fill: #a5a58d;
+  cursor: pointer;
+}
+
+.cartlistM_btn-brown_An {
+  /* #CB997E*/
+  width: 4rem;
+  height: 2.5rem;
+  margin-top: 0.75rem;
+  /* margin-left: 0.75rem; */
+  padding: 0 0.3rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  border: none;
+  color: #fffffd;
+  background-color: #cb997e;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.cartlistM_btn-brown_An:hover {
+  background-color: #d9ae97;
+}
+.cartlistM_btn-brown_An:active {
+  background-color: #bb8f78;
+}
+.cartlistM_btn-brown_An:focus {
+  background-color: #bb8f78;
+  outline: none;
+}
+
+.cartlistM_boxDownRight_An {
+  padding: 1rem;
+}
+.cartlistM_totalPrice_An {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 1rem;
+  color: #cb997e;
+  text-align: center;
+  margin-left: 0.625rem;
+  margin-bottom: 0.5rem;
+}
+
+.cartlistM_btn-green_An {
+  /* #A5A58D*/
+  /* width: 25.875rem; */
+  height: 2.5rem;
+  margin-top: 3rem;
+  margin-right: 0.5rem;
+  padding: 0.7rem 4rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  border: none;
+  color: #fffffd;
+  background-color: #a5a58d;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+}
+.cartlistM_btn-green_An:hover {
+  background-color: #b7b7a4;
+}
+.cartlistM_btn-green_An:active {
+  background-color: #777b5a;
+}
+.cartlistM_btn-green_An:focus {
   background-color: #777b5a;
   outline: none;
 }

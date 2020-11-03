@@ -19,7 +19,7 @@
   background-color: #f5f5f5;
   min-width: 100vw;
   height: 18.25rem;
-  top: 21.875rem;
+  top: 20rem;
 }
 
 //寵物分類按鈕
@@ -79,7 +79,7 @@
   width: 60.1875rem;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: -1.875rem;
+  margin-top: -3rem;
   justify-content: space-between;
 }
 
@@ -106,6 +106,9 @@
   box-shadow: 0px 8px 8px #cfcfcf;
   padding: 0.625rem;
   text-align: center;
+  img {
+    object-fit: cover;
+  }
 }
 
 .socialRankCardImg {
