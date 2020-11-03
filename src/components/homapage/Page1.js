@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Page1Carousel from './HP-component/Page1Carousel'
 
 function Page1(props) {
   return (
@@ -12,9 +13,12 @@ function Page1(props) {
             <div className="page1des3 mr-2">>了解更多</div>
           </div>
         </div>
-        <div className="page1right">
-          <img className="bigImg" src="/image/homepage/homepage1.png" />
-        </div>
+        <Page1Carousel
+          img1="/image/homepage/homepage1.png"
+          img2="/image/homepage/homepage-2.png"
+          img3="/image/homepage/homepage1.png"
+          img4="/image/homepage/homepage-2.png"
+        />
       </div>
     </>
   )
