@@ -15,14 +15,6 @@ export const getRecommandAsync = (value) => {
 
     const url = "http://localhost:3001/straymao/adoption/get_pet_list/1";
 
-    // const request = new Request(url, {
-    //   method: "PUT",
-    //   body: JSON.stringify(newTotal),
-    //   headers: new Headers({
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //   }),
-    // });
     const request = new Request(url, {
       method: "GET",
       headers: new Headers({

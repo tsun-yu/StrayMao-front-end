@@ -34,7 +34,7 @@ function AdopMainPage(props) {
 }
 
 const mapStateToProps = (store) => {
-  return { info: store.getRecom };
+  return { info: store.adoptReducer.getRecom };
 };
 const mapDispatchToProps = null;
 
