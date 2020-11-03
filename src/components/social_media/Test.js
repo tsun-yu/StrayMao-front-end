@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import SocialFourm from "./page/SocialFourm";
 import SocialHomepage from "./page/SocialHomepage";
 
 function Test(props) {
   return (
     <>
-      <SocialHomepage />
+      <SocialFourm />
     </>
   );
 }

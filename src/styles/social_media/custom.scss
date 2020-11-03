@@ -14,3 +14,175 @@ $wcolor: #90a38879;
 @import "./socialHomeActivity";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+
+//SocialFourm-Top
+.socialTitle {
+  padding-left: 30px;
+  width: 400px;
+  border-bottom: solid #ed8f8f 2px;
+}
+
+.socialEditButtom {
+  display: inline-block;
+  color: #707070;
+  margin-top: 100px;
+  margin-left: 20px;
+}
+
+.fourmMyEdit {
+  height: 40px;
+  align-items: center;
+  border: solid red 1px;
+}
+
+//pinkarrow
+.pinkarrow {
+  margin-left: 5px;
+  padding: 5px;
+  background-color: #ed8f8f;
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+}
+.pinkarrow:hover {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+//論壇主體
+.fourmMain {
+  position: relative;
+  border: solid red 1px;
+  display: flex;
+  width: 1140px;
+  height: 1200px;
+}
+
+.fourmArticleMain {
+  position: absolute;
+  top: 40px;
+  right: 69px;
+  width: 824px;
+  height: 1046px;
+  display:flex;
+}
+
+.fourmMainBg{
+  position: absolute;
+  top: 40px;
+  right: 69px;
+  width: 824px;
+  height: 1046px;
+  background-color: #d9d9c2;
+  opacity: 20%;
+}
+
+//arrowItems
+.fourmArrowItems {
+  display:flex;
+  position: absolute;
+  top:-90px;
+  right:30px;
+  width: 900px;
+  justify-content: space-between;
+}
+
+//FourmArticleImg
+.fourmArticleImgBox{
+  position: relative;
+  width: 355px;
+  height: 425px;
+  background-color: #FFFFFD;
+  border:solid red 1px;
+  right:-329px;
+  top:59px;
+  img{
+    object-fit: cover;
+  }
+}
+
+.fourmArticleImg{
+  height: 415px;
+  opacity: 70%;
+}
+
+.fourmArticleContent{
+  position: relative;
+  width: 379px;
+  height: 943px;
+  background-color: #FFFFFD;
+  border:solid red 1px;
+  top:59px;
+  right:-329px;
+}
+
+.fourmArticleTopLine{
+  border-top:solid #DDBEA9 7px;
+}
+
+//fourmAutor
+.fourmAutor{
+  position: absolute;
+  top:40px;
+  left:30px;
+  display:inline-block;
+  img{
+    object-fit: cover;
+  }
+  p{
+    color:#555555;
+  }
+}
+
+.fourmAutorImg{
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
+  margin-right:15px;
+  margin-top:-10px;
+}
+
+.fourmArticleDate{
+  position: absolute;
+  color:#ED8F8F;
+  top:35px;
+  right:50px;
+}
+
+//fourmArticleItems
+.fourmArticleTItems{
+  position: relative;
+  border:solid red 1px;
+  top:105px;
+  width: 277px;
+  margin:0 auto;
+}
+
+.fourmArticleTitle{
+  width: 277px;
+  text-align: center;
+  color:#ED8F8F;
+  font-weight: bold;
+  margin-top:16px;
+}
+
+.fourmArticleText{
+  border-top:solid #707070 1px;
+  position: relative;
+  margin:0 auto;
+  width: 275px;
+  height: 210px;
+  overflow:scroll;
+  overflow-x:hidden;
+  padding:15px;
+}
+
+.fourmReplyHiden{
+  color:#A5A58D;
+  border:solid #A5A58D 1px;
+  padding:5px;
+  position: absolute;
+  top:377px;
+  left:33px;
+}

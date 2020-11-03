@@ -142,12 +142,12 @@ function SocialHomeFourm(props) {
           </div>
           <span className="container-fluid socialFourmArrowItems">
             <img
-              class="socialfixArrow-left brownarrow-left"
+              className="socialfixArrow-left brownarrow-left"
               src="./icomoon/SVG/_011-brownarrow-left.svg"
               alt=""
             />
             <img
-              class="socialfixArrow-right brownarrow-right"
+              className="socialfixArrow-right brownarrow-right"
               src="./icomoon/SVG/_012-brownarrow-right.svg"
               alt=""
             />
