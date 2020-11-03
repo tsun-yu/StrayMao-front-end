@@ -22,9 +22,16 @@
 }
 .page4product {
   height: 25rem;
-  // background-color: #faf;
   position: relative;
+  border: solid 0.5px rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
 }
+.page4product:hover {
+  // box-shadow: 1px 1px 5px 1px #555555;
+  border: #a5a58d solid 0.5px;
+}
+
 .page4label {
   width: 2.5rem;
   height: 7rem;
