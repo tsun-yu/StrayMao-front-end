@@ -1,5 +1,5 @@
 // Import Bootstrap and its default variables
-@import "~bootstrap/scss/bootstrap.scss";
+@import '~bootstrap/scss/bootstrap.scss';
 
 body {
   overflow-x: hidden;
@@ -158,7 +158,7 @@ img {
   cursor: pointer;
   text-align: center;
   font-weight: bold;
-  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+  font-family: 'Roboto-Regular', 'Microsoft JhengHei', 'Noto_Serif_TC-Regular',
     monospace, serif;
 }
 
@@ -221,7 +221,7 @@ img {
 }
 
 .storeP1Title {
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
   display: flex;
   margin: auto;
@@ -270,7 +270,9 @@ img {
 #between {
   justify-content: space-around;
 }
-
+#between > .card_new {
+  padding: 0px;
+}
 .card_new {
   /* min-height: 30vh;
     width: 30vw; */
@@ -353,7 +355,7 @@ img {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
   font-size: 1.2rem;
   white-space: nowrap;
@@ -408,7 +410,7 @@ img {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
   font-size: 0.75rem;
   white-space: nowrap;
@@ -441,7 +443,7 @@ img {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
   font-size: 1.2rem;
   white-space: nowrap;

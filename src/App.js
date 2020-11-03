@@ -12,6 +12,7 @@ import MemberTest from './components/membership/Test'
 import SocialTest from './components/social_media/Test'
 import StoreTest from './components/store/Test'
 import StrayMaoP2 from './components/store/StrayMaoP2'
+import StrayMaoP3 from './components/store/StrayMaoP3'
 
 function App() {
   return (
@@ -47,13 +48,17 @@ function App() {
               {/*要連線的網頁*/}
               <SocialTest />
             </Route>
+            <Route path="/store">
+              {/*要連線的網頁*/}
+              <StoreTest />
+            </Route>
             <Route path="/storeP2">
               {/*要連線的網頁*/}
               <StrayMaoP2 />
             </Route>
-            <Route path="/store">
+            <Route path="/storeP3">
               {/*要連線的網頁*/}
-              <StoreTest />
+              <StrayMaoP3 />
             </Route>
           </Switch>
         </MainContent>
