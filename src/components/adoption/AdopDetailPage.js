@@ -5,7 +5,13 @@ import AdopMainButton from "./AdopMainButton";
 import AdopMainInfo from "./AdopMainInfo";
 import AdopMainReadMore from "./AdopMainReadMore";
 import AdopDetailInfo from "./AdopDetailInfo";
+
+import { getRecommand, getRecommandAsync } from "../../actions/adoption/index";
 function AdopDetailPage(props) {
+  const [test, setTest] = useState({});
+  useEffect(() => {
+    setTest(props.getRecommandAsync());
+  }, []);
   return (
     <>
       <div className="adopRecommand">
@@ -13,10 +19,10 @@ function AdopDetailPage(props) {
           <AdopMainCardPic />
         </div>
         <div className="col">
-          <AdopMainInfo />
+          <AdopMainInfo info={props.info} />
         </div>
       </div>
-      <AdopDetailInfo />
+      <AdopDetailInfo info={props.info} />
 
       <button
         className="btn-green d-flex justify-content-center  align-items-center m-auto"
@@ -30,8 +36,10 @@ function AdopDetailPage(props) {
 }
 
 const mapStateToProps = (store) => {
-  return {};
+  return { info: store.adoptReducer.getRecom };
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {})(AdopDetailPage);
+export default connect(mapStateToProps, { getRecommand, getRecommandAsync })(
+  AdopDetailPage
+);

@@ -1,74 +1,68 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
+import {
+  petDisLikeAsync,
+  petLikeAsync,
+  petLike,
+  petInitLikeAsync,
+} from "../../actions/adoption/index";
 function AdopMainButton(props) {
+  useEffect(() => {
+    props.petInitLikeAsync(1);
+    console.log("like:", props.like);
+  }, []);
+  let likeBtn = props.like ? (
+    <a
+      href="##"
+      className="buttonRight col"
+      onClick={() => {
+        props.petDisLikeAsync(1);
+        console.log("dislike!!!");
+      }}
+    >
+      <svg className="icon-003-heart">
+        <path d="M23.13,9.68l-.68-5.56a.93.93,0,0,0-.35-.61L17.77.19a.89.89,0,0,0-1-.06L11.57,3.28,6.38.13a.91.91,0,0,0-1,.06L1,3.51a.93.93,0,0,0-.35.61L0,9.68a.91.91,0,0,0,.31.8l10.67,9a.91.91,0,0,0,1.16,0l10.66-9A.94.94,0,0,0,23.13,9.68Z"></path>
+      </svg>
+    </a>
+  ) : (
+    <a
+      href="##"
+      className="buttonRight col"
+      onClick={() => {
+        props.petLikeAsync(1);
+        console.log("like!!!");
+      }}
+    >
+      <svg className="icon-002-heart">
+        <path d="M23.13,9.68l-.68-5.56a.93.93,0,0,0-.35-.61L17.77.19a.89.89,0,0,0-1-.06L11.57,3.28,6.38.13a.91.91,0,0,0-1,.06L1,3.51a.93.93,0,0,0-.35.61L0,9.68a.91.91,0,0,0,.31.8l10.67,9a.91.91,0,0,0,1.16,0l10.66-9A.94.94,0,0,0,23.13,9.68ZM11.57,17.57,1.86,9.41l.57-4.69L6,2,11.1,5.11a.93.93,0,0,0,.94,0L17.16,2,20.7,4.72l.57,4.69Z"></path>
+      </svg>
+    </a>
+  );
   return (
     <>
       <div className="adopMainButton">
         <div className="buttonGroup d-flex flex-row">
-          <a
-            className="buttonLeft col"
-            onClick={() => {
-              console.log("aaaaa");
-            }}
-          >
-            {" "}
-            <svg
-              id="_014-cancel"
-              data-name="014-cancel"
-              xmlns="http://www.w3.org/2000/svg"
-              width="18.092"
-              height="18.092"
-              viewBox="0 0 18.092 18.092"
-            >
-              <g
-                id="Group_1117"
-                data-name="Group 1117"
-                transform="translate(0 0)"
-              >
-                <path
-                  id="Path_1731"
-                  data-name="Path 1731"
-                  d="M10.045,9.046l7.839-7.839a.707.707,0,0,0-1-1L9.046,8.046,1.206.207a.707.707,0,1,0-1,1L8.046,9.046.207,16.885a.707.707,0,0,0,1,1l7.839-7.839,7.839,7.839a.707.707,0,0,0,1-1Z"
-                  transform="translate(0 0)"
-                  fill="#fff"
-                />
-              </g>
+          <a href="##" className="buttonLeft col" onClick={() => {}}>
+            <svg className="icon-014-cancel">
+              <path d="M12.59,11.34l9.82-9.83a.88.88,0,0,0,0-1.25.9.9,0,0,0-1.22,0l-9.82,9.82L1.51.26A.88.88,0,0,0,.26.26a.88.88,0,0,0,0,1.25l9.82,9.83L.26,21.16a.89.89,0,0,0,1.25,1.26l9.83-9.83,9.82,9.83a.89.89,0,0,0,1.26-1.26Z" />
             </svg>
           </a>
-          <a
-            className="buttonRight col"
-            onClick={() => {
-              console.log("bbbbb");
-            }}
-          >
-            {" "}
-            <svg
-              id="_002-heart"
-              data-name="002-heart"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24.931"
-              height="21.182"
-              viewBox="0 0 24.931 21.182"
-            >
-              <path
-                id="Path_1717"
-                data-name="Path 1717"
-                d="M24.923,48.927l-.729-5.988a.977.977,0,0,0-.374-.657L19.155,38.7a.972.972,0,0,0-1.1-.06l-5.594,3.39-5.594-3.39a.972.972,0,0,0-1.1.06L1.11,42.283a.976.976,0,0,0-.374.657L.007,48.927a.977.977,0,0,0,.341.866l11.492,9.66a.972.972,0,0,0,1.252,0l11.492-9.66A.977.977,0,0,0,24.923,48.927Zm-12.458,8.5L2,48.638l.616-5.055,3.812-2.927,5.53,3.351a.972.972,0,0,0,1.008,0l5.53-3.351,3.812,2.927.616,5.055Z"
-                transform="translate(0.001 -38.5)"
-                fill="#fff"
-              />
-            </svg>
-          </a>
-        </div>{" "}
+          {likeBtn}
+        </div>
       </div>
     </>
   );
 }
 
 const mapStateToProps = (store) => {
-  return {};
+  return { like: store.adoptReducer.petHeart };
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {})(AdopMainButton);
+export default connect(mapStateToProps, {
+  petDisLikeAsync,
+  petLikeAsync,
+  petLike,
+  petInitLikeAsync,
+})(AdopMainButton);

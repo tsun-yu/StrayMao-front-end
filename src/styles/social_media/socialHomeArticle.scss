@@ -38,6 +38,9 @@
   height: 18.75rem;
   background-color: #fffffd;
   overflow: hidden;
+  img{
+    object-fit: cover;
+  }
 }
 
 .socialArticleCardImg {
@@ -46,6 +49,7 @@
   top: 0;
   height: 11.5625rem;
   opacity: 70%;
+  
 }
 
 .socialArticleTitle {
@@ -59,7 +63,7 @@
 .socialArticleBT {
   width: 5rem;
   text-align: center;
-  color:#A5A58D;
+  color: #a5a58d;
 }
 
 .socialArticleST {
@@ -67,22 +71,22 @@
   color: #555555;
 }
 
-.socialArticleContent{
+.socialArticleContent {
   position: absolute;
-  padding-left:4.0625rem;
+  padding-left: 4.0625rem;
   height: 2.5rem;
-  bottom:0.9375rem;
+  bottom: 0.9375rem;
   line-height: 1rem;
   color: #555555;
 }
 
-.socialArticleLink{
+.socialArticleLink {
   position: absolute;
-  right:0;
-  bottom:0;
+  right: 0;
+  bottom: 0;
   width: 4rem;
   height: 1.875rem;
-  color: #4FA8E3;
+  color: #4fa8e3;
   text-align: center;
   cursor: pointer;
 }

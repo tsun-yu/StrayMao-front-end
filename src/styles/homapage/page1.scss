@@ -38,7 +38,19 @@
   width: 60vw;
 }
 
-.bigImg {
+.wrap {
+  width: 60vw;
+  height: 87vh;
+  overflow: hidden;
+}
+
+.img-wrap {
+  width: 240vw;
+  left: 0px;
+  transition: 0.5s;
+}
+
+.img-wrap img {
   width: 60vw;
   object-fit: cover;
   opacity: 0.8;

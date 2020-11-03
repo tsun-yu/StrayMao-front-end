@@ -1,0 +1,186 @@
+//------------------------------socialHomeActivity------------------------------
+//socialHomeActivity範圍
+.socialActivityMain {
+  position: relative;
+  top: -3.125rem;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialActivityBg {
+  position: absolute;
+  top: 12.5rem;
+  background-color: #f5f5f5;
+  min-width: 100vw;
+  height: 35.625rem;
+  // top: 21.875rem;
+}
+
+.socialActivityCardItems {
+  position: relative;
+  margin: 5rem auto;
+  min-height: 31.25rem;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.socialActivityMainItems {
+  position: relative;
+  margin: 0 auto;
+  width: 71.25rem;
+  height: 51.25rem;
+}
+
+.socialActivityItems {
+  position: relative;
+  margin: 0 auto;
+  min-width: 80rem;
+  height: 51.25rem;
+}
+
+//singleActivityCard
+.singleActivityCard {
+  position: relative;
+  width: 20.25rem;
+  height: 14.125rem;
+  background-color: #fffffd;
+  overflow: hidden;
+  margin-bottom: 1.875rem;
+  box-shadow: 0px 8px 8px #cfcfcf;
+}
+
+.activityCardTopItems {
+  position: relative;
+  height: 7rem;
+  background-color: #fff1e6;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.9375rem;
+}
+
+.activityCardTopBg {
+  position: absolute;
+  left: 0.3125rem;
+  top: -0.3125rem;
+  width: 6.25rem;
+  height: 6.6875rem;
+  background-color: #ed8f8f;
+  opacity: 50%;
+  z-index: 1;
+}
+
+.activityCardTop_left {
+  position: relative;
+  width: 5rem;
+  height: 5.124rem;
+  text-align: right;
+  padding-right: 1rem;
+  border-right: solid #707070 1px;
+  z-index: 2;
+}
+
+.activityCardTop_leftT {
+  position: relative;
+  left:-0.9375rem;
+  top:-0.625rem;
+  color: #cb997e;
+}
+
+.activityCardTop_left > ul > li {
+  list-style-type: none;
+  line-height: 1rem;
+  vertical-align: middle;
+  color: #fffffd;
+}
+
+.activityCardTop_leftLine {
+  height: 0.375rem;
+  width: 1.125rem;
+  display: inline-block;
+  justify-content: right;
+  border-left: solid #707070 1px;
+  margin-bottom: 0.3125rem;
+}
+
+.activityCardTop_right {
+  position: relative;
+  width: 13.25rem;
+  padding: 0 0.9375rem;
+  justify-content: center;
+  color: #707070;
+  font-weight: bold;
+}
+
+//activityCardBottomItmes
+.activityCardBottomItmes {
+  position: relative;
+  justify-content: center;
+  top: 1rem;
+}
+
+//activityTitleBox
+.activityTextBox {
+  position: absolute;
+  right: 1.25rem;
+  height: 6.25rem;
+  width: 13.125rem;
+}
+.socialActivitySTitle {
+  background-color: #cb997e;
+  border-radius: 0.625rem;
+  width: 2.5rem;
+  height: 1.4375rem;
+  text-align: center;
+  color: #fff1e6;
+  display: inline-block;
+}
+
+.socialActivitySText {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  padding-top: 0.625rem;
+  font-weight: bold;
+}
+
+//activityTextBox
+.activityPeopleBox {
+  position: relative;
+  transform: translate(-50%);
+  width: 6.25rem;
+  height: 5.124rem;
+  margin-left: -6.25rem;
+}
+
+.activityPeopleImg {
+  // position: absolute;
+  // right:0;
+  display: flex;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  background-color: #fffffd;
+  overflow: hidden;
+  margin: 0 auto;
+  img {
+    object-fit: cover;
+  }
+}
+
+.activityPeopleName {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 0;
+}
+
+//arrowitems
+.socialActivityArrowItems {
+  position: absolute;
+  display: flex;
+  top: 45%;
+  justify-content: space-between;
+  max-width: 80rem;
+  z-index: 1;
+}
