@@ -1,15 +1,289 @@
 // 預設變數覆蓋需要在導入Bootstrap之前
-$primary: #2f8b0b;
+$fontType1: "微軟正黑體";
+$fontType2: "Noto Serif TC";
+$fontType3: "Roboto";
+$primary: #a5a58d;
 $secondary: #131010;
+$formBorderStyle: 1px solid #cb997e;
 
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 main > .container {
   padding: 60px 15px 0;
 }
 
+// <會員資料>頁面
+.topicStyle {
+  width: 300px;
+  height: 80px;
+  margin: 0 auto;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: $fontType3;
+  color: #ed8f8f;
+  text-align: center;
+  border-bottom: 10px #f0efeb solid;
+  padding: 0 0 4px;
+}
+
+.memberInfoBackground {
+  width: 1000px;
+  // height: 800px;
+  margin: 5vh auto;
+  background-color: #fff1e6;
+}
+
+.btn-group.memberInfoTop {
+  width: 680px;
+  margin: 5vw 160px;
+}
+
+.btn.btn-primary.memberBtnLeft {
+  width: 340px;
+  height: 40px;
+  margin-right: 0;
+  font-size: 14px;
+  color: #ffffff;
+  border: 5px solid #a5a58d;
+  border-radius: 4px;
+  background-color: $primary;
+}
+
+.btn.btn-primary.memberBtnRight {
+  width: 340px;
+  height: 40px;
+  margin-left: 0;
+  font-size: 14px;
+  color: $primary;
+  border: 5px solid #a5a58d;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.infoForm {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.wrapFlex1 {
+  display: flex;
+}
+
+.wrapFlex2 {
+  margin-top: 2px;
+}
+
+.wrapFlex3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.viewImg {
+  width: 250px;
+  height: 250px;
+  border: 2px solid #cb997e;
+}
+
+//display+align-items可讓文字垂直置中
+.form-group.fgFlex {
+  display: flex;
+  margin: 24px 0;
+  align-items: center;
+}
+
+.form-control.infoInput1 {
+  width: 360px;
+  height: 40px;
+  border: $formBorderStyle;
+}
+
+.form-control.infoInput2 {
+  width: 660px;
+  height: 40px;
+  border: $formBorderStyle;
+}
+
+.infoChangeConfirm {
+  font-size: 24px;
+  font-family: $fontType1;
+  color: #777b5a;
+  margin-top: 5vw;
+}
+
+.form-control.infoInput {
+  width: 200px;
+  border: $formBorderStyle;
+}
+
+.confirmCode {
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  font-size: 24px;
+  font-family: $fontType1;
+  color: #ffffff;
+  background-color: #ed8f8f;
+  letter-spacing: 3px;
+}
+
+// <密碼修改>頁面
+.btn-group.memberInfoTop2 {
+  width: 680px;
+  margin: 2vw 160px;
+}
+
+.passwordChangeForm {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.passwordChangeSet {
+  font-size: 24px;
+  font-family: $fontType1;
+  color: #777b5a;
+  margin-top: 2vw;
+}
+
+.wrapFlex4 {
+  width: 360px;
+  margin: 2vw auto;
+  text-align: center;
+}
+
+.setNewPassword {
+  margin: 2vw auto;
+}
+
+.pointWord {
+  font-size: 26px;
+}
+
 .footer {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
+}
+
+//<我的評價>頁面
+.myCommentWrap {
+  width: 1000px;
+  display: flex;
+  margin: 5vw auto;
+}
+
+.productMain {
+  margin-right: 1vw;
+}
+
+.productImg {
+  width: 150px;
+  height: 150px;
+}
+
+.commentStar {
+  text-align: center;
+}
+
+.solidStar {
+  color: #ed8f8f;
+}
+
+.regularStar {
+  color: #ed8f8f;
+}
+
+.commentMain {
+  margin-right: 1vw;
+}
+
+.productName {
+  font-size: 24px;
+  font-family: $fontType1;
+}
+
+.commentContent {
+  width: 719px;
+  height: 114px;
+  background-color: #e0dfde;
+  font-size: 16px;
+  font-family: $fontType1;
+  padding: 10px;
+}
+
+.commentDate {
+  font-size: 16px;
+  font-family: $fontType1;
+  text-align: right;
+}
+
+.commentBtnGroup {
+}
+
+.commentBtn {
+  width: 155px;
+  height: 40px;
+  background-color: $primary;
+  border-radius: 4px;
+  font-size: 14px;
+  padding-left: 30px;
+  font-family: $fontType1;
+  color: #ffffff;
+  margin-bottom: 22px;
+  letter-spacing: 30px;
+}
+
+//<寵物專區>頁面
+.petAreaWrap {
+  width: 1140px;
+  height: 1000px;
+  margin: 5vw auto;
+}
+
+.flex-sm-fill.text-sm-center.nav-link.petAreaNav.active {
+  background-color: #fff1e6;
+  border: none;
+  color: #555555;
+}
+
+.flex-sm-fill.text-sm-center.nav-link.petAreaNav {
+  width: 163px;
+  height: 45px;
+  background-color: $primary;
+  border: 1px solid #707070;
+  border-radius: 4px;
+  font-size: 18px;
+  font-family: $fontType1;
+  color: #ffffff;
+}
+
+.petAreaBackgroud {
+  width: 1140px;
+  height: 827px;
+  background-color: #fff1e6;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.petCard {
+  width: 261px;
+  height: 348px;
+  margin: 2vw;
+}
+
+.petImg {
+  position: relative;
+}
+
+.petDetail {
+  width: 261px;
+  height: 40px;
+  background-color: #a5a58d50;
+  font-size: 14px;
+  font-family: $fontType1;
+  text-align: center;
+  position: absolute;
+  display: flex;
+  align-content: flex-end;
 }

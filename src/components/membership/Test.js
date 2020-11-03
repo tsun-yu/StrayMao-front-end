@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
+import MemberInfo from './MemberInfo'
+import PasswordChange from './PasswordChange'
+import MyComment from './MyComment'
+import PetArea from './PetArea'
+
 function Test(props) {
   return (
     <>
-      <h5>membership</h5>
+      <PetArea/>
+      <MyComment/>
+      <PasswordChange/>
+      <MemberInfo/>
     </>
   );
 }
