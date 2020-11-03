@@ -28,7 +28,7 @@ function Page5(props) {
             <div className="col-7 page5right">
               <div className="d-flex justify-content-between">
                 <div className=" page5right-1">
-                  <Page5Card />
+                  <Page5Card img="./image/homepage/homepage5-1.jpg" />
                   <Page5Card />
                   <Page5Card />
                   <Page5Card />

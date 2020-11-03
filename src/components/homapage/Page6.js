@@ -6,14 +6,14 @@ function Page6(props) {
       <div className="page6">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-6 page6img">
               <div className="page6activityImg1">
-                {/* <img src="/image/homepage/homepage6-1.png"></img> */}
+                <img src="/image/homepage/homepage6-1.png"></img>
               </div>
               {/* <div className="page6activityImg2">
                 <img src="/image/homepage/homepage6-1.png"></img>
-              </div>
-              <div className="page6activityImg3">
+              </div> */}
+              {/* <div className="page6activityImg3">
                 <img src="/image/homepage/homepage6-1.png"></img>
               </div> */}
             </div>

@@ -2,9 +2,12 @@
   background-color: #f0efeb;
   width: 100vw;
   height: 100vh;
+}
+.page6img {
+  height: 100vh;
   position: relative;
 }
-.page6activityImg1 .page6activityImg2 .page6activityImg3 {
+.page6activityImg1 {
   background-color: #fff;
 }
 
@@ -35,7 +38,7 @@
   color: #555555;
   font-family: $fontType2;
   font-size: 2.3rem;
-  margin-top: 100px;
+  margin-top: 20%;
 }
 .page6recent {
   font-family: $fontType1;
@@ -50,7 +53,7 @@
 
 .page6des2date {
   border-right: solid 0.5px #707070;
-  margin: 20px 0px 20px 5px;
+  margin: 1.25rem 0 1.25rem 0.3125rem;
 }
 
 .page6des2dateYear {

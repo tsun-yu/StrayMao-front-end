@@ -27,24 +27,30 @@
 }
 .page4label {
   width: 2.5rem;
-  height: 6rem;
+  height: 7rem;
   position: absolute;
-  background-color: #cb997e;
-  color: #fff1e6;
+  left: 2rem;
   font-size: 1.25rem;
   font-family: $fontType1;
   writing-mode: vertical-lr;
   z-index: 1;
   border-radius: 0 0 9rem 9rem;
 }
+.label1 {
+  background-color: #cb997e;
+  color: #fff1e6;
+}
+.label2 {
+  background-color: #fff1e6;
+  color: #cb997e;
+}
 .page4img {
   padding-top: 5%;
   width: 100%;
   object-fit: cover;
-  opacity: 0.9;
+  opacity: 0.8;
 }
-.page4text {
-}
+
 .page4date {
   border-right: 1px solid #707070;
   width: 35%;

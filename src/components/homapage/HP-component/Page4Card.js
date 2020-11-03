@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
 
 function Page4Card(props) {
+  const { className, label, img, labelClass } = props
   return (
     <>
-      <div className="col-lg-3 page4product">
-        <div className="page4label">
-          <div className="p-1">{props.label}</div>
+      <div className={className}>
+        <div className={labelClass}>
+          <div className="p-1">{label}</div>
         </div>
         <div className="page4img">
-          <img src={props.img}></img>
+          <img src={img}></img>
         </div>
         <div className="page4text px-3 py-2 d-flex">
           <div className="page4date pr-1">

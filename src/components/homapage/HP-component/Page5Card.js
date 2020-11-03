@@ -4,7 +4,9 @@ function Page5Card(props) {
   return (
     <>
       <div className="page5card">
-        <div className="page5cardImage mx-auto">background image</div>
+        <div className=" mx-auto page5cardImg">
+          <img class="" src={props.img} />
+        </div>
         <div className="page5cardDes mx-auto d-flex">
           <div className="page5cardDate my-auto d-flex flex-column justify-content-center">
             <div className="page5cardYear">2020.</div>

@@ -58,6 +58,7 @@
 }
 .page5right-2 {
   // background-color: #aaf;
+  height: 90vh;
   width: 50%;
   margin-left: 5px;
   overflow: auto;
@@ -69,15 +70,22 @@
 .page5card {
   background-color: #fff1e6;
   width: 100%;
-  height: 50%;
-  padding-top: 5%;
-  margin-bottom: 5%;
+  height: 23.375rem;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.page5cardImage {
-  width: 90%;
-  height: 75%;
+// .page5cardImg {
+//   width: 90%;
+//   height: 75%;
+//   background-color: #fff;
+// }
+
+.page5cardImg {
+  width: 17.5rem;
+  height: 16.75rem;
   background-color: #fff;
+  object-fit: cover;
 }
 
 .page5cardDes {
