@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import AdopMapPage from "./AdopMapPage";
+import AdopMainPage from "./AdopMainPage";
 function Test(props) {
   return (
     <>
-      {/* <AdopMainPage /> */}
+      <AdopMainPage />
       {/* <AdopListPage /> */}
       {/* <AdopDetailPage /> */}
-      <AdopMapPage />
+      {/* <AdopMapPage /> */}
     </>
   );
 }

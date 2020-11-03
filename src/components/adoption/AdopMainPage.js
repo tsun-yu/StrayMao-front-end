@@ -4,7 +4,13 @@ import AdopMainCardPic from "./AdopMainCardPic";
 import AdopMainButton from "./AdopMainButton";
 import AdopMainInfo from "./AdopMainInfo";
 import AdopMainReadMore from "./AdopMainReadMore";
+
+import { getRecommand, getRecommandAsync } from "../../actions/adoption/index";
 function AdopMainPage(props) {
+  const [test, setTest] = useState({});
+  useEffect(() => {
+    setTest(props.getRecommandAsync());
+  }, []);
   return (
     <>
       <div className="adopTitleMain">
@@ -18,7 +24,7 @@ function AdopMainPage(props) {
           </AdopMainCardPic>
         </div>
         <div className="col">
-          <AdopMainInfo>
+          <AdopMainInfo info={props.info}>
             <AdopMainReadMore />
           </AdopMainInfo>
         </div>
@@ -28,8 +34,10 @@ function AdopMainPage(props) {
 }
 
 const mapStateToProps = (store) => {
-  return {};
+  return { info: store.getRecom };
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {})(AdopMainPage);
+export default connect(mapStateToProps, { getRecommand, getRecommandAsync })(
+  AdopMainPage
+);

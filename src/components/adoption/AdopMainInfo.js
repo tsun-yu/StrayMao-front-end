@@ -45,19 +45,19 @@ function AdopMainInfo(props) {
         <div className="d-flex flex-row mx-auto mt-5">
           <ul className="adoptListStyleNone paragraph1 ">
             <li className="mt-2">
-              名字：<span>aaa</span>
+              名字：<span>{props.info.name}</span>
             </li>
             <li className="mt-2">
-              性別：<span>aaa</span>
+              性別：<span>{props.info.gender}</span>
             </li>
             <li className="mt-2">
-              年齡：<span>aaa</span>
+              年齡：<span>{props.info.age}</span>
             </li>
             <li className="mt-2">
-              地點：<span>aaa</span>
+              地點：<span>{props.info.area}</span>
             </li>
             <li className="mt-2">
-              介紹：<span>aaa</span>
+              介紹：<span>{props.info.des}</span>
             </li>
           </ul>
         </div>
