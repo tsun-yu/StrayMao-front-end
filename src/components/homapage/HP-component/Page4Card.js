@@ -11,7 +11,7 @@ function Page4Card(props) {
         <div className="page4img">
           <img src={img}></img>
         </div>
-        <div className="page4text px-3 py-2 d-flex">
+        <div className="page4text my-auto px-3 py-2 d-flex">
           <div className="page4date pr-1">
             <div className="page4year">2020.</div>
             <div className="page4new text-right">New</div>

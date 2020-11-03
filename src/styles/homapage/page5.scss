@@ -84,10 +84,13 @@
 .page5cardImg {
   width: 17.5rem;
   height: 16.75rem;
-  background-color: #fff;
-  object-fit: cover;
 }
-
+.page5cardImg img {
+  width: 17.5rem;
+  height: 16.75rem;
+  object-fit: cover;
+  opacity: 0.8;
+}
 .page5cardDes {
   width: 90%;
   height: 20%;
