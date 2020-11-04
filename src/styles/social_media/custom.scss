@@ -20,6 +20,7 @@ $wcolor: #90a38879;
   padding-left: 30px;
   width: 400px;
   border-bottom: solid #ed8f8f 2px;
+  margin-top: 70px;
 }
 
 .socialEditButtom {
@@ -32,7 +33,6 @@ $wcolor: #90a38879;
 .fourmMyEdit {
   height: 40px;
   align-items: center;
-  border: solid red 1px;
 }
 
 //pinkarrow
@@ -53,7 +53,6 @@ $wcolor: #90a38879;
 //論壇主體
 .fourmMain {
   position: relative;
-  border: solid red 1px;
   display: flex;
   width: 1140px;
   height: 1200px;
@@ -65,10 +64,10 @@ $wcolor: #90a38879;
   right: 69px;
   width: 824px;
   height: 1046px;
-  display:flex;
+  display: flex;
 }
 
-.fourmMainBg{
+.fourmMainBg {
   position: absolute;
   top: 40px;
   right: 69px;
@@ -80,109 +79,233 @@ $wcolor: #90a38879;
 
 //arrowItems
 .fourmArrowItems {
-  display:flex;
+  display: flex;
   position: absolute;
-  top:-90px;
-  right:30px;
+  top: -90px;
+  right: 30px;
   width: 900px;
   justify-content: space-between;
 }
 
 //FourmArticleImg
-.fourmArticleImgBox{
+.fourmArticleImgBox {
   position: relative;
   width: 355px;
   height: 425px;
-  background-color: #FFFFFD;
-  border:solid red 1px;
-  right:-329px;
-  top:59px;
-  img{
+  background-color: #fffffd;
+  right: -329px;
+  top: 59px;
+  img {
     object-fit: cover;
   }
 }
 
-.fourmArticleImg{
+.fourmArticleImg {
   height: 415px;
   opacity: 70%;
 }
 
-.fourmArticleContent{
+.fourmArticleContent {
   position: relative;
   width: 379px;
   height: 943px;
-  background-color: #FFFFFD;
-  border:solid red 1px;
-  top:59px;
-  right:-329px;
+  background-color: #fffffd;
+  top: 59px;
+  right: -329px;
 }
 
-.fourmArticleTopLine{
-  border-top:solid #DDBEA9 7px;
+.fourmArticleTopLine {
+  border-top: solid #ddbea9 7px;
 }
 
 //fourmAutor
-.fourmAutor{
+.fourmAutor {
   position: absolute;
-  top:40px;
-  left:30px;
-  display:inline-block;
-  img{
+  top: 40px;
+  left: 30px;
+  display: inline-block;
+  img {
     object-fit: cover;
   }
-  p{
-    color:#555555;
+  p {
+    color: #555555;
   }
 }
 
-.fourmAutorImg{
+.fourmAutorImg {
   width: 59px;
   height: 59px;
   border-radius: 50%;
-  margin-right:15px;
-  margin-top:-10px;
+  margin-right: 15px;
+  margin-top: -10px;
 }
 
-.fourmArticleDate{
+.fourmArticleDate {
   position: absolute;
-  color:#ED8F8F;
-  top:35px;
-  right:50px;
+  color: #ed8f8f;
+  top: 35px;
+  right: 50px;
 }
 
 //fourmArticleItems
-.fourmArticleTItems{
+.fourmArticleTItems {
   position: relative;
-  border:solid red 1px;
-  top:105px;
+  top: 105px;
   width: 277px;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
-.fourmArticleTitle{
+.fourmArticleTitle {
   width: 277px;
   text-align: center;
-  color:#ED8F8F;
+  color: #ed8f8f;
   font-weight: bold;
-  margin-top:16px;
+  margin-top: 16px;
 }
 
-.fourmArticleText{
-  border-top:solid #707070 1px;
+.fourmArticleText {
+  border-top: solid #707070 1px;
   position: relative;
-  margin:0 auto;
+  margin: 0 auto;
   width: 275px;
   height: 210px;
-  overflow:scroll;
-  overflow-x:hidden;
-  padding:15px;
+
+  overflow-x: hidden;
+  padding: 15px;
 }
 
-.fourmReplyHiden{
-  color:#A5A58D;
-  border:solid #A5A58D 1px;
-  padding:5px;
+.fourmReplyHiden {
+  color: #a5a58d;
+  border: solid #a5a58d 1px;
+  padding: 5px;
   position: absolute;
-  top:377px;
-  left:33px;
+  top: 385px;
+  left: 33px;
+}
+
+//fourmReply相關內容
+.fourmReplyMain {
+  position: relative;
+  width: 347px;
+  height: 510px;
+  margin: 14px auto;
+  top: 150px;
+  textarea {
+    width: 270px;
+    max-height: 58px;
+    margin-left: 15px;
+    margin-right: 10px;
+    background-color: rgba($color: #fff1e6, $alpha: 0.5);
+    border: solid #cb997e 1px;
+  }
+}
+
+.fourmReplyTopLine {
+  border-top: solid #707070 1px;
+  width: 351px;
+  margin-bottom: 18px;
+}
+
+.fourmUserTalk {
+  min-width: 330px;
+}
+
+.fourmUserTalkBtn {
+  color: #fffffd;
+  background-color: #ed8f8f;
+  border: none;
+  border-radius: 4px;
+  width: 47px;
+  height: 58px;
+  opacity: 50%;
+}
+
+//fourmReplyContent
+.singlefourmUserReply{
+  border-top: solid #FFFFFD 2px;
+}
+
+.fourmReplyContent {
+  position: relative;
+  // margin-left: -15px;
+  margin-top: 20px;
+  width: 348px;
+  height: 400px;
+  background-color: rgba($color: #e1e1d5, $alpha: 0.5);
+  overflow: scroll;
+  overflow-x: hidden;
+  justify-content: center;
+}
+
+.fourmUserReply {
+  display:block;
+  margin-top: 10px;
+  margin-left:10px;
+  width: 314px;
+  max-height: 500px;
+}
+
+.fourmAutorReply{
+  display:block;
+  margin-left:10px;
+  width: 314px;
+  max-height: 500px;
+  color:#CB997E;
+  margin-bottom:5px;
+}
+
+.fourmUserReplyItems {
+  // position: absolute;
+  width: 300px;
+  margin-left: 15px;
+  margin-top: 30px;
+}
+
+.fourmAutorReplyItems{
+  width: 190px;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+.fourmUserReplyText {
+  // position: absolute;
+  color: #555555;
+  width: 200px;
+  margin-left: 60px;
+  p {
+    margin-bottom: 8px;
+  }
+  border-bottom: solid #e1e1d5 1px;
+}
+
+.fourmAutorReplyText{
+  width: 150px;
+  margin-left: 150px;
+  p {
+    margin-bottom: 8px;
+  }
+}
+
+.fourmUserImg {
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  margin-right: 15px;
+  margin-top: -10px;
+}
+
+.fourmUserRBtn {
+  // position: absolute;
+  margin-top:-45px;
+  margin-left:250px;
+  padding-right:5px;
+  button {
+    width: 45px;
+    padding: 0.5rem 0rem;
+  }
+}
+
+//fourmAutorReply
+.fourmAutorReply{
+  display:inline-block;
 }
