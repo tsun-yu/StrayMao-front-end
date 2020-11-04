@@ -2,9 +2,34 @@ import React, { useState, useEffect } from 'react'
 import Page4Card from './HP-component/Page4Card'
 
 function Page4(props) {
+  // let i = 0
+  // useEffect(() => {
+  //   document.addEventListener('mousemove', function parallax(e) {
+  //     this.querySelectorAll('.page4product').forEach((page4product) => {
+  //       const speed = page4product.getAttribute('data-speed')
+  //       if (i == 1) {
+  //         const x = (window.innerWidth - e.pageX * speed) / 50
+  //         const y = (window.innerHeight - e.pageY * speed) / 50
+
+  //         page4product.style.transform = `translateX(${x}px) translateY(${y}px)`
+  //       }
+  //       // console.log(e);
+  //     })
+  //   })
+  //   document
+  //     .querySelector('.page4product')
+  //     .addEventListener('mouseover', function func(e) {
+  //       i = 1
+  //     })
+  //   document
+  //     .querySelector('.page4product')
+  //     .addEventListener('mouseout', function func(e) {
+  //       i = 0
+  //     })
+  // }, [])
   return (
     <>
-      <div className="page4title">
+      <div className="page4title my-5">
         <div className="page4Store">
           <span>Store -</span>
         </div>

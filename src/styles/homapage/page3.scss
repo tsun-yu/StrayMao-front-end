@@ -1,8 +1,57 @@
-.page3 {
+.page3bg {
   background-color: #777b5a;
+  height: 87vh;
+  padding-top: 10vh;
+  overflow: hidden;
   width: 100vw;
-  height: 100vh;
 }
-.block3 {
-  height: 74px;
+.page3 {
+  width: 600vw;
+  height: 87vh;
+  left: 0;
+  transition: 0.5s;
+}
+.page3single {
+  width: 100vw;
+  height: 87vh;
+}
+
+.page3topic {
+  // margin-top: 10vh;
+}
+.page3big {
+  font-size: 2.375rem;
+  font-family: $fontType2;
+  color: #fffffd;
+}
+
+.page3small {
+  font-size: 1rem;
+  font-family: $fontType2;
+  color: #fff1e6;
+}
+
+.page3circle {
+  width: 16.25rem;
+  height: 16.25rem;
+  border: #fff1e6 solid 0.125rem;
+  border-radius: 50%;
+}
+
+.page3area {
+  font-size: 3.75rem;
+  font-family: $fontType2;
+  color: #fff1e6;
+}
+.page3circle2 {
+  width: 10rem;
+  height: 10rem;
+  border: #fff1e6 solid 0.125rem;
+  border-radius: 50%;
+}
+
+.page3city {
+  font-size: 2.375rem;
+  font-family: $fontType2;
+  color: #fff1e6;
 }
