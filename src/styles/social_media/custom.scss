@@ -359,12 +359,6 @@ $wcolor: #90a38879;
   overflow: scroll;
   overflow-x: hidden;
   justify-content: center;
-  ::-webkit-scrollbar-track {
-    background: rgba($color: #000000, $alpha: 1);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #b7b7a4;
-  }
 }
 
 .fourmUserReply {
@@ -609,4 +603,164 @@ $wcolor: #90a38879;
   justify-content: space-between;
   width: 1200px;
   z-index: 1;
+}
+
+//過度畫面
+.fourmSaySomething{
+  height: 432px;
+}
+
+.fourmSayBigText{
+  margin-top:120px;
+  margin-left:200px;
+  color:#A5A58D;
+}
+
+.fourmSaySText{
+  margin-top:40px;
+  margin-left:300px;
+  color:#555555;
+}
+
+//寵物知識
+.petknowledgeBT{
+  margin:0 auto;
+}
+
+.petknowledgeTitle {
+  position: absolute;
+  display:inline-block;
+  left:50%;
+  margin-top:30px;
+  transform: translate(-50%);
+  width: 585px;
+  height: 26px;
+  justify-content: space-between;
+  color: #555555;
+}
+
+//petknowledge範圍
+.petknowledgeMain {
+  background-color: #FFF1E6;
+  min-width: 100%;
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//pet文章（大）
+.bigArticleBox{
+  width: 750px;
+  height: 370px;
+  background-color:#FFFFFD;
+  color:#555555;
+  margin-top:120px;
+  margin-left:20px;
+  padding:15px;
+}
+.bigArticleTitleItems{
+  position: relative;
+  width: 700px;
+  height: 30px;
+  border-bottom:solid #707070 1px;
+  margin:0 auto;
+  justify-content:space-between;
+  svg{
+    top:0;
+    right:0;
+  }
+}
+.bigArticleBTitle{
+  color:#A5A58D;
+  margin-left:40px;
+}
+
+.bigArticleSTitle{
+  color:#ED8F8F;
+  padding-right:-200px;
+ 
+}
+
+.bigArticleSText{
+  width: 680px;
+  text-align: right;
+}
+
+.bigArticleContent{
+  position: relative;
+  left:30px;
+  img{
+    object-fit: cover;
+  }
+}
+
+.bigArticleImg{
+  width: 310px;
+  height: 270px;
+  background-color: #FFFFFD;
+  opacity: 80%;
+  padding-left:30px;
+  padding-right:30px;
+  border-right:solid #707070 1px;
+}
+
+.bigArticleMain{
+  width: 340px;
+  height: 270px;
+  overflow:scroll;
+  overflow-x: hidden;
+  margin-left:30px;
+  color:#555555;
+}
+
+.bigActicleLeftLine{
+  width: 20px;
+  height: 340px;
+  border-right:solid #707070 1px;
+  position: absolute;
+  display: flex;
+  margin:-32px auto;
+  z-index: 1;
+}
+
+//修正範圍
+.bigArticleRange {
+  position: relative;
+  margin: 0 auto;
+  width: 71.25rem;
+  height: 1000px;
+}
+
+//文章arrow
+//改socialFourmArrowItems
+.bigArticleArrowItems {
+  position: absolute;
+  display: flex;
+  bottom: 40%;
+  justify-content: space-between;
+  max-width: 80rem;
+  z-index: 1;
+}
+
+//petknowledgeRight
+.petknowledgeRight{
+  position: absolute;
+  top:100px;
+  padding-top:170px;
+  right:35px;
+  width: 290px;
+  height: 375px;
+  text-align: center;
+}
+
+.petknowledgeType{
+  color:#707070;
+  justify-content: center;
+}
+
+.petknowledgeSLine{
+  border-bottom: solid #707070 1px;
+  width: 154px;
+  margin:0 auto;
 }

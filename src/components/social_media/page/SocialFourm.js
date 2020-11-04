@@ -624,6 +624,181 @@ function SocialFourm(props) {
 
         <div className="fourmNewsLineBetween" />
       </div>
+      <div className="container fourmSaySomething">
+        <h3 className="enHeader2 fourmSayBigText">or -</h3>
+        <p className="header5 fourmSaySText">從文章中找到新話題。</p>
+      </div>
+
+      <div className="container petknowledgeMain">
+        <div className="row socialFourmItems no-gutters">
+          <div className="container bigArticleRange">
+            <div className="">
+              <div className="row petknowledgeTitle">
+                <sapn className="fourmTitleLine"></sapn>
+                <h3 className="fourm_BTitle">寵物知識</h3>
+                <sapn className="fourmTitleLine"></sapn>
+              </div>
+            </div>
+            <div className="bigArticleBox">
+              <div className="row bigArticleTitleItems no-gutters">
+                <h3 className="enHeader5 bigArticleBTitle">All</h3>
+                <p className="header7 bigArticleSTitle">
+                  貓咪們都會這樣，你知道嗎？
+                </p>
+                <div className="">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21.388"
+                    height="20.524"
+                    viewBox="0 0 21.388 20.524"
+                  >
+                    <g id="愛心" transform="translate(0.251 0.25)">
+                      <path
+                        id="Path_1296"
+                        data-name="Path 1296"
+                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613a5.025,5.025,0,0,0-5.341,3.546"
+                        transform="translate(-478.964 -228.762)"
+                        fill="#fff"
+                        stroke="#707070"
+                        stroke-width="0.5"
+                      />
+                      <path
+                        id="Path_1297"
+                        data-name="Path 1297"
+                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613A5.025,5.025,0,0,0,489.508,232.381Z"
+                        transform="translate(-478.964 -228.762)"
+                        fill="none"
+                        stroke="#ed8f8f"
+                        stroke-miterlimit="10"
+                        stroke-width="0.5"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <span className="bigActicleLeftLine"></span>
+              <p className="caption bigArticleSText">撰稿人/ bemo機器人</p>
+              <div className="row bigArticleContent">
+                <img
+                  className="bigArticleImg"
+                  src="/image/homepage/homepage-1.jpg"
+                />
+                <div className="bigArticleMain caption">
+                  <p>
+                    若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。
+                    誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情",
+                    是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…
+                    若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。
+                    誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情",
+                    是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…
+                    若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="petknowledgeRight">
+              <div className="petknowledgeType">
+                <h3 className="header5">善用分類篩選</h3>
+                <div className="petknowledgeSLine" />
+                <p className="caption">幫助您找到更多寶貝知識</p>
+              </div>
+              <div class="allCardBtn_Issue btn-filter">
+                <button class="filterbtn">
+                  全部 <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="btn-filter-content">
+                  <a href="#">全部</a>
+                  <a href="#">貓</a>
+                  <a href="#">狗</a>
+                </div>
+              </div>
+            </div>
+            <div className="row socialArticleCardItems no-gutters">
+              <div className="singleArticleCard">
+                <div className="socialArticleCard">
+                  <img
+                    className="socialArticleCardImg"
+                    src="/image/homepage/homepage-1.jpg"
+                    object-fit="cover"
+                  />
+                  <div className="container">
+                    <div className="row socialArticleTitle">
+                      <span className="socialArticleBT enHeader5">All</span>
+                      <span className="socialArticleST header6">
+                        貓咪們都會這樣，你知道嗎？
+                      </span>
+                    </div>
+                    <div className="socialArticleContent caption">
+                      貓咪們都會這樣，你知道嗎？
+                      <br />
+                      貓咪們都會這樣，你知道嗎？
+                    </div>
+                    <a className="socialArticleLink caption">more+</a>
+                  </div>
+                </div>
+              </div>
+              <div className="singleArticleCard">
+                <div className="socialArticleCard">
+                  <img
+                    className="socialArticleCardImg"
+                    src="/image/homepage/homepage-1.jpg"
+                    object-fit="cover"
+                  />
+                  <div className="container">
+                    <div className="row socialArticleTitle">
+                      <span className="socialArticleBT enHeader5">All</span>
+                      <span className="socialArticleST header6">
+                        貓咪們都會這樣，你知道嗎？
+                      </span>
+                    </div>
+                    <div className="socialArticleContent caption">
+                      貓咪們都會這樣，你知道嗎？
+                      <br />
+                      貓咪們都會這樣，你知道嗎？
+                    </div>
+                    <a className="socialArticleLink caption">more+</a>
+                  </div>
+                </div>
+              </div>
+              <div className="singleArticleCard">
+                <div className="socialArticleCard">
+                  <img
+                    className="socialArticleCardImg"
+                    src="/image/homepage/homepage-1.jpg"
+                    object-fit="cover"
+                  />
+                  <div className="container">
+                    <div className="row socialArticleTitle">
+                      <span className="socialArticleBT enHeader5">All</span>
+                      <span className="socialArticleST header6">
+                        貓咪們都會這樣，你知道嗎？
+                      </span>
+                    </div>
+                    <div className="socialArticleContent caption">
+                      貓咪們都會這樣，你知道嗎？
+                      <br />
+                      貓咪們都會這樣，你知道嗎？
+                    </div>
+                    <a className="socialArticleLink caption">more+</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span className="container-fluid bigArticleArrowItems">
+            <img
+              class="socialfixArrow-left greenarrow-left"
+              src="./icomoon/SVG/_017-greenarrow-left.svg"
+              alt=""
+            />
+            <img
+              class="socialfixArrow-right greenarrow-right"
+              src="./icomoon/SVG/_018-greenarrow-right.svg"
+              alt=""
+            />
+          </span>
+        </div>
+      </div>
       <FourmArticlePage />
       <FourmArticleBox />
       <FourmReply />
