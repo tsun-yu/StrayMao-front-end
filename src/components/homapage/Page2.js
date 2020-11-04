@@ -15,7 +15,7 @@ function Page2(props) {
               class="page2img2 page2img"
             />
             <Page2Img
-              img="/image/homepage/homepage2-4.png"
+              img="/image/homepage/homepage2-3.png"
               class="page2img page2img3"
             />
             <div className="page2desBlock">

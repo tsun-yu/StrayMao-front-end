@@ -14,10 +14,11 @@ function Page1(props) {
           </div>
         </div>
         <Page1Carousel
-          img1="/image/homepage/homepage1.png"
-          img2="/image/homepage/homepage-2.png"
-          img3="/image/homepage/homepage1.png"
-          img4="/image/homepage/homepage-2.png"
+          img1="/image/homepage/homepage1-1.png"
+          img2="/image/homepage/homepage1-2.png"
+          img3="/image/homepage/homepage1-3.png"
+          img4="/image/homepage/homepage1-4.png"
+          img5="/image/homepage/homepage1-5.png"
         />
       </div>
     </>
