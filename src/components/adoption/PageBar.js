@@ -41,7 +41,7 @@ const contentManger = (start, nowPage, length, content, props) => {
     ) : (
       <li key="start">
         <a href="#" onClick={() => props.pervPage()}>
-          <i class="fas fa-caret-left fa-1x"></i>
+          <i className="fas fa-caret-left fa-1x"></i>
         </a>
       </li>
     )
@@ -193,7 +193,7 @@ const contentManger = (start, nowPage, length, content, props) => {
     ) : (
       <li key="end">
         <a href="#" onClick={() => props.nextPage()}>
-          <i class="fas fa-caret-right fa-1x"></i>
+          <i className="fas fa-caret-right fa-1x"></i>
         </a>
       </li>
     )

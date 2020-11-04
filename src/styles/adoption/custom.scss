@@ -115,7 +115,41 @@ main > .container {
 .adoptListCard {
   width: 14.2rem;
   height: 17.5rem;
+  margin: 0px 5px 3rem 2px;
+
+  padding: 0px;
+  border: 1px solid #ed8f8f;
+  border-radius: 4px;
+  background-color: white;
+  text-align: justify;
+  position: relative;
+  overflow: hidden;
+  transition: 0.1s;
+  box-shadow: 0px 5px 3px gray;
 }
+.adoptListCard:hover() {
+  box-shadow: 0px 10px 10px gray;
+}
+.adoptListCard .icon svg {
+  width: 1.6rem;
+  height: 1.4rem;
+}
+// .card {
+//   min-height: 30vh;
+//   width: 30vw;
+//   /* height: 35vh; */
+//   margin: 0px 5px 3rem 2px;
+
+//   padding: 0px;
+//   border: 1px solid #ed8f8f;
+//   border-radius: 4px;
+//   background-color: white;
+//   text-align: justify;
+//   position: relative;
+//   overflow: hidden;
+//   transition: 0.1s;
+//   box-shadow: 0px 5px 3px gray;
+// }
 .adoptListCardImg {
   width: 14.2rem;
   height: 13.2rem;

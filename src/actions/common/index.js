@@ -1,16 +1,20 @@
-import { NEXT_PAGE, GOTO_PAGE, PERV_PAGE } from "./actionTypes";
+import { NEXT_PAGE, GOTO_PAGE, PERV_PAGE, TOTAL_PAGE } from "./actionTypes";
 
 //actionCreater
 export const pervPage = () => {
   return { type: PERV_PAGE, value: -1 };
 };
+
 export const gotoPage = (value) => {
   return { type: GOTO_PAGE, value: value };
 };
+
 export const nextPage = () => {
   return { type: NEXT_PAGE, value: 1 };
 };
-
+export const setTotalPage = (value) => {
+  return { type: TOTAL_PAGE, value };
+};
 // export const addValueAsync = (value) => {
 //   return async function updateTotalToServer(dispatch, getState) {
 //     // 開啟載入的指示圖示

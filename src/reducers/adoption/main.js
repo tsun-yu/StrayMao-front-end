@@ -5,11 +5,22 @@ import {
   PET_DISLIKE,
   PET_INIT,
   PET_LIKE,
+  GET_LIST,
 } from "../../actions/adoption/actionTypes";
 
 function getRecom(state = 1, action) {
   switch (action.type) {
     case GET_RECOM:
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+function getList(state = 1, action) {
+  switch (action.type) {
+    case GET_LIST:
       state = action.value;
       break;
     default:
@@ -33,5 +44,5 @@ function petHeart(state = false, action) {
   }
   return state;
 }
-export { getRecom, petHeart };
+export { getRecom, petHeart, getList };
 // export default totalPage;

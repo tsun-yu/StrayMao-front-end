@@ -18,5 +18,4 @@ export const rootReducer = combineReducers({
   // socialReducer,
   // storeReducer,
   // cartReducer,
-  // getRecom,
 });

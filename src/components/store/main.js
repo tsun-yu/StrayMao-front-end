@@ -5,7 +5,6 @@ import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
 
 function Storepage(props) {
-  // const [storeP1Background, setstoreP1Background] = useState(0);
   let i = 0
   useEffect(() => {
     document
@@ -17,12 +16,16 @@ function Storepage(props) {
         storeP1BackgroundMouse.classList.add('animate__bounce')
       })
 
-    //     document.querySelector('#storeP1BackgroundMouse').addEventListener("mouseout", ()=> {
-
-    //       let storeP1BackgroundMouse = document.querySelector('#storeP1BackgroundMouse')
-    //           storeP1BackgroundMouse.style.transform = ` translateY(0px)`;
-
-    //         });
+    document
+      .querySelector('#storeP1BackgroundMouse')
+      .addEventListener('mouseout', () => {
+        let storeP1BackgroundMouse = document.querySelector(
+          '#storeP1BackgroundMouse'
+        )
+        setTimeout(() => {
+          storeP1BackgroundMouse.classList.remove('animate__bounce')
+        }, 1000)
+      })
 
     document.addEventListener('mousemove', function parallax(e) {
       this.querySelectorAll('.storeP1Background').forEach(
@@ -49,14 +52,6 @@ function Storepage(props) {
         i = 0
       })
   }, [])
-
-  // useEffect(()=>{
-  //   document.addEventListener("mouseover", function()=>{
-  //     // this.querySelector('#storeP1BackgroundMouse')
-  //     storeP1BackgroundMouse.style.transform = `translateX(${x}px) translateY(${y}px)`;
-
-  //   })
-  // });
 
   return (
     <>
@@ -137,13 +132,28 @@ function Storepage(props) {
         <div className="row">
           {/* <!-- 大按鈕 --> */}
           <article id="bigBtn" className="d-flex">
-            <button className="btn" id="newsBigBtn" type="button" value="News">
+            <button
+              className="storeP1Btn"
+              id="newsBigBtn"
+              type="button"
+              value="News"
+            >
               News
             </button>
-            <button className="btn" id="catBigBtn" type="button" value="Cats">
+            <button
+              className="storeP1Btn"
+              id="catBigBtn"
+              type="button"
+              value="Cats"
+            >
               Cat
             </button>
-            <button className="btn" id="dogBigBtn" type="button" value="Dogs">
+            <button
+              className="storeP1Btn"
+              id="dogBigBtn"
+              type="button"
+              value="Dogs"
+            >
               Dog
             </button>
           </article>

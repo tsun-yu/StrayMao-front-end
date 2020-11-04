@@ -143,7 +143,7 @@ img {
   margin: 15vh 0vh;
 }
 
-.btn {
+.storeP1Btn {
   background-repeat: no-repeat;
   background-position: right;
 
@@ -220,11 +220,19 @@ img {
   padding-top: 15%;
 }
 
+#root > main > div > div:nth-child(2) > div > div {
+  margin: 0px auto 5vh;
+}
+
+#root > main > div > div:nth-child(4) > div > div {
+  margin: 0px auto 5vh;
+}
+
 .storeP1Title {
   font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
   display: flex;
-  margin: auto;
+  // margin:0px auto 30vh;
 }
 
 .line1 {
@@ -269,6 +277,7 @@ img {
 
 #between {
   justify-content: space-around;
+  padding: 0vw 3vw;
 }
 #between > .card_new {
   padding: 0px;
@@ -278,7 +287,8 @@ img {
     width: 30vw; */
   /* height: 35vh; */
   /* margin: 0px 5px 20px 2px; */
-
+  // max-width: 10vw;
+  width: 10vw;
   padding: 0px;
   border: 1px solid #ed8f8f;
   border-radius: 4px;
@@ -296,10 +306,14 @@ img {
   top: 2rem;
 }
 
+// #between > div:nth-child(4) > div.goodsText > div{
+//   bottom: 1.5rem;
+// }
+
 .icon2 {
   position: absolute;
   right: 2rem;
-  bottom: 2rem;
+  bottom: 1.5rem;
 }
 
 .icon2:hover {
