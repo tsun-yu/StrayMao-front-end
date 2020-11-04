@@ -52,9 +52,9 @@ function SocialFourm(props) {
                   <p>你可以這樣做：</p>
                 </div>
                 <div className="fourmArticleLinkText">
-                  <h3 className="header5">更多話題</h3>
+                  <h3 className="header5">分享出去</h3>
                   <div className="fourmLinkLine" />
-                  <p className="caption">看看現在在討論什麼</p>
+                  <p className="caption">讓朋友加入討論</p>
                 </div>
               </div>
             </div>
@@ -389,7 +389,6 @@ function SocialFourm(props) {
           </span>
         </div>
       </div>
-
       <div className="container-fluid fourmMiddle">
         <div className="container">
           <div className="row fourmMiddleItems">
@@ -423,6 +422,207 @@ function SocialFourm(props) {
             </span>
           </div>
         </div>
+      </div>
+      <div className="container fourmNewsMain">
+        <div className="fourmNewsBT">
+          <div className="row fourmNewsTitle">
+            <sapn className="fourmTitleLine"></sapn>
+            <h3 className="enHeader5">News</h3>
+            <sapn className="fourmTitleLine"></sapn>
+          </div>
+        </div>
+        <div className="fourm_NewsItems">
+          <div className="row no-gutters">
+            <p className="fourmHotTitle">HOT</p>
+            <span>咪可思X福壽100 奔跑吧！毛小孩公益半程馬拉松</span>
+          </div>
+        </div>
+        <div className="fourm_NewsItems">
+          <div className="row no-gutters">
+            <p className="fourmNewTitle">NEW</p>
+            <span className="fourmNewColor">
+              咪可思X福壽100 奔跑吧！毛小孩公益半程馬拉松
+            </span>
+          </div>
+        </div>
+        <div className="fourmNewsLineBetween" />
+      </div>
+
+      <div className="container fourmAllCardList">
+        <div className="fourmAllCardBT">
+          <div className="row fourmNewsTitle">
+            <sapn className="fourmTitleLine"></sapn>
+            <h3 className="fourm_BTitle">討論話題</h3>
+            <sapn className="fourmTitleLine"></sapn>
+          </div>
+        </div>
+        <div className="container-fluid fourm_AllCardItems">
+          <div className="row fourmAllCardBtnItems">
+            <div className="allCardBtnLeft">
+              <div class="allCardBtn_Type btn-filter">
+                <button class="filterbtn">
+                  全部 <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="btn-filter-content">
+                  <a href="#">全部</a>
+                  <a href="#">貓</a>
+                  <a href="#">狗</a>
+                </div>
+              </div>
+              <div class="allCardBtn_Issue btn-filter">
+                <button class="filterbtn">
+                  日常 <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="btn-filter-content">
+                  <a href="#">日常</a>
+                  <a href="#">行為</a>
+                  <a href="#">照護</a>
+                </div>
+              </div>
+            </div>
+            <div className="allCardBtnRight">
+              <div class="allCardBtn_Rank btn-filterGreen">
+                <button class="filterbtnGreen fourmDayRankBtn">
+                  由新到舊 <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="btn-filter-content">
+                  <a href="#">由新到舊</a>
+                  <a href="#">由舊到新</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* 從homepage拿來的fourm列表 */}
+          <div className="row fourmCard_Items no-gutters">
+            <div className="singleRankCard">
+              <div className="socialFourmCard">
+                <span className="container fourmTitleBox">
+                  <div className="socialFourmTitle">
+                    <div className="enHeader6">2020.</div>
+                    <div className="enParagraph">9.30</div>
+                  </div>
+                  <span className="socialFourmBTitile paragraph1">
+                    用可愛的臉騙吃騙喝
+                  </span>
+                </span>
+                <span className="fourmCardBg" />
+                <img
+                  className="socialFourmCardImg"
+                  src="/image/homepage/homepage-1.jpg"
+                  object-fit="cover"
+                />
+                <span className="fourmTypeBox">
+                  <div className="container socialFourmType">
+                    <div className="row paragraph1 no-gutters">貓 /</div>
+                    <div className="row paragraph1 socialSType no-gutters">
+                      日常
+                    </div>
+                  </div>
+                  <span className="fourmTypeBg" />
+                </span>
+              </div>
+            </div>
+            <div className="singleRankCard">
+              <div className="socialFourmCard">
+                <span className="fourmTitleBox">
+                  <div className="socialFourmTitle">
+                    <div className="enHeader6">2020.</div>
+                    <div className="enParagraph">9.30</div>
+                  </div>
+                  <span className="socialFourmBTitile paragraph1">
+                    用可愛的臉騙吃騙喝
+                  </span>
+                </span>
+                <span className="fourmCardBg" />
+                <img
+                  className="socialFourmCardImg"
+                  src="/image/homepage/homepage-1.jpg"
+                  object-fit="cover"
+                />
+                <span className="fourmTypeBox">
+                  <div className="container socialFourmType">
+                    <div className="row paragraph1 no-gutters">貓 /</div>
+                    <div className="row paragraph1 socialSType no-gutters">
+                      日常
+                    </div>
+                  </div>
+                  <span className="fourmTypeBg" />
+                </span>
+              </div>
+            </div>
+            <div className="singleRankCard">
+              <div className="socialFourmCard">
+                <span className="container fourmTitleBox">
+                  <div className="socialFourmTitle">
+                    <div className="enHeader6">2020.</div>
+                    <div className="enParagraph">9.30</div>
+                  </div>
+                  <span className="socialFourmBTitile paragraph1">
+                    用可愛的臉騙吃騙喝
+                  </span>
+                </span>
+                <span className="fourmCardBg" />
+                <img
+                  className="socialFourmCardImg"
+                  src="/image/homepage/homepage-1.jpg"
+                  object-fit="cover"
+                />
+                <span className="fourmTypeBox">
+                  <div className="container socialFourmType">
+                    <div className="row paragraph1 no-gutters">貓 /</div>
+                    <div className="row paragraph1 socialSType no-gutters">
+                      日常
+                    </div>
+                  </div>
+                  <span className="fourmTypeBg" />
+                </span>
+              </div>
+            </div>
+            <div className="singleRankCard">
+              <div className="socialFourmCard">
+                <span className="container fourmTitleBox">
+                  <div className="socialFourmTitle">
+                    <div className="enHeader6">2020.</div>
+                    <div className="enParagraph">9.30</div>
+                  </div>
+                  <span className="socialFourmBTitile paragraph1">
+                    用可愛的臉騙吃騙喝
+                  </span>
+                </span>
+                <span className="fourmCardBg" />
+                <img
+                  className="socialFourmCardImg"
+                  src="/image/homepage/homepage-1.jpg"
+                  object-fit="cover"
+                />
+                <span className="fourmTypeBox">
+                  <div className="container socialFourmType">
+                    <div className="row paragraph1 no-gutters">貓 /</div>
+                    <div className="row paragraph1 socialSType no-gutters">
+                      日常
+                    </div>
+                  </div>
+                  <span className="fourmTypeBg" />
+                </span>
+              </div>
+            </div>
+          </div>
+          {/* 從首頁拿來的arrow */}
+          <span className="container-fluid fourmAllCardArrowItems">
+            <img
+              className="socialfixArrow-left brownarrow-left"
+              src="./icomoon/SVG/_011-brownarrow-left.svg"
+              alt=""
+            />
+            <img
+              className="socialfixArrow-right brownarrow-right"
+              src="./icomoon/SVG/_012-brownarrow-right.svg"
+              alt=""
+            />
+          </span>
+        </div>
+
+        <div className="fourmNewsLineBetween" />
       </div>
       <FourmArticlePage />
       <FourmArticleBox />
