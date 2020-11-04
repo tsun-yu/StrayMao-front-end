@@ -6,368 +6,420 @@ import FourmReply from "../commponents/SocialFourm/FourmReply";
 function SocialFourm(props) {
   return (
     <>
-      <div>
-        <div className="container">
-          <div className="row">
-            <span className="socialTitle header4">討論交流</span>
+      <div className="container">
+        <div className="row">
+          <span className="socialTitle header4">討論交流</span>
+        </div>
+        <div className="container fourmMain">
+          <div className="fourmMainBg" />
+          <div className="socialEditButtom paragraph2">
+            <div className="fourmMyEdit">
+              <span>建立話題</span>
+              <img
+                className="pinkarrow"
+                src="./icomoon/SVG/_103-plus-white.svg"
+                alt=""
+              />
+            </div>
+            <div className="fourmMyEdit">
+              <span>我的話題</span>
+              <img
+                className="pinkarrow"
+                src="./icomoon/SVG/_104-pencil-white.svg"
+                alt=""
+              />
+            </div>
           </div>
-          <div className="container fourmMain">
-            <div className="fourmMainBg" />
-            <div className="socialEditButtom paragraph2">
-              <div className="fourmMyEdit">
-                <span>建立話題</span>
-                <img
-                  className="pinkarrow"
-                  src="./icomoon/SVG/_103-plus-white.svg"
-                  alt=""
-                />
-              </div>
-              <div className="fourmMyEdit">
-                <span>我的話題</span>
-                <img
-                  className="pinkarrow"
-                  src="./icomoon/SVG/_104-pencil-white.svg"
-                  alt=""
-                />
+          <div className="container fourmArticleMain">
+            <div className="fourmArticleImgBox">
+              <span className="container fourm_TypeBox">
+                <p className="enHeader6 fourm_BigType">Type.</p>
+                <div className="socialFourm_Type">
+                  <div className="row paragraph1 no-gutters">貓 /</div>
+                  <div className="row paragraph1 socialSType no-gutters">
+                    日常
+                  </div>
+                </div>
+                <span className="fourm_TypeBg" />
+              </span>
+              <img
+                className="fourmArticleImg"
+                src="/image/homepage/homepage-1.jpg"
+              />
+              <div className="fourmArticleLinkBox header7">
+                <div className="fourmArticleLinkTitle">
+                  <p>喜歡這個話題嗎？</p>
+                  <p>你可以這樣做：</p>
+                </div>
+                <div className="fourmArticleLinkText">
+                  <h3 className="header5">更多話題</h3>
+                  <div className="fourmLinkLine" />
+                  <p className="caption">看看現在在討論什麼</p>
+                </div>
               </div>
             </div>
-            <div className="container fourmArticleMain">
-              <div className="fourmArticleImgBox">
+            <div className="fourmArticleContent">
+              <div className="fourmArticleTopLine" />
+              <span className="row fourmAutor paragraph2">
                 <img
-                  className="fourmArticleImg"
+                  className="fourmAutorImg"
                   src="/image/homepage/homepage-1.jpg"
                 />
-              </div>
-              <div className="fourmArticleContent">
-                <div className="fourmArticleTopLine" />
-                <span className="row fourmAutor paragraph2">
-                  <img
-                    className="fourmAutorImg"
-                    src="/image/homepage/homepage-1.jpg"
-                  />
-                  <p>路人甲已</p>
-                </span>
-                <span className="fourmArticleDate enParagraph">
-                  2020. 09/30
-                </span>
-                <div className="fourmArticleTItems">
-                  <h3 className="fourmArticleTitle header6">
-                    帶你家狗狗出來玩吧！
-                  </h3>
-                  <div className="fourmArticleText caption">
-                    我家的狗最近有點笨，不知道是不是缺乏
-                    玩伴，因此我想辦法帶他去各種地方玩，
-                    但是這幾天實在是不知道能去哪了，求推
-                    薦！我家的狗最近有點笨，不知道是不是缺乏
-                    玩伴，因此我想辦法帶他去各種地方玩，
-                    但是這幾天實在是不知道能去哪了，求推薦！
-                  </div>
+                <p>路人甲已</p>
+              </span>
+              <span className="fourmArticleDate enParagraph">2020. 09/30</span>
+              <div className="fourmArticleTItems">
+                <h3 className="fourmArticleTitle header6">
+                  帶你家狗狗出來玩吧！
+                </h3>
+                <div className="fourmArticleText caption">
+                  我家的狗最近有點笨，不知道是不是缺乏
+                  玩伴，因此我想辦法帶他去各種地方玩，
+                  但是這幾天實在是不知道能去哪了，求推
+                  薦！我家的狗最近有點笨，不知道是不是缺乏
+                  玩伴，因此我想辦法帶他去各種地方玩，
+                  但是這幾天實在是不知道能去哪了，求推薦！
                 </div>
-                <button
-                  className="fourmReplyHiden paragraph2"
-                  type="button"
-                  value="隱藏留言"
-                >
-                  隱藏留言
-                </button>
-                <div className="conatiner fourmReplyMain">
-                  <div className="row fourmUserTalk no-gutters justify-content-center">
-                    <span className="fourmReplyTopLine" />
-                    <textarea />
-                    <button
-                      className="fourmUserTalkBtn"
-                      type="button"
-                      value="送出"
-                    >
-                      送出
-                    </button>
-                  </div>
-                  <div className="container">
-                    <div className="fourmReplyContent">
-                      {/* 留言區 */}
-                      <div className="singlefourmUserReply">
-                        <div className="fourmUserReply">
-                          <div className="fourmUserReplyItems">
-                            <span className="row paragraph2">
-                              <img
-                                className="fourmUserImg"
-                                src="/image/homepage/homepage-1.jpg"
-                              />
-                              <p>路人甲已</p>
-                              <span className="fourmUserRBtn">
-                                <button
-                                  class="btn-brown"
-                                  type="button"
-                                  value="回覆"
-                                >
-                                  回覆
-                                </button>
-                              </span>
+              </div>
+              <button
+                className="fourmReplyHiden paragraph2"
+                type="button"
+                value="隱藏留言"
+              >
+                隱藏留言
+              </button>
+              <div className="conatiner fourmReplyMain">
+                <div className="row fourmUserTalk no-gutters justify-content-center">
+                  <span className="fourmReplyTopLine" />
+                  <textarea />
+                  <button
+                    className="fourmUserTalkBtn"
+                    type="button"
+                    value="送出"
+                  >
+                    送出
+                  </button>
+                </div>
+                <div className="container">
+                  <div className="fourmReplyContent">
+                    {/* 留言區 */}
+                    <div className="singlefourmUserReply">
+                      <div className="fourmUserReply">
+                        <div className="fourmUserReplyItems">
+                          <span className="row paragraph2">
+                            <img
+                              className="fourmUserImg"
+                              src="/image/homepage/homepage-1.jpg"
+                            />
+                            <p>路人甲已</p>
+                            <span className="fourmUserRBtn">
+                              <button
+                                class="btn-brown"
+                                type="button"
+                                value="回覆"
+                              >
+                                回覆
+                              </button>
                             </span>
-                          </div>
-                          <div className="fourmUserReplyText caption">
-                            <p>
-                              直接送去寵物旅館吧，包吃直接送去寵物旅館吧，包吃直接送去寵物旅館吧直接送去寵物旅館吧
-                            </p>
-                            <p>2020. 09/30. 10:30</p>
-                          </div>
+                          </span>
+                        </div>
+                        <div className="fourmUserReplyText caption">
+                          <p>
+                            直接送去寵物旅館吧，包吃直接送去寵物旅館吧，包吃直接送去寵物旅館吧直接送去寵物旅館吧
+                          </p>
+                          <p>2020. 09/30. 10:30</p>
                         </div>
                       </div>
-
-                      <div className="singlefourmAutorReply">
-                        <div className="fourmAutorReply">
-                          <div className="fourmAutorReplyItems">
-                            <span className="row paragraph2">
-                              <img
-                                className="fourmUserImg"
-                                src="/image/homepage/homepage-1.jpg"
-                              />
-                              <p>路人甲已</p>
-                            </span>
-                          </div>
-                          <div className="fourmAutorReplyText caption">
-                            <p>直接送去寵物旅館吧，包吃直接送去寵物旅館吧</p>
-                            <p>2020. 09/30. 10:30</p>
-                          </div>
-                        </div>
-                      </div>
-                      {/* 留言結束 */}
-                      {/* 留言區 */}
-                      <div className="singlefourmUserReply">
-                        <div className="fourmUserReply">
-                          <div className="fourmUserReplyItems">
-                            <span className="row paragraph2">
-                              <img
-                                className="fourmUserImg"
-                                src="/image/homepage/homepage-1.jpg"
-                              />
-                              <p>路人甲已</p>
-                              <span className="fourmUserRBtn">
-                                <button
-                                  class="btn-brown"
-                                  type="button"
-                                  value="回覆"
-                                >
-                                  回覆
-                                </button>
-                              </span>
-                            </span>
-                          </div>
-                          <div className="fourmUserReplyText caption">
-                            <p>
-                              直接送去寵物旅館吧，包吃直接送去寵物旅館吧，包吃直接送去寵物旅館吧直接送去寵物旅館吧
-                            </p>
-                            <p>2020. 09/30. 10:30</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="singlefourmAutorReply">
-                        <div className="fourmAutorReply">
-                          <div className="fourmAutorReplyItems">
-                            <span className="row paragraph2">
-                              <img
-                                className="fourmUserImg"
-                                src="/image/homepage/homepage-1.jpg"
-                              />
-                              <p>路人甲已</p>
-                            </span>
-                          </div>
-                          <div className="fourmAutorReplyText caption">
-                            <p>直接送去寵物旅館吧，包吃直接送去寵物旅館吧</p>
-                            <p>2020. 09/30. 10:30</p>
-                          </div>
-                        </div>
-                      </div>
-                      {/* 留言結束 */}
-                      {/* 留言區 */}
-                      <div className="singlefourmUserReply">
-                        <div className="fourmUserReply">
-                          <div className="fourmUserReplyItems">
-                            <span className="row paragraph2">
-                              <img
-                                className="fourmUserImg"
-                                src="/image/homepage/homepage-1.jpg"
-                              />
-                              <p>路人甲已</p>
-                              <span className="fourmUserRBtn">
-                                <button
-                                  class="btn-brown"
-                                  type="button"
-                                  value="回覆"
-                                >
-                                  回覆
-                                </button>
-                              </span>
-                            </span>
-                          </div>
-                          <div className="fourmUserReplyText caption">
-                            <p>
-                              直接送去寵物旅館吧，包吃直接送去寵物旅館吧，包吃直接送去寵物旅館吧直接送去寵物旅館吧
-                            </p>
-                            <p>2020. 09/30. 10:30</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="singlefourmAutorReply">
-                        <div className="fourmAutorReply">
-                          <div className="fourmAutorReplyItems">
-                            <span className="row paragraph2">
-                              <img
-                                className="fourmUserImg"
-                                src="/image/homepage/homepage-1.jpg"
-                              />
-                              <p>路人甲已</p>
-                            </span>
-                          </div>
-                          <div className="fourmAutorReplyText caption">
-                            <p>直接送去寵物旅館吧，包吃直接送去寵物旅館吧</p>
-                            <p>2020. 09/30. 10:30</p>
-                          </div>
-                        </div>
-                      </div>
-                      {/* 留言結束 */}
-                      {/* 留言區 */}
-                      <div className="singlefourmUserReply">
-                        <div className="fourmUserReply">
-                          <div className="fourmUserReplyItems">
-                            <span className="row paragraph2">
-                              <img
-                                className="fourmUserImg"
-                                src="/image/homepage/homepage-1.jpg"
-                              />
-                              <p>路人甲已</p>
-                              <span className="fourmUserRBtn">
-                                <button
-                                  class="btn-brown"
-                                  type="button"
-                                  value="回覆"
-                                >
-                                  回覆
-                                </button>
-                              </span>
-                            </span>
-                          </div>
-                          <div className="fourmUserReplyText caption">
-                            <p>
-                              直接送去寵物旅館吧，包吃直接送去寵物旅館吧，包吃直接送去寵物旅館吧直接送去寵物旅館吧
-                            </p>
-                            <p>2020. 09/30. 10:30</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="singlefourmAutorReply">
-                        <div className="fourmAutorReply">
-                          <div className="fourmAutorReplyItems">
-                            <span className="row paragraph2">
-                              <img
-                                className="fourmUserImg"
-                                src="/image/homepage/homepage-1.jpg"
-                              />
-                              <p>路人甲已</p>
-                            </span>
-                          </div>
-                          <div className="fourmAutorReplyText caption">
-                            <p>直接送去寵物旅館吧，包吃直接送去寵物旅館吧</p>
-                            <p>2020. 09/30. 10:30</p>
-                          </div>
-                        </div>
-                      </div>
-                      {/* 留言結束 */}
-                      {/* 留言區 */}
-                      <div className="singlefourmUserReply">
-                        <div className="fourmUserReply">
-                          <div className="fourmUserReplyItems">
-                            <span className="row paragraph2">
-                              <img
-                                className="fourmUserImg"
-                                src="/image/homepage/homepage-1.jpg"
-                              />
-                              <p>路人甲已</p>
-                              <span className="fourmUserRBtn">
-                                <button
-                                  class="btn-brown"
-                                  type="button"
-                                  value="回覆"
-                                >
-                                  回覆
-                                </button>
-                              </span>
-                            </span>
-                          </div>
-                          <div className="fourmUserReplyText caption">
-                            <p>
-                              直接送去寵物旅館吧，包吃直接送去寵物旅館吧，包吃直接送去寵物旅館吧直接送去寵物旅館吧
-                            </p>
-                            <p>2020. 09/30. 10:30</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="singlefourmAutorReply">
-                        <div className="fourmAutorReply">
-                          <div className="fourmAutorReplyItems">
-                            <span className="row paragraph2">
-                              <img
-                                className="fourmUserImg"
-                                src="/image/homepage/homepage-1.jpg"
-                              />
-                              <p>路人甲已</p>
-                            </span>
-                          </div>
-                          <div className="fourmAutorReplyText caption">
-                            <p>直接送去寵物旅館吧，包吃直接送去寵物旅館吧</p>
-                            <p>2020. 09/30. 10:30</p>
-                          </div>
-                        </div>
-                      </div>
-                      {/* 留言結束 */}
                     </div>
+
+                    <div className="singlefourmAutorReply">
+                      <div className="fourmAutorReply">
+                        <div className="fourmAutorReplyItems">
+                          <span className="row paragraph2">
+                            <img
+                              className="fourmUserImg"
+                              src="/image/homepage/homepage-1.jpg"
+                            />
+                            <p>路人甲已</p>
+                          </span>
+                        </div>
+                        <div className="fourmAutorReplyText caption">
+                          <p>直接送去寵物旅館吧，包吃直接送去寵物旅館吧</p>
+                          <p>2020. 09/30. 10:30</p>
+                        </div>
+                      </div>
+                    </div>
+                    {/* 留言結束 */}
+                    {/* 留言區 */}
+                    <div className="singlefourmUserReply">
+                      <div className="fourmUserReply">
+                        <div className="fourmUserReplyItems">
+                          <span className="row paragraph2">
+                            <img
+                              className="fourmUserImg"
+                              src="/image/homepage/homepage-1.jpg"
+                            />
+                            <p>路人甲已</p>
+                            <span className="fourmUserRBtn">
+                              <button
+                                class="btn-brown"
+                                type="button"
+                                value="回覆"
+                              >
+                                回覆
+                              </button>
+                            </span>
+                          </span>
+                        </div>
+                        <div className="fourmUserReplyText caption">
+                          <p>
+                            直接送去寵物旅館吧，包吃直接送去寵物旅館吧，包吃直接送去寵物旅館吧直接送去寵物旅館吧
+                          </p>
+                          <p>2020. 09/30. 10:30</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="singlefourmAutorReply">
+                      <div className="fourmAutorReply">
+                        <div className="fourmAutorReplyItems">
+                          <span className="row paragraph2">
+                            <img
+                              className="fourmUserImg"
+                              src="/image/homepage/homepage-1.jpg"
+                            />
+                            <p>路人甲已</p>
+                          </span>
+                        </div>
+                        <div className="fourmAutorReplyText caption">
+                          <p>直接送去寵物旅館吧，包吃直接送去寵物旅館吧</p>
+                          <p>2020. 09/30. 10:30</p>
+                        </div>
+                      </div>
+                    </div>
+                    {/* 留言結束 */}
+                    {/* 留言區 */}
+                    <div className="singlefourmUserReply">
+                      <div className="fourmUserReply">
+                        <div className="fourmUserReplyItems">
+                          <span className="row paragraph2">
+                            <img
+                              className="fourmUserImg"
+                              src="/image/homepage/homepage-1.jpg"
+                            />
+                            <p>路人甲已</p>
+                            <span className="fourmUserRBtn">
+                              <button
+                                class="btn-brown"
+                                type="button"
+                                value="回覆"
+                              >
+                                回覆
+                              </button>
+                            </span>
+                          </span>
+                        </div>
+                        <div className="fourmUserReplyText caption">
+                          <p>
+                            直接送去寵物旅館吧，包吃直接送去寵物旅館吧，包吃直接送去寵物旅館吧直接送去寵物旅館吧
+                          </p>
+                          <p>2020. 09/30. 10:30</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="singlefourmAutorReply">
+                      <div className="fourmAutorReply">
+                        <div className="fourmAutorReplyItems">
+                          <span className="row paragraph2">
+                            <img
+                              className="fourmUserImg"
+                              src="/image/homepage/homepage-1.jpg"
+                            />
+                            <p>路人甲已</p>
+                          </span>
+                        </div>
+                        <div className="fourmAutorReplyText caption">
+                          <p>直接送去寵物旅館吧，包吃直接送去寵物旅館吧</p>
+                          <p>2020. 09/30. 10:30</p>
+                        </div>
+                      </div>
+                    </div>
+                    {/* 留言結束 */}
+                    {/* 留言區 */}
+                    <div className="singlefourmUserReply">
+                      <div className="fourmUserReply">
+                        <div className="fourmUserReplyItems">
+                          <span className="row paragraph2">
+                            <img
+                              className="fourmUserImg"
+                              src="/image/homepage/homepage-1.jpg"
+                            />
+                            <p>路人甲已</p>
+                            <span className="fourmUserRBtn">
+                              <button
+                                class="btn-brown"
+                                type="button"
+                                value="回覆"
+                              >
+                                回覆
+                              </button>
+                            </span>
+                          </span>
+                        </div>
+                        <div className="fourmUserReplyText caption">
+                          <p>
+                            直接送去寵物旅館吧，包吃直接送去寵物旅館吧，包吃直接送去寵物旅館吧直接送去寵物旅館吧
+                          </p>
+                          <p>2020. 09/30. 10:30</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="singlefourmAutorReply">
+                      <div className="fourmAutorReply">
+                        <div className="fourmAutorReplyItems">
+                          <span className="row paragraph2">
+                            <img
+                              className="fourmUserImg"
+                              src="/image/homepage/homepage-1.jpg"
+                            />
+                            <p>路人甲已</p>
+                          </span>
+                        </div>
+                        <div className="fourmAutorReplyText caption">
+                          <p>直接送去寵物旅館吧，包吃直接送去寵物旅館吧</p>
+                          <p>2020. 09/30. 10:30</p>
+                        </div>
+                      </div>
+                    </div>
+                    {/* 留言結束 */}
+                    {/* 留言區 */}
+                    <div className="singlefourmUserReply">
+                      <div className="fourmUserReply">
+                        <div className="fourmUserReplyItems">
+                          <span className="row paragraph2">
+                            <img
+                              className="fourmUserImg"
+                              src="/image/homepage/homepage-1.jpg"
+                            />
+                            <p>路人甲已</p>
+                            <span className="fourmUserRBtn">
+                              <button
+                                class="btn-brown"
+                                type="button"
+                                value="回覆"
+                              >
+                                回覆
+                              </button>
+                            </span>
+                          </span>
+                        </div>
+                        <div className="fourmUserReplyText caption">
+                          <p>
+                            直接送去寵物旅館吧，包吃直接送去寵物旅館吧，包吃直接送去寵物旅館吧直接送去寵物旅館吧
+                          </p>
+                          <p>2020. 09/30. 10:30</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="singlefourmAutorReply">
+                      <div className="fourmAutorReply">
+                        <div className="fourmAutorReplyItems">
+                          <span className="row paragraph2">
+                            <img
+                              className="fourmUserImg"
+                              src="/image/homepage/homepage-1.jpg"
+                            />
+                            <p>路人甲已</p>
+                          </span>
+                        </div>
+                        <div className="fourmAutorReplyText caption">
+                          <p>直接送去寵物旅館吧，包吃直接送去寵物旅館吧</p>
+                          <p>2020. 09/30. 10:30</p>
+                        </div>
+                      </div>
+                    </div>
+                    {/* 留言結束 */}
                   </div>
                 </div>
               </div>
             </div>
-            <span className="fourmArrowItems">
-              <span className="arrow">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="17.636"
-                  height="21.653"
-                  viewBox="0 0 17.636 21.653"
-                >
-                  <path
-                    id="Path_1866"
-                    data-name="Path 1866"
-                    d="M.584,8.77,11.69.391a1.5,1.5,0,0,1,2.5,1.025l.431,16.072c.117,1.039-1.176,1.427-2.006.83L.584,10.846A1.216,1.216,0,0,1,.584,8.77Z"
-                    transform="translate(1.501 1.531)"
-                    fill="none"
-                    stroke="#ed8f8f"
-                    stroke-miterlimit="10"
-                    stroke-width="3"
-                  />
-                </svg>
-              </span>
-              <span className="arrow">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18.381"
-                  height="22.256"
-                  viewBox="0 0 18.381 22.256"
-                >
-                  <path
-                    id="Path_1865"
-                    data-name="Path 1865"
-                    d="M.584,8.77,11.69.391a1.5,1.5,0,0,1,2.5,1.025l.431,16.072c.117,1.039-1.176,1.427-2.006.83L.584,10.846A1.216,1.216,0,0,1,.584,8.77Z"
-                    transform="matrix(-0.999, -0.035, 0.035, -0.999, 16.179, 20.673)"
-                    fill="none"
-                    stroke="#ed8f8f"
-                    stroke-miterlimit="10"
-                    stroke-width="3"
-                  />
-                </svg>
-              </span>
+          </div>
+          <span className="fourmArrowItems">
+            <span className="arrow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17.636"
+                height="21.653"
+                viewBox="0 0 17.636 21.653"
+              >
+                <path
+                  id="Path_1866"
+                  data-name="Path 1866"
+                  d="M.584,8.77,11.69.391a1.5,1.5,0,0,1,2.5,1.025l.431,16.072c.117,1.039-1.176,1.427-2.006.83L.584,10.846A1.216,1.216,0,0,1,.584,8.77Z"
+                  transform="translate(1.501 1.531)"
+                  fill="none"
+                  stroke="#ed8f8f"
+                  stroke-miterlimit="10"
+                  stroke-width="3"
+                />
+              </svg>
+            </span>
+            <span className="arrow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18.381"
+                height="22.256"
+                viewBox="0 0 18.381 22.256"
+              >
+                <path
+                  id="Path_1865"
+                  data-name="Path 1865"
+                  d="M.584,8.77,11.69.391a1.5,1.5,0,0,1,2.5,1.025l.431,16.072c.117,1.039-1.176,1.427-2.006.83L.584,10.846A1.216,1.216,0,0,1,.584,8.77Z"
+                  transform="matrix(-0.999, -0.035, 0.035, -0.999, 16.179, 20.673)"
+                  fill="none"
+                  stroke="#ed8f8f"
+                  stroke-miterlimit="10"
+                  stroke-width="3"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div className="container-fluid fourmMiddle">
+        <div className="container">
+          <div className="row fourmMiddleItems">
+            <span className="row fourmMiddleBox">
+              <div>
+                <h3 className="header5">更多話題</h3>
+                <div className="fourmMiddleLine" />
+                <p className="caption">看看現在在討論什麼</p>
+              </div>
+              <button
+                className="btn-orange fourmMiddleBtn"
+                type="button"
+                value="前往列表"
+              >
+                前往列表
+              </button>
+            </span>
+            <span className="row fourmMiddleBox">
+              <div>
+                <h3 className="header5">寵物知識</h3>
+                <div className="fourmMiddleLine" />
+                <p className="caption">有些小事告訴你</p>
+              </div>
+              <button
+                className="btn-orange fourmMiddleBtn"
+                type="button"
+                value="前往知識"
+              >
+                前往知識
+              </button>
             </span>
           </div>
         </div>
