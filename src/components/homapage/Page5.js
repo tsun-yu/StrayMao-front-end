@@ -38,12 +38,6 @@ function Page5(props) {
                   <Page5Card />
                   <Page5Card />
                   <Page5Card />
-                  <Page1 />
-                  {/* <Page2 />
-      <Page3 />
-      <Page4 />
-      <Page5 />
-      <Page6 /> */}
                 </div>
               </div>
             </div>

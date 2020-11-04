@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import NorthernCity from './Ques3component/NorthernCity'
 
-function Page3Ques(props) {
+function Page3Ques3(props) {
   const { city } = props
   return (
     <>
@@ -18,4 +18,4 @@ function Page3Ques(props) {
   )
 }
 
-export default Page3Ques
+export default Page3Ques3

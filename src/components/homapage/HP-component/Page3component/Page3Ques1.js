@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function Page3Ques(props) {
+function Page3Ques1(props) {
   const { setState } = props
   const [color, setColor] = useState('#fff1e6')
   return (
@@ -63,4 +63,4 @@ function Page3Ques(props) {
   )
 }
 
-export default Page3Ques
+export default Page3Ques1
