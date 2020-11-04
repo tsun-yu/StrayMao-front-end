@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/cart/order.scss";
-
+import OrderCardC from "./orderCardC"
+import OrderCardM from "./orderCardM"
 function storepage(props) {
 return(
 <>
@@ -24,30 +25,7 @@ return(
     </div>
     <div class="orderC_box_An mx-5">
         <div class="orderC_boxBottom_An">
-            <div class="orderC_boxUpper_An d-flex justify-content-between">
-                <img class="orderC_goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
-                <span class="orderC_goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
-                <span class="orderC_quantity_An">數量：1</span>
-                <span class="orderC_goodsPrice_An">2790 元</span>
-            </div>
-            <div class="orderC_boxUpper_An d-flex justify-content-between">
-                <img class="orderC_goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
-                <span class="orderC_goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
-                <span class="orderC_quantity_An">數量：1</span>
-                <span class="orderC_goodsPrice_An">2790 元</span>
-            </div>
-            <div class="orderC_boxUpper_An d-flex justify-content-between">
-                <img class="orderC_goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
-                <span class="orderC_goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
-                <span class="orderC_quantity_An">數量：1</span>
-                <span class="orderC_goodsPrice_An">2790 元</span>
-            </div>
-            <div class="orderC_boxUpper_An d-flex justify-content-between">
-                <img class="orderC_goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
-                <span class="orderC_goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
-                <span class="orderC_quantity_An">數量：1</span>
-                <span class="orderC_goodsPrice_An">2790 元</span>
-            </div>
+          <OrderCardC />
         </div>
         <div class="orderC_boxDown_An">
             <div class="orderC_boxStatus_An">
@@ -93,46 +71,7 @@ return(
       </div>
     </div>
     <div class="orderM_boxBottom_An">
-      <div class="orderM_boxUpper_An d-flex justify-content-between">
-        <img class="orderM_goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
-        <div class="d-flex flex-column">
-          <span class="orderM_goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
-          <div class="d-flex justify-content-between">
-            <span class="orderM_quantity_An">數量：1</span>
-            <span class="orderM_goodsPrice_An">2790 元</span>
-          </div>
-        </div>
-      </div>
-      <div class="orderM_boxUpper_An d-flex justify-content-between">
-        <img class="orderM_goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
-        <div class="d-flex flex-column">
-          <span class="orderM_goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
-          <div class="d-flex justify-content-between">
-            <span class="orderM_quantity_An">數量：1</span>
-            <span class="orderM_goodsPrice_An">2790 元</span>
-          </div>
-        </div>
-      </div>
-      <div class="orderM_boxUpper_An d-flex justify-content-between">
-        <img class="orderM_goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
-        <div class="d-flex flex-column">
-          <span class="orderM_goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
-          <div class="d-flex justify-content-between">
-            <span class="orderM_quantity_An">數量：1</span>
-            <span class="orderM_goodsPrice_An">2790 元</span>
-          </div>
-        </div>
-      </div>
-      <div class="orderM_boxUpper_An d-flex justify-content-between">
-        <img class="orderM_goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
-        <div class="d-flex flex-column">
-          <span class="orderM_goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
-          <div class="d-flex justify-content-between">
-            <span class="orderM_quantity_An">數量：1</span>
-            <span class="orderM_goodsPrice_An">2790 元</span>
-          </div>
-        </div>
-      </div>
+      <OrderCardM />
     </div>
     <div class="orderM_boxDown_An">
       <div class="orderM_boxStatus_An">
