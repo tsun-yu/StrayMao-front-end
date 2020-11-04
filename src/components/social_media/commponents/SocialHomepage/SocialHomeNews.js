@@ -46,21 +46,21 @@ function SocialHomeNews(props) {
                 <div className="talkSearchType">
                   <div className="talkPetType">
                     <button
-                      class="btn-orange newsBtnW"
+                      className="btn-orange newsBtnW"
                       type="button"
                       value="全部"
                     >
                       全部
                     </button>
                     <button
-                      class="btn-orange newsBtnW"
+                      className="btn-orange newsBtnW"
                       type="button"
                       value="Cat"
                     >
                       Cat
                     </button>
                     <button
-                      class="btn-orange newsBtnW"
+                      className="btn-orange newsBtnW"
                       type="button"
                       value="Dog"
                     >
@@ -69,28 +69,28 @@ function SocialHomeNews(props) {
                   </div>
                   <div className="talkContentType">
                     <button
-                      class="btn-orange newsBtnW"
+                      className="btn-orange newsBtnW"
                       type="button"
                       value="美容"
                     >
                       美容
                     </button>
                     <button
-                      class="btn-orange newsBtnW"
+                      className="btn-orange newsBtnW"
                       type="button"
                       value="照護"
                     >
                       照護
                     </button>
                     <button
-                      class="btn-orange newsBtnW"
+                      className="btn-orange newsBtnW"
                       type="button"
                       value="日常"
                     >
                       日常
                     </button>
                     <button
-                      class="btn-orange newsBtnW"
+                      className="btn-orange newsBtnW"
                       type="button"
                       value="行為"
                     >
@@ -100,7 +100,7 @@ function SocialHomeNews(props) {
                 </div>
                 <div className="talkSearchGoBtn">
                   <button
-                    class="btn-green searchgoBtnW"
+                    className="btn-green searchgoBtnW"
                     type="button"
                     value="查詢"
                   >
@@ -115,14 +115,14 @@ function SocialHomeNews(props) {
                 <div className="activitySearchType">
                   <div className="activityArea">
                     <button
-                      class="btn-orange newsBtnW"
+                      className="btn-orange newsBtnW"
                       type="button"
                       value="北部"
                     >
                       北部
                     </button>
                     <button
-                      class="btn-orange newsBtnW"
+                      className="btn-orange newsBtnW"
                       type="button"
                       value="中部"
                     >
@@ -131,14 +131,14 @@ function SocialHomeNews(props) {
                   </div>
                   <div className="activityAreaR">
                     <button
-                      class="btn-orange newsBtnW"
+                      className="btn-orange newsBtnW"
                       type="button"
                       value="南部"
                     >
                       南部
                     </button>
                     <button
-                      class="btn-orange newsBtnW"
+                      className="btn-orange newsBtnW"
                       type="button"
                       value="東部"
                     >
@@ -148,7 +148,7 @@ function SocialHomeNews(props) {
                 </div>
                 <div className="talkSearchGoBtn">
                   <button
-                    class="btn-green searchgoBtnW"
+                    className="btn-green searchgoBtnW"
                     type="button"
                     value="查詢"
                   >

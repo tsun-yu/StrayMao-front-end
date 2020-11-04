@@ -5,7 +5,7 @@ import {
   TOTAL_PAGE,
 } from "../../actions/common/actionTypes";
 
-function nowPage(state = 13, action) {
+function nowPage(state = 1, action) {
   switch (action.type) {
     case NEXT_PAGE:
     case PERV_PAGE:
@@ -20,7 +20,7 @@ function nowPage(state = 13, action) {
   return state;
 }
 
-function totalPage(state = 19, action) {
+function totalPage(state = 5, action) {
   switch (action.type) {
     case TOTAL_PAGE:
       state = action.value;

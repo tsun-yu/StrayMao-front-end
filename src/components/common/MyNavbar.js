@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Navbar, Nav } from "react-bootstrap";
-import { GrCart } from "react-icons/gr";
+import React, { useState, useEffect } from 'react'
+import { Navbar, Nav } from 'react-bootstrap'
+import { GrCart } from 'react-icons/gr'
 
 // 選單連結要使用NavLink取代Link
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
 function MyNavbar(props) {
   return (
@@ -18,14 +18,14 @@ function MyNavbar(props) {
         <Navbar.Brand
           href="/homeTest"
           className="ml-5"
-          style={{ color: "#FFF1E6", fontFamily: "Roboto ", fontSize: "60px" }}
+          style={{ color: '#FFF1E6', fontFamily: 'Roboto ', fontSize: '60px' }}
         >
           Stray Mao
         </Navbar.Brand>
         <Navbar.Brand
           href="/homeTest"
           className="navLogoCN"
-          style={{ color: "#FFF1E6", fontSize: "16px" }}
+          style={{ color: '#FFF1E6', fontSize: '16px' }}
         >
           寵愛有家
         </Navbar.Brand>
@@ -37,17 +37,17 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/adoptionTest"
-              style={{ color: "#FFF1E6" }}
+              style={{ color: '#FFF1E6' }}
             >
               領養<i className="fas fa-caret-down"></i>
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/storeTest" style={{ color: "#FFF1E6" }}>
+            <Nav.Link as={NavLink} to="/store" style={{ color: '#FFF1E6' }}>
               商城<i className="fas fa-caret-down"></i>
             </Nav.Link>
             <Nav.Link
               as={NavLink}
               to="/socialTest"
-              style={{ color: "#FFF1E6" }}
+              style={{ color: '#FFF1E6' }}
             >
               社群<i className="fas fa-caret-down"></i>
             </Nav.Link>
@@ -58,7 +58,7 @@ function MyNavbar(props) {
                 className="input-brown searchPlaceholder"
                 type="text"
                 placeholder="搜尋"
-                style={{ color: "#d1d1d1" }}
+                style={{ color: '#d1d1d1' }}
               ></input>
             </div>
             <Nav.Link as={NavLink} to="/">
@@ -74,7 +74,7 @@ function MyNavbar(props) {
         </Navbar.Collapse>
       </Navbar>
     </>
-  );
+  )
 }
 
-export default MyNavbar;
+export default MyNavbar

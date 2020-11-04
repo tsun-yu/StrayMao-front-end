@@ -4,7 +4,6 @@ import {
   PET_DISLIKE,
   PET_LIKE,
   PET_INIT,
-  GET_LIST,
 } from "./actionTypes";
 
 //actionCreater
@@ -118,34 +117,6 @@ export const petInitLikeAsync = (value) => {
         dataValue = true;
       }
       await dispatch(petInitLike(dataValue));
-    } catch (error) {
-      //setError(error)
-    }
-  };
-};
-
-export const getList = (value) => {
-  return { type: GET_LIST, value };
-};
-
-export const getListAsync = (value) => {
-  return async function getRecommandPet(dispatch, getState) {
-    const url = "http://localhost:3001/straymao/adoption/get_pet_list";
-
-    const request = new Request(url, {
-      method: "GET",
-      headers: new Headers({
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      }),
-    });
-    try {
-      const response = await fetch(request);
-      const data = await response.json();
-      // data會是一個物件值
-      console.log(data);
-
-      await dispatch(getRecommand(data.data));
     } catch (error) {
       //setError(error)
     }

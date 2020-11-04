@@ -279,12 +279,12 @@ function SocialHomeActivity(props) {
           </div>
           <span className="container-fluid socialActivityArrowItems">
             <img
-              class="socialfixArrow-left grayarrow-left"
+              className="socialfixArrow-left grayarrow-left"
               src="./icomoon/SVG/_024-grayarrow-left.svg"
               alt=""
             />
             <img
-              class="socialfixArrow-right grayarrow-right"
+              className="socialfixArrow-right grayarrow-right"
               src="./icomoon/SVG/_025-grayarrow-right.svg"
               alt=""
             />

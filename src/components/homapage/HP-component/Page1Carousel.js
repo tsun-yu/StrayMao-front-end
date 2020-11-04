@@ -1,37 +1,30 @@
 import React, { useState, useEffect } from 'react'
 
 function Page1Carousel(props) {
-  const { img1, img2, img3, img4 } = props
-  /*
-let newIndex = 0;
-
-setInterval(() => {
-  newIndex > 3 && (newIndex = 0);
-  a = newIndex * -60;
-  document.querySelector(".img-wrap").style.left = a + "vw";
-  newIndex++;
-}, 1000);*/
-
-  //   const [test, setTest] = useState({})
+  const { img1, img2, img3, img4, img5 } = props
   useEffect(() => {
     let newIndex = 0
 
-    setInterval(() => {
+    const interval = setInterval(() => {
       newIndex > 3 && (newIndex = 0)
       let slide = newIndex * -60
-      document.querySelector('.img-wrap').style.left = slide + 'vw'
+      document.querySelector('.page1img-wrap').style.left = slide + 'vw'
       newIndex++
-    }, 1000)
+    }, 2000)
+    return () => {
+      clearInterval(interval)
+    }
   }, [])
   return (
     <>
       <div className="page1right">
-        <div class="wrap mx-auto position-relative">
-          <div class="d-flex img-wrap position-absolute">
-            <img class="bigImg" src={img1} alt="" />
-            <img class="bigImg" src={img2} alt="" />
-            <img class="bigImg" src={img3} alt="" />
-            <img class="bigImg" src={img4} alt="" />
+        <div className="page1wrap position-relative">
+          <div className="d-flex page1img-wrap position-absolute">
+            <img src={img1} alt="" />
+            <img src={img2} alt="" />
+            <img src={img3} alt="" />
+            <img src={img4} alt="" />
+            {/* <img src={img5} alt="" /> */}
           </div>
         </div>
       </div>

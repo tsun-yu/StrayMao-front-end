@@ -10,7 +10,7 @@
   color: #a5a58d;
   font-family: $fontType3;
   font-weight: lighter;
-  margin-top: 30%;
+  margin-top: 15vh;
   margin-bottom: 10%;
 }
 
@@ -23,6 +23,7 @@
   color: #707070;
   text-align: center;
 }
+
 .hide {
   color: rgba($color: #000000, $alpha: 0);
   // font-size: 0px;
@@ -33,24 +34,27 @@
   color: #a5a58d;
   text-align: end;
 }
+// .page1des3:hover {
+//   text-decoration: underline;
+// }
 .page1right {
   margin-left: 5%;
   width: 60vw;
 }
 
-.wrap {
+.page1wrap {
   width: 60vw;
   height: 87vh;
   overflow: hidden;
 }
 
-.img-wrap {
+.page1img-wrap {
   width: 240vw;
   left: 0px;
   transition: 0.5s;
 }
 
-.img-wrap img {
+.page1img-wrap img {
   width: 60vw;
   object-fit: cover;
   opacity: 0.8;
