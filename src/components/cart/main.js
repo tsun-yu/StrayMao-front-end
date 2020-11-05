@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { connect } from "react-redux"
+// import { connect } from "react-redux"
 import "../../styles/cart/cartlist.scss"
 import CartlistCardC from "./cartlistCardC"
 import CartlistCardM from "./cartlistCardM"
 
-import { getRecommand, getRecommandAsync } 
-from "../../actions/cart/index";
+// import { getRecommand, getRecommandAsync } 
+// from "../../actions/cart/index";
 function cartlist(props) {
     // const [test, setTest] = useState({});
     // useEffect(() => {
@@ -64,14 +64,14 @@ return(
 </>
 )}
 
-const mapStateToProps = (store) => {
-    return { info: store.cartReducer.getRecom };
-  };
-  const mapDispatchToProps = null;
+// const mapStateToProps = (store) => {
+//     return { info: store.cartReducer.getRecom };
+//   };
+//   const mapDispatchToProps = null;
 
-export default  connect(
-    mapStateToProps, {
-        getRecommand, getRecommandAsync 
-    })(cartlist)
+// export default  connect(
+//     mapStateToProps, {
+//         getRecommand, getRecommandAsync 
+//     })(cartlist)
 
-// export default cartlist
+export default cartlist

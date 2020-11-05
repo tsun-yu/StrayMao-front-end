@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { connect } from "react-redux";
 import "../../styles/cart/cartlist.scss";
 
 function cardlistCardC(props) {
