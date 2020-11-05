@@ -17,7 +17,7 @@
 }
 
 .page3topic {
-  // margin-top: 10vh;
+  // height: 30vh;
 }
 .page3big {
   font-size: 2.375rem;
@@ -31,11 +31,32 @@
   color: #fff1e6;
 }
 
+.page3dots {
+  bottom: 10vh;
+}
+.page3dot {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.63;
+}
+.page3dot:hover {
+  background-color: #cb997e;
+  opacity: 1;
+}
+
 .page3circle {
   width: 16.25rem;
   height: 16.25rem;
   border: #fff1e6 solid 0.125rem;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page3circle:hover {
+  border: #cb997e solid 0.125rem;
 }
 
 .page3area {
@@ -43,15 +64,31 @@
   font-family: $fontType2;
   color: #fff1e6;
 }
+.page3area:hover {
+  color: #cb997e;
+}
+.a:hover {
+  text-decoration: none;
+}
 .page3circle2 {
   width: 10rem;
   height: 10rem;
   border: #fff1e6 solid 0.125rem;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page3circle2:hover {
+  border: #cb997e solid 0.125rem;
 }
 
 .page3city {
   font-size: 2.375rem;
   font-family: $fontType2;
   color: #fff1e6;
+}
+.page3city:hover {
+  color: #cb997e;
 }
