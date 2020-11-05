@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import "../../styles/cart/cartlist.scss";
+import { connect } from "react-redux"
+import "../../styles/cart/cartlist.scss"
 import CartlistCardC from "./cartlistCardC"
 import CartlistCardM from "./cartlistCardM"
-function storepage(props) {
+
+import { getRecommand, getRecommandAsync } 
+from "../../actions/cart/index";
+function cartlist(props) {
+    const [test, setTest] = useState({});
+    useEffect(() => {
+        setTest(props.getRecommandAsync());
+    }, []);
 return(
 <>
 <div class="cartlistC_body_An">
@@ -56,4 +64,12 @@ return(
 </>
 )}
 
-export default storepage
+const mapStateToProps = (store) => {
+    return { info: store.adoptReducer.getRecom };
+  };
+  const mapDispatchToProps = null;
+
+export default  connect(
+    mapStateToProps, {
+        getRecommand, getRecommandAsync 
+    })(cartlist)

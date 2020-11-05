@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "../../styles/cart/order.scss";
 import OrderCardC from "./orderCardC"
 import OrderCardM from "./orderCardM"
-function storepage(props) {
+function order(props) {
 return(
 <>
 <div class="orderC_body_An">
@@ -99,4 +99,4 @@ return(
 </>
 )}
 
-export default storepage
+export default order

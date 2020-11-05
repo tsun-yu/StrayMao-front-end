@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "../../styles/cart/orderlist.scss";
 import OrderlistCardBoxC from "./orderlistCardBoxC"
 import OrderlistCardBoxM from "./orderlistCardBoxM"
-function storepage(props) {
+function orderlist(props) {
 return(
 <>
   <div class="orderlistC_body_An">
@@ -49,4 +49,4 @@ return(
 </>
 )}
 
-export default storepage
+export default orderlist

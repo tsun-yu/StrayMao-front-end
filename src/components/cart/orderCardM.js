@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/cart/order.scss";
 
-function storepage(props) {
+function orderCardM(props) {
 return(
 <>
     <div class="orderM_boxUpper_An d-flex justify-content-between">
@@ -17,4 +17,4 @@ return(
 </>
 )}
 
-export default storepage
+export default orderCardM

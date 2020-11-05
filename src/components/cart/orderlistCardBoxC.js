@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/cart/orderlist.scss";
 import OrderlistCardC from "./orderlistCardC"
-function storepage(props) {
+function orderlistCardBoxC(props) {
 return(
 <>
     <div class="orderlistC_box_An mx-5 mb-3 px-5 py-4 d-flex justify-content-between">
@@ -73,4 +73,4 @@ return(
 </>
 )}
 
-export default storepage
+export default orderlistCardBoxC

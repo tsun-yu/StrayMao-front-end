@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/cart/buy.scss";
-function storepage(props) {
+function buyCardC(props) {
 return(
 <>
     <div class="buyC_boxUpper_An d-flex justify-content-between">
@@ -31,4 +31,4 @@ return(
 </>
 )}
 
-export default storepage
+export default buyCardC

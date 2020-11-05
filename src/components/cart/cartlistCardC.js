@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/cart/cartlist.scss";
 
-function storepage(props) {
+function cardlistCardC(props) {
 return(
 <>
     <div class="cartlistC_boxUpper_An d-flex">
@@ -36,4 +36,4 @@ return(
 </>
 )}
 
-export default storepage
+export default cardlistCardC

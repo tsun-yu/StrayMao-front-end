@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "../../styles/cart/buy.scss";
 import BuyCardC from "./buyCardC"
 import BuyCardM from "./buyCardM"
-function storepage(props) {
+function buy(props) {
 return(
 <>
 <div class="buyC_body_An">
@@ -143,4 +143,4 @@ return(
 </>
 )}
 
-export default storepage
+export default buy
