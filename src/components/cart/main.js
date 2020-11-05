@@ -64,14 +64,14 @@ return(
 </>
 )}
 
-// const mapStateToProps = (store) => {
-//     return { info: store.adoptReducer.getRecom };
-//   };
-//   const mapDispatchToProps = null;
+const mapStateToProps = (store) => {
+    return { info: store.cartReducer.getRecom };
+  };
+  const mapDispatchToProps = null;
 
-// export default  connect(
-//     mapStateToProps, {
-//         getRecommand, getRecommandAsync 
-//     })(cartlist)
+export default  connect(
+    mapStateToProps, {
+        getRecommand, getRecommandAsync 
+    })(cartlist)
 
-export default cartlist
+// export default cartlist
