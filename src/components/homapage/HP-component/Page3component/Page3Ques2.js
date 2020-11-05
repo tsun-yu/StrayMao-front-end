@@ -17,7 +17,7 @@ function Page3Ques2(props) {
             href="##"
             onClick={() => {
               setCity(<NorthernCity />)
-              setArea('北部')
+              setArea('北部地區')
               document.querySelector('.page3').style.left = '-200vw'
             }}
           >
@@ -28,7 +28,7 @@ function Page3Ques2(props) {
             href="##"
             onClick={() => {
               setCity(<WesternCity />)
-              setArea('中部')
+              setArea('中部地區')
               document.querySelector('.page3').style.left = '-200vw'
             }}
           >
@@ -39,7 +39,7 @@ function Page3Ques2(props) {
             href="##"
             onClick={() => {
               setCity(<SouthernCity />)
-              setArea('南部')
+              setArea('南部地區')
               document.querySelector('.page3').style.left = '-200vw'
             }}
           >
@@ -50,7 +50,7 @@ function Page3Ques2(props) {
             href="##"
             onClick={() => {
               setCity(<EasternCity />)
-              setArea('東部')
+              setArea('東部地區')
               document.querySelector('.page3').style.left = '-200vw'
             }}
           >
