@@ -116,7 +116,7 @@ export const goodsDisLikeAsync = (value) => {
       // data會是一個物件值
       console.log(data);
 
-      await dispatch(goodDisLike(false));
+      await dispatch(goodsDisLike(false));
     } catch (error) {
       //setError(error)
     }

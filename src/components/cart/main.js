@@ -7,10 +7,10 @@ import CartlistCardM from "./cartlistCardM"
 import { getRecommand, getRecommandAsync } 
 from "../../actions/cart/index";
 function cartlist(props) {
-    const [test, setTest] = useState({});
-    useEffect(() => {
-        setTest(props.getRecommandAsync());
-    }, []);
+    // const [test, setTest] = useState({});
+    // useEffect(() => {
+    //     setTest(props.getRecommandAsync());
+    // }, []);
 return(
 <>
 <div class="cartlistC_body_An">
@@ -64,12 +64,14 @@ return(
 </>
 )}
 
-const mapStateToProps = (store) => {
-    return { info: store.adoptReducer.getRecom };
-  };
-  const mapDispatchToProps = null;
+// const mapStateToProps = (store) => {
+//     return { info: store.adoptReducer.getRecom };
+//   };
+//   const mapDispatchToProps = null;
 
-export default  connect(
-    mapStateToProps, {
-        getRecommand, getRecommandAsync 
-    })(cartlist)
+// export default  connect(
+//     mapStateToProps, {
+//         getRecommand, getRecommandAsync 
+//     })(cartlist)
+
+export default cartlist
