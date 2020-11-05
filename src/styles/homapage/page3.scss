@@ -16,9 +16,6 @@
   height: 87vh;
 }
 
-.page3topic {
-  // height: 30vh;
-}
 .page3big {
   font-size: 2.375rem;
   font-family: $fontType2;
@@ -31,16 +28,6 @@
   color: #fff1e6;
 }
 
-.page3dots {
-  bottom: 10vh;
-}
-.page3dot {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: 0.63;
-}
 .page3dot:hover {
   background-color: #cb997e;
   opacity: 1;
@@ -91,4 +78,19 @@
 }
 .page3city:hover {
   color: #cb997e;
+}
+
+.slider-dots {
+  bottom: 5vh;
+}
+
+.slider-dots li {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.slider-dots li:hover {
+  background-color: rgba(203, 153, 126, 1);
 }

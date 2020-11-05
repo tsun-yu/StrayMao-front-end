@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Page3Topic from './Page3Topic'
+import DogSize from './Ques6component/DogSize'
+import CatSize from './Ques6component/CatSize'
 
 function Page3Ques1(props) {
-  const { setState } = props
+  const { setPet } = props
   const [color, setColor] = useState('#fff1e6')
   return (
     <>
@@ -13,6 +15,7 @@ function Page3Ques1(props) {
             href="##"
             onClick={() => {
               document.querySelector('.page3').style.left = '-100vw'
+              setPet(<DogSize />)
               setColor('#CB997E')
             }}
           >
@@ -36,6 +39,7 @@ function Page3Ques1(props) {
             href="##"
             onClick={() => {
               document.querySelector('.page3').style.left = '-100vw'
+              setPet(<CatSize />)
               // this.setColor('#CB997E')
             }}
           >
