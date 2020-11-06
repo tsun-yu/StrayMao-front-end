@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from "react-redux";
 import "../../styles/cart/cartlist.scss";
 
-function CardListCardC(props) {
+function CartListCardC(props) {
 return(
 <>
     <div className="cartlistC_boxUpper_An d-flex">
@@ -43,5 +43,5 @@ const mapStateToProps = (store) => {
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {})(CardListCardC);
+export default connect(mapStateToProps, {})(CartListCardC);
 // export default cardlistCardC
