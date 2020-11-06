@@ -1,10 +1,13 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-
+import { withRouter, useHistory } from "react-router-dom";
 import {
   petDisLikeAsync,
   petLikeAsync,
   petInitLikeAsync,
+  setDetailPetId,
 } from "../../actions/adoption/index";
 function AdoptListCard(props) {
   const [likeIcon, setLikeIcon] = useState(<></>);
@@ -75,7 +78,17 @@ function AdoptListCard(props) {
             <span className="paragraph2"> {props.info.birth}</span>
           </p>
           <span className="paragraph2">{[...props.info.tag].join(",")} </span>
-          <a className="paragraph2 ">Read More</a>
+
+          <a
+            href=""
+            className="paragraph2"
+            onClick={() => {
+              setDetailPetId(props.info.petId);
+              props.history.push("/adoptiondetail");
+            }}
+          >
+            Read More
+          </a>
         </div>
       </div>
     </>
@@ -87,8 +100,11 @@ const mapStateToProps = (store) => {
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {
-  petDisLikeAsync,
-  petLikeAsync,
-  petInitLikeAsync,
-})(AdoptListCard);
+export default withRouter(
+  connect(mapStateToProps, {
+    petDisLikeAsync,
+    petLikeAsync,
+    petInitLikeAsync,
+    setDetailPetId,
+  })(AdoptListCard)
+);
