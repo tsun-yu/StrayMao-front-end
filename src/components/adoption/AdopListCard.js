@@ -7,7 +7,7 @@ import {
   petDisLikeAsync,
   petLikeAsync,
   petInitLikeAsync,
-  setDetailPetId,
+  petDetailId,
 } from "../../actions/adoption/index";
 function AdoptListCard(props) {
   const [likeIcon, setLikeIcon] = useState(<></>);
@@ -25,7 +25,6 @@ function AdoptListCard(props) {
         </svg>
       )
     );
-    // setBtn(props.info.heart ?():())
   }, []);
 
   return (
@@ -80,10 +79,12 @@ function AdoptListCard(props) {
           <span className="paragraph2">{[...props.info.tag].join(",")} </span>
 
           <a
-            href=""
             className="paragraph2"
             onClick={() => {
-              setDetailPetId(props.info.petId);
+              // console.log("props.info.petId: ", props.info.petId);
+              // petDetailIdAsync(120);
+              props.petDetailId(props.info.petId);
+              // console.log("::", props.detailId);
               props.history.push("/adoptiondetail");
             }}
           >
@@ -96,7 +97,10 @@ function AdoptListCard(props) {
 }
 
 const mapStateToProps = (store) => {
-  return { like: store.adoptReducer.petHeart };
+  return {
+    like: store.adoptReducer.petHeart,
+    detailId: store.adoptReducer.petDetailId,
+  };
 };
 const mapDispatchToProps = null;
 
@@ -105,6 +109,6 @@ export default withRouter(
     petDisLikeAsync,
     petLikeAsync,
     petInitLikeAsync,
-    setDetailPetId,
+    petDetailId,
   })(AdoptListCard)
 );

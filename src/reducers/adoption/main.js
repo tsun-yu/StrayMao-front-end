@@ -60,8 +60,8 @@ function petHeart(state = false, action) {
 function petDetailId(state = 1, action) {
   switch (action.type) {
     case SET_DETAIL_PET_ID:
-      console.log("set:", action.value);
-      state = action.value;
+      // console.log("set:", action.id);
+      state = action.id;
       break;
     default:
       break;

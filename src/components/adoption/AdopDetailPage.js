@@ -15,14 +15,14 @@ function AdopDetailPage(props) {
   const [test, setTest] = useState({});
   useEffect(() => {
     let id = props.petDetailId ?? 1;
-    console.log("id :", props.petDetailId);
+    // console.log("id :", props.petDetailId);
     setTest(props.getDetailAsync(id));
   }, []);
   return (
     <>
       <div className="adopRecommand">
         <div className="col p-1">
-          <AdopMainCardPic />
+          <AdopMainCardPic info={props.info} />
         </div>
         <div className="col">
           <AdopMainInfo info={props.info} />

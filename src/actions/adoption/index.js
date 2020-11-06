@@ -180,7 +180,16 @@ export const getListAsync = (value) => {
     }
   };
 };
-export const setDetailPetId = (value) => {
+export const petDetailIdAsync = (value) => {
+  return async function getRecommandPet(dispatch, getState) {
+    try {
+      await dispatch(petDetailId(value));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+export const petDetailId = (value) => {
   // console.log("value:", value);
-  return { type: SET_DETAIL_PET_ID, value };
+  return { type: SET_DETAIL_PET_ID, id: value };
 };
