@@ -6,6 +6,7 @@ import Page3Ques4 from './HP-component/Page3component/Page3Ques4'
 import Page3Ques5 from './HP-component/Page3component/Page3Ques5'
 import Page3Ques6 from './HP-component/Page3component/Page3Ques6'
 import Dogsize from './HP-component/Page3component/Ques6component/DogSize'
+
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 function Page3(props) {
@@ -21,15 +22,37 @@ function Page3(props) {
       : (x.style.border = '#cb997e solid 0.125rem')
   }
 
+  // useEffect(() => {
+  //   parseInt(document.querySelector('.page3').style.left)/(-100)
+  // }, [document.querySelector('.page3').style.left])
+
   return (
     <>
       <div>
         <div className="page3bg position-relative ">
-          <div className="position-absolute d-flex flex-column justify-content-center forward">
+          <a
+            href="##"
+            onClick={() => {
+              document.querySelector('.page3').style.left = '-100vw'
+            }}
+          >
+            <div className="position-absolute d-flex flex-column justify-content-center align-items-center back ml-4">
+              <IoIosArrowBack size="4rem" color=" #fff1e6" />
+              <div className="arrow">上一頁</div>
+            </div>
+          </a>
+
+          <div
+            className="forward position-absolute d-flex flex-column justify-content-center align-items-center forward mr-4"
+            onClick={() => {
+              document.querySelector('.page3').style.left = '-100vw'
+            }}
+          >
             <IoIosArrowForward size="4rem" color=" #fff1e6" />
-            <div>下一頁</div>
+            <div className="arrow">下一頁</div>
           </div>
-          <div className="d-flex page3 position-absolute">
+
+          <div className="d-flex page3 position-absolute" style={{ left: 0 }}>
             <Page3Ques1 setPet={setPet} />
             <Page3Ques2
               setCity={setCity}
@@ -43,9 +66,13 @@ function Page3(props) {
           </div>
           <ul className="list-unstyled slider-dots position-absolute d-flex justify-content-center w-100">
             <li
-              onClick={() =>
-                (document.querySelector('.page3').style.left = '0vw')
-              }
+              onClick={(e) => {
+                document.querySelector('.page3').style.left = '0vw'
+                // document.querySelectorAll(
+                //   '.slider-dots li'
+                // ).style.backgroundColor = ' rgba(255, 255, 255, 0.6)'
+                // e.target.style.backgroundColor = '#cb997e'
+              }}
             ></li>
             <li
               onClick={() =>
@@ -58,19 +85,16 @@ function Page3(props) {
               }
             ></li>
             <li
-              className="page3dot "
               onClick={() =>
                 (document.querySelector('.page3').style.left = '-300vw')
               }
             ></li>
             <li
-              className="page3dot "
               onClick={() =>
                 (document.querySelector('.page3').style.left = '-400vw')
               }
             ></li>
             <li
-              className="page3dot "
               onClick={() =>
                 (document.querySelector('.page3').style.left = '-500vw')
               }

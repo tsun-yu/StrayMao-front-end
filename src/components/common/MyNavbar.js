@@ -53,9 +53,9 @@ function MyNavbar(props) {
             </Nav.Link>
           </Nav>
           <Nav className="mr-5">
-            <div className="hmSearch ">
+            <div className=" ">
               <input
-                className="input-brown searchPlaceholder"
+                className="input-brown navSearchPlaceholder"
                 type="text"
                 placeholder="搜尋"
                 style={{ color: '#d1d1d1' }}
