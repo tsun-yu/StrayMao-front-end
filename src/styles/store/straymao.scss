@@ -37,6 +37,7 @@ img {
 #storeP1BackgroundTop {
   width: 100vw;
   height: calc(100vh - 12vw);
+  transition: 0.5s;
 }
 
 #storeP1BackgroundMouse {
@@ -71,6 +72,21 @@ img {
   left: 5vw;
 }
 
+#storeP1BackgroundCatTowerCircle {
+  position: absolute;
+  top: 37vh;
+  left: 15vw;
+}
+
+#storeP1BackgroundCatTowerCircle2 {
+  position: absolute;
+  top: 37vh;
+  left: 15vw;
+  transform: scale(2, 2);
+  opacity: 0.5;
+  // transition: 0.3s;
+}
+
 #storeP1BackgroundDogFood {
   min-width: 60px;
   width: 6vw;
@@ -85,6 +101,15 @@ img {
   position: absolute;
   bottom: 0%;
   right: 21vw;
+  transition: 0.5s;
+}
+
+#storeP1BackgroundDogFoodBowl:hover {
+  min-width: 80px;
+  width: 8vw;
+  position: absolute;
+  bottom: 0%;
+  right: 16vw;
 }
 
 #storeP1BackgroundBall {
@@ -306,9 +331,17 @@ img {
   top: 2rem;
 }
 
-// #between > div:nth-child(4) > div.goodsText > div{
-//   bottom: 1.5rem;
-// }
+#between > div:nth-child(4) > div.goodsText > div {
+  bottom: 1.5rem;
+}
+
+#between > div:nth-child(3) > div.goodsText > div {
+  bottom: 1.5rem;
+}
+
+#between > div:nth-child(2) > div.goodsText > div {
+  bottom: 1.5rem;
+}
 
 .icon2 {
   position: absolute;
