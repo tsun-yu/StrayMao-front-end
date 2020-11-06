@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react'
 import '../../styles/store/straymao.scss'
 import { connect } from 'react-redux'
 
-function StoreCard() {
+function StoreCard(props) {
+  // const [item , setItem] = useState(props.item)
+  const { item } = props
+  console.log('item:', item)
   return (
     <>
       {/* <div className="container">
@@ -43,8 +46,8 @@ function StoreCard() {
         </div>
 
         <div className="goodsText">
-          <p>鮮肉煲罐頭</p>
-          <span id="number">NT$ 240</span>
+          <p>{item.name}</p>
+          <span id="number">NT$ {item.price}</span>
 
           <div className="icon2 d-flex">
             <svg

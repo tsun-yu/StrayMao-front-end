@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
-import MyNavbar from './components/common/MyNavbar'
-import MyFooter from './components/common/MyFooter'
-import MainContent from './components/common/MainContent'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import TestLink from './components/common/TestLink'
-import AdoptionTest from './components/adoption/Test'
-import CartTest from './components/cart/Test'
-import HomeTest from './components/homapage/Test'
-import MemberTest from './components/membership/Test'
-import SocialTest from './components/social_media/Test'
-import StoreTest from './components/store/Test'
-import StrayMaoP2 from './components/store/StrayMaoP2'
-import StrayMaoP3 from './components/store/StrayMaoP3'
+import MyNavbar from "./components/common/MyNavbar";
+import MyFooter from "./components/common/MyFooter";
+import MainContent from "./components/common/MainContent";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import TestLink from "./components/common/TestLink";
+import AdoptionTest from "./components/adoption/Test";
+import AdoptionList from "./components/adoption/AdopListPage";
+import AdoptionMain from "./components/adoption/AdopMainPage";
+import AdoptionDetail from "./components/adoption/AdopDetailPage";
+import CartTest from "./components/cart/Test";
+import HomeTest from "./components/homapage/Test";
+import MemberTest from "./components/membership/Test";
+import SocialTest from "./components/social_media/Test";
+import StoreTest from "./components/store/Test";
+import StrayMaoP2 from "./components/store/StrayMaoP2";
+import StrayMaoP3 from "./components/store/StrayMaoP3";
 
 function App() {
   return (
@@ -31,6 +34,18 @@ function App() {
             <Route path="/adoptionTest">
               {/*要連線的網頁*/}
               <AdoptionTest />
+            </Route>
+            <Route path="/adoptionMain">
+              {/*要連線的網頁*/}
+              <AdoptionMain />
+            </Route>
+            <Route path="/adoptionList">
+              {/*要連線的網頁*/}
+              <AdoptionList />
+            </Route>
+            <Route path="/adoptionDetail">
+              {/*要連線的網頁*/}
+              <AdoptionDetail />
             </Route>
             <Route path="/cartTest">
               {/*要連線的網頁*/}
@@ -65,7 +80,7 @@ function App() {
         <MyFooter />
       </>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -5,6 +5,8 @@ import {
   PET_LIKE,
   PET_INIT,
   GET_LIST,
+  GET_DETAIL,
+  SET_DETAIL_PET_ID,
 } from "./actionTypes";
 
 //actionCreater
@@ -36,6 +38,32 @@ export const getRecommandAsync = (value) => {
   };
 };
 
+export const getDetail = (value) => {
+  return { type: GET_DETAIL, value };
+};
+
+export const getDetailAsync = (value) => {
+  return async function getRecommandPet(dispatch, getState) {
+    const url = `http://localhost:3001/straymao/adoption/get_pet_list/${value}`;
+
+    const request = new Request(url, {
+      method: "GET",
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      console.log(data.data[0]);
+      await dispatch(getDetail(data.data[0]));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
 export const petLike = (value) => {
   return { type: PET_LIKE, like: value };
 };
@@ -151,4 +179,17 @@ export const getListAsync = (value) => {
       //setError(error)
     }
   };
+};
+export const petDetailIdAsync = (value) => {
+  return async function getRecommandPet(dispatch, getState) {
+    try {
+      await dispatch(petDetailId(value));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+export const petDetailId = (value) => {
+  // console.log("value:", value);
+  return { type: SET_DETAIL_PET_ID, id: value };
 };

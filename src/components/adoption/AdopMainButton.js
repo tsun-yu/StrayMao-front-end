@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { withRouter, useHistory } from "react-router-dom";
 
 import {
   petDisLikeAsync,
@@ -14,7 +16,6 @@ function AdopMainButton(props) {
   }, []);
   let likeBtn = props.like ? (
     <a
-      href="##"
       className="buttonRight col"
       onClick={() => {
         props.petDisLikeAsync(1);
@@ -27,7 +28,6 @@ function AdopMainButton(props) {
     </a>
   ) : (
     <a
-      href="##"
       className="buttonRight col"
       onClick={() => {
         props.petLikeAsync(1);
@@ -43,7 +43,13 @@ function AdopMainButton(props) {
     <>
       <div className="adopMainButton">
         <div className="buttonGroup d-flex flex-row">
-          <a href="##" className="buttonLeft col" onClick={() => {}}>
+          <a
+            className="buttonLeft col"
+            onClick={() => {
+              console.log("asdsad");
+              props.history.push("/adoptionmain");
+            }}
+          >
             <svg className="icon-014-cancel">
               <path d="M12.59,11.34l9.82-9.83a.88.88,0,0,0,0-1.25.9.9,0,0,0-1.22,0l-9.82,9.82L1.51.26A.88.88,0,0,0,.26.26a.88.88,0,0,0,0,1.25l9.82,9.83L.26,21.16a.89.89,0,0,0,1.25,1.26l9.83-9.83,9.82,9.83a.89.89,0,0,0,1.26-1.26Z" />
             </svg>
@@ -60,9 +66,11 @@ const mapStateToProps = (store) => {
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {
-  petDisLikeAsync,
-  petLikeAsync,
-  petLike,
-  petInitLikeAsync,
-})(AdopMainButton);
+export default withRouter(
+  connect(mapStateToProps, {
+    petDisLikeAsync,
+    petLikeAsync,
+    petLike,
+    petInitLikeAsync,
+  })(AdopMainButton)
+);

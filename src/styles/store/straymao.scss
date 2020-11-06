@@ -37,6 +37,7 @@ img {
 #storeP1BackgroundTop {
   width: 100vw;
   height: calc(100vh - 12vw);
+  transition: 0.5s;
 }
 
 #storeP1BackgroundMouse {
@@ -71,6 +72,44 @@ img {
   left: 5vw;
 }
 
+#storeP1BackgroundCatTowerCircle {
+  position: absolute;
+  top: 37vh;
+  left: 15vw;
+  animation-name: animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#storeP1BackgroundCatTowerCircle2 {
+  position: absolute;
+  top: 37vh;
+  left: 15vw;
+  animation-name: faded;
+  animation-duration: 10s;
+  z-index: 99;
+}
+
+@keyframes faded {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animation {
+  from {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2, 2);
+    opacity: 0;
+  }
+}
+
 #storeP1BackgroundDogFood {
   min-width: 60px;
   width: 6vw;
@@ -79,12 +118,39 @@ img {
   right: 15vw;
 }
 
+#storeP1BackgroundDogFoodCircle {
+  position: absolute;
+  bottom: 36vh;
+  right: 21.5vw;
+  animation-name: animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#storeP1BackgroundDogFoodCircle2 {
+  position: absolute;
+  bottom: 36vh;
+  right: 21.5vw;
+  animation-name: faded;
+  animation-duration: 10s;
+  z-index: 99;
+}
+
 #storeP1BackgroundDogFoodBowl {
   min-width: 80px;
   width: 8vw;
   position: absolute;
   bottom: 0%;
   right: 21vw;
+  transition: 0.5s;
+}
+
+#storeP1BackgroundDogFoodBowl:hover {
+  min-width: 80px;
+  width: 8vw;
+  position: absolute;
+  bottom: 0%;
+  right: 16vw;
 }
 
 #storeP1BackgroundBall {
@@ -95,6 +161,24 @@ img {
   right: 10vw;
 }
 
+#storeP1BackgroundBallCircle {
+  position: absolute;
+  bottom: 15vh;
+  right: 8.5vw;
+  animation-name: animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#storeP1BackgroundBallCircle2 {
+  position: absolute;
+  bottom: 15vh;
+  right: 8.5vw;
+  animation-name: faded;
+  animation-duration: 10s;
+  z-index: 99;
+}
+
 #storeP1BackgroundMoon {
   min-width: 100px;
   width: 10vw;
@@ -103,12 +187,48 @@ img {
   right: 20vw;
 }
 
+#storeP1BackgroundMoonCircle {
+  position: absolute;
+  top: 22vh;
+  right: 24.5vw;
+  animation-name: animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#storeP1BackgroundMoonCircle2 {
+  position: absolute;
+  top: 22vh;
+  right: 24.5vw;
+  animation-name: faded;
+  animation-duration: 10s;
+  z-index: 99;
+}
+
 #storeP1BackgroundAngle {
   min-width: 100px;
   width: 10vw;
   position: absolute;
   top: 20vh;
   right: 45vw;
+}
+
+#storeP1BackgroundAngleCircle {
+  position: absolute;
+  top: 22vh;
+  right: 54vw;
+  animation-name: animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#storeP1BackgroundAngleCircle2 {
+  position: absolute;
+  top: 22vh;
+  right: 54vw;
+  animation-name: faded;
+  animation-duration: 10s;
+  z-index: 99;
 }
 
 #storeP1BackgroundStep1 {
@@ -306,9 +426,17 @@ img {
   top: 2rem;
 }
 
-// #between > div:nth-child(4) > div.goodsText > div{
-//   bottom: 1.5rem;
-// }
+#between > div:nth-child(4) > div.goodsText > div {
+  bottom: 1.5rem;
+}
+
+#between > div:nth-child(3) > div.goodsText > div {
+  bottom: 1.5rem;
+}
+
+#between > div:nth-child(2) > div.goodsText > div {
+  bottom: 1.5rem;
+}
 
 .icon2 {
   position: absolute;

@@ -5,7 +5,7 @@ import AdopMainButton from "./AdopMainButton";
 import AdopMainInfo from "./AdopMainInfo";
 import AdopMainReadMore from "./AdopMainReadMore";
 function AdopDetailInfo(props) {
-  console.log(props.info);
+  // console.log(props.info);
   return (
     <>
       <div className="adopDetailInfo p-5">

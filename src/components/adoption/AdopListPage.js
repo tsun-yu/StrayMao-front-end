@@ -52,7 +52,7 @@ function AdopListPage(props) {
       </>
     );
 
-    setTimeout(() => setDataLoading(false), 1000);
+    setTimeout(() => setDataLoading(false), 100);
   }, [totalCards, nowPage]);
 
   const loading = <div></div>;

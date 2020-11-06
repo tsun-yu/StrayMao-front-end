@@ -6,17 +6,23 @@ import AdopMainInfo from "./AdopMainInfo";
 import AdopMainReadMore from "./AdopMainReadMore";
 import AdopDetailInfo from "./AdopDetailInfo";
 
-import { getRecommand, getRecommandAsync } from "../../actions/adoption/index";
+import {
+  getDetailAsync,
+  getRecommand,
+  getRecommandAsync,
+} from "../../actions/adoption/index";
 function AdopDetailPage(props) {
   const [test, setTest] = useState({});
   useEffect(() => {
-    setTest(props.getRecommandAsync());
+    let id = props.petDetailId ?? 1;
+    // console.log("id :", props.petDetailId);
+    setTest(props.getDetailAsync(id));
   }, []);
   return (
     <>
       <div className="adopRecommand">
         <div className="col p-1">
-          <AdopMainCardPic />
+          <AdopMainCardPic info={props.info} />
         </div>
         <div className="col">
           <AdopMainInfo info={props.info} />
@@ -36,10 +42,15 @@ function AdopDetailPage(props) {
 }
 
 const mapStateToProps = (store) => {
-  return { info: store.adoptReducer.getRecom };
+  return {
+    info: store.adoptReducer.getDetail,
+    petDetailId: store.adoptReducer.petDetailId,
+  };
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, { getRecommand, getRecommandAsync })(
-  AdopDetailPage
-);
+export default connect(mapStateToProps, {
+  getDetailAsync,
+  getRecommand,
+  getRecommandAsync,
+})(AdopDetailPage);

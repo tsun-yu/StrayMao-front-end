@@ -1,10 +1,13 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-
+import { withRouter, useHistory } from "react-router-dom";
 import {
   petDisLikeAsync,
   petLikeAsync,
   petInitLikeAsync,
+  petDetailId,
 } from "../../actions/adoption/index";
 function AdoptListCard(props) {
   const [likeIcon, setLikeIcon] = useState(<></>);
@@ -22,7 +25,6 @@ function AdoptListCard(props) {
         </svg>
       )
     );
-    // setBtn(props.info.heart ?():())
   }, []);
 
   return (
@@ -75,7 +77,19 @@ function AdoptListCard(props) {
             <span className="paragraph2"> {props.info.birth}</span>
           </p>
           <span className="paragraph2">{[...props.info.tag].join(",")} </span>
-          <a className="paragraph2 ">Read More</a>
+
+          <a
+            className="paragraph2"
+            onClick={() => {
+              // console.log("props.info.petId: ", props.info.petId);
+              // petDetailIdAsync(120);
+              props.petDetailId(props.info.petId);
+              // console.log("::", props.detailId);
+              props.history.push("/adoptiondetail");
+            }}
+          >
+            Read More
+          </a>
         </div>
       </div>
     </>
@@ -83,12 +97,18 @@ function AdoptListCard(props) {
 }
 
 const mapStateToProps = (store) => {
-  return { like: store.adoptReducer.petHeart };
+  return {
+    like: store.adoptReducer.petHeart,
+    detailId: store.adoptReducer.petDetailId,
+  };
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {
-  petDisLikeAsync,
-  petLikeAsync,
-  petInitLikeAsync,
-})(AdoptListCard);
+export default withRouter(
+  connect(mapStateToProps, {
+    petDisLikeAsync,
+    petLikeAsync,
+    petInitLikeAsync,
+    petDetailId,
+  })(AdoptListCard)
+);
