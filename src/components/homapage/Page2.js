@@ -10,16 +10,16 @@ function Page2(props) {
           <div className="d-flex mx-auto">
             <Page2Img
               img="/image/homepage/homepage2-1.png"
-              pag2ImgClass="page2img"
+              page2ImgClass="page2img"
             />
 
             <Page2Img
               img="/image/homepage/homepage2-2.png"
-              pag2ImgClass="page2img2 page2img"
+              page2ImgClass="page2img2 page2img"
             />
             <Page2Img
               img="/image/homepage/homepage2-3.png"
-              pag2ImgClass="page2img page2img3"
+              page2ImgClass="page2img page2img3"
             />
             <div className="page2desBlock">
               <div className="adopt">
@@ -31,13 +31,6 @@ function Page2(props) {
               <div className="page2des2">
                 立刻前往
                 <HiArrowCircleRight color="#a5a58d" size={16} />
-              </div>
-              <div>
-                <img
-                  pag2ImgClass="greenarrow-right"
-                  src="./018-greenarrow-right.svg"
-                  alt=""
-                ></img>
               </div>
             </div>
           </div>

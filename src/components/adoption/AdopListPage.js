@@ -22,10 +22,10 @@ function AdopListPage(props) {
     totalPages = Math.ceil(totalCards.length / 9);
     if (totalCards.length > 0) {
       // let tt = JSON.parse(totalCards[0]);
-      console.log("totalCards: ", totalCards[0]);
-      console.log("now ", nowPage);
-      console.log("totalPages ", totalPages);
-      console.log("if:", nowPage === totalPages);
+      // console.log("totalCards: ", totalCards[0]);
+      // console.log("now ", nowPage);
+      // console.log("totalPages ", totalPages);
+      // console.log("if:", nowPage === totalPages);
     }
     props.setTotalPage(totalPages);
     for (
@@ -33,10 +33,8 @@ function AdopListPage(props) {
       nowPage === totalPages ? i < totalCards.length : i < 9 * nowPage;
       i++
     ) {
-      // console.log("i;", i);
       if (totalCards.length > 0) {
-        // let tt = JSON.parse(totalCards[0]);
-        console.log("totalCards: ", totalCards[i].name);
+        // console.log(":", totalCards[i]);
         content.push(<AdopListCard info={totalCards[i]} key={i} />);
       }
     }
@@ -54,7 +52,7 @@ function AdopListPage(props) {
       </>
     );
 
-    setTimeout(() => setDataLoading(false), 2000);
+    setTimeout(() => setDataLoading(false), 1000);
   }, [totalCards, nowPage]);
 
   const loading = <div></div>;

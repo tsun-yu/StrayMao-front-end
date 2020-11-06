@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import FourmArticlePage from "../commponents/SocialFourm/FourmArticlePage";
 import FourmArticleBox from "../commponents/SocialFourm/FourmArticleBox";
 import FourmReply from "../commponents/SocialFourm/FourmReply";
 
@@ -30,7 +29,7 @@ function SocialFourm(props) {
               />
             </div>
           </div>
-          <div className="container fourmArticleMain">
+          <div className="fourmArticleMain">
             <div className="fourmArticleImgBox">
               <span className="container fourm_TypeBox">
                 <p className="enHeader6 fourm_BigType">Type.</p>
@@ -347,7 +346,7 @@ function SocialFourm(props) {
               </div>
             </div>
           </div>
-          <span className="fourmArrowItems">
+          <span className="row fourmArrowItems d-flex">
             <span className="arrow">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -481,8 +480,8 @@ function SocialFourm(props) {
               </div>
             </div>
             <div className="allCardBtnRight">
-              <div class="allCardBtn_Rank btn-filterGreen">
-                <button class="filterbtnGreen fourmDayRankBtn">
+              <div class="allCardBtn_Rank btn-filter">
+                <button class="filterbtn">
                   由新到舊 <i class="fas fa-caret-down"></i>
                 </button>
                 <div class="btn-filter-content">
@@ -799,7 +798,6 @@ function SocialFourm(props) {
           </span>
         </div>
       </div>
-      <FourmArticlePage />
       <FourmArticleBox />
       <FourmReply />
     </>

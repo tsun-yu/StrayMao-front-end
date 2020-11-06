@@ -1,8 +1,3 @@
-// 預設變數覆蓋需要在導入Bootstrap之前
-$primary: #2f8b0b;
-$secondary: #131010;
-$wcolor: #90a38879;
-
 // Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";
 @import "../custom.scss";
@@ -14,53 +9,6 @@ $wcolor: #90a38879;
 @import "./socialHomeActivity";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
-/* 下拉選單-綠色自訂 */
-.filterbtnGreen {
-  background-color: #A5A58D;
-  color: #FFFFFD;
-  padding: 0.5rem 1rem;
-  border-radius:0.2rem;
-  font-size: 0.75rem;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  font-family: 'Microsoft JhengHei','Noto_Serif_TC-Regular','Roboto-Regular',monospace,serif;
-}
-.btn-filterGreen:hover .filterbtnGreen {
-  background-color: #bbbba0;
-}
-.filterbtnGreen:focus {
-  outline: none;
-}
-
-.btn-filterGreen {
-  position: relative;
-  display: inline-block;
-}
-
-.btn-filter-content {
-  display: none;
-  position: absolute;
-  background-color: #FFFFFD;
-
-}
-.btn-filterGreen:hover .btn-filter-content {
-  display: block;
-}
-
-.btn-filter-content a {
-  color: #707070;
-  padding: 0.5rem 0.95rem;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  font-size: 0.75rem;
-  font-family: 'Microsoft JhengHei','Noto_Serif_TC-Regular','Roboto-Regular',monospace,serif;
-}
-.btn-filter-content a:hover {
-  background-color: #E0DFDE;
-}
-
 
 //SocialFourm-Top
 .socialTitle {
@@ -71,10 +19,12 @@ $wcolor: #90a38879;
 }
 
 .socialEditButtom {
-  display: inline-block;
+  position: absolute;
+  margin-top:100px;
+  left:0;
   color: #707070;
-  margin-top: 100px;
-  margin-left: 20px;
+  z-index:4;
+  background: rgba($color: #FFFFFD, $alpha: 0.3);
 }
 
 .fourmMyEdit {
@@ -100,36 +50,35 @@ $wcolor: #90a38879;
 //論壇主體
 .fourmMain {
   position: relative;
+  top:40px;
+  left:5%;
   display: flex;
   width: 1140px;
   height: 1200px;
+  justify-content: center;
 }
 
 .fourmArticleMain {
   position: absolute;
-  top: 40px;
-  right: 69px;
-  width: 824px;
+  margin:50px auto;
+  // left:180px;
+  max-width: 740px;
   height: 1046px;
-  display: flex;
+  display:flex;
 }
 
 .fourmMainBg {
-  position: absolute;
-  top: 40px;
-  right: 69px;
-  width: 824px;
-  height: 1046px;
+  min-width: 824px;
+  max-height: 1046px;
   background-color: #d9d9c2;
   opacity: 20%;
 }
 
 //arrowItems
 .fourmArrowItems {
-  display: flex;
   position: absolute;
-  top: -90px;
-  right: 30px;
+  display: flex;
+  margin-top: -90px;
   width: 900px;
   justify-content: space-between;
 }
@@ -140,8 +89,6 @@ $wcolor: #90a38879;
   width: 355px;
   height: 425px;
   background-color: #fffffd;
-  right: -329px;
-  top: 59px;
   img {
     object-fit: cover;
   }
@@ -229,12 +176,9 @@ $wcolor: #90a38879;
 }
 
 .fourmArticleContent {
-  position: relative;
   width: 379px;
   height: 943px;
   background-color: #fffffd;
-  top: 59px;
-  right: -329px;
 }
 
 .fourmArticleTopLine {
@@ -245,7 +189,7 @@ $wcolor: #90a38879;
 .fourmAutor {
   position: absolute;
   top: 40px;
-  left: 30px;
+  left: 400px;
   display: inline-block;
   img {
     object-fit: cover;
@@ -266,8 +210,8 @@ $wcolor: #90a38879;
 .fourmArticleDate {
   position: absolute;
   color: #ed8f8f;
-  top: 35px;
-  right: 50px;
+  margin-top:30px;
+  margin-left: 240px;
 }
 
 //fourmArticleItems
@@ -303,7 +247,7 @@ $wcolor: #90a38879;
   padding: 5px;
   position: absolute;
   top: 385px;
-  left: 33px;
+  left: 390px;
 }
 
 //fourmReply相關內容
@@ -421,7 +365,7 @@ $wcolor: #90a38879;
 .fourmUserRBtn {
   // position: absolute;
   margin-top: -45px;
-  margin-left: 250px;
+  margin-left: 270px;
   padding-right: 5px;
   button {
     width: 45px;
@@ -588,7 +532,7 @@ $wcolor: #90a38879;
   position: relative;
   margin: 75px auto;
   height: 20rem;
-  top:40px;
+  top: 40px;
   justify-content: space-between;
   overflow: hidden;
 }
@@ -597,7 +541,7 @@ $wcolor: #90a38879;
 .fourmAllCardArrowItems {
   position: absolute;
   display: inline-flex;
-  left:50%;
+  left: 50%;
   top: 60%;
   transform: translate(-50%);
   justify-content: space-between;
@@ -606,32 +550,32 @@ $wcolor: #90a38879;
 }
 
 //過度畫面
-.fourmSaySomething{
+.fourmSaySomething {
   height: 432px;
 }
 
-.fourmSayBigText{
-  margin-top:120px;
-  margin-left:200px;
-  color:#A5A58D;
+.fourmSayBigText {
+  margin-top: 120px;
+  margin-left: 200px;
+  color: #a5a58d;
 }
 
-.fourmSaySText{
-  margin-top:40px;
-  margin-left:300px;
-  color:#555555;
+.fourmSaySText {
+  margin-top: 40px;
+  margin-left: 300px;
+  color: #555555;
 }
 
 //寵物知識
-.petknowledgeBT{
-  margin:0 auto;
+.petknowledgeBT {
+  margin: 0 auto;
 }
 
 .petknowledgeTitle {
   position: absolute;
-  display:inline-block;
-  left:50%;
-  margin-top:30px;
+  display: inline-block;
+  left: 50%;
+  margin-top: 30px;
   transform: translate(-50%);
   width: 585px;
   height: 26px;
@@ -641,7 +585,7 @@ $wcolor: #90a38879;
 
 //petknowledge範圍
 .petknowledgeMain {
-  background-color: #FFF1E6;
+  background-color: #fff1e6;
   min-width: 100%;
   height: 1000px;
   display: flex;
@@ -650,77 +594,78 @@ $wcolor: #90a38879;
 }
 
 //pet文章（大）
-.bigArticleBox{
+.bigArticleBox {
   width: 750px;
   height: 370px;
-  background-color:#FFFFFD;
-  color:#555555;
-  margin-top:120px;
-  margin-left:20px;
-  padding:15px;
+  background-color: #fffffd;
+  color: #555555;
+  margin-top: 120px;
+  margin-left: 20px;
+  padding: 15px;
 }
-.bigArticleTitleItems{
+
+.bigArticleTitleItems {
   position: relative;
   width: 700px;
   height: 30px;
-  border-bottom:solid #707070 1px;
-  margin:0 auto;
-  justify-content:space-between;
-  svg{
-    top:0;
-    right:0;
+  border-bottom: solid #707070 1px;
+  margin: 0 auto;
+  justify-content: space-between;
+  svg {
+    top: 0;
+    right: 0;
   }
 }
-.bigArticleBTitle{
-  color:#A5A58D;
-  margin-left:40px;
+
+.bigArticleBTitle {
+  color: #a5a58d;
+  margin-left: 40px;
 }
 
-.bigArticleSTitle{
-  color:#ED8F8F;
-  padding-right:-200px;
- 
+.bigArticleSTitle {
+  color: #ed8f8f;
+  padding-right: -200px;
 }
 
-.bigArticleSText{
+.bigArticleSText {
   width: 680px;
   text-align: right;
 }
 
-.bigArticleContent{
+.bigArticleContent {
   position: relative;
-  left:30px;
-  img{
+  left: 30px;
+  img {
     object-fit: cover;
   }
 }
 
-.bigArticleImg{
+.bigArticleImg {
   width: 310px;
   height: 270px;
-  background-color: #FFFFFD;
+  background-color: #fffffd;
   opacity: 80%;
-  padding-left:30px;
-  padding-right:30px;
-  border-right:solid #707070 1px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-right: solid #707070 1px;
 }
 
-.bigArticleMain{
+.bigArticleMain {
   width: 340px;
   height: 270px;
-  overflow:scroll;
+  overflow: scroll;
   overflow-x: hidden;
-  margin-left:30px;
-  color:#555555;
+  margin-left: 30px;
+  color: #555555;
 }
 
-.bigActicleLeftLine{
+.bigActicleLeftLine {
   width: 20px;
   height: 340px;
-  border-right:solid #707070 1px;
+  border-right: solid #707070 1px;
   position: absolute;
   display: flex;
-  margin:-32px auto;
+  margin: -32px auto;
   z-index: 1;
 }
 
@@ -744,23 +689,25 @@ $wcolor: #90a38879;
 }
 
 //petknowledgeRight
-.petknowledgeRight{
+.petknowledgeRight {
   position: absolute;
-  top:100px;
-  padding-top:170px;
-  right:35px;
+  top: 100px;
+  padding-top: 170px;
+  right: 35px;
   width: 290px;
   height: 375px;
   text-align: center;
 }
 
-.petknowledgeType{
-  color:#707070;
+.petknowledgeType {
+  color: #707070;
   justify-content: center;
 }
 
-.petknowledgeSLine{
+.petknowledgeSLine {
   border-bottom: solid #707070 1px;
   width: 154px;
-  margin:0 auto;
+  margin: 0 auto;
 }
+
+
