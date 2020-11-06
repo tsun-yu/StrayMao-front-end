@@ -27,7 +27,7 @@ function Page3Ques4(props) {
                   transform="translate(3333 2314)"
                   fill="none"
                   stroke="#fff1e6"
-                  stroke-width="5"
+                  strokeWidth="5"
                 >
                   <circle cx="45" cy="45" r="45" stroke="none" />
                   <circle cx="45" cy="45" r="42.5" fill="none" />
@@ -39,7 +39,7 @@ function Page3Ques4(props) {
                   transform="translate(3378.5 2242.5)"
                   fill="none"
                   stroke="#fff1e6"
-                  stroke-width="5"
+                  strokeWidth="5"
                 />
                 <path
                   id="Path_1287"
@@ -48,7 +48,7 @@ function Page3Ques4(props) {
                   transform="translate(0 -26)"
                   fill="none"
                   stroke="#fff1e6"
-                  stroke-width="5"
+                  strokeWidth="5"
                 />
               </g>
             </svg>
@@ -71,7 +71,7 @@ function Page3Ques4(props) {
                   transform="translate(3639 2243)"
                   fill="none"
                   stroke="#fff1e6"
-                  stroke-width="5"
+                  strokeWidth="5"
                 >
                   <circle cx="45" cy="45" r="45" stroke="none" />
                   <circle cx="45" cy="45" r="42.5" fill="none" />
@@ -83,7 +83,7 @@ function Page3Ques4(props) {
                   transform="translate(3684.5 2333.5)"
                   fill="none"
                   stroke="#fff1e6"
-                  stroke-width="5"
+                  strokeWidth="5"
                 />
                 <line
                   id="Line_28"
@@ -92,7 +92,7 @@ function Page3Ques4(props) {
                   transform="translate(3645.5 2359.5)"
                   fill="none"
                   stroke="#fff1e6"
-                  stroke-width="5"
+                  strokeWidth="5"
                 />
               </g>
             </svg>

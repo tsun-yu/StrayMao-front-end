@@ -23,6 +23,7 @@ function nowPage(state = 1, action) {
 function totalPage(state = 5, action) {
   switch (action.type) {
     case TOTAL_PAGE:
+      // console.log("set Total Page:", action.value);
       state = action.value;
       break;
     default:
