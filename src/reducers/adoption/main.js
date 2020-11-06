@@ -21,6 +21,7 @@ function getRecom(state = 1, action) {
 function getList(state = 1, action) {
   switch (action.type) {
     case GET_LIST:
+      // console.log("reducer!!!", action.value);
       state = action.value;
       break;
     default:

@@ -28,7 +28,6 @@ export const getRecommandAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
 
       await dispatch(getRecommand(data.data[0]));
     } catch (error) {
@@ -62,7 +61,7 @@ export const petLikeAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
       await dispatch(petLike(true));
     } catch (error) {
@@ -87,7 +86,7 @@ export const petDisLikeAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
       await dispatch(petDisLike(false));
     } catch (error) {
@@ -112,7 +111,7 @@ export const petInitLikeAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log("init:", data.data);
+      // console.log("init:", data.data);
       let dataValue = false;
       if (data.data.length > 0) {
         dataValue = true;
@@ -125,6 +124,7 @@ export const petInitLikeAsync = (value) => {
 };
 
 export const getList = (value) => {
+  // console.log("value:", value);
   return { type: GET_LIST, value };
 };
 
@@ -143,9 +143,9 @@ export const getListAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
-      await dispatch(getRecommand(data.data));
+      await dispatch(getList(data.data));
     } catch (error) {
       //setError(error)
     }

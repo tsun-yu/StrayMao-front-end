@@ -16,10 +16,10 @@ function AdoptListCard(props) {
         <div className="adopListInfo">
           <p className="paragraph1">
             {/* <span>肉包</span> */}
-            <span className="paragraph2">{props.info}</span>
-            <span className="paragraph2"> 3 年 2 週</span>
+            <span className="paragraph2">{props.info.name}</span>
+            <span className="paragraph2"> {props.info.birth}</span>
           </p>
-          <span className="paragraph2">台北 ,黑毛 </span>
+          <span className="paragraph2">{[...props.info.tag]} </span>
           <a className="paragraph2 ">Read More</a>
         </div>
       </div>
