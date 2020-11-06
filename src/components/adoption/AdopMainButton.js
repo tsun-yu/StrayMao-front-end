@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
 
 import {
   petDisLikeAsync,
   petLikeAsync,
   petLike,
   petInitLikeAsync,
-} from "../../actions/adoption/index";
+} from '../../actions/adoption/index'
 function AdopMainButton(props) {
   useEffect(() => {
-    props.petInitLikeAsync(1);
-    console.log("like:", props.like);
-  }, []);
+    props.petInitLikeAsync(1)
+    console.log('like:', props.like)
+  }, [])
   let likeBtn = props.like ? (
     <a
       href="##"
       className="buttonRight col"
       onClick={() => {
-        props.petDisLikeAsync(1);
-        console.log("dislike!!!");
+        props.petDisLikeAsync(1)
+        console.log('dislike!!!')
       }}
     >
       <svg className="icon-003-heart">
@@ -30,15 +30,15 @@ function AdopMainButton(props) {
       href="##"
       className="buttonRight col"
       onClick={() => {
-        props.petLikeAsync(1);
-        console.log("like!!!");
+        props.petLikeAsync(1)
+        console.log('like!!!')
       }}
     >
       <svg className="icon-002-heart">
         <path d="M23.13,9.68l-.68-5.56a.93.93,0,0,0-.35-.61L17.77.19a.89.89,0,0,0-1-.06L11.57,3.28,6.38.13a.91.91,0,0,0-1,.06L1,3.51a.93.93,0,0,0-.35.61L0,9.68a.91.91,0,0,0,.31.8l10.67,9a.91.91,0,0,0,1.16,0l10.66-9A.94.94,0,0,0,23.13,9.68ZM11.57,17.57,1.86,9.41l.57-4.69L6,2,11.1,5.11a.93.93,0,0,0,.94,0L17.16,2,20.7,4.72l.57,4.69Z"></path>
       </svg>
     </a>
-  );
+  )
   return (
     <>
       <div className="adopMainButton">
@@ -52,17 +52,17 @@ function AdopMainButton(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 const mapStateToProps = (store) => {
-  return { like: store.adoptReducer.petHeart };
-};
-const mapDispatchToProps = null;
+  return { like: store.adoptReducer.petHeart }
+}
+const mapDispatchToProps = null
 
 export default connect(mapStateToProps, {
   petDisLikeAsync,
   petLikeAsync,
   petLike,
   petInitLikeAsync,
-})(AdopMainButton);
+})(AdopMainButton)

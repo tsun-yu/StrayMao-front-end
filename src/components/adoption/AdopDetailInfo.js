@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import AdopMainCardPic from "./AdopMainCardPic";
-import AdopMainButton from "./AdopMainButton";
-import AdopMainInfo from "./AdopMainInfo";
-import AdopMainReadMore from "./AdopMainReadMore";
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
+import AdopMainCardPic from './AdopMainCardPic'
+import AdopMainButton from './AdopMainButton'
+import AdopMainInfo from './AdopMainInfo'
+import AdopMainReadMore from './AdopMainReadMore'
 function AdopDetailInfo(props) {
-  console.log(props.info);
+  console.log(props.info)
   return (
     <>
       <div className="adopDetailInfo p-5">
@@ -73,12 +73,12 @@ function AdopDetailInfo(props) {
         </ul>
       </div>
     </>
-  );
+  )
 }
 
 const mapStateToProps = (store) => {
-  return {};
-};
-const mapDispatchToProps = null;
+  return {}
+}
+const mapDispatchToProps = null
 
-export default connect(mapStateToProps, {})(AdopDetailInfo);
+export default connect(mapStateToProps, {})(AdopDetailInfo)

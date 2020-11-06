@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
 function AdoptListCard(props) {
   return (
     <>
@@ -24,12 +24,12 @@ function AdoptListCard(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 const mapStateToProps = (store) => {
-  return {};
-};
-const mapDispatchToProps = null;
+  return {}
+}
+const mapDispatchToProps = null
 
-export default connect(mapStateToProps, {})(AdoptListCard);
+export default connect(mapStateToProps, {})(AdoptListCard)

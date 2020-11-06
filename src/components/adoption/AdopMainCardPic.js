@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
 
 function AdopMainCardPic(props) {
   return (
@@ -9,12 +9,12 @@ function AdopMainCardPic(props) {
         {props.children}
       </div>
     </>
-  );
+  )
 }
 
 const mapStateToProps = (store) => {
-  return {};
-};
-const mapDispatchToProps = null;
+  return {}
+}
+const mapDispatchToProps = null
 
-export default connect(mapStateToProps, {})(AdopMainCardPic);
+export default connect(mapStateToProps, {})(AdopMainCardPic)

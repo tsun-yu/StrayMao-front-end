@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import AdopMainCardPic from "./AdopMainCardPic";
-import AdopMainButton from "./AdopMainButton";
-import AdopMainInfo from "./AdopMainInfo";
-import AdopMainReadMore from "./AdopMainReadMore";
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
+import AdopMainCardPic from './AdopMainCardPic'
+import AdopMainButton from './AdopMainButton'
+import AdopMainInfo from './AdopMainInfo'
+import AdopMainReadMore from './AdopMainReadMore'
 
-import { getRecommand, getRecommandAsync } from "../../actions/adoption/index";
+import { getRecommand, getRecommandAsync } from '../../actions/adoption/index'
 function AdopMainPage(props) {
-  const [test, setTest] = useState({});
+  const [test, setTest] = useState({})
   useEffect(() => {
-    setTest(props.getRecommandAsync());
-  }, []);
+    setTest(props.getRecommandAsync())
+  }, [])
   return (
     <>
       <div className="adopTitleMain">
@@ -30,14 +30,14 @@ function AdopMainPage(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 const mapStateToProps = (store) => {
-  return { info: store.adoptReducer.getRecom };
-};
-const mapDispatchToProps = null;
+  return { info: store.adoptReducer.getRecom }
+}
+const mapDispatchToProps = null
 
 export default connect(mapStateToProps, { getRecommand, getRecommandAsync })(
   AdopMainPage
-);
+)

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
 
 function AdopMainInfo(props) {
   return (
@@ -64,12 +64,12 @@ function AdopMainInfo(props) {
         {props.children}
       </div>
     </>
-  );
+  )
 }
 
 const mapStateToProps = (store) => {
-  return {};
-};
-const mapDispatchToProps = null;
+  return {}
+}
+const mapDispatchToProps = null
 
-export default connect(mapStateToProps, {})(AdopMainInfo);
+export default connect(mapStateToProps, {})(AdopMainInfo)
