@@ -76,15 +76,30 @@ img {
   position: absolute;
   top: 37vh;
   left: 15vw;
+  animation-name: animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 #storeP1BackgroundCatTowerCircle2 {
   position: absolute;
   top: 37vh;
   left: 15vw;
-  transform: scale(2, 2);
-  opacity: 0.5;
-  // transition: 0.3s;
+}
+
+@keyframes animation {
+  from {
+    position: absolute;
+    top: 37vh;
+    left: 15vw;
+  }
+  to {
+    position: absolute;
+    top: 37vh;
+    left: 15vw;
+    transform: scale(2, 2);
+    opacity: 0;
+  }
 }
 
 #storeP1BackgroundDogFood {

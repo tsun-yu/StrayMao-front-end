@@ -14,19 +14,19 @@ function Storepage(props) {
 
     // circle
 
-    setInterval(() => {
-      let storeP1BackgroundCatTowerCircle2 = document.querySelector(
-        '#storeP1BackgroundCatTowerCircle2'
-      )
-      storeP1BackgroundCatTowerCircle2.classList.add('animate__fadeOut')
-    }, 1000)
+    // setInterval(() => {
+    //   let storeP1BackgroundCatTowerCircle2 = document.querySelector(
+    //     '#storeP1BackgroundCatTowerCircle2'
+    //   )
+    //   storeP1BackgroundCatTowerCircle2.classList.add('animate__fadeOut')
+    // }, 1000)
 
-    setInterval(() => {
-      let storeP1BackgroundCatTowerCircle2 = document.querySelector(
-        '#storeP1BackgroundCatTowerCircle2'
-      )
-      storeP1BackgroundCatTowerCircle2.classList.remove('animate__fadeOut')
-    }, 3000)
+    // setInterval(() => {
+    //   let storeP1BackgroundCatTowerCircle2 = document.querySelector(
+    //     '#storeP1BackgroundCatTowerCircle2'
+    //   )
+    //   storeP1BackgroundCatTowerCircle2.classList.remove('animate__fadeOut')
+    // }, 3000)
 
     // mouse
     document
