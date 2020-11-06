@@ -8,15 +8,18 @@ function Page2(props) {
       <div className=" container page2">
         <div className="row">
           <div className="d-flex mx-auto">
-            <Page2Img img="/image/homepage/homepage2-1.png" class="page2img" />
+            <Page2Img
+              img="/image/homepage/homepage2-1.png"
+              pag2ImgClass="page2img"
+            />
 
             <Page2Img
               img="/image/homepage/homepage2-2.png"
-              class="page2img2 page2img"
+              pag2ImgClass="page2img2 page2img"
             />
             <Page2Img
               img="/image/homepage/homepage2-3.png"
-              class="page2img page2img3"
+              pag2ImgClass="page2img page2img3"
             />
             <div className="page2desBlock">
               <div className="adopt">
@@ -31,7 +34,7 @@ function Page2(props) {
               </div>
               <div>
                 <img
-                  class="greenarrow-right"
+                  pag2ImgClass="greenarrow-right"
                   src="./018-greenarrow-right.svg"
                   alt=""
                 ></img>
