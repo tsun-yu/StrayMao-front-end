@@ -10,6 +10,7 @@ import Dogsize from './HP-component/Page3component/Ques6component/DogSize'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 function Page3(props) {
+  const [dot, setDot] = useState('0vw')
   const [city, setCity] = useState('')
   const [area, setArea] = useState('縣市')
   const [pet, setPet] = useState(<Dogsize />)
@@ -22,9 +23,10 @@ function Page3(props) {
       : (x.style.border = '#cb997e solid 0.125rem')
   }
 
-  // useEffect(() => {
-  //   parseInt(document.querySelector('.page3').style.left)/(-100)
-  // }, [document.querySelector('.page3').style.left])
+  useEffect(() => {
+    let a = parseInt(document.querySelector('.page3').style.left) / -100
+    console.log(a)
+  }, [dot])
 
   return (
     <>
@@ -52,7 +54,10 @@ function Page3(props) {
             <div className="arrow">下一頁</div>
           </div>
 
-          <div className="d-flex page3 position-absolute" style={{ left: 0 }}>
+          <div
+            className="d-flex page3 position-absolute"
+            style={{ left: { dot } }}
+          >
             <Page3Ques1 setPet={setPet} />
             <Page3Ques2
               setCity={setCity}
@@ -68,6 +73,7 @@ function Page3(props) {
             <li
               onClick={(e) => {
                 document.querySelector('.page3').style.left = '0vw'
+
                 // document.querySelectorAll(
                 //   '.slider-dots li'
                 // ).style.backgroundColor = ' rgba(255, 255, 255, 0.6)'
@@ -75,9 +81,10 @@ function Page3(props) {
               }}
             ></li>
             <li
-              onClick={() =>
-                (document.querySelector('.page3').style.left = '-100vw')
-              }
+              onClick={() => {
+                document.querySelector('.page3').style.left = '-100vw'
+                // setDot('-100vw')
+              }}
             ></li>
             <li
               onClick={() =>
