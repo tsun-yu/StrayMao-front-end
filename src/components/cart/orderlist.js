@@ -1,52 +1,52 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/cart/orderlist.scss";
-import OrderlistCardBoxC from "./orderlistCardBoxC"
-import OrderlistCardBoxM from "./orderlistCardBoxM"
-function orderlist(props) {
+import OrderListCardBoxC from "./OrderListCardBoxC"
+import OrderListCardBoxM from "./OrderListCardBoxM"
+function OrderList(props) {
 return(
 <>
-  <div class="orderlistC_body_An">
-    <div class="container">
-      <div class="orderlistC_classificationBox_An">
-        <div class="orderlistC_classification_An">
+  <div className="orderlistC_body_An">
+    <div className="container">
+      <div className="orderlistC_classificationBox_An">
+        <div className="orderlistC_classification_An">
           <a href="#">近三個月內的訂單</a>
           <span> / </span>
           <a href="#">全部訂單</a>
         </div>
-        <div class="orderlistC_btn-filter_An">
-          <button class="orderlistC_filterbtn_An">
-            <span>排序 <i class="fas fa-caret-down"></i></span>
+        <div className="orderlistC_btn-filter_An">
+          <button className="orderlistC_filterbtn_An">
+            <span>排序 <i className="fas fa-caret-down"></i></span>
           </button>
-          <div class="orderlistC_btn-filter-content_An">
+          <div className="orderlistC_btn-filter-content_An">
             <a href="#">由新到舊</a>
             <a href="#">由舊到新</a>
           </div>
         </div>
       </div>
-      <OrderlistCardBoxC />
+      <OrderListCardBoxC />
     </div>
   </div>
 
-  <div class="orderlistM_body_An">
-    <div class="orderlistM_classificationBox_An">
-      <div class="orderlistM_classification_An">
+  <div className="orderlistM_body_An">
+    <div className="orderlistM_classificationBox_An">
+      <div className="orderlistM_classification_An">
         <a href="#">近三個月內的訂單</a>
         <span> / </span>
         <a href="#">全部訂單</a>
       </div>
-      <div class="orderlistM_btn-filter_An">
-        <button class="orderlistM_filterbtn_An">
-          <span>排序 <i class="fas fa-caret-down"></i></span>
+      <div className="orderlistM_btn-filter_An">
+        <button className="orderlistM_filterbtn_An">
+          <span>排序 <i className="fas fa-caret-down"></i></span>
         </button>
-        <div class="orderlistM_btn-filter-content_An">
+        <div className="orderlistM_btn-filter-content_An">
           <a href="#">由新到舊</a>
           <a href="#">由舊到新</a>
         </div>
       </div>
     </div>
-    <OrderlistCardBoxM />
+    <OrderListCardBoxM />
   </div>
 </>
 )}
 
-export default orderlist
+export default OrderList

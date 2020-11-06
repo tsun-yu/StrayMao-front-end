@@ -4,7 +4,7 @@ import DogSize from './Ques6component/DogSize'
 import CatSize from './Ques6component/CatSize'
 
 function Page3Ques1(props) {
-  const { setPet } = props
+  const { setPet, switchColor } = props
   const [color, setColor] = useState('#fff1e6')
   return (
     <>
@@ -16,7 +16,6 @@ function Page3Ques1(props) {
             onClick={() => {
               document.querySelector('.page3').style.left = '-100vw'
               setPet(<DogSize />)
-              setColor('#CB997E')
             }}
           >
             <div className="page3circle mr-5">
