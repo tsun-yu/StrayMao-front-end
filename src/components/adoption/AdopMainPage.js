@@ -9,8 +9,13 @@ import { getRecommand, getRecommandAsync } from '../../actions/adoption/index'
 function AdopMainPage(props) {
   const [test, setTest] = useState({})
   useEffect(() => {
+<<<<<<< HEAD
     setTest(props.getRecommandAsync())
   }, [])
+=======
+    props.getRecommandAsync();
+  }, []);
+>>>>>>> 6264cc9997f0a3182b1f9b7767d88642000ac679
   return (
     <>
       <div className="adopTitleMain">
@@ -19,13 +24,13 @@ function AdopMainPage(props) {
       </div>
       <div className="adopRecommand">
         <div className="col p-1">
-          <AdopMainCardPic>
+          <AdopMainCardPic info={props.info}>
             <AdopMainButton />
           </AdopMainCardPic>
         </div>
         <div className="col">
           <AdopMainInfo info={props.info}>
-            <AdopMainReadMore />
+            <AdopMainReadMore info={props.info} />
           </AdopMainInfo>
         </div>
       </div>

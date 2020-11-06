@@ -32,18 +32,17 @@
   position: relative;
   margin: 0 auto;
   max-width: 1284px;
-  height: 24.125rem;
-  margin-top: 5rem;
+  min-height: 470px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .topCardItems {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom:-10px;
   width: 61.875rem;
+  min-height: 405px;
   justify-content: space-between;
   align-items: flex-end;
   display: flex;
@@ -79,8 +78,8 @@
   height: 3.125rem;
 }
 .topCardTitle {
-  display: inline-block;
   width: 5.9375rem;
+  height: 3.125rem;
   border-right: solid #707070 1px;
   font: {
     family: $fontType2;
@@ -134,7 +133,7 @@
 //TopPageBtn
 .topBtnItems {
   position: relative;
-  margin-top: 3.4375rem;
+  top:10px;
   justify-content: center;
 }
 

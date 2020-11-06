@@ -9,13 +9,13 @@ import Page6 from './Page6'
 function homepage(props) {
   return (
     <>
-      {/* <Page1 />
+      <Page1 />
       <Page2 />
       <Page3 />
       <Page4 />
       <Page5 />
-      <Page6 /> */}
-      <h1>不要再偷看了好嗎</h1>
+      <Page6 />
+      {/* <h1>不要再偷看了，有本事找找看在哪裡</h1> */}
     </>
   )
 }

@@ -1,8 +1,113 @@
-.page3 {
+.page3bg {
   background-color: #777b5a;
+  height: 87vh;
+  overflow: hidden;
   width: 100vw;
-  height: 100vh;
 }
-.block3 {
-  height: 74px;
+.page3 {
+  width: 600vw;
+  height: 87vh;
+  transition: 0.5s;
+}
+.page3single {
+  width: 100vw;
+  height: 87vh;
+}
+
+.page3big {
+  font-size: 2.375rem;
+  font-family: $fontType2;
+  color: #fffffd;
+}
+
+.page3small {
+  font-size: 1rem;
+  font-family: $fontType2;
+  color: #fff1e6;
+}
+
+.page3circle {
+  width: 16.25rem;
+  height: 16.25rem;
+  border: #fff1e6 solid 0.125rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page3circle:hover {
+  border: #cb997e solid 0.125rem;
+}
+
+.page3area {
+  font-size: 3.75rem;
+  font-family: $fontType2;
+  color: #fff1e6;
+}
+.page3area:hover {
+  color: #cb997e;
+  font-size: 4rem;
+  transition: 0.5s;
+}
+.a:hover {
+  text-decoration: none;
+}
+.page3circle2 {
+  width: 10rem;
+  height: 10rem;
+  border: #fff1e6 solid 0.125rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page3circle2:hover {
+  border: #cb997e solid 0.125rem;
+}
+
+.page3city {
+  font-size: 2.375rem;
+  font-family: $fontType2;
+  color: #fff1e6;
+}
+.page3city:hover {
+  color: #cb997e;
+  font-size: 3rem;
+  transition: 0.5s;
+}
+
+.slider-dots {
+  bottom: 5vh;
+}
+
+.slider-dots li {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.slider-dots li:hover {
+  background-color: rgba(203, 153, 126, 1);
+}
+
+.forward {
+  // width: 10vw;
+  height: 100vh;
+  right: 0;
+}
+.forward:hover {
+  background-color: #fff1e6;
+}
+.back {
+  // width: 10vw;
+  height: 100vh;
+  left: 0;
+}
+
+.arrow {
+  font-family: $fontType3;
+  color: #fff1e6;
+  font-size: 1.5rem;
 }

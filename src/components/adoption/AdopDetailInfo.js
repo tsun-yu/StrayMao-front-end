@@ -5,7 +5,11 @@ import AdopMainButton from './AdopMainButton'
 import AdopMainInfo from './AdopMainInfo'
 import AdopMainReadMore from './AdopMainReadMore'
 function AdopDetailInfo(props) {
+<<<<<<< HEAD
   console.log(props.info)
+=======
+  // console.log(props.info);
+>>>>>>> 6264cc9997f0a3182b1f9b7767d88642000ac679
   return (
     <>
       <div className="adopDetailInfo p-5">

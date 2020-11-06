@@ -7,8 +7,8 @@ import AdopListPage from './AdopListPage'
 function Test(props) {
   return (
     <>
-      {/* <AdopMainPage /> */}
-      <AdopListPage />
+      <AdopMainPage />
+      {/* <AdopListPage /> */}
       {/* <AdopDetailPage /> */}
       {/* <AdopMapPage /> */}
     </>

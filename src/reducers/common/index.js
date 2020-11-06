@@ -13,9 +13,18 @@ export const rootReducer = combineReducers({
   nowPage,
   totalPage,
   adoptReducer,
+<<<<<<< HEAD
   // homepageReducer,
   // membershipReducer,
   // socialReducer,
   storeReducer,
   // cartReducer,
 })
+=======
+  homepageReducer,
+  membershipReducer,
+  socialReducer,
+  storeReducer,
+  cartReducer,
+});
+>>>>>>> 6264cc9997f0a3182b1f9b7767d88642000ac679

@@ -1,5 +1,6 @@
 export const GET_RECOM = "GET_RECOM";
-export const PET_LIKE = "PET_LIKE";
-export const PET_DISLIKE = "PET_DISLIKE";
-export const PET_CANCLE = "PET_CANCLE";
-export const PET_INIT = "PET_INIT";
+export const GET_ORDERLIST = "GET_ORDERLIST";
+export const GOODS_LIKE = "GOODS_LIKE";
+export const GOODS_DISLIKE = "GOODS_DISLIKE";
+export const GOODS_INIT = "GOODS_INIT";
+export const CART_CANCLE = "CART_CANCLE";
