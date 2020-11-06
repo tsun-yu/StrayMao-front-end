@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import TestLink from "./components/common/TestLink";
 import AdoptionTest from "./components/adoption/Test";
 import AdoptionList from "./components/adoption/AdopListPage";
+import AdoptionMain from "./components/adoption/AdopMainPage";
 import AdoptionDetail from "./components/adoption/AdopDetailPage";
 import CartTest from "./components/cart/Test";
 import HomeTest from "./components/homapage/Test";
@@ -33,6 +34,10 @@ function App() {
             <Route path="/adoptionTest">
               {/*要連線的網頁*/}
               <AdoptionTest />
+            </Route>
+            <Route path="/adoptionMain">
+              {/*要連線的網頁*/}
+              <AdoptionMain />
             </Route>
             <Route path="/adoptionList">
               {/*要連線的網頁*/}
