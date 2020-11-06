@@ -31,7 +31,7 @@ export const getRecommandAsync = (value) => {
       // data會是一個物件值
       console.log(data);
 
-      await dispatch(getRecommand(data.data[0]));
+      await dispatch(getRecommand(data.data));
     } catch (error) {
       //setError(error)
     }
