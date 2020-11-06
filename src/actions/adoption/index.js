@@ -114,6 +114,7 @@ export const petInitLikeAsync = (value) => {
       // console.log("init:", data.data);
       let dataValue = false;
       if (data.data.length > 0) {
+        console.log("like:", true);
         dataValue = true;
       }
       await dispatch(petInitLike(dataValue));
@@ -130,7 +131,7 @@ export const getList = (value) => {
 
 export const getListAsync = (value) => {
   return async function getRecommandPet(dispatch, getState) {
-    const url = "http://localhost:3001/straymao/adoption/get_pet_list";
+    const url = "http://localhost:3001/straymao/adoption/get_pet_list/m/111";
 
     const request = new Request(url, {
       method: "GET",
@@ -143,7 +144,7 @@ export const getListAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      // console.log(data);
+      // console.log(data.data);
 
       await dispatch(getList(data.data));
     } catch (error) {
