@@ -6,7 +6,7 @@ import EasternCity from './Ques3component/EasternCity'
 import Page3Topic from './Page3Topic'
 
 function Page3Ques2(props) {
-  const { setCity, setArea, switchColor } = props
+  const { setCity, setArea, switchColor, setDot } = props
   return (
     <>
       <div className="page3single ">
@@ -19,6 +19,7 @@ function Page3Ques2(props) {
               setCity(<NorthernCity switchColor={switchColor} />)
               setArea('北部地區')
               document.querySelector('.page3').style.left = '-200vw'
+              setDot(3)
             }}
           >
             <div className="page3circle page3area">北部</div>
@@ -30,6 +31,7 @@ function Page3Ques2(props) {
               setCity(<WesternCity switchColor={switchColor} />)
               setArea('中部地區')
               document.querySelector('.page3').style.left = '-200vw'
+              setDot(3)
             }}
           >
             <div className="page3circle page3area">中部</div>
@@ -41,6 +43,7 @@ function Page3Ques2(props) {
               setCity(<SouthernCity switchColor={switchColor} />)
               setArea('南部地區')
               document.querySelector('.page3').style.left = '-200vw'
+              setDot(3)
             }}
           >
             <div className="page3circle page3area">南部</div>
@@ -52,6 +55,7 @@ function Page3Ques2(props) {
               setCity(<EasternCity switchColor={switchColor} />)
               setArea('東部地區')
               document.querySelector('.page3').style.left = '-200vw'
+              setDot(3)
             }}
           >
             <div className="page3circle page3area">東部</div>

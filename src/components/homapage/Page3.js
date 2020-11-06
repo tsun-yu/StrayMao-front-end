@@ -10,7 +10,7 @@ import Dogsize from './HP-component/Page3component/Ques6component/DogSize'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 function Page3(props) {
-  const [dot, setDot] = useState('0vw')
+  const [dot, setDot] = useState('1')
   const [city, setCity] = useState('')
   const [area, setArea] = useState('縣市')
   const [pet, setPet] = useState(<Dogsize />)
@@ -24,10 +24,15 @@ function Page3(props) {
   }
 
   useEffect(() => {
-    let a = parseInt(document.querySelector('.page3').style.left) / -100
-    console.log(a)
+    document
+      .querySelectorAll('#root > main > div > div:nth-child(3) > div > ul > li')
+      .forEach((e) => {
+        e.style.backgroundColor = 'rgba(255, 255, 255, 0.6)'
+      })
+    document.querySelector(
+      `#root > main > div > div:nth-child(3) > div > ul > li:nth-child(${dot})`
+    ).style.backgroundColor = 'rgba(203, 153, 126, 1)'
   }, [dot])
-
   return (
     <>
       <div>
@@ -54,15 +59,13 @@ function Page3(props) {
             <div className="arrow">下一頁</div>
           </div>
 
-          <div
-            className="d-flex page3 position-absolute"
-            style={{ left: { dot } }}
-          >
-            <Page3Ques1 setPet={setPet} />
+          <div className="d-flex page3 position-absolute" style={{ left: 0 }}>
+            <Page3Ques1 setPet={setPet} setDot={setDot} />
             <Page3Ques2
               setCity={setCity}
               setArea={setArea}
               switchColor={switchColor}
+              setDot={setDot}
             />
             <Page3Ques3 city={city} area={area} setCity={setCity} />
             <Page3Ques4 />
@@ -73,38 +76,38 @@ function Page3(props) {
             <li
               onClick={(e) => {
                 document.querySelector('.page3').style.left = '0vw'
-
-                // document.querySelectorAll(
-                //   '.slider-dots li'
-                // ).style.backgroundColor = ' rgba(255, 255, 255, 0.6)'
-                // e.target.style.backgroundColor = '#cb997e'
+                setDot(1)
               }}
             ></li>
             <li
               onClick={() => {
                 document.querySelector('.page3').style.left = '-100vw'
-                // setDot('-100vw')
+                setDot(2)
               }}
             ></li>
             <li
-              onClick={() =>
-                (document.querySelector('.page3').style.left = '-200vw')
-              }
+              onClick={() => {
+                document.querySelector('.page3').style.left = '-200vw'
+                setDot(3)
+              }}
             ></li>
             <li
-              onClick={() =>
-                (document.querySelector('.page3').style.left = '-300vw')
-              }
+              onClick={() => {
+                document.querySelector('.page3').style.left = '-300vw'
+                setDot(4)
+              }}
             ></li>
             <li
-              onClick={() =>
-                (document.querySelector('.page3').style.left = '-400vw')
-              }
+              onClick={() => {
+                document.querySelector('.page3').style.left = '-400vw'
+                setDot(5)
+              }}
             ></li>
             <li
-              onClick={() =>
-                (document.querySelector('.page3').style.left = '-500vw')
-              }
+              onClick={() => {
+                document.querySelector('.page3').style.left = '-500vw'
+                setDot(6)
+              }}
             ></li>
           </ul>
         </div>
