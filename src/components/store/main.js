@@ -5,6 +5,8 @@ import '../../styles/store/straymao.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
 import { getListAsync } from '../../actions/store/index'
+import { Link } from 'react-router-dom'
+import LittleCardImg from '../../components/store/LittleCardImg'
 
 function Storepage(props) {
   let i = 0
@@ -93,57 +95,64 @@ function Storepage(props) {
                 src="./image/store/cat-3953989_1280.png"
                 alt=""
               />
-              <div className="storeP1BackgroundCatTower hoverCard">
-                123456789
-              </div>
-              <svg
-                id="storeP1BackgroundCatTowerCircle2"
-                className="animate__animated animate__slideInDown storeP1BackgroundCatTowerCircle2"
-                xmlns="http://www.w3.org/2000/svg"
-                width="27.5"
-                height="27.5"
-                viewBox="0 0 27.5 27.5"
-              >
-                <defs>
-                  <clipPath id="clip-path">
-                    <rect
-                      id="Rectangle_865"
-                      data-name="Rectangle 865"
-                      width="27.5"
-                      height="27.5"
-                      transform="translate(235.5 376.5)"
-                      fill="none"
-                    />
-                  </clipPath>
-                </defs>
-                <g
-                  id="Group_688"
-                  data-name="Group 688"
-                  transform="translate(-235.5 -376.5)"
-                  opacity="0.2"
-                >
-                  <g id="Group_687" data-name="Group 687">
+              {/* hover cards and link to */}
+
+              <a href="https://www.google.com/">
+                <div className="storeP1BackgroundCatTowerCircle2">
+                  <svg
+                    id="storeP1BackgroundCatTowerCircle2"
+                    className="animate__animated animate__slideInDown storeP1BackgroundCatTowerCircle2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="27.5"
+                    height="27.5"
+                    viewBox="0 0 27.5 27.5"
+                  >
+                    <defs>
+                      <clipPath id="clip-path">
+                        <rect
+                          id="Rectangle_865"
+                          data-name="Rectangle 865"
+                          width="27.5"
+                          height="27.5"
+                          transform="translate(235.5 376.5)"
+                          fill="none"
+                        />
+                      </clipPath>
+                    </defs>
                     <g
-                      id="Group_686"
-                      data-name="Group 686"
-                      clip-path="url(#clip-path)"
+                      id="Group_688"
+                      data-name="Group 688"
+                      transform="translate(-235.5 -376.5)"
+                      opacity="0.2"
                     >
-                      <circle
-                        id="Ellipse_19"
-                        data-name="Ellipse 19"
-                        cx="10.25"
-                        cy="10.25"
-                        r="10.25"
-                        transform="translate(239 380)"
-                        fill="none"
-                        stroke="#595757"
-                        stroke-miterlimit="10"
-                        stroke-width="7"
-                      />
+                      <g id="Group_687" data-name="Group 687">
+                        <g
+                          id="Group_686"
+                          data-name="Group 686"
+                          clip-path="url(#clip-path)"
+                        >
+                          <circle
+                            id="Ellipse_19"
+                            data-name="Ellipse 19"
+                            cx="10.25"
+                            cy="10.25"
+                            r="10.25"
+                            transform="translate(239 380)"
+                            fill="none"
+                            stroke="#595757"
+                            stroke-miterlimit="10"
+                            stroke-width="7"
+                          />
+                        </g>
+                      </g>
                     </g>
-                  </g>
-                </g>
-              </svg>
+                  </svg>
+
+                  <div className="StoreP1BackgroundCatTowerCircleCard d-flex">
+                    <LittleCardImg />
+                  </div>
+                </div>
+              </a>
 
               <svg
                 id="storeP1BackgroundCatTowerCircle"
@@ -200,53 +209,63 @@ function Storepage(props) {
               src="./image/store/dog-food2.png"
               alt=""
             />
-            <svg
-              id="storeP1BackgroundDogFoodCircle2"
-              xmlns="http://www.w3.org/2000/svg"
-              width="27.5"
-              height="27.5"
-              viewBox="0 0 27.5 27.5"
-            >
-              <defs>
-                <clipPath id="clip-path">
-                  <rect
-                    id="Rectangle_865"
-                    data-name="Rectangle 865"
-                    width="27.5"
-                    height="27.5"
-                    transform="translate(235.5 376.5)"
-                    fill="none"
-                  />
-                </clipPath>
-              </defs>
-              <g
-                id="Group_688"
-                data-name="Group 688"
-                transform="translate(-235.5 -376.5)"
-                opacity="0.2"
-              >
-                <g id="Group_687" data-name="Group 687">
+
+            {/* hover cards and link to */}
+            <a href="https://www.google.com/">
+              <div className="storeP1BackgroundDogFoodCircle2">
+                <svg
+                  id="storeP1BackgroundDogFoodCircle2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="27.5"
+                  height="27.5"
+                  viewBox="0 0 27.5 27.5"
+                >
+                  <defs>
+                    <clipPath id="clip-path">
+                      <rect
+                        id="Rectangle_865"
+                        data-name="Rectangle 865"
+                        width="27.5"
+                        height="27.5"
+                        transform="translate(235.5 376.5)"
+                        fill="none"
+                      />
+                    </clipPath>
+                  </defs>
                   <g
-                    id="Group_686"
-                    data-name="Group 686"
-                    clip-path="url(#clip-path)"
+                    id="Group_688"
+                    data-name="Group 688"
+                    transform="translate(-235.5 -376.5)"
+                    opacity="0.2"
                   >
-                    <circle
-                      id="Ellipse_19"
-                      data-name="Ellipse 19"
-                      cx="10.25"
-                      cy="10.25"
-                      r="10.25"
-                      transform="translate(239 380)"
-                      fill="none"
-                      stroke="#595757"
-                      stroke-miterlimit="10"
-                      stroke-width="7"
-                    />
+                    <g id="Group_687" data-name="Group 687">
+                      <g
+                        id="Group_686"
+                        data-name="Group 686"
+                        clip-path="url(#clip-path)"
+                      >
+                        <circle
+                          id="Ellipse_19"
+                          data-name="Ellipse 19"
+                          cx="10.25"
+                          cy="10.25"
+                          r="10.25"
+                          transform="translate(239 380)"
+                          fill="none"
+                          stroke="#595757"
+                          stroke-miterlimit="10"
+                          stroke-width="7"
+                        />
+                      </g>
+                    </g>
                   </g>
-                </g>
-              </g>
-            </svg>
+                </svg>
+
+                <div className="StoreP1BackgroundDogFoodCircleCard d-flex">
+                  <LittleCardImg />
+                </div>
+              </div>
+            </a>
 
             <svg
               id="storeP1BackgroundDogFoodCircle"
@@ -412,53 +431,63 @@ function Storepage(props) {
               src="./image/store/cat_tree01.png"
               alt=""
             />
-            <svg
-              id="storeP1BackgroundMoonCircle2"
-              xmlns="http://www.w3.org/2000/svg"
-              width="27.5"
-              height="27.5"
-              viewBox="0 0 27.5 27.5"
-            >
-              <defs>
-                <clipPath id="clip-path">
-                  <rect
-                    id="Rectangle_865"
-                    data-name="Rectangle 865"
-                    width="27.5"
-                    height="27.5"
-                    transform="translate(235.5 376.5)"
-                    fill="none"
-                  />
-                </clipPath>
-              </defs>
-              <g
-                id="Group_688"
-                data-name="Group 688"
-                transform="translate(-235.5 -376.5)"
-                opacity="0.2"
-              >
-                <g id="Group_687" data-name="Group 687">
+
+            {/* hover cards and link to */}
+            <a href="https://www.google.com/">
+              <div className="storeP1BackgroundMoonCircle2">
+                <svg
+                  id="storeP1BackgroundMoonCircle2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="27.5"
+                  height="27.5"
+                  viewBox="0 0 27.5 27.5"
+                >
+                  <defs>
+                    <clipPath id="clip-path">
+                      <rect
+                        id="Rectangle_865"
+                        data-name="Rectangle 865"
+                        width="27.5"
+                        height="27.5"
+                        transform="translate(235.5 376.5)"
+                        fill="none"
+                      />
+                    </clipPath>
+                  </defs>
                   <g
-                    id="Group_686"
-                    data-name="Group 686"
-                    clip-path="url(#clip-path)"
+                    id="Group_688"
+                    data-name="Group 688"
+                    transform="translate(-235.5 -376.5)"
+                    opacity="0.2"
                   >
-                    <circle
-                      id="Ellipse_19"
-                      data-name="Ellipse 19"
-                      cx="10.25"
-                      cy="10.25"
-                      r="10.25"
-                      transform="translate(239 380)"
-                      fill="none"
-                      stroke="#595757"
-                      stroke-miterlimit="10"
-                      stroke-width="7"
-                    />
+                    <g id="Group_687" data-name="Group 687">
+                      <g
+                        id="Group_686"
+                        data-name="Group 686"
+                        clip-path="url(#clip-path)"
+                      >
+                        <circle
+                          id="Ellipse_19"
+                          data-name="Ellipse 19"
+                          cx="10.25"
+                          cy="10.25"
+                          r="10.25"
+                          transform="translate(239 380)"
+                          fill="none"
+                          stroke="#595757"
+                          stroke-miterlimit="10"
+                          stroke-width="7"
+                        />
+                      </g>
+                    </g>
                   </g>
-                </g>
-              </g>
-            </svg>
+                </svg>
+
+                <div className="storeP1BackgroundMoonCircleCard d-flex">
+                  <LittleCardImg />
+                </div>
+              </div>
+            </a>
 
             <svg
               id="storeP1BackgroundMoonCircle"
@@ -514,53 +543,62 @@ function Storepage(props) {
               src="./image/store/cat_tree02.png"
               alt=""
             />
-            <svg
-              id="storeP1BackgroundAngleCircle2"
-              xmlns="http://www.w3.org/2000/svg"
-              width="27.5"
-              height="27.5"
-              viewBox="0 0 27.5 27.5"
-            >
-              <defs>
-                <clipPath id="clip-path">
-                  <rect
-                    id="Rectangle_865"
-                    data-name="Rectangle 865"
-                    width="27.5"
-                    height="27.5"
-                    transform="translate(235.5 376.5)"
-                    fill="none"
-                  />
-                </clipPath>
-              </defs>
-              <g
-                id="Group_688"
-                data-name="Group 688"
-                transform="translate(-235.5 -376.5)"
-                opacity="0.2"
-              >
-                <g id="Group_687" data-name="Group 687">
+
+            <a href="https://www.google.com/">
+              <div className="storeP1BackgroundAngleCircle2">
+                <svg
+                  id="storeP1BackgroundAngleCircle2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="27.5"
+                  height="27.5"
+                  viewBox="0 0 27.5 27.5"
+                >
+                  <defs>
+                    <clipPath id="clip-path">
+                      <rect
+                        id="Rectangle_865"
+                        data-name="Rectangle 865"
+                        width="27.5"
+                        height="27.5"
+                        transform="translate(235.5 376.5)"
+                        fill="none"
+                      />
+                    </clipPath>
+                  </defs>
                   <g
-                    id="Group_686"
-                    data-name="Group 686"
-                    clip-path="url(#clip-path)"
+                    id="Group_688"
+                    data-name="Group 688"
+                    transform="translate(-235.5 -376.5)"
+                    opacity="0.2"
                   >
-                    <circle
-                      id="Ellipse_19"
-                      data-name="Ellipse 19"
-                      cx="10.25"
-                      cy="10.25"
-                      r="10.25"
-                      transform="translate(239 380)"
-                      fill="none"
-                      stroke="#595757"
-                      stroke-miterlimit="10"
-                      stroke-width="7"
-                    />
+                    <g id="Group_687" data-name="Group 687">
+                      <g
+                        id="Group_686"
+                        data-name="Group 686"
+                        clip-path="url(#clip-path)"
+                      >
+                        <circle
+                          id="Ellipse_19"
+                          data-name="Ellipse 19"
+                          cx="10.25"
+                          cy="10.25"
+                          r="10.25"
+                          transform="translate(239 380)"
+                          fill="none"
+                          stroke="#595757"
+                          stroke-miterlimit="10"
+                          stroke-width="7"
+                        />
+                      </g>
+                    </g>
                   </g>
-                </g>
-              </g>
-            </svg>
+                </svg>
+
+                <div className="storeP1BackgroundAngleCircleCard d-flex">
+                  <LittleCardImg />
+                </div>
+              </div>
+            </a>
 
             <svg
               id="storeP1BackgroundAngleCircle"
