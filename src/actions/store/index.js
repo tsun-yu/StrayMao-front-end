@@ -165,7 +165,7 @@ export const getHotSaleAsync = (value) => {
       const response = await fetch(request)
       const data = await response.json()
       // data會是一個物件值
-      console.log('async: ', data)
+      console.log('getHotSaleAsync: ', data)
 
       await dispatch(getHotSale(data.data))
     } catch (error) {

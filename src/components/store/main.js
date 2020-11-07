@@ -10,16 +10,12 @@ import LittleCardImg from '../../components/store/LittleCardImg'
 
 import { getListAsync, getHotSaleAsync } from '../../actions/store/index'
 
-function StoreHotSale(props) {
-  props.getHotSaleAsync()
-  // console.log(props.info)
-}
-
 function Storepage(props) {
   let i = 0
   useEffect(() => {
     props.getListAsync()
-    console.log(props.info)
+    props.getHotSaleAsync()
+    // console.log(props.info)
 
     // mouse
     document
@@ -845,7 +841,6 @@ const mapStateToProps = (store) => {
 }
 const mapDispatchToProps = null
 
-export default connect(mapStateToProps, { getListAsync })(
-  Storepage,
-  StoreHotSale
+export default connect(mapStateToProps, { getListAsync, getHotSaleAsync })(
+  Storepage
 )
