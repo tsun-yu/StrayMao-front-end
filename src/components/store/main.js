@@ -4,9 +4,16 @@ import { connect } from 'react-redux'
 import '../../styles/store/straymao.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
-import { getListAsync } from '../../actions/store/index'
+// import { getListAsync } from '../../actions/store/index'
 import { Link } from 'react-router-dom'
 import LittleCardImg from '../../components/store/LittleCardImg'
+
+import { getListAsync, getHotSaleAsync } from '../../actions/store/index'
+
+function StoreHotSale(props) {
+  props.getHotSaleAsync()
+  // console.log(props.info)
+}
 
 function Storepage(props) {
   let i = 0
@@ -838,4 +845,7 @@ const mapStateToProps = (store) => {
 }
 const mapDispatchToProps = null
 
-export default connect(mapStateToProps, { getListAsync })(Storepage)
+export default connect(mapStateToProps, { getListAsync })(
+  Storepage,
+  StoreHotSale
+)
