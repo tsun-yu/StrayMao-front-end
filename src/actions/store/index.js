@@ -1,4 +1,4 @@
-import { GET_STORELIST } from './actionTypes'
+import { GET_STORELIST, GET_SORT, GET_DETAIL, GET_HOT } from './actionTypes'
 
 //actionCreater
 
@@ -136,9 +136,38 @@ export const getListAsync = (value) => {
       const response = await fetch(request)
       const data = await response.json()
       // data會是一個物件值
-      console.log(data)
+      console.log('async: ', data)
 
       await dispatch(getList(data.data))
+    } catch (error) {
+      //setError(error)
+    }
+  }
+}
+
+// get HotSale DATA From node.js
+export const getHotSale = (value) => {
+  return { type: GET_HOT, value }
+}
+
+export const getHotSaleAsync = (value) => {
+  return async function getRecommandPet(dispatch, getState) {
+    const url = 'http://localhost:3001/straymao/store/goods/sale'
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    try {
+      const response = await fetch(request)
+      const data = await response.json()
+      // data會是一個物件值
+      console.log('getHotSaleAsync: ', data)
+
+      await dispatch(getHotSale(data.data))
     } catch (error) {
       //setError(error)
     }
