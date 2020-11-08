@@ -5,7 +5,8 @@ import "../../styles/cart/cartlist.scss";
 function CartListCardC(props) {
   return (
     <>
-      <div className="cartlistC_boxUpper_An d-flex">
+      <div className="cartlistC_boxUpper_An d-flex justify-content-between">
+      <div className="d-flex">
         <div className="cartlistC_icon-018-trashUpper_An">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.82 24.22">
             <path
@@ -38,9 +39,11 @@ function CartListCardC(props) {
           className="cartlistC_goodsImg_An"
           src="./image/store/brothcan-1-510x510.jpg"
         ></img>
+        </div>
         <span className="cartlistC_goodsName_An">
-          {props.info.name}Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg
+          {props.info.name}
         </span>
+        <div className="d-flex">
         <div className="cartlistC_inputbox_An d-flex">
           <div className="cartlistC_icon-067-minus_An">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.44 19.44">
@@ -67,7 +70,8 @@ function CartListCardC(props) {
             </svg>
           </div>
         </div>
-        <span className="cartlistC_goodsPrice_An">2790 元</span>
+        <span className="cartlistC_goodsPrice_An">{props.info.price} 元</span>
+        </div>
         {props.children}
       </div>
     </>
