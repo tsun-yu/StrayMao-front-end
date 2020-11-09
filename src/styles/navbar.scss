@@ -4,7 +4,7 @@
 
 .navbar {
   height: 100px;
-  background-color: #a5a58d;
+  background-color: $primary;
   opacity: 0.9;
 }
 
@@ -41,4 +41,6 @@
 .navLogoCN {
   border-bottom: 1px solid #fff1e6;
   font-family: $fontType2;
+  left: 270px;
+  top: 55px;
 }
