@@ -201,7 +201,35 @@ main > .container {
   background-color: #fffffd;
   margin: 10px 0px;
 }
+.adopFormTitle {
+  text-height: 30px;
+  width: 400px;
+  height: 50px;
+  border-bottom: #ed8f8f 1px solid;
+}
+.adopFormBoxFin {
+  background-color: #a5a58d;
+  width: 80%;
+  border-radius: 4px;
+  height: 400px;
+}
+.adopFormBoxFin > label {
+  color: #fff1e6;
+}
+.adopFormBox {
+  background-color: #fff1e6;
+  width: 590px;
+  border-radius: 4px;
+}
+.opt > .adopInputInRadio {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 26px;
+}
 
+.paragraph1.ml-1 {
+  cursor: pointer;
+}
 /**page bar**/
 .pageBar {
   list-style-type: none;
