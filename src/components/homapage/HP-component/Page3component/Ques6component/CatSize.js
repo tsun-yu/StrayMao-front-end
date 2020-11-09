@@ -1,10 +1,32 @@
 import React, { useState, useEffect } from 'react'
 
 function CatSize(props) {
+  const iconColorToggle = (x) => {
+    const iconSvg = document.querySelector(
+      `#root > main > div > div:nth-child(3) > div > div > div:nth-child(6) > div.d-flex.justify-content-center > a:nth-child(${x})`
+    ).classList
+    if (iconSvg[2] == 'page3pet') {
+      iconSvg.remove('page3circle')
+      iconSvg.remove('page3pet')
+      iconSvg.add('page3circleClick')
+      iconSvg.add('page3petClick')
+    } else {
+      iconSvg.remove('page3circleClick')
+      iconSvg.remove('page3petClick')
+      iconSvg.add('page3circle')
+      iconSvg.add('page3pet')
+    }
+  }
   return (
     <>
       <div className="d-flex justify-content-center">
-        <a className=" page3circle page3pet mx-2" href="##">
+        <a
+          className="mx-2 page3circle page3pet"
+          href="##"
+          onClick={() => {
+            iconColorToggle(1)
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="104.069"
@@ -19,7 +41,13 @@ function CatSize(props) {
             />
           </svg>
         </a>
-        <a className="mx-2 page3circle page3pet" href="##">
+        <a
+          className="mx-2 page3circle page3pet"
+          href="##"
+          onClick={() => {
+            iconColorToggle(2)
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="78.586"
@@ -33,7 +61,13 @@ function CatSize(props) {
             />
           </svg>
         </a>
-        <a className="mx-2 page3circle page3pet" href="##">
+        <a
+          className="mx-2 page3circle page3pet"
+          href="##"
+          onClick={() => {
+            iconColorToggle(3)
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="49.986"
