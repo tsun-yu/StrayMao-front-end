@@ -23,15 +23,13 @@ function Page1Carousel(props) {
   }, [])
   return (
     <>
-      <div className="page1right">
-        <div className="page1wrap position-relative">
-          <div className="d-flex page1img-wrap position-absolute">
-            <img src={img1} alt="" />
-            <img src={img2} alt="" />
-            <img src={img3} alt="" />
-            <img src={img4} alt="" />
-            {/* <img src={img5} alt="" /> */}
-          </div>
+      <div className="page1wrap position-relative">
+        <div className="d-flex page1img-wrap position-absolute">
+          <img src={img1} alt="" />
+          <img src={img2} alt="" />
+          <img src={img3} alt="" />
+          <img src={img4} alt="" />
+          {/* <img src={img5} alt="" /> */}
         </div>
       </div>
     </>

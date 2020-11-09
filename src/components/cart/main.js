@@ -8,15 +8,39 @@ import { getRecommand, getRecommandAsync }
 from "../../actions/cart/index";
 function CartList(props) {
     const [test, setTest] = useState({});
+    const [dataLoading, setDataLoading] = useState(true);
+    const [display, setDisplay] = useState(<></>);
+
+    const content = [];
+    let totalCards = props.info;
     useEffect(() => {
-        setTest(props.getRecommandAsync());
+        props.getRecommandAsync()
+        console.log("info2: ",props.info)
     }, []);
-return(
+    useEffect(() => {
+        totalCards = props.info;
+        console.log("totalcards:",totalCards)
+        if (totalCards.length > 0) {
+          // let tt = JSON.parse(totalCards[0]);
+          // console.log("totalCards: ", totalCards[0]);
+        }
+        for (
+                let i = 0;
+                i < totalCards.length;
+                i++
+            ) {
+                if (totalCards.length > 0) {
+                    // console.log(":",totalCards[i]);
+                    content.push(<CartListCardC info={totalCards[i]} key={i} />);
+                }
+            }
+            setDisplay(
 <>
 <div className="cartlistC_body_An">
     <div className="container cartlistC_box_An">
         <div className="cartlistC_boxBottom_An">
-            <CartListCardC info={props.info}/>
+            {/* <CartListCardC info={props.info}/> */}
+            {content}
         </div>
         <div className="cartlistC_boxDown_An d-flex justify-content-between">
             <div className="cartlistC_boxDownLeft_An d-flex">
@@ -62,7 +86,17 @@ return(
     </div>
 </div>
 </>
-)}
+);
+
+    setTimeout(() => setDataLoading(false), 1000);
+        console.log("content:",content)
+    },[totalCards])
+    const loading = <div></div>;
+
+  // 以資料載入的指示狀態來切換要出現的畫面
+  return dataLoading ? loading : display;
+  // return loading;
+}
 
 const mapStateToProps = (store) => {
     return { info: store.cartReducer.getRecom };
