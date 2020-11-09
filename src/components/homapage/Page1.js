@@ -7,7 +7,7 @@ function Page1(props) {
 
     const interval = setInterval(() => {
       // newIndex > 3 && (newIndex = 0)
-      if (newIndex > 1) {
+      if (newIndex > 3) {
         document.querySelector('.page1left-wrap').style.transition = '0s'
         newIndex = 0
       } else {
@@ -26,6 +26,24 @@ function Page1(props) {
       <div className="d-flex page1">
         <div className="page1left position-relative">
           <div className="position-absolute page1left-wrap">
+            <div className="page1left-1">
+              <div className="page1des">Love them likes family.</div>
+              <div className="page1des2 d-flex flex-column justify-content-around">
+                <div className="hide">fuck</div>
+                <div>給他們一個機會, 擁有一個家。</div>
+                <div className="page1des3 mr-2">>了解更多</div>
+              </div>
+            </div>
+            <div className="page1left-2">
+              <div className="page1des">
+                It's not coincidence about meet our furbaby.
+              </div>
+              <div className="page1des2 d-flex flex-column justify-content-around">
+                <div className="hide">fuck</div>
+                <div>與毛孩的相遇，從來都不是巧合。</div>
+                <div className="page1des3 mr-2">>了解更多</div>
+              </div>
+            </div>
             <div className="page1left-1">
               <div className="page1des">Love them likes family.</div>
               <div className="page1des2 d-flex flex-column justify-content-around">
