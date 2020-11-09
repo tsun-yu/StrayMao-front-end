@@ -1,4 +1,9 @@
-export const GET_STORELIST = 'GET_STORELIST'
-export const GET_SORT = 'GET_SORT'
-export const GET_DETAIL = 'GET_DETAIL'
-export const GET_HOT = 'GET_HOT'
+export const GET_STORELIST = 'GET_STORELIST' //最新
+export const GET_SORT = 'GET_SORT' //分類
+export const GET_DETAIL = 'GET_DETAIL' //詳細頁面
+export const GET_HOT = 'GET_HOT' //熱賣
+export const GET_DISCOUNT = 'GET_DISCOUNT' //特價
+export const GET_DOGS = 'GET_DOGS' //狗
+export const GET_CATS = 'GET_CATS' //貓
+export const GET_PRICEUP = 'GET_PRICEUP' //價格高到低
+export const GET_PRICEDOWN = 'GET_PRICEUDOWN' //價格低到高
