@@ -13,6 +13,7 @@ function MyNavbar(props) {
         variant="dark"
         fixed="top"
         display="flex"
+        className="commonNavbar"
       >
         <Navbar.Brand
           href="/homeTest"
@@ -105,8 +106,8 @@ function MyNavbar(props) {
                 </Nav.Link>
               </NavDropdown.Item>
               {/* <Nav.Link as={NavLink} to="/store" style={{ color: '#FFF1E6' }}>
-              商城<i className="fas fa-caret-down"></i>
-            </Nav.Link> */}
+                商城<i className="fas fa-caret-down"></i>
+              </Nav.Link> */}
             </NavDropdown>
             <NavDropdown title="社群" id="basic-nav-dropdown">
               <NavDropdown.Item>
