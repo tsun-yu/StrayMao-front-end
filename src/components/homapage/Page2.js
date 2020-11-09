@@ -14,17 +14,17 @@ function Page2(props) {
               page2ImgClass="page2img"
             /> */}
             <Parallax
-              animation={{ y: 0, opacity: 1, playScale: [0.1, 0.5] }}
+              animation={{ y: 0, opacity: 1, playScale: [0, 0.5] }}
               style={{ transform: 'translateY(150px)', opacity: 0 }}
               className="page2img1"
             />
             <Parallax
-              animation={{ y: 0, opacity: 1, playScale: [0.3, 0.7] }}
+              animation={{ y: 0, opacity: 1, playScale: [0.1, 0.6] }}
               style={{ transform: 'translateY(150px)', opacity: 0 }}
               className="page2img2"
             />
             <Parallax
-              animation={{ y: 0, opacity: 1, playScale: [0.4, 0.8] }}
+              animation={{ y: 0, opacity: 1, playScale: [0.2, 0.7] }}
               style={{ transform: 'translateY(150px)', opacity: 0 }}
               className="page2img3"
             />

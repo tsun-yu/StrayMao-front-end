@@ -16,7 +16,10 @@ import SocialTest from './components/social_media/Test'
 import StoreTest from './components/store/Test'
 import StrayMaoP2 from './components/store/StrayMaoP2'
 import StrayMaoP3 from './components/store/StrayMaoP3'
+<<<<<<< HEAD
 import Try from './components/store/Try'
+=======
+>>>>>>> 8155c0f6c5c70f4fe59393ee1a429dafcb260680
 
 function App() {
   return (
