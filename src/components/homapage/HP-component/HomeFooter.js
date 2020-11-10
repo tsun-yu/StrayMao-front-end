@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import { Parallax } from 'rc-scroll-anim'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faFacebook,
@@ -11,30 +11,25 @@ import {
 function HomeFooter() {
   return (
     <>
-      <footer className="footer navbar-fixed-bottom homeFooter_bg page7">
-        <br />
-        <div className="row container-fluid footer_content">
-          <div className="row col-5 justify-content-start">
+      <footer className="navbar-fixed-bottom homeFt_bg ">
+        <div className="position-relative homeFtBlock">
+          <div className="row col-6 justify-content-center">
             <div className="col-3"></div>
             <div className="col">
-              <div className="ftSlogan">
+              <div className="homeFtSlogan">
                 <div>給愛一個家,</div>
-                <div>也把想要的都打包回家。</div>
+                <div className="text-right pt-3">也把想要的都打包回家。</div>
               </div>
             </div>
           </div>
-          <div className="row col justify-content-end">
-            {/* <FooterImgs /> */}
-            <div className="row col justify-content-end">
-              <span className="bottomText">
-                <br />
-                <br />© 2020 Stray Mao, Taipei, Taiwan
-              </span>
-            </div>
-          </div>
+          <Parallax
+            animation={{ x: 950, opacity: 1, playScale: [0, 1] }}
+            style={{ transform: 'translateX(-100px)', opacity: 1 }}
+            className="homeFtTruck position-absolute"
+          />
+          <div className="homeFtTree position-absolute"></div>
         </div>
-
-        <br />
+        <div className="homeFtBar"></div>
       </footer>
     </>
   )
