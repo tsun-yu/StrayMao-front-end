@@ -125,6 +125,28 @@ function Page3(props) {
     console.log(select)
   }
 
+  //connect DB
+  const postDB = async (select) => {
+    const url = 'http://localhost:3001/straymao/homepage/question'
+    const data = { arr: select }
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    try {
+      const response = await fetch(request)
+      const data = await response.json()
+      // data會是一個物件值
+      await console.log(data)
+    } catch (error) {
+      //setError(error)
+    }
+  }
+
   // dot
   useEffect(() => {
     document
@@ -187,7 +209,7 @@ function Page3(props) {
               selectToggle={selectToggle}
             />
             <Page3Ques5 switchColor={switchColor} selectToggle={selectToggle} />
-            <Page3Ques6 pet={pet} selectToggle={selectToggle} />
+            <Page3Ques6 pet={pet} selectToggle={selectToggle} select={select} />
           </div>
           {/* dots */}
           <ul className="list-unstyled slider-dots position-absolute d-flex justify-content-center w-100">
