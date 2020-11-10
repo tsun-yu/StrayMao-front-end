@@ -2,6 +2,7 @@ import { act } from "react-dom/test-utils";
 import {
     GET_RECOM,
     GET_ORDERLIST,
+    GET_ORDER,
     GOODS_LIKE,
     GOODS_DISLIKE,
     GOODS_INIT,
@@ -11,6 +12,30 @@ import {
 function getRecom(state = 1, action) {
   switch (action.type) {
     case GET_RECOM:
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+function getOrderList(state = 1, action) {
+  switch (action.type) {
+    case GET_ORDERLIST:
+      console.log("reducer: ",action.value)
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+function getOrder(state = 1, action) {
+  switch (action.type) {
+    case GET_ORDER:
+      console.log("reducer: ",action.value)
       state = action.value;
       break;
     default:
@@ -35,5 +60,5 @@ function goodsHeart(state = false, action) {
   }
   return state;
 }
-export { getRecom, goodsHeart };
+export { getRecom, getOrderList, getOrder, goodsHeart };
 // export default totalPage;
