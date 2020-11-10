@@ -4,16 +4,17 @@ import { connect } from 'react-redux'
 
 function LittleCardImg(props) {
   // const [item , setItem] = useState(props.item)
-  //   const { item } = props
-  //   console.log('item:', item)
+  const { item } = props
+  console.log('item:', item)
   return (
     <>
       <div class="littleCardImg">
-        <img src="./image/store/dog-food2.png" alt="" />
+        {/* <img src="./image/store/dog-food2.png" alt="" /> */}
+        <img src={item.goodsImgs} alt="" />
       </div>
       <div>
-        <div class="littleCardName">ABC</div>
-        <div class="littleCardPrice">123456</div>
+        <div class="littleCardName">{item.name}</div>
+        <div class="littleCardPrice">NT$ {item.price}</div>
       </div>
     </>
   )

@@ -1,12 +1,12 @@
 // Import Bootstrap and its default variables
-@import "~bootstrap/scss/bootstrap.scss";
-@import "../custom.scss";
-@import "./socialHomeTop";
-@import "./socialHomeNews";
-@import "./socialHomeRank";
-@import "./socialHomeFourm";
-@import "./socialHomeArticle.scss";
-@import "./socialHomeActivity";
+// @import '~bootstrap/scss/bootstrap.scss';
+// @import '../custom.scss';
+// @import './socialHomeTop';
+// @import './socialHomeNews';
+// @import './socialHomeRank';
+// @import './socialHomeFourm';
+// @import './socialHomeArticle.scss';
+// @import './socialHomeActivity';
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 
@@ -20,11 +20,11 @@
 
 .socialEditButtom {
   position: absolute;
-  margin-top:100px;
-  left:0;
+  margin-top: 100px;
+  left: 0;
   color: #707070;
-  z-index:4;
-  background: rgba($color: #FFFFFD, $alpha: 0.3);
+  z-index: 4;
+  background: rgba($color: #fffffd, $alpha: 0.3);
 }
 
 .fourmMyEdit {
@@ -50,8 +50,8 @@
 //論壇主體
 .fourmMain {
   position: relative;
-  top:40px;
-  left:5%;
+  top: 40px;
+  left: 5%;
   display: flex;
   width: 1140px;
   height: 1200px;
@@ -60,11 +60,11 @@
 
 .fourmArticleMain {
   position: absolute;
-  margin:50px auto;
+  margin: 50px auto;
   // left:180px;
   max-width: 740px;
   height: 1046px;
-  display:flex;
+  display: flex;
 }
 
 .fourmMainBg {
@@ -210,7 +210,7 @@
 .fourmArticleDate {
   position: absolute;
   color: #ed8f8f;
-  margin-top:30px;
+  margin-top: 30px;
   margin-left: 240px;
 }
 
@@ -486,7 +486,7 @@
 .fourm_BTitle {
   color: #555555;
   font: {
-    family: $fontType1;
+    // family: $fontType1;
     size: 24px;
     width: lighter;
   }
@@ -709,5 +709,3 @@
   width: 154px;
   margin: 0 auto;
 }
-
-

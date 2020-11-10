@@ -93,12 +93,12 @@ function Page3(props) {
   // dot
   useEffect(() => {
     document
-      .querySelectorAll('#root > main > div > div:nth-child(4) > div > ul > li')
+      .querySelectorAll('#root > main > div > div:nth-child(3) > div > ul > li')
       .forEach((e) => {
         e.style.backgroundColor = 'rgba(255, 255, 255, 0.6)'
       })
     document.querySelector(
-      `#root > main > div > div:nth-child(4) > div > ul > li:nth-child(${dot})`
+      `#root > main > div > div:nth-child(3) > div > ul > li:nth-child(${dot})`
     ).style.backgroundColor = 'rgba(203, 153, 126, 1)'
   }, [dot])
   return (

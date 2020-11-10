@@ -1,0 +1,102 @@
+.socialArticleMain {
+  background-color: #e1e1d5;
+  top: 3rem;
+  min-width: 100%;
+  height: 43.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 12.5rem;
+}
+
+.socialArticleTextBox {
+  border-bottom: solid #b7b7a4 3px;
+}
+
+.socialArticleBottomline {
+  display: inline-block;
+  width: 22.5rem;
+  border-bottom: solid #b7b7a4 3px;
+}
+
+.socialArticleCardItems {
+  position: relative;
+  margin: 5rem auto;
+  padding: 0 1.25rem;
+  max-height: 19.375rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+}
+
+.socialArticleCard {
+  position: relative;
+  width: 20rem;
+  height: 18.75rem;
+  background-color: #fffffd;
+  overflow: hidden;
+}
+
+.socialArticleCard img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.socialArticleCardImg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 11.5625rem;
+  opacity: 70%;
+}
+
+.socialArticleTitle {
+  position: absolute;
+  bottom: 3.75rem;
+  height: 2.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.socialArticleBT {
+  width: 5rem;
+  text-align: center;
+  color: #a5a58d;
+}
+
+.socialArticleST {
+  text-align: left;
+  color: #555555;
+}
+
+.socialArticleContent {
+  position: absolute;
+  padding-left: 4.0625rem;
+  height: 2.5rem;
+  bottom: 0.9375rem;
+  line-height: 1rem;
+  color: #555555;
+}
+
+.socialArticleLink {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4rem;
+  height: 1.875rem;
+  color: #4fa8e3;
+  text-align: center;
+  cursor: pointer;
+}
+/*# sourceMappingURL=socialHomeArticle.css.map */

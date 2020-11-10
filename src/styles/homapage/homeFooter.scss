@@ -1,0 +1,65 @@
+// 預設變數覆蓋需要在導入Bootstrap之前
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+.homeFt_bg {
+  height: 80vh;
+  min-height: 600px;
+  background-color: #f5f5f5;
+}
+.homeFtBlock {
+  height: 60vh;
+  min-height: 600px;
+}
+.homeFtSlogan {
+  font: {
+    size: 38px;
+    family: $fontType2;
+  }
+  color: #a5a58d;
+  padding-top: 30%;
+}
+
+.homeFtTruck {
+  background-image: url(../../components/common/image/footerCar.svg);
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 300px;
+  bottom: 50px;
+  z-index: 1;
+}
+.homeFtTree {
+  background-image: url(../../components/common/image/footerCar_bg.svg);
+  background-repeat: no-repeat;
+  width: 700px;
+  height: 200px;
+  right: 100px;
+  bottom: 80px;
+}
+.homeFtBar {
+  width: 100vw;
+  height: 200px;
+  background-color: #ddbea9;
+}
+.homeFtIcon {
+  padding-top: 25px;
+}
+
+.homeFtContact {
+  color: #fff1e6;
+  font: {
+    size: 1rem;
+    family: $fontType1;
+  }
+}
+.straymao2020 {
+  color: #a5a58d;
+  font: {
+    size: 0.875rem;
+    family: $fontType1;
+    weight: 600;
+  }
+  bottom: 5px;
+  left: 45%;
+}
