@@ -42,7 +42,7 @@ function StoreCard(props) {
           </svg>
         </div>
         <div className="img">
-          <img src="./image/store/brothcan-1-510x510.jpg" alt="鮮肉煲罐頭" />
+          <img src={item.goodsImgs} alt="鮮肉煲罐頭" />
         </div>
 
         <div className="goodsText">

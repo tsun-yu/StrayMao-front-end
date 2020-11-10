@@ -8,13 +8,13 @@
 
 @font-face {
   font-family: Noto_Serif_TC-Regular;
-  src: url("/fonts/Noto_Serif_TC/NotoSerifTC-Regular.otf");
+  src: url('/fonts/Noto_Serif_TC/NotoSerifTC-Regular.otf');
 }
 
 /* 加入Roboto */
 @font-face {
   font-family: Roboto-Regular;
-  src: url("/fonts/Roboto/__Roboto-Regular.ttf");
+  src: url('/fonts/Roboto/__Roboto-Regular.ttf');
 }
 
 /* 大按鈕 */
@@ -29,7 +29,7 @@
   cursor: pointer;
   text-align: center;
   font-weight: bold;
-  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+  font-family: 'Roboto-Regular', 'Microsoft JhengHei', 'Noto_Serif_TC-Regular',
     monospace, serif;
 }
 .btn:hover {
@@ -54,7 +54,7 @@
   background-color: #cb997e;
   cursor: pointer;
   text-align: center;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 }
 
@@ -80,7 +80,7 @@
   background-color: #ed8f8f;
   cursor: pointer;
   text-align: center;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 }
 .btn-red:hover {
@@ -105,7 +105,7 @@
   background-color: #a5a58d;
   cursor: pointer;
   text-align: center;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 }
 .btn-green:hover {
@@ -129,7 +129,7 @@
   border: none;
   cursor: pointer;
   text-align: center;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 }
 .btn-filter:hover .filterbtn {
@@ -160,7 +160,7 @@
   display: block;
   text-align: center;
   font-size: 0.75rem;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 }
 .btn-filter-content a:hover {
@@ -198,7 +198,7 @@
   border: solid 0.08rem #707070;
   text-align: center;
   color: #707070;
-  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+  font-family: 'Roboto-Regular', 'Microsoft JhengHei', 'Noto_Serif_TC-Regular',
     monospace, serif;
 }
 .input-black:focus {
@@ -214,7 +214,7 @@
   border: solid 0.08rem #cb997e;
   // text-align: center;
   color: #707070;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 }
 .input-brown:focus {
@@ -231,7 +231,7 @@
   border: solid 0.08rem #a5a58d;
   text-align: center;
   color: #707070;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 }
 .input-green:focus {
@@ -267,7 +267,7 @@
   display: block;
   text-align: center;
   font-size: 0.75rem;
-  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+  font-family: 'Roboto-Regular', 'Microsoft JhengHei', 'Noto_Serif_TC-Regular',
     monospace, serif;
 }
 .btn-quantity-content a:hover {
@@ -298,7 +298,7 @@
   border-color: transparent;
   text-align: center;
   color: #707070;
-  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+  font-family: 'Roboto-Regular', 'Microsoft JhengHei', 'Noto_Serif_TC-Regular',
     monospace, serif;
 }
 .input-transparent:focus {
@@ -310,7 +310,7 @@
   text-decoration: none;
   color: #4fa8e3;
   font-size: 0.75rem;
-  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+  font-family: 'Roboto-Regular', 'Microsoft JhengHei', 'Noto_Serif_TC-Regular',
     monospace, serif;
 }
 .a-readmore:hover {
@@ -334,7 +334,7 @@
   padding: 0.5rem 1rem;
   border: solid 0.08rem #707070;
   font-size: 0.75rem;
-  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+  font-family: 'Roboto-Regular', 'Microsoft JhengHei', 'Noto_Serif_TC-Regular',
     monospace, serif;
   cursor: pointer;
 }
@@ -348,7 +348,7 @@
   bottom: 0.1rem;
   color: #707070;
   font-size: 0.75rem;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 }
 
@@ -513,7 +513,7 @@
   display: inline-block;
   width: 0.8rem;
   height: 0.8rem;
-  content: "";
+  content: '';
   border: 0.15rem solid #b7b7a4;
 }
 .magic-checkbox + label:before {
@@ -523,14 +523,14 @@
   display: inline-block;
   width: 0.8rem;
   height: 0.8rem;
-  content: "";
+  content: '';
   border: 0.15rem solid #b7b7a4;
 }
 .magic-radio + label:after,
 .magic-checkbox + label:after {
   position: absolute;
   display: none;
-  content: "";
+  content: '';
 }
 
 .magic-radio[disabled] + label,
@@ -625,21 +625,21 @@
 .demo {
   line-height: 2rem;
   font-size: 0.75rem;
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 }
 
 /* 字體設置class */
 .Roboto {
-  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+  font-family: 'Roboto-Regular', 'Microsoft JhengHei', 'Noto_Serif_TC-Regular',
     monospace, serif;
 }
 .MicrosoftJhengHei {
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 }
 .NotoSerifTC {
-  font-family: "Noto_Serif_TC-Regular", "Microsoft JhengHei", "Roboto-Regular",
+  font-family: 'Noto_Serif_TC-Regular', 'Microsoft JhengHei', 'Roboto-Regular',
     monospace, serif;
 }
 
@@ -670,7 +670,7 @@
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 
   font-size: 1.2rem;
@@ -742,7 +742,7 @@
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 
   font-size: 0.75rem;
@@ -776,7 +776,7 @@
   // -moz-transform: translate(-50%, -50%);
   // -ms-transform: translate(-50%, -50%);
   // -o-transform: translate(-50%, -50%);
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
 
   font-size: 1.2rem;

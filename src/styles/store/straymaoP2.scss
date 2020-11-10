@@ -1,5 +1,5 @@
 // Import Bootstrap and its default variables
-@import "~bootstrap/scss/bootstrap.scss";
+@import '~bootstrap/scss/bootstrap.scss';
 
 * {
   margin: 0px;
@@ -23,13 +23,13 @@ p {
 }
 
 .storeP2Background {
-  margin: 3vh auto ;
+  margin: 3vh auto;
   width: 100%;
   overflow: hidden;
 }
 
 .storeP1Title {
-  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
     monospace, serif;
   display: flex;
   margin: 3vh auto 0vh;
@@ -121,8 +121,8 @@ p {
 
 .icon2 {
   position: absolute;
-  right: 2rem;
-  bottom: 2rem;
+  // right: 2rem;
+  // bottom: 2rem;
 }
 
 .icon2:hover {
