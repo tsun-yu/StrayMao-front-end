@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 function StoreCard(props) {
   // const [item , setItem] = useState(props.item)
   const { item } = props
-  console.log('item:', item)
+  // console.log('item:', item)
   return (
     <>
       {/* <div className="container">
@@ -48,6 +48,7 @@ function StoreCard(props) {
         <div className="goodsText">
           <p>{item.name}</p>
           <span id="number">NT$ {item.price}</span>
+          <span id="number2">NT$ {item.pricing}</span>
 
           <div className="icon2 d-flex">
             <svg

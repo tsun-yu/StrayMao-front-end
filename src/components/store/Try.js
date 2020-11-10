@@ -3,81 +3,44 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import '../../styles/store/straymao.scss'
 import 'animate.css'
-import StoreCard from '../../components/store/StoreCard'
+import StoreCard from './StoreCard'
 // import { getListAsync } from '../../actions/store/index'
 import { Link } from 'react-router-dom'
-import LittleCardImg from '../../components/store/LittleCardImg'
+import LittleCardImg from './LittleCardImg'
 
 import {
   getListAsync,
+  getDetailAsync,
   getHotSaleAsync,
   getDiscountAsync,
+  getDogsListAsync,
+  getCatsListAsync,
+  getPriceUpAsync,
+  getPriceDownAsync,
 } from '../../actions/store/index'
 
-function Storepage(props) {
+function Try(props) {
   let i = 0
-  const [display, setDisplay] = useState([])
-  const [display2, setDisplay2] = useState([])
-  const [displayDiscount, setDisplayDiscount] = useState([])
+  const [display, setDisplay] = useState(<></>)
+  const [display2, setDisplay2] = useState(<></>)
+  const [displayDiscount, setDisplayDiscount] = useState(<></>)
   let content = []
   let content2 = []
   let contentDiscount = []
   useEffect(() => {
     props.getListAsync()
+    props.getDetailAsync()
     props.getHotSaleAsync()
     props.getDiscountAsync()
+    props.getDogsListAsync()
+    props.getCatsListAsync()
+    props.getPriceUpAsync()
+    props.getPriceUpAsync()
     // console.log(props.info)
-
-    // mouse
-    document
-      .querySelector('#storeP1BackgroundMouse')
-      .addEventListener('mouseover', () => {
-        let storeP1BackgroundMouse = document.querySelector(
-          '#storeP1BackgroundMouse'
-        )
-        storeP1BackgroundMouse.classList.remove('animate__bounceInDown')
-        storeP1BackgroundMouse.classList.add('animate__bounce')
-      })
-
-    document
-      .querySelector('#storeP1BackgroundMouse')
-      .addEventListener('mouseout', () => {
-        let storeP1BackgroundMouse = document.querySelector(
-          '#storeP1BackgroundMouse'
-        )
-        setTimeout(() => {
-          storeP1BackgroundMouse.classList.remove('animate__bounce')
-        }, 1000)
-      })
-
-    document.addEventListener('mousemove', function parallax(e) {
-      this.querySelectorAll('.storeP1Background').forEach(
-        (storeP1Background) => {
-          const speed = storeP1Background.getAttribute('data-speed')
-          if (i == 1) {
-            const x = (window.innerWidth - e.pageX * speed) / 50
-            const y = (window.innerHeight - e.pageY * speed) / 50
-
-            storeP1Background.style.transform = `translateX(${x}px) translateY(${y}px)`
-          }
-          // console.log(e);
-        }
-      )
-    })
-    document
-      .querySelector('.storeP1Background')
-      .addEventListener('mouseover', function func(e) {
-        i = 1
-      })
-    document
-      .querySelector('.storeP1Background')
-      .addEventListener('mouseout', function func(e) {
-        i = 0
-      })
   }, [])
 
   useEffect(() => {
-    // console.log('info :', props.infoDiscount)
+    // console.log('info :', props.info)
     let info = props.info
     let info2 = props.info2
     let infoDiscount = props.infoDiscount
@@ -110,22 +73,22 @@ function Storepage(props) {
       }
       setDisplay2(content2)
 
-      if (info.length > 0 && info2.length > 0 && infoDiscount.length > 0) {
-        for (let i = 0; i < infoDiscount.length; i++) {
-          contentDiscount.push(
-            <StoreCard
-              item={{
-                name: infoDiscount[i].name,
-                price: infoDiscount[i].price,
-                pricing: infoDiscount[i].pricing,
-              }}
-            />
-          )
-        }
-        setDisplayDiscount(contentDiscount)
-      }
+      // if (info.length > 0 && info2.length > 0 && infoDiscount.length > 0) {
+      //   for (let i = 0; i < 9; i++) {
+      //     contentDiscount.push(
+      //       <StoreCard
+      //         item={{
+      //           name: infoDiscount[i].name,
+      //           price: infoDiscount[i].price,
+      //           pricing: infoDiscount[i].pricing,
+      //         }}
+      //       />
+      //     )
+      //   }
+      //   setDisplayDiscount(contentDiscount)
+      // }
     }
-  }, [props.info, props.info2, props.infoDiscount])
+  }, [props.info, props.info2])
 
   return (
     <>
@@ -854,7 +817,7 @@ function Storepage(props) {
             </svg>
           </div>
 
-          {displayDiscount}
+          {display2}
           {/* <StoreCard item={{ name: '123', price: 100 }} />
           <StoreCard item={{ name: '123', price: 100 }} />
           <StoreCard item={{ name: '123', price: 100 }} /> */}
@@ -911,6 +874,11 @@ const mapDispatchToProps = null
 
 export default connect(mapStateToProps, {
   getListAsync,
+  getDetailAsync,
   getHotSaleAsync,
   getDiscountAsync,
-})(Storepage)
+  getDogsListAsync,
+  getCatsListAsync,
+  getPriceUpAsync,
+  getPriceDownAsync,
+})(Try)
