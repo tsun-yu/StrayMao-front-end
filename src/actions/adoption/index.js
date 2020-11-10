@@ -7,6 +7,7 @@ import {
   GET_LIST,
   GET_DETAIL,
   SET_DETAIL_PET_ID,
+  MAP_OBJ,
 } from "./actionTypes";
 
 //actionCreater
@@ -192,4 +193,9 @@ export const petDetailIdAsync = (value) => {
 export const petDetailId = (value) => {
   // console.log("value:", value);
   return { type: SET_DETAIL_PET_ID, id: value };
+};
+
+export const MapObj = (value) => {
+  
+  return { type: MAP_OBJ, obj: value };
 };

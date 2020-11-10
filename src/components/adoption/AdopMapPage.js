@@ -6,10 +6,18 @@ import AdopMapDetail from "./AdopMapDetail";
 function AdopMapPage(props) {
   return (
     <>
-      <div className="row">
-        <AdopMapCheck />
-        <AdopMapMain />
-        <AdopMapDetail />
+      <div className="container">
+        <div className="row ">
+          <div className="col-2">
+            <AdopMapCheck />
+          </div>
+          <div className="col-6">
+            <AdopMapMain />
+          </div>
+          <div className="col-4">
+            <AdopMapDetail />
+          </div>
+        </div>
       </div>
     </>
   );

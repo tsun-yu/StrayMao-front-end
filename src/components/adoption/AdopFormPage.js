@@ -1,16 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { withRouter, useHistory } from "react-router-dom";
 function AdopFormPage(props) {
   const [display, setDisplay] = useState(<></>);
 
-  //   setDisplay(
-  //     <>
-  //       <div className="adoptFromBox"></div>
-  //     </>
-  //   );
   const loading = <div></div>;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // 以資料載入的指示狀態來切換要出現的畫面
   return (
     <>
@@ -144,6 +143,9 @@ function AdopFormPage(props) {
                   className="btn-green d-flex justify-content-center  align-items-center m-auto"
                   type="button"
                   value="123"
+                  onClick={() => {
+                    props.history.push("/adoptionform2");
+                  }}
                 >
                   下一步
                 </button>
@@ -162,4 +164,4 @@ const mapStateToProps = (store) => {
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {})(AdopFormPage);
+export default withRouter(connect(mapStateToProps, {})(AdopFormPage));
