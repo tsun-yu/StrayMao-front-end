@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import MyNavbar from './components/common/MyNavbar'
+import HomeNavbar from './components/homapage/HP-component/HomeNavbar'
 import MyFooter from './components/common/MyFooter'
 import MainContent from './components/common/MainContent'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
@@ -16,16 +17,23 @@ import SocialTest from './components/social_media/Test'
 import StoreTest from './components/store/Test'
 import StrayMaoP2 from './components/store/StrayMaoP2'
 import StrayMaoP3 from './components/store/StrayMaoP3'
-<<<<<<< HEAD
 import Try from './components/store/Try'
-=======
->>>>>>> 8155c0f6c5c70f4fe59393ee1a429dafcb260680
 
 function App() {
+  const [navbar, setNavbar] = useState(<MyNavbar />)
+  const [home, setHome] = useState(false)
+  useEffect(() => {
+    if (home) {
+      setNavbar(<HomeNavbar />)
+    } else {
+      setNavbar(<MyNavbar />)
+    }
+  }, [home])
+
   return (
     <Router>
       <>
-        <MyNavbar />
+        {navbar}
         <MainContent>
           <Switch>
             {/* 注意：要加上網址參數 */}
@@ -57,7 +65,7 @@ function App() {
             </Route>
             <Route path="/homeTest">
               {/*要連線的網頁*/}
-              <HomeTest />
+              <HomeTest setHome={setHome} />
             </Route>
             <Route path="/memberTest">
               {/*要連線的網頁*/}
