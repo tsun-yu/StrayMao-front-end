@@ -1,25 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
-import MyNavbar from './components/common/MyNavbar'
-import MyFooter from './components/common/MyFooter'
-import MainContent from './components/common/MainContent'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import TestLink from './components/common/TestLink'
-import AdoptionTest from './components/adoption/Test'
-import AdoptionList from './components/adoption/AdopListPage'
-import AdoptionMain from './components/adoption/AdopMainPage'
-import AdoptionDetail from './components/adoption/AdopDetailPage'
-import CartTest from './components/cart/Test'
-import HomeTest from './components/homapage/Test'
-import MemberTest from './components/membership/Test'
-import SocialTest from './components/social_media/Test'
-import StoreTest from './components/store/Test'
-import StrayMaoP2 from './components/store/StrayMaoP2'
-import StrayMaoP3 from './components/store/StrayMaoP3'
-<<<<<<< HEAD
-import Try from './components/store/Try'
-=======
->>>>>>> 8155c0f6c5c70f4fe59393ee1a429dafcb260680
+import MyNavbar from "./components/common/MyNavbar";
+import MyFooter from "./components/common/MyFooter";
+import MainContent from "./components/common/MainContent";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import TestLink from "./components/common/TestLink";
+import AdoptionTest from "./components/adoption/Test";
+import AdoptionList from "./components/adoption/AdopListPage";
+import AdoptionMain from "./components/adoption/AdopMainPage";
+import AdoptionDetail from "./components/adoption/AdopDetailPage";
+import CartTest from "./components/cart/Test";
+import HomeTest from "./components/homapage/Test";
+import MemberTest from "./components/membership/Test";
+import SocialTest from "./components/social_media/Test";
+import StoreTest from "./components/store/Test";
+import StrayMaoP2 from "./components/store/StrayMaoP2";
+import StrayMaoP3 from "./components/store/StrayMaoP3";
+import Try from "./components/store/Try";
 
 function App() {
   return (
@@ -88,7 +85,7 @@ function App() {
         <MyFooter />
       </>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
