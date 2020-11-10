@@ -33,7 +33,7 @@ function AdopMapPage(props) {
           </div>
           <div className="col-6">
             {/* <Try1 detail={detail} kind={kind} /> */}
-            <AdopMapMain detail={detail} kind={kind} setDetail={setDetail} />
+            {/* <AdopMapMain detail={detail} kind={kind} setDetail={setDetail} /> */}
           </div>
           <div className="col-4">{/* <AdopMapDetail detail={detail} /> */}</div>
         </div>
