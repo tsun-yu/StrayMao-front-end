@@ -9,11 +9,11 @@ import AdopFormPage from "./AdopFormPage4";
 function Test(props) {
   return (
     <>
-      <AdopFormPage />
+      {/* <AdopFormPage /> */}
       {/* <AdopMainPage /> */}
       {/* <AdopListPage /> */}
       {/* <AdopDetailPage /> */}
-      {/* <AdopMapPage /> */}
+      <AdopMapPage />
     </>
   );
 }
