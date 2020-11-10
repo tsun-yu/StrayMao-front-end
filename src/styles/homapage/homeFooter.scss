@@ -35,10 +35,31 @@
   width: 700px;
   height: 200px;
   right: 100px;
-  bottom: 50px;
+  bottom: 80px;
 }
 .homeFtBar {
   width: 100vw;
   height: 200px;
   background-color: #ddbea9;
+}
+.homeFtIcon {
+  padding-top: 25px;
+}
+
+.homeFtContact {
+  color: #fff1e6;
+  font: {
+    size: 1rem;
+    family: $fontType1;
+  }
+}
+.straymao2020 {
+  color: #a5a58d;
+  font: {
+    size: 0.875rem;
+    family: $fontType1;
+    weight: 600;
+  }
+  bottom: 5px;
+  left: 45%;
 }
