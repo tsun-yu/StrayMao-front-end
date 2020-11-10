@@ -1,7 +1,5 @@
-import { check } from 'prettier';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import AdopMapMain from './AdopMapMain';
 let checkObj = {
   c1: false,
   c2: false,
@@ -10,7 +8,7 @@ let checkObj = {
   c5: false,
   c6: false,
 };
-function AdopMapCheck(props) {
+function Try2(props) {
   const clickEvent = (value) => {
     // console.log(value);
     const e = document.querySelector(value);
@@ -41,6 +39,13 @@ function AdopMapCheck(props) {
   };
   return (
     <>
+      <h5
+        onClick={() => {
+          props.setDetail(props.detail + 1);
+        }}
+      >
+        click!!!
+      </h5>
       <>
         <div className="adopMapCheck">
           <div className="demo">
@@ -149,4 +154,4 @@ const mapStateToProps = (store) => {
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {})(AdopMapCheck);
+export default connect(mapStateToProps, {})(Try2);
