@@ -16,12 +16,7 @@ function Page3Ques6(props) {
         {pet}
       </div>
       <a href="##">
-        <div
-          className="forward position-absolute d-flex flex-column justify-content-center align-items-center forward forward"
-          onClick={() => {
-            // console.log('12345')
-          }}
-        >
+        <div className="forward position-absolute d-flex flex-column justify-content-center align-items-center forward forward">
           <IoIosArrowDroprightCircle
             size="5rem"
             color=" #cb997e"

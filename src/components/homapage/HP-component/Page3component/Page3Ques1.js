@@ -4,7 +4,7 @@ import DogSize from './Ques6component/DogSize'
 import CatSize from './Ques6component/CatSize'
 
 function Page3Ques1(props) {
-  const { setPet, setDot } = props
+  const { setPet, setDot, select, setSelect, selectToggle } = props
 
   const dogColorToggle = () => {
     const catSvg = document.querySelector(
@@ -63,8 +63,9 @@ function Page3Ques1(props) {
             href="##"
             onClick={() => {
               document.querySelector('.page3').style.left = '-100vw'
-              setPet(<DogSize />)
+              setPet(<DogSize selectToggle={selectToggle} />)
               setDot(2)
+              selectToggle(0)
               dogColorToggle()
               document.querySelector('.back').style.visibility = 'visible'
             }}
@@ -88,8 +89,9 @@ function Page3Ques1(props) {
             href="##"
             onClick={() => {
               document.querySelector('.page3').style.left = '-100vw'
-              setPet(<CatSize />)
+              setPet(<CatSize selectToggle={selectToggle} />)
               setDot(2)
+              selectToggle(1)
               document.querySelector('.back').style.visibility = 'visible'
               catColorToggle()
             }}
