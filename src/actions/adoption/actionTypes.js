@@ -6,3 +6,4 @@ export const PET_DISLIKE = "PET_DISLIKE";
 export const PET_CANCLE = "PET_CANCLE";
 export const PET_INIT = "PET_INIT";
 export const SET_DETAIL_PET_ID = "SET_DETAIL_PET_ID";
+export const MAP_OBJ = "MAP_OBJ";
