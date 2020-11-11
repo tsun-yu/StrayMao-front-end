@@ -51,40 +51,51 @@ function AdopMapMain(props) {
     lng: 121.5433796,
   };
   let zoom = 18;
-  const AnyReactComponent = ({ icon }) => (
+  const AnyReactComponent = ({ value }) => (
     <i className="fas fa-map-marker-alt fa-3x " onClick={() => {}}></i>
   );
-  const AnyReactComponent1 = ({ icon }) => (
+  const AnyReactComponent1 = ({ data }) => (
     <i
       className="fas fa-map-marker-alt fa-3x adopMapPin1"
-      onClick={() => {}}
+      onClick={() => {
+        // console.log('type: ', typeof JSON.parse(data));
+        // console.log('data::', JSON.parse(data));
+        props.setInfo2(JSON.parse(data));
+      }}
     ></i>
   );
-  const AnyReactComponent2 = ({ icon }) => (
+  const AnyReactComponent2 = ({ data }) => (
     <i
       className="fas fa-map-marker-alt fa-3x adopMapPin2"
-      onClick={() => {}}
+      onClick={() => {
+        props.setInfo2(JSON.parse(data));
+      }}
     ></i>
   );
-  const AnyReactComponent3 = ({ icon }) => (
+  const AnyReactComponent3 = ({ data }) => (
     <i
       className="fas fa-map-marker-alt fa-3x adopMapPin3"
-      onClick={() => {}}
+      onClick={() => {
+        props.setInfo2(JSON.parse(data));
+      }}
     ></i>
   );
-  const AnyReactComponent4 = ({ icon }) => (
+  const AnyReactComponent4 = ({ data }) => (
     <i
       className="fas fa-map-marker-alt fa-3x adopMapPin4"
-      onClick={() => {}}
+      onClick={() => {
+        props.setInfo2(JSON.parse(data));
+      }}
     ></i>
   );
-  const AnyReactComponent5 = ({ icon }) => (
+  const AnyReactComponent5 = ({ data }) => (
     <i
       className="fas fa-map-marker-alt fa-3x adopMapPin5"
-      onClick={() => {}}
+      onClick={() => {
+        props.setInfo2(JSON.parse(data));
+      }}
     ></i>
   );
-
   const content1 = [];
   const content2 = [];
   const content3 = [];
@@ -97,10 +108,11 @@ function AdopMapMain(props) {
         lng={loc[i].lng}
         text=""
         icon="/public/image/097-pin.png"
+        key={i}
+        data={props.data == null ? '' : JSON.stringify(props.data[0].info[i])}
       />
     );
   }
-
   for (let i = 5; i < 9; i++) {
     content2.push(
       <AnyReactComponent2
@@ -108,10 +120,13 @@ function AdopMapMain(props) {
         lng={loc[i].lng}
         text=""
         icon="/public/image/097-pin.png"
+        key={i}
+        data={
+          props.data == null ? '' : JSON.stringify(props.data[1].info[i - 5])
+        }
       />
     );
   }
-
   for (let i = 10; i < 14; i++) {
     content3.push(
       <AnyReactComponent3
@@ -119,10 +134,14 @@ function AdopMapMain(props) {
         lng={loc[i].lng}
         text=""
         icon="/public/image/097-pin.png"
+        key={i}
+        data={
+          1
+          // props.data == null ? '' : JSON.stringify(props.data[2].info[i - 10])
+        }
       />
     );
   }
-
   for (let i = 15; i < 19; i++) {
     content4.push(
       <AnyReactComponent4
@@ -130,10 +149,14 @@ function AdopMapMain(props) {
         lng={loc[i].lng}
         text=""
         icon="/public/image/097-pin.png"
+        key={i}
+        data={
+          1
+          // props.data == null ? '' : JSON.stringify(props.data[3].info[i - 15])
+        }
       />
     );
   }
-
   for (let i = 20; i < 24; i++) {
     content5.push(
       <AnyReactComponent5
@@ -141,6 +164,11 @@ function AdopMapMain(props) {
         lng={loc[i].lng}
         text=""
         icon="/public/image/097-pin.png"
+        key={i}
+        data={
+          1
+          // props.data == null ? '' : JSON.stringify(props.data[4].info[i - 20])
+        }
       />
     );
   }
@@ -153,12 +181,8 @@ function AdopMapMain(props) {
 
   return (
     <>
-      <>
-        {/* <h3>{props.detail}</h3>
-        <h3>{JSON.stringify(props.kind)}</h3> */}
-      </>
       <div className="adopMapMain">
-        <GoogleMapReact
+        {/* <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyCWnOR-EIX_CwsvHENq3idr__GJgZD1rbI' }}
           // bootstrapURLKeys={{ key: "AIzaSyC_Za7RqKvUuEg2Nln0EcpUVN3k2fZtDuE" }}
           defaultCenter={center}
@@ -176,7 +200,7 @@ function AdopMapMain(props) {
           {c4Dis}
           {c5Dis}
           {c6Dis}
-        </GoogleMapReact>
+        </GoogleMapReact> */}
       </div>
     </>
   );
