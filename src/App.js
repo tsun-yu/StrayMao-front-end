@@ -1,44 +1,48 @@
-import React, { useState, useEffect } from 'react'
-import MyNavbar from './components/common/MyNavbar'
-import HomeNavbar from './components/homapage/HP-component/HomeNavbar'
-import MyFooter from './components/common/MyFooter'
-import HomeFooter from './components/homapage/HP-component/HomeFooter'
-import MainContent from './components/common/MainContent'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import TestLink from './components/common/TestLink'
-import AdoptionTest from './components/adoption/Test'
-import AdoptionList from './components/adoption/AdopListPage'
-import AdoptionMain from './components/adoption/AdopMainPage'
-import AdoptionDetail from './components/adoption/AdopDetailPage'
-import CartTest from './components/cart/Test'
-import HomeTest from './components/homapage/Test'
-import MemberTest from './components/membership/Test'
-import SocialTest from './components/social_media/Test'
-import StoreTest from './components/store/Test'
-import StrayMaoP2 from './components/store/StrayMaoP2'
-import StrayMaoP3 from './components/store/StrayMaoP3'
-import Try from './components/store/Try'
+import React, { useState, useEffect } from 'react';
+import MyNavbar from './components/common/MyNavbar';
+import HomeNavbar from './components/homapage/HP-component/HomeNavbar';
+import MyFooter from './components/common/MyFooter';
+import HomeFooter from './components/homapage/HP-component/HomeFooter';
+import MainContent from './components/common/MainContent';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import TestLink from './components/common/TestLink';
+import AdoptionTest from './components/adoption/Test';
+import AdoptionList from './components/adoption/AdopListPage';
+import AdoptionMain from './components/adoption/AdopMainPage';
+import AdoptionDetail from './components/adoption/AdopDetailPage';
+import CartTest from './components/cart/Test';
+import HomeTest from './components/homapage/Test';
+import MemberTest from './components/membership/Test';
+import SocialTest from './components/social_media/Test';
+import StoreTest from './components/store/Test';
+import StrayMaoP2 from './components/store/StrayMaoP2';
+import StrayMaoP3 from './components/store/StrayMaoP3';
+import Try from './components/store/Try';
+import AdopFormPage from './components/adoption/AdopFormPage';
+import AdopFormPage2 from './components/adoption/AdopFormPage2';
+import AdopFormPage3 from './components/adoption/AdopFormPage3';
+import AdopFormPage4 from './components/adoption/AdopFormPage4';
 
 function App() {
-  const [navbar, setNavbar] = useState(<MyNavbar />)
-  const [footer, setFooter] = useState(<MyFooter />)
-  const [home, setHome] = useState(false)
+  const [navbar, setNavbar] = useState(<MyNavbar />);
+  const [footer, setFooter] = useState(<MyFooter />);
+  const [home, setHome] = useState(false);
 
   useEffect(() => {
     if (home) {
-      setNavbar(<HomeNavbar />)
+      setNavbar(<HomeNavbar />);
     } else {
-      setNavbar(<MyNavbar />)
+      setNavbar(<MyNavbar />);
     }
-  }, [home])
+  }, [home]);
 
   useEffect(() => {
     if (home) {
-      setFooter(<HomeFooter />)
+      setFooter(<HomeFooter />);
     } else {
-      setFooter(<MyFooter />)
+      setFooter(<MyFooter />);
     }
-  }, [home])
+  }, [home]);
 
   return (
     <Router>
@@ -68,6 +72,22 @@ function App() {
             <Route path="/adoptionDetail">
               {/*要連線的網頁*/}
               <AdoptionDetail />
+            </Route>
+            <Route path="/adoptionform">
+              {/*要連線的網頁*/}
+              <AdopFormPage />
+            </Route>
+            <Route path="/adoptionform2">
+              {/*要連線的網頁*/}
+              <AdopFormPage2 />
+            </Route>
+            <Route path="/adoptionform3">
+              {/*要連線的網頁*/}
+              <AdopFormPage3 />
+            </Route>
+            <Route path="/adoptionform4">
+              {/*要連線的網頁*/}
+              <AdopFormPage4 />
             </Route>
             <Route path="/cartTest">
               {/*要連線的網頁*/}
@@ -106,7 +126,7 @@ function App() {
         {footer}
       </>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 function AdopMapDetail(props) {
+  const [title, setTitle] = useState('');
   // useEffect(() => {
-  //   setDis(JSON.stringify(props.kind));
-  //   console.log(props.kind);
-  // }, [props.kind]);
+  //   console.log(':', props.info);
+  //   if (props.info.text !== '') {
+  //     setTitle(props.info.text);
+  //   }
+  // }, [props.info]);
   return (
     <>
       <div className="adopMapDetail ">
-        <div className="adopMapDetailTitle d-flex justify-content-center">
-          {props.detail.name ?? 'test'}
-        </div>
+        <h5>{props.info.pinName}</h5>
+        {/* <div className="adopMapDetailTitle d-flex justify-content-center">
+        </div> */}
+
         <div className="adopMapDetailPic d-flex justify-content-center">
-          <img src="/image/adoption/map-01.jpg" alt="敦品動物醫院" />
+          <img src={props.info.pic} alt={props.info.pinName} />
         </div>
         <div className="adopMapDetailInfo  d-flex flex-column ">
-          <div className="adopMapDetailAddr ">addr</div>
-          <div className="adopMapDetailTime ">Time</div>
-          <div className="adopMapDetailPhone ">Phone</div>
+          <div className="adopMapDetailAddr ">{props.info.address}</div>
+          <div className="adopMapDetailTime ">{props.info.businessHours}</div>
+          <div className="adopMapDetailPhone ">{props.info.phone}</div>
         </div>
       </div>
     </>

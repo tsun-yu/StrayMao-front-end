@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import AdopMainCardPic from "./AdopMainCardPic";
-import AdopMainButton from "./AdopMainButton";
-import AdopMainInfo from "./AdopMainInfo";
-import AdopMainReadMore from "./AdopMainReadMore";
-import AdopDetailInfo from "./AdopDetailInfo";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import AdopMainCardPic from './AdopMainCardPic';
+import AdopMainButton from './AdopMainButton';
+import AdopMainInfo from './AdopMainInfo';
+import AdopMainReadMore from './AdopMainReadMore';
+import AdopDetailInfo from './AdopDetailInfo';
+import { withRouter, useHistory } from 'react-router-dom';
 
 import {
   getDetailAsync,
   getRecommand,
   getRecommandAsync,
-} from "../../actions/adoption/index";
+} from '../../actions/adoption/index';
 function AdopDetailPage(props) {
   const [test, setTest] = useState({});
   useEffect(() => {
@@ -34,6 +35,9 @@ function AdopDetailPage(props) {
         className="btn-green d-flex justify-content-center  align-items-center m-auto"
         type="button"
         value="123"
+        onClick={() => {
+          props.history.push('/adoptionform');
+        }}
       >
         我要領養
       </button>
@@ -49,8 +53,10 @@ const mapStateToProps = (store) => {
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {
-  getDetailAsync,
-  getRecommand,
-  getRecommandAsync,
-})(AdopDetailPage);
+export default withRouter(
+  connect(mapStateToProps, {
+    getDetailAsync,
+    getRecommand,
+    getRecommandAsync,
+  })(AdopDetailPage)
+);
