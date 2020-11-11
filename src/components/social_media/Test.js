@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import SocialFourm from "./page/SocialFourm";
-import SocialHomepage from "./page/SocialHomepage";
+import SocialForum from "./SocialForum";
+import SocialHomepage from "./SocialHomepage";
+import AddForumCard from "./AddForumCard";
 
 function Test(props) {
   return (
     <>
-      <SocialFourm />
+      <SocialForum />
     </>
   );
 }

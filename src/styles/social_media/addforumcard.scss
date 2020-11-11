@@ -1,0 +1,61 @@
+.addForumBox {
+  position: relative;
+  margin: 150px auto;
+  width: 658px;
+  height: 570px;
+  background-color: #fffffd;
+  border: solid #cb997e 1px;
+}
+
+.addContentBox {
+  position: relative;
+  margin: 0 auto;
+  justify-content: center;
+  width: 558px;
+  height: 330px;
+  text-align: center;
+  background-color: #fffffd;
+  border: solid #cb997e 1px;
+}
+
+.addContentTop {
+  display: flex;
+  width: 558px;
+  height: 124px;
+  background-color: #ddbea9;
+  border: solid #cb997e 1px;
+  position: absolute;
+  top: 0;
+}
+
+.addfontItems {
+  color: #555555;
+  font {
+    family: $fontType1;
+  }
+}
+.addIssueStyle {
+  width: 193px;
+  height: 30px;
+  background-color: #fffffd;
+  border: solid #cb997e 1px;
+}
+
+.addIssueItems {
+  position: absolute;
+  width: 255px;
+  height: 74px;
+  align-items: center;
+  top: 30px;
+  right: 15px;
+  z-index: 1;
+  border-left: solid #707070 1px;
+}
+
+.articleContent {
+  position: absolute;
+  // border:none;
+  width: 530px;
+  height: 145px;
+  bottom: 30px;
+}
