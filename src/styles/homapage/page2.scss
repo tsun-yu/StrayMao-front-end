@@ -54,3 +54,6 @@
   font-family: $fontType1;
   margin-left: 255px;
 }
+.hoverarrow:hover {
+  transform: perspective(1px) translateZ(0);
+}

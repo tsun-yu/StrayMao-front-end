@@ -27,3 +27,9 @@ yarn-error.log*
 
 /public/bootstrap
 debug.log
+
+# social page
+SocialForum copy.js
+Form.js
+ForumListCard copy.js
+UseModal.js

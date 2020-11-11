@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Page3Topic from './Page3Topic'
 
 function Page3Ques5(props) {
-  const { switchColor } = props
+  const { switchColor, selectToggle } = props
   return (
     <>
       <div className="page3single ">
@@ -13,6 +13,7 @@ function Page3Ques5(props) {
             href="##"
             onClick={(e) => {
               switchColor(e.target)
+              selectToggle(22)
             }}
           >
             <div className="page3circle page3area">黑</div>
@@ -22,6 +23,7 @@ function Page3Ques5(props) {
             href="##"
             onClick={(e) => {
               switchColor(e.target)
+              selectToggle(23)
             }}
           >
             <div className="page3circle page3area">白</div>
@@ -31,6 +33,7 @@ function Page3Ques5(props) {
             href="##"
             onClick={(e) => {
               switchColor(e.target)
+              selectToggle(24)
             }}
           >
             <div className="page3circle page3area">灰</div>
@@ -40,6 +43,7 @@ function Page3Ques5(props) {
             href="##"
             onClick={(e) => {
               switchColor(e.target)
+              selectToggle(25)
             }}
           >
             <div className="page3circle page3area">黃</div>

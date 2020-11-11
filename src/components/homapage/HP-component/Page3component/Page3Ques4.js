@@ -3,7 +3,7 @@ import Page3Topic from './Page3Topic'
 import { IoIosFemale, IoIosMale } from 'react-icons/io'
 
 function Page3Ques4(props) {
-  const {} = props
+  const { selectToggle } = props
   const maleColorToggle = () => {
     const maleSvg = document.querySelector(
       '#root > main > div > div:nth-child(3) > div > div > div:nth-child(4) > div.d-flex.justify-content-center.align-items-center > a.mr-5'
@@ -48,6 +48,7 @@ function Page3Ques4(props) {
             href="##"
             onClick={() => {
               maleColorToggle()
+              selectToggle(20)
             }}
             className=" mr-5 page3circle page3gender"
           >
@@ -57,6 +58,7 @@ function Page3Ques4(props) {
             href="##"
             onClick={() => {
               femaleColorToggle()
+              selectToggle(21)
             }}
             className="ml-5 page3circle page3gender"
           >

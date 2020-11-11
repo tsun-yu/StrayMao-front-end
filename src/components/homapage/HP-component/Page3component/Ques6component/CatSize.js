@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 function CatSize(props) {
+  const { selectToggle } = props
   const iconColorToggle = (x) => {
     const iconSvg = document.querySelector(
       `#root > main > div > div:nth-child(3) > div > div > div:nth-child(6) > div.d-flex.justify-content-center > a:nth-child(${x})`
@@ -25,6 +26,7 @@ function CatSize(props) {
           href="##"
           onClick={() => {
             iconColorToggle(1)
+            selectToggle(26)
           }}
         >
           <svg
@@ -46,6 +48,7 @@ function CatSize(props) {
           href="##"
           onClick={() => {
             iconColorToggle(2)
+            selectToggle(27)
           }}
         >
           <svg
@@ -66,6 +69,7 @@ function CatSize(props) {
           href="##"
           onClick={() => {
             iconColorToggle(3)
+            selectToggle(28)
           }}
         >
           <svg

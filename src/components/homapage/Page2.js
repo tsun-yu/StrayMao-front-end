@@ -44,9 +44,13 @@ function Page2(props) {
               <div className="page2des">
                 <span>遇見，命中注定的那個牠</span>
               </div>
-              <div className="page2des2">
+              <div className="page2des2 ">
                 立刻前往
-                <HiArrowCircleRight color="#a5a58d" size={16} />
+                <HiArrowCircleRight
+                  color="#a5a58d"
+                  size={16}
+                  className="hoverarrow"
+                />
               </div>
             </div>
           </div>

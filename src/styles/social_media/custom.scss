@@ -1,16 +1,17 @@
 // Import Bootstrap and its default variables
-// @import '~bootstrap/scss/bootstrap.scss';
-// @import '../custom.scss';
-// @import './socialHomeTop';
-// @import './socialHomeNews';
-// @import './socialHomeRank';
-// @import './socialHomeFourm';
-// @import './socialHomeArticle.scss';
-// @import './socialHomeActivity';
+@import "~bootstrap/scss/bootstrap.scss";
+@import "../custom.scss";
+@import "./socialHomeTop";
+@import "./socialHomeNews";
+@import "./socialHomeRank";
+@import "./socialHomeForum";
+@import "./socialHomeArticle.scss";
+@import "./socialHomeActivity";
+@import "./addforumcard";
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 
-//SocialFourm-Top
+//Socialforum-Top
 .socialTitle {
   padding-left: 30px;
   width: 400px;
@@ -18,16 +19,16 @@
   margin-top: 70px;
 }
 
-.socialEditButtom {
+.socialEditButton {
   position: absolute;
-  margin-top: 100px;
-  left: 0;
+  margin-top:100px;
+  left:0;
   color: #707070;
-  z-index: 4;
-  background: rgba($color: #fffffd, $alpha: 0.3);
+  z-index:4;
+  background: rgba($color: #FFFFFD, $alpha: 0.3);
 }
 
-.fourmMyEdit {
+.forumMyEdit {
   height: 40px;
   align-items: center;
 }
@@ -48,26 +49,26 @@
 }
 
 //論壇主體
-.fourmMain {
+.forumMain {
   position: relative;
-  top: 40px;
-  left: 5%;
+  top:40px;
+  left:5%;
   display: flex;
   width: 1140px;
   height: 1200px;
   justify-content: center;
 }
 
-.fourmArticleMain {
+.forumArticleMain {
   position: absolute;
-  margin: 50px auto;
+  margin:50px auto;
   // left:180px;
   max-width: 740px;
   height: 1046px;
-  display: flex;
+  display:flex;
 }
 
-.fourmMainBg {
+.forumMainBg {
   min-width: 824px;
   max-height: 1046px;
   background-color: #d9d9c2;
@@ -75,7 +76,7 @@
 }
 
 //arrowItems
-.fourmArrowItems {
+.forumArrowItems {
   position: absolute;
   display: flex;
   margin-top: -90px;
@@ -83,8 +84,8 @@
   justify-content: space-between;
 }
 
-//FourmArticleImg
-.fourmArticleImgBox {
+//forumArticleImg
+.forumArticleImgBox {
   position: relative;
   width: 355px;
   height: 425px;
@@ -94,13 +95,13 @@
   }
 }
 
-.fourmArticleImg {
+.forumArticleImg {
   height: 415px;
   opacity: 70%;
 }
 
 //Article左下方物件
-.fourmArticleLinkBox {
+.forumArticleLinkBox {
   display: inline-block;
   width: 228px;
   height: 262px;
@@ -111,7 +112,7 @@
   margin-top: 165px;
 }
 
-.fourmArticleLinkTitle {
+.forumArticleLinkTitle {
   text-align: left;
   color: #555555;
   width: 128px;
@@ -119,20 +120,20 @@
   margin-left: -20px;
 }
 
-.fourmArticleLinkText {
+.forumArticleLinkText {
   color: #cb997e;
   margin-top: 80px;
   margin-left: -10px;
 }
 
-.fourmLinkLine {
+.forumLinkLine {
   margin: 0 auto;
   width: 154px;
   border-top: solid #cb997e 1px;
 }
 
-//fourm_TypeBox(fourm主頁用)
-.fourm_TypeBox {
+//forum_TypeBox(forum主頁用)
+.forum_TypeBox {
   position: absolute;
   top: 0;
   right: 0;
@@ -144,7 +145,7 @@
   }
 }
 
-.fourm_TypeBg {
+.forum_TypeBg {
   position: absolute;
   top: 10px;
   width: 360px;
@@ -154,11 +155,11 @@
   z-index: 1;
 }
 
-.fourm_BigType {
+.forum_BigType {
   z-index: 3;
 }
 
-.socialFourm_Type {
+.socialforum_Type {
   width: 65px;
   height: 3.75rem;
   border-left: solid #fffffd 2px;
@@ -175,18 +176,18 @@
   display: inline;
 }
 
-.fourmArticleContent {
+.forumArticleContent {
   width: 379px;
   height: 943px;
   background-color: #fffffd;
 }
 
-.fourmArticleTopLine {
+.forumArticleTopLine {
   border-top: solid #ddbea9 7px;
 }
 
-//fourmAutor
-.fourmAutor {
+//forumAutor
+.forumAutor {
   position: absolute;
   top: 40px;
   left: 400px;
@@ -199,7 +200,7 @@
   }
 }
 
-.fourmAutorImg {
+.forumAutorImg {
   width: 59px;
   height: 59px;
   border-radius: 50%;
@@ -207,22 +208,22 @@
   margin-top: -10px;
 }
 
-.fourmArticleDate {
+.forumArticleDate {
   position: absolute;
   color: #ed8f8f;
-  margin-top: 30px;
+  margin-top:30px;
   margin-left: 240px;
 }
 
-//fourmArticleItems
-.fourmArticleTItems {
+//forumArticleItems
+.forumArticleTItems {
   position: relative;
   top: 105px;
   width: 277px;
   margin: 0 auto;
 }
 
-.fourmArticleTitle {
+.forumArticleTitle {
   width: 277px;
   text-align: center;
   color: #ed8f8f;
@@ -230,7 +231,7 @@
   margin-top: 16px;
 }
 
-.fourmArticleText {
+.forumArticleText {
   border-top: solid #707070 1px;
   position: relative;
   margin: 0 auto;
@@ -241,7 +242,7 @@
   padding: 15px;
 }
 
-.fourmReplyHiden {
+.forumReplyHiden {
   color: #a5a58d;
   border: solid #a5a58d 1px;
   padding: 5px;
@@ -250,8 +251,8 @@
   left: 390px;
 }
 
-//fourmReply相關內容
-.fourmReplyMain {
+//forumReply相關內容
+.forumReplyMain {
   position: relative;
   width: 347px;
   height: 510px;
@@ -267,17 +268,17 @@
   }
 }
 
-.fourmReplyTopLine {
+.forumReplyTopLine {
   border-top: solid #707070 1px;
   width: 351px;
   margin-bottom: 18px;
 }
 
-.fourmUserTalk {
+.forumUserTalk {
   min-width: 330px;
 }
 
-.fourmUserTalkBtn {
+.forumUserTalkBtn {
   color: #fffffd;
   background-color: #ed8f8f;
   border: none;
@@ -287,12 +288,12 @@
   opacity: 50%;
 }
 
-//fourmReplyContent
-.singlefourmUserReply {
+//forumReplyContent
+.singleforumUserReply {
   border-top: solid #fffffd 2px;
 }
 
-.fourmReplyContent {
+.forumReplyContent {
   position: relative;
   margin-left: -15px;
   margin-top: 20px;
@@ -305,7 +306,7 @@
   justify-content: center;
 }
 
-.fourmUserReply {
+.forumUserReply {
   display: block;
   margin-top: 10px;
   margin-left: 10px;
@@ -313,7 +314,7 @@
   max-height: 500px;
 }
 
-.fourmAutorReply {
+.forumAutorReply {
   display: block;
   margin-left: 10px;
   width: 314px;
@@ -322,20 +323,20 @@
   margin-bottom: 5px;
 }
 
-.fourmUserReplyItems {
+.forumUserReplyItems {
   // position: absolute;
   width: 300px;
   margin-left: 15px;
   margin-top: 30px;
 }
 
-.fourmAutorReplyItems {
+.forumAutorReplyItems {
   width: 190px;
   margin-left: 100px;
   margin-top: 30px;
 }
 
-.fourmUserReplyText {
+.forumUserReplyText {
   // position: absolute;
   color: #555555;
   width: 200px;
@@ -346,7 +347,7 @@
   border-bottom: solid #e1e1d5 1px;
 }
 
-.fourmAutorReplyText {
+.forumAutorReplyText {
   width: 150px;
   margin-left: 150px;
   p {
@@ -354,7 +355,7 @@
   }
 }
 
-.fourmUserImg {
+.forumUserImg {
   width: 47px;
   height: 47px;
   border-radius: 50%;
@@ -362,7 +363,7 @@
   margin-top: -10px;
 }
 
-.fourmUserRBtn {
+.forumUserRBtn {
   // position: absolute;
   margin-top: -45px;
   margin-left: 270px;
@@ -373,13 +374,13 @@
   }
 }
 
-//fourmAutorReply
-.fourmAutorReply {
+//forumAutorReply
+.forumAutorReply {
   display: inline-block;
 }
 
-//---------------------------------fourmMiddle---------------------------
-.fourmMiddle {
+//---------------------------------forumMiddle---------------------------
+.forumMiddle {
   position: relative;
   width: 100%;
   height: 256px;
@@ -388,7 +389,7 @@
   justify-content: center;
 }
 
-.fourmMiddleItems {
+.forumMiddleItems {
   position: absolute;
   left: 50%;
   top: 45%;
@@ -400,28 +401,28 @@
   color: #fffffd;
 }
 
-.fourmMiddleLine {
+.forumMiddleLine {
   width: 154px;
   border-top: solid #fffffd 1px;
   margin-right: 16px;
 }
 
-.fourmMiddleBox {
+.forumMiddleBox {
   text-align: center;
   justify-content: center;
 }
 
-.fourmMiddleBtn {
+.forumMiddleBtn {
   width: 126px;
 }
 
-//---------------------------------fourmNews---------------------------
-.fourmNewsBT {
+//---------------------------------forumNews---------------------------
+.forumNewsBT {
   justify-content: center;
   display: flex;
 }
 
-.fourmNewsTitle {
+.forumNewsTitle {
   width: 585px;
   height: 26px;
   justify-content: space-between;
@@ -431,18 +432,18 @@
   display: inline-block;
 }
 
-.fourmTitleLine {
+.forumTitleLine {
   width: 200px;
   height: 15px;
   border-bottom: solid #ed8f8f 2px;
 }
 
-.fourmNewsMain {
+.forumNewsMain {
   height: 530px;
   justify-content: center;
 }
 
-.fourm_NewsItems {
+.forum_NewsItems {
   margin: 7px auto;
   width: 676px;
   height: 100px;
@@ -452,7 +453,7 @@
   padding: 40px;
 }
 
-.fourmHotTitle {
+.forumHotTitle {
   background-color: #ed8f8f;
   color: #fffffd;
   width: 40px;
@@ -462,7 +463,7 @@
   margin-right: 16px;
 }
 
-.fourmNewTitle {
+.forumNewTitle {
   background-color: #a5a58d;
   color: #fffffd;
   width: 40px;
@@ -472,31 +473,31 @@
   margin-right: 16px;
 }
 
-.fourmNewColor {
+.forumNewColor {
   color: #a5a58d;
 }
 
-.fourmNewsLineBetween {
+.forumNewsLineBetween {
   min-width: 1140px;
   border-bottom: solid #b7b7a4 4px;
   margin-top: 159px;
 }
 
 //論壇列表
-.fourm_BTitle {
+.forum_BTitle {
   color: #555555;
   font: {
-    // family: $fontType1;
+    family: $fontType1;
     size: 24px;
     width: lighter;
   }
 }
 
-.fourmAllCardBT {
+.forumAllCardBT {
   margin-top: 116px;
 }
 
-.fourm_AllCardItems {
+.forum_AllCardItems {
   height: 526px;
   background-color: #fff1e6;
   position: relative;
@@ -506,7 +507,7 @@
   justify-content: center;
 }
 
-.fourmAllCardBtnItems {
+.forumAllCardBtnItems {
   max-width: 1080px;
   justify-content: space-between;
 }
@@ -520,7 +521,7 @@
   margin-right: 20px;
 }
 
-.fourmDayRankBtn {
+.forumDayRankBtn {
   background-color: #a5a58d;
   &:hover {
     background-color: #c0c0a6;
@@ -528,7 +529,7 @@
 }
 
 //控制卡片全部位置
-.fourmCard_Items {
+.forumCard_Items {
   position: relative;
   margin: 75px auto;
   height: 20rem;
@@ -538,7 +539,7 @@
 }
 
 //全部卡片arrow
-.fourmAllCardArrowItems {
+.forumAllCardArrowItems {
   position: absolute;
   display: inline-flex;
   left: 50%;
@@ -550,17 +551,17 @@
 }
 
 //過度畫面
-.fourmSaySomething {
+.forumSaySomething {
   height: 432px;
 }
 
-.fourmSayBigText {
+.forumSayBigText {
   margin-top: 120px;
   margin-left: 200px;
   color: #a5a58d;
 }
 
-.fourmSaySText {
+.forumSaySText {
   margin-top: 40px;
   margin-left: 300px;
   color: #555555;
@@ -678,7 +679,7 @@
 }
 
 //文章arrow
-//改socialFourmArrowItems
+//改socialforumArrowItems
 .bigArticleArrowItems {
   position: absolute;
   display: flex;
