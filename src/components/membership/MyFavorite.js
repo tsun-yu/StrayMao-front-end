@@ -19,7 +19,7 @@ return(
             <div className="myFavoriteArticleDetail">
                 <article className="articleTopic">貓咪們都會這樣，你知道嗎？</article>
                 <article className="authorName">撰稿人/ bemo機器人</article>
-                <article className="articleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
+                <article className="myFavoriteArticleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
                 <div className="morePlus">
                     <a className="moreArticle" href="#">more+</a>
                 </div>
@@ -32,7 +32,7 @@ return(
             <div className="myFavoriteArticleDetail">
                 <article className="articleTopic">貓咪們都會這樣，你知道嗎？</article>
                 <article className="authorName">撰稿人/ bemo機器人</article>
-                <article className="articleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
+                <article className="myFavoriteArticleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
                 <div className="morePlus">
                     <a className="moreArticle" href="#">more+</a>
                 </div>
@@ -45,7 +45,7 @@ return(
             <div className="myFavoriteArticleDetail">
                 <article className="articleTopic">貓咪們都會這樣，你知道嗎？</article>
                 <article className="authorName">撰稿人/ bemo機器人</article>
-                <article className="articleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
+                <article className="myFavoriteArticleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
                 <div className="morePlus">
                     <a className="moreArticle" href="#">more+</a>
                 </div>
@@ -58,7 +58,7 @@ return(
             <div className="myFavoriteArticleDetail">
                 <article className="articleTopic">貓咪們都會這樣，你知道嗎？</article>
                 <article className="authorName">撰稿人/ bemo機器人</article>
-                <article className="articleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
+                <article className="myFavoriteArticleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
                 <div className="morePlus">
                     <a className="moreArticle" href="#">more+</a>
                 </div>
