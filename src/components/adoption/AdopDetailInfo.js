@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import AdopMainCardPic from "./AdopMainCardPic";
-import AdopMainButton from "./AdopMainButton";
-import AdopMainInfo from "./AdopMainInfo";
-import AdopMainReadMore from "./AdopMainReadMore";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import AdopMainCardPic from './AdopMainCardPic';
+import AdopMainButton from './AdopMainButton';
+import AdopMainInfo from './AdopMainInfo';
+import AdopMainReadMore from './AdopMainReadMore';
 function AdopDetailInfo(props) {
   // console.log(props.info);
   return (
     <>
-      <div className="adopDetailInfo p-5">
+      <div className="adopDetailInfo px-5 py-3">
         <ul className="adoptListStyleNone paragraph2 w-100">
           <li className="d-flex flex-row justify-content-between">
             <span className="adopDetailQues paragraph2">救援經過：</span>

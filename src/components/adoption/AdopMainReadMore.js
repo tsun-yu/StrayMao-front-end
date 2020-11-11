@@ -1,17 +1,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { petDetailId } from "../../actions/adoption/index";
-import { withRouter, useHistory } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { petDetailId } from '../../actions/adoption/index';
+import { withRouter, useHistory } from 'react-router-dom';
 function AdopMainReadMore(props) {
   return (
     <>
-      <div className="d-flex flex-row mx-auto adoptReadMore mt-5">
+      <div className="d-flex flex-row mx-auto adoptReadMore ">
         <a
           href="#"
           onClick={() => {
             props.petDetailId(props.info.petId);
-            props.history.push("/adoptiondetail");
+            props.history.push('/adoptiondetail');
           }}
         >
           Read More

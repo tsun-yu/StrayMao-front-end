@@ -182,8 +182,8 @@ function AdopMapMain(props) {
   return (
     <>
       <div className="adopMapMain">
-        {/* <GoogleMapReact
-          //bootstrapURLKeys={{ key: 'krok_AIzaSyCWnOR-EIX_CwsvHENq3idr__GJgZD1rbI' }}
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: 'AIzaSyCWnOR-EIX_CwsvHENq3idr__GJgZD1rbI' }}
           // bootstrapURLKeys={{ key: "AIzaSyC_Za7RqKvUuEg2Nln0EcpUVN3k2fZtDuE" }}
           defaultCenter={center}
           defaultZoom={zoom}
@@ -200,7 +200,7 @@ function AdopMapMain(props) {
           {c4Dis}
           {c5Dis}
           {c6Dis}
-        </GoogleMapReact> */}
+        </GoogleMapReact>
       </div>
     </>
   );

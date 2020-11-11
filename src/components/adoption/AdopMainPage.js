@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import AdopMainCardPic from "./AdopMainCardPic";
-import AdopMainButton from "./AdopMainButton";
-import AdopMainInfo from "./AdopMainInfo";
-import AdopMainReadMore from "./AdopMainReadMore";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import AdopMainCardPic from './AdopMainCardPic';
+import AdopMainButton from './AdopMainButton';
+import AdopMainInfo from './AdopMainInfo';
+import AdopMainReadMore from './AdopMainReadMore';
 
-import { getRecommand, getRecommandAsync } from "../../actions/adoption/index";
+import { getRecommand, getRecommandAsync } from '../../actions/adoption/index';
 function AdopMainPage(props) {
   const [test, setTest] = useState({});
   useEffect(() => {
@@ -13,11 +13,11 @@ function AdopMainPage(props) {
   }, []);
   return (
     <>
-      <div className="adopTitleMain">
-        <h5 className="adopTitle">ADOPT</h5>
+      <div className="adopTitleMain my-4">
+        <h5 className="adopTitle ">ADOPT</h5>
         <div className="adopTitleLine" />
       </div>
-      <div className="adopRecommand">
+      <div className="adopRecommand mb-3">
         <div className="col p-1">
           <AdopMainCardPic info={props.info}>
             <AdopMainButton />

@@ -1,9 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import AdopMainCardPic from './AdopMainCardPic';
-import AdopMainButton from './AdopMainButton';
 import AdopMainInfo from './AdopMainInfo';
-import AdopMainReadMore from './AdopMainReadMore';
 import AdopDetailInfo from './AdopDetailInfo';
 import { withRouter, useHistory } from 'react-router-dom';
 
@@ -13,15 +12,14 @@ import {
   getRecommandAsync,
 } from '../../actions/adoption/index';
 function AdopDetailPage(props) {
-  const [test, setTest] = useState({});
   useEffect(() => {
     let id = props.petDetailId ?? 1;
     // console.log("id :", props.petDetailId);
-    setTest(props.getDetailAsync(id));
+    props.getDetailAsync(id);
   }, []);
   return (
     <>
-      <div className="adopRecommand">
+      <div className="adopRecommand mt-3 mb-4">
         <div className="col p-1">
           <AdopMainCardPic info={props.info} />
         </div>
@@ -32,7 +30,7 @@ function AdopDetailPage(props) {
       <AdopDetailInfo info={props.info} />
 
       <button
-        className="btn-green d-flex justify-content-center  align-items-center m-auto"
+        className="btn-green d-flex justify-content-center  align-items-center mx-auto my-3"
         type="button"
         value="123"
         onClick={() => {

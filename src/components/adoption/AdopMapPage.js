@@ -53,7 +53,7 @@ function AdopMapPage(props) {
   return (
     <>
       <div className="container">
-        <div className="row mb-3 pt-1">
+        <div className="row mb-3 pt-3">
           <div className="col-2">
             {/* <Try2 detail={detail} setDetail={setDetail} setKind={setKind} /> */}
             <AdopMapCheck
@@ -73,7 +73,7 @@ function AdopMapPage(props) {
               setInfo2={setInfo2}
             />
           </div>
-          <div className="col-4 mt-4">
+          <div className="col-4">
             <AdopMapDetail detail={detail} info={info2} />
           </div>
         </div>

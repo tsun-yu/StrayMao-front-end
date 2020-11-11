@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
 function AdopMainInfo(props) {
   return (
     <>
-      <div className="adoptionMainInfo d-flex flex-column align-item-center justify-content-center pt-5">
+      <div className="adoptionMainInfo d-flex flex-column align-item-center pt-5 h-100">
         <div className="d-flex flex-row mx-auto">
           <svg
             className="my-auto"
@@ -43,20 +43,20 @@ function AdopMainInfo(props) {
           </svg>
         </div>
         <div className="d-flex flex-row mx-auto mt-5">
-          <ul className="adoptListStyleNone paragraph1 ">
-            <li className="mt-2">
+          <ul className="adoptListStyleNone paragraph1 h-100">
+            <li className="my-3">
               名字：<span>{props.info.name}</span>
             </li>
-            <li className="mt-2">
+            <li className="my-3">
               性別：<span>{props.info.gender}</span>
             </li>
-            <li className="mt-2">
+            <li className="my-3">
               年齡：<span>{props.info.age}</span>
             </li>
-            <li className="mt-2">
+            <li className="my-3">
               地點：<span>{props.info.area}</span>
             </li>
-            <li className="mt-2">
+            <li className="my-3">
               介紹：<span>{props.info.des}</span>
             </li>
           </ul>

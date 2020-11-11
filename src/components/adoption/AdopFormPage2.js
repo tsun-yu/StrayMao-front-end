@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { withRouter, useHistory } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { withRouter, useHistory } from 'react-router-dom';
 function AdopFormPage2(props) {
   const [display, setDisplay] = useState(<></>);
 
@@ -18,7 +18,7 @@ function AdopFormPage2(props) {
           <div className="col pt-3">
             <div className="adopFormTitle header4 mt-2">申請表格 </div>
             <div className="d-flex mt-5 flex-column align-items-center">
-              <div className="d-flex flex-row mx-auto my-3">
+              <div className="d-flex flex-row mx-auto  mb-5">
                 <svg
                   className="my-auto mr-5"
                   xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +121,7 @@ function AdopFormPage2(props) {
                     type="text"
                     placeholder=""
                   ></input>
-                </div>{" "}
+                </div>{' '}
                 <div className="d-flex flex-column my-1">
                   <label className="my-2 paragraph1">家中有否安裝窗網：</label>
                   <div className="d-flex justify no-gutters">
@@ -216,13 +216,13 @@ function AdopFormPage2(props) {
                 </div>
               </div>
 
-              <div className="my-3">
+              <div className="my-5">
                 <button
                   className="btn-green d-flex justify-content-center  align-items-center m-auto"
                   type="button"
                   value="123"
                   onClick={() => {
-                    props.history.push("/adoptionform3");
+                    props.history.push('/adoptionform3');
                   }}
                 >
                   下一步
