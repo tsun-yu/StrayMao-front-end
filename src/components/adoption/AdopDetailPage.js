@@ -16,7 +16,9 @@ function AdopDetailPage(props) {
     let id = props.petDetailId ?? 1;
     // console.log("id :", props.petDetailId);
     props.getDetailAsync(id);
+    window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <div className="adopRecommand mt-3 mb-4">
