@@ -5,14 +5,49 @@
   height: 570px;
   background-color: #fffffd;
   border: solid #cb997e 1px;
+  padding: 25px 50px;
+}
+
+.addBigEXit{
+  position: absolute;
+  top:10px;
+  right:10px;
+  width: 20px;
+  color:#777B5A;
+  // font:{
+  //   family: $fontType1;
+  //   size:18px;
+  //   weight: bold;
+  // }
+}
+
+.addForumTitle {
+  text-align: center;
+  margin-top:30px;
+  color: #a5a58d;
+  font: {
+    family: $fontType1;
+    size: 24px;
+    weight: lighter;
+  }
+}
+
+.addForumBtnControl{
+  padding:1rem;
+}
+
+.addforumright{
+  margin-right:0.75rem;
+  z-index: 10;
 }
 
 .addContentBox {
   position: relative;
   margin: 0 auto;
+  display: flex;
   justify-content: center;
   width: 558px;
-  height: 330px;
+  min-height: 330px;
   text-align: center;
   background-color: #fffffd;
   border: solid #cb997e 1px;
@@ -28,34 +63,110 @@
   top: 0;
 }
 
-.addfontItems {
-  color: #555555;
-  font {
+.addAutorItems{
+  margin-left:50px;
+  margin-top:30px;
+  width: 160px;
+  height: 68px;
+  display:flex;
+  justify-content: space-between;
+}
+
+.addAutorImg{
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #fffffD;
+}
+
+.addAutorName{
+  color:#555555;
+  margin-top:8px;
+  font:{
+    family: $fontType1;
+    size: 14px;
+  }
+}
+
+.addIssueT {
+  color: #FFFFFD;
+  // text-align: left;
+  background-color: #ED8F8F;
+  border-radius: 8px;
+  position: absolute;
+  margin-left: 35px;
+  margin-top:20px;
+  align-items: center;
+  width: 80px;
+  height: 20px;
+  font: {
+    size:12px;
     family: $fontType1;
   }
 }
 .addIssueStyle {
+  position: absolute;
+  margin-left: 35px;
+  margin-top: 50px;
   width: 193px;
-  height: 30px;
+  height: 20px;
   background-color: #fffffd;
   border: solid #cb997e 1px;
 }
 
 .addIssueItems {
-  position: absolute;
-  width: 255px;
-  height: 74px;
+  position: relative;
+  max-width: 250px;
+  height: 88px;
   align-items: center;
+  margin-right:150px;
+  left:80px;
   top: 30px;
-  right: 15px;
   z-index: 1;
   border-left: solid #707070 1px;
 }
 
 .articleContent {
   position: absolute;
-  // border:none;
-  width: 530px;
-  height: 145px;
-  bottom: 30px;
+  margin-top:140px;
+  left:18px;
+  width: 518px;
+  height: 150px;
+  border:none;
+  resize:none;
+}
+
+.addControlelse{
+  position: absolute;
+  margin-top:10px;
+  bottom:8px;
+  width: 528px;
+  height: 35px;
+  display:flex;
+  justify-content: space-between;
+  padding-left:12px;
+}
+
+.addImgText{
+  margin-left:10px;
+  margin-top:15px;
+  min-width: 104px;
+  background-color: #E0DFDE;
+  color:#FFFFFD;
+  font:{
+    family: $fontType1;
+    size: 12px;
+  }
+
+}
+
+.pinkIcon{
+  max-width: 30px;
+  margin-right:4px;
+}
+
+.addbtnControl{
+  width: 558px;
+  margin:12px auto;
+  text-align: center;
 }

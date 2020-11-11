@@ -74,7 +74,7 @@ function ForumArticleMain(props) {
         <div className="conatiner forumReplyMain">
           <div className="row forumUserTalk no-gutters justify-content-center">
             <span className="forumReplyTopLine" />
-            <textarea />
+            <textarea className="forumReplyBox"/>
             <button className="forumUserTalkBtn" type="button" value="送出">
               送出
             </button>
