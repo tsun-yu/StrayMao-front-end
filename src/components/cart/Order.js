@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import { connect } from "react-redux"
 import "../../styles/cart/order.scss";
-import OrderCardC from "./OrderCardC"
-import OrderCardM from "./OrderCardM"
+import OrderCardBoxC from "./OrderCardBoxC"
+import OrderCardBoxM from "./OrderCardBoxM"
+import OrderDetialBoxC from "./OrderDetialBoxC"
+import OrderDetialBoxM from "./OrderDetialBoxM"
+
+import { getOrder, getOrderAsync } 
+from "../../actions/cart/index";
 function Order(props) {
+    const [test, setTest] = useState({});
+    useEffect(() => {
+      props.getOrderAsync();
+    }, []);
 return(
 <>
 <div className="orderC_body_An">
@@ -24,30 +34,8 @@ return(
         </div>
     </div>
     <div className="orderC_box_An mx-5">
-        <div className="orderC_boxBottom_An">
-          <OrderCardC />
-        </div>
-        <div className="orderC_boxDown_An">
-            <div className="orderC_boxStatus_An">
-                <div className="orderC_titleBox_An d-flex justify-content-center">
-                    <div className="orderC_borderSL_An"></div>
-                    <span className="orderC_titel_An">訂單詳情</span>
-                    <div className="orderC_borderSR_An"></div>
-                </div>
-                <div className="orderC_detailBox_An d-flex flex-column justify-content-center">
-                    <span className="orderC_redSpan_An mb-1">訂單狀態：已出貨</span>
-                    <span className="orderC_brownSpan_An mb-1">總計：10,896 元</span>
-                    <span className="orderC_brownSpan_An mb-1">訂單日期：2020/07/13</span>
-                </div>
-            </div>
-            <div className="orderC_borderL_An"></div>
-            <div className="orderC_boxConsignee_An d-flex flex-column">
-                <span>收件人：王小明</span>
-                <span>取貨方式：超商取貨</span>
-                <span>付款方式：貨到付款</span>
-                <span>地址：台北市信義區信義路五段150巷401弄31號</span>
-            </div>
-        </div>
+        <OrderCardBoxC />
+        <OrderDetialBoxC />
     </div>
 </div>
 </div>
@@ -70,33 +58,21 @@ return(
         </div>
       </div>
     </div>
-    <div className="orderM_boxBottom_An">
-      <OrderCardM />
-    </div>
-    <div className="orderM_boxDown_An">
-      <div className="orderM_boxStatus_An">
-        <div className="orderM_titleBox_An m-0 d-flex justify-content-center">
-          <div className="orderM_borderSL_An"></div>
-            <span className="orderM_titel_An">訂單詳情</span>
-            <div className="orderM_borderSR_An"></div>
-          </div>
-          <div className="orderM_detailBox_An d-flex flex-column justify-content-center">
-            <span className="orderM_redSpan_An mb-1">訂單狀態：已出貨</span>
-            <span className="orderM_brownSpan_An mb-1">總計：10,896 元</span>
-            <span className="orderM_brownSpan_An mb-1">訂單日期：2020/07/13</span>
-          </div>
-        </div>
-        <div className="orderM_borderL_An"></div>
-        <div className="orderM_boxConsignee_An d-flex flex-column">
-          <span>收件人：王小明</span>
-          <span>取貨方式：超商取貨</span>
-          <span>付款方式：貨到付款</span>
-          <span>地址：台北市信義區信義路五段150巷401弄31號</span>
-        </div>
-      </div>
-    </div>
+    <OrderCardBoxM />
+    <OrderDetialBoxM />
+  </div>
 </div>
 </>
 )}
 
-export default Order
+const mapStateToProps = (store) => {
+    return { info: store.cartReducer.getOrder };
+  };
+  const mapDispatchToProps = null;
+
+export default  connect(
+    mapStateToProps, {
+        getOrder, getOrderAsync 
+    })(Order)
+
+//export default Order

@@ -14,17 +14,17 @@ function Page2(props) {
               page2ImgClass="page2img"
             /> */}
             <Parallax
-              animation={{ y: 0, opacity: 1, playScale: [0, 0.5] }}
+              animation={{ y: 0, opacity: 0.8, playScale: [0, 0.5] }}
               style={{ transform: 'translateY(150px)', opacity: 0 }}
               className="page2img1"
             />
             <Parallax
-              animation={{ y: 0, opacity: 1, playScale: [0.1, 0.6] }}
+              animation={{ y: 0, opacity: 0.8, playScale: [0.1, 0.6] }}
               style={{ transform: 'translateY(150px)', opacity: 0 }}
               className="page2img2"
             />
             <Parallax
-              animation={{ y: 0, opacity: 1, playScale: [0.2, 0.7] }}
+              animation={{ y: 0, opacity: 0.8, playScale: [0.2, 0.7] }}
               style={{ transform: 'translateY(150px)', opacity: 0 }}
               className="page2img3"
             />
@@ -44,9 +44,13 @@ function Page2(props) {
               <div className="page2des">
                 <span>遇見，命中注定的那個牠</span>
               </div>
-              <div className="page2des2">
+              <div className="page2des2 ">
                 立刻前往
-                <HiArrowCircleRight color="#a5a58d" size={16} />
+                <HiArrowCircleRight
+                  color="#a5a58d"
+                  size={16}
+                  className="hoverarrow"
+                />
               </div>
             </div>
           </div>

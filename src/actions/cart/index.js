@@ -1,6 +1,7 @@
 import {
   GET_RECOM,
   GET_ORDERLIST,
+  GET_ORDER,
   GOODS_LIKE,
   GOODS_DISLIKE,
   GOODS_INIT,
@@ -45,9 +46,39 @@ export const getOrderList = (value) => {
 export const getOrderListAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/orderlist";
-
+    const orderlist={ orderId: value, memberId:100 };
     const request = new Request(url, {
-      method: "GET",
+      method: "POST",
+      body: JSON.stringify(orderlist),
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      console.log('data:',data);
+      console.log('data.data:',data.data);
+      await dispatch(getOrderList(data.data));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+
+export const getOrder = (value) => {
+  return { type: GET_ORDER, value };
+};
+
+export const getOrderAsync = (value) => {
+  return async function getRecommandCart(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/cart/order";
+    const order={ orderId: 111, memberId:value };
+    const request = new Request(url, {
+      method: "POST",
+      body: JSON.stringify(order),
       headers: new Headers({
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -59,7 +90,7 @@ export const getOrderListAsync = (value) => {
       // data會是一個物件值
       console.log(data);
 
-      await dispatch(getRecommand(data.data));
+      await dispatch(getOrder(data.data));
     } catch (error) {
       //setError(error)
     }

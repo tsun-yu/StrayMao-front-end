@@ -27,9 +27,9 @@ function HomeNavbar(props) {
                 id="寵愛有家"
                 transform="translate(184 151)"
                 fill="#555"
-                font-size="60"
-                font-family="NotoSerifTC-Regular, Noto Serif TC"
-                letter-spacing="-0.002em"
+                fontSize="60"
+                fontFamily="NotoSerifTC-Regular, Noto Serif TC"
+                letterSpacing="-0.002em"
               >
                 <tspan x="0" y="0">
                   寵愛有家
@@ -40,9 +40,9 @@ function HomeNavbar(props) {
                 data-name="認、領養專業服務平台"
                 transform="translate(184 80)"
                 fill="#555"
-                font-size="16"
-                font-family="NotoSerifTC-Regular, Noto Serif TC"
-                letter-spacing="0em"
+                fontSize="16"
+                fontFamily="NotoSerifTC-Regular, Noto Serif TC"
+                letterSpacing="0em"
               >
                 <tspan x="0" y="0">
                   認、領養專業服務平台
@@ -53,9 +53,9 @@ function HomeNavbar(props) {
                 data-name="Stray Mao"
                 transform="translate(313 181)"
                 fill="#a5a58d"
-                font-size="20"
-                font-family="Roboto-Regular, Roboto"
-                letter-spacing="0em"
+                fontSize="20"
+                fontFamily="Roboto-Regular, Roboto"
+                letterSpacing="0em"
               >
                 <tspan x="0" y="0">
                   Stray Mao
@@ -68,7 +68,7 @@ function HomeNavbar(props) {
                 transform="translate(195.414 176.5)"
                 fill="none"
                 stroke="#a5a58d"
-                stroke-width="1"
+                strokeWidth="1"
               />
               <g
                 id="LOGO-2"

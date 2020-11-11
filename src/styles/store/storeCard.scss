@@ -1,0 +1,47 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.box {
+  display: flex;
+  overflow: hidden;
+}
+.cardline {
+  border-radius: 4px;
+  border: 1px solid palevioletred;
+  min-width: 200px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px;
+}
+
+.heart > svg {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.cardtext {
+  padding: 15px;
+}
+
+.cardimg > img {
+  width: 100%;
+}
+
+.cardlittletext {
+  margin-top: 10px;
+  display: flex;
+  position: relative;
+}
+
+.cardprice {
+  margin-right: 5px;
+}
+
+.cardpricing {
+  text-decoration: line-through;
+}
+
+.cart > svg {
+  position: absolute;
+  right: 0%;
+  bottom: 20%;
+}

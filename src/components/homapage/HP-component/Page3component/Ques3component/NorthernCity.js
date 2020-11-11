@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react'
 
 function NorthernCity(props) {
-  const { switchColor } = props
+  const { switchColor, selectToggle } = props
   return (
     <>
       <div className="d-flex justify-content-center mb-2">
         <a href="##" className="a mx-2">
           <div
             className="page3circle2 page3city "
-            onClick={(e) => switchColor(e.target)}
+            onClick={(e) => {
+              switchColor(e.target)
+              selectToggle(2)
+            }}
           >
             台北
           </div>
@@ -16,7 +19,10 @@ function NorthernCity(props) {
         <a href="##" className="a mx-2">
           <div
             className="page3circle2 page3city"
-            onClick={(e) => switchColor(e.target)}
+            onClick={(e) => {
+              switchColor(e.target)
+              selectToggle(3)
+            }}
           >
             新北
           </div>
@@ -24,7 +30,10 @@ function NorthernCity(props) {
         <a href="##" className="a mx-2">
           <div
             className="page3circle2 page3city"
-            onClick={(e) => switchColor(e.target)}
+            onClick={(e) => {
+              switchColor(e.target)
+              selectToggle(4)
+            }}
           >
             桃園
           </div>
@@ -34,7 +43,10 @@ function NorthernCity(props) {
         <a href="##" className="a mx-2 mt-2">
           <div
             className="page3circle2 page3city"
-            onClick={(e) => switchColor(e.target)}
+            onClick={(e) => {
+              switchColor(e.target)
+              selectToggle(5)
+            }}
           >
             新竹
           </div>
@@ -42,7 +54,10 @@ function NorthernCity(props) {
         <a href="##" className="a mx-2">
           <div
             className="page3circle2 page3city"
-            onClick={(e) => switchColor(e.target)}
+            onClick={(e) => {
+              switchColor(e.target)
+              selectToggle(6)
+            }}
           >
             基隆
           </div>
@@ -50,7 +65,10 @@ function NorthernCity(props) {
         <a href="##" className="a mx-2">
           <div
             className="page3circle2 page3city"
-            onClick={(e) => switchColor(e.target)}
+            onClick={(e) => {
+              switchColor(e.target)
+              selectToggle(7)
+            }}
           >
             宜蘭
           </div>

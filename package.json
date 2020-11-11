@@ -18,6 +18,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^4.1.2",
+    "google-map-react": "^2.1.9",
     "jquery": "^3.5.1",
     "node-sass": "^4.14.1",
     "prettier": "^2.1.2",
@@ -31,9 +32,11 @@
     "react-icons": "^3.11.0",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^4.0.0",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "resolve-url-loader": "^3.1.2",
+    "sass-loader": "^10.0.5"
   },
   "scripts": {
     "start": "react-scripts start",

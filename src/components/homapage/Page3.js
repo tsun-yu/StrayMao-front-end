@@ -14,6 +14,37 @@ function Page3(props) {
   const [city, setCity] = useState('')
   const [area, setArea] = useState('縣市')
   const [pet, setPet] = useState(<Dogsize />)
+  const [select, setSelect] = useState([
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+  ])
 
   const switchColor = (x) => {
     x.style.color === 'rgb(203, 153, 126)'
@@ -89,16 +120,42 @@ function Page3(props) {
     document.querySelector('.forward').style.visibility == 'hidden' &&
       (document.querySelector('.forward').style.visibility = 'visible')
   }
+  const selectToggle = (i) => {
+    select[i] == 1 ? (select[i] = 0) : (select[i] = 1)
+    console.log(select)
+  }
+
+  //connect DB
+  const postDB = async (select) => {
+    const url = 'http://localhost:3001/straymao/homepage/question'
+    const data = { arr: select }
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    try {
+      const response = await fetch(request)
+      const data = await response.json()
+      // data會是一個物件值
+      await console.log(data)
+    } catch (error) {
+      //setError(error)
+    }
+  }
 
   // dot
   useEffect(() => {
     document
-      .querySelectorAll('#root > main > div > div:nth-child(4) > div > ul > li')
+      .querySelectorAll('#root > main > div > div:nth-child(3) > div > ul > li')
       .forEach((e) => {
         e.style.backgroundColor = 'rgba(255, 255, 255, 0.6)'
       })
     document.querySelector(
-      `#root > main > div > div:nth-child(4) > div > ul > li:nth-child(${dot})`
+      `#root > main > div > div:nth-child(3) > div > ul > li:nth-child(${dot})`
     ).style.backgroundColor = 'rgba(203, 153, 126, 1)'
   }, [dot])
   return (
@@ -133,17 +190,26 @@ function Page3(props) {
           </a>
           {/* content */}
           <div className="d-flex page3 position-absolute" style={{ left: 0 }}>
-            <Page3Ques1 setPet={setPet} setDot={setDot} />
+            <Page3Ques1
+              setPet={setPet}
+              setDot={setDot}
+              selectToggle={selectToggle}
+            />
             <Page3Ques2
               setCity={setCity}
               setArea={setArea}
               switchColor={switchColor}
               setDot={setDot}
+              selectToggle={selectToggle}
             />
             <Page3Ques3 city={city} area={area} setCity={setCity} />
-            <Page3Ques4 setDot={setDot} switchSVGcolor={switchSVGcolor} />
-            <Page3Ques5 switchColor={switchColor} />
-            <Page3Ques6 pet={pet} />
+            <Page3Ques4
+              setDot={setDot}
+              switchSVGcolor={switchSVGcolor}
+              selectToggle={selectToggle}
+            />
+            <Page3Ques5 switchColor={switchColor} selectToggle={selectToggle} />
+            <Page3Ques6 pet={pet} selectToggle={selectToggle} select={select} />
           </div>
           {/* dots */}
           <ul className="list-unstyled slider-dots position-absolute d-flex justify-content-center w-100">

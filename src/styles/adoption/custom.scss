@@ -3,7 +3,7 @@ $primary: #2f8b0b;
 $secondary: #131010;
 
 // Import Bootstrap and its default variables
-@import "~bootstrap/scss/bootstrap.scss";
+@import '~bootstrap/scss/bootstrap.scss';
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 main > .container {
@@ -20,7 +20,7 @@ main > .container {
 }
 .adopTitle {
   font-size: 3.75rem;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   color: #ed8f8f;
   z-index: 1;
 }
@@ -201,6 +201,22 @@ main > .container {
   background-color: #fffffd;
   margin: 10px 0px;
 }
+.adopMapPin1 {
+  color: #4fa8e3;
+}
+.adopMapPin2 {
+  color: #707070;
+}
+.adopMapPin3 {
+  color: #cb997e;
+}
+.adopMapPin4 {
+  color: #b7b7a4;
+}
+.adopMapPin5 {
+  color: #777b5a;
+}
+
 .adopFormTitle {
   text-height: 30px;
   width: 400px;
@@ -240,7 +256,7 @@ main > .container {
   font-size: 1.2rem; /*修復行內元素之間空隙間隔*/
 }
 .pageBar li a i {
-  color: "#A5A58D";
+  color: '#A5A58D';
 }
 .pageBar li {
   width: 50px;

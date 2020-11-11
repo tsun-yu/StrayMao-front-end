@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 function AdopMapDetail(props) {
+  // useEffect(() => {
+  //   setDis(JSON.stringify(props.kind));
+  //   console.log(props.kind);
+  // }, [props.kind]);
   return (
     <>
       <div className="adopMapDetail ">
         <div className="adopMapDetailTitle d-flex justify-content-center">
-          敦品動物醫院
+          {props.detail.name ?? 'test'}
         </div>
         <div className="adopMapDetailPic d-flex justify-content-center">
           <img src="/image/adoption/map-01.jpg" alt="敦品動物醫院" />

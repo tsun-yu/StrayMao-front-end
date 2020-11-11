@@ -58,7 +58,7 @@ function CartListCardC(props) {
             className="cartlistC_input-black_An"
             type="text"
             placeholder="123"
-            value="1"
+            value={props.info.quantity}
           />
           <div className="cartlistC_icon-021-plus_An">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.44 19.44">
