@@ -5,10 +5,16 @@ import MemberInfo from './MemberInfo'
 import PasswordChange from './PasswordChange'
 import MyComment from './MyComment'
 import PetArea from './PetArea'
+import MyFavorite from './MyFavorite'
+import RegisteredForm from './RegisteredForm'
+import SignInForm from './SignInForm'
 
 function Test(props) {
   return (
     <>
+      <SignInForm/>
+      <RegisteredForm/>
+      <MyFavorite/>
       <PetArea/>
       <MyComment/>
       <PasswordChange/>

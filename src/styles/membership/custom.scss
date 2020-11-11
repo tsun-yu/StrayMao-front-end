@@ -31,13 +31,13 @@ main > .container {
 .memberInfoBackground {
   width: 1000px;
   // height: 800px;
-  margin: 5vh auto;
+  margin: 5vw auto;
   background-color: #fff1e6;
 }
 
 .btn-group.memberInfoTop {
   width: 680px;
-  margin: 5vw 160px;
+  margin: 2vw 160px;
 }
 
 .btn.btn-primary.memberBtnLeft {
@@ -237,8 +237,13 @@ main > .container {
 //<寵物專區>頁面
 .petAreaWrap {
   width: 1140px;
-  height: 1000px;
+  // height: 1000px;
   margin: 5vw auto;
+}
+
+.nav.nav-pills.flex-sm-row.petAreaNavGroup {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .flex-sm-fill.text-sm-center.nav-link.petAreaNav.active {
@@ -258,32 +263,266 @@ main > .container {
   color: #ffffff;
 }
 
-.petAreaBackgroud {
-  width: 1140px;
-  height: 827px;
+.container.petAreaBackgroud {
+  width: 100%;
   background-color: #fff1e6;
   display: flex;
   flex-wrap: wrap;
 }
 
 .petCard {
-  width: 261px;
-  height: 348px;
+  // width: 261px;
+  // height: 348px;
+  position: relative;
   margin: 2vw;
 }
 
 .petImg {
-  position: relative;
+  width: 261px;
+  height: 348px;
 }
 
 .petDetail {
   width: 261px;
   height: 40px;
-  background-color: #a5a58d50;
+  background-color: #a5a58dbc;
+  position: absolute;
+  top: 308px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aStyle {
+  font-size: 14px;
+  font-family: $fontType1;
+  color: #ffffff;
+}
+
+//<我的最愛>頁面
+.myFavoriteWrap {
+  width: 1140px;
+  margin: 5vw auto;
+}
+
+.myFavoriteArticleCard {
+  width: 502px;
+  height: 301px;
+  background-color: #fff;
+  display: flex;
+  margin: 30px;
+  box-shadow: 2px 5px 10px rgba(173, 173, 173, 0.815);
+}
+
+.myFavoriteArticleImg {
+  width: 205px;
+  height: 241px;
+  margin: auto;
+  object-fit: cover;
+}
+
+.svg-inline--fa.fa-heart.fa-w-16.myFavoriteHeart {
+  color: #ed8f8f;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  position: absolute;
+  right: 0px;
+}
+
+.myFavoriteArticleDetail {
+  width: 213px;
+  margin: 10px;
+  padding-left: 10px;
+  padding-top: 26px;
+}
+
+.articleTopic {
+  width: 213px;
+  font-size: 16px;
+  font-family: $fontType2;
+  color: #ed8f8f;
+}
+
+.authorName {
+  width: 213px;
+  margin-top: 5px;
+  text-align: right;
+  font-size: 12px;
+  font-family: $fontType1;
+  color: #555555;
+  border-bottom: 1px solid #707070;
+}
+
+.articleContent {
+  width: 166px;
+  height: 160px;
+  margin: 10px auto;
+  font-size: 12px;
+  font-family: $fontType1;
+  color: #555555;
+  overflow: hidden;
+}
+
+.morePlus {
+  text-align: right;
+  // margin-top: 5px;
+}
+
+.moreArticle {
+  font-size: 12px;
+  font-family: $fontType1;
+  color: #555555;
+}
+
+.container.petAreaBackgroud {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col.myFavoriteProductCard {
+  max-width: 267px;
+  height: 353px;
+  background-color: #fff;
+  border: 1px solid #ed8f8f;
+  border-radius: 4px;
+  margin: 30px;
+  padding: 0;
+  position: relative;
+}
+
+.myFavoriteProductImg {
+  width: 265px;
+  height: 253px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin: 0;
+  // position: relative;
+}
+
+.myFavoriteProductDetail {
+  width: 265px;
+}
+
+.productName {
   font-size: 14px;
   font-family: $fontType1;
   text-align: center;
+  color: #555555;
+  margin: 10px;
+}
+
+.productPrice {
+  font-size: 14px;
+  font-family: $fontType1;
+  text-align: center;
+  color: #ed8f8f;
+}
+
+.myFavoriteProductSvgGroup {
+  width: 267px;
+  height: 353px;
+  float: right;
   position: absolute;
+  top: 0px;
+  right: 0px;
+  opacity: 0%;
+  transition: 0.2s;
+}
+
+.myFavoriteProductSvgGroup:hover {
+  width: 264px;
+  height: 350px;
+  float: right;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: rgba(255, 255, 255, 0.534);
+  opacity: 100%;
+}
+
+.svg-inline--fa.fa-heart.fa-w-16.myFavoriteProductHeart {
+  width: 22px;
+  height: 22px;
+  display: block;
+  margin-left: 235px;
+  margin-top: 10px;
+  color: #ed8f8f;
+}
+
+.myFavoriteProductCart {
+  display: block;
+  margin-left: 230px;
+  margin-top: 10px;
+}
+
+//<註冊會員>頁面
+.RegisteredTopic {
+  width: 300px;
+  height: 80px;
+  margin: 5vw auto;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: $fontType3;
+  color: #ed8f8f;
+  text-align: center;
+  border-bottom: 10px #f0efeb solid;
+  padding: 0 0 4px;
+}
+
+.RegisteredForm {
+  width: 1000px;
+  margin-left: 20px;
+  padding: 50px 20px;
+}
+
+.wrapFlex2.registeredFlex {
+  justify-content: flex-end;
+}
+
+.wrapFlex3.registeredFlex {
+  justify-content: flex-start;
+}
+
+.form-group.fgFlex.registeredBirthday {
+  margin-left: 12px;
+}
+
+.form-group.fgFlex.registeredAddress {
+  margin-left: 12px;
+}
+
+.form-group.fgFlex.registeredPassword {
+  margin-left: 60px;
+}
+
+.red-stars {
+  color: red;
+}
+
+.form-text.text-muted.inputTip {
+  margin-left: 12px;
+}
+
+.error-msg {
+  color: red;
+}
+
+.btn-group.registeredInfoTop {
+  width: 675px;
+  height: 40px;
   display: flex;
-  align-content: flex-end;
+  margin: 3vw auto;
+}
+
+//<登入會員>頁面
+.signInForm {
+  margin-top: 3vw;
+}
+
+.signInBackground {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
