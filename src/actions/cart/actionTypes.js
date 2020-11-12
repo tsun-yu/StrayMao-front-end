@@ -11,3 +11,4 @@ export const DELETE_RECOM = "DELETE_RECOM";
 export const INSERT_ORDER = "INSERT_ORDER";
 export const UPDATE_ORDER = "UPDATE_ORDER";
 export const DELETE_ORDER = "DELETE_ORDER";
+export const UPDATE_BUY = "UPDATE_BUY";

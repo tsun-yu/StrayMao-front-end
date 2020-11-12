@@ -27,7 +27,7 @@ function getRecom(state = 1, action) {
   return state;
 }
 
-function getBuy(state = 1, action) {
+function getBuy(state = [{memberName:"",mobile:"",address:""}], action) {
   switch (action.type) {
     case GET_BUY:
       state = action.value;
@@ -62,6 +62,30 @@ function getOrder(state = 1, action) {
   return state;
 }
 
+function deleteOrder(state = 1, action) {
+  switch (action.type) {
+    case DELETE_ORDER:
+      console.log("reducer: ",action.value)
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+function updateOrder(state = 1, action) {
+  switch (action.type) {
+    case UPDATE_ORDER:
+      console.log("reducer: ",action.value)
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
 function goodsHeart(state = false, action) {
   switch (action.type) {
     case GOODS_LIKE:
@@ -78,5 +102,5 @@ function goodsHeart(state = false, action) {
   }
   return state;
 }
-export { getRecom, getOrderList, getOrder, goodsHeart,getBuy  };
+export { getRecom, getOrderList, getOrder, deleteOrder, updateOrder, goodsHeart,getBuy  };
 // export default totalPage;

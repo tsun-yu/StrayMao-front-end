@@ -8,12 +8,12 @@ import { bindActionCreators } from "redux";
 
 function CartListCardC(props) {
   const [quantity, setQuantity] = useState(props.info.quantity)
-  
-  
+  const [test,setTest] = useState(0)
+  const [checkboxvalue, setCheckBoxValue]=useState(false)
   // console.log("props.info.quantity:",props.storeInfo)
   // console.log("props.info.index:",props.index)
   // console.log("props.info.quantity2:",props.storeInfo)
-  
+
   useEffect(()=>{
     // props.changeRecommandAsync([props.storeInfo[0]])
     console.log('checked', props.checked);
@@ -42,23 +42,32 @@ function CartListCardC(props) {
     
   }
 
+  const trashBtn = ()=>{
+    props.deleteRecommandAsync(props.info.cartId);
+    console.log("dislike!!!");
+    setTest(1)
+  }
+
   const handleChange = (event)=>{
     setQuantity(event.target.value);
   }
 
   const handleCheckbox = (event)=>{
-    props.setChecked(event.target.value)
+    props.setChecked({[event.target.value]:!checkboxvalue})
+    setCheckBoxValue(!checkboxvalue)
   }
 
   return (
     <>
+{test==1?"":
+
       <div className="cartlistC_boxUpper_An d-flex justify-content-between">
       <div className="d-flex">
-        <div className="cartlistC_icon-018-trashUpper_An" 
-          onClick={() => {
-            props.deleteRecommandAsync(props.info.cartId);
-            console.log("dislike!!!");
-            }}
+        <div className="cartlistC_icon-018-trashUpper_An" onClick={()=>trashBtn()}
+          // onClick={() => {
+          //   props.deleteRecommandAsync(props.info.cartId);
+          //   console.log("dislike!!!");
+          //   }}
           >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.82 24.22">
             <path
@@ -86,6 +95,7 @@ function CartListCardC(props) {
             id={props.info.cartId}
             value={props.info.cartId}
             onChange={(event)=>{handleCheckbox(event)}}
+            checked={checkboxvalue}
             />
           <label for={props.info.cartId}></label>
         </div>
@@ -131,6 +141,7 @@ function CartListCardC(props) {
         </div>
         {props.children}
       </div>
+}
     </>
   );
 }

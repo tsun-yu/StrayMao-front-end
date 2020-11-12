@@ -11,7 +11,8 @@ import {
   DELETE_RECOM,
   INSERT_ORDER,
   UPDATE_ORDER,
-  DELETE_ORDER
+  DELETE_ORDER,
+  UPDATE_BUY,
 } from "./actionTypes";
 
 //actionCreater
@@ -60,12 +61,13 @@ export const updateRecommand = (value) => {
   return { type: UPDATE_RECOM, value };
 };
 //更新購物車
-export const updateRecommandAsync = (value) => {
+export const updateRecommandAsync = (value,cartId) => {
   return async function getRecommandCart(dispatch, getState) {
+    console.log("cart : ", cartId)
     const url = "http://localhost:3001/straymao/cart/cartupdate";
     const request = new Request(url, {
       method: "POST",
-      body: JSON.stringify(value),
+      body: JSON.stringify({value,cartId}),
       headers: new Headers({
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -152,10 +154,9 @@ export const insertOrder = (value) => {
 export const insertOrderAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/orderinsert";
-    const cartinsert={ memberId:100, totalPrice:5000, memberName:'小明', address:'台北', mobile:'0912345678', productDelivery:'郵寄', paymentTerm:'信用卡' };
     const request = new Request(url, {
       method: "POST",
-      body: JSON.stringify(cartinsert),
+      body: JSON.stringify(value),
       headers: new Headers({
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -204,6 +205,45 @@ export const getBuyAsync = (value) => {
   };
 };
 
+export const changeBuy = (value) => {
+  return { type: GET_BUY, value };
+};
+
+export const changeBuyAsync = (value) => {
+  return async (dispatch, getState) => {
+    dispatch(changeBuy([...value]))
+  };
+};
+
+export const updateBuy = (value) => {
+  return { type: UPDATE_BUY, value };
+};
+//更新cartlist
+export const updateBuyAsync = (value) => {
+  return async function getRecommandCart(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/cart/buyupdate";
+    // const order={ orderId: 110 };
+    const request = new Request(url, {
+      method: "POST",
+      body: JSON.stringify(value),
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      console.log(data);
+
+      // await dispatch(updateBuy(data.data));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+
 
 export const updateOrder = (value) => {
   return { type: UPDATE_ORDER, value };
@@ -212,10 +252,10 @@ export const updateOrder = (value) => {
 export const updateOrderAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/orderupdate";
-    const order={ cartId: 110, price:110, quantity:11 };
+    // const order={ cartId: 110, price:110, quantity:11 };
     const request = new Request(url, {
       method: "POST",
-      body: JSON.stringify(order),
+      body: JSON.stringify(value),
       headers: new Headers({
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -242,7 +282,7 @@ export const deleteOrder = (value) => {
 export const deleteOrderAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/orderdelete";
-    const order={ cartId: 112 };
+    const order={ cartId: value };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(order),

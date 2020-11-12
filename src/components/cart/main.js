@@ -11,13 +11,23 @@ function Main(props) {
     const [dataLoading, setDataLoading] = useState(true);
     const [display, setDisplay] = useState(<></>);
     const [checked, setChecked] = useState({})
+    const [saveCheckBox,setSaveCheckBox]=useState({})
 
     const content = [];
     let totalCards = props.info;
     console.log("store.cartReducer.getRecom:",props.info)
 
     const btnBuyClick = ()=>{
-        props.updateRecommandAsync(props.info)
+        let cartId=[]
+        console.log("aaayyyy ")
+        document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
+            if(e.checked){
+                console.log(e.value)
+                cartId.push(e.value)
+            }
+        })
+        console.log("aaa: ",cartId)
+        props.updateRecommandAsync(props.info,cartId)
       }
 
     useEffect(() => {
@@ -26,8 +36,13 @@ function Main(props) {
     }, []);
 
     useEffect(()=>{
-        console.log('checked',checked)
+        let oldSave={...saveCheckBox,...checked}
+        setSaveCheckBox(oldSave)
     },[checked])
+
+    useEffect(()=>{
+        console.log('savedCheck:',saveCheckBox)
+    },[setSaveCheckBox])
     
     useEffect(() => {
         totalCards = props.info;
