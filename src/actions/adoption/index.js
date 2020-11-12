@@ -58,8 +58,8 @@ export const getDetailAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data.data[0]);
-      await dispatch(getDetail(data.data[0]));
+      // console.log(data.data);
+      await dispatch(getDetail(data.data));
     } catch (error) {
       //setError(error)
     }

@@ -23,9 +23,10 @@ function getRecom(
   }
   return state;
 }
-function getDetail(state = 1, action) {
+function getDetail(state = [{}], action) {
   switch (action.type) {
     case GET_DETAIL:
+      console.log('reducer: ', action.value);
       state = action.value;
       break;
     default:

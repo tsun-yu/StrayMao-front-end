@@ -3,13 +3,16 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
 function AdopMainCardPic(props) {
+  useEffect(() => {
+    console.log('bbb: ', props.info);
+  }, [props.info]);
   return (
     <>
       <div className="adoptionMainCardPicture">
         <img
           className=""
           src={
-            props.info[props.index].pic === null
+            props.info[props.index] === undefined
               ? '/image/adoption/main-01.jpg'
               : props.info[props.index].pic
           }

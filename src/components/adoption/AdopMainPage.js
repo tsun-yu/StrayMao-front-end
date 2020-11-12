@@ -7,7 +7,6 @@ import AdopMainReadMore from './AdopMainReadMore';
 
 import { getRecommand, getRecommandAsync } from '../../actions/adoption/index';
 function AdopMainPage(props) {
-  const [test, setTest] = useState({});
   const [index, setIndex] = useState(0);
   useEffect(() => {
     props.getRecommandAsync();

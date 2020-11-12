@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
 function AdopMainInfo(props) {
-  console.log('info: ', props.info);
+  // console.log('info: ', props.info);
   return (
     <>
       <div className="adoptionMainInfo d-flex flex-column align-item-center pt-5 h-100">
