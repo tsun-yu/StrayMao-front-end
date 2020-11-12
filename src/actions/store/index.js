@@ -8,6 +8,8 @@ import {
   GET_CATS,
   GET_PRICEUP,
   GET_PRICEDOWN,
+  GET_GOODSID,
+  SET_DETAIL_GOODS_ID,
 } from './actionTypes'
 
 //actionCreater
@@ -147,7 +149,7 @@ export const getListAsync = (value) => {
       const response = await fetch(request)
       const data = await response.json()
       // data會是一個物件值
-      console.log('最新: ', data)
+      // console.log('最新: ', data)
 
       await dispatch(getList(data.data))
     } catch (error) {
@@ -176,7 +178,7 @@ export const getDetailAsync = (value) => {
       const response = await fetch(request)
       const data = await response.json()
       // data會是一個物件值
-      console.log('詳細: ', data)
+      // console.log('詳細: ', data)
 
       await dispatch(getDetail(data.data))
     } catch (error) {
@@ -205,7 +207,7 @@ export const getHotSaleAsync = (value) => {
       const response = await fetch(request)
       const data = await response.json()
       // data會是一個物件值
-      console.log('熱賣: ', data)
+      // console.log('熱賣: ', data)
 
       await dispatch(getHotSale(data.data))
     } catch (error) {
@@ -234,7 +236,7 @@ export const getDiscountAsync = (value) => {
       const response = await fetch(request)
       const data = await response.json()
       // data會是一個物件值
-      console.log('特價: ', data)
+      // console.log('特價: ', data)
 
       await dispatch(getDiscount(data.data))
     } catch (error) {
@@ -263,7 +265,7 @@ export const getDogsListAsync = (value) => {
       const response = await fetch(request)
       const data = await response.json()
       // data會是一個物件值
-      console.log('狗商品: ', data)
+      // console.log('狗商品: ', data)
 
       await dispatch(getDogsList(data.data))
     } catch (error) {
@@ -292,7 +294,7 @@ export const getCatsListAsync = (value) => {
       const response = await fetch(request)
       const data = await response.json()
       // data會是一個物件值
-      console.log('貓商品: ', data)
+      // console.log('貓商品: ', data)
 
       await dispatch(getCatsList(data.data))
     } catch (error) {
@@ -321,7 +323,7 @@ export const getPriceUpAsync = (value) => {
       const response = await fetch(request)
       const data = await response.json()
       // data會是一個物件值
-      console.log('價高到價低: ', data)
+      // console.log('價高到價低: ', data)
 
       await dispatch(getPriceUp(data.data))
     } catch (error) {
@@ -350,11 +352,54 @@ export const getPriceDownAsync = (value) => {
       const response = await fetch(request)
       const data = await response.json()
       // data會是一個物件值
-      console.log('價低到價高: ', data)
+      // console.log('價低到價高: ', data)
 
       await dispatch(getPriceDown(data.data))
     } catch (error) {
       //setError(error)
     }
   }
+}
+
+// 抓取商品ID
+export const getGoodsId = (value) => {
+  return { type: GET_GOODSID, value }
+}
+
+export const getGoodsIdAsync = (value) => {
+  return async function getRecommandPet(dispatch, getState) {
+    const url = `http://localhost:3001/straymao/store/goods/${value}`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    try {
+      const response = await fetch(request)
+      const data = await response.json()
+      // data會是一個物件值
+      // console.log('商品詳細: ', data)
+
+      await dispatch(getGoodsId(data.data))
+    } catch (error) {
+      //setError(error)
+    }
+  }
+}
+
+// 儲存商品id
+export const goodsIdDetailAsync = (value) => {
+  return async function getRecommandPet(dispatch, getState) {
+    try {
+      await dispatch(goodsIdDetail(value));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+export const goodsIdDetail = (value) => {
+  return {type: SET_DETAIL_GOODS_ID, id: value}
 }

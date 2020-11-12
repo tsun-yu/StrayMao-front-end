@@ -3,18 +3,43 @@ import { connect } from 'react-redux'
 import '../../styles/store/straymaoP3.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
+import Share from 'social-share-react'
+
+import {
+  getGoodsIdAsync,
+  // getRecommand,
+  // getRecommandAsync,
+} from '../../actions/store/index'
 
 function StrayMaoP3(props) {
+  useEffect(() => {
+    let id = props.goodsIdDetail ?? 1
+    // console.log("id :",id);
+    // console.log("id :",id);
+    props.getGoodsIdAsync(id)
+  }, [props.goodsIdDetail])
+  // useEffect(() => {
+  //   // console.log('info : ', props.info)
+  // }, [props.info])
   return (
     <>
       <div className="container">
         <div className="row">
           <div className="storeP3 d-flex">
             <div className="storeP3Img">
-              <img src="./image/store/dog-food.png" alt="" />
+              <img
+                src={
+                  props.info === 1
+                    ? 'wait for loading'
+                    : props.info[0].goodsImgs
+                }
+                alt=""
+              />
             </div>
             <div className="storeP3Description">
-              <div className="storeP3Title">鮮肉煲罐頭</div>
+              <div className="storeP3Title">
+                {props.info === 1 ? 'wait for loading' : props.info[0].name}
+              </div>
               <div className="storeP3Stock d-flex">
                 <div className="dot"></div>
                 庫存 4 件
@@ -26,7 +51,12 @@ function StrayMaoP3(props) {
 
               <div className="numberAndstar d-flex">
                 <div className="storeP3Price">
-                  <div className="realPrice">NT$1,550</div>
+                  <div className="realPrice">
+                    NT${' '}
+                    {props.info === 1
+                      ? 'wait for loading'
+                      : props.info[0].price}
+                  </div>
                   <svg className="icon-005-star">
                     <path d="M10.31,12,6.79,10.11,3.27,12l.66-3.93L1.07,5.29,5,4.7,6.76,1.13,8.53,4.69l3.94.56L9.63,8Z" />
                     <path d="M2.61,12.89l.78-4.66L0,4.94l4.68-.69L6.75,0,8.86,4.23l4.68.67L10.17,8.21,11,12.87,6.79,10.68ZM2.15,5.63,4.47,7.88l-.54,3.18L6.78,9.55,9.65,11,9.09,7.86,11.4,5.6,8.2,5.15,6.76,2.26,5.34,5.16Z" />
@@ -50,7 +80,12 @@ function StrayMaoP3(props) {
                 </div>
 
                 <div className="starAndComment">
-                  <div className="fakePrice">NT$1,850</div>
+                  <div className="fakePrice">
+                    NT${' '}
+                    {props.info === 1
+                      ? 'wait for loading'
+                      : props.info[0].pricing}
+                  </div>
                   <div className="comment">
                     4.0分｜<a href="">2個評價</a>
                   </div>
@@ -103,27 +138,34 @@ function StrayMaoP3(props) {
         </div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="goodsDescription d-flex">
-            <div class="goodsDescriptionTitle">
-              <a href="#">商品資訊</a>
+      <div className="container">
+        <div className="row">
+          <div className="goodsDescription d-flex">
+            <div className="goodsDescriptionTitle">
+              <a href="#">
+                <div>商品資訊</div>
+              </a>
             </div>
-            <div class="goodsDescriptionTitle">
-              <a href="#">顧客評價</a>
+            <div className="goodsDescriptionTitle">
+              <a href="#">
+                <div>顧客評價</div>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="goodsDescriptionLine d-flex">
-        <div class="goodsDescriptionLittleTitle">商品資訊</div>
+      <div className="goodsDescriptionLine d-flex">
+        <div className="goodsDescriptionLittleTitle">商品資訊</div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="goodsDescriptionLittleWords">
-            每盒內含10件商品
+      <div className="container">
+        <div className="row">
+          <div className="goodsDescriptionLittleWords">
+            {props.info === 1
+              ? 'wait for loading'
+              : props.info[0].goodsDescription}
+            {/* 每盒內含10件商品
             <br />
             ※零食同系列內的「口味」、玩具同系列內的「款式」將隨機出貨 恕不挑款
             <br />
@@ -145,29 +187,33 @@ function StrayMaoP3(props) {
             <br />
             9. FOFOS 兩只福狸 貓舌頭爽爽舔食墊（美味紫/馬卡龍綠/珊瑚紅）x1
             <br />
-            10. 不挑款人氣飼料試吃包 x1
+            10. 不挑款人氣飼料試吃包 x1 */}
           </div>
         </div>
       </div>
 
-      <div class="d-flex">
-        <div class="storeP3GuessYouLike">猜你喜歡</div>
+      <div className="d-flex">
+        <div className="storeP3GuessYouLike">猜你喜歡</div>
       </div>
 
-      <div class="container">
+      {/* <div class="container">
         <div class="row" id="between">
           <StoreCard />
           <StoreCard />
           <StoreCard />
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
 
 const mapStateToProps = (store) => {
-  return {}
+  return {
+    info: store.storeReducer.getGoodsId,
+    goodsIdDetail: store.storeReducer.goodsIdDetail,
+    // petDetailId: store.adoptReducer.petDetailId,
+  }
 }
 const mapDispatchToProps = null
 
-export default connect(mapStateToProps, {})(StrayMaoP3)
+export default connect(mapStateToProps, { getGoodsIdAsync })(StrayMaoP3)

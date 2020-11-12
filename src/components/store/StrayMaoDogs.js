@@ -6,18 +6,18 @@ import StoreCard from '../../components/store/StoreCard'
 
 
 import {
-  getCatsListAsync,
+  getDogsListAsync,
 } from '../../actions/store/index'
 
 
-function StrayMaoP2(props) {
+function StrayMaoDogs(props) {
   let i = 0
 
   const [display, setDisplay] = useState([])
   let content = []
 
   useEffect(() => {
-    props.getCatsListAsync()
+    props.getDogsListAsync()
     // console.log(props.info)
 
     document.addEventListener('mousemove', function parallax(e) {
@@ -45,7 +45,8 @@ function StrayMaoP2(props) {
 
   useEffect(()=>{
     let info = props.info
-    // console.log('info :', props.info)
+    console.log('info :', props.info)
+
     if (info.length > 0){
       for(let i = 0;i < info.length;i++){
         content.push(
@@ -82,7 +83,7 @@ function StrayMaoP2(props) {
           {/* 熱銷推薦  */}
           <div className="storeP1Title">
             <div className="line1"></div>
-            <div className="storeP1GoodsWords">最棒的喵，最棒的貨</div>
+            <div className="storeP1GoodsWords">最棒的汪，最棒的貨</div>
             <div className="line2"></div>
           </div>
         </div>
@@ -110,9 +111,11 @@ function StrayMaoP2(props) {
 
 const mapStateToProps = (store) => {
   return {
-    info: store.storeReducer.getCats,
+    info: store.storeReducer.getDogs,
   }
 }
 const mapDispatchToProps = null
 
-export default connect(mapStateToProps, {getCatsListAsync,})(StrayMaoP2)
+export default connect(mapStateToProps, {
+  getDogsListAsync,
+})(StrayMaoDogs)

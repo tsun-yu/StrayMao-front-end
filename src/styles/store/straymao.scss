@@ -1,8 +1,13 @@
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
 
 body {
   overflow-x: hidden;
+}
+
+a:hover {
+  text-decoration: none;
+  // color: #ffffff;
 }
 
 * {
@@ -24,7 +29,7 @@ img {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  width: 105vw;
+  width: 100vw;
   height: 100vh;
   position: relative;
   margin-top: -100px;
@@ -124,7 +129,7 @@ img {
 
 .littleCardName {
   margin-right: 10px;
-  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular';
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular";
   color: gray;
 }
 
@@ -380,7 +385,7 @@ img {
   cursor: pointer;
   text-align: center;
   font-weight: bold;
-  font-family: 'Roboto-Regular', 'Microsoft JhengHei', 'Noto_Serif_TC-Regular',
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
     monospace, serif;
 }
 
@@ -434,12 +439,18 @@ img {
 }
 
 // 熱賣背景
-.storeP1Bcc {
-  background-color: grey;
-}
+// .storeP1Bcc {
+//   position: absolute;
+//   margin: auto;
+//   margin-bottom: 0%;
+//   width: 100vw;
+//   height: 50vh;
+//   background-color: #F5F5F5;
+// }
 
 /* 左右箭頭 */
 .storeP1Bottom {
+  // position: relative;
   margin-bottom: 15vh;
 }
 
@@ -456,7 +467,7 @@ img {
 }
 
 .storeP1Title {
-  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
   display: flex;
   // margin:0px auto 30vh;
@@ -613,7 +624,7 @@ img {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
   font-size: 1.2rem;
   white-space: nowrap;
@@ -668,7 +679,7 @@ img {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
   font-size: 0.75rem;
   white-space: nowrap;
@@ -701,7 +712,7 @@ img {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  font-family: 'Microsoft JhengHei', 'Noto_Serif_TC-Regular', 'Roboto-Regular',
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
   font-size: 1.2rem;
   white-space: nowrap;
