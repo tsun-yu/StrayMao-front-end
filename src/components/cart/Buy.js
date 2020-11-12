@@ -4,7 +4,7 @@ import "../../styles/cart/buy.scss";
 import BuyCardC from "./BuyCardC"
 import BuyCardM from "./BuyCardM"
 import { bindActionCreators } from "redux";
-import { getBuy, getBuyAsync, updateBuyAsync, changeBuyAsync,updateOrderAsync,updateRecommandAsync } 
+import { getBuy, getBuyAsync, changeBuyAsync, updateOrderAsync } 
 from "../../actions/cart/index";
 function Buy(props) {
     const [memberName, setMemberName] = useState(props.info[0].memberName)
@@ -25,7 +25,8 @@ function Buy(props) {
       }
 
       const btnBuyClick = ()=>{
-        props.updateRecommandAsync(props.info)
+        props.updateBuyAsync(props.info)
+        props.updateBuyAsync(props.info)
       }
     
     useEffect(() => {
@@ -212,7 +213,7 @@ const mapStateToProps = (store) => {
   const mapDispatchToProps = dispatch =>{
     return bindActionCreators(
       {
-        getBuy, getBuyAsync,updateBuyAsync, changeBuyAsync, updateOrderAsync, updateRecommandAsync
+        getBuy, getBuyAsync, changeBuyAsync, updateOrderAsync
       },
       dispatch
     )
