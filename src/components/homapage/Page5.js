@@ -28,16 +28,16 @@ function Page5(props) {
             <div className="col-7 page5right">
               <div className="d-flex justify-content-between">
                 <div className=" page5right-1">
-                  <Page5Card img="./image/homepage/homepage5-1.jpg" />
-                  <Page5Card />
-                  <Page5Card />
-                  <Page5Card />
+                  <Page5Card img="./image/socialmedia/articleimg/article04.jpg" />
+                  <Page5Card img="./image/socialmedia/articleimg/article01.jpg" />
+                  <Page5Card img="./image/socialmedia/articleimg/article02.jpg" />
+                  <Page5Card img="./image/socialmedia/articleimg/article03.jpg" />
                 </div>
                 <div className="page5right-2">
-                  <Page5Card />
-                  <Page5Card />
-                  <Page5Card />
-                  <Page5Card />
+                  <Page5Card img="./image/socialmedia/articleimg/article05.jpg" />
+                  <Page5Card img="./image/socialmedia/articleimg/article06.jpg" />
+                  <Page5Card img="./image/socialmedia/articleimg/article07.jpg" />
+                  <Page5Card img="./image/socialmedia/articleimg/article09.jpg" />
                 </div>
               </div>
             </div>

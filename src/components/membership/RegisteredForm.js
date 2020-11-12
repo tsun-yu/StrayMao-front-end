@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/membership/custom.scss";
 
-function Page1(props) {
+function RegisteredForm(props) {
+
 return(
 <>
 <div className="RegisteredTopic">註冊會員</div>
@@ -79,4 +80,4 @@ return(
 </>
 )}
 
-export default Page1
+export default RegisteredForm

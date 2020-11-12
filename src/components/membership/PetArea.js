@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/membership/custom.scss";
 
-function Page1(props) {
+function PetArea(props) {
 return(
 <>
 <div className="petAreaWrap">
@@ -160,4 +160,4 @@ return(
 </>
 )}
 
-export default Page1
+export default PetArea

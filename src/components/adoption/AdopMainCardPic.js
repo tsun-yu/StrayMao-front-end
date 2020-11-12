@@ -1,17 +1,20 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
 function AdopMainCardPic(props) {
+  useEffect(() => {
+    console.log('bbb: ', props.info);
+  }, [props.info]);
   return (
     <>
       <div className="adoptionMainCardPicture">
         <img
           className=""
           src={
-            props.info.pic === null
-              ? "/image/adoption/main-01.jpg"
-              : props.info.pic
+            props.info[props.index] === undefined
+              ? '/image/adoption/main-01.jpg'
+              : props.info[props.index].pic
           }
         />
         {props.children}

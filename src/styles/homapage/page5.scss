@@ -2,6 +2,7 @@
   background-color: #f0efeb;
   width: 100vw;
   height: 40vh;
+  max-height: 350px;
 }
 .page5title {
   width: 400px;
@@ -24,6 +25,7 @@
 .page5 {
   width: 100vw;
   height: 90vh;
+  min-height: 700px;
   // background-color: lightsalmon;
 }
 .page5left {
@@ -45,6 +47,9 @@
   font-size: 1.25rem;
   color: #a5a58d;
   font-family: $fontType1;
+}
+.page5small:hover {
+  border-bottom: 0.5px solid #a5a58d;
 }
 .page5right-1 {
   // background-color: #faf;
@@ -73,13 +78,9 @@
   height: 23.375rem;
   padding-top: 1rem;
   margin-bottom: 1rem;
+  border: 0.1px #fff1e6 solid;
+  border-radius: 4px;
 }
-
-// .page5cardImg {
-//   width: 90%;
-//   height: 75%;
-//   background-color: #fff;
-// }
 
 .page5cardImg {
   width: 17.5rem;

@@ -13,20 +13,23 @@ import {
 } from '../../actions/adoption/index';
 function AdopDetailPage(props) {
   useEffect(() => {
-    let id = props.petDetailId ?? 1;
+    let id = props.petDetailId ?? 157;
     // console.log("id :", props.petDetailId);
     props.getDetailAsync(id);
+    // console.log('aaa: ', props.info);
     window.scrollTo(0, 0);
   }, []);
-
+  useEffect(() => {
+    // console.log('aaa: ', props.info);
+  }, [props.info]);
   return (
     <>
       <div className="adopRecommand mt-3 mb-4">
         <div className="col p-1">
-          <AdopMainCardPic info={props.info} />
+          <AdopMainCardPic info={props.info} index={0} />
         </div>
         <div className="col">
-          <AdopMainInfo info={props.info} />
+          <AdopMainInfo info={props.info} index={0} />
         </div>
       </div>
       <AdopDetailInfo info={props.info} />

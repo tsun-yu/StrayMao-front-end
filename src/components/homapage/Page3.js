@@ -54,14 +54,6 @@ function Page3(props) {
       ? (x.style.border = '#fff1e6 solid 0.125rem')
       : (x.style.border = '#cb997e solid 0.125rem')
   }
-  const switchSVGcolor = (x) => {
-    x.style.fill === 'rgb(203, 153, 126)'
-      ? (x.style.fill = '#fff1e6')
-      : (x.style.fill = '#cb997e')
-    x.style.border === '0.125rem solid rgb(203, 153, 126)'
-      ? (x.style.border = '#fff1e6 solid 0.125rem')
-      : (x.style.border = '#cb997e solid 0.125rem')
-  }
   const backpage = () => {
     switch (dot) {
       case 2:
@@ -122,6 +114,28 @@ function Page3(props) {
   }
   const selectToggle = (i) => {
     select[i] == 1 ? (select[i] = 0) : (select[i] = 1)
+    if (i == 0) {
+      if ((select[0] == select[1]) == 1) {
+        select[1] = 0
+      }
+    } else if ((i = 1)) {
+      if ((select[0] == select[1]) == 1) {
+        select[0] = 0
+      }
+    }
+    console.log(select)
+  }
+
+  const selectToggle4catdog = (i) => {
+    if (i == 0) {
+      if (select[1] == 1) {
+        select[0] = 1
+        select[1] = 0
+      } else {
+        select[0] = 0
+        select[1] = 1
+      }
+    }
     console.log(select)
   }
 
@@ -150,12 +164,12 @@ function Page3(props) {
   // dot
   useEffect(() => {
     document
-      .querySelectorAll('#root > main > div > div:nth-child(3) > div > ul > li')
+      .querySelectorAll('#root > main > div > div:nth-child(5) > div > ul > li')
       .forEach((e) => {
         e.style.backgroundColor = 'rgba(255, 255, 255, 0.6)'
       })
     document.querySelector(
-      `#root > main > div > div:nth-child(3) > div > ul > li:nth-child(${dot})`
+      `#root > main > div > div:nth-child(5) > div > ul > li:nth-child(${dot})`
     ).style.backgroundColor = 'rgba(203, 153, 126, 1)'
   }, [dot])
   return (
@@ -194,6 +208,7 @@ function Page3(props) {
               setPet={setPet}
               setDot={setDot}
               selectToggle={selectToggle}
+              selectToggle4catdog={selectToggle4catdog}
             />
             <Page3Ques2
               setCity={setCity}
@@ -203,11 +218,7 @@ function Page3(props) {
               selectToggle={selectToggle}
             />
             <Page3Ques3 city={city} area={area} setCity={setCity} />
-            <Page3Ques4
-              setDot={setDot}
-              switchSVGcolor={switchSVGcolor}
-              selectToggle={selectToggle}
-            />
+            <Page3Ques4 setDot={setDot} selectToggle={selectToggle} />
             <Page3Ques5 switchColor={switchColor} selectToggle={selectToggle} />
             <Page3Ques6 pet={pet} selectToggle={selectToggle} select={select} />
           </div>

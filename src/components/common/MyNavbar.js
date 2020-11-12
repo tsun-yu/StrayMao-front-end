@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
-import { GrCart } from 'react-icons/gr'
+import React, { useState, useEffect } from 'react';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { GrCart } from 'react-icons/gr';
 
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 function MyNavbar(props) {
   return (
@@ -168,7 +168,14 @@ function MyNavbar(props) {
               <i className="fas fa-search navIcon"></i>
             </Nav.Link>
             <Nav.Link as={NavLink} to="/memberTest">
-              <i className="fas fa-user navIcon"></i>
+              <div className="position-relative">
+                <i className="fas fa-user navIcon"></i>
+                <div className="animateHeart">
+                  <svg className="icon-003-heart position-fixed">
+                    <path d="M23.13,9.68l-.68-5.56a.93.93,0,0,0-.35-.61L17.77.19a.89.89,0,0,0-1-.06L11.57,3.28,6.38.13a.91.91,0,0,0-1,.06L1,3.51a.93.93,0,0,0-.35.61L0,9.68a.91.91,0,0,0,.31.8l10.67,9a.91.91,0,0,0,1.16,0l10.66-9A.94.94,0,0,0,23.13,9.68Z"></path>
+                  </svg>
+                </div>
+              </div>
             </Nav.Link>
             <Nav.Link as={NavLink} to="/cartTest">
               <i className="fas fa-shopping-cart navIcon"></i>
@@ -177,7 +184,7 @@ function MyNavbar(props) {
         </Navbar.Collapse>
       </Navbar>
     </>
-  )
+  );
 }
 
-export default MyNavbar
+export default MyNavbar;
