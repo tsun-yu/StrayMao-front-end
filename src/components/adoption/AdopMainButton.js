@@ -11,14 +11,18 @@ import {
 } from '../../actions/adoption/index';
 function AdopMainButton(props) {
   useEffect(() => {
-    props.petInitLikeAsync(1);
-    console.log('like:', props.like);
+    props.petInitLikeAsync(props.info[props.index].petId);
+    // console.log('like:', props.like);
   }, []);
+  useEffect(() => {
+    props.petInitLikeAsync(props.info[props.index].petId);
+    // console.log('like:', props.like);
+  }, [props.index]);
   let likeBtn = props.like ? (
     <a
       className="buttonRight col"
       onClick={() => {
-        props.petDisLikeAsync(1);
+        props.petDisLikeAsync(props.info[props.index].petId);
         console.log('dislike!!!');
 
         document.querySelector('.animateHeart>svg').classList.remove('gogo');
@@ -32,10 +36,13 @@ function AdopMainButton(props) {
     <a
       className="buttonRight col"
       onClick={() => {
-        props.petLikeAsync(1);
+        props.petLikeAsync(props.info[props.index].petId);
         console.log('like!!!');
         document.querySelector('.animateHeart>svg').classList.add('gogo');
-
+        props.setIndex(props.index + 1);
+        if (props.index === props.info.length - 1) {
+          props.setIndex(0);
+        }
         //#responsive-navbar-nav > div.mr-5.navbar-nav > a:nth-child(3) > div > div
       }}
     >
@@ -52,6 +59,10 @@ function AdopMainButton(props) {
             className="buttonLeft col"
             onClick={() => {
               console.log('asdsad');
+              props.setIndex(props.index + 1);
+              if (props.index === props.info.length - 1) {
+                props.setIndex(0);
+              }
               props.history.push('/adoptionmain');
             }}
           >

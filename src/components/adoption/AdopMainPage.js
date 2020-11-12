@@ -8,6 +8,7 @@ import AdopMainReadMore from './AdopMainReadMore';
 import { getRecommand, getRecommandAsync } from '../../actions/adoption/index';
 function AdopMainPage(props) {
   const [test, setTest] = useState({});
+  const [index, setIndex] = useState(0);
   useEffect(() => {
     props.getRecommandAsync();
   }, []);
@@ -19,12 +20,16 @@ function AdopMainPage(props) {
       </div>
       <div className="adopRecommand mb-3">
         <div className="col p-1">
-          <AdopMainCardPic info={props.info}>
-            <AdopMainButton />
+          <AdopMainCardPic info={props.info} index={index}>
+            <AdopMainButton
+              setIndex={setIndex}
+              index={index}
+              info={props.info}
+            />
           </AdopMainCardPic>
         </div>
         <div className="col">
-          <AdopMainInfo info={props.info}>
+          <AdopMainInfo info={props.info} index={index}>
             <AdopMainReadMore info={props.info} />
           </AdopMainInfo>
         </div>

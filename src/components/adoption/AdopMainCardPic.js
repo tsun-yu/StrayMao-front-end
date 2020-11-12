@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
 function AdopMainCardPic(props) {
   return (
@@ -9,9 +9,9 @@ function AdopMainCardPic(props) {
         <img
           className=""
           src={
-            props.info.pic === null
-              ? "/image/adoption/main-01.jpg"
-              : props.info.pic
+            props.info[props.index].pic === null
+              ? '/image/adoption/main-01.jpg'
+              : props.info[props.index].pic
           }
         />
         {props.children}

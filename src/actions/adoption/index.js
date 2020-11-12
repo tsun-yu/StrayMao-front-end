@@ -8,7 +8,7 @@ import {
   GET_DETAIL,
   SET_DETAIL_PET_ID,
   MAP_OBJ,
-} from "./actionTypes";
+} from './actionTypes';
 
 //actionCreater
 
@@ -18,21 +18,21 @@ export const getRecommand = (value) => {
 
 export const getRecommandAsync = (value) => {
   return async function getRecommandPet(dispatch, getState) {
-    const url = "http://localhost:3001/straymao/adoption/get_pet_list/1";
+    const url = 'http://localhost:3001/straymao/adoption/get_recom';
 
     const request = new Request(url, {
-      method: "GET",
+      method: 'GET',
       headers: new Headers({
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       }),
     });
     try {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-
-      await dispatch(getRecommand(data.data[0]));
+      console.log(data.data);
+      await dispatch(getRecommand(data.data));
     } catch (error) {
       //setError(error)
     }
@@ -48,10 +48,10 @@ export const getDetailAsync = (value) => {
     const url = `http://localhost:3001/straymao/adoption/get_pet_list/${value}`;
 
     const request = new Request(url, {
-      method: "GET",
+      method: 'GET',
       headers: new Headers({
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       }),
     });
     try {
@@ -76,14 +76,14 @@ export const petInitLike = (value) => {
 };
 export const petLikeAsync = (value) => {
   return async function addPetHeart(dispatch, getState) {
-    const url = "http://localhost:3001/straymao/adoption/pet_heart";
+    const url = 'http://localhost:3001/straymao/adoption/pet_heart';
     const pet = { petId: value, userId: 111 };
     const request = new Request(url, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify(pet),
       headers: new Headers({
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       }),
     });
     try {
@@ -101,14 +101,14 @@ export const petLikeAsync = (value) => {
 
 export const petDisLikeAsync = (value) => {
   return async function addPetHeart(dispatch, getState) {
-    const url = "http://localhost:3001/straymao/adoption/pet_heart";
+    const url = 'http://localhost:3001/straymao/adoption/pet_heart';
     const pet = { petId: value, userId: 111 };
     const request = new Request(url, {
-      method: "DELETE",
+      method: 'DELETE',
       body: JSON.stringify(pet),
       headers: new Headers({
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       }),
     });
     try {
@@ -126,14 +126,14 @@ export const petDisLikeAsync = (value) => {
 
 export const petInitLikeAsync = (value) => {
   return async function addPetHeart(dispatch, getState) {
-    const url = "http://localhost:3001/straymao/adoption/pet_heart_init";
+    const url = 'http://localhost:3001/straymao/adoption/pet_heart_init';
     const pet = { petId: value, userId: 111 };
     const request = new Request(url, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify(pet),
       headers: new Headers({
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       }),
     });
     try {
@@ -143,7 +143,7 @@ export const petInitLikeAsync = (value) => {
       // console.log("init:", data.data);
       let dataValue = false;
       if (data.data.length > 0) {
-        console.log("like:", true);
+        console.log('like:', true);
         dataValue = true;
       }
       await dispatch(petInitLike(dataValue));
@@ -160,13 +160,13 @@ export const getList = (value) => {
 
 export const getListAsync = (value) => {
   return async function getRecommandPet(dispatch, getState) {
-    const url = "http://localhost:3001/straymao/adoption/get_pet_list/m/111";
+    const url = 'http://localhost:3001/straymao/adoption/get_pet_list/m/111';
 
     const request = new Request(url, {
-      method: "GET",
+      method: 'GET',
       headers: new Headers({
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       }),
     });
     try {
@@ -196,6 +196,5 @@ export const petDetailId = (value) => {
 };
 
 export const MapObj = (value) => {
-  
   return { type: MAP_OBJ, obj: value };
 };

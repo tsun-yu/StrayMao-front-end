@@ -89,7 +89,9 @@ function AdoptListCard(props) {
             <span className="caption ml-2"> {props.info.birth}</span>
           </p>
           <div className="d-flex justify-content-between">
-            <span className="caption">{[...props.info.tag].join(',')} </span>
+            <span className="caption">
+              {[...props.info.tag].splice(0, 2).join(',')}{' '}
+            </span>
 
             <a
               className="paragraph2 adopListReadMore"
