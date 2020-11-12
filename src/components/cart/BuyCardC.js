@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import { connect } from "react-redux";
 import "../../styles/cart/buy.scss";
+
+import { getBuy, getBuyAsync } 
+from "../../actions/cart/index";
 function BuyCardC(props) {
+    useEffect(() => {
+        props.getBuyAsync()
+        console.log("info3: ",props.info)
+    }, []);
 return(
 <>
     <div className="buyC_boxUpper_An d-flex justify-content-between">
@@ -12,23 +20,32 @@ return(
             </svg>
         </div>
         <img className="buyC_goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
-        <span className="buyC_goodsName_An">Farmina 法米納獸醫寵愛天然配方-貓用腸胃道 5kg</span>
+        <span className="buyC_goodsName_An">{props.info.name}</span>
         <div className="buyC_inputbox_An d-flex">
             <div className="buyC_icon-067-minus_An">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.44 19.44">
                     <path id="Path_1767" data-name="Path 1767" d="M19.48,0H.72A.81.81,0,0,0,0,.88a.8.8,0,0,0,.72.71H19.48a.8.8,0,0,0,.71-.88A.81.81,0,0,0,19.48,0Z"/>
                 </svg>
             </div>
-            <input className="buyC_input-black_An" type="text" placeholder="123" value="1"/>
+            <input className="buyC_input-black_An" type="text" placeholder="123" value={props.info.quantity}/>
             <div className="buyC_icon-021-plus_An">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.44 19.44">
                     <path id="Path_1806" data-name="Path 1806" d="M18.67,9h-8.2V.76A.76.76,0,1,0,9,.76V9H.76a.76.76,0,0,0,0,1.52H9v8.2a.76.76,0,1,0,1.52,0h0v-8.2h8.2a.76.76,0,0,0,0-1.52h0Z"/>
                 </svg>
             </div>
         </div>
-        <span className="buyC_goodsPrice_An">2790 元</span>
+        <span className="buyC_goodsPrice_An">{props.info.price} 元</span>
+        {props.children}
     </div>
 </>
 )}
 
-export default BuyCardC
+const mapStateToProps = (store) => {
+    return {storeInfo: store.cartReducer.getBuy};
+  };
+  const mapDispatchToProps = null;
+  
+  export default connect(mapStateToProps, { getBuy, getBuyAsync })(BuyCardC);
+  
+  
+// export default BuyCardC

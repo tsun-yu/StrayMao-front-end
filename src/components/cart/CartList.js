@@ -15,11 +15,11 @@ function CartList(props) {
     let totalCards = props.info;
     useEffect(() => {
         props.getRecommandAsync()
-        console.log("info2: ",props.info)
+        // console.log("info2: ",props.info)
     }, []);
     useEffect(() => {
         totalCards = props.info;
-        console.log("totalcards:",totalCards)
+        // console.log("totalcards:",totalCards)
         if (totalCards.length > 0) {
           // let tt = JSON.parse(totalCards[0]);
           // console.log("totalCards: ", totalCards[0]);
@@ -54,7 +54,7 @@ function CartList(props) {
             <button className="cartlistC_btn-brown_An" type="button" value="123">全選</button>
             </div>
             <div className="cartlistC_boxDownRight_An">
-            <span className="cartlistC_totalPrice_An">小計：2790 元</span>
+            <span className="cartlistC_totalPrice_An">小計：32790 元</span>
             </div>
         </div>
 
@@ -89,7 +89,7 @@ function CartList(props) {
 );
 
     setTimeout(() => setDataLoading(false), 1000);
-        console.log("content:",content)
+        // console.log("content:",content)
     },[totalCards])
     const loading = <div></div>;
 

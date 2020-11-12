@@ -1,14 +1,46 @@
 import React, { useState, useEffect } from 'react'
+import { connect } from "react-redux"
 import "../../styles/cart/buy.scss";
 import BuyCardC from "./BuyCardC"
 import BuyCardM from "./BuyCardM"
+
+import { getBuy, getBuyAsync } 
+from "../../actions/cart/index";
 function Buy(props) {
-return(
+    const [test, setTest] = useState({});
+    const [dataLoading, setDataLoading] = useState(true);
+    const [display, setDisplay] = useState(<></>);
+
+    const content = [];
+    let totalCards = props.info;
+    useEffect(() => {
+        props.getBuyAsync()
+        console.log("info2: ",props.info[0].name)
+    }, []);
+    useEffect(() => {
+        totalCards = props.info;
+        // console.log("totalcards:",totalCards)
+        if (totalCards.length > 0) {
+          // let tt = JSON.parse(totalCards[0]);
+          // console.log("totalCards: ", totalCards[0]);
+        }
+        for (
+                let i = 0;
+                i < totalCards.length;
+                i++
+            ) {
+                if (totalCards.length > 0) {
+                    // console.log(":",totalCards[i]);
+                    content.push(<BuyCardC info={totalCards[i]} key={i} />);
+                }
+            }
+            setDisplay(
 <>
 <div className="buyC_body_An">
     <div className="container buyC_box_An">
         <div className="buyC_boxBottom_An">
-            <BuyCardC />
+            {/* <BuyCardC /> */}
+            {content}
         </div>
         <div className="buyC_boxDown_An d-flex justify-content-between">
             <div className="buyC_boxDownLeft_An">
@@ -21,11 +53,11 @@ return(
         <div className="buyC_boxConsignee_An">
             <div>
                 <span>收件人姓名</span>
-                <input className="buyC_input-green_An" type="text" placeholder="123"/>
+                <input className="buyC_input-green_An" type="text" placeholder="123" value={props.info[0].memberName}/>
             </div>
             <div>
                 <span>連絡電話</span>
-                <input className="buyC_input-green_An" type="text" placeholder="123"/>
+                <input className="buyC_input-green_An" type="text" placeholder="123" value={props.info[0].mobile}/>
             </div>
         </div>
         <div className="buyC_boxAddress_An">
@@ -48,7 +80,7 @@ return(
             </div>
             <div>
                 <span>地址</span>
-                <input className="buyC_input-green_An" type="text" placeholder="123"/>
+                <input className="buyC_input-green_An" type="text" placeholder="123" value={props.info[0].address}/>
             </div>
         </div>
         <div className="buyC_boxAddress_An">
@@ -141,6 +173,26 @@ return(
     </div>
 </div>
 </>
-)}
+)
 
-export default Buy
+setTimeout(() => setDataLoading(false), 1000);
+        // console.log("content:",content)
+    },[props.info])
+    const loading = <div></div>;
+
+  // 以資料載入的指示狀態來切換要出現的畫面
+  return dataLoading ? loading : display;
+  // return loading;
+}
+
+const mapStateToProps = (store) => {
+    return { info: store.cartReducer.getBuy };
+  };
+  const mapDispatchToProps = null;
+
+export default  connect(
+    mapStateToProps, {
+        getBuy, getBuyAsync 
+    })(Buy)
+
+// export default Buy
