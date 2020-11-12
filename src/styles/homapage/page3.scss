@@ -1,6 +1,7 @@
 .page3bg {
   background-color: #777b5a;
   height: 87vh;
+  min-height: 700px;
   overflow: hidden;
   width: 100vw;
 }
@@ -12,6 +13,7 @@
 .page3single {
   width: 100vw;
   height: 87vh;
+  min-height: 700px;
 }
 
 .page3big {
@@ -135,6 +137,7 @@
 .forward {
   width: 10vw;
   height: 87vh;
+  min-height: 700px;
   right: 0;
   z-index: 1;
   transition: 0.5s;
@@ -158,6 +161,7 @@
 .back {
   width: 10vw;
   height: 87vh;
+  min-height: 700px;
   left: 0;
   z-index: 1;
   transition: 0.5s;

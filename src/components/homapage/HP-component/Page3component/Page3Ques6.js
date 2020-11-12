@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Page3Topic from './Page3Topic'
-import {
-  IoIosArrowForward,
-  IoIosArrowDropright,
-  IoIosArrowDroprightCircle,
-} from 'react-icons/io'
+import { withRouter, useHistory } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { IoIosArrowDroprightCircle } from 'react-icons/io'
 
 function Page3Ques6(props) {
   const { pet, select } = props
@@ -34,7 +32,12 @@ function Page3Ques6(props) {
         <Page3Topic title="體型" />
         {pet}
       </div>
-      <a href="##">
+      <a
+        href="##"
+        onClick={() => {
+          props.history.push('/adoptionmain')
+        }}
+      >
         <div className="forward position-absolute d-flex flex-column justify-content-center align-items-center forward forward">
           <IoIosArrowDroprightCircle
             size="5rem"
@@ -54,5 +57,9 @@ function Page3Ques6(props) {
     </>
   )
 }
+const mapStateToProps = (store) => {
+  return {}
+}
+const mapDispatchToProps = null
 
-export default Page3Ques6
+export default withRouter(connect(mapStateToProps, {})(Page3Ques6))

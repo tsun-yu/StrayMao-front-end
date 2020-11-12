@@ -6,7 +6,7 @@ function Page3Ques4(props) {
   const { selectToggle } = props
   const maleColorToggle = () => {
     const maleSvg = document.querySelector(
-      '#root > main > div > div:nth-child(3) > div > div > div:nth-child(4) > div.d-flex.justify-content-center.align-items-center > a.mr-5'
+      '#root > main > div > div:nth-child(5) > div > div > div:nth-child(4) > div.d-flex.justify-content-center.align-items-center > a.mr-5'
     ).classList
 
     if (maleSvg[2] == 'page3gender') {
@@ -23,7 +23,7 @@ function Page3Ques4(props) {
   }
   const femaleColorToggle = () => {
     const femaleSvg = document.querySelector(
-      '#root > main > div > div:nth-child(3) > div > div > div:nth-child(4) > div.d-flex.justify-content-center.align-items-center > a.ml-5'
+      '#root > main > div > div:nth-child(5) > div > div > div:nth-child(4) > div.d-flex.justify-content-center.align-items-center > a.ml-5'
     ).classList
     if (femaleSvg[2] == 'page3gender') {
       femaleSvg.remove('page3circle')

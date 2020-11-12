@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Parallax } from 'rc-scroll-anim'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faFacebook,
-  faInstagram,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons'
-// import FooterImgs from './footerItem/FooterImgs'
 
 function HomeFooter() {
+  const scroll2Top = () => {
+    document.documentElement.scrollTop = 0
+  }
+  useEffect(() => {})
   return (
     <>
       <footer className="navbar-fixed-bottom homeFt_bg ">
-        <div className=" homeFtBlock">
+        <div className=" homeFtBlock position-relative">
           <div className="row col-6 justify-content-center">
             <div className="col-3"></div>
             <div className="col">
@@ -23,8 +20,8 @@ function HomeFooter() {
             </div>
           </div>
           <Parallax
-            animation={{ x: 950, opacity: 1, playScale: [0, 1] }}
-            style={{ transform: 'translateX(-100px)', opacity: 1 }}
+            animation={{ x: '200%', opacity: 1, playScale: [0, 1] }}
+            style={{ transform: 'translateX(-0)', opacity: 1 }}
             className="homeFtTruck position-absolute"
           />
           <div className="homeFtTree position-absolute"></div>
@@ -193,6 +190,43 @@ function HomeFooter() {
           <div className="position-absolute straymao2020 d-block">
             STRAYMAO©2020
           </div>
+          <a
+            href="##"
+            onClick={() => {
+              document.documentElement.scrollTop = 0
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="47"
+              height="200"
+              viewBox="0 0 47 214.5"
+              className="position-absolute homeFtPagetop"
+            >
+              <text
+                id="PAGE_TOP"
+                data-name="PAGE TOP"
+                transform="translate(47 96.5) rotate(90)"
+                fill="#fff1e6"
+                fontSize="20"
+                fontFamily="Roboto-Regular, Roboto"
+                letterSpacing="0em"
+              >
+                <tspan x="0" y="21">
+                  PAGE TOP
+                </tspan>
+              </text>
+              <line
+                id="Line_22"
+                data-name="Line 22"
+                y2="84.5"
+                transform="translate(31)"
+                fill="none"
+                stroke="#fff1e6"
+                strokeWidth="1"
+              />
+            </svg>
+          </a>
         </div>
       </footer>
     </>
