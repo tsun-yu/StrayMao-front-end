@@ -44,6 +44,10 @@ function AdoptListCard(props) {
                   </svg>
                 );
                 console.log('dislike!!!');
+
+                // document
+                //   .querySelector('.animateHeart>svg')
+                //   .classList.remove('gogo');
               } else {
                 props.petLikeAsync(props.info.petId);
                 props.info.heart = true;
@@ -53,6 +57,14 @@ function AdoptListCard(props) {
                   </svg>
                 );
                 console.log('like!!!');
+                document
+                  .querySelector('.animateHeart>svg')
+                  .classList.add('gogo');
+                setTimeout(() => {
+                  document
+                    .querySelector('.animateHeart>svg')
+                    .classList.remove('gogo');
+                }, 1000);
               }
             }}
           >
