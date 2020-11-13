@@ -25,7 +25,7 @@ export const insertRecommand = (value) => {
 export const insertRecommandAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/cartinsert";
-    const cartinsert={ value };
+    const cartinsert={ goodsId: value, memberId:100 ,name:'寵物食品 幼犬 小顆粒 羊肉與糙米特調食譜' ,price:1000 ,quantity:22 };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(cartinsert),
@@ -400,7 +400,7 @@ export const goodsLike = (value) => {
 export const goodsLikeAsync = (value) => {
   return async function addGoodsHeart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/goods_heart";
-    const goods = { value };
+    const goods = { goodsId: value, memberId: 100 };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(goods),
@@ -429,7 +429,7 @@ export const goodsDisLike = (value) => {
 export const goodsDisLikeAsync = (value) => {
   return async function addGoodsHeart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/goods_heart";
-    const goods = { value };
+    const goods = { goodsId: value, memberId: 100 };
     const request = new Request(url, {
       method: "DELETE",
       body: JSON.stringify(goods),
@@ -458,7 +458,7 @@ export const goodsInitLike = (value) => {
 export const goodsInitLikeAsync = (value) => {
   return async function addGoodsHeart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/goods_heart_init";
-    const goods = { value };
+    const goods = { goodsId: value, memberId: 100 };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(goods),
@@ -482,4 +482,6 @@ export const goodsInitLikeAsync = (value) => {
     }
   };
 };
+
+
 
