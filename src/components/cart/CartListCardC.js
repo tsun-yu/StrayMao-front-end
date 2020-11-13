@@ -143,8 +143,10 @@ function CartListCardC(props) {
             </svg>
           </div>
         </div>
-        <span className="cartlistC_goodsPrice_An">{totalPrice}</span>
-        <span className="cartlistC_goodsPrice_An"> 元</span>
+        <div className="cartlistC_goodsPrice_An d-flex">
+        <span>{totalPrice}</span>
+        <span> 元</span>
+        </div>
         </div>
         {props.children}
       </div>
