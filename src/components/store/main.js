@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import '../../styles/store/straymao.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
-import StoreCardTest from '../../components/store/StoreCardTest'
+// import StoreCardTest from '../../components/store/StoreCardTest'
 // import { getListAsync } from '../../actions/store/index'
 import { Link } from 'react-router-dom'
 import StoreAnimation from '../../components/store/StoreAnimation'
@@ -89,6 +89,7 @@ function Storepage(props) {
         content.push(
           <StoreCard
             item={{
+              goodsId: info2[i].goodsId,
               goodsImgs: info2[i].goodsImgs,
               name: info2[i].name,
               price: info2[i].price,
@@ -96,6 +97,7 @@ function Storepage(props) {
             }}
           />
         )
+        // console.log('1230',info2[i].goodsId)
       }
       setDisplay(content)
 
@@ -103,6 +105,7 @@ function Storepage(props) {
         content2.push(
           <StoreCard
             item={{
+              goodsId: info[i].goodsId,
               goodsImgs: info[i].goodsImgs,
               name: info[i].name,
               price: info[i].price,
@@ -110,6 +113,7 @@ function Storepage(props) {
             }}
           />
         )
+        // console.log('1231',info2[i].goodsId)
       }
       setDisplay2(content2)
 
@@ -118,6 +122,7 @@ function Storepage(props) {
           contentDiscount.push(
             <StoreCard
               item={{
+                goodsId: infoDiscount[i].goodsId,
                 goodsImgs: infoDiscount[i].goodsImgs,
                 name: infoDiscount[i].name,
                 price: infoDiscount[i].price,
@@ -125,6 +130,7 @@ function Storepage(props) {
               }}
             />
           )
+          // console.log('1232',info2[i].goodsId)
         }
         setDisplayDiscount(contentDiscount)
       }
@@ -142,30 +148,44 @@ function Storepage(props) {
         <div className="row">
           {/* <!-- 大按鈕 --> */}
           <article id="bigBtn" className="d-flex">
+            <a href="/storeNews">
             <button
               className="storeP1Btn"
               id="newsBigBtn"
               type="button"
-              value="News"
+              value="News"              
             >
+            
               News
-            </button>
+            
+            </button> 
+            </a>
+
+            <a href="/storeCats">
             <button
               className="storeP1Btn"
               id="catBigBtn"
               type="button"
               value="Cats"
             >
+           
               Cat
-            </button>
+            
+            </button> 
+            </a>
+
+            <a href="/storeDogs">
             <button
               className="storeP1Btn"
               id="dogBigBtn"
               type="button"
               value="Dogs"
             >
+           
               Dog
+            
             </button>
+            </a>
           </article>
           {/* <!-- 熱銷推薦 --> */}
           <div className="storeP1Title center">
@@ -176,7 +196,7 @@ function Storepage(props) {
         </div>
       </div>
 
-      <div className=".storeP1Bcc" data-speed="0">
+      <div className="storeP1Bcc" data-speed="0">
         <div className="container storeP1Bottom" data-speed="0">
           <div className="row d-flex" id="between">
             {/* <div className="arrow">

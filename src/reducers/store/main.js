@@ -8,6 +8,8 @@ import {
   GET_CATS,
   GET_PRICEUP,
   GET_PRICEDOWN,
+  GET_GOODSID,
+  SET_DETAIL_GOODS_ID,
 } from '../../actions/store/actionTypes'
 
 // function getList(state = 1, action) {
@@ -36,7 +38,7 @@ function getDetail(state = 1, action) {
 function getHot(state = 1, action) {
   switch (action.type) {
     case GET_HOT:
-      console.log('hot: ', action.value)
+      // console.log('hot: ', action.value)
       state = action.value
       break
     default:
@@ -47,7 +49,7 @@ function getHot(state = 1, action) {
 function getDiscount(state = 1, action) {
   switch (action.type) {
     case GET_DISCOUNT:
-      console.log('Dis: ', action.value)
+      // console.log('Dis: ', action.value)
 
       state = action.value
       break
@@ -100,6 +102,28 @@ function getPriceDown(state = 1, action) {
   }
   return state
 }
+function getGoodsId(state = 1, action) {
+  switch (action.type) {
+    case GET_GOODSID:
+      // console.log('reducers的商品詳細', action.value)
+      state = action.value
+      break
+    default:
+      break
+  }
+  return state
+}
+function goodsIdDetail(state = 1, action) {
+  switch (action.type) {
+    case SET_DETAIL_GOODS_ID:
+      // console.log("set:", action.id);
+      state = action.id
+      break
+    default:
+      break
+  }
+  return state
+}
 export {
   getStoreList,
   getDetail,
@@ -109,4 +133,6 @@ export {
   getCats,
   getPriceUp,
   getPriceDown,
+  getGoodsId,
+  goodsIdDetail,
 }

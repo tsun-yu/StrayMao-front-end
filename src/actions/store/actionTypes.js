@@ -7,3 +7,5 @@ export const GET_DOGS = 'GET_DOGS' //狗
 export const GET_CATS = 'GET_CATS' //貓
 export const GET_PRICEUP = 'GET_PRICEUP' //價格高到低
 export const GET_PRICEDOWN = 'GET_PRICEUDOWN' //價格低到高
+export const GET_GOODSID = 'GET_GOODSID' //抓取商品ID
+export const SET_DETAIL_GOODS_ID = 'SET_DETAIL_GOODS_ID' //儲存當前商品ID

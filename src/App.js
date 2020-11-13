@@ -17,6 +17,8 @@ import SocialTest from './components/social_media/Test'
 import StoreTest from './components/store/Test'
 import StrayMaoP2 from './components/store/StrayMaoP2'
 import StrayMaoP3 from './components/store/StrayMaoP3'
+import StrayMaoDogs from './components/store/StrayMaoDogs'
+import StrayMaoNews from './components/store/StrayMaoNews'
 import Try from './components/store/Try'
 import AdopFormPage from './components/adoption/AdopFormPage'
 import AdopFormPage2 from './components/adoption/AdopFormPage2'
@@ -114,7 +116,7 @@ function App() {
               {/*要連線的網頁*/}
               <StoreTest />
             </Route>
-            <Route path="/storeP2">
+            <Route path="/storeCats">
               {/*要連線的網頁*/}
               <StrayMaoP2 />
             </Route>
@@ -122,9 +124,13 @@ function App() {
               {/*要連線的網頁*/}
               <StrayMaoP3 />
             </Route>
-            <Route path="/try">
+            <Route path="/storeDogs">
               {/*要連線的網頁*/}
-              <Try />
+              <StrayMaoDogs />
+            </Route>
+            <Route path="/storeNews">
+              {/*要連線的網頁*/}
+              <StrayMaoNews />
             </Route>
           </Switch>
         </MainContent>

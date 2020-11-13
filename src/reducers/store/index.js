@@ -9,6 +9,8 @@ import {
   getCats,
   getPriceUp,
   getPriceDown,
+  getGoodsId,
+  goodsIdDetail,
 } from './main'
 
 // //combine all reducer to a big reducer
@@ -21,4 +23,6 @@ export const storeReducer = combineReducers({
   getCats,
   getPriceUp,
   getPriceDown,
+  getGoodsId,
+  goodsIdDetail,
 })
