@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import { GrCart } from 'react-icons/gr';
+import React, { useState, useEffect } from 'react'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import { GrCart } from 'react-icons/gr'
 
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 function MyNavbar(props) {
   return (
@@ -91,17 +91,29 @@ function MyNavbar(props) {
                 </Nav.Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Nav.Link as={NavLink} to="/store" style={{ color: '#cb997e' }}>
+                <Nav.Link
+                  as={NavLink}
+                  to="/storeNews"
+                  style={{ color: '#cb997e' }}
+                >
                   最新商品
                 </Nav.Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Nav.Link as={NavLink} to="/store" style={{ color: '#cb997e' }}>
+                <Nav.Link
+                  as={NavLink}
+                  to="/storeCats"
+                  style={{ color: '#cb997e' }}
+                >
                   喵咪專區
                 </Nav.Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Nav.Link as={NavLink} to="/store" style={{ color: '#cb997e' }}>
+                <Nav.Link
+                  as={NavLink}
+                  to="/storeDogs"
+                  style={{ color: '#cb997e' }}
+                >
                   狗勾專區
                 </Nav.Link>
               </NavDropdown.Item>
@@ -177,14 +189,14 @@ function MyNavbar(props) {
                 </div>
               </div>
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/cartTest">
+            <Nav.Link as={NavLink} to="/CartList">
               <i className="fas fa-shopping-cart navIcon"></i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
     </>
-  );
+  )
 }
 
-export default MyNavbar;
+export default MyNavbar
