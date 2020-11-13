@@ -8,6 +8,9 @@ import { getBuy, getBuyAsync, changeBuyAsync, updateOrderAsync }
 from "../../actions/cart/index";
 function Buy(props) {
     const [memberName, setMemberName] = useState(props.info[0].memberName)
+    const [mobile, setMobile] = useState(props.info[0].mobile)
+    const [address, setAddress] = useState(props.info[0].address)
+    
     // const [total, setTotal] = useState(0);
     const [dataLoading, setDataLoading] = useState(true);
     const [display, setDisplay] = useState(<></>);
@@ -20,13 +23,18 @@ function Buy(props) {
     //     props.changeBuyAsync(storeInfo)
     //   }
 
-    const handleChange = (event)=>{
+    const memberNameChange = (event)=>{
         setMemberName(event.target.value);
+      }
+      const mobileChange = (event)=>{
+        setMobile(event.target.value);
+      }
+      const addressChange = (event)=>{
+        setAddress(event.target.value);
       }
 
       const btnBuyClick = ()=>{
-        props.updateBuyAsync(props.info)
-        props.updateBuyAsync(props.info)
+        props.updateOrderAsync(props.info)
       }
     
     useEffect(() => {
@@ -36,6 +44,8 @@ function Buy(props) {
     }, []);
     useEffect(() => {
         setMemberName(props.info[0].memberName)
+        setMobile(props.info[0].mobile)
+        setAddress(props.info[0].address)
         totalCards = props.info;
         // console.log("totalcards:",totalCards)
         if (totalCards.length > 0) {
@@ -82,12 +92,12 @@ setTimeout(() => setDataLoading(false), 1000);
             <div className="buyC_boxConsignee_An">
                 <div>
                     <span>收件人姓名</span>
-                    <input className="buyC_input-green_An" type="text" placeholder="123" value={memberName} onChange={(event)=>handleChange(event)}/>
+                    <input className="buyC_input-green_An" type="text" placeholder="123" value={memberName} onChange={(event)=>memberNameChange(event)}/>
                     {/* <input className="buyC_input-green_An" type="text" placeholder="123" value={props.info[0].memberName}/> */}
                 </div>
                 <div>
                     <span>連絡電話</span>
-                    <input className="buyC_input-green_An" type="text" placeholder="123" value={props.info[0].mobile}/>
+                    <input className="buyC_input-green_An" type="text" placeholder="123" value={mobile} onChange={(event)=>mobileChange(event)}/>
                 </div>
             </div>
             <div className="buyC_boxAddress_An">
@@ -110,7 +120,7 @@ setTimeout(() => setDataLoading(false), 1000);
                 </div>
                 <div>
                     <span>地址</span>
-                    <input className="buyC_input-green_An" type="text" placeholder="123" value={props.info[0].address}/>
+                    <input className="buyC_input-green_An" type="text" placeholder="123" value={address} onChange={(event)=>addressChange(event)}/>
                 </div>
             </div>
             <div className="buyC_boxAddress_An">

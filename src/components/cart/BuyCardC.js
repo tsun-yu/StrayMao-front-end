@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from "react-redux";
 import "../../styles/cart/buy.scss";
 import { bindActionCreators } from "redux";
-import { getBuy, getBuyAsync, changeBuyAsync,deleteOrderAsync, updateBuyAsync } 
+import { getBuy, getBuyAsync, changeBuyAsync,deleteOrderAsync, updateOrderAsync } 
 from "../../actions/cart/index";
 function BuyCardC(props) {
     const [quantity, setQuantity] = useState(props.info.quantity)
@@ -34,14 +34,14 @@ function BuyCardC(props) {
 
       const trashBtn = ()=>{
         props.deleteOrderAsync(props.info.cartId);
-        console.log("dislike!!!");
+        // console.log("dislike!!!");
         setTest(1)
       }
 
     useEffect(() => {
-        setQuantity(props.info.quantity)
-        props.getBuyAsync()
-        console.log("info3: ",props.info)
+      setQuantity(props.info.quantity)
+      props.getBuyAsync() 
+      console.log("info3: ",props.info.quantity)
     }, []);
 return(
 <>
@@ -83,7 +83,7 @@ const mapStateToProps = (store) => {
   const mapDispatchToProps = dispatch =>{
     return bindActionCreators(
       {
-        getBuy, getBuyAsync, changeBuyAsync, updateBuyAsync, deleteOrderAsync
+        getBuy, getBuyAsync, changeBuyAsync, updateOrderAsync, deleteOrderAsync
       },
       dispatch
     )

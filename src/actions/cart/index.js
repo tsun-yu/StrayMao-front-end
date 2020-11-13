@@ -37,7 +37,7 @@ export const insertRecommandAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
       await dispatch(insertRecommand(data.data));
     } catch (error) {
@@ -63,7 +63,7 @@ export const updateRecommand = (value) => {
 //更新購物車
 export const updateRecommandAsync = (value,cartId) => {
   return async function getRecommandCart(dispatch, getState) {
-    console.log("cart : ", cartId)
+    // console.log("cart : ", cartId)
     const url = "http://localhost:3001/straymao/cart/cartupdate";
     const request = new Request(url, {
       method: "POST",
@@ -77,7 +77,7 @@ export const updateRecommandAsync = (value,cartId) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
       // await dispatch(updateRecommand(data.data));
     } catch (error) {
@@ -107,7 +107,7 @@ export const deleteRecommandAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
       await dispatch(deleteRecommand(false));
     } catch (error) {
@@ -137,7 +137,7 @@ export const getRecommandAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
       await dispatch(getRecommand(data.data));
     } catch (error) {
@@ -166,7 +166,7 @@ export const insertOrderAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
       await dispatch(insertOrder(data.data));
     } catch (error) {
@@ -196,7 +196,7 @@ export const getBuyAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      console.log('getBuyAsync-data:',data);
 
       await dispatch(getBuy(data.data));
     } catch (error) {
@@ -235,7 +235,7 @@ export const updateBuyAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      console.log('updateBuyAsync-data:',data);
 
       // await dispatch(updateBuy(data.data));
     } catch (error) {
@@ -265,9 +265,9 @@ export const updateOrderAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      console.log('updateOrderAsync:',data);
 
-      await dispatch(updateOrder(data.data));
+      // await dispatch(updateOrder(data.data));
     } catch (error) {
       //setError(error)
     }
@@ -295,7 +295,7 @@ export const deleteOrderAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
       await dispatch(deleteOrder(data.data));
     } catch (error) {
@@ -325,8 +325,8 @@ export const getOrderListAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log('data:',data);
-      console.log('data.data:',data.data);
+      // console.log('data:',data);
+      // console.log('data.data:',data.data);
       await dispatch(getOrderList(data.data));
     } catch (error) {
       //setError(error)
@@ -354,7 +354,7 @@ export const getOrderAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
       await dispatch(getOrder(data.data));
     } catch (error) {
@@ -383,7 +383,7 @@ export const goodsLikeAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
       await dispatch(goodsLike(true));
     } catch (error) {
@@ -412,7 +412,7 @@ export const goodsDisLikeAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log(data);
+      // console.log(data);
 
       await dispatch(goodsDisLike(false));
     } catch (error) {
@@ -441,7 +441,7 @@ export const goodsInitLikeAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log("init:", data.data);
+      // console.log("init:", data.data);
       let dataValue = false;
       if (data.data.length > 0) {
         dataValue = true;
