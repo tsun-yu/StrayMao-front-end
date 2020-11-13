@@ -1,17 +1,35 @@
 import { act } from "react-dom/test-utils";
 import {
-    GET_RECOM,
-    GET_ORDERLIST,
-    GET_ORDER,
-    GOODS_LIKE,
-    GOODS_DISLIKE,
-    GOODS_INIT,
-    CART_CANCLE,
+  GET_RECOM,
+  GET_ORDERLIST,
+  GET_ORDER,
+  GET_BUY,
+  GOODS_LIKE,
+  GOODS_DISLIKE,
+  GOODS_INIT,
+  INSERT_RECOM,
+  UPDATE_RECOM,
+  DELETE_RECOM,
+  INSERT_ORDER,
+  UPDATE_ORDER,
+  DELETE_ORDER
 } from "../../actions/cart/actionTypes";
 
 function getRecom(state = 1, action) {
   switch (action.type) {
     case GET_RECOM:
+      console.log('hi')
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+function getBuy(state = [{memberName:"",mobile:"",address:""}], action) {
+  switch (action.type) {
+    case GET_BUY:
       state = action.value;
       break;
     default:
@@ -44,6 +62,30 @@ function getOrder(state = 1, action) {
   return state;
 }
 
+function deleteOrder(state = 1, action) {
+  switch (action.type) {
+    case DELETE_ORDER:
+      console.log("reducer: ",action.value)
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+function updateOrder(state = 1, action) {
+  switch (action.type) {
+    case UPDATE_ORDER:
+      console.log("reducer: ",action.value)
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
 function goodsHeart(state = false, action) {
   switch (action.type) {
     case GOODS_LIKE:
@@ -60,5 +102,5 @@ function goodsHeart(state = false, action) {
   }
   return state;
 }
-export { getRecom, getOrderList, getOrder, goodsHeart };
+export { getRecom, getOrderList, getOrder, deleteOrder, updateOrder, goodsHeart,getBuy  };
 // export default totalPage;

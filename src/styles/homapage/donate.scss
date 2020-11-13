@@ -1,0 +1,35 @@
+.donateBanner {
+  background-image: url(/image/homepage/homepage1-1.png);
+  height: 50vh;
+  min-height: 400px;
+  width: 80vw;
+  background-attachment: fixed;
+  background-size: cover;
+  font: {
+    size: 6rem;
+    family: $fontType3;
+    weight: 700;
+  }
+  color: rgba($color: #fff, $alpha: 0.8);
+}
+.donateTitle {
+  color: #555555;
+  font: {
+    family: $fontType2;
+    size: 4rem;
+  }
+}
+
+.donateArea {
+  height: 500px;
+  width: 100vw;
+  background-color: #fff1e6;
+}
+.donateCredit {
+  font: {
+    size: 18px;
+    family: $fontType1;
+  }
+  color: #555555;
+  line-height: 36px;
+}

@@ -45,7 +45,7 @@ function AdopMapCheck(props) {
         <div className="adopMapCheck">
           <div className="demo">
             <div className="col">
-              <h4 className="header6">設施</h4>
+              <h4 className="header6 mb-4">設施</h4>
               <div className="opt">
                 <input
                   className="magic-checkbox"

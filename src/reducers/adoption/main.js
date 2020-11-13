@@ -1,4 +1,4 @@
-import { act } from "react-dom/test-utils";
+import { act } from 'react-dom/test-utils';
 import {
   GET_RECOM,
   GET_DETAIL,
@@ -8,9 +8,12 @@ import {
   PET_LIKE,
   GET_LIST,
   SET_DETAIL_PET_ID,
-} from "../../actions/adoption/actionTypes";
+} from '../../actions/adoption/actionTypes';
 
-function getRecom(state = 1, action) {
+function getRecom(
+  state = [{ pic: '', name: '', gender: '', age: '', area: '', des: '' }],
+  action
+) {
   switch (action.type) {
     case GET_RECOM:
       state = action.value;
@@ -20,9 +23,10 @@ function getRecom(state = 1, action) {
   }
   return state;
 }
-function getDetail(state = 1, action) {
+function getDetail(state = [{}], action) {
   switch (action.type) {
     case GET_DETAIL:
+      console.log('reducer: ', action.value);
       state = action.value;
       break;
     default:

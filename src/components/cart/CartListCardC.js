@@ -2,12 +2,73 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import "../../styles/cart/cartlist.scss";
 
+import { changeRecommandAsync,updateRecommandAsync,deleteRecommandAsync } 
+from "../../actions/cart/index";
+import { bindActionCreators } from "redux";
+
 function CartListCardC(props) {
+  const [quantity, setQuantity] = useState(props.info.quantity)
+  const [test,setTest] = useState(0)
+  const [checkboxvalue, setCheckBoxValue]=useState(false)
+  // console.log("props.info.quantity:",props.storeInfo)
+  // console.log("props.info.index:",props.index)
+  // console.log("props.info.quantity2:",props.storeInfo)
+
+  useEffect(()=>{
+    // props.changeRecommandAsync([props.storeInfo[0]])
+    console.log('checked', props.checked);
+  },[props])
+
+
+
+  const minusOne = ()=>{
+    let storeInfo = props.storeInfo;
+    console.log('qqq',storeInfo[props.index].quantity);
+    storeInfo[props.index].quantity -= 1;
+    console.log('qqq22',storeInfo[props.index].quantity);
+    props.info.quantity = storeInfo[props.index].quantity;
+    setQuantity(storeInfo[props.index].quantity)
+    props.changeRecommandAsync(storeInfo)
+  }
+
+  const addOne = ()=>{
+    let storeInfo = props.storeInfo;
+    console.log('qqq',storeInfo[props.index].quantity);
+    storeInfo[props.index].quantity += 1;
+    console.log('qqq22',storeInfo[props.index].quantity);
+    props.info.quantity = storeInfo[props.index].quantity;
+    setQuantity(storeInfo[props.index].quantity)
+    props.changeRecommandAsync(storeInfo)
+    
+  }
+
+  const trashBtn = ()=>{
+    props.deleteRecommandAsync(props.info.cartId);
+    console.log("dislike!!!");
+    setTest(1)
+  }
+
+  const handleChange = (event)=>{
+    setQuantity(event.target.value);
+  }
+
+  const handleCheckbox = (event)=>{
+    props.setChecked({[event.target.value]:!checkboxvalue})
+    setCheckBoxValue(!checkboxvalue)
+  }
+
   return (
     <>
+{test==1?"":
+
       <div className="cartlistC_boxUpper_An d-flex justify-content-between">
       <div className="d-flex">
-        <div className="cartlistC_icon-018-trashUpper_An">
+        <div className="cartlistC_icon-018-trashUpper_An" onClick={()=>trashBtn()}
+          // onClick={() => {
+          //   props.deleteRecommandAsync(props.info.cartId);
+          //   console.log("dislike!!!");
+          //   }}
+          >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.82 24.22">
             <path
               id="Path_1809"
@@ -31,9 +92,12 @@ function CartListCardC(props) {
             className="cartlistC_magic-checkbox_An"
             type="checkbox"
             name="layout"
-            id="c1"
-          />
-          <label for="c1"></label>
+            id={props.info.cartId}
+            value={props.info.cartId}
+            onChange={(event)=>{handleCheckbox(event)}}
+            checked={checkboxvalue}
+            />
+          <label for={props.info.cartId}></label>
         </div>
         <img
           className="cartlistC_goodsImg_An"
@@ -45,7 +109,8 @@ function CartListCardC(props) {
         </span>
         <div className="d-flex">
         <div className="cartlistC_inputbox_An d-flex">
-          <div className="cartlistC_icon-067-minus_An">
+        <div className="cartlistC_icon-067-minus_An" onClick={() => minusOne()}>
+          {/* <div className="cartlistC_icon-067-minus_An" onClick={() => setTotal(q - 1)}> */}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.44 19.44">
               <path
                 id="Path_1767"
@@ -58,9 +123,11 @@ function CartListCardC(props) {
             className="cartlistC_input-black_An"
             type="text"
             placeholder="123"
-            value={props.info.quantity}
+            value={quantity}
+            onChange={(event)=>handleChange(event)}
           />
-          <div className="cartlistC_icon-021-plus_An">
+          <div className="cartlistC_icon-021-plus_An" onClick={() => addOne()}>
+          {/* <div className="cartlistC_icon-021-plus_An" onClick={() => setTotal(q + 1)}> */}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.44 19.44">
               <path
                 id="Path_1806"
@@ -74,14 +141,26 @@ function CartListCardC(props) {
         </div>
         {props.children}
       </div>
+}
     </>
   );
 }
 
 const mapStateToProps = (store) => {
-  return {};
+  return {storeInfo: store.cartReducer.getRecom};
 };
-const mapDispatchToProps = null;
+const mapDispatchToProps = dispatch =>{
+  return bindActionCreators(
+    {
+      changeRecommandAsync,
+      updateRecommandAsync,
+      deleteRecommandAsync
+    },
+    dispatch
+  )
+};
 
-export default connect(mapStateToProps, {})(CartListCardC);
+export default connect(mapStateToProps, mapDispatchToProps)(CartListCardC);
+
+
 // export default cardlistCardC

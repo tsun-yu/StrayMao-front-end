@@ -258,14 +258,16 @@
   height: 510px;
   margin: 14px auto;
   top: 150px;
-  textarea {
+}
+
+.forumReplyBox{
     width: 270px;
     max-height: 58px;
     margin-left: 15px;
     margin-right: 10px;
     background-color: rgba($color: #fff1e6, $alpha: 0.5);
     border: solid #cb997e 1px;
-  }
+    resize:none;
 }
 
 .forumReplyTopLine {

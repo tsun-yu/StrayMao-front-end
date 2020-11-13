@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import PageBar from "./PageBar";
-import AdopListCard from "./AdopListCard";
-import { gotoPage, setTotalPage } from "../../actions/common/index";
-import { getListAsync } from "../../actions/adoption/index";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import PageBar from './PageBar';
+import AdopListCard from './AdopListCard';
+import { gotoPage, setTotalPage } from '../../actions/common/index';
+import { getListAsync } from '../../actions/adoption/index';
 function AdopListPage(props) {
   const [dataLoading, setDataLoading] = useState(true);
   const [display, setDisplay] = useState(<></>);
@@ -40,14 +40,17 @@ function AdopListPage(props) {
     }
     setDisplay(
       <>
-        <div className="adopListContainer justify-content-around align-items-center mt-5 ">
-          {/* <h5>{props.totalPage}</h5> */}
-          <div className="row my-5 justify-content-around flex-wrap">
-            {content}
+        <div className="container">
+          <div className="adopFormTitle header4 my-4">領養列表 </div>
+          <div className="adopListContainer align-items-center mt-5 ">
+            {/* <h5>{props.totalPage}</h5> */}
+            <div className="row my-5 flex-wrap justify-content-between ">
+              {content}
+            </div>
           </div>
-        </div>
-        <div className="d-flex justify-content-center">
-          <PageBar />
+          <div className="d-flex justify-content-center">
+            <PageBar />
+          </div>
         </div>
       </>
     );

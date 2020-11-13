@@ -1,15 +1,15 @@
 // 預設變數覆蓋需要在導入Bootstrap之前
-$fontType1: "微軟正黑體";
-$fontType2: "Noto Serif TC";
-$fontType3: "Roboto";
+$fontType1: '微軟正黑體';
+$fontType2: 'Noto Serif TC';
+$fontType3: 'Roboto';
 $primary: #a5a58d;
 $secondary: #131010;
 
 // Import Bootstrap and its default variables
-@import "~bootstrap/scss/bootstrap.scss";
-@import "./footer.scss";
-@import "./navbar.scss";
-@import "./styleGuide.scss";
+@import '~bootstrap/scss/bootstrap.scss';
+@import './footer.scss';
+@import './navbar.scss';
+@import './styleGuide.scss';
 
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 main {

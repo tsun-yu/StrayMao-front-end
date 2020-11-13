@@ -16,7 +16,6 @@ function homepage(props) {
       <Page4 />
       <Page5 />
       <Page6 />
-      {/* <HomeFooter /> */}
     </>
   )
 }

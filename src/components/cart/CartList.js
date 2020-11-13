@@ -4,19 +4,46 @@ import "../../styles/cart/cartlist.scss"
 import CartListCardC from "./CartListCardC"
 import CartListCardM from "./CartListCardM"
 
-import { getRecommand, getRecommandAsync } 
+import { getRecommand, getRecommandAsync,updateRecommandAsync } 
 from "../../actions/cart/index";
-function CartList(props) {
+function Main(props) {
     const [test, setTest] = useState({});
     const [dataLoading, setDataLoading] = useState(true);
     const [display, setDisplay] = useState(<></>);
+    const [checked, setChecked] = useState({})
+    const [saveCheckBox,setSaveCheckBox]=useState({})
 
     const content = [];
     let totalCards = props.info;
+    console.log("store.cartReducer.getRecom:",props.info)
+
+    const btnBuyClick = ()=>{
+        let cartId=[]
+        console.log("aaayyyy ")
+        document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
+            if(e.checked){
+                console.log(e.value)
+                cartId.push(e.value)
+            }
+        })
+        console.log("aaa: ",cartId)
+        props.updateRecommandAsync(props.info,cartId)
+      }
+
     useEffect(() => {
         props.getRecommandAsync()
         console.log("info2: ",props.info)
     }, []);
+
+    useEffect(()=>{
+        let oldSave={...saveCheckBox,...checked}
+        setSaveCheckBox(oldSave)
+    },[checked])
+
+    useEffect(()=>{
+        console.log('savedCheck:',saveCheckBox)
+    },[setSaveCheckBox])
+    
     useEffect(() => {
         totalCards = props.info;
         console.log("totalcards:",totalCards)
@@ -31,7 +58,7 @@ function CartList(props) {
             ) {
                 if (totalCards.length > 0) {
                     // console.log(":",totalCards[i]);
-                    content.push(<CartListCardC info={totalCards[i]} key={i} />);
+                    content.push(<CartListCardC info={totalCards[i]} key={i} index={i} checked={checked} setChecked={(value)=>setChecked({ [value]:true})} />);
                 }
             }
             setDisplay(
@@ -54,11 +81,11 @@ function CartList(props) {
             <button className="cartlistC_btn-brown_An" type="button" value="123">全選</button>
             </div>
             <div className="cartlistC_boxDownRight_An">
-            <span className="cartlistC_totalPrice_An">小計：2790 元</span>
+            <span className="cartlistC_totalPrice_An">小計：4442790 元</span>
             </div>
         </div>
 
-        <button className="cartlistC_btn-green_An" type="button" value="123">購買</button>
+        <button className="cartlistC_btn-green_An" type="button" value="123" onClick={() => btnBuyClick()}>購買</button>
     </div>
 </div>
 
@@ -79,7 +106,7 @@ function CartList(props) {
                     </div>
                     <button className="cartlistM_btn-brown_An" type="button" value="123">全選</button>
                 </div>
-                <span className="cartlistM_totalPrice_An">小計：2790 元</span>
+                <span className="cartlistM_totalPrice_An">小計：222790 元</span>
             </div>
             <button className="cartlistM_btn-green_An" type="button" value="123">購買</button>
         </div>
@@ -102,10 +129,10 @@ const mapStateToProps = (store) => {
     return { info: store.cartReducer.getRecom };
   };
   const mapDispatchToProps = null;
-
+  
 export default  connect(
     mapStateToProps, {
-        getRecommand, getRecommandAsync 
-    })(CartList)
+        getRecommand, getRecommandAsync,updateRecommandAsync 
+    })(Main)
 
 // export default CartList

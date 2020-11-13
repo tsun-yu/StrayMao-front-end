@@ -19,6 +19,12 @@ import StrayMaoP2 from './components/store/StrayMaoP2'
 import StrayMaoP3 from './components/store/StrayMaoP3'
 import StrayMaoDogs from './components/store/StrayMaoDogs'
 import StrayMaoNews from './components/store/StrayMaoNews'
+import Try from './components/store/Try'
+import AdopFormPage from './components/adoption/AdopFormPage'
+import AdopFormPage2 from './components/adoption/AdopFormPage2'
+import AdopFormPage3 from './components/adoption/AdopFormPage3'
+import AdopFormPage4 from './components/adoption/AdopFormPage4'
+import Donate from './components/homapage/Donate'
 
 function App() {
   const [navbar, setNavbar] = useState(<MyNavbar />)
@@ -70,6 +76,22 @@ function App() {
               {/*要連線的網頁*/}
               <AdoptionDetail />
             </Route>
+            <Route path="/adoptionform">
+              {/*要連線的網頁*/}
+              <AdopFormPage />
+            </Route>
+            <Route path="/adoptionform2">
+              {/*要連線的網頁*/}
+              <AdopFormPage2 />
+            </Route>
+            <Route path="/adoptionform3">
+              {/*要連線的網頁*/}
+              <AdopFormPage3 />
+            </Route>
+            <Route path="/adoptionform4">
+              {/*要連線的網頁*/}
+              <AdopFormPage4 />
+            </Route>
             <Route path="/cartTest">
               {/*要連線的網頁*/}
               <CartTest />
@@ -77,6 +99,10 @@ function App() {
             <Route path="/homeTest">
               {/*要連線的網頁*/}
               <HomeTest setHome={setHome} />
+            </Route>
+            <Route path="/donation">
+              {/*要連線的網頁*/}
+              <Donate />
             </Route>
             <Route path="/memberTest">
               {/*要連線的網頁*/}
