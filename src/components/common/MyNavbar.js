@@ -91,17 +91,17 @@ function MyNavbar(props) {
                 </Nav.Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Nav.Link as={NavLink} to="/store" style={{ color: '#cb997e' }}>
+                <Nav.Link as={NavLink} to="/storeNews" style={{ color: '#cb997e' }}>
                   最新商品
                 </Nav.Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Nav.Link as={NavLink} to="/store" style={{ color: '#cb997e' }}>
+                <Nav.Link as={NavLink} to="/storeCats" style={{ color: '#cb997e' }}>
                   喵咪專區
                 </Nav.Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Nav.Link as={NavLink} to="/store" style={{ color: '#cb997e' }}>
+                <Nav.Link as={NavLink} to="/storeDogs" style={{ color: '#cb997e' }}>
                   狗勾專區
                 </Nav.Link>
               </NavDropdown.Item>

@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import '../../styles/store/straymaoP2.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
+import PageBar from "../../components/adoption/PageBar"
+import { gotoPage, setTotalPage } from "../../actions/common/index";
 
 
 import {
@@ -13,8 +15,14 @@ import {
 function StrayMaoDogs(props) {
   let i = 0
 
+  const [dataLoading, setDataLoading] = useState(true);
   const [display, setDisplay] = useState([])
-  let content = []
+  const content = []
+  let totalCards = props.cards;
+  // console.log('store: ',props.cards)
+  let totalPages = Math.ceil(totalCards.length / 9);
+  let nowPage = props.nowPage;
+
 
   useEffect(() => {
     props.getDogsListAsync()
@@ -31,6 +39,8 @@ function StrayMaoDogs(props) {
         }
       })
     })
+    // console.log("aaaa , ",document
+      // .querySelector('.storeP2CatImg'))
     document
       .querySelector('.storeP2CatImg')
       .addEventListener('mouseover', function func(e) {
@@ -44,78 +54,98 @@ function StrayMaoDogs(props) {
   }, [])
 
   useEffect(()=>{
-    let info = props.info
-    console.log('info :', props.info)
 
-    if (info.length > 0){
-      for(let i = 0;i < info.length;i++){
-        content.push(
-          <StoreCard
-          item={{
-            goodsId: info[i].goodsId,
-              goodsImgs: info[i].goodsImgs,
-              name: info[i].name,
-              price: info[i].price,
-              pricing: info[i].pricing,
-          }}
-          />
-        )
-      }
-      setDisplay(content)
+    totalCards = props.cards;
+    totalPages = Math.ceil(totalCards.length / 9);
+
+    if (totalCards.length > 0) {
+      // let tt = JSON.parse(totalCards[0]);
+      // console.log("totalCards: ", totalCards[0]);
+      // console.log("now ", nowPage);
+      // console.log("totalPages ", totalPages);
+      // console.log("if:", nowPage === totalPages);
     }
-  },[props.info])
+    props.setTotalPage(totalPages);
+    for (
+      let i = 9 * (nowPage - 1);
+      nowPage === totalPages ? i < totalCards.length : i < 9 * nowPage;
+      i++
+    ) {
+      if (totalCards.length > 0) {
+        // console.log(":", totalCards[i]);
+        content.push(<StoreCard item={totalCards[i]} key={i} />);
+      }
+    }
+    setDisplay(content);
 
+    setTimeout(() => setDataLoading(false), 100);
+  }, [totalCards, nowPage]);
+
+  const loading = <div></div>;
+
+  // 以資料載入的指示狀態來切換要出現的畫面
+  // return dataLoading ? loading : display;
   return (
     <>
       <div className="container">
-        <div className="row">
-          <section>
-            <div className="storeP2Background">
-              <img
-                src="./image/store/P2Background.jpg"
-                alt=""
-                className="layer storeP2CatImg"
-                data-speed="2"
-              />
-            </div>
-          </section>
+      <div className="row">
+        <section>
+          <div className="storeP2Background">
+            <img
+              src="./image/store/Keto_banner2.png"
+              alt=""
+              className="layer storeP2CatImg"
+              data-speed="2"
+            />
+          </div>
+        </section>
 
-          {/* 熱銷推薦  */}
-          <div className="storeP1Title">
-            <div className="line1"></div>
-            <div className="storeP1GoodsWords">最棒的汪，最棒的貨</div>
-            <div className="line2"></div>
+        {/* 熱銷推薦  */}
+        <div className="storeP1Title">
+          <div className="line1"></div>
+          <div className="storeP1GoodsWords">最棒的汪，最棒的貨</div>
+          <div className="line2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div className="container">
+      <div className="row">
+        <div className="fliter">
+          <div className="hotSale">
+            熱銷推薦 <i className="fas fa-caret-down"></i>
+          </div>
+        </div>
+
+        {/* card  */}
+        <div className="container storeP1Bottom">
+          <div className="row d-flex" id="between">
+          {dataLoading ? loading : display}
           </div>
         </div>
       </div>
+    </div>
 
-      <div className="container">
-        <div className="row">
-          <div className="fliter">
-            <div className="hotSale">
-              熱銷推薦 <i className="fas fa-caret-down"></i>
-            </div>
-          </div>
-
-          {/* card  */}
-          <div className="container storeP1Bottom">
-            <div className="row d-flex" id="between">
-            {display}
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="container storeP1Bottom">
+          <div className="row d-flex" id="between">
+    <PageBar />
+    </div>
+    </div>
     </>
-  )
+  );
 }
 
 const mapStateToProps = (store) => {
   return {
-    info: store.storeReducer.getDogs,
-  }
-}
-const mapDispatchToProps = null
+    nowPage: store.nowPage,
+    totalPage: store.totalPage,
+    cards: store.storeReducer.getDogs,
+  };
+};
+const mapDispatchToProps = null;
 
 export default connect(mapStateToProps, {
+  gotoPage,
+  setTotalPage,
   getDogsListAsync,
-})(StrayMaoDogs)
+})(StrayMaoDogs);

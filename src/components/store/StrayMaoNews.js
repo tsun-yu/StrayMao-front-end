@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import '../../styles/store/straymaoP2.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
+import PageBar from "../../components/adoption/PageBar"
+import { gotoPage, setTotalPage } from "../../actions/common/index";
 
 
 import {
@@ -13,8 +15,16 @@ import {
 function StrayMaoNews(props) {
   let i = 0
 
-  const [display, setDisplay] = useState([])
-  let content = []
+  // const [display, setDisplay] = useState([])
+  // let content = []
+
+  const [dataLoading, setDataLoading] = useState(true);
+  const [displayNews, setDisplayNews] = useState([])
+  const contentNews = []
+  let totalCards = props.cards;
+  // console.log('store: ',props.cards)
+  let totalPages = Math.ceil(totalCards.length / 9);
+  let nowPage = props.nowPage;
 
   useEffect(() => {
     props.getListAsync()
@@ -31,6 +41,8 @@ function StrayMaoNews(props) {
         }
       })
     })
+    // console.log("aaaa , ",document
+      // .querySelector('.storeP2CatImg'))
     document
       .querySelector('.storeP2CatImg')
       .addEventListener('mouseover', function func(e) {
@@ -44,25 +56,82 @@ function StrayMaoNews(props) {
   }, [])
 
   useEffect(()=>{
-    let info = props.info
-    console.log('info :', props.info)
-    if (info.length > 0){
-      for(let i = 0;i < info.length;i++){
-        content.push(
-          <StoreCard
-          item={{
-            goodsId: info[i].goodsId,
-              goodsImgs: info[i].goodsImgs,
-              name: info[i].name,
-              price: info[i].price,
-              pricing: info[i].pricing,
-          }}
-          />
-        )
-      }
-      setDisplay(content)
+
+    totalCards = props.cards;
+    totalPages = Math.ceil(totalCards.length / 9);
+
+    if (totalCards.length > 0) {
+      // let tt = JSON.parse(totalCards[0]);
+      // console.log("totalCards: ", totalCards[0]);
+      // console.log("now ", nowPage);
+      // console.log("totalPages ", totalPages);
+      // console.log("if:", nowPage === totalPages);
     }
-  },[props.info])
+    props.setTotalPage(totalPages);
+    for (
+      let i = 9 * (nowPage - 1);
+      nowPage === totalPages ? i < totalCards.length : i < 9 * nowPage;
+      i++
+    ) {
+      if (totalCards.length > 0) {
+        // console.log(":", totalCards[i]);
+        contentNews.push(<StoreCard item={totalCards[i]} key={i} />);
+      }
+    }
+    setDisplayNews(contentNews);
+
+    setTimeout(() => setDataLoading(false), 100);
+  }, [totalCards, nowPage]);
+
+  const loading = <div></div>;
+
+  // useEffect(() => {
+  //   props.getListAsync()
+  //   // console.log(props.info)
+
+  //   document.addEventListener('mousemove', function parallax(e) {
+  //     this.querySelectorAll('.storeP2CatImg').forEach((storeP2CatImg) => {
+  //       const speed = storeP2CatImg.getAttribute('data-speed')
+  //       if (i == 1) {
+  //         const x = (window.innerWidth - e.pageX * speed) / 50
+  //         const y = (window.innerHeight - e.pageY * speed) / 50
+
+  //         storeP2CatImg.style.transform = `translateX(${x}px) translateY(${y}px)`
+  //       }
+  //     })
+  //   })
+  //   document
+  //     .querySelector('.storeP2CatImg')
+  //     .addEventListener('mouseover', function func(e) {
+  //       i = 1
+  //     })
+  //   document
+  //     .querySelector('.storeP2CatImg')
+  //     .addEventListener('mouseout', function func(e) {
+  //       i = 0
+  //     })
+  // }, [])
+
+  // useEffect(()=>{
+  //   let info = props.info
+  //   console.log('info :', props.info)
+  //   if (info.length > 0){
+  //     for(let i = 0;i < info.length;i++){
+  //       content.push(
+  //         <StoreCard
+  //         item={{
+  //           goodsId: info[i].goodsId,
+  //             goodsImgs: info[i].goodsImgs,
+  //             name: info[i].name,
+  //             price: info[i].price,
+  //             pricing: info[i].pricing,
+  //         }}
+  //         />
+  //       )
+  //     }
+  //     setDisplay(content)
+  //   }
+  // },[props.info])
 
   return (
     <>
@@ -71,7 +140,7 @@ function StrayMaoNews(props) {
           <section>
             <div className="storeP2Background">
               <img
-                src="./image/store/P2Background.jpg"
+                src="./image/store/kitten-touching-dog.jpg"
                 alt=""
                 className="layer storeP2CatImg"
                 data-speed="2"
@@ -99,11 +168,17 @@ function StrayMaoNews(props) {
           {/* card  */}
           <div className="container storeP1Bottom">
             <div className="row d-flex" id="between">
-            {display}
+            {dataLoading ? loading : displayNews}
             </div>
           </div>
         </div>
       </div>
+
+      <div className="container storeP1Bottom">
+          <div className="row d-flex" id="between">
+    <PageBar />
+    </div>
+    </div>
     </>
   )
 }
@@ -111,8 +186,15 @@ function StrayMaoNews(props) {
 const mapStateToProps = (store) => {
   return {
     info: store.storeReducer.getStoreList,
+    nowPage: store.nowPage,
+    totalPage: store.totalPage,
+    cards: store.storeReducer.getStoreList,
   }
 }
 const mapDispatchToProps = null
 
-export default connect(mapStateToProps, {getListAsync,})(StrayMaoNews)
+export default connect(mapStateToProps, {
+  gotoPage,
+  setTotalPage,
+  getListAsync,
+})(StrayMaoNews)

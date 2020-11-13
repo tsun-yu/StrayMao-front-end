@@ -32,7 +32,7 @@ function StoreCard(props) {
 
       <div className="card_new col-lg-3 col-md-6 col-sm-6">
         <a
-          href="#"
+          href="##"
           onClick={() => {
             // console.log('aaa:', props.item)
             props.goodsIdDetail(props.item.goodsId)
