@@ -9,6 +9,7 @@ import {
   INSERT_RECOM,
   UPDATE_RECOM,
   DELETE_RECOM,
+  DELETE_RECOMS,
   INSERT_ORDER,
   UPDATE_ORDER,
   DELETE_ORDER,
@@ -110,6 +111,35 @@ export const deleteRecommandAsync = (value) => {
       // console.log(data);
 
       await dispatch(deleteRecommand(false));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+
+export const deleteRecommands = (value) => {
+  return { type: DELETE_RECOMS, like: value };
+};
+//刪除購物車
+export const deleteRecommandsAsync = (value,cartId) => {
+  return async function deleteCart(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/cart/cartlists";
+    const goods = { value,cartId };
+    const request = new Request(url, {
+      method: "DELETE",
+      body: JSON.stringify(goods),
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      // console.log(data);
+
+      await dispatch(deleteRecommands(false));
     } catch (error) {
       //setError(error)
     }
@@ -452,4 +482,6 @@ export const goodsInitLikeAsync = (value) => {
     }
   };
 };
+
+
 

@@ -10,6 +10,7 @@ function CartListCardC(props) {
   const [quantity, setQuantity] = useState(props.info.quantity)
   const [test,setTest] = useState(0)
   const [checkboxvalue, setCheckBoxValue]=useState(false)
+  const [totalPrice,setTotalPrice] = useState(props.info.price*props.info.quantity)
   // console.log("props.info.quantity:",props.storeInfo)
   // console.log("props.info.index:",props.index)
   // console.log("props.info.quantity2:",props.storeInfo)
@@ -29,6 +30,9 @@ function CartListCardC(props) {
     props.info.quantity = storeInfo[props.index].quantity;
     setQuantity(storeInfo[props.index].quantity)
     props.changeRecommandAsync(storeInfo)
+    console.log("quantity:",quantity)
+    setTotalPrice(storeInfo[props.index].quantity*props.info.price)
+    props.cost()
   }
 
   const addOne = ()=>{
@@ -39,7 +43,8 @@ function CartListCardC(props) {
     props.info.quantity = storeInfo[props.index].quantity;
     setQuantity(storeInfo[props.index].quantity)
     props.changeRecommandAsync(storeInfo)
-    
+    setTotalPrice(storeInfo[props.index].quantity*props.info.price)
+    props.cost()
   }
 
   const trashBtn = ()=>{
@@ -63,7 +68,8 @@ function CartListCardC(props) {
 
       <div className="cartlistC_boxUpper_An d-flex justify-content-between">
       <div className="d-flex">
-        <div className="cartlistC_icon-018-trashUpper_An" onClick={()=>trashBtn()}
+        <div 
+        id={"t_"+props.info.cartId} className="cartlistC_icon-018-trashUpper_An" onClick={()=>trashBtn()}
           // onClick={() => {
           //   props.deleteRecommandAsync(props.info.cartId);
           //   console.log("dislike!!!");
@@ -137,7 +143,10 @@ function CartListCardC(props) {
             </svg>
           </div>
         </div>
-        <span className="cartlistC_goodsPrice_An">{props.info.price} 元</span>
+        <div className="cartlistC_goodsPrice_An d-flex">
+        <span>{totalPrice}</span>
+        <span> 元</span>
+        </div>
         </div>
         {props.children}
       </div>

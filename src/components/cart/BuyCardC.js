@@ -6,7 +6,7 @@ import { getBuy, getBuyAsync, changeBuyAsync,deleteOrderAsync, updateOrderAsync 
 from "../../actions/cart/index";
 function BuyCardC(props) {
     const [quantity, setQuantity] = useState(props.info.quantity)
-    const [test,setTest] = useState(0)
+    
     const minusOne = ()=>{
         let storeInfo = props.storeInfo;
         console.log('qqq',storeInfo[props.index].quantity);
@@ -35,7 +35,7 @@ function BuyCardC(props) {
       const trashBtn = ()=>{
         props.deleteOrderAsync(props.info.cartId);
         // console.log("dislike!!!");
-        setTest(1)
+        props.setTest(1)
       }
 
     useEffect(() => {
@@ -45,7 +45,7 @@ function BuyCardC(props) {
     }, []);
 return(
 <>
-{test==1?"":
+{props.test==1?"":
     <div className="buyC_boxUpper_An d-flex justify-content-between">
         <div className="buyC_icon-018-trashUpper_An" onClick={()=>trashBtn()}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.82 24.22">

@@ -8,6 +8,7 @@ export const GOODS_INIT = "GOODS_INIT";
 export const INSERT_RECOM = "INSERT_RECOM";
 export const UPDATE_RECOM = "UPDATE_RECOM";
 export const DELETE_RECOM = "DELETE_RECOM";
+export const DELETE_RECOMS = "DELETE_RECOMS";
 export const INSERT_ORDER = "INSERT_ORDER";
 export const UPDATE_ORDER = "UPDATE_ORDER";
 export const DELETE_ORDER = "DELETE_ORDER";

@@ -3,31 +3,31 @@ import { connect } from 'react-redux'
 import '../../styles/store/straymaoP2.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
-import PageBar from '../../components/common/PageBar'
+import PageBar from "../../components/adoption/PageBar"
 import { gotoPage, setTotalPage } from "../../actions/common/index";
 
+
 import {
-  getCatsListAsync,
+  getListAsync,
 } from '../../actions/store/index'
 
 
-function StrayMaoP2(props) {
+function StrayMaoNews(props) {
   let i = 0
 
-  const [display, setDisplay] = useState([])
-  let content = []
+  // const [display, setDisplay] = useState([])
+  // let content = []
 
-  // 分頁
   const [dataLoading, setDataLoading] = useState(true);
-  const [displayPage, setDisplayPage] = useState([])
-  const contentPage = []
+  const [displayNews, setDisplayNews] = useState([])
+  const contentNews = []
   let totalCards = props.cards;
   // console.log('store: ',props.cards)
   let totalPages = Math.ceil(totalCards.length / 9);
   let nowPage = props.nowPage;
 
   useEffect(() => {
-    props.getCatsListAsync()
+    props.getListAsync()
     // console.log(props.info)
 
     document.addEventListener('mousemove', function parallax(e) {
@@ -41,6 +41,8 @@ function StrayMaoP2(props) {
         }
       })
     })
+    // console.log("aaaa , ",document
+      // .querySelector('.storeP2CatImg'))
     document
       .querySelector('.storeP2CatImg')
       .addEventListener('mouseover', function func(e) {
@@ -73,19 +75,46 @@ function StrayMaoP2(props) {
     ) {
       if (totalCards.length > 0) {
         // console.log(":", totalCards[i]);
-        contentPage.push(<StoreCard item={totalCards[i]} key={i} />);
+        contentNews.push(<StoreCard item={totalCards[i]} key={i} />);
       }
     }
-    setDisplayPage(contentPage);
+    setDisplayNews(contentNews);
 
     setTimeout(() => setDataLoading(false), 100);
   }, [totalCards, nowPage]);
 
   const loading = <div></div>;
 
+  // useEffect(() => {
+  //   props.getListAsync()
+  //   // console.log(props.info)
+
+  //   document.addEventListener('mousemove', function parallax(e) {
+  //     this.querySelectorAll('.storeP2CatImg').forEach((storeP2CatImg) => {
+  //       const speed = storeP2CatImg.getAttribute('data-speed')
+  //       if (i == 1) {
+  //         const x = (window.innerWidth - e.pageX * speed) / 50
+  //         const y = (window.innerHeight - e.pageY * speed) / 50
+
+  //         storeP2CatImg.style.transform = `translateX(${x}px) translateY(${y}px)`
+  //       }
+  //     })
+  //   })
+  //   document
+  //     .querySelector('.storeP2CatImg')
+  //     .addEventListener('mouseover', function func(e) {
+  //       i = 1
+  //     })
+  //   document
+  //     .querySelector('.storeP2CatImg')
+  //     .addEventListener('mouseout', function func(e) {
+  //       i = 0
+  //     })
+  // }, [])
+
   // useEffect(()=>{
   //   let info = props.info
-  //   // console.log('info :', props.info)
+  //   console.log('info :', props.info)
   //   if (info.length > 0){
   //     for(let i = 0;i < info.length;i++){
   //       content.push(
@@ -104,12 +133,6 @@ function StrayMaoP2(props) {
   //   }
   // },[props.info])
 
-  // useEffect(getRandomInt(max) {
-  //   let getRandomInt = null
-  //   return: Math.floor(Math.random() * Math.floor(max)),
-  //   console.log('整數',getRandomInt)
-  // },[])
-
   return (
     <>
       <div className="container">
@@ -117,7 +140,7 @@ function StrayMaoP2(props) {
           <section>
             <div className="storeP2Background">
               <img
-                src="./image/store/P2Background.jpg"
+                src="./image/store/kitten-touching-dog.jpg"
                 alt=""
                 className="layer storeP2CatImg"
                 data-speed="2"
@@ -145,36 +168,33 @@ function StrayMaoP2(props) {
           {/* card  */}
           <div className="container storeP1Bottom">
             <div className="row d-flex" id="between">
-            {dataLoading ? loading : displayPage}
+            {dataLoading ? loading : displayNews}
             </div>
           </div>
-          
-          <div className="container storeP1Bottom">
-            <div className="row d-flex" id="between">
-            <PageBar />
-            </div>
-          </div>
-
         </div>
       </div>
 
-      
+      <div className="container storeP1Bottom">
+          <div className="row d-flex" id="between">
+    <PageBar />
+    </div>
+    </div>
     </>
   )
 }
 
 const mapStateToProps = (store) => {
   return {
-    info: store.storeReducer.getCats,
+    info: store.storeReducer.getStoreList,
     nowPage: store.nowPage,
     totalPage: store.totalPage,
-    cards: store.storeReducer.getCats,
+    cards: store.storeReducer.getStoreList,
   }
 }
 const mapDispatchToProps = null
 
 export default connect(mapStateToProps, {
-  getCatsListAsync,
   gotoPage,
   setTotalPage,
-  })(StrayMaoP2)
+  getListAsync,
+})(StrayMaoNews)
