@@ -4,7 +4,7 @@ import DogSize from './Ques6component/DogSize'
 import CatSize from './Ques6component/CatSize'
 
 function Page3Ques1(props) {
-  const { setPet, setDot, selectToggle, selectToggle4catdog } = props
+  const { setPet, setDot, selectToggle } = props
 
   const dogColorToggle = () => {
     const catSvg = document.querySelector(

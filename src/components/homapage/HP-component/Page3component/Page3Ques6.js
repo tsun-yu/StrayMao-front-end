@@ -38,7 +38,7 @@ function Page3Ques6(props) {
           props.history.push('/adoptionmain')
         }}
       >
-        <div className="forward position-absolute d-flex flex-column justify-content-center align-items-center forward forward">
+        <div className="forward position-absolute d-flex flex-column justify-content-center align-items-center forward hvr-bounce-to-right">
           <IoIosArrowDroprightCircle
             size="5rem"
             color=" #cb997e"

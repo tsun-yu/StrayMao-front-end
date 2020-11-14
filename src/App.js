@@ -98,7 +98,7 @@ function App() {
               {/*要連線的網頁*/}
               <HomeTest setHome={setHome} />
             </Route>
-            <Route path="/donation">
+            <Route path="/donate">
               {/*要連線的網頁*/}
               <Donate />
             </Route>

@@ -44,6 +44,7 @@
   padding-top: 15vh;
   margin-bottom: 10%;
 }
+
 .page1left-2 .page1des {
   font-size: 2.5rem;
   color: #a5a58d;
@@ -72,10 +73,13 @@
   font-size: 14px;
   color: #a5a58d;
   text-align: end;
+  transition: 0.5s;
 }
-// .page1des3:hover {
-//   text-decoration: underline;
-// }
+
+.page1des3:hover {
+  color: #a5a58d;
+}
+
 .page1right {
   margin-left: 5vw;
   width: 60vw;

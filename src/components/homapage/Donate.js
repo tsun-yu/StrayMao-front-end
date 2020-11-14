@@ -136,6 +136,7 @@ function Donate(props) {
               </div>
             </div>
             <div className="row justify-content-center mt-5">
+              {/* autofill */}
               <button
                 className="btn-red mr-3"
                 type="button"
@@ -152,10 +153,20 @@ function Donate(props) {
               >
                 Autofill
               </button>
+              {/* send */}
               <button
                 className="btn-red"
                 type="button"
                 style={{ width: '155px' }}
+                onClick={() => {
+                  document.querySelector('.cdcard-1').value = ''
+                  document.querySelector('.cdcard-2').value = ''
+                  document.querySelector('.cdcard-3').value = ''
+                  document.querySelector('.cdcard-4').value = ''
+                  document.querySelector('.cdcardthree').value = ''
+                  document.querySelector('.cdcardmon').value = ''
+                  document.querySelector('.cdcardyr').value = ''
+                }}
               >
                 馬上捐款
               </button>
