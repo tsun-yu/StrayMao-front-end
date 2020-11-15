@@ -18,7 +18,7 @@ import {
 function getRecom(state = 1, action) {
   switch (action.type) {
     case GET_RECOM:
-      console.log('hi')
+      console.log('hi GET_RECOM')
       state = action.value;
       break;
     default:

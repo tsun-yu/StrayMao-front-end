@@ -11,7 +11,9 @@ import {
   getGoodsIdAsync,
   goodsIdDetail,
 } from '../../actions/store/index'
-
+import {
+  insertRecommandAsync
+} from '../../actions/cart/index'
 function StoreCard(props) {
   // const [item , setItem] = useState(props.item)
   const { item } = props
@@ -73,5 +75,6 @@ export default withRouter(
   connect(mapStateToProps, {
     goodsIdDetail,
     getHotSaleAsync,
+    insertRecommandAsync
   })(StoreCard)
 )
