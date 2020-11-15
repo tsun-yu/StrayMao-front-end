@@ -20,31 +20,26 @@ function Main(props) {
 
     const content = [];
     
-    console.log("store.cartReducer.getRecom:",props.info)
-    console.log('selectAllBtn',selectAllBtn)
     const checkAll = ()=>{
         setSelectAllBtn(true)
 
-        let check=false
-        document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
-            if(e.checked==false){
-                check=true
-            }
-        })
-        document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
-                e.checked=check
-        })
+        // let check=false
+        // document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
+        //     if(e.checked==false){
+        //         check=true
+        //     }
+        // })
+        // document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
+        //         e.checked=check
+        // })
 
         let temp = 0;
+        let oldSave ={}
         for (let cartId in savedtotal) {
-            
-            console.log(cartId);
-            console.log('savedTotal:', savedtotal)
-            console.log('savedTotal[cartId]:', savedtotal[cartId])
             temp += +savedtotal[cartId]; 
-            
+            oldSave = {...oldSave,[cartId]:true}
         }
-        console.log('temp',temp);
+        setSaveCheckBox(oldSave)
         setSubTotal(temp)
         
       }
@@ -78,18 +73,16 @@ function Main(props) {
 
       const cost=()=>{
         // setTotalCards (props.info);
-        let costtotal=0
-        for (let i = 1;i <= props.info.length; i++
-            ) {
-                console.log(`l = ${i}:`,props.info.length)
-                if (props.info.length > 0) {
-                   costtotal+= +document.querySelector(`div.cartlistC_goodsPrice_An.d-flex > span:nth-child(1)`).innerHTML
-                }
-            }
+        // let costtotal=0
+        // for (let i = 1;i <= props.info.length; i++
+        //     ) {
+        //         console.log(`l = ${i}:`,props.info.length)
+        //         if (props.info.length > 0) {
+        //            costtotal+= +document.querySelector(`div.cartlistC_goodsPrice_An.d-flex > span:nth-child(1)`).innerHTML
+        //         }
+        //     }
             // setTotal(costtotal)
       }
-
-    //   setSelectAllBtn()
 
     useEffect(() => {
         props.getRecommandAsync()
@@ -97,9 +90,7 @@ function Main(props) {
     }, []);
 
     useEffect(()=>{
-        
         setTotalCards(props.info)
-        
     },[props.info])
 
     useEffect(()=>{
@@ -110,10 +101,6 @@ function Main(props) {
     },[total])
 
     useEffect(()=>{
-        console.log('savedTotal222',savedtotal)
-    },[savedtotal])
-
-    useEffect(()=>{
         // console.log('useEffect checkeds')
         let oldSave={...saveCheckBox,...checked}
         setSaveCheckBox(oldSave)
@@ -121,20 +108,16 @@ function Main(props) {
     },[checked])
 
     useEffect(()=>{
-        
-    
-        console.log('savedCheck:',saveCheckBox)
-        let temp = 0;
-        for (let cartId in saveCheckBox) {
-            if(saveCheckBox[cartId] === true){
-                console.log(cartId);
-                console.log('savedTotal:', savedtotal)
-                console.log('savedTotal[cartId]:', savedtotal[cartId])
-                temp += +savedtotal[cartId]; 
+        if(selectAllBtn !== true){
+            let temp = 0;
+            for (let cartId in saveCheckBox) {
+                if(saveCheckBox[cartId] === true){
+                    temp += +savedtotal[cartId]; 
+                }
             }
+            setSubTotal(temp)
         }
-        console.log('temp',temp);
-        setSubTotal(temp)
+        
     },[saveCheckBox,savedtotal])
     
     useEffect(() => {
@@ -145,7 +128,6 @@ function Main(props) {
           // console.log("totalCards: ", totalCards[0]);
         }
         for (
-            // todo list tofix tofixed 從第二筆資料開始
                 let i = 0;
                 i < totalCards.length;
                 i++
@@ -154,7 +136,7 @@ function Main(props) {
                     console.log(":",totalCards[i]);
                     content.push(<CartListCardC info={totalCards[i]} key={i} index={i} checked={checked} setChecked={(value)=>setChecked(value)}  cost={()=>{
                         setTimeout(()=>{cost()},1000) 
-                        }}  test={test} setTest = {setTest} totalCards = {totalCards} setTotalCards = {setTotalCards} setTotal={(value)=>setTotal(value)} selectAllBtn={selectAllBtn} />);
+                        }}  test={test} setTest = {setTest} totalCards = {totalCards} setTotalCards = {setTotalCards} setTotal={(value)=>setTotal(value)} selectAllBtn={selectAllBtn} setSelectAllBtn={(value)=>setSelectAllBtn(value)} />);
                 }
             }
         setDisplay(content)
@@ -169,7 +151,7 @@ function Main(props) {
         
         console.log("content:",content)
         
-    },[totalCards, saveCheckBox])
+    },[totalCards, selectAllBtn])
     const loading = <div></div>;
 
   // 以資料載入的指示狀態來切換要出現的畫面
