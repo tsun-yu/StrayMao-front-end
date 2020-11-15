@@ -1,7 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import {
+  articleDisLikeAsync,
+  articleLikeAsync,
+  articleInitLikeAsync,
+} from '../../actions/social_media/index';
 
 function ArticleDetail(props) {
+  const [likeIcon, setLikeIcon] = useState(<></>);
+
+  useEffect(() => {
+    setLikeIcon(
+      props.getdetail.heart ? (
+        <svg className="icon-003-heart">
+          <path d="M23.13,9.68l-.68-5.56a.93.93,0,0,0-.35-.61L17.77.19a.89.89,0,0,0-1-.06L11.57,3.28,6.38.13a.91.91,0,0,0-1,.06L1,3.51a.93.93,0,0,0-.35.61L0,9.68a.91.91,0,0,0,.31.8l10.67,9a.91.91,0,0,0,1.16,0l10.66-9A.94.94,0,0,0,23.13,9.68Z"></path>
+        </svg>
+      ) : (
+        <svg className="icon-002-heart">
+          <path d="M23.13,9.68l-.68-5.56a.93.93,0,0,0-.35-.61L17.77.19a.89.89,0,0,0-1-.06L11.57,3.28,6.38.13a.91.91,0,0,0-1,.06L1,3.51a.93.93,0,0,0-.35.61L0,9.68a.91.91,0,0,0,.31.8l10.67,9a.91.91,0,0,0,1.16,0l10.66-9A.94.94,0,0,0,23.13,9.68ZM11.57,17.57,1.86,9.41l.57-4.69L6,2,11.1,5.11a.93.93,0,0,0,.94,0L17.16,2,20.7,4.72l.57,4.69Z"></path>
+        </svg>
+      )
+    );
+  }, []);
+
+
   return (
     <>
       <div className="bigArticleBox">
@@ -12,36 +34,33 @@ function ArticleDetail(props) {
           <p className="header7 bigArticleSTitle">
             {props.getdetail.articleTitle}
           </p>
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="21.388"
-              height="20.524"
-              viewBox="0 0 21.388 20.524"
-            >
-              <g id="愛心" transform="translate(0.251 0.25)">
-                <path
-                  id="Path_1296"
-                  data-name="Path 1296"
-                  d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613a5.025,5.025,0,0,0-5.341,3.546"
-                  transform="translate(-478.964 -228.762)"
-                  fill="#fff"
-                  stroke="#707070"
-                  strokeWidth="0.5"
-                />
-                <path
-                  id="Path_1297"
-                  data-name="Path 1297"
-                  d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613A5.025,5.025,0,0,0,489.508,232.381Z"
-                  transform="translate(-478.964 -228.762)"
-                  fill="none"
-                  stroke="#ed8f8f"
-                  strokeMiterlimit="10"
-                  strokeWidth="0.5"
-                />
-              </g>
-            </svg>
-          </div>
+          <a
+            href="##"
+            className="articleHeartBox"
+            onClick={() => {
+              if (props.getdetail.heart) {
+                props.articleDisLikeAsync(props.getdetail.articleId);
+                props.getdetail.heart = false;
+                setLikeIcon(
+                  <svg className="icon-002-heart">
+                    <path d="M23.13,9.68l-.68-5.56a.93.93,0,0,0-.35-.61L17.77.19a.89.89,0,0,0-1-.06L11.57,3.28,6.38.13a.91.91,0,0,0-1,.06L1,3.51a.93.93,0,0,0-.35.61L0,9.68a.91.91,0,0,0,.31.8l10.67,9a.91.91,0,0,0,1.16,0l10.66-9A.94.94,0,0,0,23.13,9.68ZM11.57,17.57,1.86,9.41l.57-4.69L6,2,11.1,5.11a.93.93,0,0,0,.94,0L17.16,2,20.7,4.72l.57,4.69Z"></path>
+                  </svg>
+                );
+                console.log('dislike!!!');
+              } else {
+                props.articleLikeAsync(props.getdetail.articleId);
+                props.getdetail.heart = true;
+                setLikeIcon(
+                  <svg className="icon-003-heart">
+                    <path d="M23.13,9.68l-.68-5.56a.93.93,0,0,0-.35-.61L17.77.19a.89.89,0,0,0-1-.06L11.57,3.28,6.38.13a.91.91,0,0,0-1,.06L1,3.51a.93.93,0,0,0-.35.61L0,9.68a.91.91,0,0,0,.31.8l10.67,9a.91.91,0,0,0,1.16,0l10.66-9A.94.94,0,0,0,23.13,9.68Z"></path>
+                  </svg>
+                );
+                console.log('like!!!');
+              }
+            }}
+          >
+            {likeIcon}
+          </a>
         </div>
         <span className="bigActicleLeftLine"></span>
         <p className="caption bigArticleSText">
@@ -84,8 +103,10 @@ function ArticleDetail(props) {
 }
 
 const mapStateToProps = (store) => {
-  return {};
+  return {like: store.socialReducer.articleHeart,};
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {})(ArticleDetail);
+export default connect(mapStateToProps, {articleDisLikeAsync,
+  articleLikeAsync,
+  articleInitLikeAsync,})(ArticleDetail);

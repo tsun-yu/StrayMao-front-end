@@ -4,6 +4,12 @@ import { GET_ARTICLE_DETAIL } from "./actionTypes";
 import { SET_DETAIL_ARTICLE_ID } from "./actionTypes";
 import { GET_FORUM_DETAIL } from "./actionTypes";
 import { SET_DETAIL_FORUM_ID } from "./actionTypes";
+import { ADD_FORUMREPLY } from "./actionTypes";
+import { GET_FORUMREPLY } from "./actionTypes";
+import { ADD_FORUMCARD } from "./actionTypes";
+import { ARTICLE_LIKE } from "./actionTypes";
+import { ARTICLE_DISLIKE } from "./actionTypes";
+import { ARTICLE_INIT } from "./actionTypes";
 
 // 取得論壇清單
 export const getForumList = (value) => {
@@ -25,7 +31,7 @@ export const getForumListAsync = (value) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      // console.log(data);
+      console.log("article : ",data);
 
       await dispatch(getForumList(data));
     } catch (error) {
@@ -33,6 +39,35 @@ export const getForumListAsync = (value) => {
     }
   };
 };
+
+export const getForumReply = (value) => {
+  return { type: GET_FORUMREPLY, value };
+};
+
+export const getForumReplyAsync = (value) => {
+  return async function getForumReplyOK(dispatch, getState) {
+    const url = `http://localhost:3001/straymao/social_media/get_forumUserTalkMessage/${value}`;
+
+    const request = new Request(url, {
+      method: "GET",
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      // await console.log("ddd:",data);
+
+      await dispatch(getForumReply(data));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+
 
 //取得論壇文章id
 export const forumDetailIdAsync = (value) => {
@@ -77,6 +112,62 @@ export const getForumDetailAsync = (value) => {
   };
 };
 
+//送出論壇文章留言
+export const addForumReply = (value) => {
+  return { type: ADD_FORUMREPLY, value };
+};
+export const addForumReplyAsync = (value) => {
+  return async function addForumR(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/social_media/forumUserTalk";
+    const request = new Request(url, {
+      method: "POST",
+      body: JSON.stringify(value),
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      // console.log(data);
+
+      await dispatch(addForumReply(true));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+
+
+//新增論壇文章
+export const addForumCard = (value) => {
+  return { type: ADD_FORUMCARD, value };
+};
+export const addForumCardAsync = (value) => {
+  return async function addForumC(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/social_media/addForumCard";
+    const request = new Request(url, {
+      method: "POST",
+      body: JSON.stringify(value),
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      // console.log(data);
+
+      await dispatch(addForumCard(true));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
 
 //--------------------------------------
 //取得文章清單
@@ -145,6 +236,97 @@ export const getArticleDetailAsync = (value) => {
       // data會是一個物件值
       // console.log(data.data[0]);
       await dispatch(getArticleDetail(data[0]));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+
+//-----------文章收藏
+export const articleLike = (value) => {
+  return { type: ARTICLE_LIKE, like: value };
+};
+export const articleDisLike = (value) => {
+  return { type: ARTICLE_DISLIKE, like: value };
+};
+
+export const articleInitLike = (value) => {
+  return { type: ARTICLE_INIT, like: value };
+};
+
+export const articleLikeAsync = (value) => {
+  return async function addArticleHeart(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/social_media/article_heart";
+    const article = { articleId: value, userId: 111 };
+    const request = new Request(url, {
+      method: "POST",
+      body: JSON.stringify(article),
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      // console.log(data);
+
+      await dispatch(articleLike(true));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+
+export const articleDisLikeAsync = (value) => {
+  return async function addarticleHeart(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/social_media/article_heart";
+    const article = { articleId: value, userId: 111 };
+    const request = new Request(url, {
+      method: "DELETE",
+      body: JSON.stringify(article),
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      // console.log(data);
+
+      await dispatch(articleDisLike(false));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+
+export const articleInitLikeAsync = (value) => {
+  return async function addarticleHeart(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/social_media/article_heart_init";
+    const article = { articleId: value, userId: 111 };
+    const request = new Request(url, {
+      method: "POST",
+      body: JSON.stringify(article),
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      // console.log("init:", data.data);
+      let dataValue = false;
+      if (data.data.length > 0) {
+        console.log("like:", true);
+        dataValue = true;
+      }
+      await dispatch(articleInitLike(dataValue));
     } catch (error) {
       //setError(error)
     }

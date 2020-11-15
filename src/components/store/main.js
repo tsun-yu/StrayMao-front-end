@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import '../../styles/store/straymao.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
+import ChatRoomSvg from '../../components/store/ChatRoomSvg'
 // import StoreCardTest from '../../components/store/StoreCardTest'
 // import { getListAsync } from '../../actions/store/index'
 import { Link } from 'react-router-dom'
@@ -318,6 +319,8 @@ function Storepage(props) {
           </div>
         </div>
       </div> */}
+
+<ChatRoomSvg/>
 
       {/* <!-- 特價商品結束 --> */}
       <aside>

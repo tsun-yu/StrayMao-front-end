@@ -13,7 +13,9 @@ import AdoptionDetail from './components/adoption/AdopDetailPage'
 import CartTest from './components/cart/Test'
 import HomeTest from './components/homapage/Test'
 import MemberTest from './components/membership/Test'
-import SocialTest from './components/social_media/Test'
+import SocialTest from './components/social_media/Test';
+import SocialForum from './components/social_media/SocialForum';
+import AddForumCard from './components/social_media/AddForumCard';
 import StoreTest from './components/store/Test'
 import StrayMaoP2 from './components/store/StrayMaoP2'
 import StrayMaoP3 from './components/store/StrayMaoP3'
@@ -113,6 +115,14 @@ function App() {
             <Route path="/socialTest">
               {/*要連線的網頁*/}
               <SocialTest />
+            </Route>
+            <Route path="/socialForum">
+              {/*要連線的網頁*/}
+              <SocialForum />
+            </Route>
+            <Route path="/addForum">
+              {/*要連線的網頁*/}
+              <AddForumCard />
             </Route>
             <Route path="/store">
               {/*要連線的網頁*/}

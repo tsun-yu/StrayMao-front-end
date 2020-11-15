@@ -148,19 +148,19 @@ function HomeNavbar(props) {
             </Nav.Link>
             <Nav.Link
               as={NavLink}
-              to="/socialTest"
-              style={{ color: '#a5a58d' }}
-              className="hvr-pop mx-3"
-            >
-              社群
-            </Nav.Link>
-            <Nav.Link
-              as={NavLink}
               to="/store"
               style={{ color: '#a5a58d' }}
               className="hvr-pop mx-3"
             >
               商城
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/socialTest"
+              style={{ color: '#a5a58d' }}
+              className="hvr-pop mx-3"
+            >
+              社群
             </Nav.Link>
           </Nav>
           <Nav className="mr-5">
