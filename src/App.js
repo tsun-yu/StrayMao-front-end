@@ -25,6 +25,8 @@ import AdopFormPage2 from './components/adoption/AdopFormPage2'
 import AdopFormPage3 from './components/adoption/AdopFormPage3'
 import AdopFormPage4 from './components/adoption/AdopFormPage4'
 import Donate from './components/homapage/Donate'
+import ChatRoomSvg from './components/store/ChatRoomSvg'
+import ChatRoom from './components/store/ChatRoom'
 
 function App() {
   const [navbar, setNavbar] = useState(<MyNavbar />)
@@ -131,6 +133,14 @@ function App() {
             <Route path="/storeNews">
               {/*要連線的網頁*/}
               <StrayMaoNews />
+            </Route>
+            <Route path="/Chatroom">
+              {/*要連線的網頁*/}
+              <ChatRoom />
+            </Route>
+            <Route path="/ChatroomSvg">
+              {/*要連線的網頁*/}
+              <ChatRoomSvg />
             </Route>
           </Switch>
         </MainContent>

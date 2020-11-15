@@ -148,7 +148,7 @@ function StrayMaoP3(props) {
     // console.log('arr: ',arr)
 
 
-    // if( info != 1){
+    // if( arr!=1){
     if (item.length > 0) {
       // for (let i = 0; i < info.length; i++) {
       for (let i = 0; i < 3; i++) {
