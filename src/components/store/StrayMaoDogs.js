@@ -137,6 +137,7 @@ function StrayMaoDogs(props) {
 
 const mapStateToProps = (store) => {
   return {
+    info: store.storeReducer.getDogs,
     nowPage: store.nowPage,
     totalPage: store.totalPage,
     cards: store.storeReducer.getDogs,

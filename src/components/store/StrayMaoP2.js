@@ -14,13 +14,14 @@ import {
 function StrayMaoP2(props) {
   let i = 0
 
-  const [display, setDisplay] = useState([])
-  let content = []
+  // const [display, setDisplay] = useState([])
+  // let content = []
 
   // 分頁
   const [dataLoading, setDataLoading] = useState(true);
   const [displayPage, setDisplayPage] = useState([])
   const contentPage = []
+
   let totalCards = props.cards;
   // console.log('store: ',props.cards)
   let totalPages = Math.ceil(totalCards.length / 9);

@@ -13,12 +13,18 @@ import {
   insertRecommandAsync
 } from '../../actions/cart/index';
 import {
+  getListAsync,
   getGoodsIdAsync,
   // getRecommand,
   // getRecommandAsync,
 } from '../../actions/store/index'
 
 function StrayMaoP3(props) {
+
+  let content = []
+  const [display, setDisplay] = useState([])
+
+  
   const [test,setTest] = useState(0)
   const [aaa,setAaa] = useState(<button className="btn-addMyLove" type="button" value="" onClick={() => {
     props.goodsLikeAsync(props.goodsIdDetail);
@@ -62,6 +68,7 @@ function StrayMaoP3(props) {
   
 
   useEffect(() => {
+    props.getListAsync()
     let id = props.goodsIdDetail ?? 1
     console.log("id :",id);
     // console.log("id :",id);
@@ -132,6 +139,38 @@ function StrayMaoP3(props) {
   //   // console.log('info : ', props.info)
   // }, [props.info])
 
+  useEffect(()=>{
+
+    let info =props.info
+    console.log('info',info)
+    let item = props.item
+    const arr = item.filter((e) => {return e.categoryId == info[0].categoryId&&e.goodsId != info[0].goodsId});
+    // console.log('arr: ',arr)
+
+
+    // if( info != 1){
+    if (item.length > 0) {
+      // for (let i = 0; i < info.length; i++) {
+      for (let i = 0; i < 3; i++) {
+        content.push(
+          <StoreCard
+            item={{
+              goodsId: arr[i].goodsId,
+              goodsImgs: arr[i].goodsImgs,
+              name: arr[i].name,
+              price: arr[i].price,
+              pricing: arr[i].pricing,
+            }}
+          />
+        )
+        // console.log('1230',info2[i].goodsId)
+      }
+      setDisplay(content)
+    }
+  //  }
+  },[props.info,props.item])
+
+  
   let likeBtn = props.like ? (
 <button className="btn-addMyLove" type="button" value="" onClick={() => {
         props.goodsDisLikeAsync(props.goodsIdDetail);
@@ -365,13 +404,11 @@ function StrayMaoP3(props) {
         <div className="storeP3GuessYouLike">猜你喜歡</div>
       </div>
 
-      {/* <div class="container">
+      <div class="container">
         <div class="row" id="between">
-          <StoreCard />
-          <StoreCard />
-          <StoreCard />
+          {display}
         </div>
-      </div> */}
+      </div>
     </>
   )
 }
@@ -380,6 +417,7 @@ const mapStateToProps = (store) => {
   return {
     info: store.storeReducer.getGoodsId,
     goodsIdDetail: store.storeReducer.goodsIdDetail,
+    item: store.storeReducer.getStoreList,
     // petDetailId: store.adoptReducer.petDetailId,
     like: store.cartReducer.goodsHeart
   }
@@ -388,7 +426,9 @@ const mapDispatchToProps = null
 
 export default withRouter(
   connect(mapStateToProps, { 
-  getGoodsIdAsync,goodsDisLikeAsync,
+  getGoodsIdAsync,
+  getListAsync,
+  goodsDisLikeAsync,
   goodsLikeAsync,
   goodsLike,
   goodsInitLikeAsync, 
