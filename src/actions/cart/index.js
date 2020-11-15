@@ -282,10 +282,10 @@ export const updateOrder = (value) => {
 export const updateOrderAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/orderupdate";
-    // const order={ cartId: 110, price:110, quantity:11 };
+    const order={ cartId:value[0] ,quantity:value[1] ,price:value[2] ,memberId:100 };
     const request = new Request(url, {
       method: "POST",
-      body: JSON.stringify(value),
+      body: JSON.stringify(order),
       headers: new Headers({
         Accept: "application/json",
         "Content-Type": "application/json",
