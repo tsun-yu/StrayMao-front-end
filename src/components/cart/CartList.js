@@ -24,21 +24,29 @@ function Main(props) {
     console.log('selectAllBtn',selectAllBtn)
     const checkAll = ()=>{
         setSelectAllBtn(true)
-        // let check=false
-        // document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
-        //     if(e.checked==false){
-        //         check=true
-        //     }
-        // })
-        // document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
-        //         e.checked=check
-        // })
 
+        let check=false
+        document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
+            if(e.checked==false){
+                check=true
+            }
+        })
+        document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
+                e.checked=check
+        })
 
-        // props.info.forEach((value)=>{
-        //     setSaveCheckBox({[value.cartID]:true})
-        // })
-
+        let temp = 0;
+        for (let cartId in savedtotal) {
+            
+            console.log(cartId);
+            console.log('savedTotal:', savedtotal)
+            console.log('savedTotal[cartId]:', savedtotal[cartId])
+            temp += +savedtotal[cartId]; 
+            
+        }
+        console.log('temp',temp);
+        setSubTotal(temp)
+        
       }
 
     const btnBuyClick = ()=>{
@@ -146,7 +154,7 @@ function Main(props) {
                     console.log(":",totalCards[i]);
                     content.push(<CartListCardC info={totalCards[i]} key={i} index={i} checked={checked} setChecked={(value)=>setChecked(value)}  cost={()=>{
                         setTimeout(()=>{cost()},1000) 
-                        }}  test={test} setTest = {setTest} totalCards = {totalCards} setTotalCards = { setTotalCards} setTotal={(value)=>setTotal(value)} selectAllBtn={selectAllBtn} />);
+                        }}  test={test} setTest = {setTest} totalCards = {totalCards} setTotalCards = {setTotalCards} setTotal={(value)=>setTotal(value)} selectAllBtn={selectAllBtn} />);
                 }
             }
         setDisplay(content)
@@ -161,7 +169,7 @@ function Main(props) {
         
         console.log("content:",content)
         
-    },[totalCards])
+    },[totalCards, saveCheckBox])
     const loading = <div></div>;
 
   // 以資料載入的指示狀態來切換要出現的畫面
