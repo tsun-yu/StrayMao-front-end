@@ -44,3 +44,14 @@
   left: 270px;
   top: 55px;
 }
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #fff !important;
+  text-decoration: none;
+  background-color: #fff1e6 !important;
+}
+
+.dropdown-menu.show {
+  display: flex !important;
+}
