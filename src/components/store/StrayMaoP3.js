@@ -404,11 +404,11 @@ function StrayMaoP3(props) {
         <div className="storeP3GuessYouLike">猜你喜歡</div>
       </div>
 
-      <div class="container">
+      {/* <div class="container">
         <div class="row" id="between">
           {display}
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

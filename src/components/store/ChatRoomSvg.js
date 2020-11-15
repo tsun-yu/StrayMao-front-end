@@ -1,7 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import "../../styles/store/chatRoom.scss"
+import GoogleLogin from "react-google-login";
 
 function ChatRoomSvg(props){
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [url, setUrl] = useState("");
+
+  const responseGoogle = (response) => {
+    setName(response.profileObj.name);
+    setEmail(response.profileObj.email);
+    setUrl(response.profileObj.imageUrl);
+  };
+
     const [whichSVG, setWhichSVG] = useState(1)
 
     const changeToSvg1 = ()=>{
@@ -16,7 +29,7 @@ function ChatRoomSvg(props){
         setWhichSVG(3)
     }
 
-    const [svg1, setSvg1] = useState(<svg onMouseEnter={changeToSvg2} onMouseLeave={changeToSvg1}  className="ChatRoomSvg1" xmlns="http://www.w3.org/2000/svg"  width="96.641" height="92" viewBox="0 0 96.641 92">
+    const [svg1, setSvg1] = useState(<svg onMouseEnter={changeToSvg2} onMouseLeave={changeToSvg1}  className="ChatRoomSvg1" xmlns="http://www.w3.org/2000/svg"  width="83.2" height="80" viewBox="0 0 96.641 92">
     <defs>
       <filter id="Path_1874" x="0" y="0" width="96.641" height="92" filterUnits="userSpaceOnUse">
         <feOffset dy="3" input="SourceAlpha"/>
@@ -39,7 +52,7 @@ function ChatRoomSvg(props){
     </g>
   </svg>) 
 
-    const [svg2, setSvg2] = useState(<svg onMouseEnter={changeToSvg2} onMouseLeave={changeToSvg1} onClick={changeToSvg3} xmlns="http://www.w3.org/2000/svg"  width="96.641" height="92" viewBox="0 0 96.641 92">
+    const [svg2, setSvg2] = useState(<svg onMouseEnter={changeToSvg2} onMouseLeave={changeToSvg1} onClick={changeToSvg3} xmlns="http://www.w3.org/2000/svg"  width="83.2" height="80" viewBox="0 0 96.641 92">
     <defs>
       <filter id="Path_1874" x="0" y="0" width="96.641" height="92" filterUnits="userSpaceOnUse">
         <feOffset dy="3" input="SourceAlpha"/>
@@ -68,7 +81,7 @@ function ChatRoomSvg(props){
   </svg>
   )
     
-    const [svg3, setSvg3] = useState(  <svg onClick={changeToSvg1} xmlns="http://www.w3.org/2000/svg"  width="96.641" height="92" viewBox="0 0 96.641 92">
+    const [svg3, setSvg3] = useState(  <svg onClick={changeToSvg1} xmlns="http://www.w3.org/2000/svg"  width="83.2" height="80" viewBox="0 0 96.641 92">
     <defs>
       <filter id="Path_1874" x="0" y="0" width="96.641" height="92" filterUnits="userSpaceOnUse">
         <feOffset dy="3" input="SourceAlpha"/>
@@ -96,13 +109,77 @@ function ChatRoomSvg(props){
     </g>
   </svg>
   )
-    
 
     return(
     <>
+{/* {(whichSVG === 1)?svg1:''}
+{(whichSVG === 2)?svg2:''}
+{(whichSVG === 3)?svg3:''} */}
+
+<div className="chatCircle">
+
+<div className="circle">
 {(whichSVG === 1)?svg1:''}
 {(whichSVG === 2)?svg2:''}
 {(whichSVG === 3)?svg3:''}
+    <form action="" method="">
+    <div className="chat">
+      <div className="chatBorder">
+        <div className="chatTop">ヽ(✿ﾟ▽ﾟ)ノ StrayMao ヽ(✿ﾟ▽ﾟ)ノ</div>
+        <div className="chatContant">
+             
+          <div className="chatName">
+            <label for="exampleFormControlInput1">姓名: <br /></label>
+            <div className="chatName2">
+            <div className="chatImg">
+              <img src={url==""?"/image/store/1584615665394.jpg":url} alt="" />
+            </div>   
+            <input
+              type="text"
+              className="form-control"
+              id="exampleFormControlInput1"
+              placeholder="您的名稱"
+              value={name==""?null:name}
+              required
+            />
+            </div>
+          </div>
+
+          <div className="google">或登入  
+          <GoogleLogin
+        clientId="948674925767-o40p7pthnhkp2quco9nvon70lfcu8624.apps.googleusercontent.com"
+        buttonText="Login"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+        cookiePolicy={"single_host_origin"}
+      />
+          </div>
+
+          <div className="chatEmail">
+            <label for="exampleFormControlInput1">e-mail: <br /></label>
+            <input
+              type="email"
+              className="form-control"
+              id="exampleFormControlInput1"
+              placeholder="請輸入您的e-mail"
+              value={email==""?null:email}
+              required
+            />
+          </div>
+
+          <div className="chatInput">
+            <label for="exampleFormControlInput1">訊息: <br /></label>
+            <div></div>
+            <textarea rows="4" cols="35" placeholder="請輸入您的訊息"></textarea>
+          </div>
+
+          <input type="submit"  className="chatBtn" ></input>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
     </>
     )
 }
