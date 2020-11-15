@@ -14,16 +14,22 @@ function CartListCardC(props) {
   // console.log("props.info.quantity:",props.storeInfo)
   // console.log("props.info.index:",props.index)
   // console.log("props.info.quantity2:",props.storeInfo)
-
+console.log('cccprops.selectAllBtn',props.selectAllBtn)
   useEffect(()=>{
-    
+    console.log('setCheckBoxValue(props.selectAllBtn)')
+  setCheckBoxValue(props.selectAllBtn)
+  props.setChecked({[props.info.cartId]:props.selectAllBtn})
 },[])
+
+useEffect(()=>{
+  
+},[props.selectAllBtn])
 
   useEffect(()=>{
     // props.changeRecommandAsync([props.storeInfo[0]])
     console.log('checked', props.checked);
     console.log('id:',props.info.cartId,'quantity',props.info.quantity,'price',props.info.price)
-    if(props.info.cartId == 140 || props.info.cartId == 136){
+    if(props.info.cartId == 151 || props.info.cartId == 136){
       setQuantity(props.info.quantity);
       setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
       props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
@@ -34,6 +40,8 @@ function CartListCardC(props) {
       setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
       props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
     },1000)
+
+    
     
   },[props])
 
