@@ -25,7 +25,7 @@ export const insertRecommand = (value) => {
 export const insertRecommandAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/cartinsert";
-    const cartinsert={ goodsId: value, memberId:100 ,name:'寵物食品 幼犬 小顆粒 羊肉與糙米特調食譜' ,price:1000 ,quantity:22 };
+    const cartinsert={ goodsId: value, name:value, price:value, memberId:100 };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(cartinsert),
@@ -156,8 +156,8 @@ export const getRecommandAsync = (value) => {
     const url = "http://localhost:3001/straymao/cart/cartlist";
     const cartlist={ goodsId: value, memberId:100 };
     const request = new Request(url, {
-      method: "POST",
-      body: JSON.stringify(cartlist),
+      method: "GET",
+      // body: JSON.stringify(cartlist),
       headers: new Headers({
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -475,6 +475,7 @@ export const goodsInitLikeAsync = (value) => {
       let dataValue = false;
       if (data.data.length > 0) {
         dataValue = true;
+        console.log("action true")
       }
       await dispatch(goodsInitLike(dataValue));
     } catch (error) {

@@ -7,7 +7,7 @@ from "../../actions/cart/index";
 import { bindActionCreators } from "redux";
 
 function CartListCardC(props) {
-  const [quantity, setQuantity] = useState(props.info.quantity)
+  const [quantity, setQuantity] = useState(0)
   const [test,setTest] = useState(0)
   const [checkboxvalue, setCheckBoxValue]=useState(false)
   const [totalPrice,setTotalPrice] = useState(props.info.price*props.info.quantity)
@@ -16,9 +16,31 @@ function CartListCardC(props) {
   // console.log("props.info.quantity2:",props.storeInfo)
 
   useEffect(()=>{
+    
+},[])
+
+  useEffect(()=>{
     // props.changeRecommandAsync([props.storeInfo[0]])
     console.log('checked', props.checked);
+    console.log('id:',props.info.cartId,'quantity',props.info.quantity,'price',props.info.price)
+    if(props.info.cartId == 140 || props.info.cartId == 136){
+      setQuantity(props.info.quantity);
+      setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
+      props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
+    }
+
+    setTimeout(()=>{
+      setQuantity(props.info.quantity);
+      setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
+      props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
+    },1000)
+    
   },[props])
+
+  useEffect(()=>{
+      setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
+      props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
+  },[quantity])
 
 
 
@@ -50,6 +72,10 @@ function CartListCardC(props) {
   const trashBtn = ()=>{
     props.deleteRecommandAsync(props.info.cartId);
     console.log("dislike!!!");
+    props.totalCards.pop()
+    props.setTotalCards(props.totalCards)
+    props.setTotal({[props.info.cartId]:0})
+    props.cost()
     setTest(1)
   }
 
@@ -58,6 +84,7 @@ function CartListCardC(props) {
   }
 
   const handleCheckbox = (event)=>{
+    console.log('event target value', event.target.value)
     props.setChecked({[event.target.value]:!checkboxvalue})
     setCheckBoxValue(!checkboxvalue)
   }
