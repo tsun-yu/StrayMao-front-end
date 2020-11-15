@@ -21,11 +21,11 @@
 
 .socialEditButton {
   position: absolute;
-  margin-top:100px;
-  left:0;
+  margin-top: 100px;
+  left: 0;
   color: #707070;
-  z-index:4;
-  background: rgba($color: #FFFFFD, $alpha: 0.3);
+  z-index: 4;
+  background: rgba($color: #fffffd, $alpha: 0.3);
 }
 
 .forumMyEdit {
@@ -51,28 +51,43 @@
 //論壇主體
 .forumMain {
   position: relative;
-  top:40px;
-  left:5%;
+  top: 40px;
+  left: 5%;
   display: flex;
   width: 1140px;
   height: 1200px;
   justify-content: center;
 }
 
-.forumArticleMain {
-  position: absolute;
-  margin:50px auto;
-  // left:180px;
-  max-width: 740px;
+.forumBCItemsControl {
+  position: relative;
+  overflow: hidden;
+  top:40px;
+  left:30px;
+  width: 764px;
   height: 1046px;
-  display:flex;
+  z-index: 1;
+}
+
+.forumArticleMain {
+  // position: absolute;
+  // margin:50px auto;
+  width: 764px;
+  height: 1046px;
+  display: flex;
+}
+
+.forumTopBigCard {
+  position: absolute;
+  left: 0px;
+  display: flex;
+  width: 15, 280px;
 }
 
 .forumMainBg {
-  min-width: 824px;
-  max-height: 1046px;
-  background-color: #d9d9c2;
-  opacity: 20%;
+  width: 824px;
+  height: 1046px;
+  background-color: rgba($color: #d9d9c2, $alpha: 0.2);
 }
 
 //arrowItems
@@ -189,9 +204,9 @@
 //forumAutor
 .forumAutor {
   position: absolute;
-  top: 40px;
-  left: 400px;
-  display: inline-block;
+  margin-top: 40px;
+  padding-left: 20px;
+  // left: 400px;
   img {
     object-fit: cover;
   }
@@ -211,7 +226,7 @@
 .forumArticleDate {
   position: absolute;
   color: #ed8f8f;
-  margin-top:30px;
+  margin-top: 30px;
   margin-left: 240px;
 }
 
@@ -248,7 +263,7 @@
   padding: 5px;
   position: absolute;
   top: 385px;
-  left: 390px;
+  margin-left: 1rem;
 }
 
 //forumReply相關內容
@@ -260,14 +275,14 @@
   top: 150px;
 }
 
-.forumReplyBox{
-    width: 270px;
-    max-height: 58px;
-    margin-left: 15px;
-    margin-right: 10px;
-    background-color: rgba($color: #fff1e6, $alpha: 0.5);
-    border: solid #cb997e 1px;
-    resize:none;
+.forumReplyBox {
+  width: 270px;
+  max-height: 58px;
+  margin-left: 15px;
+  margin-right: 10px;
+  background-color: rgba($color: #fff1e6, $alpha: 0.5);
+  border: solid #cb997e 1px;
+  resize: none;
 }
 
 .forumReplyTopLine {
@@ -711,4 +726,29 @@
   border-bottom: solid #707070 1px;
   width: 154px;
   margin: 0 auto;
+}
+
+.addImg{
+  position: relative;
+}
+
+.addInput{
+  position: absolute;
+  opacity: 0;
+}
+
+.articleHeartBox{
+  position: relative;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.articleHeartBox svg{
+  height: 1.4rem;
+}
+
+.articleHeart{
+  position: absolute;
+  height: 20px;
 }

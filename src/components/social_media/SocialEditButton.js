@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { withRouter, useHistory } from 'react-router-dom';
 
 function SocialEditButton(props) {
   return (
@@ -9,6 +11,8 @@ function SocialEditButton(props) {
           className="pinkarrow"
           src="./icomoon/SVG/_103-plus-white.svg"
           alt=""
+          onClick={() => {
+            props.history.push("/addForum");}}
         />
       </div>
       <div className="forumMyEdit">
@@ -23,4 +27,9 @@ function SocialEditButton(props) {
   );
 }
 
-export default SocialEditButton;
+const mapStateToProps = (store) => {
+  return {};
+};
+const mapDispatchToProps = null;
+
+export default withRouter(connect(mapStateToProps, {})(SocialEditButton));

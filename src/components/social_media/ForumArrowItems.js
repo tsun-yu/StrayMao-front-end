@@ -28,6 +28,9 @@ function ForumArrowItems(props) {
           width="18.381"
           height="22.256"
           viewBox="0 0 18.381 22.256"
+          onClick={()=>{
+            document.querySelector(".forumTopBigCard").style.left="-764px"
+          }}
         >
           <path
             id="Path_1865"

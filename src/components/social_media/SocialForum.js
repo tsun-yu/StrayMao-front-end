@@ -5,7 +5,10 @@ import ForumArrowItems from "./ForumArrowItems";
 import ForumListCard from "./ForumListCard";
 import ForumNewsMain from "./ForumNewsMain";
 import ArticleListCard from "./ArticleListCard";
+import ForumCardPagebar from "./ForumCardPagebar";
+import ArticleCardPagebar from "./ArticleCardPagebar";
 import ArticleDetailPage from "./ArticleDetailPage";
+import { gotoPage, setTotalPage,setArticleTotalPage, } from '../../actions/common/index';
 import { connect } from "react-redux";
 
 import {
@@ -16,49 +19,102 @@ import {
 function SocialForum(props) {
   const [display, setDisplay] = useState(<></>);
   const [display2, setDisplay2] = useState(<></>);
+  const [display3, setDisplay3] = useState(<></>);
   const [articleInfoshow, setArticleInfoshow] = useState(<></>);
-  const [forumInfoshow, setForumInfoshow] = useState(<></>);
+  // const [forumInfoshow, setForumInfoshow] = useState();
+  // const [content4, setContent4] = useState();
 
   const content = [];
   const content2 = [];
+  const content3 =[];
   let totalCards = props.info;
+  let totalPages = Math.ceil(totalCards.length / 4);
+  let nowPage = props.nowPage;
+  let nowArticlePage = props.nowArticlePage;
+
   let totalArticles = props.info2;
+  let totalArticlePages = Math.ceil(totalArticles.length / 3);
+
   useEffect(() => {
     props.getForumListAsync();
     props.getArticleListAsync();
   }, []);
 
   useEffect(() => {
+    totalCards = props.info;
+    totalPages = Math.ceil(totalCards.length / 4);
+    if (totalCards.length > 0) {
+    props.setTotalPage(totalPages);
+    for (
+      let i = 4 * (nowPage - 1);
+      nowPage === totalPages ? i < totalCards.length : i < 4 * nowPage;
+      i++
+    ) {
+      if (totalCards.length > 0) {
+        // console.log(":", totalCards[i]);
+        content.push(<ForumListCard test={totalCards[i]} i={i} />);
+      }
+    }
+  }
     if (totalCards.length > 0) {
       console.log(props.info);
       for (let i = 0; i < totalCards.length; i++) {
-        content.push(
-          <ForumListCard
-            info={totalCards[i]}
-            setForumInfoshow={setForumInfoshow}
+        content3.push(
+          <ForumArticleMain
+            test={totalCards[i]}
           />
         );
       }
+      // console.log("content3:",content3)
+      // content3.push(
+      //     <ForumArticleMain
+      //       test={totalCards[0]}
+      //       forumDetailId={forumInfoshow}
+      //     />
+      //   );
     }
+    // setContent4(content3.slice())
+    // console.log("content4:",content4)
 
     setDisplay(<div className="row forumCard_Items no-gutters">{content}</div>);
 
+    setDisplay3(content3);
+
+    totalArticles = props.info2;
+    totalArticlePages = Math.ceil(totalArticles.length / 3);
     if (totalArticles.length > 0) {
-      console.log(props.info2);
-      for (let i = 0; i < totalArticles.length; i++) {
-        content2.push(
-          <ArticleListCard
+      // console.log(props.info2);
+      props.setArticleTotalPage(totalArticlePages);
+      for (
+        let i = 3 * (nowArticlePage - 1);
+        nowArticlePage === totalArticlePages ? i < totalArticles.length : i < 3 * nowArticlePage;
+        i++
+      ) {
+        if (totalArticles.length > 0) {
+          // console.log(":", totalCards[i]);
+          content2.push(<ArticleListCard
             info2={totalArticles[i]}
             setArticleInfoshow={setArticleInfoshow}
-          />
-        );
+          />);
+        }
       }
     }
+    // if (totalArticles.length > 0) {
+    //   console.log(props.info2);
+    //   for (let i = 0; i < totalArticles.length; i++) {
+    //     content2.push(
+    //       <ArticleListCard
+    //         info2={totalArticles[i]}
+    //         setArticleInfoshow={setArticleInfoshow}
+    //       />
+    //     );
+    //   }
+    // }
 
     setDisplay2(
       <div className="row socialArticleCardItems no-gutters">{content2}</div>
     );
-  }, [props.info, props.info2]);
+  }, [props.info, props.info2,nowPage,nowArticlePage]);
 
   return (
     <>
@@ -66,10 +122,13 @@ function SocialForum(props) {
         <div className="row">
           <span className="socialTitle header4">討論交流</span>
         </div>
-        <div className="container forumMain">
-          <div className="forumMainBg" />
-          <SocialEditButton />
-          <ForumArticleMain forumDetailId={forumInfoshow}/>
+        <div className="container forumMain d-flex">
+        <SocialEditButton/> 
+        <div className="forumMainBg">
+          <div className="forumBCItemsControl">
+            <div className="forumTopBigCard">{display3}</div>
+          </div>
+        </div>
           <ForumArrowItems />
         </div>
       </div>
@@ -156,18 +215,7 @@ function SocialForum(props) {
           {/* forum列表 */}
           {display}
           {/* 從首頁拿來的arrow */}
-          <span className="container-fluid forumAllCardArrowItems">
-            <img
-              className="socialfixArrow-left brownarrow-left"
-              src="./icomoon/SVG/_011-brownarrow-left.svg"
-              alt=""
-            />
-            <img
-              className="socialfixArrow-right brownarrow-right"
-              src="./icomoon/SVG/_012-brownarrow-right.svg"
-              alt=""
-            />
-          </span>
+          <ForumCardPagebar />
         </div>
 
         <div className="forumNewsLineBetween" />
@@ -208,18 +256,7 @@ function SocialForum(props) {
             {/* 文章清單 */}
             {display2}
           </div>
-          <span className="container-fluid bigArticleArrowItems">
-            <img
-              className="socialfixArrow-left greenarrow-left"
-              src="./icomoon/SVG/_017-greenarrow-left.svg"
-              alt=""
-            />
-            <img
-              className="socialfixArrow-right greenarrow-right"
-              src="./icomoon/SVG/_018-greenarrow-right.svg"
-              alt=""
-            />
-          </span>
+          <ArticleCardPagebar />
         </div>
       </div>
     </>
@@ -230,6 +267,10 @@ const mapStateToProps = (store) => {
   return {
     info: store.socialReducer.getForumList,
     info2: store.socialReducer.getArticleList,
+    nowPage: store.nowPage,
+    totalPage: store.totalPage,
+    nowArticlePage: store.nowArticlePage,
+    totalArticlePage: store.totalArticlePage,
   };
 };
 const mapDispatchToProps = null;
@@ -237,4 +278,7 @@ const mapDispatchToProps = null;
 export default connect(mapStateToProps, {
   getArticleListAsync,
   getForumListAsync,
+  gotoPage,
+  setTotalPage,
+  setArticleTotalPage,
 })(SocialForum);

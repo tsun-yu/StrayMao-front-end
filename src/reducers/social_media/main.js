@@ -4,11 +4,27 @@ import { GET_ARTICLE_DETAIL } from "../../actions/social_media/actionTypes";
 import { SET_DETAIL_ARTICLE_ID } from "../../actions/social_media/actionTypes";
 import { GET_FORUM_DETAIL } from "../../actions/social_media/actionTypes";
 import { SET_DETAIL_FORUM_ID } from "../../actions/social_media/actionTypes";
+import { ADD_FORUMREPLY } from "../../actions/social_media/actionTypes";
+import { GET_FORUMREPLY } from "../../actions/social_media/actionTypes";
+import { ADD_FORUMCARD } from "../../actions/social_media/actionTypes";
+import { ARTICLE_LIKE } from "../../actions/social_media/actionTypes";
+import { ARTICLE_DISLIKE } from "../../actions/social_media/actionTypes";
+import { ARTICLE_INIT } from "../../actions/social_media/actionTypes";
 
 
 function getForumList(state = 1, action) {
   switch (action.type) {
     case GET_FORUMLIST:
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+function getForumReply(state = 1, action) {
+  switch (action.type) {
+    case GET_FORUMREPLY:
       state = action.value;
       break;
     default:
@@ -22,6 +38,28 @@ function forumDetailId(state = 1, action) {
     case SET_DETAIL_FORUM_ID:
       // console.log("set:", action.id);
       state = action.id;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+function addForumCard(state = 1, action) {
+  switch (action.type) {
+    case ADD_FORUMCARD:
+      // console.log("set:", action.id);
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+function addForumReply(state = 1, action) {
+  switch (action.type) {
+    case ADD_FORUMREPLY:
+      // console.log("set:", action.id);
+      state = action.value;
       break;
     default:
       break;
@@ -75,4 +113,21 @@ function getArticleDetail(state = 1, action) {
   return state;
 }
 
-export { getForumList, getArticleList, articleDetailId, getArticleDetail,forumDetailId, getForumDetail };
+function articleHeart(state = false, action) {
+  switch (action.type) {
+    case ARTICLE_LIKE:
+      state = true;
+      break;
+    case ARTICLE_DISLIKE:
+      state = false;
+      break;
+    case ARTICLE_INIT:
+      state = action.like;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+export { getForumList, getArticleList, articleDetailId, getArticleDetail,forumDetailId, getForumDetail,addForumReply,getForumReply,addForumCard,articleHeart };

@@ -1,4 +1,4 @@
-import { NEXT_PAGE, GOTO_PAGE, PERV_PAGE, TOTAL_PAGE } from "./actionTypes";
+import { NEXT_PAGE, GOTO_PAGE, PERV_PAGE, TOTAL_PAGE, TOTAL_ARTICLE_PAGE,ARTICLE_PERV_PAGE, ARTICLE_NEXT_PAGE } from "./actionTypes";
 
 //actionCreater
 export const pervPage = () => {
@@ -14,6 +14,18 @@ export const nextPage = () => {
 };
 export const setTotalPage = (value) => {
   return { type: TOTAL_PAGE, value };
+};
+
+export const setArticleTotalPage = (value) => {
+  return { type: TOTAL_ARTICLE_PAGE, value };
+};
+
+export const articlePervPage = () => {
+  return { type: ARTICLE_PERV_PAGE, value: -1 };
+};
+
+export const articleNextPage = () => {
+  return { type: ARTICLE_NEXT_PAGE, value: 1 };
 };
 // export const addValueAsync = (value) => {
 //   return async function updateTotalToServer(dispatch, getState) {

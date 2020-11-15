@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 
 import { nowPage, totalPage } from "./pageBar";
+import { nowArticlePage, totalArticlePage } from "./pageBar2";
 import { adoptReducer } from "../adoption/index";
 import { cartReducer } from "../cart/index";
 import { homepageReducer } from "../homapage/index";
@@ -18,4 +19,6 @@ export const rootReducer = combineReducers({
   socialReducer,
   storeReducer,
   cartReducer,
+  nowArticlePage, 
+  totalArticlePage,
 });

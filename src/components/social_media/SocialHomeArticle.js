@@ -99,12 +99,12 @@ function SocialHomeArticle(props) {
           </div>
           <span className="container-fluid socialforumArrowItems">
             <img
-              class="socialfixArrow-left greenarrow-left"
+              className="socialfixArrow-left greenarrow-left"
               src="./icomoon/SVG/_017-greenarrow-left.svg"
               alt=""
             />
             <img
-              class="socialfixArrow-right greenarrow-right"
+              className="socialfixArrow-right greenarrow-right"
               src="./icomoon/SVG/_018-greenarrow-right.svg"
               alt=""
             />
