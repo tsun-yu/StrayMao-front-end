@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Page1Carousel from './HP-component/Page1Carousel'
 
+import Page1Text1 from './HP-component/Page1Text1'
+import Page1Text2 from './HP-component/Page1Text2'
+
 function Page1(props) {
   useEffect(() => {
     let newIndex = 0
@@ -90,42 +93,10 @@ function Page1(props) {
       <div className="d-flex page1">
         <div className="page1left position-relative">
           <div className="position-absolute page1left-wrap">
-            <div className="page1left-1">
-              <div className="page1des">Love them likes family.</div>
-              <div className="page1des2 d-flex flex-column justify-content-around">
-                <div className="hide">fuck</div>
-                <div>給他們一個機會, 擁有一個家。</div>
-                <div className="page1des3 mr-2">>了解更多</div>
-              </div>
-            </div>
-            <div className="page1left-2">
-              <div className="page1des">
-                It's not coincidence about meet our furbaby.
-              </div>
-              <div className="page1des2 d-flex flex-column justify-content-around">
-                <div className="hide">fuck</div>
-                <div>與毛孩的相遇，從來都不是巧合。</div>
-                <div className="page1des3 mr-2">>了解更多</div>
-              </div>
-            </div>
-            <div className="page1left-1">
-              <div className="page1des">Love them likes family.</div>
-              <div className="page1des2 d-flex flex-column justify-content-around">
-                <div className="hide">fuck</div>
-                <div>給他們一個機會, 擁有一個家。</div>
-                <div className="page1des3 mr-2">>了解更多</div>
-              </div>
-            </div>
-            <div className="page1left-2">
-              <div className="page1des">
-                It's not coincidence about meet our furbaby.
-              </div>
-              <div className="page1des2 d-flex flex-column justify-content-around">
-                <div className="hide">fuck</div>
-                <div>與毛孩的相遇，從來都不是巧合。</div>
-                <div className="page1des3 mr-2">>了解更多</div>
-              </div>
-            </div>
+            <Page1Text1 />
+            <Page1Text2 />
+            <Page1Text1 />
+            <Page1Text2 />
           </div>
         </div>
         <div className="page1right">

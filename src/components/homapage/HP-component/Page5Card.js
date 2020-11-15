@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 function Page5Card(props) {
   return (
     <>
-      <div className="page5card">
+      <div className={props.page5cardClass}>
         <div className=" mx-auto page5cardImg">
           <img className="" src={props.img} />
         </div>

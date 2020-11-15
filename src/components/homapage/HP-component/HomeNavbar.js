@@ -142,6 +142,7 @@ function HomeNavbar(props) {
               as={NavLink}
               to="/adoptionTest"
               style={{ color: '#a5a58d' }}
+              className="hvr-pop mx-3"
             >
               領養
             </Nav.Link>
@@ -149,22 +150,28 @@ function HomeNavbar(props) {
               as={NavLink}
               to="/socialTest"
               style={{ color: '#a5a58d' }}
+              className="hvr-pop mx-3"
             >
               社群
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/store" style={{ color: '#a5a58d' }}>
+            <Nav.Link
+              as={NavLink}
+              to="/store"
+              style={{ color: '#a5a58d' }}
+              className="hvr-pop mx-3"
+            >
               商城
             </Nav.Link>
           </Nav>
           <Nav className="mr-5">
-            <Nav.Link as={NavLink} to="/">
-              <i className="fas fa-search navIcon mx-1"></i>
+            <Nav.Link as={NavLink} to="/" className="hvr-icon-pulse">
+              ><i className="fas fa-search navIcon mx-1 hvr-icon"></i>
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/memberTest">
-              <i className="fas fa-user navIcon mx-1"></i>
+            <Nav.Link as={NavLink} to="/memberTest" className="hvr-icon-pulse">
+              <i className="fas fa-user navIcon mx-1 hvr-icon"></i>
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/cartTest">
-              <i className="fas fa-shopping-cart navIcon mx-1"></i>
+            <Nav.Link as={NavLink} to="/cartList" className="hvr-icon-pulse">
+              <i className="fas fa-shopping-cart navIcon mx-1 hvr-icon"></i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

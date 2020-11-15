@@ -5,7 +5,7 @@ import Page3Ques3 from './HP-component/Page3component/Page3Ques3'
 import Page3Ques4 from './HP-component/Page3component/Page3Ques4'
 import Page3Ques5 from './HP-component/Page3component/Page3Ques5'
 import Page3Ques6 from './HP-component/Page3component/Page3Ques6'
-import Dogsize from './HP-component/Page3component/Ques6component/DogSize'
+import DogSize from './HP-component/Page3component/Ques6component/DogSize'
 
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
@@ -13,7 +13,7 @@ function Page3(props) {
   const [dot, setDot] = useState(1)
   const [city, setCity] = useState('')
   const [area, setArea] = useState('縣市')
-  const [pet, setPet] = useState(<Dogsize />)
+
   const [select, setSelect] = useState([
     0,
     0,
@@ -126,19 +126,7 @@ function Page3(props) {
     console.log(select)
   }
 
-  const selectToggle4catdog = (i) => {
-    if (i == 0) {
-      if (select[1] == 1) {
-        select[0] = 1
-        select[1] = 0
-      } else {
-        select[0] = 0
-        select[1] = 1
-      }
-    }
-    console.log(select)
-  }
-
+  const [pet, setPet] = useState(<DogSize selectToggle={selectToggle} />)
   //connect DB
   const postDB = async (select) => {
     const url = 'http://localhost:3001/straymao/homepage/question'
@@ -166,12 +154,26 @@ function Page3(props) {
     document
       .querySelectorAll('#root > main > div > div:nth-child(5) > div > ul > li')
       .forEach((e) => {
-        e.style.backgroundColor = 'rgba(255, 255, 255, 0.6)'
+        // e.style.backgroundColor = 'rgba(255, 255, 255, 0.6)'
+        e.classList.remove('aaaa')
+        e.classList.add('bbbb')
       })
-    document.querySelector(
-      `#root > main > div > div:nth-child(5) > div > ul > li:nth-child(${dot})`
-    ).style.backgroundColor = 'rgba(203, 153, 126, 1)'
+    // document.querySelector(
+    //   `#root > main > div > div:nth-child(5) > div > ul > li:nth-child(${dot})`
+    // ).style.backgroundColor = 'rgba(203, 153, 126, 1)'
+
+    document
+      .querySelector(
+        `#root > main > div > div:nth-child(5) > div > ul > li:nth-child(${dot})`
+      )
+      .classList.remove('bbbb')
+    document
+      .querySelector(
+        `#root > main > div > div:nth-child(5) > div > ul > li:nth-child(${dot})`
+      )
+      .classList.add('aaaa')
   }, [dot])
+
   return (
     <>
       <div>
@@ -179,7 +181,7 @@ function Page3(props) {
           {/* back */}
           <a href="##">
             <div
-              className="position-absolute d-flex flex-column justify-content-center align-items-center back"
+              className="position-absolute d-flex flex-column justify-content-center align-items-center back hvr-bounce-to-left"
               style={{ visibility: 'hidden' }}
               onClick={() => {
                 backpage()
@@ -192,7 +194,7 @@ function Page3(props) {
           {/* forward */}
           <a href="##">
             <div
-              className="forward position-absolute d-flex flex-column justify-content-center align-items-center forward forward"
+              className="forward position-absolute d-flex flex-column justify-content-center align-items-center forward forward hvr-bounce-to-right"
               onClick={() => {
                 console.log('12345')
                 nextpage()
@@ -208,7 +210,6 @@ function Page3(props) {
               setPet={setPet}
               setDot={setDot}
               selectToggle={selectToggle}
-              selectToggle4catdog={selectToggle4catdog}
             />
             <Page3Ques2
               setCity={setCity}
@@ -231,6 +232,7 @@ function Page3(props) {
                 document.querySelector('.back').style.visibility = 'hidden'
                 document.querySelector('.forward').style.visibility = 'visible'
               }}
+              className="hvr-radial-in"
             ></li>
             <li
               onClick={() => {
@@ -238,6 +240,7 @@ function Page3(props) {
                 setDot(2)
                 arrowToggle()
               }}
+              className="hvr-radial-in"
             ></li>
             <li
               onClick={() => {
@@ -245,6 +248,7 @@ function Page3(props) {
                 setDot(3)
                 arrowToggle()
               }}
+              className="hvr-radial-in"
             ></li>
             <li
               onClick={() => {
@@ -252,6 +256,7 @@ function Page3(props) {
                 setDot(4)
                 arrowToggle()
               }}
+              className="hvr-radial-in"
             ></li>
             <li
               onClick={() => {
@@ -259,14 +264,16 @@ function Page3(props) {
                 setDot(5)
                 arrowToggle()
               }}
+              className="hvr-radial-in"
             ></li>
             <li
-              onClick={() => {
+              onClick={(e) => {
                 document.querySelector('.page3').style.left = '-500vw'
                 setDot(6)
                 document.querySelector('.forward').style.visibility = 'hidden'
                 document.querySelector('.back').style.visibility = 'visible'
               }}
+              className="hvr-radial-in"
             ></li>
           </ul>
         </div>

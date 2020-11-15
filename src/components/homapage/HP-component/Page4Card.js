@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
 function Page4Card(props) {
-  const { className, label, img, labelClass } = props
+  const { cardClass, label, img, labelClass } = props
   return (
     <>
-      <div className={className}>
+      <div className={cardClass}>
         <div className={labelClass}>
           <div className="p-1">{label}</div>
         </div>

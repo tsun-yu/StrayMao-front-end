@@ -1,3 +1,4 @@
+import { queryAllByAltText } from '@testing-library/react'
 import React, { useState, useEffect } from 'react'
 
 function Page6(props) {
@@ -40,6 +41,7 @@ function Page6(props) {
                         </div>
                       </div>
                     </div>
+
                     <div className="page6des3 ">
                       <div className="d-flex">
                         <div className="page6des2date col-4 pr-1">
@@ -77,12 +79,14 @@ function Page6(props) {
                       </div>
                     </div>
                   </div>
-                  <div
+                  <a
+                    href="##"
+                    onClick={() => {}}
                     className="text-right
                          page6more mt-3"
                   >
-                    >了解更多
-                  </div>
+                    <div className="hvr-underline-from-center">>了解更多</div>
+                  </a>
                 </div>
               </div>
             </div>
