@@ -89,6 +89,7 @@ function Storepage(props) {
         content.push(
           <StoreCard
             item={{
+              categoryId: info2[i].categoryId,
               goodsId: info2[i].goodsId,
               goodsImgs: info2[i].goodsImgs,
               name: info2[i].name,
@@ -105,6 +106,7 @@ function Storepage(props) {
         content2.push(
           <StoreCard
             item={{
+              categoryId: info[i].categoryId,
               goodsId: info[i].goodsId,
               goodsImgs: info[i].goodsImgs,
               name: info[i].name,
@@ -122,6 +124,7 @@ function Storepage(props) {
           contentDiscount.push(
             <StoreCard
               item={{
+                categoryId: infoDiscount[i].categoryId,
                 goodsId: infoDiscount[i].goodsId,
                 goodsImgs: infoDiscount[i].goodsImgs,
                 name: infoDiscount[i].name,

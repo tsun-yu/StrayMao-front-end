@@ -16,14 +16,15 @@ function Main(props) {
     const [savedtotal, setSavedTotal] = useState(total)
     const [subTotal, setSubTotal] = useState(0)
     const [totalCards, setTotalCards] = useState(props.info)
+    const [selectAllBtn, setSelectAllBtn] = useState(false)
 
     const content = [];
     
     console.log("store.cartReducer.getRecom:",props.info)
-
-
-
+    console.log('selectAllBtn',selectAllBtn)
     const checkAll = ()=>{
+        setSelectAllBtn(true)
+
         let check=false
         document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
             if(e.checked==false){
@@ -33,8 +34,20 @@ function Main(props) {
         document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
                 e.checked=check
         })
-      }
 
+        let temp = 0;
+        for (let cartId in savedtotal) {
+            
+            console.log(cartId);
+            console.log('savedTotal:', savedtotal)
+            console.log('savedTotal[cartId]:', savedtotal[cartId])
+            temp += +savedtotal[cartId]; 
+            
+        }
+        console.log('temp',temp);
+        setSubTotal(temp)
+        
+      }
 
     const btnBuyClick = ()=>{
         let cartId=[]
@@ -76,13 +89,17 @@ function Main(props) {
             // setTotal(costtotal)
       }
 
+    //   setSelectAllBtn()
+
     useEffect(() => {
         props.getRecommandAsync()
         console.log("info2: ",props.info)
     }, []);
 
     useEffect(()=>{
+        
         setTotalCards(props.info)
+        
     },[props.info])
 
     useEffect(()=>{
@@ -97,27 +114,32 @@ function Main(props) {
     },[savedtotal])
 
     useEffect(()=>{
-        console.log('useEffect checkeds')
+        // console.log('useEffect checkeds')
         let oldSave={...saveCheckBox,...checked}
         setSaveCheckBox(oldSave)
+
     },[checked])
 
     useEffect(()=>{
-        console.log('savedCheck:',saveCheckBox)
         
+    
+        console.log('savedCheck:',saveCheckBox)
+        let temp = 0;
         for (let cartId in saveCheckBox) {
             if(saveCheckBox[cartId] === true){
                 console.log(cartId);
                 console.log('savedTotal:', savedtotal)
-
                 console.log('savedTotal[cartId]:', savedtotal[cartId])
+                temp += +savedtotal[cartId]; 
             }
         }
-    },[saveCheckBox])
+        console.log('temp',temp);
+        setSubTotal(temp)
+    },[saveCheckBox,savedtotal])
     
     useEffect(() => {
         // setTotalCards (props.info);
-        console.log("totalcards:",totalCards)
+        // console.log("totalcards:",totalCards)
         if (totalCards.length > 0) {
           // let tt = JSON.parse(totalCards[0]);
           // console.log("totalCards: ", totalCards[0]);
@@ -132,7 +154,7 @@ function Main(props) {
                     console.log(":",totalCards[i]);
                     content.push(<CartListCardC info={totalCards[i]} key={i} index={i} checked={checked} setChecked={(value)=>setChecked(value)}  cost={()=>{
                         setTimeout(()=>{cost()},1000) 
-                        }}  test={test} setTest = {setTest} totalCards = {totalCards} setTotalCards = { setTotalCards} setTotal={(value)=>setTotal(value)} />);
+                        }}  test={test} setTest = {setTest} totalCards = {totalCards} setTotalCards = {setTotalCards} setTotal={(value)=>setTotal(value)} selectAllBtn={selectAllBtn} />);
                 }
             }
         setDisplay(content)
@@ -147,7 +169,7 @@ function Main(props) {
         
         console.log("content:",content)
         
-    },[totalCards])
+    },[totalCards, saveCheckBox])
     const loading = <div></div>;
 
   // 以資料載入的指示狀態來切換要出現的畫面
@@ -170,6 +192,7 @@ function Main(props) {
                     </svg>
                 </div>
                 <button className="cartlistC_btn-brown_An" type="button" value="123"  onClick={()=>checkAll()}>全選</button>
+                
                 </div>
                 <div className="cartlistC_boxDownRight_An">
                 <span onClick={()=>cost()} className="cartlistC_totalPrice_An">小計：{subTotal} 元</span>

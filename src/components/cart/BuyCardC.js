@@ -5,28 +5,73 @@ import { bindActionCreators } from "redux";
 import { getBuy, getBuyAsync, changeBuyAsync,deleteOrderAsync, updateOrderAsync } 
 from "../../actions/cart/index";
 function BuyCardC(props) {
-    const [quantity, setQuantity] = useState(props.info.quantity)
+  const [quantity, setQuantity] = useState(0)
+    const [totalPrice,setTotalPrice] = useState(props.info.price*props.info.quantity)
+    // const [quantity, setQuantity] = useState(props.info.quantity)
     
-    const minusOne = ()=>{
-        let storeInfo = props.storeInfo;
-        console.log('qqq',storeInfo[props.index].quantity);
-        storeInfo[props.index].quantity -= 1;
-        console.log('qqq22',storeInfo[props.index].quantity);
-        props.info.quantity = storeInfo[props.index].quantity;
-        setQuantity(storeInfo[props.index].quantity)
-        props.changeBuyAsync(storeInfo)
-      }
+    useEffect(()=>{
+      setQuantity(props.info.quantity);
+      setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
+      // props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
+
+    setTimeout(()=>{
+      setQuantity(props.info.quantity);
+      setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
+      // props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
+    },1000)
+
+  },[props])
+
+  useEffect(()=>{
+      setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
+      // props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
+  },[quantity])
+
+  const minusOne = ()=>{
+    let storeInfo = props.storeInfo;
+    console.log('qqq',storeInfo[props.index].quantity);
+    storeInfo[props.index].quantity -= 1;
+    console.log('qqq22',storeInfo[props.index].quantity);
+    props.info.quantity = storeInfo[props.index].quantity;
+    setQuantity(storeInfo[props.index].quantity)
+    props.changeBuyAsync(storeInfo)
+    console.log("quantity:",quantity)
+    setTotalPrice(storeInfo[props.index].quantity*props.info.price)
+    // props.cost()
+  }
+
+  const addOne = ()=>{
+    let storeInfo = props.storeInfo;
+    console.log('qqq',storeInfo[props.index].quantity);
+    storeInfo[props.index].quantity += 1;
+    console.log('qqq22',storeInfo[props.index].quantity);
+    props.info.quantity = storeInfo[props.index].quantity;
+    setQuantity(storeInfo[props.index].quantity)
+    props.changeBuyAsync(storeInfo)
+    setTotalPrice(storeInfo[props.index].quantity*props.info.price)
+    // props.cost()
+  }
+
+    // const minusOne = ()=>{
+    //     let storeInfo = props.storeInfo;
+    //     console.log('qqq',storeInfo[props.index].quantity);
+    //     storeInfo[props.index].quantity -= 1;
+    //     console.log('qqq22',storeInfo[props.index].quantity);
+    //     props.info.quantity = storeInfo[props.index].quantity;
+    //     setQuantity(storeInfo[props.index].quantity)
+    //     props.changeBuyAsync(storeInfo)
+    //   }
     
-      const addOne = ()=>{
-        let storeInfo = props.storeInfo;
-        console.log('qqq',storeInfo[props.index].quantity);
-        storeInfo[props.index].quantity += 1;
-        console.log('qqq22',storeInfo[props.index].quantity);
-        props.info.quantity = storeInfo[props.index].quantity;
-        setQuantity(storeInfo[props.index].quantity)
-        props.changeBuyAsync(storeInfo)
+    //   const addOne = ()=>{
+    //     let storeInfo = props.storeInfo;
+    //     console.log('qqq',storeInfo[props.index].quantity);
+    //     storeInfo[props.index].quantity += 1;
+    //     console.log('qqq22',storeInfo[props.index].quantity);
+    //     props.info.quantity = storeInfo[props.index].quantity;
+    //     setQuantity(storeInfo[props.index].quantity)
+    //     props.changeBuyAsync(storeInfo)
         
-      }
+    //   }
 
       const handleChange = (event)=>{
         setQuantity(event.target.value);
@@ -35,6 +80,11 @@ function BuyCardC(props) {
       const trashBtn = ()=>{
         props.deleteOrderAsync(props.info.cartId);
         // console.log("dislike!!!");
+        console.log("dislike!!!");
+    props.totalCards.pop()
+    props.setTotalCards(props.totalCards)
+    // props.setTotal({[props.info.cartId]:0})
+    // props.cost()
         props.setTest(1)
       }
 
@@ -69,7 +119,7 @@ return(
                 </svg>
             </div>
         </div>
-        <span className="buyC_goodsPrice_An">{props.info.price} 元</span>
+        <span className="buyC_goodsPrice_An">{totalPrice} 元</span>
         {props.children}
     </div>
 }

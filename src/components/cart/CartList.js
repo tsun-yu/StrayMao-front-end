@@ -13,14 +13,18 @@ function Main(props) {
     const [checked, setChecked] = useState({})
     const [saveCheckBox,setSaveCheckBox]=useState({})
     const [total, setTotal] = useState(0)
+    const [savedtotal, setSavedTotal] = useState(total)
+    const [subTotal, setSubTotal] = useState(0)
+    const [totalCards, setTotalCards] = useState(props.info)
+    const [selectAllBtn, setSelectAllBtn] = useState(false)
 
     const content = [];
-    let totalCards = props.info;
+    
     console.log("store.cartReducer.getRecom:",props.info)
-
-
-
+    console.log('selectAllBtn',selectAllBtn)
     const checkAll = ()=>{
+        setSelectAllBtn(true)
+
         let check=false
         document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
             if(e.checked==false){
@@ -30,8 +34,20 @@ function Main(props) {
         document.querySelectorAll(".cartlistC_magic-checkbox_An").forEach((e)=>{
                 e.checked=check
         })
-      }
 
+        let temp = 0;
+        for (let cartId in savedtotal) {
+            
+            console.log(cartId);
+            console.log('savedTotal:', savedtotal)
+            console.log('savedTotal[cartId]:', savedtotal[cartId])
+            temp += +savedtotal[cartId]; 
+            
+        }
+        console.log('temp',temp);
+        setSubTotal(temp)
+        
+      }
 
     const btnBuyClick = ()=>{
         let cartId=[]
@@ -61,16 +77,19 @@ function Main(props) {
       }
 
       const cost=()=>{
-        totalCards = props.info;
+        // setTotalCards (props.info);
         let costtotal=0
-        for (let i = 1;i <= totalCards.length; i++
+        for (let i = 1;i <= props.info.length; i++
             ) {
-                if (totalCards.length > 0) {
-                   costtotal+= +document.querySelector(`#root > main > div > div.cartlistC_body_An > div > div.cartlistC_boxBottom_An > div:nth-child(${i}) > div:nth-child(3) > span:nth-child(2)`).innerHTML
+                console.log(`l = ${i}:`,props.info.length)
+                if (props.info.length > 0) {
+                   costtotal+= +document.querySelector(`div.cartlistC_goodsPrice_An.d-flex > span:nth-child(1)`).innerHTML
                 }
             }
-            setTotal(costtotal)
+            // setTotal(costtotal)
       }
+
+    //   setSelectAllBtn()
 
     useEffect(() => {
         props.getRecommandAsync()
@@ -78,42 +97,79 @@ function Main(props) {
     }, []);
 
     useEffect(()=>{
+        
+        setTotalCards(props.info)
+        
+    },[props.info])
+
+    useEffect(()=>{
+        console.log('total',total)
+        console.log('savedtotal1',savedtotal)
+        let newTotal ={...savedtotal,...total}
+        setSavedTotal(newTotal);
+    },[total])
+
+    useEffect(()=>{
+        console.log('savedTotal222',savedtotal)
+    },[savedtotal])
+
+    useEffect(()=>{
+        // console.log('useEffect checkeds')
         let oldSave={...saveCheckBox,...checked}
         setSaveCheckBox(oldSave)
+
     },[checked])
 
     useEffect(()=>{
+        
+    
         console.log('savedCheck:',saveCheckBox)
-    },[setSaveCheckBox])
+        let temp = 0;
+        for (let cartId in saveCheckBox) {
+            if(saveCheckBox[cartId] === true){
+                console.log(cartId);
+                console.log('savedTotal:', savedtotal)
+                console.log('savedTotal[cartId]:', savedtotal[cartId])
+                temp += +savedtotal[cartId]; 
+            }
+        }
+        console.log('temp',temp);
+        setSubTotal(temp)
+    },[saveCheckBox,savedtotal])
     
     useEffect(() => {
-        totalCards = props.info;
-        console.log("totalcards:",totalCards)
+        // setTotalCards (props.info);
+        // console.log("totalcards:",totalCards)
         if (totalCards.length > 0) {
           // let tt = JSON.parse(totalCards[0]);
           // console.log("totalCards: ", totalCards[0]);
         }
         for (
+            // todo list tofix tofixed 從第二筆資料開始
                 let i = 0;
                 i < totalCards.length;
                 i++
             ) {
-                if (totalCards.length > 0) {
-                    // console.log(":",totalCards[i]);
-                    content.push(<CartListCardC info={totalCards[i]} key={i} index={i} checked={checked} setChecked={(value)=>setChecked({ [value]:true})}  cost={()=>{
-                        setTimeout(()=>{cost()},10) 
-                        }}  test={test} setTest = {setTest}/>);
+                if (totalCards.length > 0 && totalCards != 1) {
+                    console.log(":",totalCards[i]);
+                    content.push(<CartListCardC info={totalCards[i]} key={i} index={i} checked={checked} setChecked={(value)=>setChecked(value)}  cost={()=>{
+                        setTimeout(()=>{cost()},1000) 
+                        }}  test={test} setTest = {setTest} totalCards = {totalCards} setTotalCards = {setTotalCards} setTotal={(value)=>setTotal(value)} selectAllBtn={selectAllBtn} />);
                 }
             }
         setDisplay(content)
         setTimeout(()=>{
-            cost()
             setDataLoading(false)
+        
         },100) 
+        setTimeout(()=>{
+            
+            cost()
+        },1000) 
         
         console.log("content:",content)
         
-    },[totalCards])
+    },[totalCards, saveCheckBox])
     const loading = <div></div>;
 
   // 以資料載入的指示狀態來切換要出現的畫面
@@ -136,9 +192,10 @@ function Main(props) {
                     </svg>
                 </div>
                 <button className="cartlistC_btn-brown_An" type="button" value="123"  onClick={()=>checkAll()}>全選</button>
+                
                 </div>
                 <div className="cartlistC_boxDownRight_An">
-                <span onClick={()=>cost()} className="cartlistC_totalPrice_An">小計：{total} 元</span>
+                <span onClick={()=>cost()} className="cartlistC_totalPrice_An">小計：{subTotal} 元</span>
                 </div>
             </div>
     
@@ -163,7 +220,7 @@ function Main(props) {
                         </div>
                         <button className="cartlistM_btn-brown_An" type="button" value="123">全選</button>
                     </div>
-                    <span className="cartlistM_totalPrice_An">小計：222790 元</span>
+                    <span className="cartlistM_totalPrice_An">小計：{subTotal} 元</span>
                 </div>
                 <button className="cartlistM_btn-green_An" type="button" value="123">購買</button>
             </div>
