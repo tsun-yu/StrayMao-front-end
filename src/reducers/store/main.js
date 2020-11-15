@@ -16,7 +16,7 @@ import {
 function getStoreList(state = 1, action) {
   switch (action.type) {
     case GET_STORELIST:
-      // console.log('action', action.value)
+      console.log('action', action.value)
       state = action.value
       break
     default:
