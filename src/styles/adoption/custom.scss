@@ -309,3 +309,32 @@ main > .container {
 }
 
 /**page bar end**/
+.animateHeart svg {
+  top: 100px;
+  fill: #ed8f8f;
+  width: 1.4rem;
+  height: 1.4rem;
+  opacity: 0;
+  transition: 1s;
+  display: none;
+}
+.animateHeart .gogo {
+  animation: animateHeart 0.5s ease-in;
+  transition: 1s;
+  display: block;
+}
+@keyframes animateHeart {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  99% {
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 0;
+  }
+}

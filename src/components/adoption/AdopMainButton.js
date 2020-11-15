@@ -1,25 +1,31 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { withRouter, useHistory } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { withRouter, useHistory } from 'react-router-dom';
 
 import {
   petDisLikeAsync,
   petLikeAsync,
   petLike,
   petInitLikeAsync,
-} from "../../actions/adoption/index";
+} from '../../actions/adoption/index';
 function AdopMainButton(props) {
   useEffect(() => {
-    props.petInitLikeAsync(1);
-    console.log("like:", props.like);
+    props.petInitLikeAsync(props.info[props.index].petId);
+    // console.log('like:', props.like);
   }, []);
+  useEffect(() => {
+    props.petInitLikeAsync(props.info[props.index].petId);
+    // console.log('like:', props.like);
+  }, [props.index]);
   let likeBtn = props.like ? (
     <a
       className="buttonRight col"
       onClick={() => {
-        props.petDisLikeAsync(1);
-        console.log("dislike!!!");
+        props.petDisLikeAsync(props.info[props.index].petId);
+        console.log('dislike!!!');
+
+        document.querySelector('.animateHeart>svg').classList.remove('gogo');
       }}
     >
       <svg className="icon-003-heart">
@@ -30,8 +36,14 @@ function AdopMainButton(props) {
     <a
       className="buttonRight col"
       onClick={() => {
-        props.petLikeAsync(1);
-        console.log("like!!!");
+        props.petLikeAsync(props.info[props.index].petId);
+        console.log('like!!!');
+        document.querySelector('.animateHeart>svg').classList.add('gogo');
+        props.setIndex(props.index + 1);
+        if (props.index === props.info.length - 1) {
+          props.setIndex(0);
+        }
+        //#responsive-navbar-nav > div.mr-5.navbar-nav > a:nth-child(3) > div > div
       }}
     >
       <svg className="icon-002-heart">
@@ -46,8 +58,12 @@ function AdopMainButton(props) {
           <a
             className="buttonLeft col"
             onClick={() => {
-              console.log("asdsad");
-              props.history.push("/adoptionmain");
+              console.log('asdsad');
+              props.setIndex(props.index + 1);
+              if (props.index === props.info.length - 1) {
+                props.setIndex(0);
+              }
+              props.history.push('/adoptionmain');
             }}
           >
             <svg className="icon-014-cancel">

@@ -2,12 +2,55 @@ import React, { useEffect, useState } from 'react'
 import '../../styles/store/straymao.scss'
 import { connect } from 'react-redux'
 import LittleCardImg from '../../components/store/LittleCardImg'
+import { getListAsync,goodsIdDetail,getGoodsIdAsync, } from '../../actions/store/index'
+import { withRouter } from 'react-router-dom'
 
 function StoreAnimation(props) {
-  // const [item , setItem] = useState(props.item)
-  // const { item } = props
-  // const { itemLittleCard2 } = props
-  // console.log('item:', item)
+  const [displayAni, setDisplayAni] = useState([])
+  // console.log('itemAniId: ',props)
+
+  const { item2 } = props
+  // console.log('item' ,item2)
+  const [test, setTest] = useState({})
+
+  let contentAni = []
+    useEffect(() => {
+      props.getListAsync()
+      // console.log('iamani: ',props.info)
+    },  [])
+
+   useEffect(() => {
+  //   props.getListAsync()
+    let itemAni = props.itemAni
+    // console.log('hihi',itemAni)
+
+    if (itemAni.length > 0) {
+      // console.log('hihi2',itemAni)
+      for (let i = 0; i < 1; i++) {
+        
+        contentAni.push(
+          <LittleCardImg
+            itemAni={{
+              goodsId: itemAni[i].goodsId,
+              goodsImgs: itemAni[i].goodsImgs,
+              name: itemAni[i].name,
+              price: itemAni[i].price,
+              // pricing: itemAni[i].pricing,
+            }}
+          />          
+        )
+      }
+      // console.log('props',itemAni.props)
+      setDisplayAni(contentAni)
+    }
+  }, [props.itemAni])
+
+  useEffect(() => {
+    let id = props.goodsId ?? 1
+    // console.log("id :", props.petDetailId);
+    setTest(props.getListAsync(id))
+  }, [])
+
   return (
     <>
       <div className="d-flex storeP1Background" data-speed="1">
@@ -40,7 +83,14 @@ function StoreAnimation(props) {
             />
             {/* hover cards and link to */}
 
-            <a href="https://www.google.com/">
+            <a 
+            href="#"
+            onClick={() => {
+            console.log('aaa:', props.itemAni)
+            props.goodsIdDetail(props.itemAni[3].goodsId)
+            props.history.push('/storeP3')
+          }}
+            >
               <div className="storeP1BackgroundCatTowerCircle2">
                 <svg
                   id="storeP1BackgroundCatTowerCircle2"
@@ -92,13 +142,14 @@ function StoreAnimation(props) {
                 </svg>
 
                 <div className="StoreP1BackgroundCatTowerCircleCard d-flex">
+                  {/* {displayAni} */}
                   <LittleCardImg
-                    item={{
-                      goodsImgs: './image/store/cat-3953989_1280.png',
-                      name: 'Trixie 貓樹屋',
-                      price: '20,000',
-                    }}
-                  />
+                  itemAni={{
+                    goodsImgs: './image/store/cat-3953989_1280.png',
+                    name: 'Trixie 貓樹屋',
+                    price: '20,000',
+                  }} 
+                />
                 </div>
               </div>
             </a>
@@ -160,7 +211,14 @@ function StoreAnimation(props) {
           />
 
           {/* hover cards and link to */}
-          <a href="https://www.google.com/">
+          <a 
+            href="#"
+            onClick={() => {
+            // console.log('aaa:', props.itemAni)
+            props.goodsIdDetail(props.itemAni[2].goodsId)
+            props.history.push('/storeP3')
+          }}
+            >
             <div className="storeP1BackgroundDogFoodCircle2">
               <svg
                 id="storeP1BackgroundDogFoodCircle2"
@@ -211,8 +269,9 @@ function StoreAnimation(props) {
               </svg>
 
               <div className="StoreP1BackgroundDogFoodCircleCard d-flex">
+                {/* {displayAni} */}
                 <LittleCardImg
-                  item={{
+                  itemAni={{
                     goodsImgs: './image/store/dog-food2.png',
                     name: 'Hills 成犬 完美體重',
                     price: '1,800',
@@ -388,7 +447,14 @@ function StoreAnimation(props) {
           />
 
           {/* hover cards and link to */}
-          <a href="https://www.google.com/">
+          <a 
+            href="#"
+            onClick={() => {
+            // console.log('aaa:', props.itemAni)
+            props.goodsIdDetail(props.itemAni[1].goodsId)
+            props.history.push('/storeP3')
+          }}
+            >
             <div className="storeP1BackgroundMoonCircle2">
               <svg
                 id="storeP1BackgroundMoonCircle2"
@@ -439,12 +505,13 @@ function StoreAnimation(props) {
               </svg>
 
               <div className="storeP1BackgroundMoonCircleCard d-flex">
+                {/* {displayAni} */}
                 <LittleCardImg
-                  item={{
+                  itemAni={{
                     goodsImgs: './image/store/cat_tree01.png',
                     name: 'Luna月亮跳台',
                     price: '5,000',
-                  }}
+                  }} 
                 />
               </div>
             </div>
@@ -505,7 +572,14 @@ function StoreAnimation(props) {
             alt=""
           />
 
-          <a href="https://www.google.com/">
+         <a 
+            href="#"
+            onClick={() => {
+            // console.log('aaa:', props.itemAni)
+            props.goodsIdDetail(props.itemAni[0].goodsId)
+            props.history.push('/storeP3')
+          }}
+            >
             <div className="storeP1BackgroundAngleCircle2">
               <svg
                 id="storeP1BackgroundAngleCircle2"
@@ -556,13 +630,14 @@ function StoreAnimation(props) {
               </svg>
 
               <div className="storeP1BackgroundAngleCircleCard d-flex">
-                <LittleCardImg
-                  item={{
+                {displayAni}
+                {/* <LittleCardImg
+                  itemAni={{
                     goodsImgs: './image/store/cat_tree02.png',
                     name: '六角貓跳台Busy Cat',
                     price: '2,200',
                   }}
-                />
+                /> */}
               </div>
             </div>
           </a>
@@ -638,9 +713,20 @@ function StoreAnimation(props) {
     </>
   )
 }
-
 const mapStateToProps = (store) => {
-  return {}
+  return {
+    itemAni: store.storeReducer.getStoreList,
+    info: store.storeReducer.getGoodsId,
+    goodsId: store.storeReducer.goodsIdDetail,
+    // itemAni: store.storeReducer.getGoodsId,
+    // goodsId: store.storeReducer.goodsIdDetail,
+    // info: store.storeReducer.getStoreList,
+    // info2: store.storeReducer.getHot,
+    // infoDiscount: store.storeReducer.getDiscount,
+  }
 }
+
 const mapDispatchToProps = null
-export default connect(mapStateToProps, {})(StoreAnimation)
+export default withRouter(
+  connect(mapStateToProps, { getListAsync,goodsIdDetail, })(StoreAnimation)
+)

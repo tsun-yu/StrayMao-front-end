@@ -2,43 +2,84 @@
   background-color: #f0efeb;
   width: 100vw;
   height: 100vh;
+  min-height: 700px;
 }
 .page6img {
   height: 100vh;
-  position: relative;
+}
+.page6imgArea {
+  height: 40vh;
+  min-width: 27.25rem;
+  width: 30vw;
+  min-height: 31.875rem;
 }
 .page6activityImg1 {
   background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 27.25rem;
+  height: 31.875rem;
+  z-index: 3;
 }
 
 .page6activityImg1 img {
-  opacity: 0.7;
-  position: absolute;
+  opacity: 0.8;
   width: 27.25rem;
   height: 31.875rem;
-  bottom: 0;
+}
+.page6activityImg2 {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+  background-color: #fff;
+  transition: 0.5s;
 }
 .page6activityImg2 img {
-  opacity: 0.5;
-  position: absolute;
+  opacity: 0.6;
   width: 27.25rem;
   height: 31.875rem;
-  bottom: 1rem;
-  left: 1rem;
+  object-fit: cover;
+}
+
+.page6activityImg2:hover {
+  z-index: 4;
+}
+.page6activityImg2:hover img {
+  z-index: 4;
+  opacity: 0.8;
+}
+.page6activityImg3 {
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  z-index: 1;
+  background-color: #fff;
 }
 .page6activityImg3 img {
   opacity: 0.3;
-  position: absolute;
   width: 27.25rem;
   height: 31.875rem;
-  bottom: 2rem;
-  left: 2rem;
+  transition: 0.5s;
+  object-fit: cover;
+}
+.page6activityImg3:hover {
+  z-index: 4;
+}
+.page6activityImg3:hover img {
+  z-index: 4;
+  opacity: 0.8;
+}
+.page6desArea {
+  height: 20vh;
+  min-height: 200px;
+  overflow: auto;
+  overflow-x: hidden;
 }
 .page6des1 {
   color: #555555;
   font-family: $fontType2;
   font-size: 2.3rem;
-  margin-top: 20%;
 }
 .page6recent {
   font-family: $fontType1;
@@ -49,6 +90,7 @@
   border-bottom: 1px solid #707070;
   border-top: 1px solid #707070;
   width: 20vw;
+  max-width: 300px;
 }
 
 .page6des2date {
@@ -75,9 +117,17 @@
 .page6des3 {
   border-bottom: 1px solid #707070;
   width: 20vw;
+  max-width: 300px;
 }
 .page6more {
   color: #a5a58d;
   font-size: 1rem;
   font-family: $fontType1;
+}
+.page6more:hover {
+  color: #a5a58d;
+}
+
+.homepage {
+  transition: 1s;
 }

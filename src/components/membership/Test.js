@@ -6,14 +6,14 @@ import PasswordChange from './PasswordChange'
 import MyComment from './MyComment'
 import PetArea from './PetArea'
 import MyFavorite from './MyFavorite'
-import RegisteredForm from './RegisteredForm'
+import RegisteredForm2 from './RegisteredForm2'
 import SignInForm from './SignInForm'
 
 function Test(props) {
   return (
     <>
       <SignInForm/>
-      <RegisteredForm/>
+      <RegisteredForm2/>
       <MyFavorite/>
       <PetArea/>
       <MyComment/>

@@ -19,6 +19,7 @@ main > .container {
   width: 300px;
   height: 80px;
   margin: 0 auto;
+  margin-top: 5vw;
   font-size: 60px;
   font-weight: bold;
   font-family: $fontType3;
@@ -81,10 +82,22 @@ main > .container {
   justify-content: space-between;
 }
 
+.form-group.memberImg {
+  width: 250px;
+  margin-right: 30px;
+}
+
 .viewImg {
   width: 250px;
   height: 250px;
+  object-fit: cover;
   border: 2px solid #cb997e;
+}
+
+.upLoadImg {
+  width: 250px;
+  height: 40px;
+  background-color: $primary;
 }
 
 //display+align-items可讓文字垂直置中
@@ -525,4 +538,11 @@ main > .container {
 .signInBackground {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.form-group.fgFlex.signInInputEmail {
+  margin-bottom: 5px;
+}
+
+.form-text.text-muted.inputTip {
 }

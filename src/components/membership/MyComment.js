@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/membership/custom.scss";
 
-function Page1(props) {
+function MyComment(props) {
 return(
 <>
 <div className="myCommentWrap">
@@ -90,4 +90,4 @@ return(
 </>
 )}
 
-export default Page1
+export default MyComment

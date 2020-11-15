@@ -3,18 +3,249 @@ import { connect } from 'react-redux'
 import '../../styles/store/straymaoP3.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
+import Share from 'social-share-react'
+import { withRouter, useHistory } from 'react-router-dom';
+import {
+  goodsDisLikeAsync,
+  goodsLikeAsync,
+  goodsLike,
+  goodsInitLikeAsync,
+  insertRecommandAsync
+} from '../../actions/cart/index';
+import {
+  getListAsync,
+  getGoodsIdAsync,
+  // getRecommand,
+  // getRecommandAsync,
+} from '../../actions/store/index'
 
 function StrayMaoP3(props) {
+
+  let content = []
+  const [display, setDisplay] = useState([])
+
+  
+  const [test,setTest] = useState(0)
+  const [aaa,setAaa] = useState(<button className="btn-addMyLove" type="button" value="" onClick={() => {
+    props.goodsLikeAsync(props.goodsIdDetail);
+    console.log('like!!!');
+    setTest(test+1)
+    // document.querySelector('.animateHeart>svg').classList.add('gogo');
+    // props.setIndex(props.index + 1);
+    // if (props.index === props.info.length - 1) {
+    //   props.setIndex(0);
+    // }
+    //#responsive-navbar-nav > div.mr-5.navbar-nav > a:nth-child(3) > div > div
+  }}>
+              加入願望清單
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14.668"
+                height="14.163"
+                viewBox="0 0 14.668 14.163"
+              >
+                <path
+                  id="Path_1698"
+                  data-name="Path 1698"
+                  d="M1158.688,665.922a3.1,3.1,0,0,0-3.336-2.368c-1.708-.011-3.474,1.719-3.561,4.28-.081,2.4,1.652,5.57,6.667,8.794,5.23-3.152,6.912-6.3,6.994-8.7.086-2.561-1.563-4.315-3.27-4.327a3.287,3.287,0,0,0-3.494,2.32"
+                  transform="translate(-1151.288 -663.054)"
+                  fill="none"
+                  stroke="#ed8f8f"
+                  stroke-width="1"
+                />
+              </svg>
+            </button>
+)
+  useEffect(() => {
+    // console.log("props.info:",props.info)
+    // props.goodsInitLikeAsync(props.info[props.index].goodsId);
+    // console.log('like:', props.like);
+  }, []);
+  useEffect(() => {
+    // props.goodsInitLikeAsync(props.info[props.index].goodsId);
+    // console.log('like:', props.like);
+  }, [props.index]);
+  
+
+  useEffect(() => {
+    props.getListAsync()
+    let id = props.goodsIdDetail ?? 1
+    console.log("id :",id);
+    // console.log("id :",id);
+    props.getGoodsIdAsync(id)
+    //getheart(id)
+    props.goodsInitLikeAsync(id);
+    console.log('like:', props.like);
+ 
+    // let likeBtn = props.like ? (
+    //   <button className="btn-addMyLove" type="button" value="" onClick={() => {
+    //           props.goodsDisLikeAsync(props.goodsIdDetail);
+    //           console.log('dislike!!!');
+    //           setTest(test+1)}}>
+    //                     加入願望清單222
+    //                     <svg
+    //                       xmlns="http://www.w3.org/2000/svg"
+    //                       width="14.668"
+    //                       height="14.163"
+    //                       viewBox="0 0 14.668 14.163"
+    //                     >
+    //                       <path
+    //                         id="Path_1698"
+    //                         data-name="Path 1698"
+    //                         d="M1158.688,665.922a3.1,3.1,0,0,0-3.336-2.368c-1.708-.011-3.474,1.719-3.561,4.28-.081,2.4,1.652,5.57,6.667,8.794,5.23-3.152,6.912-6.3,6.994-8.7.086-2.561-1.563-4.315-3.27-4.327a3.287,3.287,0,0,0-3.494,2.32"
+    //                         transform="translate(-1151.288 -663.054)"
+    //                         fill="none"
+    //                         stroke="#ed8f8f"
+    //                         stroke-width="1"
+    //                       />
+    //                     </svg>
+    //                   </button>
+    //                     ) : (
+    //   <button className="btn-addMyLove" type="button" value="" onClick={() => {
+    //           props.goodsLikeAsync(props.goodsIdDetail);
+    //           console.log('like!!!');
+    //           setTest(test+1)
+    //           // document.querySelector('.animateHeart>svg').classList.add('gogo');
+    //           // props.setIndex(props.index + 1);
+    //           // if (props.index === props.info.length - 1) {
+    //           //   props.setIndex(0);
+    //           // }
+    //           //#responsive-navbar-nav > div.mr-5.navbar-nav > a:nth-child(3) > div > div
+    //         }}>
+    //                     加入願望清單111
+    //                     <svg
+    //                       xmlns="http://www.w3.org/2000/svg"
+    //                       width="14.668"
+    //                       height="14.163"
+    //                       viewBox="0 0 14.668 14.163"
+    //                     >
+    //                       <path
+    //                         id="Path_1698"
+    //                         data-name="Path 1698"
+    //                         d="M1158.688,665.922a3.1,3.1,0,0,0-3.336-2.368c-1.708-.011-3.474,1.719-3.561,4.28-.081,2.4,1.652,5.57,6.667,8.794,5.23-3.152,6.912-6.3,6.994-8.7.086-2.561-1.563-4.315-3.27-4.327a3.287,3.287,0,0,0-3.494,2.32"
+    //                         transform="translate(-1151.288 -663.054)"
+    //                         fill="none"
+    //                         stroke="#ed8f8f"
+    //                         stroke-width="1"
+    //                       />
+    //                     </svg>
+    //                   </button>
+    //    );
+
+      //  setAaa(likeBtn)
+
+  }, [props.goodsIdDetail,test])
+  // useEffect(() => {
+  //   // console.log('info : ', props.info)
+  // }, [props.info])
+
+  useEffect(()=>{
+
+    let info =props.info
+    console.log('info',info)
+    let item = props.item
+    const arr = item.filter((e) => {return e.categoryId == info[0].categoryId&&e.goodsId != info[0].goodsId});
+    // console.log('arr: ',arr)
+
+
+    // if( arr!=1){
+    if (item.length > 0) {
+      // for (let i = 0; i < info.length; i++) {
+      for (let i = 0; i < 3; i++) {
+        content.push(
+          <StoreCard
+            item={{
+              goodsId: arr[i].goodsId,
+              goodsImgs: arr[i].goodsImgs,
+              name: arr[i].name,
+              price: arr[i].price,
+              pricing: arr[i].pricing,
+            }}
+          />
+        )
+        // console.log('1230',info2[i].goodsId)
+      }
+      setDisplay(content)
+    }
+  //  }
+  },[props.info,props.item])
+
+  
+  let likeBtn = props.like ? (
+<button className="btn-addMyLove" type="button" value="" onClick={() => {
+        props.goodsDisLikeAsync(props.goodsIdDetail);
+        console.log('dislike!!!');
+        setTest(test+1)}}>
+                  移除願望清單
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14.668"
+                    height="14.163"
+                    viewBox="0 0 14.668 14.163"
+                  >
+                    <path
+                      id="Path_1698"
+                      data-name="Path 1698"
+                      d="M1158.688,665.922a3.1,3.1,0,0,0-3.336-2.368c-1.708-.011-3.474,1.719-3.561,4.28-.081,2.4,1.652,5.57,6.667,8.794,5.23-3.152,6.912-6.3,6.994-8.7.086-2.561-1.563-4.315-3.27-4.327a3.287,3.287,0,0,0-3.494,2.32"
+                      transform="translate(-1151.288 -663.054)"
+                      fill="#ed8f8f"
+                      stroke="#ed8f8f"
+                      stroke-width="1"
+                    />
+                  </svg>
+                </button>
+                  ) : (
+<button className="btn-addMyLove" type="button" value="" onClick={() => {
+        props.goodsLikeAsync(props.goodsIdDetail);
+        console.log('like!!!');
+        setTest(test+1)
+        // document.querySelector('.animateHeart>svg').classList.add('gogo');
+        // props.setIndex(props.index + 1);
+        // if (props.index === props.info.length - 1) {
+        //   props.setIndex(0);
+        // }
+        //#responsive-navbar-nav > div.mr-5.navbar-nav > a:nth-child(3) > div > div
+      }}>
+                  加入願望清單
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14.668"
+                    height="14.163"
+                    viewBox="0 0 14.668 14.163"
+                  >
+                    <path
+                      id="Path_1698"
+                      data-name="Path 1698"
+                      d="M1158.688,665.922a3.1,3.1,0,0,0-3.336-2.368c-1.708-.011-3.474,1.719-3.561,4.28-.081,2.4,1.652,5.57,6.667,8.794,5.23-3.152,6.912-6.3,6.994-8.7.086-2.561-1.563-4.315-3.27-4.327a3.287,3.287,0,0,0-3.494,2.32"
+                      transform="translate(-1151.288 -663.054)"
+                      fill="none"
+                      stroke="#ed8f8f"
+                      stroke-width="1"
+                    />
+                  </svg>
+                </button>
+ );
+
+
   return (
     <>
       <div className="container">
         <div className="row">
           <div className="storeP3 d-flex">
             <div className="storeP3Img">
-              <img src="./image/store/dog-food.png" alt="" />
+              <img
+                src={
+                  props.info === 1
+                    ? 'wait for loading'
+                    : props.info[0].goodsImgs
+                }
+                alt=""
+              />
             </div>
             <div className="storeP3Description">
-              <div className="storeP3Title">鮮肉煲罐頭</div>
+              <div className="storeP3Title">
+                {props.info === 1 ? 'wait for loading' : props.info[0].name}
+              </div>
               <div className="storeP3Stock d-flex">
                 <div className="dot"></div>
                 庫存 4 件
@@ -26,7 +257,12 @@ function StrayMaoP3(props) {
 
               <div className="numberAndstar d-flex">
                 <div className="storeP3Price">
-                  <div className="realPrice">NT$1,550</div>
+                  <div className="realPrice">
+                    NT${' '}
+                    {props.info === 1
+                      ? 'wait for loading'
+                      : props.info[0].price}
+                  </div>
                   <svg className="icon-005-star">
                     <path d="M10.31,12,6.79,10.11,3.27,12l.66-3.93L1.07,5.29,5,4.7,6.76,1.13,8.53,4.69l3.94.56L9.63,8Z" />
                     <path d="M2.61,12.89l.78-4.66L0,4.94l4.68-.69L6.75,0,8.86,4.23l4.68.67L10.17,8.21,11,12.87,6.79,10.68ZM2.15,5.63,4.47,7.88l-.54,3.18L6.78,9.55,9.65,11,9.09,7.86,11.4,5.6,8.2,5.15,6.76,2.26,5.34,5.16Z" />
@@ -50,7 +286,12 @@ function StrayMaoP3(props) {
                 </div>
 
                 <div className="starAndComment">
-                  <div className="fakePrice">NT$1,850</div>
+                  <div className="fakePrice">
+                    NT${' '}
+                    {props.info === 1
+                      ? 'wait for loading'
+                      : props.info[0].pricing}
+                  </div>
                   <div className="comment">
                     4.0分｜<a href="">2個評價</a>
                   </div>
@@ -75,7 +316,7 @@ function StrayMaoP3(props) {
               </div>
 
               <div className="storeP3BTN d-flex">
-                <button className="btn-addMyLove" type="button" value="">
+                {/* <button className="btn-addMyLove" type="button" value="">
                   加入願望清單
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -93,8 +334,10 @@ function StrayMaoP3(props) {
                       stroke-width="1"
                     />
                   </svg>
-                </button>
-                <button className="btn-green" type="button" value="">
+                </button> */}
+                {likeBtn}
+                <button className="btn-green" type="button" value="" onClick={() => {
+                  props.insertRecommandAsync([props.goodsIdDetail,props.info[0].name,props.info[0].price]);}}>
                   加入購物車
                 </button>
               </div>
@@ -103,27 +346,34 @@ function StrayMaoP3(props) {
         </div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="goodsDescription d-flex">
-            <div class="goodsDescriptionTitle">
-              <a href="#">商品資訊</a>
+      <div className="container">
+        <div className="row">
+          <div className="goodsDescription d-flex">
+            <div className="goodsDescriptionTitle">
+              <a href="#">
+                <div>商品資訊</div>
+              </a>
             </div>
-            <div class="goodsDescriptionTitle">
-              <a href="#">顧客評價</a>
+            <div className="goodsDescriptionTitle">
+              <a href="#">
+                <div>顧客評價</div>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="goodsDescriptionLine d-flex">
-        <div class="goodsDescriptionLittleTitle">商品資訊</div>
+      <div className="goodsDescriptionLine d-flex">
+        <div className="goodsDescriptionLittleTitle">商品資訊</div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="goodsDescriptionLittleWords">
-            每盒內含10件商品
+      <div className="container">
+        <div className="row">
+          <div className="goodsDescriptionLittleWords">
+            {props.info === 1
+              ? 'wait for loading'
+              : props.info[0].goodsDescription}
+            {/* 每盒內含10件商品
             <br />
             ※零食同系列內的「口味」、玩具同系列內的「款式」將隨機出貨 恕不挑款
             <br />
@@ -145,29 +395,43 @@ function StrayMaoP3(props) {
             <br />
             9. FOFOS 兩只福狸 貓舌頭爽爽舔食墊（美味紫/馬卡龍綠/珊瑚紅）x1
             <br />
-            10. 不挑款人氣飼料試吃包 x1
+            10. 不挑款人氣飼料試吃包 x1 */}
           </div>
         </div>
       </div>
 
-      <div class="d-flex">
-        <div class="storeP3GuessYouLike">猜你喜歡</div>
+      <div className="d-flex">
+        <div className="storeP3GuessYouLike">猜你喜歡</div>
       </div>
 
-      <div class="container">
+      {/* <div class="container">
         <div class="row" id="between">
-          <StoreCard />
-          <StoreCard />
-          <StoreCard />
+          {display}
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
 
 const mapStateToProps = (store) => {
-  return {}
+  return {
+    info: store.storeReducer.getGoodsId,
+    goodsIdDetail: store.storeReducer.goodsIdDetail,
+    item: store.storeReducer.getStoreList,
+    // petDetailId: store.adoptReducer.petDetailId,
+    like: store.cartReducer.goodsHeart
+  }
 }
 const mapDispatchToProps = null
 
-export default connect(mapStateToProps, {})(StrayMaoP3)
+export default withRouter(
+  connect(mapStateToProps, { 
+  getGoodsIdAsync,
+  getListAsync,
+  goodsDisLikeAsync,
+  goodsLikeAsync,
+  goodsLike,
+  goodsInitLikeAsync, 
+  insertRecommandAsync
+})(StrayMaoP3)
+);

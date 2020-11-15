@@ -1,6 +1,7 @@
 .page3bg {
   background-color: #777b5a;
   height: 87vh;
+  min-height: 700px;
   overflow: hidden;
   width: 100vw;
 }
@@ -12,6 +13,7 @@
 .page3single {
   width: 100vw;
   height: 87vh;
+  min-height: 700px;
 }
 
 .page3big {
@@ -126,7 +128,7 @@
   height: 1.5rem;
   border-radius: 50%;
   margin: 0 0.5rem;
-  background-color: rgba(255, 255, 255, 0.6);
+  // background-color: rgba(255, 255, 255, 0.6);
 }
 .slider-dots li:hover {
   background-color: rgba(203, 153, 126, 0.6);
@@ -135,13 +137,14 @@
 .forward {
   width: 10vw;
   height: 87vh;
+  min-height: 700px;
   right: 0;
   z-index: 1;
   transition: 0.5s;
 }
-.forward:hover {
-  background-color: #fff1e636;
-}
+// .forward:hover {
+//   background-color: #fff1e636;
+// }
 .forward:hover .forward2 {
   display: none;
 }
@@ -158,14 +161,20 @@
 .back {
   width: 10vw;
   height: 87vh;
+  min-height: 700px;
   left: 0;
   z-index: 1;
   transition: 0.5s;
 }
-.back:hover {
-  background-color: #fff1e636;
+// .back:hover {
+//   background-color: #fff1e636;
+// }
+.aaaa {
+  background-color: rgba(203, 153, 126, 1);
 }
-
+.bbbb {
+  background-color: rgba(255, 255, 255, 0.6);
+}
 .arrow {
   font-family: $fontType3;
   color: #fff1e6;

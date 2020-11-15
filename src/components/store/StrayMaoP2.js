@@ -2,10 +2,35 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import '../../styles/store/straymaoP2.scss'
 import 'animate.css'
+import StoreCard from '../../components/store/StoreCard'
+import PageBar from '../../components/common/PageBar'
+import { gotoPage, setTotalPage } from "../../actions/common/index";
+
+import {
+  getCatsListAsync,
+} from '../../actions/store/index'
+
 
 function StrayMaoP2(props) {
   let i = 0
+
+  // const [display, setDisplay] = useState([])
+  // let content = []
+
+  // 分頁
+  const [dataLoading, setDataLoading] = useState(true);
+  const [displayPage, setDisplayPage] = useState([])
+  const contentPage = []
+
+  let totalCards = props.cards;
+  // console.log('store: ',props.cards)
+  let totalPages = Math.ceil(totalCards.length / 9);
+  let nowPage = props.nowPage;
+
   useEffect(() => {
+    props.getCatsListAsync()
+    // console.log(props.info)
+
     document.addEventListener('mousemove', function parallax(e) {
       this.querySelectorAll('.storeP2CatImg').forEach((storeP2CatImg) => {
         const speed = storeP2CatImg.getAttribute('data-speed')
@@ -28,6 +53,63 @@ function StrayMaoP2(props) {
         i = 0
       })
   }, [])
+
+  useEffect(()=>{
+
+    totalCards = props.cards;
+    totalPages = Math.ceil(totalCards.length / 9);
+
+    if (totalCards.length > 0) {
+      // let tt = JSON.parse(totalCards[0]);
+      // console.log("totalCards: ", totalCards[0]);
+      // console.log("now ", nowPage);
+      // console.log("totalPages ", totalPages);
+      // console.log("if:", nowPage === totalPages);
+    }
+    props.setTotalPage(totalPages);
+    for (
+      let i = 9 * (nowPage - 1);
+      nowPage === totalPages ? i < totalCards.length : i < 9 * nowPage;
+      i++
+    ) {
+      if (totalCards.length > 0) {
+        // console.log(":", totalCards[i]);
+        contentPage.push(<StoreCard item={totalCards[i]} key={i} />);
+      }
+    }
+    setDisplayPage(contentPage);
+
+    setTimeout(() => setDataLoading(false), 100);
+  }, [totalCards, nowPage]);
+
+  const loading = <div></div>;
+
+  // useEffect(()=>{
+  //   let info = props.info
+  //   // console.log('info :', props.info)
+  //   if (info.length > 0){
+  //     for(let i = 0;i < info.length;i++){
+  //       content.push(
+  //         <StoreCard
+  //         item={{
+  //           goodsId: info[i].goodsId,
+  //             goodsImgs: info[i].goodsImgs,
+  //             name: info[i].name,
+  //             price: info[i].price,
+  //             pricing: info[i].pricing,
+  //         }}
+  //         />
+  //       )
+  //     }
+  //     setDisplay(content)
+  //   }
+  // },[props.info])
+
+  // useEffect(getRandomInt(max) {
+  //   let getRandomInt = null
+  //   return: Math.floor(Math.random() * Math.floor(max)),
+  //   console.log('整數',getRandomInt)
+  // },[])
 
   return (
     <>
@@ -64,817 +146,36 @@ function StrayMaoP2(props) {
           {/* card  */}
           <div className="container storeP1Bottom">
             <div className="row d-flex" id="between">
-              <div className="card_new col-lg-3">
-                <div className="icon d-flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21.388"
-                    height="20.524"
-                    viewBox="0 0 21.388 20.524"
-                  >
-                    <g id="愛心" transform="translate(0.251 0.25)">
-                      <path
-                        id="Path_1296"
-                        data-name="Path 1296"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613a5.025,5.025,0,0,0-5.341,3.546"
-                        transform="translate(-478.964 -228.762)"
-                        fill="#fff"
-                        stroke="#707070"
-                        stroke-width="0.5"
-                      />
-                      <path
-                        id="Path_1297"
-                        data-name="Path 1297"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613A5.025,5.025,0,0,0,489.508,232.381Z"
-                        transform="translate(-478.964 -228.762)"
-                        fill="none"
-                        stroke="#ed8f8f"
-                        stroke-miterlimit="10"
-                        stroke-width="0.5"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <div className="img">
-                  <img
-                    src="./image/store/brothcan-1-510x510.jpg"
-                    alt="鮮肉煲罐頭"
-                  />
-                </div>
-
-                <div className="goodsText">
-                  <p>鮮肉煲罐頭</p>
-                  <span id="number">NT$ 240</span>
-
-                  <div className="icon2 d-flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="26.865"
-                      height="27.721"
-                      viewBox="0 0 26.865 27.721"
-                    >
-                      <g
-                        id="Group_607"
-                        data-name="Group 607"
-                        transform="translate(0.5 0.5)"
-                      >
-                        <circle
-                          id="Ellipse_10"
-                          data-name="Ellipse 10"
-                          cx="1.98"
-                          cy="1.98"
-                          r="1.98"
-                          transform="translate(7.983 22.76)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1085"
-                          data-name="Path 1085"
-                          d="M268.477,324.1h0a1.98,1.98,0,1,0,1.98,1.98A1.98,1.98,0,0,0,268.477,324.1Z"
-                          transform="translate(-246.608 -301.338)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1086"
-                          data-name="Path 1086"
-                          d="M31.8,19.73H15.326L15,17.583H28.541a.978.978,0,0,0,.9-.7l3.223-9.328a1.17,1.17,0,0,0-.545-1.44.857.857,0,0,0-.357-.077H13.327L12.554.925A1.014,1.014,0,0,0,11.587,0H7.88A1.046,1.046,0,0,0,6.913,1.11,1.046,1.046,0,0,0,7.88,2.221h2.9l2.772,18.8a1.014,1.014,0,0,0,.967.925H31.8a1.121,1.121,0,0,0,0-2.221Z"
-                          transform="translate(-6.913 0.001)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card_new col-lg-3">
-                <div className="icon d-flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21.388"
-                    height="20.524"
-                    viewBox="0 0 21.388 20.524"
-                  >
-                    <g id="愛心" transform="translate(0.251 0.25)">
-                      <path
-                        id="Path_1296"
-                        data-name="Path 1296"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613a5.025,5.025,0,0,0-5.341,3.546"
-                        transform="translate(-478.964 -228.762)"
-                        fill="#fff"
-                        stroke="#707070"
-                        stroke-width="0.5"
-                      />
-                      <path
-                        id="Path_1297"
-                        data-name="Path 1297"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613A5.025,5.025,0,0,0,489.508,232.381Z"
-                        transform="translate(-478.964 -228.762)"
-                        fill="none"
-                        stroke="#ed8f8f"
-                        stroke-miterlimit="10"
-                        stroke-width="0.5"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <div className="img">
-                  <img
-                    src="./image/store/brothcan-1-510x510.jpg"
-                    alt="鮮肉煲罐頭"
-                  />
-                </div>
-
-                <div className="goodsText">
-                  <p>鮮肉煲罐頭</p>
-                  <span id="number">NT$ 240</span>
-
-                  <div className="icon2 d-flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="26.865"
-                      height="27.721"
-                      viewBox="0 0 26.865 27.721"
-                    >
-                      <g
-                        id="Group_607"
-                        data-name="Group 607"
-                        transform="translate(0.5 0.5)"
-                      >
-                        <circle
-                          id="Ellipse_10"
-                          data-name="Ellipse 10"
-                          cx="1.98"
-                          cy="1.98"
-                          r="1.98"
-                          transform="translate(7.983 22.76)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1085"
-                          data-name="Path 1085"
-                          d="M268.477,324.1h0a1.98,1.98,0,1,0,1.98,1.98A1.98,1.98,0,0,0,268.477,324.1Z"
-                          transform="translate(-246.608 -301.338)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1086"
-                          data-name="Path 1086"
-                          d="M31.8,19.73H15.326L15,17.583H28.541a.978.978,0,0,0,.9-.7l3.223-9.328a1.17,1.17,0,0,0-.545-1.44.857.857,0,0,0-.357-.077H13.327L12.554.925A1.014,1.014,0,0,0,11.587,0H7.88A1.046,1.046,0,0,0,6.913,1.11,1.046,1.046,0,0,0,7.88,2.221h2.9l2.772,18.8a1.014,1.014,0,0,0,.967.925H31.8a1.121,1.121,0,0,0,0-2.221Z"
-                          transform="translate(-6.913 0.001)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card_new col-lg-3">
-                <div className="icon d-flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21.388"
-                    height="20.524"
-                    viewBox="0 0 21.388 20.524"
-                  >
-                    <g id="愛心" transform="translate(0.251 0.25)">
-                      <path
-                        id="Path_1296"
-                        data-name="Path 1296"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613a5.025,5.025,0,0,0-5.341,3.546"
-                        transform="translate(-478.964 -228.762)"
-                        fill="#fff"
-                        stroke="#707070"
-                        stroke-width="0.5"
-                      />
-                      <path
-                        id="Path_1297"
-                        data-name="Path 1297"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613A5.025,5.025,0,0,0,489.508,232.381Z"
-                        transform="translate(-478.964 -228.762)"
-                        fill="none"
-                        stroke="#ed8f8f"
-                        stroke-miterlimit="10"
-                        stroke-width="0.5"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <div className="img">
-                  <img
-                    src="./image/store/brothcan-1-510x510.jpg"
-                    alt="鮮肉煲罐頭"
-                  />
-                </div>
-
-                <div className="goodsText">
-                  <p>鮮肉煲罐頭</p>
-                  <span id="number">NT$ 240</span>
-
-                  <div className="icon2 d-flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="26.865"
-                      height="27.721"
-                      viewBox="0 0 26.865 27.721"
-                    >
-                      <g
-                        id="Group_607"
-                        data-name="Group 607"
-                        transform="translate(0.5 0.5)"
-                      >
-                        <circle
-                          id="Ellipse_10"
-                          data-name="Ellipse 10"
-                          cx="1.98"
-                          cy="1.98"
-                          r="1.98"
-                          transform="translate(7.983 22.76)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1085"
-                          data-name="Path 1085"
-                          d="M268.477,324.1h0a1.98,1.98,0,1,0,1.98,1.98A1.98,1.98,0,0,0,268.477,324.1Z"
-                          transform="translate(-246.608 -301.338)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1086"
-                          data-name="Path 1086"
-                          d="M31.8,19.73H15.326L15,17.583H28.541a.978.978,0,0,0,.9-.7l3.223-9.328a1.17,1.17,0,0,0-.545-1.44.857.857,0,0,0-.357-.077H13.327L12.554.925A1.014,1.014,0,0,0,11.587,0H7.88A1.046,1.046,0,0,0,6.913,1.11,1.046,1.046,0,0,0,7.88,2.221h2.9l2.772,18.8a1.014,1.014,0,0,0,.967.925H31.8a1.121,1.121,0,0,0,0-2.221Z"
-                          transform="translate(-6.913 0.001)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card_new col-lg-3">
-                <div className="icon d-flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21.388"
-                    height="20.524"
-                    viewBox="0 0 21.388 20.524"
-                  >
-                    <g id="愛心" transform="translate(0.251 0.25)">
-                      <path
-                        id="Path_1296"
-                        data-name="Path 1296"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613a5.025,5.025,0,0,0-5.341,3.546"
-                        transform="translate(-478.964 -228.762)"
-                        fill="#fff"
-                        stroke="#707070"
-                        stroke-width="0.5"
-                      />
-                      <path
-                        id="Path_1297"
-                        data-name="Path 1297"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613A5.025,5.025,0,0,0,489.508,232.381Z"
-                        transform="translate(-478.964 -228.762)"
-                        fill="none"
-                        stroke="#ed8f8f"
-                        stroke-miterlimit="10"
-                        stroke-width="0.5"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <div className="img">
-                  <img
-                    src="./image/store/brothcan-1-510x510.jpg"
-                    alt="鮮肉煲罐頭"
-                  />
-                </div>
-
-                <div className="goodsText">
-                  <p>鮮肉煲罐頭</p>
-                  <span id="number">NT$ 240</span>
-
-                  <div className="icon2 d-flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="26.865"
-                      height="27.721"
-                      viewBox="0 0 26.865 27.721"
-                    >
-                      <g
-                        id="Group_607"
-                        data-name="Group 607"
-                        transform="translate(0.5 0.5)"
-                      >
-                        <circle
-                          id="Ellipse_10"
-                          data-name="Ellipse 10"
-                          cx="1.98"
-                          cy="1.98"
-                          r="1.98"
-                          transform="translate(7.983 22.76)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1085"
-                          data-name="Path 1085"
-                          d="M268.477,324.1h0a1.98,1.98,0,1,0,1.98,1.98A1.98,1.98,0,0,0,268.477,324.1Z"
-                          transform="translate(-246.608 -301.338)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1086"
-                          data-name="Path 1086"
-                          d="M31.8,19.73H15.326L15,17.583H28.541a.978.978,0,0,0,.9-.7l3.223-9.328a1.17,1.17,0,0,0-.545-1.44.857.857,0,0,0-.357-.077H13.327L12.554.925A1.014,1.014,0,0,0,11.587,0H7.88A1.046,1.046,0,0,0,6.913,1.11,1.046,1.046,0,0,0,7.88,2.221h2.9l2.772,18.8a1.014,1.014,0,0,0,.967.925H31.8a1.121,1.121,0,0,0,0-2.221Z"
-                          transform="translate(-6.913 0.001)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card_new col-lg-3">
-                <div className="icon d-flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21.388"
-                    height="20.524"
-                    viewBox="0 0 21.388 20.524"
-                  >
-                    <g id="愛心" transform="translate(0.251 0.25)">
-                      <path
-                        id="Path_1296"
-                        data-name="Path 1296"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613a5.025,5.025,0,0,0-5.341,3.546"
-                        transform="translate(-478.964 -228.762)"
-                        fill="#fff"
-                        stroke="#707070"
-                        stroke-width="0.5"
-                      />
-                      <path
-                        id="Path_1297"
-                        data-name="Path 1297"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613A5.025,5.025,0,0,0,489.508,232.381Z"
-                        transform="translate(-478.964 -228.762)"
-                        fill="none"
-                        stroke="#ed8f8f"
-                        stroke-miterlimit="10"
-                        stroke-width="0.5"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <div className="img">
-                  <img
-                    src="./image/store/brothcan-1-510x510.jpg"
-                    alt="鮮肉煲罐頭"
-                  />
-                </div>
-
-                <div className="goodsText">
-                  <p>鮮肉煲罐頭</p>
-                  <span id="number">NT$ 240</span>
-
-                  <div className="icon2 d-flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="26.865"
-                      height="27.721"
-                      viewBox="0 0 26.865 27.721"
-                    >
-                      <g
-                        id="Group_607"
-                        data-name="Group 607"
-                        transform="translate(0.5 0.5)"
-                      >
-                        <circle
-                          id="Ellipse_10"
-                          data-name="Ellipse 10"
-                          cx="1.98"
-                          cy="1.98"
-                          r="1.98"
-                          transform="translate(7.983 22.76)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1085"
-                          data-name="Path 1085"
-                          d="M268.477,324.1h0a1.98,1.98,0,1,0,1.98,1.98A1.98,1.98,0,0,0,268.477,324.1Z"
-                          transform="translate(-246.608 -301.338)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1086"
-                          data-name="Path 1086"
-                          d="M31.8,19.73H15.326L15,17.583H28.541a.978.978,0,0,0,.9-.7l3.223-9.328a1.17,1.17,0,0,0-.545-1.44.857.857,0,0,0-.357-.077H13.327L12.554.925A1.014,1.014,0,0,0,11.587,0H7.88A1.046,1.046,0,0,0,6.913,1.11,1.046,1.046,0,0,0,7.88,2.221h2.9l2.772,18.8a1.014,1.014,0,0,0,.967.925H31.8a1.121,1.121,0,0,0,0-2.221Z"
-                          transform="translate(-6.913 0.001)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card_new col-lg-3">
-                <div className="icon d-flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21.388"
-                    height="20.524"
-                    viewBox="0 0 21.388 20.524"
-                  >
-                    <g id="愛心" transform="translate(0.251 0.25)">
-                      <path
-                        id="Path_1296"
-                        data-name="Path 1296"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613a5.025,5.025,0,0,0-5.341,3.546"
-                        transform="translate(-478.964 -228.762)"
-                        fill="#fff"
-                        stroke="#707070"
-                        stroke-width="0.5"
-                      />
-                      <path
-                        id="Path_1297"
-                        data-name="Path 1297"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613A5.025,5.025,0,0,0,489.508,232.381Z"
-                        transform="translate(-478.964 -228.762)"
-                        fill="none"
-                        stroke="#ed8f8f"
-                        stroke-miterlimit="10"
-                        stroke-width="0.5"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <div className="img">
-                  <img
-                    src="./image/store/brothcan-1-510x510.jpg"
-                    alt="鮮肉煲罐頭"
-                  />
-                </div>
-
-                <div className="goodsText">
-                  <p>鮮肉煲罐頭</p>
-                  <span id="number">NT$ 240</span>
-
-                  <div className="icon2 d-flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="26.865"
-                      height="27.721"
-                      viewBox="0 0 26.865 27.721"
-                    >
-                      <g
-                        id="Group_607"
-                        data-name="Group 607"
-                        transform="translate(0.5 0.5)"
-                      >
-                        <circle
-                          id="Ellipse_10"
-                          data-name="Ellipse 10"
-                          cx="1.98"
-                          cy="1.98"
-                          r="1.98"
-                          transform="translate(7.983 22.76)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1085"
-                          data-name="Path 1085"
-                          d="M268.477,324.1h0a1.98,1.98,0,1,0,1.98,1.98A1.98,1.98,0,0,0,268.477,324.1Z"
-                          transform="translate(-246.608 -301.338)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1086"
-                          data-name="Path 1086"
-                          d="M31.8,19.73H15.326L15,17.583H28.541a.978.978,0,0,0,.9-.7l3.223-9.328a1.17,1.17,0,0,0-.545-1.44.857.857,0,0,0-.357-.077H13.327L12.554.925A1.014,1.014,0,0,0,11.587,0H7.88A1.046,1.046,0,0,0,6.913,1.11,1.046,1.046,0,0,0,7.88,2.221h2.9l2.772,18.8a1.014,1.014,0,0,0,.967.925H31.8a1.121,1.121,0,0,0,0-2.221Z"
-                          transform="translate(-6.913 0.001)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card_new col-lg-3">
-                <div className="icon d-flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21.388"
-                    height="20.524"
-                    viewBox="0 0 21.388 20.524"
-                  >
-                    <g id="愛心" transform="translate(0.251 0.25)">
-                      <path
-                        id="Path_1296"
-                        data-name="Path 1296"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613a5.025,5.025,0,0,0-5.341,3.546"
-                        transform="translate(-478.964 -228.762)"
-                        fill="#fff"
-                        stroke="#707070"
-                        stroke-width="0.5"
-                      />
-                      <path
-                        id="Path_1297"
-                        data-name="Path 1297"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613A5.025,5.025,0,0,0,489.508,232.381Z"
-                        transform="translate(-478.964 -228.762)"
-                        fill="none"
-                        stroke="#ed8f8f"
-                        stroke-miterlimit="10"
-                        stroke-width="0.5"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <div className="img">
-                  <img
-                    src="./image/store/brothcan-1-510x510.jpg"
-                    alt="鮮肉煲罐頭"
-                  />
-                </div>
-
-                <div className="goodsText">
-                  <p>鮮肉煲罐頭</p>
-                  <span id="number">NT$ 240</span>
-
-                  <div className="icon2 d-flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="26.865"
-                      height="27.721"
-                      viewBox="0 0 26.865 27.721"
-                    >
-                      <g
-                        id="Group_607"
-                        data-name="Group 607"
-                        transform="translate(0.5 0.5)"
-                      >
-                        <circle
-                          id="Ellipse_10"
-                          data-name="Ellipse 10"
-                          cx="1.98"
-                          cy="1.98"
-                          r="1.98"
-                          transform="translate(7.983 22.76)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1085"
-                          data-name="Path 1085"
-                          d="M268.477,324.1h0a1.98,1.98,0,1,0,1.98,1.98A1.98,1.98,0,0,0,268.477,324.1Z"
-                          transform="translate(-246.608 -301.338)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1086"
-                          data-name="Path 1086"
-                          d="M31.8,19.73H15.326L15,17.583H28.541a.978.978,0,0,0,.9-.7l3.223-9.328a1.17,1.17,0,0,0-.545-1.44.857.857,0,0,0-.357-.077H13.327L12.554.925A1.014,1.014,0,0,0,11.587,0H7.88A1.046,1.046,0,0,0,6.913,1.11,1.046,1.046,0,0,0,7.88,2.221h2.9l2.772,18.8a1.014,1.014,0,0,0,.967.925H31.8a1.121,1.121,0,0,0,0-2.221Z"
-                          transform="translate(-6.913 0.001)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card_new col-lg-3">
-                <div className="icon d-flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21.388"
-                    height="20.524"
-                    viewBox="0 0 21.388 20.524"
-                  >
-                    <g id="愛心" transform="translate(0.251 0.25)">
-                      <path
-                        id="Path_1296"
-                        data-name="Path 1296"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613a5.025,5.025,0,0,0-5.341,3.546"
-                        transform="translate(-478.964 -228.762)"
-                        fill="#fff"
-                        stroke="#707070"
-                        stroke-width="0.5"
-                      />
-                      <path
-                        id="Path_1297"
-                        data-name="Path 1297"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613A5.025,5.025,0,0,0,489.508,232.381Z"
-                        transform="translate(-478.964 -228.762)"
-                        fill="none"
-                        stroke="#ed8f8f"
-                        stroke-miterlimit="10"
-                        stroke-width="0.5"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <div className="img">
-                  <img
-                    src="./image/store/brothcan-1-510x510.jpg"
-                    alt="鮮肉煲罐頭"
-                  />
-                </div>
-
-                <div className="goodsText">
-                  <p>鮮肉煲罐頭</p>
-                  <span id="number">NT$ 240</span>
-
-                  <div className="icon2 d-flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="26.865"
-                      height="27.721"
-                      viewBox="0 0 26.865 27.721"
-                    >
-                      <g
-                        id="Group_607"
-                        data-name="Group 607"
-                        transform="translate(0.5 0.5)"
-                      >
-                        <circle
-                          id="Ellipse_10"
-                          data-name="Ellipse 10"
-                          cx="1.98"
-                          cy="1.98"
-                          r="1.98"
-                          transform="translate(7.983 22.76)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1085"
-                          data-name="Path 1085"
-                          d="M268.477,324.1h0a1.98,1.98,0,1,0,1.98,1.98A1.98,1.98,0,0,0,268.477,324.1Z"
-                          transform="translate(-246.608 -301.338)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1086"
-                          data-name="Path 1086"
-                          d="M31.8,19.73H15.326L15,17.583H28.541a.978.978,0,0,0,.9-.7l3.223-9.328a1.17,1.17,0,0,0-.545-1.44.857.857,0,0,0-.357-.077H13.327L12.554.925A1.014,1.014,0,0,0,11.587,0H7.88A1.046,1.046,0,0,0,6.913,1.11,1.046,1.046,0,0,0,7.88,2.221h2.9l2.772,18.8a1.014,1.014,0,0,0,.967.925H31.8a1.121,1.121,0,0,0,0-2.221Z"
-                          transform="translate(-6.913 0.001)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card_new col-lg-3">
-                <div className="icon d-flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21.388"
-                    height="20.524"
-                    viewBox="0 0 21.388 20.524"
-                  >
-                    <g id="愛心" transform="translate(0.251 0.25)">
-                      <path
-                        id="Path_1296"
-                        data-name="Path 1296"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613a5.025,5.025,0,0,0-5.341,3.546"
-                        transform="translate(-478.964 -228.762)"
-                        fill="#fff"
-                        stroke="#707070"
-                        stroke-width="0.5"
-                      />
-                      <path
-                        id="Path_1297"
-                        data-name="Path 1297"
-                        d="M489.508,232.381a4.73,4.73,0,0,0-5.1-3.618c-2.61-.018-5.309,2.627-5.441,6.541-.125,3.664,2.524,8.514,10.189,13.439,7.994-4.816,10.564-9.629,10.689-13.294.133-3.914-2.387-6.595-5-6.613A5.025,5.025,0,0,0,489.508,232.381Z"
-                        transform="translate(-478.964 -228.762)"
-                        fill="none"
-                        stroke="#ed8f8f"
-                        stroke-miterlimit="10"
-                        stroke-width="0.5"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <div className="img">
-                  <img
-                    src="./image/store/brothcan-1-510x510.jpg"
-                    alt="鮮肉煲罐頭"
-                  />
-                </div>
-
-                <div className="goodsText">
-                  <p>鮮肉煲罐頭</p>
-                  <span id="number">NT$ 240</span>
-
-                  <div className="icon2 d-flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="26.865"
-                      height="27.721"
-                      viewBox="0 0 26.865 27.721"
-                    >
-                      <g
-                        id="Group_607"
-                        data-name="Group 607"
-                        transform="translate(0.5 0.5)"
-                      >
-                        <circle
-                          id="Ellipse_10"
-                          data-name="Ellipse 10"
-                          cx="1.98"
-                          cy="1.98"
-                          r="1.98"
-                          transform="translate(7.983 22.76)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1085"
-                          data-name="Path 1085"
-                          d="M268.477,324.1h0a1.98,1.98,0,1,0,1.98,1.98A1.98,1.98,0,0,0,268.477,324.1Z"
-                          transform="translate(-246.608 -301.338)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                        <path
-                          id="Path_1086"
-                          data-name="Path 1086"
-                          d="M31.8,19.73H15.326L15,17.583H28.541a.978.978,0,0,0,.9-.7l3.223-9.328a1.17,1.17,0,0,0-.545-1.44.857.857,0,0,0-.357-.077H13.327L12.554.925A1.014,1.014,0,0,0,11.587,0H7.88A1.046,1.046,0,0,0,6.913,1.11,1.046,1.046,0,0,0,7.88,2.221h2.9l2.772,18.8a1.014,1.014,0,0,0,.967.925H31.8a1.121,1.121,0,0,0,0-2.221Z"
-                          transform="translate(-6.913 0.001)"
-                          fill="#fffffd"
-                          stroke="#ed8f8f"
-                          stroke-width="1"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </div>
-              </div>
+            {dataLoading ? loading : displayPage}
             </div>
           </div>
+          
+          <div className="container storeP1Bottom">
+            <div className="row d-flex" id="between">
+            <PageBar />
+            </div>
+          </div>
+
         </div>
       </div>
+
+      
     </>
   )
 }
 
 const mapStateToProps = (store) => {
-  return {}
+  return {
+    info: store.storeReducer.getCats,
+    nowPage: store.nowPage,
+    totalPage: store.totalPage,
+    cards: store.storeReducer.getCats,
+  }
 }
 const mapDispatchToProps = null
 
-export default connect(mapStateToProps, {})(StrayMaoP2)
+export default connect(mapStateToProps, {
+  getCatsListAsync,
+  gotoPage,
+  setTotalPage,
+  })(StrayMaoP2)
