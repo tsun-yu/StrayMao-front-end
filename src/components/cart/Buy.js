@@ -14,6 +14,12 @@ function Buy(props) {
     // const [total, setTotal] = useState(0);
     const [dataLoading, setDataLoading] = useState(true);
     const [display, setDisplay] = useState(<></>);
+
+    const [total, setTotal] = useState(0)
+    const [savedtotal, setSavedTotal] = useState(total)
+    const [subTotal, setSubTotal] = useState(0)
+
+
     const content = [];
     let totalCards = props.info;
 
@@ -42,6 +48,24 @@ function Buy(props) {
         
         // console.log("info2: ",props.info[0].name)
     }, []);
+
+    useEffect(() => {
+        let newTotal ={...savedtotal,...total}
+        setSavedTotal(newTotal);
+    }, [total]);
+
+    useEffect(() => {
+        console.log('savedtotal',savedtotal)
+        
+        let temp = 0;
+        for (let cartId in savedtotal) { 
+            temp += +savedtotal[cartId]; 
+        }
+        setSubTotal(temp)
+        
+    }, [savedtotal]);
+
+
     useEffect(() => {
         setMemberName(props.info[0].memberName)
         setMobile(props.info[0].mobile)
@@ -59,7 +83,7 @@ function Buy(props) {
             ) {
                 if (totalCards.length > 0) {
                     // console.log(":",totalCards[i]);
-                    content.push(<BuyCardC info={totalCards[i]} key={i} index={i} />);
+                    content.push(<BuyCardC info={totalCards[i]} key={i} index={i} setTotal={(value)=>setTotal(value)}  />);
                 }
             }
             setDisplay(content)
@@ -82,11 +106,11 @@ setTimeout(() => setDataLoading(false), 1000);
             </div>
             <div className="buyC_boxDown_An d-flex justify-content-between">
                 <div className="buyC_boxDownLeft_An">
-                    <span className="buyC_countPrice_An">小計：2790 元 + 運費：40元</span>
+                    <span className="buyC_countPrice_An">小計：{subTotal} 元 + 運費：40元</span>
                 </div>
                 <div className="buyC_boxDownRight_An">
                     {/* <span className="buyC_totalPrice_An"  onChange={()=>totalChange()}>總計：{total} 元</span> */}
-                    <span className="buyC_totalPrice_An">總計：20000 元</span>
+                    <span className="buyC_totalPrice_An">總計：{subTotal+40} 元</span>
                 </div>
             </div>
             <div className="buyC_boxConsignee_An">
@@ -153,8 +177,8 @@ setTimeout(() => setDataLoading(false), 1000);
                 <BuyCardM />
             </div>
             <div className="buyM_boxDown_An d-flex flex-column">
-                <span className="buyM_countPrice_An">小計：2790 元 + 運費：40元</span>
-                <span className="buyM_totalPrice_An">總計：2790 元</span>
+                <span className="buyM_countPrice_An">小計：{subTotal} 元 + 運費：40元</span>
+                <span className="buyM_totalPrice_An">總計：{subTotal+40} 元</span>
             </div>
             <div className="buyM_boxConsignee_An">
                 <div>

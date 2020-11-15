@@ -9,22 +9,25 @@ function BuyCardC(props) {
     const [totalPrice,setTotalPrice] = useState(props.info.price*props.info.quantity)
     // const [quantity, setQuantity] = useState(props.info.quantity)
     
-    useEffect(()=>{
-      setQuantity(props.info.quantity);
-      setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
-      // props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
+  useEffect(()=>{
+    setQuantity(props.info.quantity);
+    setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
+    if(props.info.cartId){
+      props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
+    }
 
     setTimeout(()=>{
       setQuantity(props.info.quantity);
       setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
-      // props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
     },1000)
 
   },[props])
 
   useEffect(()=>{
       setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
-      // props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
+      if(props.info.cartId){
+        props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
+      }
   },[quantity])
 
   const minusOne = ()=>{
@@ -81,10 +84,10 @@ function BuyCardC(props) {
         props.deleteOrderAsync(props.info.cartId);
         // console.log("dislike!!!");
         console.log("dislike!!!");
-    props.totalCards.pop()
-    props.setTotalCards(props.totalCards)
-    // props.setTotal({[props.info.cartId]:0})
-    // props.cost()
+        props.totalCards.pop()
+        props.setTotalCards(props.totalCards)
+        // props.setTotal({[props.info.cartId]:0})
+        // props.cost() 
         props.setTest(1)
       }
 
