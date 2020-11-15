@@ -25,7 +25,7 @@ export const insertRecommand = (value) => {
 export const insertRecommandAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/cartinsert";
-    const cartinsert={ goodsId: value, name:value, price:value, memberId:100 };
+    const cartinsert={ goodsId:value[0] ,name:value[1] ,price:value[2] ,memberId:100 };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(cartinsert),
@@ -213,7 +213,7 @@ export const getBuy = (value) => {
 export const getBuyAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/buy";
-    const order={ orderId: 110 };
+    const order={ orderId: 153 };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(order),
