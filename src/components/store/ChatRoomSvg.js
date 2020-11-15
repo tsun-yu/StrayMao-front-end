@@ -146,13 +146,13 @@ function ChatRoomSvg(props){
           </div>
 
           <div className="google">或登入  
-          <GoogleLogin
+          {/* <GoogleLogin
         clientId="948674925767-o40p7pthnhkp2quco9nvon70lfcu8624.apps.googleusercontent.com"
         buttonText="Login"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
         cookiePolicy={"single_host_origin"}
-      />
+      /> */}
           </div>
 
           <div className="chatEmail">
