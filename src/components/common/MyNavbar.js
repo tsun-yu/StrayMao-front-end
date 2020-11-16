@@ -151,6 +151,58 @@ function MyNavbar(props) {
                 </Nav.Link>
               </NavDropdown.Item>
             </NavDropdown>
+
+            {/* 會員中心 Start */}
+            <NavDropdown title="我的" id="basic-nav-dropdown">
+              <NavDropdown.Item>
+                <Nav.Link
+                  as={NavLink}
+                  to="/memberInfo"
+                  style={{ color: '#cb997e' }}
+                >
+                  基本資料
+                </Nav.Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Nav.Link
+                  as={NavLink}
+                  to="/petArea"
+                  style={{ color: '#cb997e' }}
+                >
+                  我的寶貝
+                </Nav.Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Nav.Link
+                  as={NavLink}
+                  to="/myComment"
+                  style={{ color: '#cb997e' }}
+                >
+                  我的評價
+                </Nav.Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Nav.Link
+                  as={NavLink}
+                  to="/socialTest"
+                  style={{ color: '#cb997e' }}
+                >
+                  訂單查詢
+                </Nav.Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Nav.Link
+                  as={NavLink}
+                  to="/myFavorite"
+                  style={{ color: '#cb997e' }}
+                >
+                  我的最愛
+                </Nav.Link>
+              </NavDropdown.Item>
+            </NavDropdown>
+            {/* 會員中心 End */}
+
+
           </Nav>
           <Nav className="mr-5">
             <div className=" ">
