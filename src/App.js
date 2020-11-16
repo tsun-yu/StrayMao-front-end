@@ -11,6 +11,10 @@ import AdoptionList from './components/adoption/AdopListPage'
 import AdoptionMain from './components/adoption/AdopMainPage'
 import AdoptionDetail from './components/adoption/AdopDetailPage'
 import CartTest from './components/cart/Test'
+import CartList from './components/cart/CartList'
+import Buy from './components/cart/Buy'
+import OrderList from './components/cart/OrderList'
+import Order from './components/cart/Order'
 import HomeTest from './components/homapage/Test'
 import MemberTest from './components/membership/Test'
 import SocialTest from './components/social_media/Test';
@@ -96,9 +100,25 @@ function App() {
               {/*要連線的網頁*/}
               <AdopFormPage4 />
             </Route>
+            <Route path="/CartList">
+              {/*要連線的網頁*/}
+              <CartList />
+            </Route>
             <Route path="/cartTest">
               {/*要連線的網頁*/}
               <CartTest />
+            </Route>
+            <Route path="/Buy">
+              {/*要連線的網頁*/}
+              <Buy />
+            </Route>
+            <Route path="/OrderList">
+              {/*要連線的網頁*/}
+              <OrderList />
+            </Route>
+            <Route path="/Order">
+              {/*要連線的網頁*/}
+              <Order />
             </Route>
             <Route path="/homeTest">
               {/*要連線的網頁*/}

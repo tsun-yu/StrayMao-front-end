@@ -137,7 +137,7 @@ useEffect(()=>{
         </div>
         <img
           className="cartlistC_goodsImg_An"
-          src="./image/store/brothcan-1-510x510.jpg"
+          src={props.info.goodsImgs}
         ></img>
         </div>
         <span className="cartlistC_goodsName_An">

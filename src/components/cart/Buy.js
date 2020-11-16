@@ -7,9 +7,9 @@ import { bindActionCreators } from "redux";
 import { getBuy, getBuyAsync, changeBuyAsync, updateOrderAsync } 
 from "../../actions/cart/index";
 function Buy(props) {
-    const [memberName, setMemberName] = useState(props.info[0].memberName)
-    const [mobile, setMobile] = useState(props.info[0].mobile)
-    const [address, setAddress] = useState(props.info[0].address)
+    const [memberName, setMemberName] = useState(props.id[0].memberName)
+    const [mobile, setMobile] = useState(props.id[0].mobile)
+    const [address, setAddress] = useState(props.id[0].address)
     
     // const [total, setTotal] = useState(0);
     const [dataLoading, setDataLoading] = useState(true);
@@ -21,10 +21,10 @@ function Buy(props) {
 
 
     const content = [];
-    let totalCards = props.info;
+    let totalCards = props.id;
 
     // const totalChange = ()=>{
-    //     total=total+(props.info.price*props.info.quantity);
+    //     total=total+(props.id.price*props.id.quantity);
     //     setTotal(total)
     //     props.changeBuyAsync(storeInfo)
     //   }
@@ -40,18 +40,20 @@ function Buy(props) {
       }
 
       const btnBuyClick = ()=>{
-        props.updateOrderAsync(props.info)
+        props.updateOrderAsync(props.id)
       }
     
     useEffect(() => {
-        props.getBuyAsync()
+        // props.getBuyAsync()
         
-        // console.log("info2: ",props.info[0].name)
     }, []);
 
     useEffect(() => {
+        console.log("1 : ",total)
+        console.log("2 : ",savedtotal)
         let newTotal ={...savedtotal,...total}
         setSavedTotal(newTotal);
+        console.log("3 : ",newTotal)
     }, [total]);
 
     useEffect(() => {
@@ -67,31 +69,24 @@ function Buy(props) {
 
 
     useEffect(() => {
-        setMemberName(props.info[0].memberName)
-        setMobile(props.info[0].mobile)
-        setAddress(props.info[0].address)
-        totalCards = props.info;
-        // console.log("totalcards:",totalCards)
-        if (totalCards.length > 0) {
+        setMemberName(props.id[0].memberName)
+        setMobile(props.id[0].mobile)
+        setAddress(props.id[0].address)
+        totalCards = props.id;
+        if (totalCards.length > 0 && props.id[0].memberName!=="") {
           // let tt = JSON.parse(totalCards[0]);
-          // console.log("totalCards: ", totalCards[0]);
-        }
-        for (
-                let i = 0;
-                i < totalCards.length;
-                i++
-            ) {
-                if (totalCards.length > 0) {
-                    // console.log(":",totalCards[i]);
-                    content.push(<BuyCardC info={totalCards[i]} key={i} index={i} setTotal={(value)=>setTotal(value)}  />);
+            
+            for (let i = 0;i < totalCards.length;i++) {
+                    if (totalCards.length > 0) {
+                        content.push(<BuyCardC info={totalCards[i]} key={i} index={i} setTotal={(value)=>setTotal(value)}  />);
+                    }
                 }
-            }
-            setDisplay(content)
-
+                setDisplay(content)
+        }
 
 setTimeout(() => setDataLoading(false), 1000);
-        // console.log("content:",content)
-    },[props.info])
+       
+    },[props.id])
     const loading = <div></div>;
 
   // 以資料載入的指示狀態來切換要出現的畫面
@@ -117,7 +112,7 @@ setTimeout(() => setDataLoading(false), 1000);
                 <div>
                     <span>收件人姓名</span>
                     <input className="buyC_input-green_An" type="text" placeholder="123" value={memberName} onChange={(event)=>memberNameChange(event)}/>
-                    {/* <input className="buyC_input-green_An" type="text" placeholder="123" value={props.info[0].memberName}/> */}
+                    {/* <input className="buyC_input-green_An" type="text" placeholder="123" value={props.id[0].memberName}/> */}
                 </div>
                 <div>
                     <span>連絡電話</span>
@@ -241,7 +236,8 @@ setTimeout(() => setDataLoading(false), 1000);
 }
 
 const mapStateToProps = (store) => {
-    return { info: store.cartReducer.getBuy };
+    return { info: store.cartReducer.getBuy,
+        id: store.cartReducer.getOrderId };
   };
 
   const mapDispatchToProps = dispatch =>{

@@ -25,7 +25,7 @@ export const insertRecommand = (value) => {
 export const insertRecommandAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/cartinsert";
-    const cartinsert={ goodsId:value[0] ,name:value[1] ,price:value[2] ,memberId:100 };
+    const cartinsert={ goodsId:value[0] ,name:value[1] ,price:value[2] ,goodsImgs:value[3] ,memberId:100 };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(cartinsert),
@@ -64,7 +64,7 @@ export const updateRecommand = (value) => {
 //更新購物車
 export const updateRecommandAsync = (value,cartId) => {
   return async function getRecommandCart(dispatch, getState) {
-    // console.log("cart : ", cartId)
+     console.log("JSON : ", JSON.stringify({value,cartId}))
     const url = "http://localhost:3001/straymao/cart/cartupdate";
     const request = new Request(url, {
       method: "POST",
@@ -78,9 +78,9 @@ export const updateRecommandAsync = (value,cartId) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      // console.log(data);
+      console.log("data = ",data);
 
-      // await dispatch(updateRecommand(data.data));
+      await dispatch(updateRecommand(data.data));
     } catch (error) {
       //setError(error)
     }
@@ -154,7 +154,7 @@ export const getRecommand = (value) => {
 export const getRecommandAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/cartlist";
-    const cartlist={ goodsId: value, memberId:100 };
+    const cartlist={ memberId:100 };
     const request = new Request(url, {
       method: "GET",
       // body: JSON.stringify(cartlist),
@@ -213,7 +213,7 @@ export const getBuy = (value) => {
 export const getBuyAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/buy";
-    const order={ orderId: 153 };
+    const order={ orderId: value };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(order),
