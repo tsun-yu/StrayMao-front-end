@@ -216,7 +216,7 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/">
               <i className="fas fa-search navIcon"></i>
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/memberTest">
+            <Nav.Link as={NavLink} to="/memberInfo">
               <div className="position-relative">
                 <i className="fas fa-user navIcon"></i>
                 <div className="animateHeart">
