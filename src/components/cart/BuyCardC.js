@@ -12,6 +12,9 @@ function BuyCardC(props) {
   useEffect(()=>{
     setQuantity(props.info.quantity);
     setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
+    console.log("props.storeInfo : ",props.storeInfo)
+    console.log("props.index : ",props.index)
+    console.log("total1 : ",props.storeInfo[props.index].quantity*props.info.price)
     if(props.info.cartId){
       props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
     }
@@ -19,12 +22,14 @@ function BuyCardC(props) {
     setTimeout(()=>{
       setQuantity(props.info.quantity);
       setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
+      // console.log("total2 : ",props.storeInfo[props.index].quantity*props.info.price)
     },1000)
 
   },[props])
 
   useEffect(()=>{
       setTotalPrice(props.storeInfo[props.index].quantity*props.info.price)
+      // console.log("total3 : ",props.storeInfo[props.index].quantity*props.info.price)
       if(props.info.cartId){
         props.setTotal({[props.info.cartId]:props.storeInfo[props.index].quantity*props.info.price})
       }
@@ -55,26 +60,6 @@ function BuyCardC(props) {
     // props.cost()
   }
 
-    // const minusOne = ()=>{
-    //     let storeInfo = props.storeInfo;
-    //     console.log('qqq',storeInfo[props.index].quantity);
-    //     storeInfo[props.index].quantity -= 1;
-    //     console.log('qqq22',storeInfo[props.index].quantity);
-    //     props.info.quantity = storeInfo[props.index].quantity;
-    //     setQuantity(storeInfo[props.index].quantity)
-    //     props.changeBuyAsync(storeInfo)
-    //   }
-    
-    //   const addOne = ()=>{
-    //     let storeInfo = props.storeInfo;
-    //     console.log('qqq',storeInfo[props.index].quantity);
-    //     storeInfo[props.index].quantity += 1;
-    //     console.log('qqq22',storeInfo[props.index].quantity);
-    //     props.info.quantity = storeInfo[props.index].quantity;
-    //     setQuantity(storeInfo[props.index].quantity)
-    //     props.changeBuyAsync(storeInfo)
-        
-    //   }
 
       const handleChange = (event)=>{
         setQuantity(event.target.value);
@@ -94,8 +79,10 @@ function BuyCardC(props) {
     useEffect(() => {
       setQuantity(props.info.quantity)
       props.getBuyAsync() 
-      console.log("info3: ",props.info.quantity)
+      // console.log("info3: ",props.info.quantity)
     }, []);
+    console.log("info :::,",props.info)
+    console.log(props.info.price*props.info.quantity)
 return(
 <>
 {props.test==1?"":
@@ -107,7 +94,7 @@ return(
                 <path id="Path_1811" data-name="Path 1811" d="M12.77,9.78a.94.94,0,0,0-.94.94h0V20a.95.95,0,0,0,1.89,0V10.72A.94.94,0,0,0,12.77,9.78Z"/>
             </svg>
         </div>
-        <img className="buyC_goodsImg_An" src="./image/store/brothcan-1-510x510.jpg"></img>
+        <img className="buyC_goodsImg_An" src={props.info.goodsImgs}></img>
         <span className="buyC_goodsName_An">{props.info.name}</span>
         <div className="buyC_inputbox_An d-flex">
             <div className="buyC_icon-067-minus_An" onClick={() => minusOne()}>
@@ -130,7 +117,7 @@ return(
 )}
 
 const mapStateToProps = (store) => {
-    return {storeInfo: store.cartReducer.getBuy};
+    return {storeInfo: store.cartReducer.getOrderId};
   };
 
   const mapDispatchToProps = dispatch =>{

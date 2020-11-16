@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/membership/custom.scss";
+import { Route, withRouter, NavLink, Switch, matchPath , Redirect, Link } from 'react-router-dom'
 
 function PasswordChange(props) {
 return(
 <>
-<div className="topicStyle">MEMBER</div>
+<div className="topicStyle">能給我個家嗎? 爸脫~</div>
 <div className="memberInfoBackground">
-    <div className="btn-group memberInfoTop2" role="group" aria-label="Basic example">
-        <button type="button" className="btn btn-primary memberBtnLeft">會員資料修改</button>
-        <button type="button" className="btn btn-primary memberBtnRight">密碼修改</button>
-    </div>
+  <div className="btn-group memberInfoTop2" role="group" aria-label="Basic example">
+      <button type="button"
+              className="btn btn-primary memberBtnLeft"
+              onClick={() => {
+                props.history.push('/memberInfo');
+              }}
+              >會員資料修改</button>
+      <button type="button" className="btn btn-primary memberBtnRight">密碼修改</button>
+  </div>
 
 
 <form className="passwordChangeForm">
@@ -42,4 +48,4 @@ return(
 </>
 )}
 
-export default PasswordChange
+export default withRouter(PasswordChange);

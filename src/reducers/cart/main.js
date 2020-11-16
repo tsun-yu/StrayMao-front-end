@@ -15,6 +15,17 @@ import {
   DELETE_ORDER
 } from "../../actions/cart/actionTypes";
 
+function getOrderId(state = [{memberName:"",mobile:"",address:""}], action) {
+  switch (action.type) {
+    case UPDATE_RECOM:
+      console.log('hi UPDATE_RECOM')
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
 function getRecom(state = 1, action) {
   switch (action.type) {
     case GET_RECOM:
@@ -102,5 +113,5 @@ function goodsHeart(state = false, action) {
   }
   return state;
 }
-export { getRecom, getOrderList, getOrder, deleteOrder, updateOrder, goodsHeart,getBuy  };
+export { getRecom, getOrderList, getOrder, deleteOrder, updateOrder, goodsHeart,getBuy ,getOrderId };
 // export default totalPage;

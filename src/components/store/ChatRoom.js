@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import "./styles.css";
 import GoogleLogin from "react-google-login";
+import ReactShare from "../../components/store/ReactShare"
 
 export default function App() {
   const [name, setName] = useState("");
@@ -14,6 +15,7 @@ export default function App() {
   };
   return (
     <div className="App">
+    <ReactShare />
       <h1>Login with google</h1>
       <h2>歡迎: {name}</h2>
       <h2>{email}</h2>

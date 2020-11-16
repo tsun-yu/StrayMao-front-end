@@ -3,10 +3,11 @@ import { connect } from "react-redux"
 import "../../styles/cart/cartlist.scss"
 import CartListCardC from "./CartListCardC"
 import CartListCardM from "./CartListCardM"
+import { withRouter, useHistory } from 'react-router-dom';
 
-import { getRecommand, getRecommandAsync,updateRecommandAsync, deleteRecommandsAsync } 
+import { getRecommand, getRecommandAsync,updateRecommandAsync, deleteRecommandsAsync, getBuyAsync } 
 from "../../actions/cart/index";
-function Main(props) {
+function CartList(props) {
     const [test,setTest] = useState(0)
     const [dataLoading, setDataLoading] = useState(true);
     const [display, setDisplay] = useState(<></>);
@@ -55,6 +56,7 @@ function Main(props) {
         })
         console.log("aaa: ",cartId)
         props.updateRecommandAsync(props.info,cartId)
+        props.history.push('/Buy');
       }
 
       const trashBtn = ()=>{
@@ -204,7 +206,7 @@ function Main(props) {
                     </div>
                     <span className="cartlistM_totalPrice_An">小計：{subTotal} 元</span>
                 </div>
-                <button className="cartlistM_btn-green_An" type="button" value="123">購買</button>
+                <a href=""><button className="cartlistM_btn-green_An" type="button" value="123" onClick={()=>{}}>購買</button></a>
             </div>
         </div>
     </div>
@@ -218,9 +220,9 @@ const mapStateToProps = (store) => {
   };
   const mapDispatchToProps = null;
   
-export default  connect(
+export default  withRouter(connect(
     mapStateToProps, {
-        getRecommand, getRecommandAsync,updateRecommandAsync, deleteRecommandsAsync 
-    })(Main)
+        getRecommand, getRecommandAsync,updateRecommandAsync, deleteRecommandsAsync,getBuyAsync 
+    })(CartList))
 
 // export default CartList

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react'
 import '../../styles/store/straymao.scss'
 import { connect } from 'react-redux'
@@ -34,7 +35,6 @@ function StoreCard(props) {
 
       <div className="card_new col-lg-3 col-md-6 col-sm-6">
         <a
-          href="##"
           onClick={() => {
             console.log('aaa:', props.item)
             props.goodsIdDetail(props.item.goodsId)

@@ -144,30 +144,33 @@ function StrayMaoP3(props) {
     let info =props.info
     console.log('info',info)
     let item = props.item
-    const arr = item.filter((e) => {return e.categoryId == info[0].categoryId&&e.goodsId != info[0].goodsId});
-    // console.log('arr: ',arr)
 
+    if(info!==1){
 
-    // if( arr!=1){
-    if (item.length > 0) {
-      // for (let i = 0; i < info.length; i++) {
-      for (let i = 0; i < 3; i++) {
-        content.push(
-          <StoreCard
-            item={{
-              goodsId: arr[i].goodsId,
-              goodsImgs: arr[i].goodsImgs,
-              name: arr[i].name,
-              price: arr[i].price,
-              pricing: arr[i].pricing,
-            }}
-          />
-        )
-        // console.log('1230',info2[i].goodsId)
+      const arr = item.filter((e) => {
+          return (e.categoryId === info[0].categoryId)&&(e.goodsId !== info[0].goodsId)
+      });
+      // console.log('arr: ',arr)
+  
+      if (item.length > 0) {
+        // for (let i = 0; i < info.length; i++) {
+        for (let i = 0; i < 3; i++) {
+          content.push(
+            <StoreCard
+              item={{
+                goodsId: arr[i].goodsId,
+                goodsImgs: arr[i].goodsImgs,
+                name: arr[i].name,
+                price: arr[i].price,
+                pricing: arr[i].pricing,
+              }}
+            />
+          )
+        }
+        setDisplay(content)
       }
-      setDisplay(content)
     }
-  //  }
+  
   },[props.info,props.item])
 
   
@@ -226,6 +229,7 @@ function StrayMaoP3(props) {
                 </button>
  );
 
+ console.log("aa : ",props.info)
 
   return (
     <>
@@ -337,7 +341,7 @@ function StrayMaoP3(props) {
                 </button> */}
                 {likeBtn}
                 <button className="btn-green" type="button" value="" onClick={() => {
-                  props.insertRecommandAsync([props.goodsIdDetail,props.info[0].name,props.info[0].price]);}}>
+                  props.insertRecommandAsync([props.goodsIdDetail,props.info[0].name,props.info[0].price,props.info[0].goodsImgs]);}}>
                   加入購物車
                 </button>
               </div>
@@ -404,11 +408,11 @@ function StrayMaoP3(props) {
         <div className="storeP3GuessYouLike">猜你喜歡</div>
       </div>
 
-      {/* <div class="container">
+      <div class="container">
         <div class="row" id="between">
           {display}
         </div>
-      </div> */}
+      </div>
     </>
   )
 }

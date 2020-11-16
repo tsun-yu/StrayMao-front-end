@@ -8,6 +8,7 @@ function ChatRoomSvg(props){
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [url, setUrl] = useState("");
+  const [submited, setSubmited] = useState(false);
 
   const responseGoogle = (response) => {
     setName(response.profileObj.name);
@@ -110,6 +111,7 @@ function ChatRoomSvg(props){
   </svg>
   )
 
+  useEffect(()=>console.log("res :  ",responseGoogle),[responseGoogle])
     return(
     <>
 {/* {(whichSVG === 1)?svg1:''}
@@ -122,39 +124,50 @@ function ChatRoomSvg(props){
 {(whichSVG === 1)?svg1:''}
 {(whichSVG === 2)?svg2:''}
 {(whichSVG === 3)?svg3:''}
-    <form action="" method="">
+
+{
+  whichSVG !== 3?"":
+  <form action="" method="GET">
     <div className="chat">
       <div className="chatBorder">
         <div className="chatTop">ヽ(✿ﾟ▽ﾟ)ノ StrayMao ヽ(✿ﾟ▽ﾟ)ノ</div>
+        
         <div className="chatContant">
-             
+      {submited===true?      
+        <input type="button"  className="chatBtn"  onClick={()=>{
+        setSubmited(false)
+        }}></input>
+          :   <>
           <div className="chatName">
             <label for="exampleFormControlInput1">姓名: <br /></label>
             <div className="chatName2">
             <div className="chatImg">
-              <img src={url==""?"/image/store/1584615665394.jpg":url} alt="" />
+              <img src={url===""?"/image/store/1584615665394.jpg":url} alt="" />
             </div>   
             <input
               type="text"
               className="form-control"
               id="exampleFormControlInput1"
               placeholder="您的名稱"
-              value={name==""?null:name}
+              value={name===""?null:name}
               required
             />
             </div>
           </div>
 
-          <div className="google">或登入  
-          {/* <GoogleLogin
-        clientId="948674925767-o40p7pthnhkp2quco9nvon70lfcu8624.apps.googleusercontent.com"
-        buttonText="Login"
-        onSuccess={responseGoogle}
-        onFailure={responseGoogle}
-        cookiePolicy={"single_host_origin"}
-      /> */}
+   {      name!==""?"": <div className="google">或登入  
+                <GoogleLogin
+              clientId="948674925767-o40p7pthnhkp2quco9nvon70lfcu8624.apps.googleusercontent.com"
+              buttonText="Login"
+              render={renderProps => (
+      <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
+    )}
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={"single_host_origin"}
+            />
           </div>
-
+}
           <div className="chatEmail">
             <label for="exampleFormControlInput1">e-mail: <br /></label>
             <input
@@ -173,17 +186,54 @@ function ChatRoomSvg(props){
             <textarea rows="4" cols="35" placeholder="請輸入您的訊息"></textarea>
           </div>
 
-          <input type="submit"  className="chatBtn" ></input>
+          <input type="button"  className="chatBtn"  onClick={()=>{
+
+            //fetch???
+            setSubmited(true)
+
+
+
+          }}></input>
+        
+        
+      
+      </>
+      }
         </div>
       </div>
     </div>
   </form>
+}
+
+
+
 </div>
 </div>
     </>
     )
 }
 
+
+const submitMsg = async () =>{
+  const url = 'http://localhost:3001/straymao/adoption/get_recom';
+
+  const request = new Request(url, {
+    method: 'GET',
+    headers: new Headers({
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    }),
+  });
+  try {
+    const response = await fetch(request);
+    const data = await response.json();
+    // data會是一個物件值
+    console.log(data.data);
+    
+  } catch (error) {
+    //setError(error)
+  }
+}
 const mapStateToProps = (store) => {
     return {}
   }
