@@ -13,7 +13,7 @@ function OrderList(props) {
     const content = [];
     let totalCards = props.info;
     useEffect(() => {
-        props.getOrderListAsync()
+        props.getOrderListAsync(100)
     }, []);
     useEffect(() => {
         totalCards = props.info;
@@ -25,26 +25,7 @@ function OrderList(props) {
           console.log("totalCards[0].data[0]: ", totalCards[0].data[0]);
          }
           
-        // }
-        for (
-            let i = 0;
-            i < totalCards.length;
-            i++
-        ) {
-            console.log("totalCards.length:",totalCards.length);
-            if (totalCards.length > 0) {
-                // content.push(<OrderListCardBoxC info={totalCards[i]} key={i} />);
 
-                // for(let j=0;
-                //     j<totalCards[i].data[j].length;
-                //     j++
-                // ){
-                //     if (totalCards[i].data[j].length > 0) {
-                //         content.push(<OrderListCardBoxC info={totalCards[i].data[j]} key={j} />);
-                //     }
-                // }
-            }
-        }
         console.log("content :　",content)
         setDisplay(totalCards)
 

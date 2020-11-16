@@ -14,6 +14,7 @@ import {
   UPDATE_ORDER,
   DELETE_ORDER,
   UPDATE_BUY,
+  GET_ORDERID
 } from "./actionTypes";
 
 //actionCreater
@@ -282,7 +283,7 @@ export const updateOrder = (value) => {
 export const updateOrderAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/orderupdate";
-    const order={ cartId:value[0] ,quantity:value[1] ,price:value[2] ,memberId:100 };
+    // const order={ cartId:value[0] ,quantity:value[1] ,totalPrice:[2] ,memberName:[3],moblie:[4],address:[5],memberId:100 };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(order),
@@ -342,7 +343,7 @@ export const getOrderList = (value) => {
 export const getOrderListAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/orderlist";
-    const orderlist={ orderId: value, memberId:100 };
+    const orderlist={ memberId: value };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(orderlist),
@@ -356,7 +357,7 @@ export const getOrderListAsync = (value) => {
       const data = await response.json();
       // data會是一個物件值
       // console.log('data:',data);
-      // console.log('data.data:',data.data);
+      console.log('data.data:',data.data);
       await dispatch(getOrderList(data.data));
     } catch (error) {
       //setError(error)
@@ -364,6 +365,16 @@ export const getOrderListAsync = (value) => {
   };
 };
 
+
+
+
+
+
+
+
+export const getOrderId = (value) => {
+  return { type: GET_ORDERID, value };
+};
 export const getOrder = (value) => {
   return { type: GET_ORDER, value };
 };
@@ -371,7 +382,7 @@ export const getOrder = (value) => {
 export const getOrderAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/order";
-    const order={ orderId: 111, memberId:value };
+    const order={ orderId: value, memberId:100 };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(order),
