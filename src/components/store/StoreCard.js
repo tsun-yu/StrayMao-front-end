@@ -12,13 +12,11 @@ import {
   getGoodsIdAsync,
   goodsIdDetail,
 } from '../../actions/store/index'
-import {
-  insertRecommandAsync
-} from '../../actions/cart/index'
+import { insertRecommandAsync } from '../../actions/cart/index'
 function StoreCard(props) {
   // const [item , setItem] = useState(props.item)
   const { item } = props
-    // console.log('item' ,item)
+  // console.log('item' ,item)
   const [test, setTest] = useState({})
   // const [display, setDisplay] = useState(0)
   // console.log('item:', item)
@@ -38,7 +36,7 @@ function StoreCard(props) {
           onClick={() => {
             console.log('aaa:', props.item)
             props.goodsIdDetail(props.item.goodsId)
-            props.history.push('/storeP3')
+            props.history.push(`/storeP3`)
           }}
         >
           <StoreHeart />
@@ -50,7 +48,7 @@ function StoreCard(props) {
           <div className="goodsText">
             <p>{item.name}</p>
             <span id="number">NT$ {item.price}</span>
-            <span id="number2">NT$ {item.pricing}</span>
+           {item.pricing>item.price?<span id="number2">NT$ {item.pricing}</span>:""}
 
             <StoreCart />
           </div>
@@ -75,6 +73,6 @@ export default withRouter(
   connect(mapStateToProps, {
     goodsIdDetail,
     getHotSaleAsync,
-    insertRecommandAsync
+    insertRecommandAsync,
   })(StoreCard)
 )
