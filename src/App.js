@@ -1,62 +1,63 @@
-import React, { useState, useEffect } from 'react'
-import MyNavbar from './components/common/MyNavbar'
-import HomeNavbar from './components/homapage/HP-component/HomeNavbar'
-import MyFooter from './components/common/MyFooter'
-import HomeFooter from './components/homapage/HP-component/HomeFooter'
-import MainContent from './components/common/MainContent'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import TestLink from './components/common/TestLink'
-import AdoptionTest from './components/adoption/Test'
-import AdoptionList from './components/adoption/AdopListPage'
-import AdoptionMain from './components/adoption/AdopMainPage'
-import AdoptionDetail from './components/adoption/AdopDetailPage'
-import CartTest from './components/cart/Test'
-import CartList from './components/cart/CartList'
-import Buy from './components/cart/Buy'
-import OrderList from './components/cart/OrderList'
-import Order from './components/cart/Order'
-import HomeTest from './components/homapage/Test'
+import React, { useState, useEffect } from 'react';
+import MyNavbar from './components/common/MyNavbar';
+import HomeNavbar from './components/homapage/HP-component/HomeNavbar';
+import MyFooter from './components/common/MyFooter';
+import HomeFooter from './components/homapage/HP-component/HomeFooter';
+import MainContent from './components/common/MainContent';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import TestLink from './components/common/TestLink';
+import AdoptionTest from './components/adoption/Test';
+import AdoptionList from './components/adoption/AdopListPage';
+import AdoptionMain from './components/adoption/AdopMainPage';
+import AdoptionDetail from './components/adoption/AdopDetailPage';
+import AdopMapPage from './components/adoption/AdopMapPage';
+import CartTest from './components/cart/Test';
+import CartList from './components/cart/CartList';
+import Buy from './components/cart/Buy';
+import OrderList from './components/cart/OrderList';
+import Order from './components/cart/Order';
+import HomeTest from './components/homapage/Test';
 
 // 會員中心
-import Member from './components/membership/Member'
+import Member from './components/membership/Member';
 
 import SocialTest from './components/social_media/Test';
 import SocialForum from './components/social_media/SocialForum';
 import AddForumCard from './components/social_media/AddForumCard';
-import StoreTest from './components/store/Test'
-import StrayMaoP2 from './components/store/StrayMaoP2'
-import StrayMaoP3 from './components/store/StrayMaoP3'
-import StrayMaoDogs from './components/store/StrayMaoDogs'
-import StrayMaoNews from './components/store/StrayMaoNews'
-import Try from './components/store/Try'
-import AdopFormPage from './components/adoption/AdopFormPage'
-import AdopFormPage2 from './components/adoption/AdopFormPage2'
-import AdopFormPage3 from './components/adoption/AdopFormPage3'
-import AdopFormPage4 from './components/adoption/AdopFormPage4'
-import Donate from './components/homapage/Donate'
-import ChatRoomSvg from './components/store/ChatRoomSvg'
-import ChatRoom from './components/store/ChatRoom'
+import StoreTest from './components/store/Test';
+import StrayMaoP2 from './components/store/StrayMaoP2';
+import StrayMaoP3 from './components/store/StrayMaoP3';
+import StrayMaoDogs from './components/store/StrayMaoDogs';
+import StrayMaoNews from './components/store/StrayMaoNews';
+import Try from './components/store/Try';
+import AdopFormPage from './components/adoption/AdopFormPage';
+import AdopFormPage2 from './components/adoption/AdopFormPage2';
+import AdopFormPage3 from './components/adoption/AdopFormPage3';
+import AdopFormPage4 from './components/adoption/AdopFormPage4';
+import Donate from './components/homapage/Donate';
+import ChatRoomSvg from './components/store/ChatRoomSvg';
+import ChatRoom from './components/store/ChatRoom';
 
 function App() {
-  const [navbar, setNavbar] = useState(<MyNavbar />)
-  const [footer, setFooter] = useState(<MyFooter />)
-  const [home, setHome] = useState(false)
+  const [navbar, setNavbar] = useState(<MyNavbar />);
+  const [footer, setFooter] = useState(<MyFooter />);
+  const [home, setHome] = useState(false);
 
   useEffect(() => {
     if (home) {
-      setNavbar(<HomeNavbar />)
+      setNavbar(<HomeNavbar />);
     } else {
-      setNavbar(<MyNavbar />)
+      setNavbar(<MyNavbar />);
     }
-  }, [home])
+  }, [home]);
 
   useEffect(() => {
     if (home) {
-      setFooter(<HomeFooter />)
+      setFooter(<HomeFooter />);
     } else {
-      setFooter(<MyFooter />)
+      setFooter(<MyFooter />);
     }
-  }, [home])
+  }, [home]);
 
   return (
     <Router>
@@ -65,7 +66,6 @@ function App() {
         <MainContent>
           <Switch>
             {/* 注意：要加上網址參數 */}
-
             <Route exact path="/"></Route>
             <Route path="/test">
               {/*要連線的網頁*/}
@@ -74,6 +74,11 @@ function App() {
             <Route path="/adoptionTest">
               {/*要連線的網頁*/}
               <AdoptionTest />
+            </Route>
+            <Route path="/adoptionMap">
+              {/*要連線的網頁*/}
+
+              <AdopMapPage />
             </Route>
             <Route path="/adoptionMain">
               {/*要連線的網頁*/}
@@ -131,34 +136,55 @@ function App() {
               {/*要連線的網頁*/}
               <Donate />
             </Route>
-
             {/*會員中心start*/}
-            <Route path="/member">
-              <Member />
-            </Route>
-            <Route path="/memberInfo">
-              <Member />
-            </Route>
-            <Route path="/signInForm">
-              <Member />
-            </Route>
-            <Route path="/myComment">
-              <Member />
-            </Route>
-            <Route path="/petArea">
-              <Member />
-            </Route>
-            <Route path="/registeredForm">
-              <Member />
-            </Route>
-            <Route path="/myFavorite">
-              <Member />
-            </Route>
-            <Route path="/passwordChange">
-              <Member />
-            </Route>
+            <Route path="/member">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/memberInfo">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/signInForm">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/myComment">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/petArea">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/registeredForm">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/myFavorite">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/passwordChange">
+                            
+              <Member />
+                          
+            </Route>
             {/*會員中心End*/}
-
             <Route path="/socialTest">
               {/*要連線的網頁*/}
               <SocialTest />
@@ -204,7 +230,7 @@ function App() {
         {footer}
       </>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

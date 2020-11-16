@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
-import { pervPage, gotoPage, nextPage } from "../../actions/common/index";
-import { nowPage } from "../../reducers/common/pageBar";
+import { pervPage, gotoPage, nextPage } from '../../actions/common/index';
+import { nowPage } from '../../reducers/common/pageBar';
 function PageBar(props) {
   const startPage = props.nowPage - 2 > 0 ? props.nowPage - 2 : -1;
   const endPage = props.nowPage + 2 <= props.totalPage ? props.nowPage + 2 : -1;
@@ -36,11 +36,11 @@ const contentManger = (start, nowPage, length, content, props) => {
   content.push(
     nowPage == 1 ? (
       <li key="start">
-        <a href="#" onClick={() => {}}></a>
+        <a onClick={() => {}}></a>
       </li>
     ) : (
       <li key="start">
-        <a href="#" onClick={() => props.pervPage()}>
+        <a onClick={() => props.pervPage()}>
           <i className="fas fa-caret-left fa-1x"></i>
         </a>
       </li>
@@ -50,11 +50,7 @@ const contentManger = (start, nowPage, length, content, props) => {
     if (i == nowPage) {
       content.push(
         <li key={i}>
-          <a
-            href="#"
-            className="pageBarActive"
-            onClick={() => props.gotoPage(i)}
-          >
+          <a className="pageBarActive" onClick={() => props.gotoPage(i)}>
             <span> {i} </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +116,7 @@ const contentManger = (start, nowPage, length, content, props) => {
     } else {
       content.push(
         <li key={i}>
-          <a href="#" onClick={() => props.gotoPage(i)}>
+          <a onClick={() => props.gotoPage(i)}>
             <span> {i} </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -188,11 +184,11 @@ const contentManger = (start, nowPage, length, content, props) => {
   content.push(
     nowPage == props.totalPage ? (
       <li key="end">
-        <a href="#" onClick={() => {}}></a>
+        <a onClick={() => {}}></a>
       </li>
     ) : (
       <li key="end">
-        <a href="#" onClick={() => props.nextPage()}>
+        <a onClick={() => props.nextPage()}>
           <i className="fas fa-caret-right fa-1x"></i>
         </a>
       </li>
