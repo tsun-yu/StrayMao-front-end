@@ -41,7 +41,7 @@ function Buy(props) {
       }
 
       const btnBuyClick = ()=>{
-        // props.updateOrderAsync([props.id[0].cartId,props.id[0].quantity,subTotal+40,memberName,mobile,address,])
+        // props.updateOrderAsync([props.id[0].cartId,props.id[0].quantity,subTotal+60,memberName,mobile,address,])
       }
     
     useEffect(() => {
