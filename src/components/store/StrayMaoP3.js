@@ -4,14 +4,14 @@ import '../../styles/store/straymaoP3.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
 import Share from 'social-share-react'
-import { withRouter, useHistory } from 'react-router-dom';
+import { withRouter, useHistory } from 'react-router-dom'
 import {
   goodsDisLikeAsync,
   goodsLikeAsync,
   goodsLike,
   goodsInitLikeAsync,
-  insertRecommandAsync
-} from '../../actions/cart/index';
+  insertRecommandAsync,
+} from '../../actions/cart/index'
 import {
   getListAsync,
   getGoodsIdAsync,
@@ -20,63 +20,66 @@ import {
 } from '../../actions/store/index'
 
 function StrayMaoP3(props) {
-
   let content = []
   const [display, setDisplay] = useState([])
 
-  
-  const [test,setTest] = useState(0)
-  const [aaa,setAaa] = useState(<button className="btn-addMyLove" type="button" value="" onClick={() => {
-    props.goodsLikeAsync(props.goodsIdDetail);
-    console.log('like!!!');
-    setTest(test+1)
-    // document.querySelector('.animateHeart>svg').classList.add('gogo');
-    // props.setIndex(props.index + 1);
-    // if (props.index === props.info.length - 1) {
-    //   props.setIndex(0);
-    // }
-    //#responsive-navbar-nav > div.mr-5.navbar-nav > a:nth-child(3) > div > div
-  }}>
-              加入願望清單
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14.668"
-                height="14.163"
-                viewBox="0 0 14.668 14.163"
-              >
-                <path
-                  id="Path_1698"
-                  data-name="Path 1698"
-                  d="M1158.688,665.922a3.1,3.1,0,0,0-3.336-2.368c-1.708-.011-3.474,1.719-3.561,4.28-.081,2.4,1.652,5.57,6.667,8.794,5.23-3.152,6.912-6.3,6.994-8.7.086-2.561-1.563-4.315-3.27-4.327a3.287,3.287,0,0,0-3.494,2.32"
-                  transform="translate(-1151.288 -663.054)"
-                  fill="none"
-                  stroke="#ed8f8f"
-                  stroke-width="1"
-                />
-              </svg>
-            </button>
-)
+  const [test, setTest] = useState(0)
+  const [aaa, setAaa] = useState(
+    <button
+      className="btn-addMyLove"
+      type="button"
+      value=""
+      onClick={() => {
+        props.goodsLikeAsync(props.goodsIdDetail)
+        console.log('like!!!')
+        setTest(test + 1)
+        // document.querySelector('.animateHeart>svg').classList.add('gogo');
+        // props.setIndex(props.index + 1);
+        // if (props.index === props.info.length - 1) {
+        //   props.setIndex(0);
+        // }
+        //#responsive-navbar-nav > div.mr-5.navbar-nav > a:nth-child(3) > div > div
+      }}
+    >
+      加入願望清單
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14.668"
+        height="14.163"
+        viewBox="0 0 14.668 14.163"
+      >
+        <path
+          id="Path_1698"
+          data-name="Path 1698"
+          d="M1158.688,665.922a3.1,3.1,0,0,0-3.336-2.368c-1.708-.011-3.474,1.719-3.561,4.28-.081,2.4,1.652,5.57,6.667,8.794,5.23-3.152,6.912-6.3,6.994-8.7.086-2.561-1.563-4.315-3.27-4.327a3.287,3.287,0,0,0-3.494,2.32"
+          transform="translate(-1151.288 -663.054)"
+          fill="none"
+          stroke="#ed8f8f"
+          stroke-width="1"
+        />
+      </svg>
+    </button>
+  )
   useEffect(() => {
     // console.log("props.info:",props.info)
     // props.goodsInitLikeAsync(props.info[props.index].goodsId);
     // console.log('like:', props.like);
-  }, []);
+  }, [])
   useEffect(() => {
     // props.goodsInitLikeAsync(props.info[props.index].goodsId);
     // console.log('like:', props.like);
-  }, [props.index]);
-  
+  }, [props.index])
 
   useEffect(() => {
     props.getListAsync()
     let id = props.goodsIdDetail ?? 1
-    console.log("id :",id);
+    // console.log('id :', id)
     // console.log("id :",id);
     props.getGoodsIdAsync(id)
     //getheart(id)
-    props.goodsInitLikeAsync(id);
-    console.log('like:', props.like);
- 
+    props.goodsInitLikeAsync(id)
+    console.log('like:', props.like)
+
     // let likeBtn = props.like ? (
     //   <button className="btn-addMyLove" type="button" value="" onClick={() => {
     //           props.goodsDisLikeAsync(props.goodsIdDetail);
@@ -132,29 +135,28 @@ function StrayMaoP3(props) {
     //                   </button>
     //    );
 
-      //  setAaa(likeBtn)
-
-  }, [props.goodsIdDetail,test])
+    //  setAaa(likeBtn)
+  }, [props.goodsIdDetail, test])
   // useEffect(() => {
   //   // console.log('info : ', props.info)
   // }, [props.info])
 
-  useEffect(()=>{
-
-    let info =props.info
-    console.log('info',info)
+  useEffect(() => {
+    let info = props.info
+    // console.log('info', info)
     let item = props.item
 
-    if(info!==1){
-
+    if (info !== 1) {
       const arr = item.filter((e) => {
-          return (e.categoryId === info[0].categoryId)&&(e.goodsId !== info[0].goodsId)
-      });
+        return (
+          e.categoryId === info[0].categoryId && e.goodsId !== info[0].goodsId
+        )
+      })
       // console.log('arr: ',arr)
-  
+
       if (item.length > 0) {
         // for (let i = 0; i < info.length; i++) {
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 3; i++) {          
           content.push(
             <StoreCard
               item={{
@@ -170,66 +172,75 @@ function StrayMaoP3(props) {
         setDisplay(content)
       }
     }
-  
-  },[props.info,props.item])
+  }, [props.info, props.item])
 
-  
   let likeBtn = props.like ? (
-<button className="btn-addMyLove" type="button" value="" onClick={() => {
-        props.goodsDisLikeAsync(props.goodsIdDetail);
-        console.log('dislike!!!');
-        setTest(test+1)}}>
-                  移除願望清單
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14.668"
-                    height="14.163"
-                    viewBox="0 0 14.668 14.163"
-                  >
-                    <path
-                      id="Path_1698"
-                      data-name="Path 1698"
-                      d="M1158.688,665.922a3.1,3.1,0,0,0-3.336-2.368c-1.708-.011-3.474,1.719-3.561,4.28-.081,2.4,1.652,5.57,6.667,8.794,5.23-3.152,6.912-6.3,6.994-8.7.086-2.561-1.563-4.315-3.27-4.327a3.287,3.287,0,0,0-3.494,2.32"
-                      transform="translate(-1151.288 -663.054)"
-                      fill="#ed8f8f"
-                      stroke="#ed8f8f"
-                      stroke-width="1"
-                    />
-                  </svg>
-                </button>
-                  ) : (
-<button className="btn-addMyLove" type="button" value="" onClick={() => {
-        props.goodsLikeAsync(props.goodsIdDetail);
-        console.log('like!!!');
-        setTest(test+1)
+    <button
+      className="btn-addMyLove"
+      type="button"
+      value=""
+      onClick={() => {
+        props.goodsDisLikeAsync(props.goodsIdDetail)
+        console.log('dislike!!!')
+        setTest(test + 1)
+      }}
+    >
+      移除願望清單
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14.668"
+        height="14.163"
+        viewBox="0 0 14.668 14.163"
+      >
+        <path
+          id="Path_1698"
+          data-name="Path 1698"
+          d="M1158.688,665.922a3.1,3.1,0,0,0-3.336-2.368c-1.708-.011-3.474,1.719-3.561,4.28-.081,2.4,1.652,5.57,6.667,8.794,5.23-3.152,6.912-6.3,6.994-8.7.086-2.561-1.563-4.315-3.27-4.327a3.287,3.287,0,0,0-3.494,2.32"
+          transform="translate(-1151.288 -663.054)"
+          fill="#ed8f8f"
+          stroke="#ed8f8f"
+          stroke-width="1"
+        />
+      </svg>
+    </button>
+  ) : (
+    <button
+      className="btn-addMyLove"
+      type="button"
+      value=""
+      onClick={() => {
+        props.goodsLikeAsync(props.goodsIdDetail)
+        console.log('like!!!')
+        setTest(test + 1)
         // document.querySelector('.animateHeart>svg').classList.add('gogo');
         // props.setIndex(props.index + 1);
         // if (props.index === props.info.length - 1) {
         //   props.setIndex(0);
         // }
         //#responsive-navbar-nav > div.mr-5.navbar-nav > a:nth-child(3) > div > div
-      }}>
-                  加入願望清單
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14.668"
-                    height="14.163"
-                    viewBox="0 0 14.668 14.163"
-                  >
-                    <path
-                      id="Path_1698"
-                      data-name="Path 1698"
-                      d="M1158.688,665.922a3.1,3.1,0,0,0-3.336-2.368c-1.708-.011-3.474,1.719-3.561,4.28-.081,2.4,1.652,5.57,6.667,8.794,5.23-3.152,6.912-6.3,6.994-8.7.086-2.561-1.563-4.315-3.27-4.327a3.287,3.287,0,0,0-3.494,2.32"
-                      transform="translate(-1151.288 -663.054)"
-                      fill="none"
-                      stroke="#ed8f8f"
-                      stroke-width="1"
-                    />
-                  </svg>
-                </button>
- );
+      }}
+    >
+      加入願望清單
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14.668"
+        height="14.163"
+        viewBox="0 0 14.668 14.163"
+      >
+        <path
+          id="Path_1698"
+          data-name="Path 1698"
+          d="M1158.688,665.922a3.1,3.1,0,0,0-3.336-2.368c-1.708-.011-3.474,1.719-3.561,4.28-.081,2.4,1.652,5.57,6.667,8.794,5.23-3.152,6.912-6.3,6.994-8.7.086-2.561-1.563-4.315-3.27-4.327a3.287,3.287,0,0,0-3.494,2.32"
+          transform="translate(-1151.288 -663.054)"
+          fill="none"
+          stroke="#ed8f8f"
+          stroke-width="1"
+        />
+      </svg>
+    </button>
+  )
 
- console.log("aa : ",props.info)
+  // console.log('aa : ', props.info)
 
   return (
     <>
@@ -290,12 +301,12 @@ function StrayMaoP3(props) {
                 </div>
 
                 <div className="starAndComment">
-                  <div className="fakePrice">
+                  {props.info[0].pricing>props.info[0].price?<div className="fakePrice">
                     NT${' '}
                     {props.info === 1
                       ? 'wait for loading'
                       : props.info[0].pricing}
-                  </div>
+                  </div>:<div className="fakePrice"></div>}
                   <div className="comment">
                     4.0分｜<a href="">2個評價</a>
                   </div>
@@ -340,8 +351,18 @@ function StrayMaoP3(props) {
                   </svg>
                 </button> */}
                 {likeBtn}
-                <button className="btn-green" type="button" value="" onClick={() => {
-                  props.insertRecommandAsync([props.goodsIdDetail,props.info[0].name,props.info[0].price]);}}>
+                <button
+                  className="btn-green"
+                  type="button"
+                  value=""
+                  onClick={() => {
+                    props.insertRecommandAsync([
+                      props.goodsIdDetail,
+                      props.info[0].name,
+                      props.info[0].price,
+                    ])
+                  }}
+                >
                   加入購物車
                 </button>
               </div>
@@ -423,19 +444,19 @@ const mapStateToProps = (store) => {
     goodsIdDetail: store.storeReducer.goodsIdDetail,
     item: store.storeReducer.getStoreList,
     // petDetailId: store.adoptReducer.petDetailId,
-    like: store.cartReducer.goodsHeart
+    like: store.cartReducer.goodsHeart,
   }
 }
 const mapDispatchToProps = null
 
 export default withRouter(
-  connect(mapStateToProps, { 
-  getGoodsIdAsync,
-  getListAsync,
-  goodsDisLikeAsync,
-  goodsLikeAsync,
-  goodsLike,
-  goodsInitLikeAsync, 
-  insertRecommandAsync
-})(StrayMaoP3)
-);
+  connect(mapStateToProps, {
+    getGoodsIdAsync,
+    getListAsync,
+    goodsDisLikeAsync,
+    goodsLikeAsync,
+    goodsLike,
+    goodsInitLikeAsync,
+    insertRecommandAsync,
+  })(StrayMaoP3)
+)

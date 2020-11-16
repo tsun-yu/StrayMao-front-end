@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { withRouter, useHistory } from 'react-router-dom'
 import MyNavbar from './components/common/MyNavbar'
 import HomeNavbar from './components/homapage/HP-component/HomeNavbar'
 import MyFooter from './components/common/MyFooter'
@@ -13,9 +14,9 @@ import AdoptionDetail from './components/adoption/AdopDetailPage'
 import CartTest from './components/cart/Test'
 import HomeTest from './components/homapage/Test'
 import MemberTest from './components/membership/Test'
-import SocialTest from './components/social_media/Test';
-import SocialForum from './components/social_media/SocialForum';
-import AddForumCard from './components/social_media/AddForumCard';
+import SocialTest from './components/social_media/Test'
+import SocialForum from './components/social_media/SocialForum'
+import AddForumCard from './components/social_media/AddForumCard'
 import StoreTest from './components/store/Test'
 import StrayMaoP2 from './components/store/StrayMaoP2'
 import StrayMaoP3 from './components/store/StrayMaoP3'
@@ -29,8 +30,9 @@ import AdopFormPage4 from './components/adoption/AdopFormPage4'
 import Donate from './components/homapage/Donate'
 import ChatRoomSvg from './components/store/ChatRoomSvg'
 import ChatRoom from './components/store/ChatRoom'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
-function App() {
+function App(props) {
   const [navbar, setNavbar] = useState(<MyNavbar />)
   const [footer, setFooter] = useState(<MyFooter />)
   const [home, setHome] = useState(false)

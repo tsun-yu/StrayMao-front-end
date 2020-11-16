@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 // import "./styles.css";
-import GoogleLogin from "react-google-login";
-import ReactShare from "../../components/store/ReactShare"
+import GoogleLogin from 'react-google-login'
+import ReactShare from '../../components/store/ReactShare'
 
 export default function App() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [url, setUrl] = useState("");
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [url, setUrl] = useState('')
 
   const responseGoogle = (response) => {
-    setName(response.profileObj.name);
-    setEmail(response.profileObj.email);
-    setUrl(response.profileObj.imageUrl);
-  };
+    setName(response.profileObj.name)
+    setEmail(response.profileObj.email)
+    setUrl(response.profileObj.imageUrl)
+  }
   return (
     <div className="App">
-    <ReactShare />
+      <ReactShare />
       <h1>Login with google</h1>
       <h2>歡迎: {name}</h2>
       <h2>{email}</h2>
@@ -27,9 +27,8 @@ export default function App() {
         buttonText="Login"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
-        cookiePolicy={"single_host_origin"}
+        cookiePolicy={'single_host_origin'}
       />
-
     </div>
-  );
+  )
 }

@@ -84,3 +84,21 @@ input::placeholder {
 textarea::placeholder {
   font-size: 0.75rem;
 }
+#root
+  > main
+  > div
+  > div.chatCircle
+  > div
+  > form
+  > div
+  > div
+  > div.chatContant
+  > div.google
+  > a {
+  margin-left: 5px;
+}
+
+//提交後畫面
+.closedBtn {
+  display: inline;
+}
