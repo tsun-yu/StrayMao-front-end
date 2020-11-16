@@ -51,10 +51,6 @@
 .page3circle:hover {
   border: #cb997e solid 0.125rem;
 }
-// .page3circle:hover svg {
-//   fill: #cb997e;
-//   transition: 0.5s;
-// }
 
 .a:hover {
   text-decoration: none;
@@ -128,12 +124,16 @@
   height: 1.5rem;
   border-radius: 50%;
   margin: 0 0.5rem;
-  // background-color: rgba(255, 255, 255, 0.6);
 }
 .slider-dots li:hover {
   background-color: rgba(203, 153, 126, 0.6);
 }
-
+.dotSelected {
+  background-color: rgba(203, 153, 126, 1);
+}
+.dotUnselected {
+  background-color: rgba(255, 255, 255, 0.6);
+}
 .forward {
   width: 10vw;
   height: 87vh;
@@ -142,9 +142,7 @@
   z-index: 1;
   transition: 0.5s;
 }
-// .forward:hover {
-//   background-color: #fff1e636;
-// }
+
 .forward:hover .forward2 {
   display: none;
 }
@@ -166,15 +164,7 @@
   z-index: 1;
   transition: 0.5s;
 }
-// .back:hover {
-//   background-color: #fff1e636;
-// }
-.dotSelected {
-  background-color: rgba(203, 153, 126, 1);
-}
-.dotUnselected {
-  background-color: rgba(255, 255, 255, 0.6);
-}
+
 .arrow {
   font-family: $fontType3;
   color: #fff1e6;
