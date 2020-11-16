@@ -8,9 +8,8 @@ function AdopMainReadMore(props) {
     <>
       <div className="d-flex flex-row mx-auto adoptReadMore ">
         <a
-          href="#"
           onClick={() => {
-            props.petDetailId(props.info.petId);
+            props.petDetailId(props.info[props.index].petId);
             props.history.push('/adoptiondetail');
           }}
         >

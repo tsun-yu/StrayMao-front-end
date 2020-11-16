@@ -1,277 +1,278 @@
 @import "~bootstrap/scss/bootstrap.scss";
- 
+
 .storeP3 {
-    margin: auto;
-    margin-bottom: 6rem;
-  }
-  
-  .storeP3Img {
-    width: 24rem;
-    height: 21rem;
-    margin-top: 8rem;
-    /* margin: 8rem 0rem 8rem 7.5rem; */
-  }
-  
-  .storeP3Description {
-    margin: 8rem 0rem 0rem 7.5rem;
-  }
-  
-  .storeP3Title {
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #555555;
-    margin-bottom: 0.75rem;
-  }
-  
-  .storeP3Stock {
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-size: 0.75rem;
-    font-weight: 350;
-    color: #555555;
-    margin-bottom: 1.875rem;
-  }
-  
-  .dot {
-    width: 0.5rem;
-    height: 0.5rem;
-    background-color: #2edb0f;
-    border-radius: 50%;
-    margin-right: 0.5rem;
-    margin-top: 0.3rem;
-  }
-  
-  .storeP3Transport {
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-size: 0.75rem;
-    font-weight: 350;
-    color: #555555;
-    margin-bottom: 1.875rem;
-    border-left: 2px solid #777b5a;
-    padding-left: 0.5rem;
-  }
-  
-  /* .storeP3Price {
+  margin: auto;
+  margin-bottom: 6rem;
+}
+
+.storeP3Img {
+  width: 24rem;
+  height: 21rem;
+  margin-top: 8rem;
+  /* margin: 8rem 0rem 8rem 7.5rem; */
+}
+
+.storeP3Description {
+  margin: 8rem 0rem 0rem 7.5rem;
+}
+
+.storeP3Title {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #555555;
+  margin-bottom: 0.75rem;
+}
+
+.storeP3Stock {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 0.75rem;
+  font-weight: 350;
+  color: #555555;
+  margin-bottom: 1.875rem;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #2edb0f;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.storeP3Transport {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 0.75rem;
+  font-weight: 350;
+  color: #555555;
+  margin-bottom: 1.875rem;
+  border-left: 2px solid #777b5a;
+  padding-left: 0.5rem;
+}
+
+/* .storeP3Price {
     justify-content: space-between;
   } */
-  
-  .realPrice {
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-size: 1rem;
-    font-weight: 350;
-    color: #555555;
-  }
-  
-  .fakePrice {
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-size: 0.75rem;
-    font-weight: 350;
-    color: #555555;
-    margin: auto auto 0.5rem;
-    text-decoration: line-through;
-  }
-  
-  .starAndComment {
-    padding-top: 0.15rem;
-    margin-left: 0.5rem;
-  }
-  
-  /* 星星 */
-  .icon-004-star {
-    fill: #d1d1d1;
-    width: 1.4rem;
-    height: 1rem;
-    margin-left: -0.1rem;
-    margin-bottom: 0%;
-  }
-  .icon-004-star:hover {
-    fill: #ed8f8f;
-    cursor: pointer;
-  }
-  
-  .icon-005-star {
-    fill: #ed8f8f;
-    width: 1rem;
-    height: 1rem;
-    margin-right: -0.3rem;
-  }
-  .icon-005-star:hover {
-    cursor: pointer;
-  }
-  
-  .comment {
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-size: 0.75rem;
-    font-weight: 350;
-    color: #555555;
-    margin: auto;
-  }
-  
-  .storeP3Discount {
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-size: 0.75rem;
-    font-weight: 350;
-    color: #555555;
-    margin: 1.25rem auto 1rem;
-  }
-  
-  /* 數量輸入欄&加減按鈕 */
-  .inputbox {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.25rem;
-  }
-  
-  .icon-067-minus {
-    fill: #707070;
-    width: 1rem;
-    height: 1rem;
-    margin-bottom: -0.6rem;
-  }
-  .icon-067-minus:hover {
-    fill: #cb997e;
-    cursor: pointer;
-  }
-  
-  .icon-021-plus {
-    fill: #707070;
-    width: 1rem;
-    height: 1rem;
-    margin-bottom: -0.2rem;
-  }
-  .icon-021-plus:hover {
-    fill: #cb997e;
-    cursor: pointer;
-  }
-  
-  .input-black {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 0.75rem;
-    border: solid 0.08rem #707070;
-    text-align: center;
-    color: #707070;
-    font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
-      monospace, serif;
-    margin: 0px 3.5rem;
-  }
-  .input-black:focus {
-    outline: none;
-  }
-  
-  .storeP3BTN {
-    justify-content: space-around;
-  }
-  
-  .btn-addMyLove {
-    width: 8.75rem;
-    height: 2.3rem;
-    /* padding: 0.5rem 2rem; */
-    border-radius: 0.2rem;
-    font-size: 0.75rem;
-    border: 1px solid #cb997e;
-    color: #cb997e;
-    background-color: #fffffd;
-    cursor: pointer;
-    text-align: center;
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    margin-right: 1.875rem;
-    transition: 0.3s;
-  }
-  
-  .btn-addMyLove:hover {
-    /* background-color:#CB997E;
-    color: #FFFFFD; */
-    border: 2px solid #cb997e;
-    font-weight: 1000;
-  }
-  
-  /* 小按鈕(綠) */
-  .btn-green {
-    /* #A5A58D*/
-    width: 8.75rem;
-    /* padding: 0.5rem 2rem; */
-    border-radius: 0.2rem;
-    font-size: 0.75rem;
-    border: none;
-    color: #fffffd;
-    background-color: #a5a58d;
-    cursor: pointer;
-    text-align: center;
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    transition: 0.3s;
-  }
-  .btn-green:hover {
-    background-color: #b7b7a4;
-  }
-  .btn-green:active {
-    background-color: #777b5a;
-  }
-  .btn-green:focus {
-    background-color: #777b5a;
-    outline: none;
-  }
-  
-  .goodsDescription {
-    width: 25rem;
-    margin: 7.5rem auto;
-    border-bottom: 1px solid #e0dfde;
-  }
-  
-  .goodsDescriptionTitle {
-    margin: auto;
-    border-bottom: 1px solid #777b5a;
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-weight: 500;
-    font-size: 0.88rem;
-  }
-  
-  .goodsDescriptionTitle > a {
-    text-decoration: none;
-    color: #555555;
-  }
-  
-  .goodsDescriptionLine {
-    border-bottom: 1px solid #777b5a;
-    margin-bottom: 5rem;
-  }
-  
-  .goodsDescriptionLittleTitle{
-    margin: 0 auto 1.2rem auto;
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-weight: 400;
-    font-size: 1rem;
-  }
-  
-  .goodsDescriptionLittleWords{
-    margin:0px auto 8.25rem;
-    text-align: center;
-    line-height: 2.5rem;
-  }
-  
-  .storeP3GuessYouLike{
-    margin:0 auto 2.84rem;
-    border-bottom: 1px solid #777b5a;
-    font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
-      monospace, serif;
-    font-weight: 400;
-    font-size: 1rem;
-    padding-bottom: 0.2rem;
-  }
 
-  #between {
-    justify-content: space-around;
-  }
-  
+.realPrice {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 1rem;
+  font-weight: 350;
+  color: #555555;
+}
+
+.fakePrice {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 0.75rem;
+  font-weight: 350;
+  color: #555555;
+  margin: auto auto 0.5rem;
+  text-decoration: line-through;
+  min-height: 17.6px;
+}
+
+.starAndComment {
+  padding-top: 0.15rem;
+  margin-left: 0.5rem;
+}
+
+/* 星星 */
+.icon-004-star {
+  fill: #d1d1d1;
+  width: 1.4rem;
+  height: 1rem;
+  margin-left: -0.1rem;
+  margin-bottom: 0%;
+}
+.icon-004-star:hover {
+  fill: #ed8f8f;
+  cursor: pointer;
+}
+
+.icon-005-star {
+  fill: #ed8f8f;
+  width: 1rem;
+  height: 1rem;
+  margin-right: -0.3rem;
+}
+.icon-005-star:hover {
+  cursor: pointer;
+}
+
+.comment {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 0.75rem;
+  font-weight: 350;
+  color: #555555;
+  margin: auto;
+}
+
+.storeP3Discount {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-size: 0.75rem;
+  font-weight: 350;
+  color: #555555;
+  margin: 1.25rem auto 1rem;
+}
+
+/* 數量輸入欄&加減按鈕 */
+.inputbox {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.icon-067-minus {
+  fill: #707070;
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: -0.6rem;
+}
+.icon-067-minus:hover {
+  fill: #cb997e;
+  cursor: pointer;
+}
+
+.icon-021-plus {
+  fill: #707070;
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: -0.2rem;
+}
+.icon-021-plus:hover {
+  fill: #cb997e;
+  cursor: pointer;
+}
+
+.input-black {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  border: solid 0.08rem #707070;
+  text-align: center;
+  color: #707070;
+  font-family: "Roboto-Regular", "Microsoft JhengHei", "Noto_Serif_TC-Regular",
+    monospace, serif;
+  margin: 0px 3.5rem;
+}
+.input-black:focus {
+  outline: none;
+}
+
+.storeP3BTN {
+  justify-content: space-around;
+}
+
+.btn-addMyLove {
+  width: 8.75rem;
+  height: 2.3rem;
+  /* padding: 0.5rem 2rem; */
+  border-radius: 0.2rem;
+  font-size: 0.75rem;
+  border: 1px solid #cb997e;
+  color: #cb997e;
+  background-color: #fffffd;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  margin-right: 1.875rem;
+  transition: 0.3s;
+}
+
+.btn-addMyLove:hover {
+  /* background-color:#CB997E;
+    color: #FFFFFD; */
+  border: 2px solid #cb997e;
+  font-weight: 1000;
+}
+
+/* 小按鈕(綠) */
+.btn-green {
+  /* #A5A58D*/
+  width: 8.75rem;
+  /* padding: 0.5rem 2rem; */
+  border-radius: 0.2rem;
+  font-size: 0.75rem;
+  border: none;
+  color: #fffffd;
+  background-color: #a5a58d;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  transition: 0.3s;
+}
+.btn-green:hover {
+  background-color: #b7b7a4;
+}
+.btn-green:active {
+  background-color: #777b5a;
+}
+.btn-green:focus {
+  background-color: #777b5a;
+  outline: none;
+}
+
+.goodsDescription {
+  width: 25rem;
+  margin: 7.5rem auto;
+  border-bottom: 1px solid #e0dfde;
+}
+
+.goodsDescriptionTitle {
+  margin: auto;
+  border-bottom: 1px solid #777b5a;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-weight: 500;
+  font-size: 0.88rem;
+}
+
+.goodsDescriptionTitle > a {
+  text-decoration: none;
+  color: #555555;
+}
+
+.goodsDescriptionLine {
+  border-bottom: 1px solid #777b5a;
+  margin-bottom: 5rem;
+}
+
+.goodsDescriptionLittleTitle {
+  margin: 0 auto 1.2rem auto;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.goodsDescriptionLittleWords {
+  margin: 0px auto 9rem;
+  text-align: center;
+  line-height: 2.5rem;
+  word-wrap: Normal;
+}
+
+.storeP3GuessYouLike {
+  margin: 0 auto 2.84rem;
+  border-bottom: 1px solid #777b5a;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-bottom: 0.2rem;
+}
+
+#between {
+  justify-content: space-around;
+}

@@ -155,8 +155,8 @@ function Page3(props) {
       .querySelectorAll('#root > main > div > div:nth-child(5) > div > ul > li')
       .forEach((e) => {
         // e.style.backgroundColor = 'rgba(255, 255, 255, 0.6)'
-        e.classList.remove('aaaa')
-        e.classList.add('bbbb')
+        e.classList.remove('dotSelected')
+        e.classList.add('dotUnselected')
       })
     // document.querySelector(
     //   `#root > main > div > div:nth-child(5) > div > ul > li:nth-child(${dot})`
@@ -166,12 +166,12 @@ function Page3(props) {
       .querySelector(
         `#root > main > div > div:nth-child(5) > div > ul > li:nth-child(${dot})`
       )
-      .classList.remove('bbbb')
+      .classList.remove('dotUnselected')
     document
       .querySelector(
         `#root > main > div > div:nth-child(5) > div > ul > li:nth-child(${dot})`
       )
-      .classList.add('aaaa')
+      .classList.add('dotSelected')
   }, [dot])
 
   return (

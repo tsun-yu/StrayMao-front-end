@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, useHistory } from 'react-router-dom';
+import { getAdopPetAsync } from '../../actions/adoption/index';
 function AdopFormPage3(props) {
   const [display, setDisplay] = useState(<></>);
 
@@ -213,6 +214,8 @@ function AdopFormPage3(props) {
                   type="button"
                   value="123"
                   onClick={() => {
+                    props.getAdopPetAsync(props.id);
+                    console.log('111111');
                     props.history.push('/adoptionform4');
                   }}
                 >
@@ -229,8 +232,10 @@ function AdopFormPage3(props) {
 }
 
 const mapStateToProps = (store) => {
-  return {};
+  return { id: store.adoptReducer.adopId };
 };
 const mapDispatchToProps = null;
 
-export default withRouter(connect(mapStateToProps, {})(AdopFormPage3));
+export default withRouter(
+  connect(mapStateToProps, { getAdopPetAsync })(AdopFormPage3)
+);
