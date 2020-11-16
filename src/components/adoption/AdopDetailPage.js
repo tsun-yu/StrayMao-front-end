@@ -10,6 +10,8 @@ import {
   getDetailAsync,
   getRecommand,
   getRecommandAsync,
+  setAdopId,
+  getAdopId,
 } from '../../actions/adoption/index';
 function AdopDetailPage(props) {
   useEffect(() => {
@@ -39,6 +41,7 @@ function AdopDetailPage(props) {
         type="button"
         value="123"
         onClick={() => {
+          props.setAdopId(props.info[0].petId);
           props.history.push('/adoptionform');
         }}
       >
@@ -61,5 +64,7 @@ export default withRouter(
     getDetailAsync,
     getRecommand,
     getRecommandAsync,
+    setAdopId,
+    getAdopId,
   })(AdopDetailPage)
 );

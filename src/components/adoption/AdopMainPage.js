@@ -29,7 +29,7 @@ function AdopMainPage(props) {
         </div>
         <div className="col">
           <AdopMainInfo info={props.info} index={index}>
-            <AdopMainReadMore info={props.info} />
+            <AdopMainReadMore info={props.info} index={index} />
           </AdopMainInfo>
         </div>
       </div>

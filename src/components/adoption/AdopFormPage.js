@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, useHistory } from 'react-router-dom';
+
+import { setAdopId, getAdopId } from '../../actions/adoption/index';
 function AdopFormPage(props) {
   const [display, setDisplay] = useState(<></>);
 
@@ -9,6 +11,7 @@ function AdopFormPage(props) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    console.log(props.id);
   }, []);
   // 以資料載入的指示狀態來切換要出現的畫面
   return (
@@ -160,8 +163,10 @@ function AdopFormPage(props) {
 }
 
 const mapStateToProps = (store) => {
-  return {};
+  return { id: store.adoptReducer.adopId };
 };
 const mapDispatchToProps = null;
 
-export default withRouter(connect(mapStateToProps, {})(AdopFormPage));
+export default withRouter(
+  connect(mapStateToProps, { setAdopId, getAdopId })(AdopFormPage)
+);
