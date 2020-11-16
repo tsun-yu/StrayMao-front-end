@@ -23,7 +23,7 @@ function SocialHomeforum(props) {
               </div>
             </div>
             <div className="row socialforumCardItems no-gutters">
-              <ForumListCard />
+              {/* <ForumListCard /> */}
               {/* 這邊要放卡片元件 */}
               {/* <div className="singleRankCard">
                 <div className="socialforumCard">
