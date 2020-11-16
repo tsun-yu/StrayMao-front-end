@@ -44,7 +44,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/adoptionTest"
-                  style={{ color: '#a5a58d' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   領養首頁
                 </Nav.Link>
@@ -53,7 +53,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/adoptionTest"
-                  style={{ color: '#a5a58d' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   最新商品
                 </Nav.Link>
@@ -62,7 +62,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/adoptionTest"
-                  style={{ color: '#a5a58d' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   喵咪專區
                 </Nav.Link>
@@ -71,7 +71,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/adoptionTest"
-                  style={{ color: '#a5a58d' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   狗勾專區
                 </Nav.Link>
@@ -81,7 +81,11 @@ function MyNavbar(props) {
             <NavDropdown title="商城" id="basic-nav-dropdown">
               <NavDropdown.Item className="hvr-sweep-to-right">
                 {' '}
-                <Nav.Link as={NavLink} to="/store" style={{ color: '#a5a58d' }}>
+                <Nav.Link
+                  as={NavLink}
+                  to="/store"
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
+                >
                   商城首頁
                 </Nav.Link>
               </NavDropdown.Item>
@@ -89,7 +93,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/storeNews"
-                  style={{ color: '#a5a58d' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   最新商品
                 </Nav.Link>
@@ -98,7 +102,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/storeCats"
-                  style={{ color: '#a5a58d' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   喵咪專區
                 </Nav.Link>
@@ -107,7 +111,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/storeDogs"
-                  style={{ color: '#a5a58d' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   狗勾專區
                 </Nav.Link>
@@ -118,7 +122,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/socialTest"
-                  style={{ color: '#a5a58d' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   商城首頁
                 </Nav.Link>
@@ -127,7 +131,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/socialTest"
-                  style={{ color: '#a5a58d' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   商城首頁
                 </Nav.Link>
@@ -136,7 +140,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/socialTest"
-                  style={{ color: '#a5a58d' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   商城首頁
                 </Nav.Link>
@@ -145,7 +149,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/socialTest"
-                  style={{ color: '#a5a58d' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   商城首頁
                 </Nav.Link>

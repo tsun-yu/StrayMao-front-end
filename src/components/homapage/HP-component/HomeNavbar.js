@@ -165,7 +165,7 @@ function HomeNavbar(props) {
           </Nav>
           <Nav className="mr-5">
             <Nav.Link as={NavLink} to="/" className="hvr-icon-pulse">
-              ><i className="fas fa-search navIcon mx-1 hvr-icon"></i>
+              <i className="fas fa-search navIcon mx-1 hvr-icon"></i>
             </Nav.Link>
             <Nav.Link as={NavLink} to="/memberTest" className="hvr-icon-pulse">
               <i className="fas fa-user navIcon mx-1 hvr-icon"></i>
