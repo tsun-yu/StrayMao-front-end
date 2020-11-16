@@ -527,6 +527,8 @@
 .forumAllCardBtnItems {
   max-width: 1080px;
   justify-content: space-between;
+  position: relative;
+  z-index: 5;
 }
 
 .allCardBtnLeft {
@@ -751,4 +753,8 @@
 .articleHeart{
   position: absolute;
   height: 20px;
+}
+
+.firstSelect{
+  min-width: 66.5px;
 }

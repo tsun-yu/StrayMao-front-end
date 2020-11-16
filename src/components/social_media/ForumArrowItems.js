@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { faJoomla } from "@fortawesome/free-brands-svg-icons";
 
 function ForumArrowItems(props) {
+
   return (
     <span className="row forumArrowItems d-flex">
       <span className="arrow">
@@ -9,6 +11,14 @@ function ForumArrowItems(props) {
           width="17.636"
           height="21.653"
           viewBox="0 0 17.636 21.653"
+          onClick={()=>{
+            // document.querySelector(".forumTopBigCard").style.left=;
+            document.querySelector(".forumTopBigCard").style.left = parseInt(document.querySelector(".forumTopBigCard").offsetLeft)+"px";
+            if(document.querySelector(".forumTopBigCard").style.left !== "0px"){document.querySelector(".forumTopBigCard").style.left = 
+            parseInt(document.querySelector(".forumTopBigCard").style.left) + 764 + "px";  
+          }
+          console.log(document.querySelector(".forumTopBigCard").style.left)
+            }}
         >
           <path
             id="Path_1866"
@@ -29,7 +39,12 @@ function ForumArrowItems(props) {
           height="22.256"
           viewBox="0 0 18.381 22.256"
           onClick={()=>{
-            document.querySelector(".forumTopBigCard").style.left="-764px"
+            document.querySelector(".forumTopBigCard").style.left = parseInt(document.querySelector(".forumTopBigCard").offsetLeft)+"px";
+            if(document.querySelector(".forumTopBigCard").style.left !== "-15280px"){
+              document.querySelector(".forumTopBigCard").style.left = 
+            parseInt(document.querySelector(".forumTopBigCard").style.left) + -764 + "px";
+            }
+            console.log(document.querySelector(".forumTopBigCard").style.left)
           }}
         >
           <path

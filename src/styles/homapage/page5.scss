@@ -26,14 +26,12 @@
   width: 100vw;
   height: 90vh;
   min-height: 700px;
-  // background-color: lightsalmon;
 }
 .page5left {
   height: 60vh;
 }
 .page5right {
   height: 90vh;
-  // background-color: #faa;
 }
 
 .page5des1 {
@@ -48,11 +46,8 @@
   color: #a5a58d;
   font-family: $fontType1;
 }
-// .page5small:hover {
-//   border-bottom: 0.5px solid #a5a58d;
-// }
+
 .page5right-1 {
-  // background-color: #faf;
   height: 90vh;
   width: 50%;
   margin-right: 5px;
@@ -62,7 +57,6 @@
   display: none;
 }
 .page5right-2 {
-  // background-color: #aaf;
   height: 90vh;
   width: 50%;
   margin-left: 5px;
@@ -95,7 +89,6 @@
 .page5cardDes {
   width: 90%;
   height: 20%;
-  // background-color: #afa;
   margin-top: 2%;
 }
 .page5cardDate {
@@ -105,7 +98,6 @@
   color: #555555;
   font-family: $fontType3;
   padding: 0 5%;
-  // margin: 5% 0;
 }
 .page5cardYear {
   font-size: 1.5rem;

@@ -35,6 +35,11 @@ function SocialForum(props) {
   let totalArticles = props.info2;
   let totalArticlePages = Math.ceil(totalArticles.length / 3);
 
+  function show(event){
+    document.querySelector(".filterbtn").innerHTML = event.target.name + "<i className='fas fa-caret-down'></i>";
+    event.preventDefault();
+  }
+
   useEffect(() => {
     props.getForumListAsync();
     props.getArticleListAsync();
@@ -180,13 +185,13 @@ function SocialForum(props) {
           <div className="row forumAllCardBtnItems">
             <div className="allCardBtnLeft">
               <div className="allCardBtn_Type btn-filter">
-                <button className="filterbtn">
-                  全部 <i className="fas fa-caret-down"></i>
+                <button className="filterbtn firstSelect">全部
+                  <i className="fas fa-caret-down"></i>
                 </button>
-                <div className="btn-filter-content">
-                  <a href="#">全部</a>
-                  <a href="#">貓</a>
-                  <a href="#">狗</a>
+                <div className="btn-filter-content" name="petType">
+                  <a href="#" name="全部" onClick={show}>全部</a>
+                  <a href="#" name="貓" onClick={show}>貓</a>
+                  <a href="#" name="狗" onClick={show}>狗</a>
                 </div>
               </div>
               <div className="allCardBtn_Issue btn-filter">

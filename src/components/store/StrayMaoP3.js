@@ -351,18 +351,8 @@ function StrayMaoP3(props) {
                   </svg>
                 </button> */}
                 {likeBtn}
-                <button
-                  className="btn-green"
-                  type="button"
-                  value=""
-                  onClick={() => {
-                    props.insertRecommandAsync([
-                      props.goodsIdDetail,
-                      props.info[0].name,
-                      props.info[0].price,
-                    ])
-                  }}
-                >
+                <button className="btn-green" type="button" value="" onClick={() => {
+                  props.insertRecommandAsync([props.goodsIdDetail,props.info[0].name,props.info[0].price,props.info[0].goodsImgs]);}}>
                   加入購物車
                 </button>
               </div>
