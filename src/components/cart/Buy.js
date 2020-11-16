@@ -102,7 +102,7 @@ setTimeout(() => setDataLoading(false), 1000);
             </div>
             <div className="buyC_boxDown_An d-flex justify-content-between">
                 <div className="buyC_boxDownLeft_An">
-                    <span className="buyC_countPrice_An">小計：{subTotal} 元 + 運費：40元</span>
+                    <span className="buyC_countPrice_An">小計：{subTotal} 元 + 運費：60元</span>
                 </div>
                 <div className="buyC_boxDownRight_An">
                     {/* <span className="buyC_totalPrice_An"  onChange={()=>totalChange()}>總計：{total} 元</span> */}
