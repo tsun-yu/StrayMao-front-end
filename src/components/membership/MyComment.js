@@ -22,10 +22,28 @@ function MyComment(props) {
   useEffect(() => {
     if(doSave != null) {
       console.log("收到更新訊息了!!" , doSave);
+      addMyCommemt();
     }
   },[doSave]);
 
-  //拉取喜歡的文章
+  //更新評價
+  async function addMyCommemt() {
+    const url = MEMBER_API_URL + "/addMyCommemtList";
+    const condition = doSave;
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(condition),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    });
+    const response = await fetch(request)
+    const rsObj = await response.json();  //轉成物件
+    if(rsObj.success) alert("評價已送出!!");
+  }
+
+  //拉取顯示列表
   async function getMyComment() {
     const url = MEMBER_API_URL + "/getMyCommemtList";
     const condition = {
