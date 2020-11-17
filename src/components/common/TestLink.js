@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
-import AdoptionTest from "../adoption/Test";
-import CartTest from "../cart/Test";
-import HomeTest from "../homapage/Test";
-import MemberTest from "../membership/Test";
-import SocialTest from "../social_media/Test";
-import StoreTest from "../store/Test";
+import AdoptionTest from '../adoption/Test'
+import CartTest from '../cart/Test'
+// import HomeTest from "../homapage/Test";
+import MemberTest from '../membership/Test'
+import SocialTest from '../social_media/Test'
+import StoreTest from '../store/Test'
 
 function TestLink() {
   return (
     <>
-    <Router>
-
+      <Router>
         <Link to="/adoptionTest">adoption</Link>
         <br />
-        <Link to="/homeTest">homepage</Link>
+        {/* <Link to="/homeTest">homepage</Link> */}
         <br />
         <Link to="/cartTest">cart</Link>
         <br />
@@ -41,10 +40,10 @@ function TestLink() {
             {/*要連線的網頁*/}
             <CartTest />
           </Route>
-          <Route path="/homeTest">
-            {/*要連線的網頁*/}
-            <HomeTest />
-          </Route>
+          {/* <Route path="/homeTest"> */}
+          {/*要連線的網頁*/}
+          {/* <HomeTest /> */}
+          {/* </Route> */}
           <Route path="/memberTest">
             {/*要連線的網頁*/}
             <MemberTest />
@@ -58,10 +57,9 @@ function TestLink() {
             <StoreTest />
           </Route>
         </Switch>
-      
-    </Router>
+      </Router>
     </>
-  );
+  )
 }
 
-export default TestLink;
+export default TestLink

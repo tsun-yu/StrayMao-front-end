@@ -15,14 +15,13 @@ import CartList from './components/cart/CartList'
 import Buy from './components/cart/Buy'
 import OrderList from './components/cart/OrderList'
 import Order from './components/cart/Order'
-import HomeTest from './components/homapage/Test'
 
 // 會員中心
-import Member from './components/membership/Member'
+import Member from './components/membership/Member'
 
-import SocialTest from './components/social_media/Test';
-import SocialForum from './components/social_media/SocialForum';
-import AddForumCard from './components/social_media/AddForumCard';
+import SocialTest from './components/social_media/Test'
+import SocialForum from './components/social_media/SocialForum'
+import AddForumCard from './components/social_media/AddForumCard'
 import StoreTest from './components/store/Test'
 import StrayMaoP2 from './components/store/StrayMaoP2'
 import StrayMaoP3 from './components/store/StrayMaoP3'
@@ -36,6 +35,7 @@ import AdopFormPage4 from './components/adoption/AdopFormPage4'
 import Donate from './components/homapage/Donate'
 import ChatRoomSvg from './components/store/ChatRoomSvg'
 import ChatRoom from './components/store/ChatRoom'
+import Homepage from './components/homapage/Homepage'
 
 function App() {
   const [navbar, setNavbar] = useState(<MyNavbar />)
@@ -45,15 +45,9 @@ function App() {
   useEffect(() => {
     if (home) {
       setNavbar(<HomeNavbar />)
-    } else {
-      setNavbar(<MyNavbar />)
-    }
-  }, [home])
-
-  useEffect(() => {
-    if (home) {
       setFooter(<HomeFooter />)
     } else {
+      setNavbar(<MyNavbar />)
       setFooter(<MyFooter />)
     }
   }, [home])
@@ -65,8 +59,6 @@ function App() {
         <MainContent>
           <Switch>
             {/* 注意：要加上網址參數 */}
-
-            <Route exact path="/"></Route>
             <Route path="/test">
               {/*要連線的網頁*/}
               <TestLink />
@@ -123,42 +115,63 @@ function App() {
               {/*要連線的網頁*/}
               <Order />
             </Route>
-            <Route path="/homeTest">
+            <Route path="/" exact>
               {/*要連線的網頁*/}
-              <HomeTest setHome={setHome} />
+              <Homepage setHome={setHome} />
             </Route>
             <Route path="/donate">
               {/*要連線的網頁*/}
               <Donate />
             </Route>
-
             {/*會員中心start*/}
-            <Route path="/member">
-              <Member />
-            </Route>
-            <Route path="/memberInfo">
-              <Member />
-            </Route>
-            <Route path="/signInForm">
-              <Member />
-            </Route>
-            <Route path="/myComment">
-              <Member />
-            </Route>
-            <Route path="/petArea">
-              <Member />
-            </Route>
-            <Route path="/registeredForm">
-              <Member />
-            </Route>
-            <Route path="/myFavorite">
-              <Member />
-            </Route>
-            <Route path="/passwordChange">
-              <Member />
-            </Route>
+            <Route path="/member">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/memberInfo">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/signInForm">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/myComment">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/petArea">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/registeredForm">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/myFavorite">
+                            
+              <Member />
+                          
+            </Route>
+                        
+            <Route path="/passwordChange">
+                            
+              <Member />
+                          
+            </Route>
             {/*會員中心End*/}
-
             <Route path="/socialTest">
               {/*要連線的網頁*/}
               <SocialTest />

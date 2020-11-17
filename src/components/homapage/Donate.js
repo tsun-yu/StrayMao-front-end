@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 function Donate(props) {
   return (
     <>
-      <div>
+      <div className="position-relative">
         <div className="donateBanner mx-auto mt-5 d-flex justify-content-center align-items-center">
           DONATE
         </div>
@@ -234,6 +234,7 @@ function Donate(props) {
                   document.querySelector('.cdcardthree').value = ''
                   document.querySelector('.cdcardmon').value = ''
                   document.querySelector('.cdcardyr').value = ''
+                  document.querySelector('.donatePopup').style.display = 'block'
                 }}
               >
                 馬上捐款
@@ -241,6 +242,7 @@ function Donate(props) {
             </div>
           </div>
         </div>
+        <div className="position-absolute donatePopup"></div>
       </div>
     </>
   )
