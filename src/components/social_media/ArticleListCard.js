@@ -38,6 +38,7 @@ function ArticleListCard(props) {
               onClick={() => {
                 props.articleDetailId(props.info2.articleId)
                 setArticleInfoshow(props.info2.articleId);
+                document.getElementById("petknowledgeTitle").scrollIntoView();
               }}
             >
               more+
