@@ -1,7 +1,37 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import "../../styles/membership/custom.scss";
+import { withRouter} from 'react-router-dom';
+import MyFavorite1_card from './MyFavorite1_card';
 
 function MyFavorite(props) {
+  // console.log("myFavorite   props:::" , props)
+  const member = props.member;
+  const apiUrl = props.apiUrl;
+  const [renderList , setRenderList] = useState([]);
+  useEffect(()=>{
+    getMyFavoriteType2();
+  },[])
+  
+  //拉取喜歡的文章
+  async function getMyFavoriteType2() {
+    const url = apiUrl + "/getHeartList";
+    const condition = {
+      typeCode: '2',
+      memberId: member.memberId
+    };
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(condition),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    });
+    const response = await fetch(request)
+    const rsObj = await response.json();  //轉成物件
+    setRenderList(rsObj.data);
+  }
+
 return(
 <>
 <div className="myFavoriteWrap">
@@ -14,57 +44,9 @@ return(
         <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
     </nav>
     <div className="container petAreaBackgroud">
-        <div className="col myFavoriteArticleCard">
-            <img className="myFavoriteArticleImg" src="./image/membership/articleImg1.jpg" alt="pet image" />                
-            <div className="myFavoriteArticleDetail">
-                <article className="articleTopic">貓咪們都會這樣，你知道嗎？</article>
-                <article className="authorName">撰稿人/ bemo機器人</article>
-                <article className="myFavoriteArticleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
-                <div className="morePlus">
-                    <a className="moreArticle" href="#">more+</a>
-                </div>
-            </div>
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" className="svg-inline--fa fa-heart fa-w-16 myFavoriteHeart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
-        </div>
-            
-        <div className="col myFavoriteArticleCard">
-            <img className="myFavoriteArticleImg" src="./image/membership/articleImg1.jpg" alt="pet image" />                
-            <div className="myFavoriteArticleDetail">
-                <article className="articleTopic">貓咪們都會這樣，你知道嗎？</article>
-                <article className="authorName">撰稿人/ bemo機器人</article>
-                <article className="myFavoriteArticleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
-                <div className="morePlus">
-                    <a className="moreArticle" href="#">more+</a>
-                </div>
-            </div>
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" className="svg-inline--fa fa-heart fa-w-16 myFavoriteHeart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
-        </div>
-
-        <div className="col myFavoriteArticleCard">
-            <img className="myFavoriteArticleImg" src="./image/membership/articleImg1.jpg" alt="pet image" />                
-            <div className="myFavoriteArticleDetail">
-                <article className="articleTopic">貓咪們都會這樣，你知道嗎？</article>
-                <article className="authorName">撰稿人/ bemo機器人</article>
-                <article className="myFavoriteArticleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
-                <div className="morePlus">
-                    <a className="moreArticle" href="#">more+</a>
-                </div>
-            </div>
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" className="svg-inline--fa fa-heart fa-w-16 myFavoriteHeart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
-        </div>
-
-        <div className="col myFavoriteArticleCard">
-            <img className="myFavoriteArticleImg" src="./image/membership/articleImg1.jpg" alt="pet image" />                
-            <div className="myFavoriteArticleDetail">
-                <article className="articleTopic">貓咪們都會這樣，你知道嗎？</article>
-                <article className="authorName">撰稿人/ bemo機器人</article>
-                <article className="myFavoriteArticleContent">  若能夠欣賞到寵物知識的美，相信我們一定會對寵物知識改觀。對於寵物知識，我們不能不去想，卻也不能走火入魔。誇美紐斯講過一段深奧的話，"良好的模範懇切的語言和真誠坦白的同情", 是指家長、教師、同學及其他人的示範對兒童的影響。這不禁…</article>
-                <div className="morePlus">
-                    <a className="moreArticle" href="#">more+</a>
-                </div>
-            </div>
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" className="svg-inline--fa fa-heart fa-w-16 myFavoriteHeart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
-        </div>
+      {renderList.length > 0 && renderList.map((element, i) => {
+        return <MyFavorite1_card info={element} />;
+      })}
     </div>
 </div>
 
@@ -155,4 +137,4 @@ return(
 </>
 )}
 
-export default MyFavorite
+export default withRouter(MyFavorite);

@@ -15,10 +15,7 @@ function MyNavbar(props) {
         display="flex"
         className="commonNavbar"
       >
-        <Navbar.Brand
-          href="/homeTest"
-          className="ml-5 d-flex position-relative"
-        >
+        <Navbar.Brand href="/" className="ml-5 d-flex position-relative">
           <div
             style={{
               color: '#FFF1E6',
@@ -43,37 +40,28 @@ function MyNavbar(props) {
               <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
-                  to="/adoptionTest"
+                  to="/adoptionMain"
                   style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
-                  領養首頁
+                  推薦寵物
                 </Nav.Link>
               </NavDropdown.Item>
               <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
-                  to="/adoptionTest"
+                  to="/adoptionList"
                   style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
-                  最新商品
+                  領養清單
                 </Nav.Link>
               </NavDropdown.Item>
               <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
-                  to="/adoptionTest"
+                  to="/adoptionMap"
                   style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
-                  喵咪專區
-                </Nav.Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item className="hvr-sweep-to-right">
-                <Nav.Link
-                  as={NavLink}
-                  to="/adoptionTest"
-                  style={{ color: '#a5a58d', fontSize: '1rem' }}
-                >
-                  狗勾專區
+                  相關設施
                 </Nav.Link>
               </NavDropdown.Item>
             </NavDropdown>
@@ -157,7 +145,7 @@ function MyNavbar(props) {
             </NavDropdown>
 
             {/* 會員中心 Start */}
-            <NavDropdown title="我的" id="basic-nav-dropdown">
+            <NavDropdown title="會員" id="basic-nav-dropdown">
               <NavDropdown.Item>
                 <Nav.Link
                   as={NavLink}
@@ -170,10 +158,10 @@ function MyNavbar(props) {
               <NavDropdown.Item>
                 <Nav.Link
                   as={NavLink}
-                  to="/petArea"
+                  to="/petArea1"
                   style={{ color: '#cb997e' }}
                 >
-                  我的寶貝
+                  寵物專區
                 </Nav.Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
@@ -188,7 +176,7 @@ function MyNavbar(props) {
               <NavDropdown.Item>
                 <Nav.Link
                   as={NavLink}
-                  to="/socialTest"
+                  to="/OrderList"
                   style={{ color: '#cb997e' }}
                 >
                   訂單查詢
@@ -197,7 +185,7 @@ function MyNavbar(props) {
               <NavDropdown.Item>
                 <Nav.Link
                   as={NavLink}
-                  to="/myFavorite"
+                  to="/myFavorite1"
                   style={{ color: '#cb997e' }}
                 >
                   我的最愛
@@ -205,8 +193,6 @@ function MyNavbar(props) {
               </NavDropdown.Item>
             </NavDropdown>
             {/* 會員中心 End */}
-
-
           </Nav>
           <Nav className="mr-5">
             <div className=" ">

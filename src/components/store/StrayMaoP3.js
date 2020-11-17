@@ -145,6 +145,7 @@ function StrayMaoP3(props) {
     let info = props.info
     // console.log('info', info)
     let item = props.item
+    console.log("123: ",info.pricing>info.price)
 
     if (info !== 1) {
       const arr = item.filter((e) => {
@@ -240,7 +241,7 @@ function StrayMaoP3(props) {
     </button>
   )
 
-  // console.log('aa : ', props.info)
+  console.log('aa : ', props.info)
 
   return (
     <>
@@ -301,12 +302,15 @@ function StrayMaoP3(props) {
                 </div>
 
                 <div className="starAndComment">
-                  {props.info[0].pricing>props.info[0].price?<div className="fakePrice">
+
+
+                  {props.info !==1?props.info[0].pricing>props.info[0].price?<div className="fakePrice">                                  
                     NT${' '}
                     {props.info === 1
                       ? 'wait for loading'
                       : props.info[0].pricing}
-                  </div>:<div className="fakePrice"></div>}
+                  </div>:<div className="fakePrice"></div>:<div className="fakePrice"></div>}
+
                   <div className="comment">
                     4.0分｜<a href="">2個評價</a>
                   </div>
@@ -326,7 +330,7 @@ function StrayMaoP3(props) {
                   value="1"
                 />
                 <svg className="icon-021-plus">
-                  <path d="M18.67,9h-8.2V.76A.76.76,0,1,0,9,.76V9H.76a.76.76,0,0,0,0,1.52H9v8.2a.76.76,0,1,0,1.52,0h0v-8.2h8.2a.76.76,0,0,0,0-1.52h0Z"></path>{' '}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.44 19.44"><path id="Path_1806" data-name="Path 1806" d="M18.67,9h-8.2V.76A.76.76,0,1,0,9,.76V9H.76a.76.76,0,0,0,0,1.52H9v8.2a.76.76,0,1,0,1.52,0h0v-8.2h8.2a.76.76,0,0,0,0-1.52h0Z"></path></svg>
                 </svg>
               </div>
 
@@ -387,7 +391,10 @@ function StrayMaoP3(props) {
           <div className="goodsDescriptionLittleWords">
             {props.info === 1
               ? 'wait for loading'
-              : props.info[0].goodsDescription}
+              : props.info[0].newDesc}
+
+
+              {/* : props.info[0].newDesc.split("<aaa>") + "<br />"} */}
             {/* 每盒內含10件商品
             <br />
             ※零食同系列內的「口味」、玩具同系列內的「款式」將隨機出貨 恕不挑款

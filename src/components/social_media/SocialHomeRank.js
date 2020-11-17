@@ -9,7 +9,7 @@ function SocialHomeRank(props) {
           <div className="row socialNewsTop no-gutters">
             <span className="socialHomeNewsTitile enHeader3">RANKING</span>
           </div>
-          <div classNmae="container socialRankType">
+          {/* <div classNmae="container socialRankType">
             <div className="row rankTypeItems">
               <button className="btn-rankType" type="button" value="All">
                 All
@@ -21,7 +21,7 @@ function SocialHomeRank(props) {
                 Dog
               </button>
             </div>
-          </div>
+          </div> */}
           <div className="row socialRankBox">
             <div className="row socialRankItems no-gutters">
               <div className="singleRankCard">
