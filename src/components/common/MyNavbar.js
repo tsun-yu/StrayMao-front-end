@@ -146,47 +146,47 @@ function MyNavbar(props) {
 
             {/* 會員中心 Start */}
             <NavDropdown title="會員" id="basic-nav-dropdown">
-              <NavDropdown.Item>
+              <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
                   to="/memberInfo"
-                  style={{ color: '#cb997e' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   基本資料
                 </Nav.Link>
               </NavDropdown.Item>
-              <NavDropdown.Item>
+              <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
                   to="/petArea1"
-                  style={{ color: '#cb997e' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   寵物專區
                 </Nav.Link>
               </NavDropdown.Item>
-              <NavDropdown.Item>
+              <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
                   to="/myComment"
-                  style={{ color: '#cb997e' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   我的評價
                 </Nav.Link>
               </NavDropdown.Item>
-              <NavDropdown.Item>
+              <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
                   to="/OrderList"
-                  style={{ color: '#cb997e' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   訂單查詢
                 </Nav.Link>
               </NavDropdown.Item>
-              <NavDropdown.Item>
+              <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
                   to="/myFavorite1"
-                  style={{ color: '#cb997e' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   我的最愛
                 </Nav.Link>
