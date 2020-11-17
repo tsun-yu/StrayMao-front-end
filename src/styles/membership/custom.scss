@@ -14,9 +14,38 @@ main > .container {
   padding: 60px 15px 0;
 }
 
+//會員中心按鈕
+.linkGroup {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.linkBtn {
+  width: 200px;
+  height: 80px;
+  background-color: $primary;
+  font-size: 18px;
+  font-family: $fontType1;
+  color: #fff;
+  margin: 20px;
+  padding: 10px;
+}
+
 // <會員資料>頁面
+.memberInfoTopicGroup {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.memberInfoPetImg {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+}
+
 .topicStyle {
-  width: 300px;
+  width: 600px;
   height: 80px;
   margin: 0 auto;
   margin-top: 5vw;
@@ -27,6 +56,7 @@ main > .container {
   text-align: center;
   border-bottom: 10px #f0efeb solid;
   padding: 0 0 4px;
+  position: relative;
 }
 
 .memberInfoBackground {
@@ -318,7 +348,7 @@ main > .container {
   margin: 5vw auto;
 }
 
-.myFavoriteArticleCard {
+.col.myFavoriteArticleCard {
   width: 502px;
   height: 301px;
   background-color: #fff;
@@ -544,5 +574,24 @@ main > .container {
   margin-bottom: 5px;
 }
 
-.form-text.text-muted.inputTip {
+.memberStatusGroup {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.memberStatus {
+  font-size: 16px;
+  color: #555555;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.memberStatusBtn {
+  width: 80px;
+  height: 30px;
+  background-color: $primary;
+  font-size: 16px;
+  font-family: $fontType1;
 }
