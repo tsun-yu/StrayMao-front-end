@@ -10,6 +10,9 @@ function Buy(props) {
     const [memberName, setMemberName] = useState(props.id[0].memberName)
     const [mobile, setMobile] = useState(props.id[0].mobile)
     const [address, setAddress] = useState(props.id[0].address)
+
+    const [shipType, setShipType] = useState('便利商店取貨')
+    const [paymentType, setPaymentType] = useState('貨到付款')
     
     // const [total, setTotal] = useState(0);
     const [dataLoading, setDataLoading] = useState(true);
@@ -57,6 +60,16 @@ function Buy(props) {
     //   }else{
     //     paymentTermRadio=document.getElementById("r6").value
     //   }
+
+    const onChangeShip = e =>{
+        console.log(e.target.value)
+        setShipType(e.target.value)
+    }
+
+    const onChangePayment = e =>{
+        console.log(e.target.value)
+        setPaymentType(e.target.value)
+    }
 
       const btnBuyClick = ()=>{
           console.log('props.id[0].cartId',props.id[0].cartId)
@@ -149,15 +162,15 @@ setTimeout(() => setDataLoading(false), 1000);
                     <span>取貨方式</span>
                     <div className="d-flex mx-0 my-0">
                         <div className="buyC_opt_An ml-0 mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r1" value="郵寄" checked={false}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r1" value="郵寄" checked={(shipType==='郵寄')?true:false} onChange={onChangeShip}/>
                             <label className="mb-0 pl-4" for="r1">郵寄</label>
                         </div>
                         <div className="buyC_opt_An mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r2" value="宅急便" checked={false}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r2" value="宅急便" checked={(shipType==='宅急便')?true:false} onChange={onChangeShip}/>
                             <label className="mb-0 pl-4" for="r2">宅急便</label>
                         </div>
                         <div className="buyC_opt_An mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r3" value="便利商店取貨" checked={true}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r3" value="便利商店取貨" checked={(shipType==='便利商店取貨')?true:false} onChange={onChangeShip}/>
                             <label className="mb-0 pl-4" for="r3">便利商店取貨</label>
                         </div>
                     </div>
@@ -172,15 +185,15 @@ setTimeout(() => setDataLoading(false), 1000);
                     <span>付款方式</span>
                     <div className="d-flex mx-0 my-0">
                         <div className="buyC_opt_An ml-0 mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r4" value="信用卡" checked={false}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r4" value="信用卡" checked={(paymentType==='貨到付款')?true:false} onChange={onChangePayment}/>
                             <label className="mb-0 pl-4" for="r4">信用卡</label>
                         </div>
                         <div className="buyC_opt_An mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r5" value="ATM" checked={false}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r5" value="ATM" checked={(paymentType==='貨到付款')?true:false} onChange={onChangePayment}/>
                             <label className="mb-0 pl-4" for="r5">ATM</label>
                         </div>
                         <div className="buyC_opt_An mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r6" value="貨到付款" checked={true}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r6" value="貨到付款" checked={(paymentType==='貨到付款')?true:false} onChange={onChangePayment}/>
                             <label className="mb-0 pl-4" for="r6">貨到付款</label>
                         </div>
                     </div>
