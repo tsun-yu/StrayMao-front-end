@@ -1,8 +1,22 @@
 import React, { useState, useEffect } from 'react'
+import { withRouter} from 'react-router-dom';
+//user used
 import "../../styles/membership/custom.scss";
-import { Route, withRouter, NavLink, Switch, matchPath , Redirect, Link } from 'react-router-dom'
+import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
+import LogInInfo from './LogInInfo';
 
 function PasswordChange(props) {
+  //檢查登入狀態 >> 取得要render畫面的內容
+  const [member , setMember] = useState({});  //登入者資訊
+  const [renderList , setRenderList] = useState([]);
+  useEffect(()=>{
+    if(member == null){
+      props.history.push("/signInForm");
+    }else{
+      // if(member.memberId != null) getMyFavorite();
+    }
+  },[member]);
+  
 return(
 <>
 <div className="topicStyle">能給我個家嗎? 爸脫~</div>

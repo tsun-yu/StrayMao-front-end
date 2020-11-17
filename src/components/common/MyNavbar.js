@@ -144,54 +144,55 @@ function MyNavbar(props) {
               </NavDropdown.Item>
             </NavDropdown>
 
-            {/* 會員中心 */}
-            <NavDropdown title="我的" id="basic-nav-dropdown">
-              <NavDropdown.Item className="hvr-sweep-to-right">
+            {/* 會員中心 Start */}
+            <NavDropdown title="會員" id="basic-nav-dropdown">
+              <NavDropdown.Item>
                 <Nav.Link
                   as={NavLink}
                   to="/memberInfo"
-                  style={{ color: '#a5a58d', fontSize: '1rem' }}
+                  style={{ color: '#cb997e' }}
                 >
                   基本資料
                 </Nav.Link>
               </NavDropdown.Item>
-              <NavDropdown.Item className="hvr-sweep-to-right">
+              <NavDropdown.Item>
                 <Nav.Link
                   as={NavLink}
-                  to="/petArea"
-                  style={{ color: '#a5a58d', fontSize: '1rem' }}
+                  to="/petArea1"
+                  style={{ color: '#cb997e' }}
                 >
-                  我的寶貝
+                  寵物專區
                 </Nav.Link>
               </NavDropdown.Item>
-              <NavDropdown.Item className="hvr-sweep-to-right">
+              <NavDropdown.Item>
                 <Nav.Link
                   as={NavLink}
                   to="/myComment"
-                  style={{ color: '#a5a58d', fontSize: '1rem' }}
+                  style={{ color: '#cb997e' }}
                 >
                   我的評價
                 </Nav.Link>
               </NavDropdown.Item>
-              <NavDropdown.Item className="hvr-sweep-to-right">
+              <NavDropdown.Item>
                 <Nav.Link
                   as={NavLink}
-                  to="/socialTest"
-                  style={{ color: '#a5a58d', fontSize: '1rem' }}
+                  to="/OrderList"
+                  style={{ color: '#cb997e' }}
                 >
                   訂單查詢
                 </Nav.Link>
               </NavDropdown.Item>
-              <NavDropdown.Item className="hvr-sweep-to-right">
+              <NavDropdown.Item>
                 <Nav.Link
                   as={NavLink}
-                  to="/myFavorite"
-                  style={{ color: '#a5a58d', fontSize: '1rem' }}
+                  to="/myFavorite1"
+                  style={{ color: '#cb997e' }}
                 >
                   我的最愛
                 </Nav.Link>
               </NavDropdown.Item>
             </NavDropdown>
+            {/* 會員中心 End */}
           </Nav>
           <Nav className="mr-5">
             <div className=" ">
