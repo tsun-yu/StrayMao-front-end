@@ -41,7 +41,13 @@ function Buy(props) {
       }
 
       const btnBuyClick = ()=>{
-        // props.updateOrderAsync([props.id[0].cartId,props.id[0].quantity,subTotal+60,memberName,mobile,address,])
+          console.log('props.id[0].cartId',props.id[0].cartId)
+          console.log('props.id[0].quantity',props.id[0].quantity)
+          console.log('subTotal+60',subTotal+60)
+          console.log('memberName',memberName)
+          console.log('mobile',mobile)
+          console.log('address',address)
+        props.updateOrderAsync([props.id[0].cartId,props.id[0].quantity,subTotal+60,memberName,mobile,address,'便利商店取貨','貨到付款',props.id[0].orderId])
       }
     
     useEffect(() => {
