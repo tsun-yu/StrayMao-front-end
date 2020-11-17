@@ -220,7 +220,7 @@ const mapStateToProps = (store) => {
   };
   const mapDispatchToProps = null;
   
-export default  withRouter(connect(
+export default withRouter(connect(
     mapStateToProps, {
         getRecommand, getRecommandAsync,updateRecommandAsync, deleteRecommandsAsync,getBuyAsync 
     })(CartList))

@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import { getRecom, getBuy, getOrderList, getOrder, updateOrder, deleteOrder, goodsHeart,getOrderId } from "./main";
+import { getRecom, getBuy, getOrderList, getOrder, updateOrder, deleteOrder, goodsHeart,getOrderId,getOrderListId,getId } from "./main";
 
 // //combine all reducer to a big reducer
 export const cartReducer = combineReducers({
@@ -11,5 +11,6 @@ export const cartReducer = combineReducers({
     updateOrder,
     deleteOrder,
     goodsHeart,
-    getOrderId
+    getOrderId,
+    getOrderListId,getId
 });

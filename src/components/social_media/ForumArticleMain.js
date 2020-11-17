@@ -4,6 +4,49 @@ import { connect } from "react-redux";
 import { getForumDetailAsync } from "../../actions/social_media/index";
 let j = 0
 function ForumArticleMain(props) {
+  const [topviewsize,setTopviewsize]=useState(1);
+
+  function smallView(){
+    let el = document.querySelectorAll(".forumArticleLinkBox");
+    let e2 = document.querySelectorAll(".forumReplyMain");
+    let e3 = document.querySelectorAll(".forumArticleContent");
+    let e4 = document.querySelectorAll(".forumReplyHiden");
+    let elLen = el.length;
+    let e2Len = e2.length;
+    let e3Len = e3.length;
+    let e4Len = e4.length;
+    for( let i=0 ; i < elLen ; i++){el[i].style.display="none";}
+    for( let i=0 ; i < e2Len ; i++){e2[i].style.display="none";}
+    for( let i=0 ; i < e3Len ; i++){e3[i].style.height="425px";}
+    for( let i=0 ; i < e4Len ; i++){e4[i].innerHTML="顯示留言";}
+    
+    document.querySelector(".forumMainBg").style.height="500px";
+    document.querySelector(".forumMain").style.height="700px";
+    
+    setTopviewsize(0);
+  }
+
+  function bigView(){
+    let el = document.querySelectorAll(".forumArticleLinkBox");
+    let e2 = document.querySelectorAll(".forumReplyMain");
+    let e3 = document.querySelectorAll(".forumArticleContent");
+    let e4 = document.querySelectorAll(".forumReplyHiden");
+    let elLen = el.length;
+    let e2Len = e2.length;
+    let e3Len = e3.length;
+    let e4Len = e4.length;
+    for( let i=0 ; i < elLen ; i++){el[i].style.display="";}
+    for( let i=0 ; i < e2Len ; i++){e2[i].style.display="";}
+    for( let i=0 ; i < e3Len ; i++){e3[i].style.height="";}
+    for( let i=0 ; i < e4Len ; i++){e4[i].innerHTML="隱藏留言";}
+    
+    document.querySelector(".forumMainBg").style.height="";
+    document.querySelector(".forumMain").style.height="";
+    
+    setTopviewsize(1);
+  }
+
+
 
   useEffect(() => {
     j++
@@ -67,7 +110,11 @@ function ForumArticleMain(props) {
         <button
           className="forumReplyHiden paragraph2"
           type="button"
-          value="隱藏留言"
+          onClick={()=>{
+            topviewsize === 1
+            ? smallView() 
+            : bigView();
+          }}
         >
           隱藏留言
         </button>

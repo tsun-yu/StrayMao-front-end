@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import HomeFooter from './HP-component/HomeFooter'
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
 import Page1 from './Page1'
 import Page2 from './Page2'
 import Page3 from './Page3'
@@ -7,7 +7,14 @@ import Page4 from './Page4'
 import Page5 from './Page5'
 import Page6 from './Page6'
 
-function homepage(props) {
+function Homepage(props) {
+  useEffect(() => {
+    props.setHome(true)
+    return () => {
+      props.setHome(false)
+    }
+  }, [])
+
   return (
     <>
       <Page1 />
@@ -20,4 +27,9 @@ function homepage(props) {
   )
 }
 
-export default homepage
+const mapStateToProps = (store) => {
+  return {}
+}
+const mapDispatchToProps = null
+
+export default connect(mapStateToProps, {})(Homepage)

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 function Donate(props) {
   return (
     <>
-      <div>
+      <div className="position-relative">
         <div className="donateBanner mx-auto mt-5 d-flex justify-content-center align-items-center">
           DONATE
         </div>
@@ -151,7 +151,7 @@ function Donate(props) {
                 <div>
                   <input
                     className="input-brown donateAmount pl-3"
-                    type="text"
+                    type="t"
                     style={{ width: '265px' }}
                   ></input>
                 </div>
@@ -241,6 +241,10 @@ function Donate(props) {
             </div>
           </div>
         </div>
+        {/* <div className="position-absolute donatePopup"></div> */}
+        {/* <div className="donatepay">
+          <iframe src="https://ccore.newebpay.com/EPG/straymao/goXutn"></iframe>
+        </div> */}
       </div>
     </>
   )

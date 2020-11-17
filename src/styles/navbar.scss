@@ -55,3 +55,8 @@
 // .dropdown-menu.show {
 //   display: flex !important;
 // }
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #f8f9fa00 !important;
+}

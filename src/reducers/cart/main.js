@@ -12,6 +12,7 @@ import {
   DELETE_RECOM,
   INSERT_ORDER,
   UPDATE_ORDER,
+  GET_ORDERID,
   DELETE_ORDER
 } from "../../actions/cart/actionTypes";
 
@@ -61,6 +62,18 @@ function getOrderList(state = 1, action) {
   return state;
 }
 
+function getOrderListId(state = 1, action) {
+  switch (action.type) {
+    case GET_ORDERLIST:
+      console.log("reducer: ",action.value)
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
 function getOrder(state = 1, action) {
   switch (action.type) {
     case GET_ORDER:
@@ -73,6 +86,17 @@ function getOrder(state = 1, action) {
   return state;
 }
 
+function getId(state = 1, action) {
+  switch (action.type) {
+    case GET_ORDERID:
+      console.log("reducer: ",action.value)
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
 function deleteOrder(state = 1, action) {
   switch (action.type) {
     case DELETE_ORDER:
@@ -113,5 +137,5 @@ function goodsHeart(state = false, action) {
   }
   return state;
 }
-export { getRecom, getOrderList, getOrder, deleteOrder, updateOrder, goodsHeart,getBuy ,getOrderId };
+export { getRecom, getOrderList, getOrder, deleteOrder, updateOrder, goodsHeart,getBuy ,getOrderId,getOrderListId ,getId};
 // export default totalPage;

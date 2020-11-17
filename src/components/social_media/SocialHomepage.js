@@ -5,25 +5,41 @@ import SocialHomeRank from "./SocialHomeRank";
 import SocialHomeforum from "./SocialHomeForum";
 import SocialHomeArticle from "./SocialHomeArticle";
 import SocialHomeActivity from "./SocialHomeActivity";
+import { setTotalPage,setArticleTotalPage, } from '../../actions/common/index';
+import {
+  getForumListAsync,
+  getArticleListAsync,
+} from "../../actions/social_media/index";
 import { connect } from "react-redux";
 
 function SocialHomepage(props) {
   return (
     <>
       <SocialHomeTop />
-      <SocialHomeNews />
+      {/* <SocialHomeNews /> */}
       <SocialHomeRank />
       <SocialHomeforum />
       <SocialHomeArticle />
-      <SocialHomeActivity />
+      {/* <SocialHomeActivity /> */}
     </>
   );
 }
 
 const mapStateToProps = (store) => {
   return {
+    info: store.socialReducer.getForumList,
+    info2: store.socialReducer.getArticleList,
+    nowPage: store.nowPage,
+    totalPage: store.totalPage,
+    nowArticlePage: store.nowArticlePage,
+    totalArticlePage: store.totalArticlePage,
   };
 };
 const mapDispatchToProps = null;
 
-export default connect(mapStateToProps, {})(SocialHomepage);
+export default connect(mapStateToProps, {
+  getArticleListAsync,
+  getForumListAsync,
+  setTotalPage,
+  setArticleTotalPage,
+})(SocialHomepage);

@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react'
+import { connect } from "react-redux";
 import "../../styles/cart/orderlist.scss";
 import OrderListCardC from "./OrderListCardC"
+import { withRouter, useHistory } from 'react-router-dom';
+
+import { getOrderId } from "../../actions/cart/index";
 function OrderListCardBoxC(props) {
+    useEffect(()=>{
+
+
+    },[])
     console.log('createAt',props.info)
 return(
 <>
@@ -15,10 +23,19 @@ return(
                 {/* { dataLoading ? loading : display} */}
             </div>
             <div className="orderlistC_boxR_An">
-                <a href="#">查看更多</a>
+                <a onClick={() => {
+                    props.getOrderId(props.info.orderId)
+                    props.history.push('/Order')
+                    }}>查看更多</a>
             </div>
         </div>
 </>
 )}
 
-export default OrderListCardBoxC
+const mapStateToProps = (store) => {
+    return { id: store.cartReducer.getId };
+  };
+  const mapDispatchToProps = null;
+export default  withRouter(connect(mapStateToProps, {
+    getOrderId
+})(OrderListCardBoxC))
