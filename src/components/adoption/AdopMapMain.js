@@ -127,7 +127,7 @@ function AdopMapMain(props) {
       />
     );
   }
-  for (let i = 10; i < 14; i++) {
+  for (let i = 10; i < 11; i++) {
     content3.push(
       <AnyReactComponent3
         lat={loc[i].lat}

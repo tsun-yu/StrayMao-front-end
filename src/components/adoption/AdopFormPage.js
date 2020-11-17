@@ -13,6 +13,10 @@ function AdopFormPage(props) {
     window.scrollTo(0, 0);
     console.log(props.id);
   }, []);
+
+  const ele = (value) => {
+    return document.querySelector(value);
+  };
   // 以資料載入的指示狀態來切換要出現的畫面
   return (
     <>
@@ -64,6 +68,7 @@ function AdopFormPage(props) {
                 <div className="d-flex flex-column my-1">
                   <label className="my-2 paragraph1">姓名：</label>
                   <input
+                    id="q1"
                     className="input-brown navSearchPlaceholder w-100"
                     type="text"
                     placeholder=""
@@ -72,6 +77,7 @@ function AdopFormPage(props) {
                 <div className="d-flex flex-column my-1">
                   <label className="my-2 paragraph1">年齡：</label>
                   <input
+                    id="q2"
                     className="input-brown navSearchPlaceholder w-100"
                     type="text"
                     placeholder=""
@@ -80,6 +86,7 @@ function AdopFormPage(props) {
                 <div className="d-flex flex-column my-1">
                   <label className="my-2 paragraph1">電話：</label>
                   <input
+                    id="q3"
                     className="input-brown navSearchPlaceholder w-100"
                     type="text"
                     placeholder=""
@@ -88,6 +95,7 @@ function AdopFormPage(props) {
                 <div className="d-flex flex-column my-1">
                   <label className="my-2 paragraph1">職業：</label>
                   <input
+                    id="q4"
                     className="input-brown navSearchPlaceholder w-100"
                     type="text"
                     placeholder=""
@@ -96,6 +104,7 @@ function AdopFormPage(props) {
                 <div className="d-flex flex-column my-1">
                   <label className="my-2 paragraph1">地址：</label>
                   <input
+                    id="q5"
                     className="input-brown navSearchPlaceholder w-100"
                     type="text"
                     placeholder=""
@@ -104,6 +113,7 @@ function AdopFormPage(props) {
                 <div className="d-flex flex-column my-1">
                   <label className="my-2 paragraph1">FB/IG：</label>
                   <input
+                    id="q6"
                     className="input-brown navSearchPlaceholder w-100"
                     type="text"
                     placeholder=""
@@ -141,9 +151,25 @@ function AdopFormPage(props) {
                 </div>
               </div>
 
-              <div className="my-5">
+              <div className="my-5 d-flex">
                 <button
-                  className="btn-green d-flex justify-content-center  align-items-center m-auto"
+                  className="mx-2 btn-green d-flex justify-content-center  align-items-center my-auto"
+                  type="button"
+                  value="123"
+                  onClick={() => {
+                    ele('#q1').value = '王小明';
+                    ele('#q2').value = '22';
+                    ele('#q3').value = '0911234567';
+                    ele('#q4').value = '工程師';
+                    ele('#q5').value = '106台北市大安區復興南路一段390號2樓';
+                    ele('#q6').value = 'WangXiaoＭing0001';
+                    ele('#r1').setAttribute('checked', true);
+                  }}
+                >
+                  一鍵填寫
+                </button>
+                <button
+                  className="mx-2 btn-green d-flex justify-content-center  align-items-center my-auto"
                   type="button"
                   value="123"
                   onClick={() => {
