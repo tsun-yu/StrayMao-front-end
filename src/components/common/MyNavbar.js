@@ -150,7 +150,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/memberInfo"
-                  style={{ color: '#cb997e', fontSize: '1rem' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   基本資料
                 </Nav.Link>
@@ -159,7 +159,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/petArea"
-                  style={{ color: '#cb997e', fontSize: '1rem' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   我的寶貝
                 </Nav.Link>
@@ -168,7 +168,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/myComment"
-                  style={{ color: '#cb997e', fontSize: '1rem' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   我的評價
                 </Nav.Link>
@@ -177,7 +177,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/socialTest"
-                  style={{ color: '#cb997e', fontSize: '1rem' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   訂單查詢
                 </Nav.Link>
@@ -186,7 +186,7 @@ function MyNavbar(props) {
                 <Nav.Link
                   as={NavLink}
                   to="/myFavorite"
-                  style={{ color: '#cb997e', fontSize: '1rem' }}
+                  style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   我的最愛
                 </Nav.Link>

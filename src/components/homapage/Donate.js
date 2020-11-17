@@ -236,13 +236,7 @@ function Donate(props) {
                   document.querySelector('.cdcardyr').value = ''
                 }}
               >
-                <a
-                  href="https://ccore.newebpay.com/EPG/straymao/goXutn"
-                  className="a"
-                  style={{ color: '#fff' }}
-                >
-                  馬上捐款
-                </a>
+                馬上捐款
               </button>
             </div>
           </div>
