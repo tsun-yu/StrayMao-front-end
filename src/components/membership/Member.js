@@ -8,60 +8,36 @@ import { Route, withRouter, NavLink, Switch, matchPath , Redirect, Link } from '
 import MemberInfo from "./MemberInfo";
 import PasswordChange from "./PasswordChange";
 import MyComment from "./MyComment";
-import PetArea from "./PetArea";
-import MyFavorite from "./MyFavorite";
+import PetArea1 from "./PetArea1";
+import PetArea2 from "./PetArea2";
+import MyFavorite1 from "./MyFavorite1";
+import MyFavorite2 from "./MyFavorite2";
 import RegisteredForm from "./RegisteredForm";
 import SignInForm from "./SignInForm";
 
 function Member(props) {
-  console.log("member props:" , props)
+  // console.log("member props:" , props)
   const [memberPage, setMemberPage] = useState(<MemberInfo />)
-  const [apiUrl , setApiUrl] = useState('http://localhost:3001/straymao/membership/');
-
+  const [apiUrl , setApiUrl] = useState('http://localhost:3001/straymao/membership');
   const [isLogin, setIsLogin] = useState(false) // login = true 表示有登入
-  // const [member , setMember] = useState(null);  //登入者資訊
-
-
   const [member , setMember] = useState(localStorage.getItem("loginAccount") == null? null : JSON.parse(localStorage.getItem("loginAccount")));  //登入者資訊
   useEffect(() => {
     if(member !== null){
-      console.log("member yes")
       setIsLogin(true);
     }else{
-      console.log("member is null")
       props.history.push("/signInForm");
     }
   },[member]);
   
-  // const [memberLS, setMemberLS] = useState(localStorage.getItem("loginAccount") == null? null : JSON.parse(localStorage.getItem("loginAccount")))
-  // console.log("memberLS:" , memberLS)
-  // useEffect(() => {
-  //   console.log("member effect1")
-  //   // const member1 = localStorage.getItem("loginAccount") == null? null : JSON.parse(localStorage.getItem("loginAccount"));
-  //   if(memberLS !== null){
-  //     console.log("memberLS not null")
-  //     setIsLogin(true);
-  //     setMember(memberLS);
-  //   }else{
-  //     console.log("memberLS null")
-  //     props.history.push("/signInForm");
-  //   }
-  // },[memberLS]);
-  
-  //這個不能用鉤子
   const url = props.location.pathname;
-  console.log("url:", url)
   useEffect(()=>{
-    console.log("member effect2")
     switch (url){
       case '/memberInfo' :
-        console.log("info")
         setMemberPage(<MemberInfo
           apiUrl = {apiUrl}  
         />)
         break;
       case '/signInForm' :
-        console.log("sign")
         setMemberPage(<SignInForm
           setIsLogin = {setIsLogin}
           setMember = {setMember}
@@ -71,14 +47,26 @@ function Member(props) {
       case '/myComment' :
         setMemberPage(<MyComment />)
         break;
-      case '/petArea' :
-        setMemberPage(<PetArea />)
+      case '/petArea1' :
+        setMemberPage(<PetArea1 />)
+        break;
+      case '/petArea2' :
+        setMemberPage(<PetArea2 />)
         break;
       case '/registeredForm' :
         setMemberPage(<RegisteredForm />)
         break;
-      case '/myFavorite' :
-        setMemberPage(<MyFavorite />)
+      case '/myFavorite1' :
+        setMemberPage(<MyFavorite1
+          apiUrl = {apiUrl}
+          member = {member}
+        />)
+        break;
+      case '/myFavorite2' :
+        setMemberPage(<MyFavorite2
+          apiUrl = {apiUrl}
+          member = {member}
+        />)
         break;
       case '/passwordChange' :
         setMemberPage(<PasswordChange />)

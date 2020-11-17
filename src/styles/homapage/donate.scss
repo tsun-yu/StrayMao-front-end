@@ -33,3 +33,23 @@
   color: #555555;
   line-height: 36px;
 }
+
+.donatePopup {
+  background-color: #fff;
+  width: 500px;
+  height: 500px;
+  left: calc(50% - 250px);
+  top: 60%;
+  border-radius: 4px;
+  display: none;
+}
+
+.donatepay {
+  width: 100vw;
+  height: 100vh;
+}
+
+iframe {
+  width: 100vw;
+  height: 80vh;
+}

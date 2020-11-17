@@ -11,6 +11,7 @@ function ChatRoomSvg(props) {
   const [submited, setSubmited] = useState(false)
 
   const responseGoogle = (response) => {
+    console.log("my: ",response)
     setName(response.profileObj.name)
     setEmail(response.profileObj.email)
     setUrl(response.profileObj.imageUrl)
@@ -34,6 +35,7 @@ function ChatRoomSvg(props) {
     <svg
       onMouseEnter={changeToSvg2}
       onMouseLeave={changeToSvg1}
+      onClick={changeToSvg3}
       className="ChatRoomSvg1"
       xmlns="http://www.w3.org/2000/svg"
       width="83.2"
@@ -318,7 +320,7 @@ function ChatRoomSvg(props) {
     </svg>
   )
 
-  useEffect(() => console.log('res :  ', responseGoogle), [responseGoogle])
+  // useEffect(() => console.log('res :  ', responseGoogle), [responseGoogle])
   return (
     <>
       {/* {(whichSVG === 1)?svg1:''}
@@ -342,21 +344,27 @@ function ChatRoomSvg(props) {
                   <div className="chatContant">
                     {submited === true ? (
                       <>
+                      <div className="closedBox">
+                      感謝您的填寫，我們將盡快回覆。
+                      </div>
                         <div className="closedBtn">
                           <input
+                          className="closedBtn1"
                             value="返回"
                             type="button"
-                            className="chatBtn"
+                            
                             onClick={() => {
                               setSubmited(false)
                             }}
                           ></input>
                           <input
+                          className="closedBtn1"
                             value="關閉"
                             type="button"
-                            className="chatBtn"
+                            
                             onClick={() => {
-                              setSubmited(false && whichSVG == 1)
+                              setSubmited(false)
+                              setWhichSVG(1)
                             }}
                           ></input>
                         </div>
@@ -371,11 +379,11 @@ function ChatRoomSvg(props) {
                             <div className="chatImg">
                               <img
                                 src={
-                                  url === ''
-                                    ? '/image/store/1584615665394.jpg'
+                                  url === ""
+                                    ? './image/store/1584615665394.jpg'
                                     : url
                                 }
-                                alt=""
+                                alt={name}
                               />
                             </div>
                             <input
@@ -445,6 +453,7 @@ function ChatRoomSvg(props) {
                           className="chatBtn"
                           onClick={() => {
                             //fetch???
+                            
 
                             setSubmited(true)
                           }}
