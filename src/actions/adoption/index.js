@@ -8,9 +8,47 @@ import {
   GET_DETAIL,
   SET_DETAIL_PET_ID,
   MAP_OBJ,
+  GET_ADOP_ID,
+  SET_ADOP_ID,
+  ADD_ADOP,
 } from './actionTypes';
 
 //actionCreater
+
+export const setAdopId = (value) => {
+  return { type: SET_ADOP_ID, value };
+};
+export const getAdopId = (value) => {
+  return { type: GET_ADOP_ID, value };
+};
+
+export const getAdopPet = (value) => {
+  return { type: ADD_ADOP, value };
+};
+
+export const getAdopPetAsync = (value) => {
+  return async function getRecommandPet(dispatch, getState) {
+    const url = 'http://localhost:3001/straymao/adoption/get_adop_pet';
+    const pet = { petId: value, userId: 111 };
+    const request = new Request(url, {
+      method: 'POST',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+      body: JSON.stringify(pet),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      console.log(data.data);
+      await dispatch(getAdopPet(data.data));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
 
 export const getRecommand = (value) => {
   return { type: GET_RECOM, value };
@@ -137,16 +175,18 @@ export const petInitLikeAsync = (value) => {
       }),
     });
     try {
-      const response = await fetch(request);
-      const data = await response.json();
-      // data會是一個物件值
-      // console.log("init:", data.data);
-      let dataValue = false;
-      if (data.data.length > 0) {
-        console.log('like:', true);
-        dataValue = true;
+      if (value > 0) {
+        const response = await fetch(request);
+        const data = await response.json();
+        // data會是一個物件值
+        // console.log("init:", data.data);
+        let dataValue = false;
+        if (data.data.length > 0) {
+          console.log('like:', true);
+          dataValue = true;
+        }
+        await dispatch(petInitLike(dataValue));
       }
-      await dispatch(petInitLike(dataValue));
     } catch (error) {
       //setError(error)
     }

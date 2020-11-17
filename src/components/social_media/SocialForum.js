@@ -15,8 +15,11 @@ import {
   getForumListAsync,
   getArticleListAsync,
 } from "../../actions/social_media/index";
+import { HiOutlineReceiptRefund } from "react-icons/hi";
 
 function SocialForum(props) {
+  const [arr, setArr] = useState([]);
+  const [arrTwo, setArrTwo] = useState([]);
   const [display, setDisplay] = useState(<></>);
   const [display2, setDisplay2] = useState(<></>);
   const [display3, setDisplay3] = useState(<></>);
@@ -35,6 +38,87 @@ function SocialForum(props) {
   let totalArticles = props.info2;
   let totalArticlePages = Math.ceil(totalArticles.length / 3);
 
+  let funTypeId=0;
+  let funIssueId=0;
+  let newData = {};
+
+  function show(event){
+    document.getElementById("filterbtn1").innerHTML = event.target.innerHTML + "<i className='fas fa-caret-down'></i>";
+    funTypeId = event.target.name;
+    setArrTwo(funTypeId)
+    console.log(funTypeId)
+    newData = {
+      typeId: funTypeId,
+     }
+     console.log("newData1:",newData)
+     console.log("content : " ,arr)
+     console.log("content2 : " ,arr.filter((e)=> e.typeId===+funTypeId))
+
+     let newArr = arr.filter((e)=> e.typeId===+newData.typeId)
+     let newContent = []
+     for(let i=0;i<newArr.length;i++){
+      newContent.push(<ForumListCard test={newArr[i]} i={i} />);
+     }
+     setDisplay(<div className="row forumCard_Items no-gutters">{newContent}</div>);
+    // props.info(newData)
+    event.preventDefault();
+  }
+
+  function show2(event){
+    document.getElementById("filterbtn2").innerHTML = event.target.innerHTML + "<i className='fas fa-caret-down'></i>";
+    funIssueId = event.target.name;
+    console.log(funIssueId)
+    newData = {
+      typeId: arrTwo,
+      issueId:funIssueId,
+     }
+     console.log("newData2:",newData)
+     console.log("content : " ,arr)
+
+     let newArr = arr.filter((e)=> e.typeId===+newData.typeId && e.issueId===+newData.issueId)
+     let newContent = []
+     for(let i=0;i<newArr.length;i++){
+      newContent.push(<ForumListCard test={newArr[i]} i={i} />);
+     }
+     setDisplay(<div className="row forumCard_Items no-gutters">{newContent}</div>);
+
+    event.preventDefault();
+  }
+
+  // useEffect(()=>{
+
+  //   let info = props.info
+
+  //   if(info!==null){
+
+  //     const arr = info.filter((e) => {
+  //         return (e.categoryId === info.categoryId)&&(e.goodsId !== info[0].goodsId)
+  //     });
+  //     // console.log('arr: ',arr)
+  
+  //     if (info.length > 0) {
+  //       // for (let i = 0; i < info.length; i++) {
+  //       for (let i = 0; i < 3; i++) {
+  //         content.push(
+  //           <StoreCard
+  //             item={{
+  //               goodsId: arr[i].goodsId,
+  //               goodsImgs: arr[i].goodsImgs,
+  //               name: arr[i].name,
+  //               price: arr[i].price,
+  //               pricing: arr[i].pricing,
+  //             }}
+  //           />
+  //         )
+  //       }
+  //       setDisplay(content)
+  //     }
+  //   }
+  
+  // },[props.item])
+
+
+
   useEffect(() => {
     props.getForumListAsync();
     props.getArticleListAsync();
@@ -42,6 +126,13 @@ function SocialForum(props) {
 
   useEffect(() => {
     totalCards = props.info;
+    // console.log("這是最上面:",props.info)
+
+    // if(newData!=={}){
+    //   let arr = totalCards.filter((e) => {return totalCards.typeId === newData.typeId}); 
+    //   console.log("ThisNew:",arr)   
+    // };
+
     totalPages = Math.ceil(totalCards.length / 4);
     if (totalCards.length > 0) {
     props.setTotalPage(totalPages);
@@ -55,6 +146,7 @@ function SocialForum(props) {
         content.push(<ForumListCard test={totalCards[i]} i={i} />);
       }
     }
+    setArr(totalCards)
   }
     if (totalCards.length > 0) {
       console.log(props.info);
@@ -180,23 +272,24 @@ function SocialForum(props) {
           <div className="row forumAllCardBtnItems">
             <div className="allCardBtnLeft">
               <div className="allCardBtn_Type btn-filter">
-                <button className="filterbtn">
-                  全部 <i className="fas fa-caret-down"></i>
+                <button className="filterbtn firstSelect"  id="filterbtn1">全部
+                  <i className="fas fa-caret-down"></i>
                 </button>
-                <div className="btn-filter-content">
-                  <a href="#">全部</a>
-                  <a href="#">貓</a>
-                  <a href="#">狗</a>
+                <div className="btn-filter-content" name="petType">
+                  <a href="#" name="1" onClick={show}>全部</a>
+                  <a href="#" name="2" onClick={show}>貓</a>
+                  <a href="#" name="3" onClick={show}>狗</a>
                 </div>
               </div>
               <div className="allCardBtn_Issue btn-filter">
-                <button className="filterbtn">
+                <button className="filterbtn firstSelect" id="filterbtn2">
                   日常 <i className="fas fa-caret-down"></i>
                 </button>
                 <div className="btn-filter-content">
-                  <a href="#">日常</a>
-                  <a href="#">行為</a>
-                  <a href="#">照護</a>
+                  <a href="#" name="1"  onClick={show2}>日常</a>
+                  <a href="#" name="2"  onClick={show2}>行為</a>
+                  <a href="#" name="3" onClick={show2}>照護</a>
+                  <a href="#" name="4" onClick={show2}>飲食</a>
                 </div>
               </div>
             </div>

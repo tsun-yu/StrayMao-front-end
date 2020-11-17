@@ -242,7 +242,12 @@ function Donate(props) {
             </div>
           </div>
         </div>
-        <div className="position-absolute donatePopup"></div>
+        {/* <div className="position-absolute donatePopup"></div> */}
+        <div className="donatepay">
+          <iframe src="https://ccore.newebpay.com/EPG/straymao/goXutn">
+            你的瀏覽器不支援 iframe
+          </iframe>
+        </div>
       </div>
     </>
   )

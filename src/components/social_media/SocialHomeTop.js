@@ -81,7 +81,7 @@ function SocialHomeTop(props) {
       <div className="row topBtnItems d-flex">
         <div className="topBtnBox">
           <button className="btn-green topBtnW" type="button" value="發起活動">
-            發起活動
+            發起話題
           </button>
           <button className="btn-brown topBtnW" type="button" value="加入討論">
             加入討論

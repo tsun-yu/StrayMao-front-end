@@ -87,53 +87,98 @@ function Storepage(props) {
     if (info.length > 0 && info2.length > 0) {
       // for (let i = 0; i < info.length; i++) {
       for (let i = 0; i < 3; i++) {
-        content.push(
-          <StoreCard
-            item={{
-              categoryId: info2[i].categoryId,
-              goodsId: info2[i].goodsId,
-              goodsImgs: info2[i].goodsImgs,
-              name: info2[i].name,
-              price: info2[i].price,
-              pricing: info2[i].pricing,
-            }}
-          />
-        )
+        if(info2[i].price<info2[i].pricing){
+          content.push(
+            <StoreCard
+              item={{
+                categoryId: info2[i].categoryId,
+                goodsId: info2[i].goodsId,
+                goodsImgs: info2[i].goodsImgs,
+                name: info2[i].name,
+                price: info2[i].price,
+                pricing: info2[i].pricing,
+              }}
+            />
+          )
+        }else{
+          content.push(
+            <StoreCard
+              item={{
+                categoryId: info2[i].categoryId,
+                goodsId: info2[i].goodsId,
+                goodsImgs: info2[i].goodsImgs,
+                name: info2[i].name,
+                price: info2[i].price,
+              }}
+            />
+          )
+        }
+        
         // console.log('1230',info2[i].goodsId)
       }
       setDisplay(content)
 
       for (let i = 0; i < 9; i++) {
-        content2.push(
-          <StoreCard
-            item={{
-              categoryId: info[i].categoryId,
-              goodsId: info[i].goodsId,
-              goodsImgs: info[i].goodsImgs,
-              name: info[i].name,
-              price: info[i].price,
-              pricing: info[i].pricing,
-            }}
-          />
-        )
+        if(info[i].price<info[i].pricing){
+          content2.push(
+            <StoreCard
+              item={{
+                categoryId: info[i].categoryId,
+                goodsId: info[i].goodsId,
+                goodsImgs: info[i].goodsImgs,
+                name: info[i].name,
+                price: info[i].price,
+                pricing: info[i].pricing,
+              }}
+            />
+          )
+        }else{
+          content2.push(
+            <StoreCard
+              item={{
+                categoryId: info[i].categoryId,
+                goodsId: info[i].goodsId,
+                goodsImgs: info[i].goodsImgs,
+                name: info[i].name,
+                price: info[i].price,
+              }}
+            />
+          )
+        }
+        
         // console.log('1231',info2[i].goodsId)
       }
       setDisplay2(content2)
 
       if (info.length > 0 && info2.length > 0 && infoDiscount.length > 0) {
         for (let i = 0; i < 3; i++) {
-          contentDiscount.push(
-            <StoreCard
-              item={{
-                categoryId: infoDiscount[i].categoryId,
-                goodsId: infoDiscount[i].goodsId,
-                goodsImgs: infoDiscount[i].goodsImgs,
-                name: infoDiscount[i].name,
-                price: infoDiscount[i].price,
-                pricing: infoDiscount[i].pricing,
-              }}
-            />
-          )
+          if(infoDiscount[i].price<infoDiscount[i].pricing){
+            contentDiscount.push(
+              <StoreCard
+                item={{
+                  categoryId: infoDiscount[i].categoryId,
+                  goodsId: infoDiscount[i].goodsId,
+                  goodsImgs: infoDiscount[i].goodsImgs,
+                  name: infoDiscount[i].name,
+                  price: infoDiscount[i].price,
+                  pricing: infoDiscount[i].pricing,
+                }}
+              />
+            )
+          }else{
+            contentDiscount.push(
+              <StoreCard
+                item={{
+                  categoryId: infoDiscount[i].categoryId,
+                  goodsId: infoDiscount[i].goodsId,
+                  goodsImgs: infoDiscount[i].goodsImgs,
+                  name: infoDiscount[i].name,
+                  price: infoDiscount[i].price,
+                }}
+              />
+            )
+          }
+          
           // console.log('1232',info2[i].goodsId)
         }
         setDisplayDiscount(contentDiscount)
@@ -153,42 +198,36 @@ function Storepage(props) {
           {/* <!-- 大按鈕 --> */}
           <article id="bigBtn" className="d-flex">
             <a href="/storeNews">
-            <button
-              className="storeP1Btn"
-              id="newsBigBtn"
-              type="button"
-              value="News"              
-            >
-            
-              News
-            
-            </button> 
+              <button
+                className="storeP1Btn"
+                id="newsBigBtn"
+                type="button"
+                value="News"
+              >
+                News
+              </button>
             </a>
 
             <a href="/storeCats">
-            <button
-              className="storeP1Btn"
-              id="catBigBtn"
-              type="button"
-              value="Cats"
-            >
-           
-              Cat
-            
-            </button> 
+              <button
+                className="storeP1Btn"
+                id="catBigBtn"
+                type="button"
+                value="Cats"
+              >
+                Cat
+              </button>
             </a>
 
             <a href="/storeDogs">
-            <button
-              className="storeP1Btn"
-              id="dogBigBtn"
-              type="button"
-              value="Dogs"
-            >
-           
-              Dog
-            
-            </button>
+              <button
+                className="storeP1Btn"
+                id="dogBigBtn"
+                type="button"
+                value="Dogs"
+              >
+                Dog
+              </button>
             </a>
           </article>
           {/* <!-- 熱銷推薦 --> */}
@@ -320,7 +359,7 @@ function Storepage(props) {
         </div>
       </div> */}
 
-<ChatRoomSvg/>
+      <ChatRoomSvg />
 
       {/* <!-- 特價商品結束 --> */}
       <aside>

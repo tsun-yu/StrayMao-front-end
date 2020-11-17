@@ -13,40 +13,43 @@ function OrderCardBoxC(props) {
     const content = [];
     let totalCards = props.info;
     useEffect(() => {
-        props.getOrderAsync()
+        // props.getOrderAsync()
+        //console.log("88558: ",props.info)
     }, []);
     useEffect(() => {
         totalCards = props.info;
-        console.log("info2: ",props.info)
-        console.log("totalcards:",totalCards)
+        //console.log("info2: ",props.info)
+        //console.log("totalcards:",totalCards)
         if (totalCards.length > 0) {
           // let tt = JSON.parse(totalCards[0]);
-          // console.log("totalCards: ", totalCards[0]);
-        }
-        for (
-            let i = 0;
-            i < totalCards.length;
-            i++
-        ) {
-            console.log(":",totalCards[i]);
+          // //console.log("totalCards: ", totalCards[0]);
+
+          for (let i = 0;i < totalCards.length;i++) {
+            //console.log(":",totalCards[i]);
             if (totalCards.length > 0) {
-                content.push(<OrderCardC info={totalCards[i]} key={i} />);
+                // //console.log("for loop:",i)
+                content.push(<><OrderCardC info={totalCards[i]} key={i} />
+                    </>);
                 // content.push(<OrderDetialC info={totalCards[i]} key={i} />);
             }
-        }
-        // console.log("content :　",content)
-        setDisplay(
-<>
-    <div className="orderC_boxBottom_An">
-        {/* <OrderCardC /> */}
-        {content}
-    </div>
-</>
-)
+          }
+        // //console.log("content :　",content)
+        setDisplay( <>
+                        <div className="orderC_boxBottom_An">
+                            {/* <OrderCardC /> */}
+                            {content}
+                        </div>
+                    </> )
 
-setTimeout(() => setDataLoading(false), 1000)
-        console.log("content:",content)
-    },[props.info])
+            setTimeout(() => {
+                setDataLoading(false)
+                // //console.log("content:",content)
+            }, 1000)
+        }
+ 
+    
+
+},[props.info])
     const loading = <div></div>
 
   // 以資料載入的指示狀態來切換要出現的畫面
@@ -55,7 +58,8 @@ setTimeout(() => setDataLoading(false), 1000)
 }
 
 const mapStateToProps = (store) => {
-    return { info: store.cartReducer.getOrder };
+    // return { info: store.cartReducer.getOrder };
+    return {  };
 };
 const mapDispatchToProps = null;
 

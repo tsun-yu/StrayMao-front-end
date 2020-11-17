@@ -8,8 +8,35 @@ import {
   PET_LIKE,
   GET_LIST,
   SET_DETAIL_PET_ID,
+  SET_ADOP_ID,
+  GET_ADOP_ID,
+  ADD_ADOP,
 } from '../../actions/adoption/actionTypes';
 
+function addPet(state = 1, action) {
+  switch (action.type) {
+    case ADD_ADOP:
+      state = state;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+function adopId(state = 1, action) {
+  switch (action.type) {
+    case SET_ADOP_ID:
+      state = action.value;
+      break;
+    case GET_ADOP_ID:
+      state = state;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
 function getRecom(
   state = [{ pic: '', name: '', gender: '', age: '', area: '', des: '' }],
   action
@@ -72,5 +99,5 @@ function petDetailId(state = 1, action) {
   }
   return state;
 }
-export { getRecom, petHeart, getList, getDetail, petDetailId };
+export { getRecom, petHeart, getList, getDetail, petDetailId, adopId, addPet };
 // export default totalPage;
