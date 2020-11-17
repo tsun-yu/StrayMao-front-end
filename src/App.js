@@ -117,10 +117,10 @@ function App() {
               {/*要連線的網頁*/}
               <OrderList />
             </Route>
-            <Route path="/Order">
-              {/*要連線的網頁*/}
+            {/* <Route path="/Order">
+              要連線的網頁
               <Order />
-            </Route>
+            </Route> */}
             <Route path="/" exact>
               {/*要連線的網頁*/}
               <Homepage setHome={setHome} />
