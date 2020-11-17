@@ -151,7 +151,7 @@ function Donate(props) {
                 <div>
                   <input
                     className="input-brown donateAmount pl-3"
-                    type="text"
+                    type="t"
                     style={{ width: '265px' }}
                   ></input>
                 </div>
@@ -234,7 +234,6 @@ function Donate(props) {
                   document.querySelector('.cdcardthree').value = ''
                   document.querySelector('.cdcardmon').value = ''
                   document.querySelector('.cdcardyr').value = ''
-                  document.querySelector('.donatePopup').style.display = 'block'
                 }}
               >
                 馬上捐款
@@ -243,11 +242,9 @@ function Donate(props) {
           </div>
         </div>
         {/* <div className="position-absolute donatePopup"></div> */}
-        <div className="donatepay">
-          <iframe src="https://ccore.newebpay.com/EPG/straymao/goXutn">
-            你的瀏覽器不支援 iframe
-          </iframe>
-        </div>
+        {/* <div className="donatepay">
+          <iframe src="https://ccore.newebpay.com/EPG/straymao/goXutn"></iframe>
+        </div> */}
       </div>
     </>
   )

@@ -140,7 +140,7 @@ function HomeNavbar(props) {
           <Nav className="mx-auto">
             <Nav.Link
               as={NavLink}
-              to="/adoptionTest"
+              to="/adoptionMain"
               style={{ color: '#a5a58d' }}
               className="hvr-pop mx-3"
             >
