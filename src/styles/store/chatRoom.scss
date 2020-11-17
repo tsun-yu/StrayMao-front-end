@@ -26,18 +26,19 @@
   background-color: #fff;
 }
 .chatBorder {
-  border: 1px solid pink;
+  border: 1px solid #eea4a4;
   border-radius: 4px;
   min-width: 280px;
 }
 .chatTop {
   height: 6vh;
   width: 101%;
-  background-color: pink;
+  background-color: #ed8f8f;
   border-radius: 4px;
   color: #fff;
   text-align: center;
   line-height: 6vh;
+  opacity: 0.7;
 }
 .chatImg {
   width: 55px;
@@ -72,11 +73,12 @@
 }
 .chatContant > .chatBtn {
   width: 100%;
-  border: 1px solid pink;
-  background-color: pink;
+  border: 1px solid #ed8f8f;
+  background-color: #ed8f8f;
   color: #fff;
   border-radius: 4px;
   height: 2rem;
+  opacity: 0.7;
 }
 input::placeholder {
   font-size: 0.75rem;
@@ -100,5 +102,36 @@ textarea::placeholder {
 
 //提交後畫面
 .closedBtn {
-  display: inline;
+  display: flex;
+  justify-content: center;
+}
+.closedBtn1 {
+  height: 32px;
+  margin: 0px 10px;
+  background-color: #fff;
+  color: #ed8f8f;
+  padding: 0px 20px;
+  border: 1px solid #ed8f8f;
+  border-radius: 4px;
+  opacity: 0.7;
+}
+.closedBtn1:hover {
+  height: 32px;
+  margin: 0px 10px;
+  background-color: #ed8f8f;
+  color: #fff;
+  padding: 0px 20px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  opacity: 0.7;
+}
+.closedBox {
+  height: 78px;
+  background-color: #a5a58d;
+  text-align: center;
+  margin: 10px;
+  color: #fff;
+  line-height: 78px;
+  border-radius: 4px;
+  opacity: 80%;
 }
