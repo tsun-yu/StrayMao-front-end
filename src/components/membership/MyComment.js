@@ -3,19 +3,14 @@ import { withRouter} from 'react-router-dom';
 //user used
 import "../../styles/membership/custom.scss";
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
-import LogInInfo from './LogInInfo';
 import MyComment_card from './MyComment_card';
+import LogInInfo from './LogInInfo2';
 
 function MyComment(props) {
   //檢查登入狀態 >> 取得要render畫面的內容
   const [member , setMember] = useState({});  //登入者資訊
-  const [renderList , setRenderList] = useState([]);
   useEffect(()=>{
-    if(member == null){
-      props.history.push("/signInForm");
-    }else{
-      if(member.memberId != null) getMyComment();
-    }
+    if(member.memberId != null) getMyComment();
   },[member]);
 
   const [doSave , setDoSave] = useState(null);
@@ -27,6 +22,7 @@ function MyComment(props) {
   },[doSave]);
 
   //更新評價
+  const [renderList , setRenderList] = useState([]);
   async function addMyCommemt() {
     const url = MEMBER_API_URL + "/addMyCommemtList";
     const condition = doSave;
@@ -66,6 +62,7 @@ return(
 <>
   <LogInInfo
     setMember = {setMember}
+    history = {props.history}
   />
 
   {renderList.length > 0 && renderList.map((element, i) => {

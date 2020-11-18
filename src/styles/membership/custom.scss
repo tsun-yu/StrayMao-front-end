@@ -237,7 +237,7 @@ main > .container {
   margin-right: 1vw;
 }
 
-.productName {
+.productName1 {
   font-size: 24px;
   font-family: $fontType1;
 }
@@ -249,6 +249,7 @@ main > .container {
   font-size: 16px;
   font-family: $fontType1;
   padding: 10px;
+  resize: none;
 }
 
 .commentDate {
@@ -271,6 +272,7 @@ main > .container {
   color: #ffffff;
   margin-bottom: 22px;
   letter-spacing: 30px;
+  align-items: center;
 }
 
 //<寵物專區>頁面
@@ -300,6 +302,7 @@ main > .container {
   font-size: 18px;
   font-family: $fontType1;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .container.petAreaBackgroud {

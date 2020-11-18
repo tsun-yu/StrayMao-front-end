@@ -4,22 +4,17 @@ import { withRouter} from 'react-router-dom';
 import "../../styles/membership/custom.scss";
 import { MEMBER_API_URL } from "../../actions/membership/actionTypes";
 import PetArea1_card from './PetArea1_card';
-import LogInInfo from './LogInInfo';
+import LogInInfo from './LogInInfo2';
 
 function PetArea1(props) {
   //檢查登入狀態 >> 取得要render畫面的內容
   const [member , setMember] = useState({});  //登入者資訊
-  const [renderList , setRenderList] = useState([]);
   useEffect(()=>{
-    if(member == null){
-      props.history.push("/signInForm");
-    }else{
-      if(member.memberId != null) getMyFavorite();
-    }
+    if(member.memberId != null) getMyFavorite();
   },[member]);
 
-  
   //拉取追蹤
+  const [renderList , setRenderList] = useState([]);
   async function getMyFavorite() {
     const url = MEMBER_API_URL + "/getHeartList";
     const condition = {
@@ -43,24 +38,24 @@ return(
 <>
   <LogInInfo
     setMember = {setMember}
+    history = {props.history}
   />
 
   <div className="petAreaWrap">
       <nav className="nav nav-pills flex-sm-row petAreaNavGroup">
-          <a className="flex-sm-fill text-sm-center nav-link petAreaNav active" href="#">關注寵物清單</a>
-          <a className="flex-sm-fill text-sm-center nav-link petAreaNav" href="#">線上領養查詢</a>
-          <a className="flex-sm-fill text-sm-center nav-link petAreaNav" href="#">認/領&emsp;養紀錄</a>
-          <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
-          <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
-          <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
-          <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
+        <a className="flex-sm-fill text-sm-center nav-link petAreaNav active" href="#">關注寵物清單</a>
+        <a className="flex-sm-fill text-sm-center nav-link petAreaNav" onClick={() => {props.history.push('/petArea2')}}>認/領&emsp;養紀錄</a>
+        <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
+        <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
+        <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
+        <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
       </nav>
       <div className="container petAreaBackgroud">
-          <div className="row">
-            {renderList.length > 0 && renderList.map((element, i) => {
-              return <PetArea1_card info={element} />;
-            })}
-          </div>
+        <div className="row">
+          {renderList.length > 0 && renderList.map((element, i) => {
+            return <PetArea1_card info={element} />;
+          })}
+        </div>
       </div>
   </div>
 </>

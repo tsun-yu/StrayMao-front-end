@@ -73,7 +73,7 @@ function RegisteredForm(props) {
         setTimeout(() => {
           setDataLoading(false)
           alert('喵~ ，您的會員資格已生效 !!')
-          props.history.push('/')
+          props.history.push('/memberInfo')
         }, 500)
       }
     }

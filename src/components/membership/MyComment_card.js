@@ -2,6 +2,7 @@ import ReactStars from "react-rating-stars-component";
 import React, { useState, useEffect } from 'react';
 import "../../styles/cart/orderlist.scss";
 import $ from 'jquery'
+import Moment from 'react-moment';
 
 function MyComment_card(props) {
   let info = props.info;
@@ -29,26 +30,27 @@ return(
 <>
   <div className="myCommentWrap">
     <div className="productMain">
-        <img className="productImg" src={"." + info.goodsImgs} alt="product image" />
-        <div className="commentStar">
-          <ReactStars {...commentStarGroup} />
-        </div>
+      <img className="productImg" src={"." + info.goodsImgs} alt="product image" />
+      <div className="commentStar">
+        <ReactStars {...commentStarGroup} />
+      </div>
     </div>
     <div className="commentMain">
-        <div className="productName">商品名稱：{info.name}</div>
-        <div className="commentContent">
-          <textarea 
-            className="form-control infoInput2" 
-            id={"comDescArea_" + info.orderId + info.goodsId + info.memberId} 
-            rows="3"
-          >{info.comDesc}</textarea>
-        </div>
-        <input type="hidden" id={"comStars_" + info.orderId + info.goodsId + info.memberId} value=""  />
-        <div className="commentDate">評價日期：{info.comDate} </div>
+      <div className="productName1">商品名稱：{info.name}</div>
+      <div className="">
+        <textarea
+          className="form-control infoInput2 commentContent" 
+          id={"comDescArea_" + info.orderId + info.goodsId + info.memberId} 
+          rows="3"
+        >{info.comDesc}</textarea>
+      </div>
+      <input type="hidden" id={"comStars_" + info.orderId + info.goodsId + info.memberId} value=""  />
+      <div className="commentDate">評價日期：
+      {(info.comDate=='') ? <Moment format="YYYY/MM/DD hh:mm:ss">{info.comDate}</Moment>:"尚未評價" }
+      </div>
     </div>
     
     <div className="commentBtnGroup">
-    <button className="commentBtn"></button>
     <button className="commentBtn"
       onClick={() => {
         const id = "#comDescArea_" + info.orderId + info.goodsId + info.memberId;
@@ -62,8 +64,8 @@ return(
           comDesc: $comDesc2.val(),
         });
       }}
-    > {(info.comDesc =='' && info.comStars == '') ? "儲存":"更新" }</button>
-        <button className="commentBtn">刪除</button>
+    > {(info.comDate=='') ? "儲存":"更新" }</button>
+    <button className="commentBtn">刪除</button>
     </div>
   </div>
 </>
