@@ -48,7 +48,6 @@ return(
   <div className="petAreaWrap">
       <nav className="nav nav-pills flex-sm-row petAreaNavGroup">
           <a className="flex-sm-fill text-sm-center nav-link petAreaNav active" href="#">關注寵物清單</a>
-          <a className="flex-sm-fill text-sm-center nav-link petAreaNav" href="#">線上領養查詢</a>
           <a className="flex-sm-fill text-sm-center nav-link petAreaNav" href="#">認/領&emsp;養紀錄</a>
           <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
           <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>

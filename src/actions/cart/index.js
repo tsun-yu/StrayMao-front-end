@@ -26,7 +26,8 @@ export const insertRecommand = (value) => {
 export const insertRecommandAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/cartinsert";
-    const cartinsert={ goodsId:value[0] ,name:value[1] ,price:value[2] ,goodsImgs:value[3] ,memberId:100 };
+    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:100;
+    const cartinsert={ goodsId:value[0] ,name:value[1] ,price:value[2] ,goodsImgs:value[3] ,memberId:memberId };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(cartinsert),
@@ -154,7 +155,8 @@ export const getRecommand = (value) => {
 //購物車列表
 export const getRecommandAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
-    const url = "http://localhost:3001/straymao/cart/cartlist";
+    const url = "http://localhost:3001/straymao/cart/cartlist/get/" + value;
+    const cartlist={ memberId:value };
     const request = new Request(url, {
       method: "GET",
       // body: JSON.stringify(cartlist),
@@ -379,10 +381,11 @@ export const getOrder = (value) => {
   return { type: GET_ORDER, value };
 };
 //某一筆訂單
+//OrderCardBoxM.js OrderDetailBoxM.js
 export const getOrderAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/order";
-    const order={ orderId: value, memberId:100 };
+    const order={ orderId: value };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(order),
@@ -411,7 +414,8 @@ export const goodsLike = (value) => {
 export const goodsLikeAsync = (value) => {
   return async function addGoodsHeart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/goods_heart";
-    const goods = { goodsId: value, memberId: 100 };
+    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:100;
+    const goods = { goodsId: value, memberId: memberId };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(goods),
@@ -440,7 +444,8 @@ export const goodsDisLike = (value) => {
 export const goodsDisLikeAsync = (value) => {
   return async function addGoodsHeart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/goods_heart";
-    const goods = { goodsId: value, memberId: 100 };
+    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:100;
+    const goods = { goodsId: value, memberId: memberId };
     const request = new Request(url, {
       method: "DELETE",
       body: JSON.stringify(goods),
@@ -469,7 +474,8 @@ export const goodsInitLike = (value) => {
 export const goodsInitLikeAsync = (value) => {
   return async function addGoodsHeart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/goods_heart_init";
-    const goods = { goodsId: value, memberId: 100 };
+    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:100;
+    const goods = { goodsId: value, memberId: memberId };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(goods),
