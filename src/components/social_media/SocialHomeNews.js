@@ -38,7 +38,7 @@ function SocialHomeNews(props) {
               </div>
             </div>
           </div>
-          <div className="newsSearchBox">
+          {/* <div className="newsSearchBox">
             <div className="talkSearchBox d-flex no-gutters">
               <div className="talkSearchBoxItems">
                 <div className="talkSearchTitle">討論主題</div>
@@ -156,7 +156,7 @@ function SocialHomeNews(props) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

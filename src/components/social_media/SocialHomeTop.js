@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { doc } from "prettier";
 // import Form from "./Form";
 
 function SocialHomeTop(props) {
 
   return (
     <>
-    {/* <Form setFormDone={setFormDone}/>
-    {formDone?<p>表單填答完成</p>:<p>請填表單</p>} */}
       <div className="socialTitleMain">
         <div className="socialBTitle enHeader1">SOCIAL</div>
         <div className="socialTitleLine">
@@ -41,7 +40,7 @@ function SocialHomeTop(props) {
               />
               <div className="topCardText">
                 <div className="topCardTitle">話題</div>
-                <a className="topCardP">>了解更多</a>
+                <a className="topCardP"  onClick={()=>{document.getElementById("socialforumMain").scrollIntoView(false)}}>>了解更多</a>
               </div>
             </div>
           </div>

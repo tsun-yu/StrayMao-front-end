@@ -1,4 +1,5 @@
 import { GET_FORUMLIST } from "./actionTypes";
+import { GET_FORUMHOT } from "./actionTypes";
 import { GET_ARTICLELIST } from "./actionTypes";
 import { GET_ARTICLE_DETAIL } from "./actionTypes";
 import { SET_DETAIL_ARTICLE_ID } from "./actionTypes";
@@ -36,6 +37,35 @@ export const getForumListAsync = (value) => {
       await dispatch(getForumList(data));
     } catch (error) {
       //setError(error)
+    }
+  };
+};
+
+
+// 取得論壇熱門
+export const getForumHot = (value) => {
+  return { type: GET_FORUMHOT, value };
+};
+
+export const getForumHotAsync = (value) => {
+  return async function getForumHotaaa(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/social_media/get_forum_hot";
+    const request = new Request(url, {
+      method: "GET",
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      console.log("hot : ",data);
+
+      await dispatch(getForumHot(data));
+    } catch (error) {
+      // setError(error)
     }
   };
 };

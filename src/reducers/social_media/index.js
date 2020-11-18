@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 
 import {
   getForumList,
+  getForumHot,
   getArticleList,
   articleDetailId,
   getArticleDetail,
@@ -16,6 +17,7 @@ import {
 // //combine all reducer to a big reducer
 export const socialReducer = combineReducers({
   getForumList,
+  getForumHot,
   getArticleList,
   articleDetailId,
   getArticleDetail,

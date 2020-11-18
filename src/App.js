@@ -30,6 +30,7 @@ import PetArea2 from "./components/membership/PetArea2";
 // 會員中心End
 import SocialTest from './components/social_media/Test'
 import SocialForum from './components/social_media/SocialForum'
+import SocialHomepage from './components/social_media/SocialHomepage'
 import AddForumCard from './components/social_media/AddForumCard'
 import StoreTest from './components/store/Test'
 import StrayMaoP2 from './components/store/StrayMaoP2'
@@ -169,6 +170,10 @@ function App() {
             <Route path="/socialTest">
               {/*要連線的網頁*/}
               <SocialTest />
+            </Route>
+            <Route path="/socialHomepage">
+              {/*要連線的網頁*/}
+              <SocialHomepage />
             </Route>
             <Route path="/socialForum">
               {/*要連線的網頁*/}
