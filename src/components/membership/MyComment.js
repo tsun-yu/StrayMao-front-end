@@ -5,6 +5,7 @@ import "../../styles/membership/custom.scss";
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
 import MyComment_card from './MyComment_card';
 import LogInInfo from './LogInInfo2';
+import DonateButton from '../common/DonateButton'
 
 function MyComment(props) {
   //檢查登入狀態 >> 取得要render畫面的內容
@@ -21,6 +22,11 @@ function MyComment(props) {
     }
   },[doSave]);
 
+  const [reload , setReLoad] = useState(false);
+  useEffect(() => {
+    getMyComment();
+  },[reload]);
+
   //更新評價
   const [renderList , setRenderList] = useState([]);
   async function addMyCommemt() {
@@ -36,7 +42,10 @@ function MyComment(props) {
     });
     const response = await fetch(request)
     const rsObj = await response.json();  //轉成物件
-    if(rsObj.success) alert("評價已送出!!");
+    if(rsObj.success) {
+      setReLoad(!reload);  //讓資訊刷新
+      alert("評價已送出!!");
+    }
   }
 
   //拉取顯示列表
@@ -64,6 +73,7 @@ return(
     setMember = {setMember}
     history = {props.history}
   />
+  <DonateButton />
 
   {renderList.length > 0 && renderList.map((element, i) => {
     return <MyComment_card 

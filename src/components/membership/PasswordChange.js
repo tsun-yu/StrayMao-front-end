@@ -4,6 +4,7 @@ import { withRouter} from 'react-router-dom';
 import "../../styles/membership/custom.scss";
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
 import LogInInfo from './LogInInfo';
+import DonateButton from '../common/DonateButton'
 
 function PasswordChange(props) {
   //檢查登入狀態 >> 取得要render畫面的內容
@@ -22,6 +23,7 @@ return(
   <LogInInfo
     setMember = {setMember}
   />
+  <DonateButton />
 
   <div className="topicStyle">能給我個家嗎? 爸脫~</div>
   <div className="memberInfoBackground">
