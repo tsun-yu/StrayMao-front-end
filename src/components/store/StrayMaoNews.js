@@ -5,8 +5,6 @@ import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
 import PageBar from '../../components/adoption/PageBar'
 import { gotoPage, setTotalPage } from '../../actions/common/index'
-import ChatRoomSvg from '../../components/store/ChatRoomSvg'
-
 
 import { getListAsync } from '../../actions/store/index'
 
@@ -136,7 +134,6 @@ function StrayMaoNews(props) {
         </div>
       </div>
 
-      <ChatRoomSvg />
     </>
   )
 }

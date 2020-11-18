@@ -7,8 +7,9 @@ import StoreCard from '../../components/store/StoreCard'
 import ChatRoomSvg from '../../components/store/ChatRoomSvg'
 // import StoreCardTest from '../../components/store/StoreCardTest'
 // import { getListAsync } from '../../actions/store/index'
-import { Link } from 'react-router-dom'
+import DonateButton from '../common/DonateButton'
 import StoreAnimation from '../../components/store/StoreAnimation'
+
 
 import {
   getListAsync,
@@ -188,9 +189,10 @@ function Storepage(props) {
 
   return (
     <>
+          <DonateButton />
       {/* 地板 */}
       {/* onMouseOver={(storeP1Background)=> */}
-      <section>
+      <section className="test1">
         <StoreAnimation />
       </section>
       <div className="container" data-speed="0">

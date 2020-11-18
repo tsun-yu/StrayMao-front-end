@@ -276,13 +276,13 @@ function RegisteredForm(props) {
 
 return (
   <>
-    <ImageUploader
+    {/* <ImageUploader
       {...props}
       withIcon={true}
       onChange={onDrop}
       imgExtension={[".jpg", ".gif", ".png", ".gif"]}
       maxFileSize={5242880}
-    />
+    /> */}
 
     {dataLoading ? loading : display}
   </>
