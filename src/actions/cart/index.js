@@ -155,7 +155,6 @@ export const getRecommand = (value) => {
 export const getRecommandAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/cartlist";
-    const cartlist={ memberId:100 };
     const request = new Request(url, {
       method: "GET",
       // body: JSON.stringify(cartlist),
