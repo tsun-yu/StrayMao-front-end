@@ -287,7 +287,7 @@ export const updateOrderAsync = (value) => {
     console.log('order:',order)
     const request = new Request(url, {
       method: "POST",
-      // body: JSON.stringify(order),
+      body: JSON.stringify(order),
       headers: new Headers({
         Accept: "application/json",
         "Content-Type": "application/json",
