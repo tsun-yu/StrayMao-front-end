@@ -1,65 +1,65 @@
-import React, { useState, useEffect } from 'react';
-import MyNavbar from './components/common/MyNavbar';
-import HomeNavbar from './components/homapage/HP-component/HomeNavbar';
-import MyFooter from './components/common/MyFooter';
-import HomeFooter from './components/homapage/HP-component/HomeFooter';
-import MainContent from './components/common/MainContent';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import TestLink from './components/common/TestLink';
-import AdoptionTest from './components/adoption/Test';
-import AdoptionList from './components/adoption/AdopListPage';
-import AdoptionMain from './components/adoption/AdopMainPage';
-import AdoptionDetail from './components/adoption/AdopDetailPage';
-import AdopMapPage from './components/adoption/AdopMapPage';
-import CartTest from './components/cart/Test';
-import CartList from './components/cart/CartList';
-import Buy from './components/cart/Buy';
-import OrderList from './components/cart/OrderList';
-import Order from './components/cart/Order';
-import SocialTest from './components/social_media/Test';
-import SocialForum from './components/social_media/SocialForum';
-import AddForumCard from './components/social_media/AddForumCard';
-import StoreTest from './components/store/Test';
-import StrayMaoP2 from './components/store/StrayMaoP2';
-import StrayMaoP3 from './components/store/StrayMaoP3';
-import StrayMaoDogs from './components/store/StrayMaoDogs';
-import StrayMaoNews from './components/store/StrayMaoNews';
-import Try from './components/store/Try';
-import AdopFormPage from './components/adoption/AdopFormPage';
-import AdopFormPage2 from './components/adoption/AdopFormPage2';
-import AdopFormPage3 from './components/adoption/AdopFormPage3';
-import AdopFormPage4 from './components/adoption/AdopFormPage4';
-import Donate from './components/homapage/Donate';
-import ChatRoomSvg from './components/store/ChatRoomSvg';
-import ChatRoom from './components/store/ChatRoom';
+import React, { useState, useEffect } from 'react'
+import MyNavbar from './components/common/MyNavbar'
+import HomeNavbar from './components/homapage/HP-component/HomeNavbar'
+import MyFooter from './components/common/MyFooter'
+import HomeFooter from './components/homapage/HP-component/HomeFooter'
+import MainContent from './components/common/MainContent'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import TestLink from './components/common/TestLink'
+import AdoptionTest from './components/adoption/Test'
+import AdoptionList from './components/adoption/AdopListPage'
+import AdoptionMain from './components/adoption/AdopMainPage'
+import AdoptionDetail from './components/adoption/AdopDetailPage'
+import AdopMapPage from './components/adoption/AdopMapPage'
+import CartTest from './components/cart/Test'
+import CartList from './components/cart/CartList'
+import Buy from './components/cart/Buy'
+import OrderList from './components/cart/OrderList'
+import Order from './components/cart/Order'
+import SocialTest from './components/social_media/Test'
+import SocialForum from './components/social_media/SocialForum'
+import AddForumCard from './components/social_media/AddForumCard'
+import StoreTest from './components/store/Test'
+import StrayMaoP2 from './components/store/StrayMaoP2'
+import StrayMaoP3 from './components/store/StrayMaoP3'
+import StrayMaoDogs from './components/store/StrayMaoDogs'
+import StrayMaoNews from './components/store/StrayMaoNews'
+import Try from './components/store/Try'
+import AdopFormPage from './components/adoption/AdopFormPage'
+import AdopFormPage2 from './components/adoption/AdopFormPage2'
+import AdopFormPage3 from './components/adoption/AdopFormPage3'
+import AdopFormPage4 from './components/adoption/AdopFormPage4'
+import Donate from './components/homapage/Donate'
+import ChatRoomSvg from './components/store/ChatRoomSvg'
+import ChatRoom from './components/store/ChatRoom'
 // 會員中心Start
-import Member from './components/membership/Member';
-import MemberInfo from './components/membership/MemberInfo';
-import RegisteredForm from './components/membership/RegisteredForm';
-import PasswordChange from './components/membership/PasswordChange';
-import MyComment from './components/membership/MyComment';
-import MyFavorite1 from './components/membership/MyFavorite1';
-import MyFavorite2 from './components/membership/MyFavorite2';
-import SignInForm from './components/membership/SignInForm';
-import PetArea1 from './components/membership/PetArea1';
-import PetArea2 from './components/membership/PetArea2';
+import Member from './components/membership/Member'
+import MemberInfo from './components/membership/MemberInfo'
+import RegisteredForm from './components/membership/RegisteredForm'
+import PasswordChange from './components/membership/PasswordChange'
+import MyComment from './components/membership/MyComment'
+import MyFavorite1 from './components/membership/MyFavorite1'
+import MyFavorite2 from './components/membership/MyFavorite2'
+import SignInForm from './components/membership/SignInForm'
+import PetArea1 from './components/membership/PetArea1'
+import PetArea2 from './components/membership/PetArea2'
 // 會員中心End
-import Homepage from './components/homapage/Homepage';
+import Homepage from './components/homapage/Homepage'
 
 function App() {
-  const [navbar, setNavbar] = useState(<MyNavbar />);
-  const [footer, setFooter] = useState(<MyFooter />);
-  const [home, setHome] = useState(false);
+  const [navbar, setNavbar] = useState(<MyNavbar />)
+  const [footer, setFooter] = useState(<MyFooter />)
+  const [home, setHome] = useState(false)
 
   useEffect(() => {
     if (home) {
-      setNavbar(<HomeNavbar />);
-      setFooter(<HomeFooter />);
+      setNavbar(<HomeNavbar />)
+      setFooter(<HomeFooter />)
     } else {
-      setNavbar(<MyNavbar />);
-      setFooter(<MyFooter />);
+      setNavbar(<MyNavbar />)
+      setFooter(<MyFooter />)
     }
-  }, [home]);
+  }, [home])
 
   return (
     <Router>
@@ -211,7 +211,7 @@ function App() {
         {footer}
       </>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
