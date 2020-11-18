@@ -24,7 +24,7 @@ return(
             </div>
             <div className="orderlistC_boxR_An">
                 <a onClick={() => {
-                    props.getOrderId(props.info.orderId)
+                    props.getOrderId(props.info)
                     props.history.push('/Order')
                     }}>查看更多</a>
             </div>

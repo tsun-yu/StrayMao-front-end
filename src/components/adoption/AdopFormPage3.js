@@ -10,7 +10,9 @@ function AdopFormPage3(props) {
     window.scrollTo(0, 0);
   }, []);
   const loading = <div></div>;
-
+  const ele = (value) => {
+    return document.querySelector(value);
+  };
   // 以資料載入的指示狀態來切換要出現的畫面
   return (
     <>
@@ -74,6 +76,7 @@ function AdopFormPage3(props) {
                         有
                       </label>
                       <input
+                        id="q1"
                         className="input-brown adopInputInRadio w-25"
                         type="text"
                         placeholder=""
@@ -121,6 +124,7 @@ function AdopFormPage3(props) {
                         有
                       </label>
                       <input
+                        id="q2"
                         className="input-brown adopInputInRadio w-25"
                         type="text"
                         placeholder=""
@@ -208,14 +212,27 @@ function AdopFormPage3(props) {
                   </div>
                 </div>
               </div>
-              <div className="my-5">
+              <div className="my-5 d-flex">
                 <button
-                  className="btn-green d-flex justify-content-center  align-items-center m-auto"
+                  className="mx-2 btn-green d-flex justify-content-center  align-items-center my-auto"
+                  type="button"
+                  value="123"
+                  onClick={() => {
+                    ele('#q1').value = '3';
+                    ele('#r1').setAttribute('checked', true);
+                    ele('#r4').setAttribute('checked', true);
+                    ele('#r5').setAttribute('checked', true);
+                    ele('#r7').setAttribute('checked', true);
+                  }}
+                >
+                  一鍵填寫
+                </button>
+                <button
+                  className="mx-2 btn-green d-flex justify-content-center  align-items-center my-auto"
                   type="button"
                   value="123"
                   onClick={() => {
                     props.getAdopPetAsync(props.id);
-                    console.log('111111');
                     props.history.push('/adoptionform4');
                   }}
                 >

@@ -90,13 +90,19 @@ function StrayMaoNews(props) {
       <div className="container">
         <div className="row">
           <section>
-            <div className="storeP2Background">
-              <img
-                src="./image/store/kitten-touching-dog.jpg"
-                alt=""
-                className="layer storeP2CatImg"
-                data-speed="2"
-              />
+            <div className="storeP2BackgroundAround">
+              <div className="storeP2Background">
+                <img
+  src="./image/store/kitten-touching-dog.jpg"
+                  alt=""
+                  className="layer storeP2CatImg"
+                  data-speed="2"
+                />
+              </div>
+              <div className="storeP2BackgroundBox1 animate__animated animate__slideInRight"></div>
+              <div className="storeP2BackgroundBox2 animate__animated animate__slideInDown">
+                新。商品
+              </div>
             </div>
           </section>
 
@@ -127,7 +133,7 @@ function StrayMaoNews(props) {
       </div>
 
       <div className="container storeP1Bottom">
-          <div className="row d-flex" id="between">
+          <div className="row d-flex" id="PageBar">
     <PageBar />
     </div>
     </div>

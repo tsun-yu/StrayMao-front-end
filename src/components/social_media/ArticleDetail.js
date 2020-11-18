@@ -26,7 +26,7 @@ function ArticleDetail(props) {
 
   return (
     <>
-      <div className="bigArticleBox">
+      <div className="bigArticleBox" id="bigArticleBox">
         <div className="row bigArticleTitleItems no-gutters">
           <h3 className="enHeader5 bigArticleBTitle">
             {props.getdetail.issueType}
