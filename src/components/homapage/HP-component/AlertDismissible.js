@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Alert, Button } from 'react-bootstrap'
 
-function AlertDismissible() {
-  const [show, setShow] = useState(true)
-
-  if (show) {
-    return (
-      <Alert
-        className="fsd"
-        variant="success"
-        onClose={() => setShow(false)}
-        dismissible
-      >
-        <Alert.Heading className="text-center">捐款成功</Alert.Heading>
+function AlertDismissible(props) {
+  return (
+    <div className="donateSuccess animate__fadeInDown animate__animated ">
+      <Alert variant="success" className="text-center">
+        <h4>捐款成功</h4>
         <p className="text-center">您的愛心已收到，祝您上廁所都有衛生紙</p>
       </Alert>
-    )
-  }
-  return <Button onClick={() => setShow(true)}>Show Alert</Button>
+    </div>
+  )
 }
 
 export default AlertDismissible

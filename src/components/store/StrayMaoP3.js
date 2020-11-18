@@ -5,6 +5,8 @@ import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
 import Share from 'social-share-react'
 import { withRouter, useHistory } from 'react-router-dom'
+import { FacebookShareButton, LineShareButton, TwitterShareButton } from "react-share";
+import { FacebookIcon, LineIcon, TwitterIcon } from "react-share";
 import {
   goodsDisLikeAsync,
   goodsLikeAsync,
@@ -61,6 +63,7 @@ function StrayMaoP3(props) {
     </button>
   )
   useEffect(() => {
+    props.getListAsync()
     // console.log("props.info:",props.info)
     // props.goodsInitLikeAsync(props.info[props.index].goodsId);
     // console.log('like:', props.like);
@@ -145,7 +148,7 @@ function StrayMaoP3(props) {
     let info = props.info
     // console.log('info', info)
     let item = props.item
-    console.log("123: ",info.pricing>info.price)
+    console.log('123: ', info.pricing > info.price)
 
     if (info !== 1) {
       const arr = item.filter((e) => {
@@ -157,7 +160,7 @@ function StrayMaoP3(props) {
 
       if (item.length > 0) {
         // for (let i = 0; i < info.length; i++) {
-        for (let i = 0; i < 3; i++) {          
+        for (let i = 0; i < 3; i++) {
           content.push(
             <StoreCard
               item={{
@@ -257,6 +260,37 @@ function StrayMaoP3(props) {
                 }
                 alt=""
               />
+              <div className="shareP3">分享至：
+              <div className="App">
+              <FacebookShareButton
+        url={"http://sc.piee.pw/38yp2q"}
+        quote={"4不4有點累惹阿，要不要來點毛毛阿ヽ(●´∀`●)ﾉ"}
+        hashtag={["#StrayMao寵愛有家", "#Luna月亮跳台"]}
+        description={"aiueo"}
+        className="shareBtnStore Demo__some-network__share-button"
+      >
+        <FacebookIcon size={32} round />
+      </FacebookShareButton>
+      <LineShareButton
+        url={"http://localhost:3000/ChatRoom"}
+        quote={"test"}
+        hashtag={"#毛毛"}
+        description={"test啦"}
+        className="shareBtnStore Demo__some-network__share-button"
+      >
+        <LineIcon size={32} round />
+      </LineShareButton>
+      
+      <TwitterShareButton
+        title={"test"}
+        url={"http://localhost:3000/ChatRoom"}
+        hashtags={["hashtag1", "hashtag2"]}
+      >
+        <TwitterIcon size={32} round />
+        
+      </TwitterShareButton>
+    </div>
+              </div>
             </div>
             <div className="storeP3Description">
               <div className="storeP3Title">
@@ -302,14 +336,20 @@ function StrayMaoP3(props) {
                 </div>
 
                 <div className="starAndComment">
-
-
-                  {props.info !==1?props.info[0].pricing>props.info[0].price?<div className="fakePrice">                                  
-                    NT${' '}
-                    {props.info === 1
-                      ? 'wait for loading'
-                      : props.info[0].pricing}
-                  </div>:<div className="fakePrice"></div>:<div className="fakePrice"></div>}
+                  {props.info !== 1 ? (
+                    props.info[0].pricing > props.info[0].price ? (
+                      <div className="fakePrice">
+                        NT${' '}
+                        {props.info === 1
+                          ? 'wait for loading'
+                          : props.info[0].pricing}
+                      </div>
+                    ) : (
+                      <div className="fakePrice"></div>
+                    )
+                  ) : (
+                    <div className="fakePrice"></div>
+                  )}
 
                   <div className="comment">
                     4.0分｜<a href="">2個評價</a>
@@ -330,7 +370,16 @@ function StrayMaoP3(props) {
                   value="1"
                 />
                 <svg className="icon-021-plus">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.44 19.44"><path id="Path_1806" data-name="Path 1806" d="M18.67,9h-8.2V.76A.76.76,0,1,0,9,.76V9H.76a.76.76,0,0,0,0,1.52H9v8.2a.76.76,0,1,0,1.52,0h0v-8.2h8.2a.76.76,0,0,0,0-1.52h0Z"></path></svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 19.44 19.44"
+                  >
+                    <path
+                      id="Path_1806"
+                      data-name="Path 1806"
+                      d="M18.67,9h-8.2V.76A.76.76,0,1,0,9,.76V9H.76a.76.76,0,0,0,0,1.52H9v8.2a.76.76,0,1,0,1.52,0h0v-8.2h8.2a.76.76,0,0,0,0-1.52h0Z"
+                    ></path>
+                  </svg>
                 </svg>
               </div>
 
@@ -355,8 +404,19 @@ function StrayMaoP3(props) {
                   </svg>
                 </button> */}
                 {likeBtn}
-                <button className="btn-green" type="button" value="" onClick={() => {
-                  props.insertRecommandAsync([props.goodsIdDetail,props.info[0].name,props.info[0].price,props.info[0].goodsImgs]);}}>
+                <button
+                  className="btn-green"
+                  type="button"
+                  value=""
+                  onClick={() => {
+                    props.insertRecommandAsync([
+                      props.goodsIdDetail,
+                      props.info[0].name,
+                      props.info[0].price,
+                      props.info[0].goodsImgs,
+                    ])
+                  }}
+                >
                   加入購物車
                 </button>
               </div>
@@ -388,36 +448,7 @@ function StrayMaoP3(props) {
 
       <div className="container">
         <div className="row">
-          <div className="goodsDescriptionLittleWords">
-            {props.info === 1
-              ? 'wait for loading'
-              : props.info[0].newDesc}
-
-
-              {/* : props.info[0].newDesc.split("<aaa>") + "<br />"} */}
-            {/* 每盒內含10件商品
-            <br />
-            ※零食同系列內的「口味」、玩具同系列內的「款式」將隨機出貨 恕不挑款
-            <br />
-            1. SHEBA 誘惑泥 (12gx4條) x1
-            <br />
-            2. Catit 喵肉乾 (30g) 炭燒風味 x1
-            <br />
-            3. 舟屋 冷凍乾燥雞腿肉/櫻桃鴨 x1
-            <br />
-            4. Bistro cat 特級銀貓健康餐罐 (80g) x1
-            <br />
-            5. HYPERR超躍貓咪無穀主食罐 (70g) x1
-            <br />
-            6. 克瑞斯 天然無穀主食貓餐罐(90g) x1
-            <br />
-            7. CIAO 鰹魚燒晚餐 (50g) x1
-            <br />
-            8. Kitcat 山羊奶湯罐-(70g) x1
-            <br />
-            9. FOFOS 兩只福狸 貓舌頭爽爽舔食墊（美味紫/馬卡龍綠/珊瑚紅）x1
-            <br />
-            10. 不挑款人氣飼料試吃包 x1 */}
+          <div className="goodsDescriptionLittleWords" dangerouslySetInnerHTML={{__html: props.info === 1 ? 'wait for loading' : props.info[0].newDesc}}>           
           </div>
         </div>
       </div>

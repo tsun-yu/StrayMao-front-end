@@ -21,9 +21,20 @@
 }
 
 .donateArea {
-  height: 500px;
+  height: 600px;
   width: 100vw;
   background-color: #fff1e6;
+  position: relative;
+}
+.donateSuccess {
+  width: 60vw;
+  transition: 0.5s;
+  position: absolute;
+  left: 20vw;
+  margin-top: 5px;
+}
+.donateItems {
+  margin-top: 100px;
 }
 .donateCredit {
   font: {
@@ -32,24 +43,4 @@
   }
   color: #555555;
   line-height: 36px;
-}
-
-.donatePopup {
-  background-color: #fff;
-  width: 500px;
-  height: 500px;
-  left: calc(50% - 250px);
-  top: 60%;
-  border-radius: 4px;
-  display: none;
-}
-
-.donatepay {
-  width: 100vw;
-  height: 100vh;
-}
-
-iframe {
-  width: 100vw;
-  height: 80vh;
 }

@@ -10,6 +10,9 @@ function Buy(props) {
     const [memberName, setMemberName] = useState(props.id[0].memberName)
     const [mobile, setMobile] = useState(props.id[0].mobile)
     const [address, setAddress] = useState(props.id[0].address)
+
+    const [shipType, setShipType] = useState('便利商店取貨')
+    const [paymentType, setPaymentType] = useState('貨到付款')
     
     // const [total, setTotal] = useState(0);
     const [dataLoading, setDataLoading] = useState(true);
@@ -40,23 +43,15 @@ function Buy(props) {
         setAddress(event.target.value);
       }
 
-      let productDeliveryRadio ='便利商店取貨'
-    //   if(document.getElementById("r1").checked==true){
-    //     productDeliveryRadio=document.getElementById("r1").value
-    //   }else if(document.getElementById("r2").checked==true){
-    //     productDeliveryRadio=document.getElementById("r2").value
-    //   }else{
-    //     productDeliveryRadio=document.getElementById("r3").value
-    //   }
+    const onChangeShip = e =>{
+        console.log(e.target.value)
+        setShipType(e.target.value)
+    }
 
-      let paymentTermRadio ='貨到付款'
-    //   if(document.getElementById("r4").checked==true){
-    //     paymentTermRadio=document.getElementById("r4").value
-    //   }else if(document.getElementById("r5").checked==true){
-    //     paymentTermRadio=document.getElementById("r5").value
-    //   }else{
-    //     paymentTermRadio=document.getElementById("r6").value
-    //   }
+    const onChangePayment = e =>{
+        console.log(e.target.value)
+        setPaymentType(e.target.value)
+    }
 
       const btnBuyClick = ()=>{
           console.log('props.id[0].cartId',props.id[0].cartId)
@@ -65,6 +60,24 @@ function Buy(props) {
           console.log('memberName',memberName)
           console.log('mobile',mobile)
           console.log('address',address)
+          let productDeliveryRadio ='便利商店取貨'
+          let radios1 = document.getElementsByName('radio1');
+    
+    for (let i = 0, length = radios1.length; i < length; i++) {
+      if (radios1[i].checked) {
+        productDeliveryRadio=radios1[i].value
+        break;
+      }
+    }
+          let paymentTermRadio ='貨到付款'
+          let radios2 = document.getElementsByName('radio2');
+    
+    for (let i = 0, length = radios2.length; i < length; i++) {
+      if (radios2[i].checked) {
+        paymentTermRadio=radios2[i].value
+        break;
+      }
+    }
         props.updateOrderAsync([props.id[0].cartId,props.id[0].quantity,subTotal+60,memberName,mobile,address,productDeliveryRadio,paymentTermRadio,props.id[0].orderId])
       }
     
@@ -149,15 +162,15 @@ setTimeout(() => setDataLoading(false), 1000);
                     <span>取貨方式</span>
                     <div className="d-flex mx-0 my-0">
                         <div className="buyC_opt_An ml-0 mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r1" value="郵寄" checked={false}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r1" value="郵寄" checked={(shipType==='郵寄')?true:false} onChange={onChangeShip}/>
                             <label className="mb-0 pl-4" for="r1">郵寄</label>
                         </div>
                         <div className="buyC_opt_An mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r2" value="宅急便" checked={false}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r2" value="宅急便" checked={(shipType==='宅急便')?true:false} onChange={onChangeShip}/>
                             <label className="mb-0 pl-4" for="r2">宅急便</label>
                         </div>
                         <div className="buyC_opt_An mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r3" value="便利商店取貨" checked={true}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio1" id="r3" value="便利商店取貨" checked={(shipType==='便利商店取貨')?true:false} onChange={onChangeShip}/>
                             <label className="mb-0 pl-4" for="r3">便利商店取貨</label>
                         </div>
                     </div>
@@ -172,15 +185,15 @@ setTimeout(() => setDataLoading(false), 1000);
                     <span>付款方式</span>
                     <div className="d-flex mx-0 my-0">
                         <div className="buyC_opt_An ml-0 mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r4" value="信用卡" checked={false}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r4" value="信用卡" checked={(paymentType==='貨到付款')?true:false} onChange={onChangePayment}/>
                             <label className="mb-0 pl-4" for="r4">信用卡</label>
                         </div>
                         <div className="buyC_opt_An mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r5" value="ATM" checked={false}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r5" value="ATM" checked={(paymentType==='貨到付款')?true:false} onChange={onChangePayment}/>
                             <label className="mb-0 pl-4" for="r5">ATM</label>
                         </div>
                         <div className="buyC_opt_An mt-3 mb-0">
-                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r6" value="貨到付款" checked={true}/>
+                            <input className="buyC_magic-radio_An" type="radio" name="radio2" id="r6" value="貨到付款" checked={(paymentType==='貨到付款')?true:false} onChange={onChangePayment}/>
                             <label className="mb-0 pl-4" for="r6">貨到付款</label>
                         </div>
                     </div>
@@ -198,7 +211,7 @@ setTimeout(() => setDataLoading(false), 1000);
             </div>
             <div className="buyM_boxDown_An d-flex flex-column">
                 <span className="buyM_countPrice_An">小計：{subTotal} 元 + 運費：40元</span>
-                <span className="buyM_totalPrice_An">總計：{subTotal+40} 元</span>
+                <span className="buyM_totalPrice_An">總計：{subTotal+60} 元</span>
             </div>
             <div className="buyM_boxConsignee_An">
                 <div>

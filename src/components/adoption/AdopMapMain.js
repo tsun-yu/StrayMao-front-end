@@ -127,7 +127,7 @@ function AdopMapMain(props) {
       />
     );
   }
-  for (let i = 10; i < 14; i++) {
+  for (let i = 10; i < 11; i++) {
     content3.push(
       <AnyReactComponent3
         lat={loc[i].lat}
@@ -136,8 +136,8 @@ function AdopMapMain(props) {
         icon="/public/image/097-pin.png"
         key={i}
         data={
-          1
-          // props.data == null ? '' : JSON.stringify(props.data[2].info[i - 10])
+          // 1
+          props.data == null ? '' : JSON.stringify(props.data[2].info[i - 10])
         }
       />
     );
@@ -151,8 +151,8 @@ function AdopMapMain(props) {
         icon="/public/image/097-pin.png"
         key={i}
         data={
-          1
-          // props.data == null ? '' : JSON.stringify(props.data[3].info[i - 15])
+          // 1
+          props.data == null ? '' : JSON.stringify(props.data[3].info[i - 15])
         }
       />
     );
@@ -166,8 +166,7 @@ function AdopMapMain(props) {
         icon="/public/image/097-pin.png"
         key={i}
         data={
-          1
-          // props.data == null ? '' : JSON.stringify(props.data[4].info[i - 20])
+          props.data == null ? '' : JSON.stringify(props.data[4].info[i - 20])
         }
       />
     );
