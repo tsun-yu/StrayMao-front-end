@@ -4,12 +4,9 @@ import '../../styles/store/straymaoP2.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
 import PageBar from '../../components/common/PageBar'
-import { gotoPage, setTotalPage } from "../../actions/common/index";
+import { gotoPage, setTotalPage } from '../../actions/common/index'
 
-import {
-  getCatsListAsync,
-} from '../../actions/store/index'
-
+import { getCatsListAsync } from '../../actions/store/index'
 
 function StrayMaoP2(props) {
   let i = 0
@@ -18,14 +15,14 @@ function StrayMaoP2(props) {
   // let content = []
 
   // 分頁
-  const [dataLoading, setDataLoading] = useState(true);
+  const [dataLoading, setDataLoading] = useState(true)
   const [displayPage, setDisplayPage] = useState([])
   const contentPage = []
 
-  let totalCards = props.cards;
+  let totalCards = props.cards
   // console.log('store: ',props.cards)
-  let totalPages = Math.ceil(totalCards.length / 9);
-  let nowPage = props.nowPage;
+  let totalPages = Math.ceil(totalCards.length / 9)
+  let nowPage = props.nowPage
 
   useEffect(() => {
     props.getCatsListAsync()
@@ -54,10 +51,9 @@ function StrayMaoP2(props) {
       })
   }, [])
 
-  useEffect(()=>{
-
-    totalCards = props.cards;
-    totalPages = Math.ceil(totalCards.length / 9);
+  useEffect(() => {
+    totalCards = props.cards
+    totalPages = Math.ceil(totalCards.length / 9)
 
     if (totalCards.length > 0) {
       // let tt = JSON.parse(totalCards[0]);
@@ -66,7 +62,7 @@ function StrayMaoP2(props) {
       // console.log("totalPages ", totalPages);
       // console.log("if:", nowPage === totalPages);
     }
-    props.setTotalPage(totalPages);
+    props.setTotalPage(totalPages)
     for (
       let i = 9 * (nowPage - 1);
       nowPage === totalPages ? i < totalCards.length : i < 9 * nowPage;
@@ -74,15 +70,15 @@ function StrayMaoP2(props) {
     ) {
       if (totalCards.length > 0) {
         // console.log(":", totalCards[i]);
-        contentPage.push(<StoreCard item={totalCards[i]} key={i} />);
+        contentPage.push(<StoreCard item={totalCards[i]} key={i} />)
       }
     }
-    setDisplayPage(contentPage);
+    setDisplayPage(contentPage)
 
-    setTimeout(() => setDataLoading(false), 100);
-  }, [totalCards, nowPage]);
+    setTimeout(() => setDataLoading(false), 100)
+  }, [totalCards, nowPage])
 
-  const loading = <div></div>;
+  const loading = <div></div>
 
   // useEffect(()=>{
   //   let info = props.info
@@ -116,16 +112,21 @@ function StrayMaoP2(props) {
       <div className="container">
         <div className="row">
           <section>
-            <div className="storeP2Background">
-              <img
-                src="./image/store/P2Background.jpg"
-                alt=""
-                className="layer storeP2CatImg"
-                data-speed="2"
-              />
+            <div className="storeP2BackgroundAround">
+              <div className="storeP2Background">
+                <img
+                  src="./image/store/P2Background.jpg"
+                  alt=""
+                  className="layer storeP2CatImg"
+                  data-speed="2"
+                />
+              </div>
+              <div className="storeP2BackgroundBox1 animate__animated animate__slideInRight"></div>
+              <div className="storeP2BackgroundBox2 animate__animated animate__slideInDown">
+                貓。商品
+              </div>
             </div>
           </section>
-
           {/* 熱銷推薦  */}
           <div className="storeP1Title">
             <div className="line1"></div>
@@ -146,20 +147,17 @@ function StrayMaoP2(props) {
           {/* card  */}
           <div className="container storeP1Bottom">
             <div className="row d-flex" id="between">
-            {dataLoading ? loading : displayPage}
-            </div>
-          </div>
-          
-          <div className="container storeP1Bottom">
-            <div className="row d-flex" id="between">
-            <PageBar />
+              {dataLoading ? loading : displayPage}
             </div>
           </div>
 
+          <div className="container storeP1Bottom">
+            <div className="row d-flex" id="PageBar">
+              <PageBar />
+            </div>
+          </div>
         </div>
       </div>
-
-      
     </>
   )
 }
@@ -178,4 +176,4 @@ export default connect(mapStateToProps, {
   getCatsListAsync,
   gotoPage,
   setTotalPage,
-  })(StrayMaoP2)
+})(StrayMaoP2)

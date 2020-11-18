@@ -12,6 +12,20 @@
   /* margin: 8rem 0rem 8rem 7.5rem; */
 }
 
+.shareP3 {
+  font-size: 0.85rem;
+  color: #555555;
+  margin-top: 3vh;
+}
+
+.shareBtnStore {
+  margin: 0px 10px 0 0;
+}
+
+.App {
+  display: inline;
+}
+
 .storeP3Description {
   margin: 8rem 0rem 0rem 7.5rem;
 }
@@ -274,5 +288,5 @@
 }
 
 #between {
-  justify-content: space-around;
+  justify-content: space-between;
 }

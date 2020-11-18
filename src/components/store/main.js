@@ -87,7 +87,7 @@ function Storepage(props) {
     if (info.length > 0 && info2.length > 0) {
       // for (let i = 0; i < info.length; i++) {
       for (let i = 0; i < 3; i++) {
-        if(info2[i].price<info2[i].pricing){
+        if (info2[i].price < info2[i].pricing) {
           content.push(
             <StoreCard
               item={{
@@ -100,7 +100,7 @@ function Storepage(props) {
               }}
             />
           )
-        }else{
+        } else {
           content.push(
             <StoreCard
               item={{
@@ -113,13 +113,13 @@ function Storepage(props) {
             />
           )
         }
-        
+
         // console.log('1230',info2[i].goodsId)
       }
       setDisplay(content)
 
       for (let i = 0; i < 9; i++) {
-        if(info[i].price<info[i].pricing){
+        if (info[i].price < info[i].pricing) {
           content2.push(
             <StoreCard
               item={{
@@ -132,7 +132,7 @@ function Storepage(props) {
               }}
             />
           )
-        }else{
+        } else {
           content2.push(
             <StoreCard
               item={{
@@ -145,14 +145,14 @@ function Storepage(props) {
             />
           )
         }
-        
+
         // console.log('1231',info2[i].goodsId)
       }
       setDisplay2(content2)
 
       if (info.length > 0 && info2.length > 0 && infoDiscount.length > 0) {
         for (let i = 0; i < 3; i++) {
-          if(infoDiscount[i].price<infoDiscount[i].pricing){
+          if (infoDiscount[i].price < infoDiscount[i].pricing) {
             contentDiscount.push(
               <StoreCard
                 item={{
@@ -165,7 +165,7 @@ function Storepage(props) {
                 }}
               />
             )
-          }else{
+          } else {
             contentDiscount.push(
               <StoreCard
                 item={{
@@ -178,7 +178,7 @@ function Storepage(props) {
               />
             )
           }
-          
+
           // console.log('1232',info2[i].goodsId)
         }
         setDisplayDiscount(contentDiscount)
@@ -239,52 +239,14 @@ function Storepage(props) {
         </div>
       </div>
 
-      <div className="storeP1Bcc" data-speed="0">
-        <div className="container storeP1Bottom" data-speed="0">
-          <div className="row d-flex" id="between">
-            {/* <div className="arrow">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="17.636"
-              height="21.653"
-              viewBox="0 0 17.636 21.653"
-            >
-              <path
-                id="Path_1866"
-                data-name="Path 1866"
-                d="M.584,8.77,11.69.391a1.5,1.5,0,0,1,2.5,1.025l.431,16.072c.117,1.039-1.176,1.427-2.006.83L.584,10.846A1.216,1.216,0,0,1,.584,8.77Z"
-                transform="translate(1.501 1.531)"
-                fill="none"
-                stroke="#ed8f8f"
-                stroke-miterlimit="10"
-                stroke-width="3"
-              />
-            </svg>
-          </div> */}
-            {display}
-            {/* <StoreCard item={{ name: '546', price: 100 }} />
-          <StoreCard item={{ name: '123', price: 100 }} />
-          <StoreCard item={{ name: '123', price: 100, pricing: 200 }} /> */}
+      <div className="storeP1BccPeachDad">
+        <div className="storeP1BccPeach"></div>
 
-            {/* <div className="arrow">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18.381"
-              height="22.256"
-              viewBox="0 0 18.381 22.256"
-            >
-              <path
-                id="Path_1865"
-                data-name="Path 1865"
-                d="M.584,8.77,11.69.391a1.5,1.5,0,0,1,2.5,1.025l.431,16.072c.117,1.039-1.176,1.427-2.006.83L.584,10.846A1.216,1.216,0,0,1,.584,8.77Z"
-                transform="matrix(-0.999, -0.035, 0.035, -0.999, 16.179, 20.673)"
-                fill="none"
-                stroke="#ed8f8f"
-                stroke-miterlimit="10"
-                stroke-width="3"
-              />
-            </svg>
-          </div> */}
+        <div className="storeP1Bcc" data-speed="0">
+          <div className="container storeP1Bottom" data-speed="0">
+            <div className="row d-flex" id="between">
+              {display}
+            </div>
           </div>
         </div>
       </div>
@@ -301,53 +263,14 @@ function Storepage(props) {
         </div>
       </div>
 
-      <div className="container">
-        <div className="row d-flex" id="between">
-          {/* <div className="arrow">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="17.636"
-              height="21.653"
-              viewBox="0 0 17.636 21.653"
-            >
-              <path
-                id="Path_1866"
-                data-name="Path 1866"
-                d="M.584,8.77,11.69.391a1.5,1.5,0,0,1,2.5,1.025l.431,16.072c.117,1.039-1.176,1.427-2.006.83L.584,10.846A1.216,1.216,0,0,1,.584,8.77Z"
-                transform="translate(1.501 1.531)"
-                fill="none"
-                stroke="#ed8f8f"
-                stroke-miterlimit="10"
-                stroke-width="3"
-              />
-            </svg>
-          </div> */}
-
-          {displayDiscount}
-
-          {/* <StoreCard item={{ name: '123', price: 100 }} />
-          <StoreCard item={{ name: '123', price: 100 }} />
-          <StoreCard item={{ name: '123', price: 100 }} /> */}
-
-          {/* <div className="arrow">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18.381"
-              height="22.256"
-              viewBox="0 0 18.381 22.256"
-            >
-              <path
-                id="Path_1865"
-                data-name="Path 1865"
-                d="M.584,8.77,11.69.391a1.5,1.5,0,0,1,2.5,1.025l.431,16.072c.117,1.039-1.176,1.427-2.006.83L.584,10.846A1.216,1.216,0,0,1,.584,8.77Z"
-                transform="matrix(-0.999, -0.035, 0.035, -0.999, 16.179, 20.673)"
-                fill="none"
-                stroke="#ed8f8f"
-                stroke-miterlimit="10"
-                stroke-width="3"
-              />
-            </svg>
-          </div> */}
+      <div className="storeP1BccGreenDad">
+        <div className="storeP1BccGreen"></div>
+        <div className="storeP1Bcc storeP1Bottom" data-speed="0">
+          <div className="container">
+            <div className="row d-flex" id="between">
+              {displayDiscount}
+            </div>
+          </div>
         </div>
       </div>
 

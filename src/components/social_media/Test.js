@@ -7,8 +7,8 @@ import AddForumCard from "./AddForumCard";
 function Test(props) {
   return (
     <>
-      {/* <SocialHomepage /> */}
-      <SocialForum />
+      <SocialHomepage />
+      {/* <SocialForum /> */}
     </>
   );
 }

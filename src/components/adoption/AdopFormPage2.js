@@ -9,7 +9,9 @@ function AdopFormPage2(props) {
     window.scrollTo(0, 0);
   }, []);
   const loading = <div></div>;
-
+  const ele = (value) => {
+    return document.querySelector(value);
+  };
   // 以資料載入的指示狀態來切換要出現的畫面
   return (
     <>
@@ -61,6 +63,7 @@ function AdopFormPage2(props) {
                 <div className="d-flex flex-column my-1">
                   <label className="my-2 paragraph1">住家房型：</label>
                   <input
+                    id="q1"
                     className="input-brown navSearchPlaceholder w-100"
                     type="text"
                     placeholder=""
@@ -69,6 +72,7 @@ function AdopFormPage2(props) {
                 <div className="d-flex flex-column my-1">
                   <label className="my-2 paragraph1">住家坪數：</label>
                   <input
+                    id="q2"
                     className="input-brown navSearchPlaceholder w-100"
                     type="text"
                     placeholder=""
@@ -117,6 +121,7 @@ function AdopFormPage2(props) {
                 <div className="d-flex flex-column my-1">
                   <label className="my-2 paragraph1">同住人數：</label>
                   <input
+                    id="q3"
                     className="input-brown navSearchPlaceholder w-100"
                     type="text"
                     placeholder=""
@@ -216,9 +221,26 @@ function AdopFormPage2(props) {
                 </div>
               </div>
 
-              <div className="my-5">
+              <div className="my-5 d-flex">
                 <button
-                  className="btn-green d-flex justify-content-center  align-items-center m-auto"
+                  className="mx-2 btn-green d-flex justify-content-center  align-items-center my-auto"
+                  type="button"
+                  value="123"
+                  onClick={() => {
+                    ele('#q1').value = '社區大樓';
+                    ele('#q2').value = '40';
+                    ele('#q3').value = '6';
+                    ele('#c3').setAttribute('checked', true);
+                    ele('#c4').setAttribute('checked', true);
+                    ele('#r2').setAttribute('checked', true);
+                    ele('#r3').setAttribute('checked', true);
+                    ele('#r6').setAttribute('checked', true);
+                  }}
+                >
+                  一鍵填寫
+                </button>
+                <button
+                  className="mx-2 btn-green d-flex justify-content-center  align-items-center my-auto"
                   type="button"
                   value="123"
                   onClick={() => {

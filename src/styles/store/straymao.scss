@@ -438,6 +438,14 @@ img {
   outline: none;
 }
 
+.storeP1BccPeachDad {
+  position: relative;
+}
+
+.storeP1BccGreenDad {
+  position: relative;
+}
+
 // 熱賣背景
 // .storeP1Bcc {
 //   position: absolute;
@@ -447,6 +455,25 @@ img {
 //   height: 50vh;
 //   background-color: #F5F5F5;
 // }
+
+//熱賣背景色
+.storeP1BccPeach {
+  position: absolute;
+  width: 100%;
+  height: 40vh;
+  background-color: #fff1e6;
+  bottom: 0px;
+  opacity: 0.8;
+}
+
+.storeP1BccGreen {
+  position: absolute;
+  width: 100%;
+  height: 40vh;
+  background-color: #e1e1d5;
+  bottom: 0px;
+  opacity: 0.5;
+}
 
 /* 左右箭頭 */
 .storeP1Bottom {
@@ -458,9 +485,9 @@ img {
   padding-top: 15%;
 }
 
-#root > main > div > div:nth-child(2) > div > div {
-  margin: 0px auto 5vh;
-}
+// #root > main > div > div:nth-child(2) > div > div {
+//   margin: 0px auto 5vh;
+// }
 
 // #root > main > div > div:nth-child(4) > div > div {
 //   margin: 0px auto 5vh;
@@ -470,7 +497,7 @@ img {
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
   display: flex;
-  // margin:0px auto 30vh;
+  margin: 3vh auto 5vh;
 }
 
 .line1 {

@@ -23,7 +23,7 @@ return(
                 {/* { dataLoading ? loading : display} */}
             </div>
             <div className="orderlistC_boxR_An">
-                <a onClick={() => {
+                <a href="" onClick={() => {
                     props.getOrderId(props.info)
                     props.history.push('/Order')
                     }}>查看更多</a>

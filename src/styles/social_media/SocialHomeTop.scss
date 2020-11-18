@@ -87,9 +87,10 @@
   }
 }
 .topCardP {
-  display: inline-block;
+  // display: block;
   width: 11.625rem;
   color: #a5a58d;
+  cursor: pointer;
 }
 
 //TopCard變化

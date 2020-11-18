@@ -3,14 +3,10 @@ import { connect } from 'react-redux'
 import '../../styles/store/straymaoP2.scss'
 import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
-import PageBar from "../../components/adoption/PageBar"
-import { gotoPage, setTotalPage } from "../../actions/common/index";
+import PageBar from '../../components/adoption/PageBar'
+import { gotoPage, setTotalPage } from '../../actions/common/index'
 
-
-import {
-  getListAsync,
-} from '../../actions/store/index'
-
+import { getListAsync } from '../../actions/store/index'
 
 function StrayMaoNews(props) {
   let i = 0
@@ -18,13 +14,13 @@ function StrayMaoNews(props) {
   // const [display, setDisplay] = useState([])
   // let content = []
 
-  const [dataLoading, setDataLoading] = useState(true);
+  const [dataLoading, setDataLoading] = useState(true)
   const [displayNews, setDisplayNews] = useState([])
   const contentNews = []
-  let totalCards = props.cards;
+  let totalCards = props.cards
   // console.log('store: ',props.cards)
-  let totalPages = Math.ceil(totalCards.length / 9);
-  let nowPage = props.nowPage;
+  let totalPages = Math.ceil(totalCards.length / 9)
+  let nowPage = props.nowPage
 
   useEffect(() => {
     props.getListAsync()
@@ -42,7 +38,7 @@ function StrayMaoNews(props) {
       })
     })
     // console.log("aaaa , ",document
-      // .querySelector('.storeP2CatImg'))
+    // .querySelector('.storeP2CatImg'))
     document
       .querySelector('.storeP2CatImg')
       .addEventListener('mouseover', function func(e) {
@@ -55,10 +51,9 @@ function StrayMaoNews(props) {
       })
   }, [])
 
-  useEffect(()=>{
-
-    totalCards = props.cards;
-    totalPages = Math.ceil(totalCards.length / 9);
+  useEffect(() => {
+    totalCards = props.cards
+    totalPages = Math.ceil(totalCards.length / 9)
 
     if (totalCards.length > 0) {
       // let tt = JSON.parse(totalCards[0]);
@@ -67,7 +62,7 @@ function StrayMaoNews(props) {
       // console.log("totalPages ", totalPages);
       // console.log("if:", nowPage === totalPages);
     }
-    props.setTotalPage(totalPages);
+    props.setTotalPage(totalPages)
     for (
       let i = 9 * (nowPage - 1);
       nowPage === totalPages ? i < totalCards.length : i < 9 * nowPage;
@@ -75,28 +70,34 @@ function StrayMaoNews(props) {
     ) {
       if (totalCards.length > 0) {
         // console.log(":", totalCards[i]);
-        contentNews.push(<StoreCard item={totalCards[i]} key={i} />);
+        contentNews.push(<StoreCard item={totalCards[i]} key={i} />)
       }
     }
-    setDisplayNews(contentNews);
+    setDisplayNews(contentNews)
 
-    setTimeout(() => setDataLoading(false), 100);
-  }, [totalCards, nowPage]);
+    setTimeout(() => setDataLoading(false), 100)
+  }, [totalCards, nowPage])
 
-  const loading = <div></div>;
+  const loading = <div></div>
 
   return (
     <>
       <div className="container">
         <div className="row">
           <section>
-            <div className="storeP2Background">
-              <img
-                src="./image/store/kitten-touching-dog.jpg"
-                alt=""
-                className="layer storeP2CatImg"
-                data-speed="2"
-              />
+            <div className="storeP2BackgroundAround">
+              <div className="storeP2Background">
+                <img
+                  src="./image/store/kitten-touching-dog.jpg"
+                  alt=""
+                  className="layer storeP2CatImg"
+                  data-speed="2"
+                />
+              </div>
+              <div className="storeP2BackgroundNewsBox1 animate__animated animate__slideInRight"></div>
+              <div className="storeP2BackgroundNewsBox2 animate__animated animate__slideInDown">
+                新。商品
+              </div>
             </div>
           </section>
 
@@ -120,17 +121,17 @@ function StrayMaoNews(props) {
           {/* card  */}
           <div className="container storeP1Bottom">
             <div className="row d-flex" id="between">
-            {dataLoading ? loading : displayNews}
+              {dataLoading ? loading : displayNews}
             </div>
           </div>
         </div>
       </div>
 
       <div className="container storeP1Bottom">
-          <div className="row d-flex" id="between">
-    <PageBar />
-    </div>
-    </div>
+        <div className="row d-flex" id="PageBar">
+          <PageBar />
+        </div>
+      </div>
     </>
   )
 }

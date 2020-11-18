@@ -3,19 +3,19 @@
 .socialNewsMain {
   position: relative;
   background-color: #e1e1d5;
-  top: 3rem;
+  top: 8rem;
   min-width: 100%;
-  height: 43.75rem;
+  height: 25rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.socialNewsItems {
-  position: absolute;
-  width: 71.25rem;
-  height: 31.25rem;
-}
+// .socialNewsItems {
+//   position: absolute;
+//   width: 71.25rem;
+//   height: 20rem;
+// }
 
 .socialNewsTop {
   position: relative;
@@ -26,12 +26,15 @@
 
 .newsScrollingItems {
   display: inline-block;
+  margin-left:10%;
+  top:-15px;
   width: 58.25rem;
-  position: relative;
+  position: absolute;
+  align-items: center;
 }
 
 .socialHomeNewsTitile {
-  margin-top: -1.625rem;
+  margin-top: -8rem;
   color: #555555;
 }
 
