@@ -94,8 +94,8 @@ function StrayMaoDogs(props) {
                   data-speed="2"
                 />
               </div>
-              <div className="storeP2BackgroundBox1 animate__animated animate__slideInRight"></div>
-              <div className="storeP2BackgroundBox2 animate__animated animate__slideInDown">
+              <div className="storeP2BackgroundDogsBox1 animate__animated animate__slideInRight"></div>
+              <div className="storeP2BackgroundDogsBox2 animate__animated animate__slideInDown">
                 狗。商品
               </div>
             </div>

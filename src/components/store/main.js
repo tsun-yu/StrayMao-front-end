@@ -245,9 +245,7 @@ function Storepage(props) {
         <div className="storeP1Bcc" data-speed="0">
           <div className="container storeP1Bottom" data-speed="0">
             <div className="row d-flex" id="between">
-              
               {display}
-             
             </div>
           </div>
         </div>
@@ -270,14 +268,9 @@ function Storepage(props) {
         <div className="storeP1Bcc storeP1Bottom" data-speed="0">
           <div className="container">
             <div className="row d-flex" id="between">
-              
-
               {displayDiscount}
-
-              
             </div>
           </div>
-          
         </div>
       </div>
 

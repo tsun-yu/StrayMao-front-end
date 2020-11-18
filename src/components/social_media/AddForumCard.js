@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import { connect } from 'react-redux';
 import { withRouter, useHistory } from 'react-router-dom';
@@ -13,17 +13,17 @@ function AddForumCard(props) {
     formDatas.memberId=1;
   },[]);
 
-const handleOnSubmit = (event=>{
+const handleOnSubmit = (()=>{
       console.log('formDatas:',formDatas);
       props.addForumCardAsync(formDatas);
   })
 
-  function validate(form) { 
+  function validate(event) { 
     if(window.confirm(`確認送出嗎?`)) {
       handleOnSubmit()
       props.history.push('/socialForum');
     }else{
-      // return false;
+      event.preventDefault();
     }
 } 
   function addGiveUp() { 
@@ -39,7 +39,7 @@ const handleOnSubmit = (event=>{
       <span className="addBigEXit" onClick={()=>{addGiveUp()}}>
         <img src="./icomoon/SVG/_014-cancel.svg" alt=""/></span>
       <h3 className="addForumTitle">建立話題</h3>
-        <form onChange={handleOnChange} 
+        <form onChange={handleOnChange} onSubmit={validate}
         >
           <div className="row addForumBtnControl">
           <div className="btn-filter addforumright">
@@ -93,7 +93,7 @@ const handleOnSubmit = (event=>{
           </div>
         </div>
         <div className="addbtnControl">
-          <button className="btn-green" type="button" value="確認新增" onClick={()=>{validate()}}>
+          <button className="btn-green" type="submit" value="確認新增">
           確認新增
           </button>
           </div> 
