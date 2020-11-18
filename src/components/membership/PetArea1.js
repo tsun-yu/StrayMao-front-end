@@ -55,7 +55,7 @@ return(
       <div className="container petAreaBackgroud">
         <div className="row">
           {renderList.length > 0 && renderList.map((element, i) => {
-            return <PetArea1_card info={element} />;
+            return <PetArea1_card info={element} history = {props.history} />;
           })}
         </div>
       </div>
