@@ -18,15 +18,15 @@ import OrderList from './components/cart/OrderList'
 import Order from './components/cart/Order'
 // 會員中心Start
 import Member from './components/membership/Member'
-import MemberInfo from "./components/membership/MemberInfo";
-import RegisteredForm from "./components/membership/RegisteredForm";
-import PasswordChange from "./components/membership/PasswordChange";
-import MyComment from "./components/membership/MyComment";
-import MyFavorite1 from "./components/membership/MyFavorite1";
-import MyFavorite2 from "./components/membership/MyFavorite2";
-import SignInForm from "./components/membership/SignInForm";
-import PetArea1 from "./components/membership/PetArea1";
-import PetArea2 from "./components/membership/PetArea2";
+import MemberInfo from './components/membership/MemberInfo'
+import RegisteredForm from './components/membership/RegisteredForm'
+import PasswordChange from './components/membership/PasswordChange'
+import MyComment from './components/membership/MyComment'
+import MyFavorite1 from './components/membership/MyFavorite1'
+import MyFavorite2 from './components/membership/MyFavorite2'
+import SignInForm from './components/membership/SignInForm'
+import PetArea1 from './components/membership/PetArea1'
+import PetArea2 from './components/membership/PetArea2'
 // 會員中心End
 import SocialTest from './components/social_media/Test'
 import SocialForum from './components/social_media/SocialForum'
