@@ -7,6 +7,8 @@ import Share from 'social-share-react'
 import { withRouter, useHistory } from 'react-router-dom'
 import { FacebookShareButton, LineShareButton, TwitterShareButton } from "react-share";
 import { FacebookIcon, LineIcon, TwitterIcon } from "react-share";
+import ChatRoomSvg from '../../components/store/ChatRoomSvg'
+
 import {
   goodsDisLikeAsync,
   goodsLikeAsync,
@@ -265,7 +267,7 @@ function StrayMaoP3(props) {
               <FacebookShareButton
         url={"http://sc.piee.pw/38yp2q"}
         quote={"4不4有點累惹阿，要不要來點毛毛阿ヽ(●´∀`●)ﾉ"}
-        hashtag={["#StrayMao寵愛有家", "#Luna月亮跳台"]}
+        hashtag={"#Luna月亮跳台"}
         description={"aiueo"}
         className="shareBtnStore Demo__some-network__share-button"
       >
@@ -462,6 +464,7 @@ function StrayMaoP3(props) {
           {display}
         </div>
       </div>
+      <ChatRoomSvg />
     </>
   )
 }

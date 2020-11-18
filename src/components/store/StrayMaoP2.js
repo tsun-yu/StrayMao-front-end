@@ -5,6 +5,8 @@ import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
 import PageBar from '../../components/common/PageBar'
 import { gotoPage, setTotalPage } from '../../actions/common/index'
+import ChatRoomSvg from '../../components/store/ChatRoomSvg'
+
 
 import { getCatsListAsync } from '../../actions/store/index'
 
@@ -109,10 +111,7 @@ function StrayMaoP2(props) {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <section>
-            <div className="storeP2BackgroundAround">
+    <div className="storeP2BackgroundAround">
               <div className="storeP2Background">
                 <img
                   src="./image/store/P2Background.jpg"
@@ -126,6 +125,10 @@ function StrayMaoP2(props) {
                 貓。商品
               </div>
             </div>
+      <div className="container">
+        <div className="row">
+          <section>
+            
           </section>
           {/* 熱銷推薦  */}
           <div className="storeP1Title">
@@ -158,6 +161,8 @@ function StrayMaoP2(props) {
           </div>
         </div>
       </div>
+
+      <ChatRoomSvg />
     </>
   )
 }
