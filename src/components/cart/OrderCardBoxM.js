@@ -13,7 +13,7 @@ function OrderCardBoxM(props) {
     const content = [];
     let totalCards = props.info;
     useEffect(() => {
-        // props.getOrderAsync()
+        // props.getOrderAsync(props.info.orderId)
     }, []);
     useEffect(() => {
         totalCards = props.info;

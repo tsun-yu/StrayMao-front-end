@@ -78,7 +78,7 @@ function ForumReplyMain(props) {
       <button className="forumUserTalkBtn" type="button" value="送出" onClick={() => {
                 const newMessage = {
                   content: messageContent,
-                  memberId: '456',
+                  memberId: '3',
                   talkId:props.id
                 }
                 console.log(newMessage)
@@ -99,7 +99,7 @@ function ForumReplyMain(props) {
         {/* 留言區 */}
         {display4}
 
-        <div className="singleforumAutorReply">
+        {/* <div className="singleforumAutorReply">
           <div className="forumAutorReply">
             <div className="forumAutorReplyItems">
               <span className="row paragraph2">
@@ -115,7 +115,7 @@ function ForumReplyMain(props) {
               <p>2020. 09/30. 10:30</p>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* 留言結束 */}
 
       </div>
