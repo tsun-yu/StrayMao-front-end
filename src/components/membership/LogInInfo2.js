@@ -6,7 +6,6 @@ function LogInInfo(props) {
   const [member , setMember] = useState(localStorage.getItem("loginAccount") == null? null : JSON.parse(localStorage.getItem("loginAccount")));  //登入者資訊
   useEffect(() => {
     if(member == null) props.history.push("/signInForm");
-
     setIsLogin(true);
     props.setMember(member);
   },[]);

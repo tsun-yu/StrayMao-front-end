@@ -5,8 +5,8 @@ import "../../styles/membership/custom.scss";
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
 import LogInInfo from './LogInInfo2';
 
-function MemberInfo(props) {
 
+function MemberInfo(props) {
   //檢查登入狀態 >> 取得要render畫面的內容
   const [member , setMember] = useState({});  //登入者資訊
   useEffect(()=>{
@@ -69,6 +69,7 @@ function MemberInfo(props) {
     }
   }
 
+
 return(
 <>
   <LogInInfo
@@ -95,7 +96,10 @@ return(
     <div className="wrapFlex1">
       <div className="form-group">
         <label htmlFor="infoFormControlFile1" className="viewImg">請上傳個人照片</label>
-        <input type="file" className="form-control-file uploadImg" id="infoFormControlFile1"/>
+        <input 
+          type="file" 
+          className="form-control-file uploadImg" id="infoFormControlFile1"
+        />
       </div>
       
       <div className="wrapFlex2">

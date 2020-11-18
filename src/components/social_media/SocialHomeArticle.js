@@ -1,6 +1,40 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import ArticleListCard from "./ArticleListCard";
+import ArticleHomeCardPagebar from "./ArticleHomeCardPagebar";
+import { getArticleListAsync } from "../../actions/social_media/index";
+import { gotoPage, setArticleTotalPage, } from '../../actions/common/index';
+import { withRouter, useHistory } from "react-router-dom";
 
 function SocialHomeArticle(props) {
+  const [display2, setDisplay2] = useState(<></>);
+  const content2=[];
+
+  let nowArticlePage = props.nowArticlePage;
+  let totalArticles = props.info2;
+  let totalArticlePages = Math.ceil(totalArticles.length / 3);
+
+  useEffect(() => {
+    props.getArticleListAsync();
+  }, [])
+
+  useEffect(() => {
+    let totalArticles = props.info2;
+    let totalArticlePages = Math.ceil(totalArticles.length / 3);
+    if(totalArticles.length > 0) {
+      props.setArticleTotalPage(totalArticlePages);
+      
+      for (let i = 3 * (nowArticlePage - 1);
+      nowArticlePage === totalArticlePages ? i < totalArticles.length : i < 3 * nowArticlePage;
+      i++) {
+        if (totalArticles.length > 0) {
+          console.log(":", totalArticles[i]);
+          content2.push(<ArticleListCard info2={totalArticles[i]} />);
+        }
+      }   
+    }
+    setDisplay2(content2);},[props.info2,nowArticlePage]);
+
   return (
     <>
       <div className="container d-flex socialArticleMain">
@@ -15,75 +49,7 @@ function SocialHomeArticle(props) {
               </div>
             </div>
             <div className="row socialArticleCardItems no-gutters">
-              <div className="singleArticleCard">
-                <div className="socialArticleCard">
-                  <img
-                    className="socialArticleCardImg"
-                    src="/image/homepage/homepage-1.jpg"
-                    object-fit="cover"
-                  />
-                  <div className="container">
-                    <div className="row socialArticleTitle">
-                      <span className="socialArticleBT enHeader5">All</span>
-                      <span className="socialArticleST header6">
-                        貓咪們都會這樣，你知道嗎？
-                      </span>
-                    </div>
-                    <div className="socialArticleContent caption">
-                      貓咪們都會這樣，你知道嗎？
-                      <br />
-                      貓咪們都會這樣，你知道嗎？
-                    </div>
-                    <a className="socialArticleLink caption">more+</a>
-                  </div>
-                </div>
-              </div>
-              <div className="singleArticleCard">
-                <div className="socialArticleCard">
-                  <img
-                    className="socialArticleCardImg"
-                    src="/image/homepage/homepage-1.jpg"
-                    object-fit="cover"
-                  />
-                  <div className="container">
-                    <div className="row socialArticleTitle">
-                      <span className="socialArticleBT enHeader5">All</span>
-                      <span className="socialArticleST header6">
-                        貓咪們都會這樣，你知道嗎？
-                      </span>
-                    </div>
-                    <div className="socialArticleContent caption">
-                      貓咪們都會這樣，你知道嗎？
-                      <br />
-                      貓咪們都會這樣，你知道嗎？
-                    </div>
-                    <a className="socialArticleLink caption">more+</a>
-                  </div>
-                </div>
-              </div>
-              <div className="singleArticleCard">
-                <div className="socialArticleCard">
-                  <img
-                    className="socialArticleCardImg"
-                    src="/image/homepage/homepage-1.jpg"
-                    object-fit="cover"
-                  />
-                  <div className="container">
-                    <div className="row socialArticleTitle">
-                      <span className="socialArticleBT enHeader5">All</span>
-                      <span className="socialArticleST header6">
-                        貓咪們都會這樣，你知道嗎？
-                      </span>
-                    </div>
-                    <div className="socialArticleContent caption">
-                      貓咪們都會這樣，你知道嗎？
-                      <br />
-                      貓咪們都會這樣，你知道嗎？
-                    </div>
-                    <a className="socialArticleLink caption">more+</a>
-                  </div>
-                </div>
-              </div>
+              {display2}
             </div>
             <div className="row socialforumBottom no-gutters">
               <div className="socialArticleBottomline" />
@@ -91,28 +57,36 @@ function SocialHomeArticle(props) {
                 className="socialforumBottomBtn btn-brown"
                 type="button"
                 value="查看更多"
+                onClick={() => {
+                    console.log(props)
+                    props.history.push('/socialForum');
+                  }}
               >
                 查看更多
               </button>
               <div className="socialArticleBottomline" />
             </div>
           </div>
-          <span className="container-fluid socialforumArrowItems">
-            <img
-              className="socialfixArrow-left greenarrow-left"
-              src="./icomoon/SVG/_017-greenarrow-left.svg"
-              alt=""
-            />
-            <img
-              className="socialfixArrow-right greenarrow-right"
-              src="./icomoon/SVG/_018-greenarrow-right.svg"
-              alt=""
-            />
-          </span>
+          <ArticleHomeCardPagebar/>
         </div>
       </div>
     </>
   );
 }
 
-export default SocialHomeArticle;
+
+const mapStateToProps = (store) => {
+  return { 
+    info2: store.socialReducer.getArticleList,
+    nowArticlePage: store.nowArticlePage,
+    totalArticlePage: store.totalArticlePage,};
+};
+const mapDispatchToProps = null;
+
+export default withRouter(
+  connect(mapStateToProps, {
+    getArticleListAsync,
+    gotoPage,
+    setArticleTotalPage,
+  })(SocialHomeArticle)
+);
