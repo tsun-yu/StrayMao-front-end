@@ -155,11 +155,11 @@ export const getRecommand = (value) => {
 //購物車列表
 export const getRecommandAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
-    const url = "http://localhost:3001/straymao/cart/cartlist";
+    const url = "http://localhost:3001/straymao/cart/cartlist/get/" + value;
     const cartlist={ memberId:value };
     const request = new Request(url, {
-      method: "POST",
-      body: JSON.stringify(cartlist),
+      method: "GET",
+      // body: JSON.stringify(cartlist),
       headers: new Headers({
         Accept: "application/json",
         "Content-Type": "application/json",

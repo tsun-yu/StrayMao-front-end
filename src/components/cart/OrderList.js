@@ -3,10 +3,18 @@ import { connect } from "react-redux"
 import "../../styles/cart/orderlist.scss";
 import OrderListCardBoxC from "./OrderListCardBoxC"
 import OrderListCardBoxM from "./OrderListCardBoxM"
+import { withRouter, useHistory } from 'react-router-dom';
+import LogInInfo from '../membership/LogInInfo2';
 
 import { getOrderList, getOrderListAsync } 
 from "../../actions/cart/index";
 function OrderList(props) {
+  //檢查登入狀態 >> 取得要render畫面的內容
+  const [member , setMember] = useState({});  //登入者資訊
+  useEffect(()=>{
+    // if(member.memberId != null) getMyMemberInfo();
+  },[member]);
+
     const [dataLoading, setDataLoading] = useState(true);
     const [display, setDisplay] = useState([]);
     console.log('display',display)
@@ -14,8 +22,8 @@ function OrderList(props) {
     let totalCards = props.info;
     useEffect(() => {
       console.log('hello there')
-      let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:'';
-      props.getOrderListAsync(memberId)
+      // let memberId = member.memberId;
+      props.getOrderListAsync( member.memberId)
     }, []);
     useEffect(() => {
         totalCards = props.info;
@@ -38,6 +46,10 @@ setTimeout(() => setDataLoading(false), 1000)
     const loading = <div></div>
 return(
 <>
+  <LogInInfo
+    setMember = {setMember}
+    history = {props.history}
+  />
   <div className="orderlistC_body_An">
     <div className="container">
       <div className="orderlistC_classificationBox_An">
@@ -90,9 +102,9 @@ const mapStateToProps = (store) => {
   };
   const mapDispatchToProps = null;
 
-export default  connect(
+export default withRouter( connect(
     mapStateToProps, {
         getOrderList, getOrderListAsync 
-    })(OrderList)
+    })(OrderList))
 
 // export default OrderList
