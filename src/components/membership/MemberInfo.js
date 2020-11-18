@@ -20,9 +20,10 @@ function MemberInfo(props) {
   const [telephone , setTelephone] = useState("");
   const [email , setEmail] = useState("");
   const [address , setAddress] = useState("");
+  const [memberPic , setMemberPic] = useState("");
   const [password , setPassword] = useState("");
-
   
+
   //預設會員資料
   const [renderData , setRenderData] = useState([]);
   async function getMyMemberInfo() {
@@ -43,6 +44,7 @@ function MemberInfo(props) {
     setTelephone(rsObj.data[0].telephone)
     setEmail(rsObj.data[0].email)
     setAddress(rsObj.data[0].address)
+    setMemberPic(rsObj.data[0].memberPic)
   }
 
   async function updMyMemberInfo() {
