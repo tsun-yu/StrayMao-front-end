@@ -46,11 +46,11 @@ function Page6(props) {
                       <div className="d-flex">
                         <div className="page6des2date col-4 pr-1">
                           <div className="page6des2dateYear">2020</div>
-                          <div className="page6desdateDay">10.10</div>
+                          <div className="page6desdateDay">10.23</div>
                         </div>
                         <div className="page6des2topic col-8 my-auto">
-                          <div>雙十去哪玩呢？</div>
-                          <div className="text-right">貓貓狗狗齊出遊</div>
+                          <div>台北寵物節</div>
+                          <div className="text-right">最狂優惠開跑</div>
                         </div>
                       </div>
                     </div>
@@ -58,11 +58,11 @@ function Page6(props) {
                       <div className="d-flex">
                         <div className="page6des2date col-4 pr-1">
                           <div className="page6des2dateYear">2020</div>
-                          <div className="page6desdateDay">10.10</div>
+                          <div className="page6desdateDay">10.31</div>
                         </div>
                         <div className="page6des2topic col-8 my-auto">
-                          <div>雙十去哪玩呢？</div>
-                          <div className="text-right">貓貓狗狗齊出遊</div>
+                          <div>毛孩麻吉日</div>
+                          <div className="text-right">熱血犬貓鬥陣來</div>
                         </div>
                       </div>
                     </div>
@@ -70,11 +70,11 @@ function Page6(props) {
                       <div className="d-flex">
                         <div className="page6des2date col-4 pr-1">
                           <div className="page6des2dateYear">2020</div>
-                          <div className="page6desdateDay">10.10</div>
+                          <div className="page6desdateDay">11.11</div>
                         </div>
                         <div className="page6des2topic col-8 my-auto">
-                          <div>雙十去哪玩呢？</div>
-                          <div className="text-right">貓貓狗狗齊出遊</div>
+                          <div>雙十一光棍節</div>
+                          <div className="text-right">單身狗一同出遊</div>
                         </div>
                       </div>
                     </div>

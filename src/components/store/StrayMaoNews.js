@@ -5,6 +5,8 @@ import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
 import PageBar from '../../components/adoption/PageBar'
 import { gotoPage, setTotalPage } from '../../actions/common/index'
+import ChatRoomSvg from '../../components/store/ChatRoomSvg'
+
 
 import { getListAsync } from '../../actions/store/index'
 
@@ -82,10 +84,7 @@ function StrayMaoNews(props) {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <section>
-            <div className="storeP2BackgroundAround">
+     <div className="storeP2BackgroundAround">
               <div className="storeP2Background">
                 <img
                   src="./image/store/kitten-touching-dog.jpg"
@@ -99,6 +98,10 @@ function StrayMaoNews(props) {
                 新。商品
               </div>
             </div>
+      <div className="container">
+        <div className="row">
+          <section>
+           
           </section>
 
           {/* 熱銷推薦  */}
@@ -132,6 +135,8 @@ function StrayMaoNews(props) {
           <PageBar />
         </div>
       </div>
+
+      <ChatRoomSvg />
     </>
   )
 }

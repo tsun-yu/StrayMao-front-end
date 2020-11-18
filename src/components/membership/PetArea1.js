@@ -5,6 +5,7 @@ import "../../styles/membership/custom.scss";
 import { MEMBER_API_URL } from "../../actions/membership/actionTypes";
 import PetArea1_card from './PetArea1_card';
 import LogInInfo from './LogInInfo2';
+import DonateButton from '../common/DonateButton'
 
 function PetArea1(props) {
   //檢查登入狀態 >> 取得要render畫面的內容
@@ -40,6 +41,7 @@ return(
     setMember = {setMember}
     history = {props.history}
   />
+  <DonateButton />
 
   <div className="petAreaWrap">
       <nav className="nav nav-pills flex-sm-row petAreaNavGroup">
@@ -53,7 +55,7 @@ return(
       <div className="container petAreaBackgroud">
         <div className="row">
           {renderList.length > 0 && renderList.map((element, i) => {
-            return <PetArea1_card info={element} />;
+            return <PetArea1_card info={element} history = {props.history} />;
           })}
         </div>
       </div>

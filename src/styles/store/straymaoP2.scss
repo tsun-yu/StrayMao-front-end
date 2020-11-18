@@ -27,7 +27,7 @@ p {
 }
 
 .storeP2Background {
-  margin: 3vh auto;
+  // margin: 3vh auto;
   width: 100%;
   overflow: hidden;
   // position: relative;
@@ -115,7 +115,8 @@ p {
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
   display: flex;
-  margin: 3vh auto 5vh;
+  // margin: 3vh auto 5vh; MY
+  margin: 6vh auto 0vh; //1920
   font-size: 16px;
 }
 
@@ -172,7 +173,7 @@ p {
 }
 
 .storeP1Bottom {
-  margin-bottom: 15vh;
+  // margin-bottom: 15vh; 1920
 }
 
 #between {
