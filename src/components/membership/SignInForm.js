@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import "../../styles/membership/custom.scss";
+import { withRouter } from 'react-router-dom'
 import $ from 'jquery'
-import { Route, withRouter, NavLink, Switch, matchPath , Redirect, Link } from 'react-router-dom'
+//user used
+import "../../styles/membership/custom.scss";
+import { MEMBER_API_URL } from "../../actions/membership/actionTypes";
+
 
 function SignInForm(props) {
   console.log("sign props:" , props)
@@ -37,14 +40,8 @@ function SignInForm(props) {
     }
 
     if (isPass) {
-      // setDataLoading(true)
+      const url = MEMBER_API_URL + "/login";
       const Data = { account, password}
-      // console.log(Data)
-  
-      // 連接的伺服器資料網址
-      const url = "http://localhost:3001/straymao/membership/login";
-  
-      // 注意資料格式要設定，伺服器才知道是json格式
       const request = new Request(url, {
         method: 'POST',
         body: JSON.stringify(Data),
@@ -59,15 +56,12 @@ function SignInForm(props) {
       if(rsObj.success){
         const data = { ...rsObj.data };
         localStorage.setItem("loginAccount", JSON.stringify(data));
-        props.setMember(data);
-        props.setIsLogin(true);
+        // props.setMember(data);
+        // props.setIsLogin(true);
         props.history.push("/memberInfo");
-        // props.history.goForward("/memberInfo");
-        // window.location.hash='memberInfo';
       }else{
         alert("帳號或密碼錯誤");
       }
-      // setDataLoading(false)
     } else {
       submitBtn.style.display = "block";
     }

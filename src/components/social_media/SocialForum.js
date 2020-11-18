@@ -18,7 +18,10 @@ import {
 import { HiOutlineReceiptRefund } from "react-icons/hi";
 
 function SocialForum(props) {
+  const [flag, setFlag] = useState(0);
+  const [flag2, setFlag2] = useState(0);
   const [arr, setArr] = useState([]);
+  const [arrForPet, setArrForPet] = useState([]);
   const [arrTwo, setArrTwo] = useState([]);
   const [display, setDisplay] = useState(<></>);
   const [display2, setDisplay2] = useState(<></>);
@@ -30,8 +33,17 @@ function SocialForum(props) {
   const content = [];
   const content2 = [];
   const content3 =[];
+
   let totalCards = props.info;
+
+  // let totalPages = 0;
+  // if(arrForPet!==[]){
+  //   totalPages = Math.ceil(arrForPet.length / 4)
+  // }else{
+  //   totalPages = Math.ceil(totalCards.length / 4);
+  // }
   let totalPages = Math.ceil(totalCards.length / 4);
+
   let nowPage = props.nowPage;
   let nowArticlePage = props.nowArticlePage;
 
@@ -40,49 +52,108 @@ function SocialForum(props) {
 
   let funTypeId=0;
   let funIssueId=0;
-  let newData = {};
+  let newData = 0;
 
   function show(event){
     document.getElementById("filterbtn1").innerHTML = event.target.innerHTML + "<i className='fas fa-caret-down'></i>";
+    document.getElementById("filterbtn1").value = event.target.name;
     funTypeId = event.target.name;
     setArrTwo(funTypeId)
     console.log(funTypeId)
     newData = {
       typeId: funTypeId,
      }
+     setFlag(1)
      console.log("newData1:",newData)
      console.log("content : " ,arr)
      console.log("content2 : " ,arr.filter((e)=> e.typeId===+funTypeId))
 
-     let newArr = arr.filter((e)=> e.typeId===+newData.typeId)
+     showTest();
+     event.preventDefault();
+    }
+
+    function showTest(){
+      let id = document.getElementById("filterbtn1").value;
+
+      let newArr=0;
+
+      if(+id===0){
+        newArr = arr
+      }else{
+        newArr = arr.filter((e)=> e.typeId===+id)
+      }
      let newContent = []
-     for(let i=0;i<newArr.length;i++){
-      newContent.push(<ForumListCard test={newArr[i]} i={i} />);
-     }
-     setDisplay(<div className="row forumCard_Items no-gutters">{newContent}</div>);
-    // props.info(newData)
-    event.preventDefault();
-  }
+    //  for(let i=0;i<newArr.length;i++){
+    //   newContent.push(<ForumListCard test={newArr[i]} i={i} />);
+    //  }
+    totalPages = Math.ceil(newArr.length / 4);
+    console.log("aaa : :", newArr)
+    if (newArr.length > 0) {
+      props.setTotalPage(totalPages);
+      for (
+        let j = 4 * (nowPage - 1);
+        nowPage === totalPages ? j < newArr.length : j < 4 * nowPage;j++) {
+          if (newArr.length > 0) {
+            newContent.push(<ForumListCard test={newArr[j]} j={j} />);
+          }
+        }
+        console.log(":??  ",newContent);
+        setTimeout(()=>{setDisplay(<div className="row forumCard_Items no-gutters">{newContent}</div>);},10)
+        setDisplay(<div className="row forumCard_Items no-gutters">{newContent}</div>);
+
+        setArrForPet(newArr);
+      }
+    }
+
 
   function show2(event){
     document.getElementById("filterbtn2").innerHTML = event.target.innerHTML + "<i className='fas fa-caret-down'></i>";
+    document.getElementById("filterbtn2").value = event.target.name;
     funIssueId = event.target.name;
     console.log(funIssueId)
     newData = {
       typeId: arrTwo,
       issueId:funIssueId,
      }
-     console.log("newData2:",newData)
+
+     setFlag2(1)
+     console.log("newData:",newData)
      console.log("content : " ,arr)
+     console.log("content2 : " ,arr.filter((e)=> e.typeId===+funTypeId))
 
-     let newArr = arr.filter((e)=> e.typeId===+newData.typeId && e.issueId===+newData.issueId)
-     let newContent = []
-     for(let i=0;i<newArr.length;i++){
-      newContent.push(<ForumListCard test={newArr[i]} i={i} />);
-     }
-     setDisplay(<div className="row forumCard_Items no-gutters">{newContent}</div>);
+     showTest2();
 
-    event.preventDefault();
+     event.preventDefault();
+  }
+
+  function showTest2(){
+    let id = arrTwo;
+    let issue =document.getElementById("filterbtn2").value;
+
+    let newArr=0;
+    if(+id===0){
+      newArr = arr.filter((e)=> e.issueId===+issue)
+    }else{
+      newArr = arr.filter((e)=> e.typeId===+id && e.issueId===+issue)
+    }
+   let newContent = []
+   totalPages = Math.ceil(newArr.length / 4);
+  //  console.log("aaa : :", newArr)
+   if (newArr.length > 0) {
+    props.setTotalPage(totalPages);
+    for (
+      let j = 4 * (nowPage - 1);
+      nowPage === totalPages ? j < newArr.length : j < 4 * nowPage;j++) {
+        if (newArr.length > 0) {
+          newContent.push(<ForumListCard test={newArr[j]} j={j} />);
+        }
+      }
+      // console.log(":??  ",newContent);
+      setTimeout(()=>{setDisplay(<div className="row forumCard_Items no-gutters">{newContent}</div>);},10)
+      setDisplay(<div className="row forumCard_Items no-gutters">{newContent}</div>);
+
+      setArrForPet(newArr);
+    }
   }
 
   // useEffect(()=>{
@@ -122,31 +193,28 @@ function SocialForum(props) {
   useEffect(() => {
     props.getForumListAsync();
     props.getArticleListAsync();
-  }, []);
+  }, [])
 
   useEffect(() => {
     totalCards = props.info;
-    // console.log("這是最上面:",props.info)
-
-    // if(newData!=={}){
-    //   let arr = totalCards.filter((e) => {return totalCards.typeId === newData.typeId}); 
-    //   console.log("ThisNew:",arr)   
-    // };
-
     totalPages = Math.ceil(totalCards.length / 4);
-    if (totalCards.length > 0) {
-    props.setTotalPage(totalPages);
-    for (
-      let i = 4 * (nowPage - 1);
-      nowPage === totalPages ? i < totalCards.length : i < 4 * nowPage;
-      i++
-    ) {
-      if (totalCards.length > 0) {
-        // console.log(":", totalCards[i]);
-        content.push(<ForumListCard test={totalCards[i]} i={i} />);
-      }
+    if(totalCards.length > 0) {
+      props.setTotalPage(totalPages);
+      setArr(totalCards);
+      if(flag!==0&&flag2!==0){
+        showTest2();
+      }else if(flag!==0){
+        console.log("arr:",arr);showTest();
+    }else{
+      for (let i = 4 * (nowPage - 1);nowPage === totalPages ? i < totalCards.length : i < 4 * nowPage;
+        i++
+      ) {
+        if (totalCards.length > 0) {
+          console.log(":", totalCards[i]);
+          content.push(<ForumListCard test={totalCards[i]} i={i} />);
+        }
+      }   
     }
-    setArr(totalCards)
   }
     if (totalCards.length > 0) {
       console.log(props.info);
@@ -206,7 +274,7 @@ function SocialForum(props) {
     setDisplay2(
       <div className="row socialArticleCardItems no-gutters">{content2}</div>
     );
-  }, [props.info, props.info2,nowPage,nowArticlePage]);
+  }, [props.info, props.info2,nowPage,nowArticlePage,]);
 
   return (
     <>
@@ -237,6 +305,9 @@ function SocialForum(props) {
                 className="btn-orange forumMiddleBtn"
                 type="button"
                 value="前往列表"
+                onClick={()=>{
+                  document.getElementById("forumAllCardList").scrollIntoView();
+                }}
               >
                 前往列表
               </button>
@@ -251,6 +322,9 @@ function SocialForum(props) {
                 className="btn-orange forumMiddleBtn"
                 type="button"
                 value="前往知識"
+                onClick={()=>{
+                  document.getElementById("petknowledgeMain").scrollIntoView();
+                }}
               >
                 前往知識
               </button>
@@ -260,8 +334,8 @@ function SocialForum(props) {
       </div>
       <ForumNewsMain />
 
-      <div className="container forumAllCardList">
-        <div className="forumAllCardBT">
+      <div className="container forumAllCardList" id="forumAllCardList">
+        <div className="forumAllCardBT d-flex">
           <div className="row forumNewsTitle">
             <span className="forumTitleLine"></span>
             <h3 className="forum_BTitle">討論話題</h3>
@@ -270,19 +344,20 @@ function SocialForum(props) {
         </div>
         <div className="container-fluid forum_AllCardItems">
           <div className="row forumAllCardBtnItems">
-            <div className="allCardBtnLeft">
+            <div className="allCardBtnLeft d-flex">
               <div className="allCardBtn_Type btn-filter">
-                <button className="filterbtn firstSelect"  id="filterbtn1">全部
+                <button className="filterbtn firstSelect" id="filterbtn1" value="">全部
                   <i className="fas fa-caret-down"></i>
                 </button>
                 <div className="btn-filter-content" name="petType">
-                  <a href="#" name="1" onClick={show}>全部</a>
+                  <a href="#" name="0" onClick={show} >全部</a>
+                  <a href="#" name="1" onClick={show}>不分類</a>
                   <a href="#" name="2" onClick={show}>貓</a>
                   <a href="#" name="3" onClick={show}>狗</a>
                 </div>
               </div>
               <div className="allCardBtn_Issue btn-filter">
-                <button className="filterbtn firstSelect" id="filterbtn2">
+                <button className="filterbtn firstSelect" id="filterbtn2" value="">
                   日常 <i className="fas fa-caret-down"></i>
                 </button>
                 <div className="btn-filter-content">
@@ -322,7 +397,7 @@ function SocialForum(props) {
         <div className="row socialforumItems no-gutters">
           <div className="container bigArticleRange">
             <div>
-              <div className="row petknowledgeTitle">
+              <div className="row petknowledgeTitle" id="petknowledgeTitle">
                 <span className="forumTitleLine"></span>
                 <h3 className="forum_BTitle">寵物知識</h3>
                 <span className="forumTitleLine"></span>

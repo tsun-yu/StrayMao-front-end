@@ -144,8 +144,8 @@ function MyNavbar(props) {
               </NavDropdown.Item>
             </NavDropdown>
 
-            {/* 會員中心 */}
-            <NavDropdown title="我的" id="basic-nav-dropdown">
+            {/* 會員中心 Start */}
+            <NavDropdown title="會員" id="basic-nav-dropdown">
               <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
@@ -158,10 +158,10 @@ function MyNavbar(props) {
               <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
-                  to="/petArea"
+                  to="/petArea1"
                   style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
-                  我的寶貝
+                  寵物專區
                 </Nav.Link>
               </NavDropdown.Item>
               <NavDropdown.Item className="hvr-sweep-to-right">
@@ -176,7 +176,7 @@ function MyNavbar(props) {
               <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
-                  to="/socialTest"
+                  to="/OrderList"
                   style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   訂單查詢
@@ -185,13 +185,14 @@ function MyNavbar(props) {
               <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
-                  to="/myFavorite"
+                  to="/myFavorite1"
                   style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
                   我的最愛
                 </Nav.Link>
               </NavDropdown.Item>
             </NavDropdown>
+            {/* 會員中心 End */}
           </Nav>
           <Nav className="mr-5">
             <div className=" ">

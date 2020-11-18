@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter, useHistory } from 'react-router-dom';
 
 import { addForumCardAsync } from "../../actions/social_media/index";
+import { faWindows } from "@fortawesome/free-brands-svg-icons";
 
 function AddForumCard(props) {
   const {current:formDatas}=React.useRef({});
@@ -12,19 +13,34 @@ function AddForumCard(props) {
     formDatas.memberId=1;
   },[]);
 
-  const handleOnSubmit = React.useCallback(event=>{
-    console.log('formDatas:',formDatas);
-    props.addForumCardAsync(formDatas);
-    event.preventDefault();
-    props.history.push('/socialForum');
+const handleOnSubmit = (event=>{
+      console.log('formDatas:',formDatas);
+      props.addForumCardAsync(formDatas);
   })
+
+  function validate(form) { 
+    if(window.confirm(`確認送出嗎?`)) {
+      handleOnSubmit()
+      props.history.push('/socialForum');
+    }else{
+      // return false;
+    }
+} 
+  function addGiveUp() { 
+    if(window.confirm("是否放棄離開?")){
+      props.history.push('/socialForum')
+    }
+} 
+  
 
   return (
     <>
       <div className="addForumBox">
-      <span className="addBigEXit"><img src="./icomoon/SVG/_014-cancel.svg" alt=""/></span>
+      <span className="addBigEXit" onClick={()=>{addGiveUp()}}>
+        <img src="./icomoon/SVG/_014-cancel.svg" alt=""/></span>
       <h3 className="addForumTitle">建立話題</h3>
-        <form onChange={handleOnChange} onSubmit={handleOnSubmit}>
+        <form onChange={handleOnChange} 
+        >
           <div className="row addForumBtnControl">
           <div className="btn-filter addforumright">
             <select className="filterbtn" name="petType" required>
@@ -71,13 +87,13 @@ function AddForumCard(props) {
             <p className="addImgText">未上傳檔案</p>
             </label>
             </div>
-            <div className="row">
+            {/* <div className="row">
             <img className="pinkIconExit" src="./icomoon/SVG/_059-logout.svg" alt="" />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="addbtnControl">
-          <button className="btn-green" type="submit" value="確認新增">
+          <button className="btn-green" type="button" value="確認新增" onClick={()=>{validate()}}>
           確認新增
           </button>
           </div> 

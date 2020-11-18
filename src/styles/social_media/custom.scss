@@ -512,7 +512,8 @@
 }
 
 .forumAllCardBT {
-  margin-top: 116px;
+  // margin-top: 116px;
+  justify-content: center;
 }
 
 .forum_AllCardItems {
@@ -534,7 +535,7 @@
 
 .allCardBtnLeft {
   width: 220px;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .allCardBtn_Type {
@@ -553,7 +554,7 @@
   position: relative;
   margin: 75px auto;
   height: 20rem;
-  top: 40px;
+  // top: 30px;
   justify-content: space-between;
   overflow: hidden;
 }
@@ -563,7 +564,7 @@
   position: absolute;
   display: inline-flex;
   left: 50%;
-  top: 60%;
+  top: 55%;
   transform: translate(-50%);
   justify-content: space-between;
   width: 1200px;

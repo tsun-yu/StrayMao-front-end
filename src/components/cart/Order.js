@@ -6,13 +6,13 @@ import OrderCardBoxM from "./OrderCardBoxM"
 import OrderDetialBoxC from "./OrderDetialBoxC"
 import OrderDetialBoxM from "./OrderDetialBoxM"
 
-import { getOrderAsync, getOrderListAsync } 
+import { getOrderId } 
 from "../../actions/cart/index";
 function Order(props) {
     const [test, setTest] = useState({});
     useEffect(() => {
-      console.log("id :", props.id)
-      props.getOrderAsync(props.id);
+      console.log("id :", props.info)
+      props.getOrderId(props.info);
     }, []);
 return(
 <>
@@ -59,22 +59,21 @@ return(
         </div>
       </div>
     </div>
-    {/* <OrderCardBoxM />
-    <OrderDetialBoxM /> */}
+    <OrderCardBoxM />
+    <OrderDetialBoxM />
   </div>
 </div>
 </>
 )}
 
 const mapStateToProps = (store) => {
-    return { info: store.cartReducer.getOrder,
-      id: store.cartReducer.getId  };
+    return { info: store.cartReducer.getId  };
   };
   const mapDispatchToProps = null;
 
 export default  connect(
     mapStateToProps, {
-        getOrderAsync, getOrderListAsync 
+      getOrderId 
     })(Order)
 
 //export default Order

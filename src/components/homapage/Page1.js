@@ -9,13 +9,8 @@ function Page1(props) {
     let newIndex = 0
 
     const interval = setInterval(() => {
-      // newIndex > 3 && (newIndex = 0)
-      if (newIndex > 3) {
-        document.querySelector('.page1left-wrap').style.transition = '0s'
-        newIndex = 0
-      } else {
-        document.querySelector('.page1left-wrap').style.transition = '0.5s'
-      }
+      newIndex > 3 && (newIndex = 0)
+
       let slide = newIndex * -70
       document.querySelector('.page1left-wrap').style.top = slide + 'vh'
       newIndex++
