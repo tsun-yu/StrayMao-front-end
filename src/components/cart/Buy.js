@@ -43,24 +43,6 @@ function Buy(props) {
         setAddress(event.target.value);
       }
 
-      let productDeliveryRadio ='便利商店取貨'
-    //   if(document.getElementById("r1").checked==true){
-    //     productDeliveryRadio=document.getElementById("r1").value
-    //   }else if(document.getElementById("r2").checked==true){
-    //     productDeliveryRadio=document.getElementById("r2").value
-    //   }else{
-    //     productDeliveryRadio=document.getElementById("r3").value
-    //   }
-
-      let paymentTermRadio ='貨到付款'
-    //   if(document.getElementById("r4").checked==true){
-    //     paymentTermRadio=document.getElementById("r4").value
-    //   }else if(document.getElementById("r5").checked==true){
-    //     paymentTermRadio=document.getElementById("r5").value
-    //   }else{
-    //     paymentTermRadio=document.getElementById("r6").value
-    //   }
-
     const onChangeShip = e =>{
         console.log(e.target.value)
         setShipType(e.target.value)
@@ -78,6 +60,24 @@ function Buy(props) {
           console.log('memberName',memberName)
           console.log('mobile',mobile)
           console.log('address',address)
+          let productDeliveryRadio ='便利商店取貨'
+          let radios1 = document.getElementsByName('radio1');
+    
+    for (let i = 0, length = radios1.length; i < length; i++) {
+      if (radios1[i].checked) {
+        productDeliveryRadio=radios1[i].value
+        break;
+      }
+    }
+          let paymentTermRadio ='貨到付款'
+          let radios2 = document.getElementsByName('radio2');
+    
+    for (let i = 0, length = radios2.length; i < length; i++) {
+      if (radios2[i].checked) {
+        paymentTermRadio=radios2[i].value
+        break;
+      }
+    }
         props.updateOrderAsync([props.id[0].cartId,props.id[0].quantity,subTotal+60,memberName,mobile,address,productDeliveryRadio,paymentTermRadio,props.id[0].orderId])
       }
     
@@ -211,7 +211,7 @@ setTimeout(() => setDataLoading(false), 1000);
             </div>
             <div className="buyM_boxDown_An d-flex flex-column">
                 <span className="buyM_countPrice_An">小計：{subTotal} 元 + 運費：40元</span>
-                <span className="buyM_totalPrice_An">總計：{subTotal+40} 元</span>
+                <span className="buyM_totalPrice_An">總計：{subTotal+60} 元</span>
             </div>
             <div className="buyM_boxConsignee_An">
                 <div>

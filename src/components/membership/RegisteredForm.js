@@ -8,16 +8,43 @@ function RegisteredForm(props) {
     const [memberName, setMemberName] = useState('')
     const [memberPic, setMemberPic] = useState('')
     const [password, setPassword] = useState('')
+    const [password2, setPassword2] = useState('')
     const [birthday, setBirthday] = useState('')
     const [telephone, setTelephone] = useState('')
     const [mobile, setMobile] = useState('')
     const [email, setEmail] = useState('')
     const [address, setAddress] = useState('')
+    const [goAdd , setGoAdd] = useState(true);
+
+    const $password1 = document.querySelector("#exampleInputPassword1");
+    const $password2 = document.querySelector("#exampleInputPassword2");
+
+    // useEffect(() => {
+      
+    // },[password]);
+
+    // useEffect(() => {
+      
+    // },[password2]);
+
+    async function checkPassword12(){
+      if($password1.value != $password2.value){
+        $password2.style.borderColor = "red";
+        $password2.nextElementSibling.innerHTML = "不相符";
+        setGoAdd(false);
+      }
+      else{
+        $password2.style.borderColor = "";
+        $password2.nextElementSibling.innerHTML = "";
+        setGoAdd(true);
+      }
+    }
 
     async function addUserToSever() {
+      if(goAdd){
         // 開啟載入指示
         setDataLoading(true)
-    
+        
         const newData = { memberName,  memberPic, password, birthday, telephone, mobile, email,  address}
         console.log(newData)
     
@@ -37,7 +64,7 @@ function RegisteredForm(props) {
         console.log(JSON.stringify(newData))
     
         const response = await fetch(request)
-        const data = await response.json()
+        const data = await response.json();
     
         console.log('伺服器回傳的json資料', data)
         // 要等驗証過，再設定資料(簡單的直接設定)
@@ -45,22 +72,23 @@ function RegisteredForm(props) {
         //直接在一段x秒關掉指示器
         setTimeout(() => {
           setDataLoading(false)
-          alert('儲存完成')
+          alert('喵~ ，您的會員資格已生效 !!')
           props.history.push('/')
         }, 500)
+      }
     }
-    
-      // 一開始就會開始載入資料
-      // useEffect(() => {
-      //   getUserFromServer(userid)
-      // }, [])
-    
-      // 每次users資料有變動就會X秒後關掉載入指示
-      // useEffect(() => {
-      //   setTimeout(() => {
-      //     setDataLoading(false)
-      //   }, 1000)
-      // }, [userid])
+
+    // 一開始就會開始載入資料
+    // useEffect(() => {
+    //   getUserFromServer(userid)
+    // }, [])
+  
+    // 每次users資料有變動就會X秒後關掉載入指示
+    // useEffect(() => {
+    //   setTimeout(() => {
+    //     setDataLoading(false)
+    //   }, 1000)
+    // }, [userid])
 
     const loading = (
         <>
@@ -71,7 +99,6 @@ function RegisteredForm(props) {
           </div>
         </>
     )
-
     
     const display = (
         <>
@@ -208,7 +235,8 @@ function RegisteredForm(props) {
                     placeholder="Password"
                     value={password}
                     onChange={(event) => {
-                        setPassword(event.target.value)
+                      setPassword(event.target.value);
+                      checkPassword12();
                     }}
                     required/>
                 <br/>
@@ -220,9 +248,15 @@ function RegisteredForm(props) {
                 <label for="exampleInputPassword1"><span class="red-stars">**</span>再輸入一次密碼：</label>
                 <input 
                     type="password" 
-                    className="form-control infoInput" id="exampleInputPassword1" 
+                    className="form-control infoInput" 
+                    id="exampleInputPassword2" 
                     placeholder="Password Again" 
-                    required/>
+                    required
+                    onChange={(event) => {
+                      setPassword2(event.target.value);
+                      checkPassword12();
+                    }}
+                    />
                 <small class="form-text error-msg"></small>
             </div>
         </div>

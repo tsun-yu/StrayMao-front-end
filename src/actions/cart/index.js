@@ -155,7 +155,6 @@ export const getRecommand = (value) => {
 export const getRecommandAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/cartlist";
-    const cartlist={ memberId:100 };
     const request = new Request(url, {
       method: "GET",
       // body: JSON.stringify(cartlist),
@@ -287,7 +286,7 @@ export const updateOrderAsync = (value) => {
     console.log('order:',order)
     const request = new Request(url, {
       method: "POST",
-      // body: JSON.stringify(order),
+      body: JSON.stringify(order),
       headers: new Headers({
         Accept: "application/json",
         "Content-Type": "application/json",
