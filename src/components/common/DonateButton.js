@@ -9,7 +9,7 @@ function DonateButton(props) {
         <div className="donateButtonBlock-1 position-relative">
           <a
             href="##"
-            className="donateButton position-absolute d-flex justify-content-center align-items-center a"
+            className="donateButton position-absolute d-flex justify-content-center align-items-center hvr-reveal a"
             onClick={() => {
               props.history.push('/donate')
             }}
@@ -18,7 +18,7 @@ function DonateButton(props) {
           </a>
           <a
             href="##"
-            className="adoptionButton position-absolute d-flex justify-content-center align-items-center a"
+            className="adoptionButton position-absolute d-flex justify-content-center align-items-center hvr-radial-out a"
             onClick={() => {
               props.history.push('/adoptionMain')
             }}
