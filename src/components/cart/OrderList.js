@@ -13,7 +13,9 @@ function OrderList(props) {
     const content = [];
     let totalCards = props.info;
     useEffect(() => {
-        props.getOrderListAsync(100)
+      console.log('hello there')
+      let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:'';
+      props.getOrderListAsync(memberId)
     }, []);
     useEffect(() => {
         totalCards = props.info;

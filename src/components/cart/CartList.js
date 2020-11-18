@@ -87,7 +87,8 @@ function CartList(props) {
       }
 
     useEffect(() => {
-        props.getRecommandAsync()
+        let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:'';
+        props.getRecommandAsync(memberId)
         console.log("info2: ",props.info)
     }, []);
 
