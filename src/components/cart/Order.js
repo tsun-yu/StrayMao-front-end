@@ -5,6 +5,8 @@ import OrderCardBoxC from "./OrderCardBoxC"
 import OrderCardBoxM from "./OrderCardBoxM"
 import OrderDetialBoxC from "./OrderDetialBoxC"
 import OrderDetialBoxM from "./OrderDetialBoxM"
+import DonateButton from '../common/DonateButton'
+import ChatRoomSvg from '../store/ChatRoomSvg'
 import { withRouter, useHistory } from 'react-router-dom';
 
 import { getOrderId } 
@@ -30,6 +32,8 @@ function Order(props) {
     }
 return(
 <>
+<DonateButton />
+<ChatRoomSvg />
 <div className="orderC_body_An">
 <div className="container">
     <div className="orderC_classificationBox_An">

@@ -3,6 +3,8 @@ import { connect } from "react-redux"
 import "../../styles/cart/orderlist.scss";
 import OrderListCardBoxC from "./OrderListCardBoxC"
 import OrderListCardBoxM from "./OrderListCardBoxM"
+import DonateButton from '../common/DonateButton'
+import ChatRoomSvg from '../store/ChatRoomSvg'
 import { withRouter, useHistory } from 'react-router-dom';
 import LogInInfo from '../membership/LogInInfo2';
 
@@ -61,6 +63,8 @@ setTimeout(() => setDataLoading(false), 1000)
 
 return(
 <>
+<DonateButton />
+<ChatRoomSvg />
   <LogInInfo
     setMember = {setMember}
     history = {props.history}
