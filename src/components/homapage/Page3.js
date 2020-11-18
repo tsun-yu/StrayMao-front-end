@@ -152,7 +152,7 @@ function Page3(props) {
   // dot
   useEffect(() => {
     document
-      .querySelectorAll('#root > main > div > div:nth-child(4) > div > ul > li')
+      .querySelectorAll('#root > main > div > div:nth-child(5) > div > ul > li')
       .forEach((e) => {
         // e.style.backgroundColor = 'rgba(255, 255, 255, 0.6)'
         e.classList.remove('dotSelected')
@@ -164,12 +164,12 @@ function Page3(props) {
 
     document
       .querySelector(
-        `#root > main > div > div:nth-child(4) > div > ul > li:nth-child(${dot})`
+        `#root > main > div > div:nth-child(5) > div > ul > li:nth-child(${dot})`
       )
       .classList.remove('dotUnselected')
     document
       .querySelector(
-        `#root > main > div > div:nth-child(4) > div > ul > li:nth-child(${dot})`
+        `#root > main > div > div:nth-child(5) > div > ul > li:nth-child(${dot})`
       )
       .classList.add('dotSelected')
   }, [dot])

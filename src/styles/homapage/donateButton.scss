@@ -1,0 +1,42 @@
+.donateButtonBlock {
+  top: 20vh;
+  right: 10px;
+  z-index: 4;
+}
+.donateButtonBlock-1 {
+  width: 130px;
+  height: 117px;
+}
+
+.donateButton {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background-color: #fffffd;
+  border: solid 0.5px #cb997e;
+  right: 0;
+  top: 0;
+  color: #cb997e;
+  font-size: 20px;
+  font-family: $fontType1;
+  font-weight: 400;
+}
+.donateButton:hover {
+  color: #ed8f8f;
+}
+
+.adoptionButton {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background-color: #cb997e;
+  bottom: 0;
+  left: 0;
+  color: #fffffd;
+  font-size: 20px;
+  font-family: $fontType1;
+  font-weight: 400;
+}
+.adoptionButton:hover {
+  color: #fffffd;
+}

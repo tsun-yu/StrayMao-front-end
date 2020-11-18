@@ -3,23 +3,22 @@ import { connect } from "react-redux";
 import "../../styles/cart/order.scss";
 import OrderCardC from "./OrderCardC"
 
-import { getOrderId } 
+import { getOrderId,getOrderAsync,getOrderList } 
 from "../../actions/cart/index";
 function OrderCardBoxC(props) {
     const [test, setTest] = useState({});
     const [dataLoading, setDataLoading] = useState(true);
     const [display, setDisplay] = useState(<></>);
+    // const [totalCards, setTotalCards] = useState('');
 
-    const content = [];
-    let totalCards = props.info.data;
+    const [content, setContent] = useState([]);
+    // let totalCards = props.info.data;
+    
     useEffect(() => {
-        // props.getOrderAsync()
-        //console.log("88558: ",props.info)
-    }, []);
-    useEffect(() => {
-        totalCards = props.info.data;
-        //console.log("info2: ",props.info)
-        //console.log("totalcards:",totalCards)
+        // setTotalCards(JSON.parse(localStorage.getItem('orderListData')).data)
+        // console.log("OrderCardBoxC info2: ",(localStorage.getItem('orderListData')))
+        // console.log("totalcards:",totalCards)
+        let totalCards = JSON.parse(localStorage.getItem('orderListData')).data;
         if (totalCards.length > 0) {
           // let tt = JSON.parse(totalCards[0]);
           // //console.log("totalCards: ", totalCards[0]);
@@ -46,10 +45,12 @@ function OrderCardBoxC(props) {
                 // //console.log("content:",content)
             }, 1000)
         }
- 
-    
-
-},[props.info.data])
+        // props.getOrderAsync(props.info.orderId)
+        //console.log("88558: ",props.info)
+    }, []);
+    useEffect(() => {
+        // totalCards = props.info.data;
+    },[props.info])
     const loading = <div></div>
 
   // 以資料載入的指示狀態來切換要出現的畫面
@@ -58,12 +59,14 @@ function OrderCardBoxC(props) {
 }
 
 const mapStateToProps = (store) => {
-    // return { info: store.cartReducer.getOrder };
-    return {  };
+    return { info: store.cartReducer.getId };
+    // return {  };
 };
 const mapDispatchToProps = null;
 
 export default connect(mapStateToProps, {
-    getOrderId
+    getOrderId,
+    getOrderAsync,
+    getOrderList
 })(OrderCardBoxC);
 // export default OrderCardC
