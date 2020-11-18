@@ -26,7 +26,7 @@ export const insertRecommand = (value) => {
 export const insertRecommandAsync = (value) => {
   return async function getRecommandCart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/cartinsert";
-    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:100;
+    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:3;
     const cartinsert={ goodsId:value[0] ,name:value[1] ,price:value[2] ,goodsImgs:value[3] ,memberId:memberId };
     const request = new Request(url, {
       method: "POST",
@@ -414,7 +414,7 @@ export const goodsLike = (value) => {
 export const goodsLikeAsync = (value) => {
   return async function addGoodsHeart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/goods_heart";
-    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:100;
+    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:3;
     const goods = { goodsId: value, memberId: memberId };
     const request = new Request(url, {
       method: "POST",
@@ -444,7 +444,7 @@ export const goodsDisLike = (value) => {
 export const goodsDisLikeAsync = (value) => {
   return async function addGoodsHeart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/goods_heart";
-    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:100;
+    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:3;
     const goods = { goodsId: value, memberId: memberId };
     const request = new Request(url, {
       method: "DELETE",
@@ -474,7 +474,7 @@ export const goodsInitLike = (value) => {
 export const goodsInitLikeAsync = (value) => {
   return async function addGoodsHeart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/cart/goods_heart_init";
-    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:100;
+    let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:3;
     const goods = { goodsId: value, memberId: memberId };
     const request = new Request(url, {
       method: "POST",
