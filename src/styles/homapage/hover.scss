@@ -1696,7 +1696,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: #ed8f8f;
   border-radius: 100%;
   -webkit-transform: scale(0);
   transform: scale(0);
@@ -2488,12 +2488,13 @@
 .hvr-reveal:before {
   content: '';
   position: absolute;
+  border-radius: 50%;
   z-index: -1;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  border-color: #2098d1;
+  border-color: #ed8f8f;
   border-style: solid;
   border-width: 0;
   -webkit-transition-property: border-width;
@@ -2508,7 +2509,7 @@
 .hvr-reveal:active:before {
   -webkit-transform: translateY(0);
   transform: translateY(0);
-  border-width: 4px;
+  border-width: 3px;
 }
 
 /* Underline Reveal */

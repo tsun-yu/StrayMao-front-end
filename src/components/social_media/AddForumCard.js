@@ -63,8 +63,8 @@ const handleOnSubmit = (()=>{
         <div className="container addContentBox">
           <div className="row addContentTop">
             <span className="addAutorItems">
-              <div className="addAutorImg" />
-              <p className="addAutorName">路人甲乙</p>
+              <div><img className="addAutorImg" src="./image/membership/AvataM1.jpg"/></div>
+              <p className="addAutorName">郭彥洋</p>
             </span>
           </div>
           <div className="addIssueItems">

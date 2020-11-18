@@ -10,9 +10,9 @@ function ForumUserReply(props) {
               <span className="row paragraph2">
                 <img
                   className="forumUserImg"
-                  src="/image/homepage/homepage-1.jpg"
+                  src={props.info3.memberPic}
                 />
-                <p>{props.info3.memberId}</p>
+                <p className="forum_Name">{props.info3.memberName}</p>
                 <span className="forumUserRBtn">
                   <button className="btn-brown" type="button" value="回覆">
                     回覆

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import AlertDismissible from './HP-component/AlertDismissible'
 import ReactLoading from 'react-loading'
 import RingLoader from 'react-spinners/RingLoader'
+import DonateButton from '../common/DonateButton'
 
 function Donate(props) {
   const [alert, setAlert] = useState(<></>)
@@ -9,6 +10,7 @@ function Donate(props) {
 
   return (
     <>
+      <DonateButton />
       <div className="">
         <div className="donateBanner mx-auto mt-5 d-flex justify-content-center align-items-center">
           DONATE
@@ -245,7 +247,7 @@ function Donate(props) {
                     setSpinner(<RingLoader size={150} color={'#cb997e'} />)
                     setTimeout(() => {
                       setSpinner(<></>)
-                    }, 2000)
+                    }, 2500)
                     setTimeout(() => {
                       setAlert(<AlertDismissible />)
                       document.querySelector('.cdcard-1').value = ''
@@ -255,7 +257,7 @@ function Donate(props) {
                       document.querySelector('.cdcardthree').value = ''
                       document.querySelector('.cdcardmon').value = ''
                       document.querySelector('.cdcardyr').value = ''
-                    }, 2000)
+                    }, 2500)
                     setTimeout(() => {
                       setAlert(<></>)
                     }, 4000)
