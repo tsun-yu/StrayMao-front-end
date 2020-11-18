@@ -11,9 +11,10 @@ function OrderDetialBoxC(props) {
     const [display, setDisplay] = useState(<></>);
 
     const content = [];
-    let totalCards = props.info.data;
+    // let totalCards = props.info.data;
     useEffect(() => {
-        totalCards = props.info.data
+      let totalCards = JSON.parse(localStorage.getItem('orderListData')).data;
+        // totalCards = props.info.data
         console.log("99: ",props.info.data)
         if (totalCards.length > 0) {
             content.push(<OrderDetialC info={totalCards[0]} key={0} />);
@@ -23,6 +24,7 @@ function OrderDetialBoxC(props) {
                     <div className="orderC_boxDown_An">
                     <OrderDetialC info={totalCards[0]} key={0} />
                                 {/* {content} */}
+                              
                             </div>
                     </>
               )
@@ -32,8 +34,8 @@ function OrderDetialBoxC(props) {
             }
     }, []);
     useEffect(() => {
-        totalCards = props.info.data;
-        
+        // totalCards = props.info.data;
+        // setTotalCards(props.info.data)
         
     },[props.info.data])
     const loading = <div></div>
@@ -44,8 +46,8 @@ function OrderDetialBoxC(props) {
 }
 
 const mapStateToProps = (store) => {
-//   return { info: store.cartReducer.getOrder };
-  return { };
+  return { info: store.cartReducer.getOrderId };
+  // return { };
 };
 const mapDispatchToProps = null;
 
