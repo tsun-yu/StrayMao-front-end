@@ -21,24 +21,6 @@ function Page1(props) {
   }, [])
   return (
     <>
-      {/* line */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="114"
-        height="1"
-        viewBox="0 0 114 1"
-        className="page1line position-absolute"
-      >
-        <line
-          id="Line_2"
-          data-name="Line 2"
-          x2="114"
-          transform="translate(0 0.5)"
-          fill="none"
-          stroke="#707070"
-          strokeWidth="1"
-        />
-      </svg>
       {/* scroll */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
