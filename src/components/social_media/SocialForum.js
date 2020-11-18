@@ -393,11 +393,11 @@ function SocialForum(props) {
         <p className="header5 forumSaySText">從文章中找到新話題。</p>
       </div>
 
-      <div className="container petknowledgeMain">
+      <div className="container petknowledgeMain" id="petknowledgeMain">
         <div className="row socialforumItems no-gutters">
           <div className="container bigArticleRange">
             <div>
-              <div className="row petknowledgeTitle" id="petknowledgeTitle">
+              <div className="row petknowledgeTitle">
                 <span className="forumTitleLine"></span>
                 <h3 className="forum_BTitle">寵物知識</h3>
                 <span className="forumTitleLine"></span>
