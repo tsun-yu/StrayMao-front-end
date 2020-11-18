@@ -13,7 +13,7 @@ function OrderDetialBoxM(props) {
     const content = [];
     let totalCards = props.info;
     useEffect(() => {
-        props.getOrderAsync()
+        // props.getOrderAsync()
     }, []);
     useEffect(() => {
         totalCards = props.info;
