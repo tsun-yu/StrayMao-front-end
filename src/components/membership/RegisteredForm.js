@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "../../styles/membership/custom.scss";
 import { withRouter } from 'react-router-dom'
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
+import ImageUploading from 'react-images-uploading';
 
 function RegisteredForm(props) {
     const [dataLoading, setDataLoading] = useState(false)
@@ -110,19 +111,12 @@ function RegisteredForm(props) {
                             <label for="memberUpLoadImg" className="viewImg">請上傳個人照片</label>
                             <button
                                 className="upLoadImg"
-                                // component="label"
-                                // variant="contained"
                             >
-                             上傳照片(250pixel x 250pixel)
                                 <input 
                                     type="file" 
                                     className="form-control-file uploadImg" 
                                     name="memberUpLoadImg"
-                                    style={{ display: "none" }}
                                     value={memberPic}
-                                    onChange={(event) => {
-                                        setMemberPic(event.target.value)
-                                    }}
                                 />
                             </button>
                         </div>
@@ -282,8 +276,13 @@ function RegisteredForm(props) {
 
 return (
   <>
-    <h1>會員編輯</h1>
-    <hr />
+    <ImageUploader
+      {...props}
+      withIcon={true}
+      onChange={onDrop}
+      imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+      maxFileSize={5242880}
+    />
 
     {dataLoading ? loading : display}
   </>

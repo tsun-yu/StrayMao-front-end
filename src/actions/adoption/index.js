@@ -29,7 +29,7 @@ export const getAdopPet = (value) => {
 export const getAdopPetAsync = (value) => {
   return async function getRecommandPet(dispatch, getState) {
     const url = 'http://localhost:3001/straymao/adoption/get_adop_pet';
-    const pet = { petId: value, userId: 111 };
+    const pet = { petId: value, userId: 3 };
     const request = new Request(url, {
       method: 'POST',
       headers: new Headers({
@@ -115,7 +115,7 @@ export const petInitLike = (value) => {
 export const petLikeAsync = (value) => {
   return async function addPetHeart(dispatch, getState) {
     const url = 'http://localhost:3001/straymao/adoption/pet_heart';
-    const pet = { petId: value, userId: 111 };
+    const pet = { petId: value, userId: 3 };
     const request = new Request(url, {
       method: 'POST',
       body: JSON.stringify(pet),
@@ -140,7 +140,7 @@ export const petLikeAsync = (value) => {
 export const petDisLikeAsync = (value) => {
   return async function addPetHeart(dispatch, getState) {
     const url = 'http://localhost:3001/straymao/adoption/pet_heart';
-    const pet = { petId: value, userId: 111 };
+    const pet = { petId: value, userId: 3 };
     const request = new Request(url, {
       method: 'DELETE',
       body: JSON.stringify(pet),
@@ -165,7 +165,7 @@ export const petDisLikeAsync = (value) => {
 export const petInitLikeAsync = (value) => {
   return async function addPetHeart(dispatch, getState) {
     const url = 'http://localhost:3001/straymao/adoption/pet_heart_init';
-    const pet = { petId: value, userId: 111 };
+    const pet = { petId: value, userId: 3 };
     const request = new Request(url, {
       method: 'POST',
       body: JSON.stringify(pet),

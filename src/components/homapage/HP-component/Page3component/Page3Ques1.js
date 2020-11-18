@@ -8,10 +8,10 @@ function Page3Ques1(props) {
 
   const dogColorToggle = () => {
     const catSvg = document.querySelector(
-      '#root > main > div > div:nth-child(4) > div > div > div:nth-child(1) > div.d-flex.justify-content-center > a.ml-5'
+      '#root > main > div > div:nth-child(5) > div > div > div:nth-child(1) > div.d-flex.justify-content-center > a.ml-5'
     ).classList
     const dogSvg = document.querySelector(
-      '#root > main > div > div:nth-child(4) > div > div > div:nth-child(1) > div.d-flex.justify-content-center > a.mr-5'
+      '#root > main > div > div:nth-child(5) > div > div > div:nth-child(1) > div.d-flex.justify-content-center > a.mr-5'
     ).classList
     if (dogSvg[2] == 'page3pet') {
       dogSvg.remove('page3circle')
@@ -31,10 +31,10 @@ function Page3Ques1(props) {
   }
   const catColorToggle = () => {
     const catSvg = document.querySelector(
-      '#root > main > div > div:nth-child(4) > div > div > div:nth-child(1) > div.d-flex.justify-content-center > a.ml-5'
+      '#root > main > div > div:nth-child(5) > div > div > div:nth-child(1) > div.d-flex.justify-content-center > a.ml-5'
     ).classList
     const dogSvg = document.querySelector(
-      '#root > main > div > div:nth-child(4) > div > div > div:nth-child(1) > div.d-flex.justify-content-center > a.mr-5'
+      '#root > main > div > div:nth-child(5) > div > div > div:nth-child(1) > div.d-flex.justify-content-center > a.mr-5'
     ).classList
     if (catSvg[2] == 'page3pet') {
       dogSvg.remove('page3circleClick')

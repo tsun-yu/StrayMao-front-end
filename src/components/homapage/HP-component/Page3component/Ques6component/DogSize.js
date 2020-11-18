@@ -4,7 +4,7 @@ function DogSize(props) {
   const { selectToggle } = props
   const iconColorToggle = (x) => {
     const iconSvg = document.querySelector(
-      `#root > main > div > div:nth-child(4) > div > div > div:nth-child(6) > div.d-flex.justify-content-center > a:nth-child(${x})`
+      `#root > main > div > div:nth-child(5) > div > div > div:nth-child(6) > div.d-flex.justify-content-center > a:nth-child(${x})`
     ).classList
     if (iconSvg[2] == 'page3pet') {
       iconSvg.remove('page3circle')
