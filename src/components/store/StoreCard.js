@@ -23,7 +23,7 @@ function StoreCard(props) {
   useEffect(() => {
     let id = props.goodsId ?? 1
     // console.log("id :", props.petDetailId);
-    setTest(props.getHotSaleAsync(id))
+    props.getHotSaleAsync(id)
   }, [])
 
   return (
