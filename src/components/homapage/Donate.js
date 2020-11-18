@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import AlertDismissible from './HP-component/AlertDismissible'
 import ReactLoading from 'react-loading'
-import RingLoader from 'react-spinners'
+import RingLoader from 'react-spinners/RingLoader'
 
 function Donate(props) {
   const [alert, setAlert] = useState(<></>)
@@ -51,10 +51,9 @@ function Donate(props) {
 
         <div className="donateArea">
           <div className="donateAlert">
-            {/* {spinner} */}
+            {spinner}
 
             {alert}
-            {/* <RingLoader /> */}
           </div>
           <div className="container">
             <div className="donateItems">
@@ -243,15 +242,7 @@ function Donate(props) {
                   type="button"
                   style={{ width: '155px' }}
                   onClick={() => {
-                    setSpinner(
-                      <ReactLoading
-                        type={'spinningBubbles'}
-                        color={'#cb997e'}
-                        height={'100px'}
-                        width={'100px'}
-                        className="mx-auto mt-2"
-                      />
-                    )
+                    setSpinner(<RingLoader size={150} color={'#cb997e'} />)
                     setTimeout(() => {
                       setSpinner(<></>)
                     }, 2000)
