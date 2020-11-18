@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/membership/custom.scss";
 import { withRouter } from 'react-router-dom'
+import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
 
 function RegisteredForm(props) {
     const [dataLoading, setDataLoading] = useState(false)
@@ -21,7 +22,7 @@ function RegisteredForm(props) {
         console.log(newData)
     
         // 連接的伺服器資料網址
-        const url = 'http://localhost:3001/straymao/membership/add'
+        const url = MEMBER_API_URL + '/addMember';
     
         // 注意資料格式要設定，伺服器才知道是json格式
         const request = new Request(url, {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import AlertDismissible from './HP-component/AlertDismissible'
 
 function Donate(props) {
   return (
@@ -246,6 +247,7 @@ function Donate(props) {
           <iframe src="https://ccore.newebpay.com/EPG/straymao/goXutn"></iframe>
         </div> */}
       </div>
+      <AlertDismissible />
     </>
   )
 }

@@ -19,7 +19,7 @@ import {
 function getOrderId(state = [{memberName:"",mobile:"",address:""}], action) {
   switch (action.type) {
     case UPDATE_RECOM:
-      console.log('hi UPDATE_RECOM')
+      // console.log('hi UPDATE_RECOM')
       state = action.value;
       break;
     default:
@@ -30,7 +30,7 @@ function getOrderId(state = [{memberName:"",mobile:"",address:""}], action) {
 function getRecom(state = 1, action) {
   switch (action.type) {
     case GET_RECOM:
-      console.log('hi GET_RECOM')
+      // console.log('hi GET_RECOM')
       state = action.value;
       break;
     default:
@@ -53,7 +53,7 @@ function getBuy(state = [{memberName:"",mobile:"",address:""}], action) {
 function getOrderList(state = 1, action) {
   switch (action.type) {
     case GET_ORDERLIST:
-      console.log("reducer: ",action.value)
+      // console.log("reducer: ",action.value)
       state = action.value;
       break;
     default:
@@ -65,7 +65,7 @@ function getOrderList(state = 1, action) {
 function getOrderListId(state = 1, action) {
   switch (action.type) {
     case GET_ORDERLIST:
-      console.log("reducer: ",action.value)
+      // console.log("reducer: ",action.value)
       state = action.value;
       break;
     default:
@@ -77,7 +77,7 @@ function getOrderListId(state = 1, action) {
 function getOrder(state = 1, action) {
   switch (action.type) {
     case GET_ORDER:
-      console.log("reducer: ",action.value)
+      // console.log("reducer: ",action.value)
       state = action.value;
       break;
     default:
@@ -100,7 +100,7 @@ function getId(state = 1, action) {
 function deleteOrder(state = 1, action) {
   switch (action.type) {
     case DELETE_ORDER:
-      console.log("reducer: ",action.value)
+      // console.log("reducer: ",action.value)
       state = action.value;
       break;
     default:
@@ -112,7 +112,7 @@ function deleteOrder(state = 1, action) {
 function updateOrder(state = 1, action) {
   switch (action.type) {
     case UPDATE_ORDER:
-      console.log("reducer: ",action.value)
+      // console.log("reducer: ",action.value)
       state = action.value;
       break;
     default:

@@ -21,9 +21,13 @@ function ForumListCard(props) {
             // props.forumDetailId(props.test.talkId);
             console.log(props.test);
             console.log(props.i);
+            console.log("j=",props.j);
             let cardNum = String((Number(props.i) * Number(-764)) + "px")
+            let cardNum2 = String((Number(props.j) * Number(-764)) + "px")
             console.log(cardNum)
-            document.querySelector(".forumTopBigCard").style.left= cardNum
+            document.querySelector(".forumTopBigCard").style.left= cardNum;
+            document.querySelector(".forumTopBigCard").style.left= cardNum2;
+            document.documentElement.scrollTop = 0;
             // console.log("test1:",content4);
             // setContent4([content4[0]=[props.test]);
             

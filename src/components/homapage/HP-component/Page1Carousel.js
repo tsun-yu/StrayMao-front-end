@@ -6,13 +6,8 @@ function Page1Carousel(props) {
     let newIndex = 0
 
     const interval = setInterval(() => {
-      // newIndex > 3 && (newIndex = 0)
-      if (newIndex > 3) {
-        document.querySelector('.page1img-wrap').style.transition = '0s'
-        newIndex = 0
-      } else {
-        document.querySelector('.page1img-wrap').style.transition = '0.5s'
-      }
+      newIndex > 3 && (newIndex = 0)
+
       let slide = newIndex * -60
       document.querySelector('.page1img-wrap').style.left = slide + 'vw'
       newIndex++
