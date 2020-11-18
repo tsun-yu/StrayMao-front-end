@@ -3,28 +3,51 @@ import { withRouter} from 'react-router-dom';
 //user used
 import "../../styles/membership/custom.scss";
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
-import LogInInfo from './LogInInfo';
+import LogInInfo from './LogInInfo2';
 
 function MemberInfo(props) {
 
   //檢查登入狀態 >> 取得要render畫面的內容
   const [member , setMember] = useState({});  //登入者資訊
-  const [renderList , setRenderList] = useState([]);
   useEffect(()=>{
-    if(member == null){
-      props.history.push("/signInForm");
-    }else{
-      // if(member.memberId != null) getMyFavorite();
-    }
+    if(member.memberId != null) getMyMemberInfo();
   },[member]);
 
-  //拉取喜歡的文章
-  async function getMyFavorite() {
-    const url = MEMBER_API_URL + "/getHeartList";
-    const condition = {
-      typeCode: '2',
-      memberId: member.memberId
-    };
+  //form
+  const [memberName , setMemberName] = useState("");
+  const [birthday , setBirthday] = useState("");
+  const [mobile , setMobile] = useState("");
+  const [telephone , setTelephone] = useState("");
+  const [email , setEmail] = useState("");
+  const [address , setAddress] = useState("");
+  const [password , setPassword] = useState("");
+
+  
+  //預設會員資料
+  const [renderData , setRenderData] = useState([]);
+  async function getMyMemberInfo() {
+    const url = MEMBER_API_URL + "/member/get/" + member.memberId;
+    const request = new Request(url, {
+      method: 'GET',
+      // body: JSON.stringify(condition),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    });
+    const response = await fetch(request)
+    const rsObj = await response.json();  //轉成物件
+    setMemberName(rsObj.data[0].memberName)
+    setBirthday(rsObj.data[0].birthday)
+    setMobile(rsObj.data[0].mobile)
+    setTelephone(rsObj.data[0].telephone)
+    setEmail(rsObj.data[0].email)
+    setAddress(rsObj.data[0].address)
+  }
+
+  async function updMyMemberInfo() {
+    const url = MEMBER_API_URL + "/member/edit";
+    const condition = { memberName , birthday , mobile , telephone , email , address , memberId: member.memberId , password };
     const request = new Request(url, {
       method: 'POST',
       body: JSON.stringify(condition),
@@ -35,13 +58,22 @@ function MemberInfo(props) {
     });
     const response = await fetch(request)
     const rsObj = await response.json();  //轉成物件
-    setRenderList(rsObj.data);
+    if(rsObj.success) {
+      if(rsObj.data.changedRows === 1) {
+        alert("喵~ 會員資料已更新!!");
+      } else if (rsObj.data.affectedRows === 0){
+        alert("喵嗚~ 會員密碼好像錯了唷!!!");
+      }
+    } else{
+      alert("喵嗚~ 有點小問題捏，請與我們聯繫好嗎?");
+    }
   }
 
 return(
 <>
   <LogInInfo
     setMember = {setMember}
+    history = {props.history}
   />
 
   <div className="topicStyle">能給我個家嗎? 爸脫~</div>
@@ -63,26 +95,45 @@ return(
         <label htmlFor="infoFormControlFile1" className="viewImg">請上傳個人照片</label>
         <input type="file" className="form-control-file uploadImg" id="infoFormControlFile1"/>
       </div>
-
       
       <div className="wrapFlex2">
         <div className="form-group fgFlex">
           <label for="infoInputName">姓&emsp;&emsp;&emsp;名：</label>
-          <input type="text" className="form-control infoInput1" id="infoInputName" placeholder="Enter name"/>
+          <input type="text" className="form-control infoInput1" id="infoInputName" placeholder="Enter name"
+            value={memberName}
+            onChange={(event) => {
+              setMemberName(event.target.value)
+            }}
+          />
         </div>
       
         <div className="form-group fgFlex">
           <label for="infoInputBirthday">出生年月日：</label>
-          <input type="date" className="form-control infoInput1" id="infoInputBirthday" placeholder="Enter birthday"/>
+          <input type="date" className="form-control infoInput1" id="infoInputBirthday" placeholder="Enter birthday" 
+            value={birthday}
+            onChange={(event) => {
+              setBirthday(event.target.value)
+            }}
+          />
         </div>
     
         <div className="form-group fgFlex">
           <label for="infoInputMobile">行&nbsp;動&nbsp;電&nbsp;話：</label>
-          <input type="text" className="form-control infoInput1" id="infoInputMobile" placeholder="Enter mobile"/>
+          <input type="text" className="form-control infoInput1" id="infoInputMobile" placeholder="Enter mobile" 
+            value={mobile}
+            onChange={(event) => {
+              setMobile(event.target.value)
+            }}
+          />
         </div>
         <div className="form-group fgFlex">
           <label for="infoInputTelephone">連&nbsp;絡&nbsp;電&nbsp;話：</label>
-          <input type="text" className="form-control infoInput1" id="infoInputTelephone" placeholder="Enter telephone"/>
+          <input type="text" className="form-control infoInput1" id="infoInputTelephone" placeholder="Enter telephone"
+            value={telephone}
+            onChange={(event) => {
+              setTelephone(event.target.value)
+            }}
+          />
         </div>
       </div>
     </div>
@@ -90,13 +141,23 @@ return(
     <div c  lassName="wrapFlex2">
       <div className="form-group fgFlex">
         <label for="infoInputEmail1">電&nbsp;子&nbsp;信&nbsp;箱：</label>
-        <input type="email" className="form-control infoInput2" id="infoInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+        <input type="email" className="form-control infoInput2" id="infoInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" readOnly
+          value={email}
+          // onChange={(event) => {
+          //   setEmail(event.target.value)
+          // }}
+        />
         
       </div>
 
       <div className="form-group fgFlex">
         <label for="infoInputAddress">地&emsp;&emsp;&emsp;址：</label>
-        <textarea className="form-control infoInput2" id="infoInputAddress" rows="3"></textarea>
+        <input type="text" className="form-control infoInput1" id="infoInputAddress" rows="3" 
+          value={address}
+          onChange={(event) => {
+            setAddress(event.target.value)
+          }}
+        />
       </div>
     </div>
 
@@ -104,12 +165,16 @@ return(
     <div className="wrapFlex3">
       <div className="form-group fgFlex">
         <label for="exampleInputPassword1">請輸入密碼：</label>
-        <input type="password" className="form-control infoInput" id="exampleInputPassword1" placeholder="Password"/>
+        <input type="password" className="form-control infoInput" id="checkPassword1" placeholder="Enter Password"
+          onChange={(event) => {
+            setPassword(event.target.value)
+          }}
+        />
       </div>
 
       <div className="form-group fgFlex">
         <label for="exampleInputPassword1">請輸入驗證碼：</label>
-        <input type="password" className="form-control infoInput" id="exampleInputPassword1" placeholder="Password"/>
+        <input type="password" className="form-control infoInput" id="checkCode1" placeholder="Enter Code"/>
       </div>
       <div className="confirmCode">123456</div>
     </div>
@@ -126,7 +191,7 @@ return(
             type="button" 
             className="btn btn-primary memberBtnRight"
             onClick={() => {
-              // saveMemberInfo();
+              updMyMemberInfo();
             }}
             >儲存會員資料</button>
     </div>
