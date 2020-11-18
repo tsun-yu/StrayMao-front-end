@@ -46,7 +46,7 @@ return(
       </div>
       <input type="hidden" id={"comStars_" + info.orderId + info.goodsId + info.memberId} value=""  />
       <div className="commentDate">評價日期：
-      {(info.comDate=='') ? <Moment format="YYYY/MM/DD hh:mm:ss">{info.comDate}</Moment>:"尚未評價" }
+      {(info.comDate=='') ? "尚未評價" : <Moment format="YYYY/MM/DD hh:mm:ss">{info.comDate}</Moment> }
       </div>
     </div>
     
@@ -64,7 +64,7 @@ return(
           comDesc: $comDesc2.val(),
         });
       }}
-    > {(info.comDate=='') ? "儲存":"更新" }</button>
+    > {(info.comDate == '') ? "儲存":"更新" }</button>
     <button className="commentBtn">刪除</button>
     </div>
   </div>
