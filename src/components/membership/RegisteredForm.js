@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "../../styles/membership/custom.scss";
 import { withRouter } from 'react-router-dom'
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
-import ImageUploading from 'react-images-uploading';
+// import ImageUploading from 'react-images-uploading';
 
 function RegisteredForm(props) {
     const [dataLoading, setDataLoading] = useState(false)
@@ -276,13 +276,13 @@ function RegisteredForm(props) {
 
 return (
   <>
-    <ImageUploader
+    {/* <ImageUploading
       {...props}
       withIcon={true}
       onChange={onDrop}
       imgExtension={[".jpg", ".gif", ".png", ".gif"]}
       maxFileSize={5242880}
-    />
+    /> */}
 
     {dataLoading ? loading : display}
   </>
