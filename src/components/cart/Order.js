@@ -11,7 +11,7 @@ from "../../actions/cart/index";
 function Order(props) {
     const [test, setTest] = useState({});
     useEffect(() => {
-      console.log("id :", props.info)
+      console.log("Order Order id :", props.info)
       props.getOrderId(props.info);
     }, []);
 return(

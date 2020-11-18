@@ -25,6 +25,7 @@ return(
             <div className="orderlistC_boxR_An">
                 <a href="" onClick={() => {
                     props.getOrderId(props.info)
+                    localStorage.setItem('orderListData',JSON.stringify(props.info))
                     props.history.push('/Order')
                     }}>查看更多</a>
             </div>
