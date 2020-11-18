@@ -4,22 +4,17 @@ import { withRouter} from 'react-router-dom';
 import "../../styles/membership/custom.scss";
 import { MEMBER_API_URL } from "../../actions/membership/actionTypes";
 import PetArea1_card from './PetArea1_card';
-import LogInInfo from './LogInInfo';
+import LogInInfo from './LogInInfo2';
 
 function PetArea1(props) {
   //檢查登入狀態 >> 取得要render畫面的內容
   const [member , setMember] = useState({});  //登入者資訊
-  const [renderList , setRenderList] = useState([]);
   useEffect(()=>{
-    if(member == null){
-      props.history.push("/signInForm");
-    }else{
-      if(member.memberId != null) getMyFavorite();
-    }
+    if(member.memberId != null) getMyFavorite();
   },[member]);
 
-  
   //拉取追蹤
+  const [renderList , setRenderList] = useState([]);
   async function getMyFavorite() {
     const url = MEMBER_API_URL + "/getHeartList";
     const condition = {
@@ -43,6 +38,7 @@ return(
 <>
   <LogInInfo
     setMember = {setMember}
+    history = {props.history}
   />
 
   <div className="petAreaWrap">

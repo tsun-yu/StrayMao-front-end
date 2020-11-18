@@ -6,7 +6,6 @@ import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
 import LogInInfo from './LogInInfo2';
 
 function MemberInfo(props) {
-
   //檢查登入狀態 >> 取得要render畫面的內容
   const [member , setMember] = useState({});  //登入者資訊
   useEffect(()=>{
