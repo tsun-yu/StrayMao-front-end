@@ -7,7 +7,8 @@ import Share from 'social-share-react'
 import { withRouter, useHistory } from 'react-router-dom'
 import { FacebookShareButton, LineShareButton, TwitterShareButton } from "react-share";
 import { FacebookIcon, LineIcon, TwitterIcon } from "react-share";
-import ChatRoomSvg from '../../components/store/ChatRoomSvg'
+
+
 
 import {
   goodsDisLikeAsync,
@@ -435,7 +436,7 @@ function StrayMaoP3(props) {
                 <div>商品資訊</div>
               </a>
             </div>
-            <div className="goodsDescriptionTitle">
+            <div className="goodsDescriptionTitle2">
               <a href="#">
                 <div>顧客評價</div>
               </a>
@@ -464,7 +465,6 @@ function StrayMaoP3(props) {
           {display}
         </div>
       </div>
-      <ChatRoomSvg />
     </>
   )
 }

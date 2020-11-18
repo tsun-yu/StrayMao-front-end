@@ -4,7 +4,7 @@ import { withRouter} from 'react-router-dom';
 import "../../styles/membership/custom.scss";
 import { MEMBER_API_URL } from "../../actions/membership/actionTypes";
 import MyFavorite1_card from './MyFavorite1_card';
-import LogInInfo from './LogInInfo';
+import LogInInfo from './LogInInfo2';
 import DonateButton from '../common/DonateButton'
 
 function MyFavorite1(props) {
@@ -16,13 +16,13 @@ function MyFavorite1(props) {
 
   //檢查登入狀態 >> 取得要render畫面的內容
   const [member , setMember] = useState({});  //登入者資訊
-  const [renderList , setRenderList] = useState([]);
   useEffect(()=>{
-    if(member == null){
-      props.history.push("/signInForm");
-    }else{
-      if(member.memberId != null) getMyFavorite();
-    }
+    if(member.memberId != null) getMyFavorite();
+    // if(member == null){
+    //   props.history.push("/signInForm");
+    // }else{
+    //   if(member.memberId != null) getMyFavorite();
+    // }
     //or
     // if(member !== null) {
     //   getMyFavorite();
@@ -33,6 +33,7 @@ function MyFavorite1(props) {
 
   
   //拉取喜歡的文章
+  const [renderList , setRenderList] = useState([]);
   async function getMyFavorite() {
     const url = MEMBER_API_URL + "/getHeartList";
     const condition = {
@@ -56,7 +57,9 @@ return(
 <>
   <LogInInfo
     setMember = {setMember}
+    history = {props.history}
   />
+
   <DonateButton />
 
   <div className="myFavoriteWrap">
@@ -70,7 +73,7 @@ return(
       </nav>
       <div className="container petAreaBackgroud">
         {renderList.length > 0 && renderList.map((element, i) => {
-          return <MyFavorite1_card info={element} />;
+          return <MyFavorite1_card info={element} history = {props.history} />;
         })}
       </div>
   </div>

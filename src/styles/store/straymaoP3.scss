@@ -246,6 +246,7 @@
 
 .goodsDescriptionTitle {
   margin: auto;
+  margin-bottom: -1px;
   border-bottom: 1px solid #777b5a;
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
@@ -253,7 +254,21 @@
   font-size: 0.88rem;
 }
 
+.goodsDescriptionTitle2 {
+  margin: auto;
+  margin-bottom: -1px;
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  font-weight: 500;
+  font-size: 0.88rem;
+}
+
 .goodsDescriptionTitle > a {
+  text-decoration: none;
+  color: #555555;
+}
+
+.goodsDescriptionTitle2 > a {
   text-decoration: none;
   color: #555555;
 }

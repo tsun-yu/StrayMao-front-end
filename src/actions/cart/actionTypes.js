@@ -1,5 +1,6 @@
 export const GET_RECOM = "GET_RECOM";
 export const GET_ORDERLIST = "GET_ORDERLIST";
+export const GET_ORDERLISTOLD = "GET_ORDERLISTOLD";
 export const GET_ORDER = "GET_ORDER";
 export const GET_BUY = "GET_BUY";
 export const GOODS_LIKE = "GOODS_LIKE";
