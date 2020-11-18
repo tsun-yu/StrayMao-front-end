@@ -33,6 +33,7 @@ p {
   // position: relative;
 }
 
+//貓
 .storeP2BackgroundBox1 {
   top: 0px;
   right: 8vw;
@@ -46,6 +47,58 @@ p {
 .storeP2BackgroundBox2 {
   top: 5vh;
   right: 11vw;
+  width: 15vw;
+  height: 35vh;
+  opacity: 0.8;
+  position: absolute;
+  background-color: #fff1e6;
+  z-index: 2;
+  font-size: 1.5rem;
+  color: #ddbea9;
+  text-align: center;
+  line-height: 35vh;
+}
+
+//狗
+.storeP2BackgroundDogsBox1 {
+  top: 0px;
+  left: 8vw;
+  width: 15vw;
+  height: 35vh;
+  opacity: 0.8;
+  position: absolute;
+  background-color: #a5a58d;
+}
+
+.storeP2BackgroundDogsBox2 {
+  top: 5vh;
+  left: 11vw;
+  width: 15vw;
+  height: 35vh;
+  opacity: 0.6;
+  position: absolute;
+  background-color: #fff1e6;
+  z-index: 2;
+  font-size: 1.5rem;
+  color: #a5a58d;
+  text-align: center;
+  line-height: 35vh;
+}
+
+//最新
+.storeP2BackgroundNewsBox1 {
+  top: 0px;
+  right: 3vw;
+  width: 15vw;
+  height: 35vh;
+  opacity: 0.8;
+  position: absolute;
+  background-color: #a5a58d;
+}
+
+.storeP2BackgroundNewsBox2 {
+  top: 5vh;
+  right: 6vw;
   width: 15vw;
   height: 35vh;
   opacity: 0.8;
