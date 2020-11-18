@@ -84,7 +84,7 @@ function ForumArticleMain(props) {
             <p>你可以這樣做：</p>
           </div>
           <div className="forumArticleLinkText">
-            <h3 className="header5"><a href={{javascript:void(0)}} onClick={()=>{window.open('http://www.facebook.com/sharer/sharer.php?u='+fbhtml_url);return false;}}>分享出去</a></h3>
+            <h3 className="header5 articleShareBtn"><a href={{javascript:void(0)}} onClick={()=>{window.open('http://www.facebook.com/sharer/sharer.php?u='+fbhtml_url);return false;}}>分享出去</a></h3>
             <div className="forumLinkLine" />
             <p className="caption">讓朋友加入討論</p>
           </div>

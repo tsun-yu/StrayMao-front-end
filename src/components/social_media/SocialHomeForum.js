@@ -1,17 +1,46 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import ForumListCard from "./ForumListCard";
-import { getForumList } from "../../actions/social_media/index";
+import ForumHomeCardPagebar from "./ForumHomeCardPagebar";
 import { getForumListAsync } from "../../actions/social_media/index";
+import { gotoPage, setTotalPage,setArticleTotalPage, } from '../../actions/common/index';
 import { withRouter, useHistory } from "react-router-dom";
 
 function SocialHomeforum(props) {
-  // const content = [];
-  // let totalCards = props.getForumList;
+  const [display, setDisplay] = useState(<></>);
+  const content=[];
+
+  let totalCards = props.info;
+  let totalPages = Math.ceil(totalCards.length / 4);
+  let nowPage = props.nowPage;
+
+  useEffect(() => {
+    props.getForumListAsync();
+  }, [])
+
+  useEffect(() => {
+    let totalCards = props.info;
+    let totalPages = Math.ceil(totalCards.length / 4);
+    if(totalCards.length > 0) {
+      props.setTotalPage(totalPages);
+      
+      for (let i = 4 * (nowPage - 1);nowPage === totalPages ? i < totalCards.length : i < 4 * nowPage;
+        i++
+      ) {
+        if (totalCards.length > 0) {
+          console.log(":", totalCards[i]);
+          content.push(<ForumListCard test={totalCards[i]} i={i} />);
+        }
+      }   
+    }
+
+  setDisplay(content);
+},[props.info,nowPage]);
+
 
   return (
     <>
-      <div className="container d-flex socialforumMain">
+      <div className="container d-flex socialforumMain" id="socialforumMain">
         <div className="row socialforumItems no-gutters">
           <div className="container socialforumMainItems">
             <div className="socialforumTop">
@@ -23,36 +52,7 @@ function SocialHomeforum(props) {
               </div>
             </div>
             <div className="row socialforumCardItems no-gutters">
-              {/* <ForumListCard /> */}
-              {/* 這邊要放卡片元件 */}
-              {/* <div className="singleRankCard">
-                <div className="socialforumCard">
-                  <span className="forumTitleBox">
-                    <div className="socialforumTitle">
-                      <div className="enHeader6">2020.</div>
-                      <div className="enParagraph">9.30</div>
-                    </div>
-                    <span className="socialforumBTitile paragraph1">
-                      用可愛的臉騙吃騙喝
-                    </span>
-                  </span>
-                  <span className="forumCardBg" />
-                  <img
-                    className="socialforumCardImg"
-                    src="/image/homepage/homepage-1.jpg"
-                    object-fit="cover"
-                  />
-                  <span className="forumTypeBox">
-                    <div className="container socialforumType">
-                      <div className="row paragraph1 no-gutters">貓 /</div>
-                      <div className="row paragraph1 socialSType no-gutters">
-                        日常
-                      </div>
-                    </div>
-                    <span className="forumTypeBg" />
-                  </span>
-                </div>
-              </div> */}
+            {display}
             </div>
             <div className="row socialforumBottom no-gutters">
               <div className="socialforumBottomline" />
@@ -60,24 +60,17 @@ function SocialHomeforum(props) {
                 className="socialforumBottomBtn btn-green"
                 type="button"
                 value="加入討論"
+                onClick={() => {
+                    console.log(props)
+                    props.history.push('/socialForum');
+                  }}
               >
                 加入討論
               </button>
               <div className="socialforumBottomline" />
             </div>
           </div>
-          <span className="container-fluid socialforumArrowItems">
-            <img
-              className="socialfixArrow-left brownarrow-left"
-              src="./icomoon/SVG/_011-brownarrow-left.svg"
-              alt=""
-            />
-            <img
-              className="socialfixArrow-right brownarrow-right"
-              src="./icomoon/SVG/_012-brownarrow-right.svg"
-              alt=""
-            />
-          </span>
+          <ForumHomeCardPagebar />
         </div>
       </div>
     </>
@@ -85,13 +78,17 @@ function SocialHomeforum(props) {
 }
 
 const mapStateToProps = (store) => {
-  return { info: store.socialReducer.getForumList };
+  return { 
+    info: store.socialReducer.getForumList,
+    nowPage: store.nowPage,
+    totalPage: store.totalPage,};
 };
 const mapDispatchToProps = null;
 
 export default withRouter(
   connect(mapStateToProps, {
-    getForumList,
     getForumListAsync,
+    gotoPage,
+    setTotalPage,
   })(SocialHomeforum)
 );

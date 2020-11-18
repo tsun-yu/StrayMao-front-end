@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { withRouter, useHistory } from 'react-router-dom';
 import { doc } from "prettier";
 // import Form from "./Form";
 
@@ -79,10 +82,18 @@ function SocialHomeTop(props) {
       </div>
       <div className="row topBtnItems d-flex">
         <div className="topBtnBox">
-          <button className="btn-green topBtnW" type="button" value="發起活動">
+          <button className="btn-green topBtnW" type="button" value="發起活動"  onClick={() => {
+                    console.log(props)
+                    props.history.push('/addForum');
+                  }}
+        
+        >
             發起話題
           </button>
-          <button className="btn-brown topBtnW" type="button" value="加入討論">
+          <button className="btn-brown topBtnW" type="button" value="加入討論" onClick={() => {
+                    console.log(props)
+                    props.history.push('/socialForum');
+                  }}>
             加入討論
           </button>
         </div>
@@ -91,4 +102,23 @@ function SocialHomeTop(props) {
   );
 }
 
-export default SocialHomeTop;
+const mapStateToProps = (store) => {
+  return {};
+};
+const mapDispatchToProps = null;
+
+export default withRouter(connect(mapStateToProps, {})(SocialHomeTop));
+
+
+
+// const mapStateToProps = (store) => {
+//   return {
+//   };
+// };
+// const mapDispatchToProps = null;
+
+// export default withRouter(
+//   connect(mapStateToProps, {
+//   })(SocialHomeTop)
+// );
+  

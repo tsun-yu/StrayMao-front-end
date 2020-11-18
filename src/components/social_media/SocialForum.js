@@ -20,6 +20,7 @@ import { HiOutlineReceiptRefund } from "react-icons/hi";
 function SocialForum(props) {
   const [flag, setFlag] = useState(0);
   const [flag2, setFlag2] = useState(0);
+  const [flag3, setFlag3] = useState(0);
   const [arr, setArr] = useState([]);
   const [arrForPet, setArrForPet] = useState([]);
   const [arrTwo, setArrTwo] = useState([]);
@@ -27,6 +28,7 @@ function SocialForum(props) {
   const [display2, setDisplay2] = useState(<></>);
   const [display3, setDisplay3] = useState(<></>);
   const [articleInfoshow, setArticleInfoshow] = useState(<></>);
+  const [articleTypeId, setArticleTypeId] = useState(<></>);
   // const [forumInfoshow, setForumInfoshow] = useState();
   // const [content4, setContent4] = useState();
 
@@ -156,6 +158,14 @@ function SocialForum(props) {
     }
   }
 
+  function articleTypeshow(event){
+    document.getElementById("article_filterbtn").innerHTML = event.target.innerHTML + "<i className='fas fa-caret-down'></i>";
+    setArticleTypeId(event.target.name)
+    document.getElementById("allCardBtn_Issue").value = articleTypeId;
+    console.log("allCardBtn_Issue:",document.getElementById("allCardBtn_Issue").value)
+    setFlag3(1)
+    event.preventDefault() 
+  }
   // useEffect(()=>{
 
   //   let info = props.info
@@ -244,6 +254,10 @@ function SocialForum(props) {
     totalArticlePages = Math.ceil(totalArticles.length / 3);
     if (totalArticles.length > 0) {
       // console.log(props.info2);
+      let totalArticlesR = totalArticles.filter((e)=> e.typeId===+articleTypeId);
+      (flag3!==0 && +articleTypeId!==0)?(totalArticles = totalArticlesR):(totalArticles = props.info2)
+      
+      totalArticlePages = Math.ceil(totalArticles.length / 3);
       props.setArticleTotalPage(totalArticlePages);
       for (
         let i = 3 * (nowArticlePage - 1);
@@ -274,7 +288,7 @@ function SocialForum(props) {
     setDisplay2(
       <div className="row socialArticleCardItems no-gutters">{content2}</div>
     );
-  }, [props.info, props.info2,nowPage,nowArticlePage,]);
+  }, [props.info, props.info2,nowPage,nowArticlePage,articleTypeId]);
 
   return (
     <>
@@ -397,7 +411,7 @@ function SocialForum(props) {
         <div className="row socialforumItems no-gutters">
           <div className="container bigArticleRange">
             <div>
-              <div className="row petknowledgeTitle">
+              <div className="row petknowledgeTitle" id="petknowledgeTitle">
                 <span className="forumTitleLine"></span>
                 <h3 className="forum_BTitle">寵物知識</h3>
                 <span className="forumTitleLine"></span>
@@ -410,14 +424,15 @@ function SocialForum(props) {
                 <div className="petknowledgeSLine" />
                 <p className="caption">幫助您找到更多寶貝知識</p>
               </div>
-              <div className="allCardBtn_Issue btn-filter">
-                <button className="filterbtn">
+              <div className="allCardBtn_Issue btn-filter" id="allCardBtn_Issue" value="">
+                <button className="filterbtn firstSelect" id="article_filterbtn">
                   全部 <i className="fas fa-caret-down"></i>
                 </button>
                 <div className="btn-filter-content">
-                  <a href="#">全部</a>
-                  <a href="#">貓</a>
-                  <a href="#">狗</a>
+                  <a href="#" name="0" onClick={articleTypeshow} >全部</a>
+                  <a href="#" name="1" onClick={articleTypeshow}>不分類</a>
+                  <a href="#" name="2" onClick={articleTypeshow}>貓</a>
+                  <a href="#" name="3" onClick={articleTypeshow}>狗</a>
                 </div>
               </div>
             </div>
