@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import AlertDismissible from './HP-component/AlertDismissible'
+import ReactLoading from 'react-loading'
+import RingLoader from 'react-spinners'
 
 function Donate(props) {
   const [alert, setAlert] = useState(<></>)
+  const [spinner, setSpinner] = useState(<></>)
 
   return (
     <>
@@ -47,7 +50,12 @@ function Donate(props) {
         </div>
 
         <div className="donateArea">
-          {alert}
+          <div className="donateAlert">
+            {/* {spinner} */}
+
+            {alert}
+            {/* <RingLoader /> */}
+          </div>
           <div className="container">
             <div className="donateItems">
               {/* radio */}
@@ -235,6 +243,18 @@ function Donate(props) {
                   type="button"
                   style={{ width: '155px' }}
                   onClick={() => {
+                    setSpinner(
+                      <ReactLoading
+                        type={'spinningBubbles'}
+                        color={'#cb997e'}
+                        height={'100px'}
+                        width={'100px'}
+                        className="mx-auto mt-2"
+                      />
+                    )
+                    setTimeout(() => {
+                      setSpinner(<></>)
+                    }, 2000)
                     setTimeout(() => {
                       setAlert(<AlertDismissible />)
                       document.querySelector('.cdcard-1').value = ''
@@ -244,10 +264,10 @@ function Donate(props) {
                       document.querySelector('.cdcardthree').value = ''
                       document.querySelector('.cdcardmon').value = ''
                       document.querySelector('.cdcardyr').value = ''
-                    }, 1000)
+                    }, 2000)
                     setTimeout(() => {
                       setAlert(<></>)
-                    }, 3000)
+                    }, 4000)
                   }}
                 >
                   馬上捐款
