@@ -4,6 +4,7 @@ import "../../styles/cart/buy.scss";
 import BuyCardC from "./BuyCardC"
 import BuyCardM from "./BuyCardM"
 import { bindActionCreators } from "redux";
+import { withRouter, useHistory } from 'react-router-dom';
 import { getBuy, getBuyAsync, changeBuyAsync, updateOrderAsync } 
 from "../../actions/cart/index";
 function Buy(props) {
@@ -79,6 +80,8 @@ function Buy(props) {
       }
     }
         props.updateOrderAsync([props.id[0].cartId,props.id[0].quantity,subTotal+60,memberName,mobile,address,productDeliveryRadio,paymentTermRadio,props.id[0].orderId])
+
+        props.history.push('/store');
       }
     
     useEffect(() => {
@@ -287,7 +290,7 @@ const mapStateToProps = (store) => {
     )
   };
 
-export default  connect(
-    mapStateToProps,mapDispatchToProps)(Buy)
+export default withRouter( connect(
+    mapStateToProps,mapDispatchToProps)(Buy))
 
 // export default Buy

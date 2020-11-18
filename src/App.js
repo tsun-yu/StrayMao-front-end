@@ -15,6 +15,7 @@ import CartTest from './components/cart/Test'
 import CartList from './components/cart/CartList'
 import Buy from './components/cart/Buy'
 import OrderList from './components/cart/OrderList'
+import OrderListAsc from './components/cart/OrderListAsc'
 import Order from './components/cart/Order'
 import SocialTest from './components/social_media/Test'
 import SocialForum from './components/social_media/SocialForum'
@@ -125,6 +126,10 @@ function App() {
             <Route path="/OrderList">
               {/*要連線的網頁*/}
               <OrderList />
+            </Route>
+            <Route path="/OrderListAsc">
+              {/*要連線的網頁*/}
+              <OrderListAsc />
             </Route>
             <Route path="/Order">
               {/* 要連線的網頁*/}
