@@ -22,8 +22,10 @@ return(
   <LogInInfo
     setMember = {setMember}
   />
-
-  <div className="topicStyle">能給我個家嗎? 爸脫~</div>
+  <div className="memberInfoTopicGroup">
+    <img className="memberInfoPetImg" src="../image/membership/catpls.png" alt="pet image" />
+    <div className="topicStyle">能給我個家嗎? 爸脫~</div>
+  </div>
   <div className="memberInfoBackground">
     <div className="btn-group memberInfoTop2" role="group" aria-label="Basic example">
         <button type="button"

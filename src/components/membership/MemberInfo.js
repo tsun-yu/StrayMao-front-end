@@ -24,6 +24,18 @@ function MemberInfo(props) {
   const [password , setPassword] = useState("");
   
 
+  //預覽上傳照片
+  const [file, setFile] = useState(null);
+  const fileHandler = event => {
+        console.log(event.target.files[0]);
+      let reader = new FileReader();
+        reader.onload = function(e) {
+          setFile(e.target.result);
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      };
+
+  
   //預設會員資料
   const [renderData , setRenderData] = useState([]);
   async function getMyMemberInfo() {
@@ -97,11 +109,13 @@ return(
     <form className="infoForm">
     <div className="wrapFlex1">
       <div className="form-group">
-        <label htmlFor="infoFormControlFile1" className="viewImg">請上傳個人照片</label>
-        <input 
-          type="file" 
-          className="form-control-file uploadImg" id="infoFormControlFile1"
-        />
+        <label for="memberUpLoadImg" >請上傳個人照片</label>
+          <div className="addNew">
+            <div className="viewImg">
+              <img src={file} alt={""} />
+            </div>
+            <input type="file" className="upLoadImg" onChange={fileHandler} />
+          </div>
       </div>
       
       <div className="wrapFlex2">
@@ -184,7 +198,7 @@ return(
         <label for="exampleInputPassword1">請輸入驗證碼：</label>
         <input type="password" className="form-control infoInput" id="checkCode1" placeholder="Enter Code"/>
       </div>
-      <div className="confirmCode">123456</div>
+      <div className="confirmCode">192388</div>
     </div>
     </form>
     <div className="btn-group memberInfoTop" role="group" aria-label="Basic example">
