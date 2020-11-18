@@ -125,9 +125,10 @@ main > .container {
 }
 
 .upLoadImg {
-  width: 250px;
-  height: 40px;
-  background-color: $primary;
+  // width: 250px;
+  // height: 40px;
+  margin-top: 10px;
+  // background-color: $primary;
 }
 
 //display+align-items可讓文字垂直置中
@@ -339,6 +340,7 @@ main > .container {
   font-size: 14px;
   font-family: $fontType1;
   color: #ffffff;
+  cursor: pointer;
 }
 
 //<我的最愛>頁面

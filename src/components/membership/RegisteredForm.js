@@ -28,6 +28,17 @@ function RegisteredForm(props) {
       
     // },[password2]);
 
+    //預覽上傳照片
+    const [file, setFile] = useState(null);
+    const fileHandler = event => {
+          console.log(event.target.files[0]);
+        let reader = new FileReader();
+          reader.onload = function(e) {
+            setFile(e.target.result);
+          };
+          reader.readAsDataURL(event.target.files[0]);
+        };
+
     async function checkPassword12(){
       if($password1.value != $password2.value){
         $password2.style.borderColor = "red";
@@ -108,17 +119,13 @@ function RegisteredForm(props) {
                 <form className="infoForm RegisteredForm" name="form1" onsubmit="checkForm(); return false;" novalidate>
                     <div className="wrapFlex1">
                         <div className="form-group memberImg">
-                            <label for="memberUpLoadImg" className="viewImg">請上傳個人照片</label>
-                            <button
-                                className="upLoadImg"
-                            >
-                                <input 
-                                    type="file" 
-                                    className="form-control-file uploadImg" 
-                                    name="memberUpLoadImg"
-                                    value={memberPic}
-                                />
-                            </button>
+                            <label for="memberUpLoadImg" >請上傳個人照片</label>
+                            <div className="addNew">
+                                <div className="viewImg">
+                                    <img src={file} alt={""} />
+                                </div>
+                                <input type="file" className="upLoadImg" onChange={fileHandler} />
+                            </div>
                         </div>
 
                          <div className="wrapFlex2 registeredFlex">
