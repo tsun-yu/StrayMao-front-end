@@ -286,7 +286,7 @@ export const updateOrderAsync = (value) => {
     // const order={ cartId:value[0] ,quantity:value[1] ,totalPrice:[2] ,memberName:[3],moblie:[4],address:[5],memberId:100 };
     const request = new Request(url, {
       method: "POST",
-      body: JSON.stringify(order),
+      // body: JSON.stringify(order),
       headers: new Headers({
         Accept: "application/json",
         "Content-Type": "application/json",
