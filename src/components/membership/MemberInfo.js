@@ -58,6 +58,7 @@ function MemberInfo(props) {
     setEmail(rsObj.data[0].email)
     setAddress(rsObj.data[0].address)
     setMemberPic(rsObj.data[0].memberPic)
+    setFile(rsObj.data[0].memberPic)
   }
 
   async function updMyMemberInfo() {
