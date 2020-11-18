@@ -35,10 +35,10 @@ return(
         </div>
     </div>
     <div className="commentMain">
-        <div className="productName">商品名稱：{info.name}</div>
-        <div className="commentContent">
+        <div className="productName1">商品名稱：{info.name}</div>
+        <div className="">
           <textarea 
-            className="form-control infoInput2" 
+            className="form-control infoInput2 commentContent" 
             id={"comDescArea_" + info.orderId + info.goodsId + info.memberId} 
             rows="3"
           >{info.comDesc}</textarea>
@@ -48,7 +48,6 @@ return(
     </div>
     
     <div className="commentBtnGroup">
-    <button className="commentBtn"></button>
     <button className="commentBtn"
       onClick={() => {
         const id = "#comDescArea_" + info.orderId + info.goodsId + info.memberId;
