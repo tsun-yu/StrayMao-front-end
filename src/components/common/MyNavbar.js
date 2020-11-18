@@ -109,37 +109,19 @@ function MyNavbar(props) {
               <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
-                  to="/socialTest"
+                  to="/socialHomepage"
                   style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
-                  商城首頁
+                  社群首頁
                 </Nav.Link>
               </NavDropdown.Item>
               <NavDropdown.Item className="hvr-sweep-to-right">
                 <Nav.Link
                   as={NavLink}
-                  to="/socialTest"
+                  to="/socialForum"
                   style={{ color: '#a5a58d', fontSize: '1rem' }}
                 >
-                  商城首頁
-                </Nav.Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item className="hvr-sweep-to-right">
-                <Nav.Link
-                  as={NavLink}
-                  to="/socialTest"
-                  style={{ color: '#a5a58d', fontSize: '1rem' }}
-                >
-                  商城首頁
-                </Nav.Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item className="hvr-sweep-to-right">
-                <Nav.Link
-                  as={NavLink}
-                  to="/socialTest"
-                  style={{ color: '#a5a58d', fontSize: '1rem' }}
-                >
-                  商城首頁
+                  討論專區
                 </Nav.Link>
               </NavDropdown.Item>
             </NavDropdown>

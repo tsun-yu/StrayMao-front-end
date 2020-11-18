@@ -1,4 +1,5 @@
 import { GET_FORUMLIST } from "./actionTypes";
+import { GET_FORUMHOT } from "./actionTypes";
 import { GET_ARTICLELIST } from "./actionTypes";
 import { GET_ARTICLE_DETAIL } from "./actionTypes";
 import { SET_DETAIL_ARTICLE_ID } from "./actionTypes";
@@ -10,6 +11,8 @@ import { ADD_FORUMCARD } from "./actionTypes";
 import { ARTICLE_LIKE } from "./actionTypes";
 import { ARTICLE_DISLIKE } from "./actionTypes";
 import { ARTICLE_INIT } from "./actionTypes";
+import { GET_NEWFIVE } from "./actionTypes";
+import { GET_HOTFIVE } from "./actionTypes";
 
 // 取得論壇清單
 export const getForumList = (value) => {
@@ -39,6 +42,96 @@ export const getForumListAsync = (value) => {
     }
   };
 };
+
+
+// 取得論壇熱門
+export const getForumHot = (value) => {
+  return { type: GET_FORUMHOT, value };
+};
+
+export const getForumHotAsync = (value) => {
+  return async function getForumHotaaa(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/social_media/get_forum_hot";
+    const request = new Request(url, {
+      method: "GET",
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      console.log("hot : ",data);
+
+      await dispatch(getForumHot(data));
+    } catch (error) {
+      // setError(error)
+    }
+  };
+};
+
+
+//取得最新五筆
+export const getNewFive = (value) => {
+  return { type: GET_NEWFIVE, value };
+};
+
+export const getNewFiveAsync = (value) => {
+  return async function getNewdown(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/social_media/forum/news/all";
+
+    const request = new Request(url, {
+      method: "GET",
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      console.log("article : ",data);
+
+      await dispatch(getNewFive(data));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+
+//取得最熱五筆
+export const getHotFive = (value) => {
+  return { type: GET_HOTFIVE, value };
+};
+
+export const getHotFiveAsync = (value) => {
+  return async function getHotdown(dispatch, getState) {
+    const url = "http://localhost:3001/straymao/social_media/forum/hot/all";
+
+    const request = new Request(url, {
+      method: "GET",
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }),
+    });
+    try {
+      const response = await fetch(request);
+      const data = await response.json();
+      // data會是一個物件值
+      console.log("article : ",data);
+
+      await dispatch(getHotFive(data));
+    } catch (error) {
+      //setError(error)
+    }
+  };
+};
+
+
 
 export const getForumReply = (value) => {
   return { type: GET_FORUMREPLY, value };
@@ -257,7 +350,7 @@ export const articleInitLike = (value) => {
 export const articleLikeAsync = (value) => {
   return async function addArticleHeart(dispatch, getState) {
     const url = "http://localhost:3001/straymao/social_media/article_heart";
-    const article = { articleId: value, userId: 111 };
+    const article = { articleId: value, userId: 3 };
     const request = new Request(url, {
       method: "POST",
       body: JSON.stringify(article),

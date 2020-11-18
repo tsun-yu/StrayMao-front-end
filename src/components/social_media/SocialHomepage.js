@@ -16,10 +16,10 @@ function SocialHomepage(props) {
   return (
     <>
       <SocialHomeTop />
-      {/* <SocialHomeNews /> */}
+      <SocialHomeNews />
       <SocialHomeRank />
       <SocialHomeforum />
-      <SocialHomeArticle />
+      <SocialHomeArticle /> 
       {/* <SocialHomeActivity /> */}
     </>
   );

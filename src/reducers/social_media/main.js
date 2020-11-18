@@ -1,4 +1,5 @@
 import { GET_FORUMLIST } from "../../actions/social_media/actionTypes";
+import { GET_FORUMHOT } from "../../actions/social_media/actionTypes";
 import { GET_ARTICLELIST } from "../../actions/social_media/actionTypes";
 import { GET_ARTICLE_DETAIL } from "../../actions/social_media/actionTypes";
 import { SET_DETAIL_ARTICLE_ID } from "../../actions/social_media/actionTypes";
@@ -10,6 +11,8 @@ import { ADD_FORUMCARD } from "../../actions/social_media/actionTypes";
 import { ARTICLE_LIKE } from "../../actions/social_media/actionTypes";
 import { ARTICLE_DISLIKE } from "../../actions/social_media/actionTypes";
 import { ARTICLE_INIT } from "../../actions/social_media/actionTypes";
+import { GET_NEWFIVE } from "../../actions/social_media/actionTypes";
+import { GET_HOTFIVE } from "../../actions/social_media/actionTypes";
 
 
 function getForumList(state = 1, action) {
@@ -22,6 +25,42 @@ function getForumList(state = 1, action) {
   }
   return state;
 }
+
+function getForumHot(state = 1, action) {
+  switch (action.type) {
+    case GET_FORUMHOT:
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+function getNewFive(state = 1, action) {
+  switch (action.type) {
+    case GET_NEWFIVE:
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+
+function getHotFive(state = 1, action) {
+  switch (action.type) {
+    case GET_HOTFIVE:
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+
 function getForumReply(state = 1, action) {
   switch (action.type) {
     case GET_FORUMREPLY:
@@ -130,4 +169,4 @@ function articleHeart(state = false, action) {
   return state;
 }
 
-export { getForumList, getArticleList, articleDetailId, getArticleDetail,forumDetailId, getForumDetail,addForumReply,getForumReply,addForumCard,articleHeart };
+export { getForumList,getForumHot,getHotFive, getNewFive, getArticleList, articleDetailId, getArticleDetail,forumDetailId, getForumDetail,addForumReply,getForumReply,addForumCard,articleHeart };

@@ -9,7 +9,11 @@ return(
   <div className="col petCard">
       <img className="petImg" src={"." + info.pic} alt="pet image" />
       <div className="petDetail">
-      <a className="aStyle" href={"/petPage/" + info.petId }>詳細資訊</a>
+      <a className="aStyle" 
+        onClick={() => {
+          props.history.push("/adoptionList");
+        }}
+      >詳細資訊</a>
       </div>
   </div>
 </>

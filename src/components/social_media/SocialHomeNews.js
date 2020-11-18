@@ -1,6 +1,55 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import ForumNewsFive from "./ForumNewsFive"
+import ForumHotFive from "./ForumHotFive"
+import {
+  getNewFiveAsync,getHotFiveAsync,
+} from "../../actions/social_media/index";
+
 
 function SocialHomeNews(props) {
+
+  const [newDisplay,setNewDisplay]=useState(<></>)
+  const [hotDisplay,setHotDisplay]=useState(<></>)
+  const newContent =[];
+  const hotContent =[];
+
+  useEffect(() => {
+    props.getNewFiveAsync();
+    props.getHotFiveAsync();
+  }, [])
+
+  useEffect(() => {
+    let totalNews = props.new
+    if (totalNews.length > 0) {
+      console.log(props.new);
+      for (let i = 0; i < totalNews.length; i++) {
+        newContent.push(
+        <span className="socialNewsScrollP paragraph1" new={totalNews[i]}>
+        {props.new[i].talkTitle}
+        </span>
+        );
+      }
+  } 
+  setNewDisplay(newContent)
+}, [props.new])
+
+useEffect(() => {
+  let totalHot = props.hot
+  if (totalHot.length > 0) {
+    console.log(props.hot);
+    for (let i = 0; i < totalHot.length; i++) {
+      hotContent.push(
+        <span className="socialNewsScrollP paragraph1" hot={totalHot[i]}>
+        {props.hot[i].talkTitle}
+        </span>
+      );
+    }
+} 
+setHotDisplay(hotContent)
+}, [props.hot])
+
+
   return (
     <>
       <div className="container d-flex socialNewsMain">
@@ -9,36 +58,20 @@ function SocialHomeNews(props) {
             <span className="socialHomeNewsTitile enHeader3">News</span>
             <div className="newsScrollingItems">
               <div className="socialNewsSTItems">
-                <span className="socialNewsSTitle paragraph2">話題</span>
+                <span className="socialHotSTitle paragraph2">HOT</span>
                 <div className="scrollTextItems">
-                  <span className="socialNewsScrollP paragraph1">
-                    咪可思X福壽100 奔跑吧！毛小孩公益半程馬拉松
-                  </span>
-                  <span className="socialNewsScrollP paragraph1">
-                    咪可思X福壽100 奔跑吧！毛小孩公益半程馬拉松
-                  </span>
-                  <span className="socialNewsScrollP paragraph1">
-                    咪可思X福壽100 奔跑吧！毛小孩公益半程馬拉松
-                  </span>
+                 {hotDisplay}
                 </div>
               </div>
               <div className="socialNewsSTItems">
-                <span className="socialNewsSTitle paragraph2">活動</span>
+                <span className="socialNewsSTitle paragraph2">NEW</span>
                 <div className="scrollTextItems">
-                  <span className="socialNewsScrollP paragraph1">
-                    咪可思X福壽100 奔跑吧！毛小孩公益半程馬拉松
-                  </span>
-                  <span className="socialNewsScrollP paragraph1">
-                    咪可思X福壽100 奔跑吧！毛小孩公益半程馬拉松
-                  </span>
-                  <span className="socialNewsScrollP paragraph1">
-                    咪可思X福壽100 奔跑吧！毛小孩公益半程馬拉松
-                  </span>
+                {newDisplay}
                 </div>
               </div>
             </div>
           </div>
-          <div className="newsSearchBox">
+          {/* <div className="newsSearchBox">
             <div className="talkSearchBox d-flex no-gutters">
               <div className="talkSearchBoxItems">
                 <div className="talkSearchTitle">討論主題</div>
@@ -156,11 +189,22 @@ function SocialHomeNews(props) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
   );
 }
 
-export default SocialHomeNews;
+const mapStateToProps = (store) => {
+  return {
+    new: store.socialReducer.getNewFive,
+    hot: store.socialReducer.getHotFive,
+  };
+};
+const mapDispatchToProps = null;
+
+export default connect(mapStateToProps, {
+  getNewFiveAsync,
+  getHotFiveAsync,
+})(SocialHomeNews);

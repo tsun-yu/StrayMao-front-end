@@ -7,8 +7,6 @@ import { MEMBER_API_URL } from "../../actions/membership/actionTypes";
 
 
 function SignInForm(props) {
-  console.log("sign props:" , props)
-
   const $account = document.querySelector("#account");
   const $password = document.querySelector("#password");
   const r_fields = [$account, $password];

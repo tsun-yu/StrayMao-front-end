@@ -1,6 +1,6 @@
 .donateBanner {
   background-image: url(/image/homepage/homepage1-1.png);
-  height: 50vh;
+  height: 70vh;
   min-height: 400px;
   width: 80vw;
   background-attachment: fixed;
@@ -32,9 +32,17 @@
   position: absolute;
   left: 20vw;
   margin-top: 5px;
+  background-color: #777b5a;
+  color: #fafafa;
+  border-radius: 5px;
+}
+.donateAlert {
+  height: 100px;
+  width: 100vw;
+  padding-top: 5px;
 }
 .donateItems {
-  margin-top: 100px;
+  margin-top: 20px;
 }
 .donateCredit {
   font: {
@@ -43,4 +51,8 @@
   }
   color: #555555;
   line-height: 36px;
+}
+
+.css-dyz6n {
+  margin: 0 auto;
 }

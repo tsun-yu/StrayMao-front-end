@@ -21,24 +21,6 @@ function Page1(props) {
   }, [])
   return (
     <>
-      {/* line */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="114"
-        height="1"
-        viewBox="0 0 114 1"
-        className="page1line position-absolute"
-      >
-        <line
-          id="Line_2"
-          data-name="Line 2"
-          x2="114"
-          transform="translate(0 0.5)"
-          fill="none"
-          stroke="#707070"
-          strokeWidth="1"
-        />
-      </svg>
       {/* scroll */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +67,7 @@ function Page1(props) {
           />
         </g>
       </svg>
-      <div className="d-flex page1">
+      <div className="d-flex page1 position-relative">
         <div className="page1left position-relative">
           <div className="position-absolute page1left-wrap">
             <Page1Text1 />
@@ -94,7 +76,7 @@ function Page1(props) {
             <Page1Text2 />
           </div>
         </div>
-        <div className="page1right">
+        <div className="page1right position-absolute">
           <Page1Carousel
             img1="/image/homepage/homepage1-1.png"
             img2="/image/homepage/homepage1-2.png"

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
+import DonateButton from '../common/DonateButton'
 import Page1 from './Page1'
 import Page2 from './Page2'
 import Page3 from './Page3'
@@ -17,6 +18,7 @@ function Homepage(props) {
 
   return (
     <>
+      <DonateButton />
       <Page1 />
       <Page2 />
       <Page3 />

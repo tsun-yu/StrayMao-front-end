@@ -40,7 +40,7 @@
 
 .topCardItems {
   position: absolute;
-  bottom:-10px;
+  // bottom:-10px;
   width: 61.875rem;
   min-height: 405px;
   justify-content: space-between;
@@ -87,9 +87,10 @@
   }
 }
 .topCardP {
-  display: inline-block;
+  // display: block;
   width: 11.625rem;
   color: #a5a58d;
+  cursor: pointer;
 }
 
 //TopCard變化
