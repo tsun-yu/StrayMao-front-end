@@ -5,6 +5,7 @@ import "../../styles/membership/custom.scss";
 import { MEMBER_API_URL } from "../../actions/membership/actionTypes";
 import MyFavorite2_card from './MyFavorite2_card';
 import LogInInfo from './LogInInfo';
+import DonateButton from '../common/DonateButton'
 
 function MyFavorite2(props) {
   //檢查登入狀態 >> 取得要render畫面的內容
@@ -45,6 +46,8 @@ return(
   <LogInInfo
     setMember = {setMember}
   />
+  <DonateButton />
+  
   <div className="myFavoriteWrap">
     <nav className="nav nav-pills flex-sm-row petAreaNavGroup">
         <a className="flex-sm-fill text-sm-center nav-link petAreaNav" onClick={() => {props.history.push('/myFavorite1')}}>喜歡的文章</a>

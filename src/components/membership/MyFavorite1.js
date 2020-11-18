@@ -5,6 +5,7 @@ import "../../styles/membership/custom.scss";
 import { MEMBER_API_URL } from "../../actions/membership/actionTypes";
 import MyFavorite1_card from './MyFavorite1_card';
 import LogInInfo from './LogInInfo';
+import DonateButton from '../common/DonateButton'
 
 function MyFavorite1(props) {
   //檢查登入狀態
@@ -56,6 +57,7 @@ return(
   <LogInInfo
     setMember = {setMember}
   />
+  <DonateButton />
 
   <div className="myFavoriteWrap">
       <nav className="nav nav-pills flex-sm-row petAreaNavGroup">
