@@ -2,6 +2,7 @@ import ReactStars from "react-rating-stars-component";
 import React, { useState, useEffect } from 'react';
 import "../../styles/cart/orderlist.scss";
 import $ from 'jquery'
+import Moment from 'react-moment';
 
 function MyComment_card(props) {
   let info = props.info;
@@ -44,7 +45,9 @@ return(
           >{info.comDesc}</textarea>
         </div>
         <input type="hidden" id={"comStars_" + info.orderId + info.goodsId + info.memberId} value=""  />
-        <div className="commentDate">評價日期：{info.comDate} </div>
+        <div className="commentDate">評價日期：
+          <Moment format="YYYY/MM/DD hh:mm:ss">{info.comDate}</Moment>
+        </div>
     </div>
     
     <div className="commentBtnGroup">
