@@ -3,7 +3,7 @@ import { withRouter} from 'react-router-dom';
 //user used
 import "../../styles/membership/custom.scss";
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
-import LogInInfo from './LogInInfo';
+import LogInInfo from './LogInInfo2';
 import DonateButton from '../common/DonateButton'
 
 function PasswordChange(props) {
@@ -22,6 +22,7 @@ return(
 <>
   <LogInInfo
     setMember = {setMember}
+    history = {props.history}
   />
   <DonateButton />
 
