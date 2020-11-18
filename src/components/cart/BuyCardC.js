@@ -87,6 +87,7 @@ return(
 <>
 {props.test==1?"":
     <div className="buyC_boxUpper_An d-flex justify-content-between">
+    <div className="d-flex">
         <div className="buyC_icon-018-trashUpper_An" onClick={()=>trashBtn()}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.82 24.22">
                 <path id="Path_1809" data-name="Path 1809" d="M19.87,2.78H13.72V1a.94.94,0,0,0-1-.95H8A.94.94,0,0,0,7.1,1V2.78H1a.94.94,0,0,0-.95,1v3.7a1,1,0,0,0,1,1H2.36V21.86a2.37,2.37,0,0,0,2.37,2.36H16.09a2.36,2.36,0,0,0,2.36-2.36V8.38h1.42a1,1,0,0,0,.95-1V3.73A1,1,0,0,0,19.87,2.78ZM9,1.89h2.84v.89H9Zm7.57,20a.47.47,0,0,1-.47.47H4.73a.47.47,0,0,1-.47-.47V8.38h12.3ZM18.92,6.49h-17V4.67h17Z"/>
@@ -95,7 +96,9 @@ return(
             </svg>
         </div>
         <img className="buyC_goodsImg_An" src={props.info.goodsImgs}></img>
+        </div>
         <span className="buyC_goodsName_An">{props.info.name}</span>
+        <div className="d-flex">
         <div className="buyC_inputbox_An d-flex">
             <div className="buyC_icon-067-minus_An" onClick={() => minusOne()}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.44 19.44">
@@ -110,6 +113,7 @@ return(
             </div>
         </div>
         <span className="buyC_goodsPrice_An">{totalPrice} 元</span>
+        </div>
         {props.children}
     </div>
 }
