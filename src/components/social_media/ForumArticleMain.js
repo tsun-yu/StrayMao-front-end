@@ -93,8 +93,8 @@ function ForumArticleMain(props) {
       <div className="forumArticleContent">
         <div className="forumArticleTopLine" />
         <div className="row forumAutor paragraph2 no-gutters">
-          <img className="forumAutorImg" src="/image/homepage/homepage-1.jpg" />
-          <p>{props.test.memberId}</p>
+          <img className="forumAutorImg" src={props.test.memberPic} />
+          <p className="forum_Name">{props.test.memberName}</p>
         </div>
         <span className="forumArticleDate enParagraph">
           {props.test.createAt}

@@ -11,3 +11,5 @@ export const ADD_FORUMCARD = "ADD_FORUMCARD";
 export const ARTICLE_LIKE = "ADD_FORUMCARD";
 export const ARTICLE_DISLIKE = "ADD_FORUMCARD";
 export const ARTICLE_INIT = "ADD_FORUMCARD";
+export const GET_NEWFIVE = "GET_NEWFIVE";
+export const GET_HOTFIVE = "GET_HOTFIVE";
