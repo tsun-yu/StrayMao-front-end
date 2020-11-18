@@ -67,7 +67,7 @@ function Page1(props) {
           />
         </g>
       </svg>
-      <div className="d-flex page1">
+      <div className="d-flex page1 position-relative">
         <div className="page1left position-relative">
           <div className="position-absolute page1left-wrap">
             <Page1Text1 />
@@ -76,7 +76,7 @@ function Page1(props) {
             <Page1Text2 />
           </div>
         </div>
-        <div className="page1right">
+        <div className="page1right position-absolute">
           <Page1Carousel
             img1="/image/homepage/homepage1-1.png"
             img2="/image/homepage/homepage1-2.png"
