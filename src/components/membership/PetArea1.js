@@ -43,19 +43,19 @@ return(
 
   <div className="petAreaWrap">
       <nav className="nav nav-pills flex-sm-row petAreaNavGroup">
-          <a className="flex-sm-fill text-sm-center nav-link petAreaNav active" href="#">關注寵物清單</a>
-          <a className="flex-sm-fill text-sm-center nav-link petAreaNav" href="#">認/領&emsp;養紀錄</a>
-          <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
-          <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
-          <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
-          <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
+        <a className="flex-sm-fill text-sm-center nav-link petAreaNav active" href="#">關注寵物清單</a>
+        <a className="flex-sm-fill text-sm-center nav-link petAreaNav" onClick={() => {props.history.push('/petArea2')}}>認/領&emsp;養紀錄</a>
+        <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
+        <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
+        <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
+        <a className="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
       </nav>
       <div className="container petAreaBackgroud">
-          <div className="row">
-            {renderList.length > 0 && renderList.map((element, i) => {
-              return <PetArea1_card info={element} />;
-            })}
-          </div>
+        <div className="row">
+          {renderList.length > 0 && renderList.map((element, i) => {
+            return <PetArea1_card info={element} />;
+          })}
+        </div>
       </div>
   </div>
 </>

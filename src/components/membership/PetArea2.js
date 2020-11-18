@@ -16,14 +16,13 @@ function PetArea2(props) {
   //拉資料
   const [renderList , setRenderList] = useState([]);
   async function getMyFavorite() {
-    const url = MEMBER_API_URL + "/getHeartList";
-    const condition = {
-      typeCode: '3',
-      memberId: member.memberId
-    };
+    const url = `http://localhost:3001/straymao/adoption/adop_list/${member.memberId}`;
+    // const condition = {
+    //   memberId: member.memberId
+    // };
     const request = new Request(url, {
-      method: 'POST',
-      body: JSON.stringify(condition),
+      method: 'GET',
+      // body: JSON.stringify(condition),
       headers: new Headers({
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -43,7 +42,7 @@ return(
 
   <div className="petAreaWrap">
     <nav className="nav nav-pills flex-sm-row petAreaNavGroup">
-        <a className="flex-sm-fill text-sm-center nav-link petAreaNav" href="#">關注寵物清單</a>
+        <a className="flex-sm-fill text-sm-center nav-link petAreaNav" onClick={() => {props.history.push('/petArea1')}}>關注寵物清單</a>
         <a className="flex-sm-fill text-sm-center nav-link petAreaNav active" href="#">認/領&emsp;養紀錄</a>
         <a class="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
         <a class="flex-sm-fill text-sm-center nav-link disabled" href="#" tabIndex="-1" aria-disabled="true"></a>
@@ -53,11 +52,11 @@ return(
     <div className="container petAreaBackgroud">
       <div className="row">
         {renderList.length > 0 && renderList.map((element, i) => {
-          return <PetArea1_card info={element} />;
+          return <PetArea1_card info={element} history = {props.history} />;
         })}
       </div>
     </div>
-</div>
+  </div>
 </>
 )}
 
