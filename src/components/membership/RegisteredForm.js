@@ -110,19 +110,13 @@ function RegisteredForm(props) {
                             <label for="memberUpLoadImg" className="viewImg">請上傳個人照片</label>
                             <button
                                 className="upLoadImg"
-                                // component="label"
-                                // variant="contained"
                             >
-                             上傳照片(250pixel x 250pixel)
                                 <input 
                                     type="file" 
                                     className="form-control-file uploadImg" 
                                     name="memberUpLoadImg"
-                                    style={{ display: "none" }}
                                     value={memberPic}
-                                    onChange={(event) => {
-                                        setMemberPic(event.target.value)
-                                    }}
+                                    }
                                 />
                             </button>
                         </div>
