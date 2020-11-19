@@ -60,7 +60,7 @@ function ForumReplyMain(props) {
             console.log("content4 : ",props.reply)
             setDisplay4(content4);   
           }
-        },[replyDetail])
+        },[replyDetail,])
 
 
   return (

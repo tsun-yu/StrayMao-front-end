@@ -60,13 +60,17 @@ setHotDisplay(hotContent)
               <div className="socialNewsSTItems">
                 <span className="socialHotSTitle paragraph2">HOT</span>
                 <div className="scrollTextItems">
-                 {hotDisplay}
+                <marquee id="affiche" align="left" behavior="scroll" direction="left" height="300" width="880" vspace="20" loop="-1" scrollamount="15" scrolldelay="100" onMouseOut="this.start()" onMouseOver="this.stop()">
+                {hotDisplay}
+                </marquee>
                 </div>
               </div>
               <div className="socialNewsSTItems">
                 <span className="socialNewsSTitle paragraph2">NEW</span>
                 <div className="scrollTextItems">
+                <marquee id="affiche" align="middle" behavior="scroll" direction="left" height="300" width="880" vspace="20" loop="-1" scrollamount="14" scrolldelay="10" onMouseOut="this.start()" onMouseOver="this.stop()">
                 {newDisplay}
+                </marquee>
                 </div>
               </div>
             </div>
