@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "../../styles/membership/custom.scss";
 import { withRouter } from 'react-router-dom'
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
+import ImageUploading from 'react-images-uploading';
 
 function RegisteredForm(props) {
     const [dataLoading, setDataLoading] = useState(false)
@@ -26,6 +27,17 @@ function RegisteredForm(props) {
     // useEffect(() => {
       
     // },[password2]);
+
+    //預覽上傳照片
+    const [file, setFile] = useState(null);
+    const fileHandler = event => {
+          console.log(event.target.files[0]);
+        let reader = new FileReader();
+          reader.onload = function(e) {
+            setFile(e.target.result);
+          };
+          reader.readAsDataURL(event.target.files[0]);
+        };
 
     async function checkPassword12(){
       if($password1.value != $password2.value){
@@ -107,24 +119,15 @@ function RegisteredForm(props) {
                 <form className="infoForm RegisteredForm" name="form1" onsubmit="checkForm(); return false;" novalidate>
                     <div className="wrapFlex1">
                         <div className="form-group memberImg">
-                            <label for="memberUpLoadImg" className="viewImg">請上傳個人照片</label>
-                            <button
-                                className="upLoadImg"
-                                // component="label"
-                                // variant="contained"
-                            >
-                             上傳照片(250pixel x 250pixel)
-                                <input 
-                                    type="file" 
-                                    className="form-control-file uploadImg" 
-                                    name="memberUpLoadImg"
-                                    style={{ display: "none" }}
-                                    value={memberPic}
-                                    onChange={(event) => {
-                                        setMemberPic(event.target.value)
-                                    }}
+                            <label for="memberUpLoadImg" >請上傳個人照片</label>
+                            <div className="addNew">
+                                <div className="viewImg imgCover">
+                                    <img src={file} alt={""} />
+                                </div>
+                                <input type="file" className="upLoadImg" 
+                                onChange={fileHandler} 
                                 />
-                            </button>
+                            </div>
                         </div>
 
                          <div className="wrapFlex2 registeredFlex">
@@ -282,8 +285,13 @@ function RegisteredForm(props) {
 
 return (
   <>
-    <h1>會員編輯</h1>
-    <hr />
+    {/* <ImageUploader
+      {...props}
+      withIcon={true}
+      onChange={onDrop}
+      imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+      maxFileSize={5242880}
+    /> */}
 
     {dataLoading ? loading : display}
   </>

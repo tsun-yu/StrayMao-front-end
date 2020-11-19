@@ -3,7 +3,10 @@ import { connect } from "react-redux"
 import "../../styles/cart/buy.scss";
 import BuyCardC from "./BuyCardC"
 import BuyCardM from "./BuyCardM"
+import DonateButton from '../common/DonateButton'
+import ChatRoomSvg from '../store/ChatRoomSvg'
 import { bindActionCreators } from "redux";
+import { withRouter, useHistory } from 'react-router-dom';
 import { getBuy, getBuyAsync, changeBuyAsync, updateOrderAsync } 
 from "../../actions/cart/index";
 function Buy(props) {
@@ -79,6 +82,8 @@ function Buy(props) {
       }
     }
         props.updateOrderAsync([props.id[0].cartId,props.id[0].quantity,subTotal+60,memberName,mobile,address,productDeliveryRadio,paymentTermRadio,props.id[0].orderId])
+
+        props.history.push('/store');
       }
     
     useEffect(() => {
@@ -131,6 +136,8 @@ setTimeout(() => setDataLoading(false), 1000);
 //   return dataLoading ? loading : display;
   return (
     <>
+    <DonateButton />
+    <ChatRoomSvg />
     <div className="buyC_body_An">
         <div className="container buyC_box_An">
             <div className="buyC_boxBottom_An">
@@ -287,7 +294,7 @@ const mapStateToProps = (store) => {
     )
   };
 
-export default  connect(
-    mapStateToProps,mapDispatchToProps)(Buy)
+export default withRouter( connect(
+    mapStateToProps,mapDispatchToProps)(Buy))
 
 // export default Buy

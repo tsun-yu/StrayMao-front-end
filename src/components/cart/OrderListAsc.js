@@ -3,14 +3,12 @@ import { connect } from "react-redux"
 import "../../styles/cart/orderlist.scss";
 import OrderListCardBoxC from "./OrderListCardBoxC"
 import OrderListCardBoxM from "./OrderListCardBoxM"
-import DonateButton from '../common/DonateButton'
-import ChatRoomSvg from '../store/ChatRoomSvg'
 import { withRouter, useHistory } from 'react-router-dom';
 import LogInInfo from '../membership/LogInInfo2';
 
-import { getOrderList, getOrderListAsync } 
+import { getOrderListOld, getOrderListOldAsync } 
 from "../../actions/cart/index";
-function OrderList(props) {
+function OrderListAsc(props) {
   //檢查登入狀態 >> 取得要render畫面的內容
   const [member , setMember] = useState({});  //登入者資訊
   useEffect(()=>{
@@ -25,7 +23,7 @@ function OrderList(props) {
     useEffect(() => {
       console.log('hello there')
       let memberId = (localStorage.getItem("loginAccount"))?JSON.parse(localStorage.getItem("loginAccount")).memberId:'';
-      props.getOrderListAsync(memberId)
+      props.getOrderListOldAsync(memberId)
     }, []);
     useEffect(() => {
         totalCards = props.info;
@@ -45,7 +43,6 @@ function OrderList(props) {
 setTimeout(() => setDataLoading(false), 1000)
         console.log("content2:",content)
     },[props.info])
-    
     const loading = <div></div>
 
     const btnBuyClick1 = ()=>{
@@ -63,8 +60,6 @@ setTimeout(() => setDataLoading(false), 1000)
 
 return(
 <>
-<DonateButton />
-<ChatRoomSvg />
   <LogInInfo
     setMember = {setMember}
     history = {props.history}
@@ -117,13 +112,13 @@ return(
 )}
 
 const mapStateToProps = (store) => {
-    return { info: store.cartReducer.getOrderList };
+    return { info: store.cartReducer.getOrderListOld };
   };
   const mapDispatchToProps = null;
 
 export default withRouter( connect(
     mapStateToProps, {
-        getOrderList, getOrderListAsync 
-    })(OrderList))
+        getOrderListOld, getOrderListOldAsync 
+    })(OrderListAsc))
 
 // export default OrderList
