@@ -121,10 +121,12 @@ function RegisteredForm(props) {
                         <div className="form-group memberImg">
                             <label for="memberUpLoadImg" >請上傳個人照片</label>
                             <div className="addNew">
-                                <div className="viewImg">
+                                <div className="viewImg imgCover">
                                     <img src={file} alt={""} />
                                 </div>
-                                <input type="file" className="upLoadImg" onChange={fileHandler} />
+                                <input type="file" className="upLoadImg" 
+                                onChange={fileHandler} 
+                                />
                             </div>
                         </div>
 

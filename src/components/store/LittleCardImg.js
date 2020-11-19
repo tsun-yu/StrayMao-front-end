@@ -29,7 +29,7 @@ function LittleCardImg(props) {
           {/* <img src="./image/store/dog-food2.png" alt="" /> */}
           <img src={itemAni.goodsImgs} alt="" />
         </div>
-        <div>
+        <div className="littleCardImgLine">
           <div className="littleCardName">{itemAni.name}</div>
           <div className="littleCardPrice">NT$ {itemAni.price}</div>
         </div>

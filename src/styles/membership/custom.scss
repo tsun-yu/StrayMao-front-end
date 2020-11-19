@@ -120,8 +120,14 @@ main > .container {
 .viewImg {
   width: 250px;
   height: 250px;
-  object-fit: cover;
   border: 2px solid #cb997e;
+  overflow: hidden;
+}
+
+.imgCover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .upLoadImg {
@@ -400,7 +406,7 @@ main > .container {
 
 .myFavoriteArticleContent {
   width: 166px;
-  height: 160px;
+  height: 130px;
   margin: 10px auto;
   font-size: 12px;
   font-family: $fontType1;
