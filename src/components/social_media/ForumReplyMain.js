@@ -60,7 +60,7 @@ function ForumReplyMain(props) {
             console.log("content4 : ",props.reply)
             setDisplay4(content4);   
           }
-        },[replyDetail,])
+        },[replyDetail,props.add])
 
 
   return (
@@ -127,6 +127,7 @@ function ForumReplyMain(props) {
 const mapStateToProps = (store) => {
   return {
       reply: store.socialReducer.getForumReply,
+      add: store.socialReducer.addForumCard,
     };
 };
 const mapDispatchToProps = null;

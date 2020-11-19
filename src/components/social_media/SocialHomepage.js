@@ -10,11 +10,13 @@ import {
   getForumListAsync,
   getArticleListAsync,
 } from "../../actions/social_media/index";
+import DonateButton from '../common/DonateButton'
 import { connect } from "react-redux";
 
 function SocialHomepage(props) {
   return (
     <>
+    <DonateButton/>
       <SocialHomeTop />
       <SocialHomeNews />
       <SocialHomeRank />
