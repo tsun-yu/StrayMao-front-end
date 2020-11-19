@@ -5,16 +5,21 @@ import { withRouter, useHistory } from 'react-router-dom';
 
 import { addForumCardAsync } from "../../actions/social_media/index";
 import { faWindows } from "@fortawesome/free-brands-svg-icons";
+import { doc } from "prettier";
 
 function AddForumCard(props) {
   const {current:formDatas}=React.useRef({});
+  const [save,setSave]=useState("");
   const handleOnChange = React.useCallback(event=>{
     formDatas[event.target.name]=event.target.value;
-    formDatas.memberId=1;
+    formDatas.memberId=3;
   },[]);
 
 const handleOnSubmit = (()=>{
-      console.log('formDatas:',formDatas);
+      
+      formDatas.talkPic="/image/socialmedia/forumimg/"+ save
+      // formDatas.talkPic=formDatas.talkPic.split("\\")[2]
+      console.log('formDatas:',formDatas.talkPic);
       props.addForumCardAsync(formDatas);
   })
 
@@ -31,6 +36,13 @@ const handleOnSubmit = (()=>{
       props.history.push('/socialForum')
     }
 } 
+
+function changeName(){
+  let file = document.getElementById("addFileDefault").files[0].name;
+  document.getElementById("addImgText").innerHTML=file;
+  setSave(file)
+  console.log(file)
+}
   
 
   return (
@@ -64,7 +76,7 @@ const handleOnSubmit = (()=>{
           <div className="row addContentTop">
             <span className="addAutorItems">
               <div><img className="addAutorImg" src="./image/membership/AvataM1.jpg"/></div>
-              <p className="addAutorName">郭彥洋</p>
+              <p className="addAutorName">東尼‧史塔克</p>
             </span>
           </div>
           <div className="addIssueItems">
@@ -79,12 +91,12 @@ const handleOnSubmit = (()=>{
           </div>
           <div className="row addControlelse">
             <div className="row addImg">
-            <input type="file" className="addInput" name="talkPic" id="file" />
+            <input type="file" className="addInput" name="talkPic" id="addFileDefault" onChange={changeName}/>
             <label for="file" style={{display:"flex"}}>
               <img className="pinkIcon" src="./icomoon/SVG/_084-image.svg" alt="" />
             </label>
             <label for="fileName">
-            <p className="addImgText">未上傳檔案</p>
+            <p className="addImgText" id="addImgText">未上傳檔案</p>
             </label>
             </div>
             {/* <div className="row">

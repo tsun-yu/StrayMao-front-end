@@ -56,12 +56,16 @@ setHotDisplay(hotContent)
       </div>
       <div className="forum_NewsItems">
       <div className="newsFiveBox">
-        {hotDisplay}
+      <marquee STRONG id="affiche" align="middle" behavior="scroll" direction="up" height="100" width="600" vspace="20" loop="-1" scrollamount="10" scrolldelay="200" onMouseOut="this.start()" onMouseOver="this.stop()">
+      {hotDisplay}
+      </marquee>
       </div>
       </div>
       <div className="forum_NewsItems">
       <div className="newsFiveBox">
-        {newDisplay}
+      <marquee STRONG id="affiche" align="middle" behavior="scroll" direction="up" height="100" width="600" vspace="20" loop="-1" scrollamount="14" scrolldelay="200" onMouseOut="this.start()" onMouseOver="this.stop()">
+      {newDisplay}
+      </marquee>
       </div>
       </div>
       <div className="forumNewsLineBetween" />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ForumReplyMain from "./ForumReplyMain";
 import { connect } from "react-redux";
-import { getForumDetailAsync } from "../../actions/social_media/index";
+import { getForumDetailAsync,getForumReplyAsync } from "../../actions/social_media/index";
 let j = 0
 function ForumArticleMain(props) {
   const [topviewsize,setTopviewsize]=useState(1);
@@ -53,6 +53,7 @@ function ForumArticleMain(props) {
     console.log("j = ",j," id = :",props.forumDetailId)
     let id = props.forumDetailId ?? 1;
     props.getForumDetailAsync(id);
+    props.getForumReplyAsync(id);
   }, [props.forumDetailId]);
 
   return (
@@ -73,7 +74,7 @@ function ForumArticleMain(props) {
         <img
           className="forumArticleImg"
           src={
-            props.test.talkPic===null?
+            (props.test.talkPic===null)||(props.test.talkPic==="undefined")?
             "/image/homepage/homepage-1.jpg"
             :props.test.talkPic
           }
@@ -134,4 +135,5 @@ const mapDispatchToProps = null;
 
 export default connect(mapStateToProps, {
   getForumDetailAsync,
+  getForumReplyAsync,
 })(ForumArticleMain);
