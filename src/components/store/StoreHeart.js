@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 function StoreHeart(props) {
   return (
     <>
-      <div className="icon d-flex">
+      <div className="iconStore d-flex">
         <a href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
