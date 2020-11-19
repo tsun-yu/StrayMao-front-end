@@ -2,6 +2,7 @@ import { act } from "react-dom/test-utils";
 import {
   GET_RECOM,
   GET_ORDERLIST,
+  GET_ORDERLISTOLD,
   GET_ORDER,
   GET_BUY,
   GOODS_LIKE,
@@ -53,6 +54,18 @@ function getBuy(state = [{memberName:"",mobile:"",address:""}], action) {
 function getOrderList(state = 1, action) {
   switch (action.type) {
     case GET_ORDERLIST:
+      // console.log("reducer: ",action.value)
+      state = action.value;
+      break;
+    default:
+      break;
+  }
+  return state;
+}
+
+function getOrderListOld(state = 1, action) {
+  switch (action.type) {
+    case GET_ORDERLISTOLD:
       // console.log("reducer: ",action.value)
       state = action.value;
       break;
@@ -137,5 +150,5 @@ function goodsHeart(state = false, action) {
   }
   return state;
 }
-export { getRecom, getOrderList, getOrder, deleteOrder, updateOrder, goodsHeart,getBuy ,getOrderId,getOrderListId ,getId};
+export { getRecom, getOrderList, getOrderListOld, getOrder, deleteOrder, updateOrder, goodsHeart,getBuy ,getOrderId,getOrderListId ,getId};
 // export default totalPage;

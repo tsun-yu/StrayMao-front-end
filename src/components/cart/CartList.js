@@ -3,6 +3,8 @@ import { connect } from "react-redux"
 import "../../styles/cart/cartlist.scss"
 import CartListCardC from "./CartListCardC"
 import CartListCardM from "./CartListCardM"
+import DonateButton from '../common/DonateButton'
+import ChatRoomSvg from '../store/ChatRoomSvg'
 import { withRouter, useHistory } from 'react-router-dom';
 
 import { getRecommand, getRecommandAsync,updateRecommandAsync, deleteRecommandsAsync, getBuyAsync } 
@@ -161,6 +163,8 @@ function CartList(props) {
 //   return dataLoading ? loading : display;
   return  (
     <>
+    <DonateButton />
+    <ChatRoomSvg />
     <div className="cartlistC_body_An">
         <div className="container cartlistC_box_An">
             <div className="cartlistC_boxBottom_An">

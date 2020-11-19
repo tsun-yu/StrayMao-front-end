@@ -31,7 +31,7 @@ function RegisteredForm(props) {
     //預覽上傳照片
     const [file, setFile] = useState(null);
     const fileHandler = event => {
-          console.log(event.target.files[0]);
+          // console.log(event.target.files[0]);
         let reader = new FileReader();
           reader.onload = function(e) {
             setFile(e.target.result);
@@ -139,7 +139,7 @@ function RegisteredForm(props) {
                         value={memberName}
                         onChange={(event) => {
                             setMemberName(event.target.value)
-                        }} 
+                        }}
                         required/>
                     <small class="form-text error-msg"></small>
                 </div>
@@ -283,6 +283,14 @@ function RegisteredForm(props) {
 
 return (
   <>
+    {/* <ImageUploader
+      {...props}
+      withIcon={true}
+      onChange={onDrop}
+      imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+      maxFileSize={5242880}
+    /> */}
+
     {dataLoading ? loading : display}
   </>
 )}

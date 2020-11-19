@@ -24,6 +24,10 @@ img {
   width: 100%;
 }
 
+.test1 {
+  overflow: hidden;
+}
+
 .storeP1Background {
   background-image: url(/image/store/background.jpg);
   background-repeat: no-repeat;
@@ -116,7 +120,7 @@ img {
 
 .littleCardImg {
   max-width: 100px;
-  height: 50px;
+  height: 50px; //my
   // overflow: hidden;
   margin-right: 10px;
 }

@@ -5,8 +5,6 @@ import 'animate.css'
 import StoreCard from '../../components/store/StoreCard'
 import PageBar from '../../components/common/PageBar'
 import { gotoPage, setTotalPage } from '../../actions/common/index'
-import ChatRoomSvg from '../../components/store/ChatRoomSvg'
-
 
 import { getCatsListAsync } from '../../actions/store/index'
 
@@ -162,7 +160,6 @@ function StrayMaoP2(props) {
         </div>
       </div>
 
-      <ChatRoomSvg />
     </>
   )
 }
