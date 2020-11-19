@@ -9,11 +9,6 @@ function MyComment_card(props) {
   // const [info , setInfo] = useState(props.info)
   const [thiscomStars , setThisComStars] = useState(info.comStars);
   const [thisComDesc , setThisComDesc] = useState(info.comDesc);
-
-  if(info.orderId == 204){
-    console.log("star:" , thiscomStars)
-    console.log("desc:" , thisComDesc)
-  }
   
   const commentStarGroup = {
     size: 20,
