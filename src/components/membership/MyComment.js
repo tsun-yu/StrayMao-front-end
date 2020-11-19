@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter} from 'react-router-dom';
+
 //user used
+import "react-alert-confirm/dist/index.css";
 import "../../styles/membership/custom.scss";
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
 import MyComment_card from './MyComment_card';
 import LogInInfo from './LogInInfo2';
 import DonateButton from '../common/DonateButton'
+import alertConfirm from 'react-alert-confirm';
+
 
 function MyComment(props) {
   //檢查登入狀態 >> 取得要render畫面的內容
@@ -72,7 +76,7 @@ function MyComment(props) {
     const rsObj = await response.json();  //轉成物件
     if(rsObj.success) {
       setReLoad(!reload);  //讓資訊刷新
-      alert("評價已送出!!");
+      alertConfirm({ type: 'alert', content: '評價已送出~' })
     }
   }
 

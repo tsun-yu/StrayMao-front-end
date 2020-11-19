@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter} from 'react-router-dom';
+
 //user used
+import "react-alert-confirm/dist/index.css";
 import "../../styles/membership/custom.scss";
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
 import LogInInfo from './LogInInfo2';
 import DonateButton from '../common/DonateButton'
+import alertConfirm from 'react-alert-confirm';
 
 
 function MemberInfo(props) {
@@ -79,12 +82,12 @@ function MemberInfo(props) {
     const rsObj = await response.json();  //轉成物件
     if(rsObj.success) {
       if(rsObj.data.changedRows === 1) {
-        alert("喵~ 會員資料已更新!!");
+        alertConfirm({ type: 'alert', content: "喵~ 會員資料已更新!!" })
       } else if (rsObj.data.affectedRows === 0){
-        alert("喵嗚~ 會員密碼好像錯了唷!!!");
+        alertConfirm({ type: 'alert', content: "喵嗚~ 會員密碼好像錯了唷!!!" })
       }
     } else{
-      alert("喵嗚~ 有點小問題捏，請與我們聯繫好嗎?");
+      alertConfirm({ type: 'alert', content: "喵嗚~ 有點小問題捏，請與我們聯繫好嗎?" })
     }
   }
 
@@ -172,9 +175,6 @@ return(
         <label for="infoInputEmail1">電&nbsp;子&nbsp;信&nbsp;箱：</label>
         <input type="email" className="form-control infoInput2" id="infoInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" readOnly
           value={email}
-          // onChange={(event) => {
-          //   setEmail(event.target.value)
-          // }}
         />
         
       </div>

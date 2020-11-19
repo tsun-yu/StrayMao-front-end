@@ -1,8 +1,9 @@
-import ReactStars from "react-rating-stars-component";
 import React, { useState, useEffect } from 'react';
-import "../../styles/cart/orderlist.scss";
-import $ from 'jquery'
+import ReactStars from "react-rating-stars-component";
 import Moment from 'react-moment';
+import confirm , { Button, alert } from "react-alert-confirm";
+import { Fragment } from "react";
+
 
 function MyComment_card(props) {
   let info = props.info;
@@ -24,6 +25,32 @@ function MyComment_card(props) {
     onChange: newValue => {
       setThisComStars(newValue);
     }
+  };
+
+  const confirmDelete = () => {
+    confirm({
+      title: "我們很重視您的評價，真的要刪除嗎?",
+      content: "喵嗚~ 這是真的嗎?",
+      footer: dispatch => (
+        <Fragment>
+          <Button onClick={() => dispatch("cancel")}>取 消</Button>
+          <Button onClick={() => dispatch("ok")} styleType="danger">
+            請幫我刪除
+          </Button>
+        </Fragment>
+      ),
+      closeBefore: (action, close) => {
+        if (action === "ok") {
+          props.setDoDelete({
+            orderId: info.orderId,
+            goodsId: info.goodsId,
+            memberId: info.memberId,
+          });
+        } else {
+          close();
+        }
+      }
+    });
   };
 
 return(
@@ -56,7 +83,7 @@ return(
     <div className="commentBtnGroup">
     <button className="commentBtn"
       onClick={() => {
-        const $comDesc2 = $("#comDescArea_" + info.orderId + info.goodsId + info.memberId);
+        // const $comDesc2 = $("#comDescArea_" + info.orderId + info.goodsId + info.memberId);
         props.setDoSave({
           orderId: info.orderId,
           goodsId: info.goodsId,
@@ -66,20 +93,22 @@ return(
         });
       }}
     > {(info.comDate == '') ? "儲存":"更新" }</button>
-    <button className="commentBtn" 
+    <button className="commentBtn"
       onClick={() => {
-        var yes = window.confirm('確定嗎？  喵~');
-        if (yes) {
-          props.setDoDelete({
-            orderId: info.orderId,
-            goodsId: info.goodsId,
-            memberId: info.memberId,
-          });
-        } else {
-          alert('好哩家在  喵~');
-        }
-        
+        confirmDelete();
       }}
+      // onClick={() => {
+        // var yes = window.confirm('確定嗎？  喵~');
+        // if (yes) {
+        //   props.setDoDelete({
+        //     orderId: info.orderId,
+        //     goodsId: info.goodsId,
+        //     memberId: info.memberId,
+        //   });
+        // } else {
+        //   alert('好哩家在  喵~');
+        // }
+      // }}
     >刪除</button>
     </div>
   </div>

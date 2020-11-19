@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import $ from 'jquery'
+
 //user used
+import "react-alert-confirm/dist/index.css";
 import "../../styles/membership/custom.scss";
 import { MEMBER_API_URL } from "../../actions/membership/actionTypes";
+import alertConfirm from 'react-alert-confirm';
 
 
 function SignInForm(props) {
@@ -58,7 +61,7 @@ function SignInForm(props) {
         // props.setIsLogin(true);
         props.history.push("/memberInfo");
       }else{
-        alert("帳號或密碼錯誤");
+        alertConfirm({ type: 'alert', content: "喵~ 帳號或密碼不對優" })
       }
     } else {
       submitBtn.style.display = "block";
