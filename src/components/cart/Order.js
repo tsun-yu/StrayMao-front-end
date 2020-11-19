@@ -5,32 +5,50 @@ import OrderCardBoxC from "./OrderCardBoxC"
 import OrderCardBoxM from "./OrderCardBoxM"
 import OrderDetialBoxC from "./OrderDetialBoxC"
 import OrderDetialBoxM from "./OrderDetialBoxM"
+import DonateButton from '../common/DonateButton'
+import ChatRoomSvg from '../store/ChatRoomSvg'
+import { withRouter, useHistory } from 'react-router-dom';
 
 import { getOrderId } 
 from "../../actions/cart/index";
 function Order(props) {
     const [test, setTest] = useState({});
     useEffect(() => {
-      console.log("id :", props.info)
+      console.log("Order Order id :", props.info)
       props.getOrderId(props.info);
     }, []);
+
+    const btnBuyClick1 = ()=>{
+      props.history.push('/OrderList');
+    }
+    const btnBuyClick2 = ()=>{
+      props.history.push('/OrderList');
+    }
+    const btnBuyClick3 = ()=>{
+      props.history.push('/OrderList');
+    }
+    const btnBuyClick4 = ()=>{
+      props.history.push('/OrderListAsc');
+    }
 return(
 <>
+<DonateButton />
+<ChatRoomSvg />
 <div className="orderC_body_An">
 <div className="container">
     <div className="orderC_classificationBox_An">
         <div className="orderC_classification_An">
-            <a href="#">近三個月內的訂單</a>
+            <a href="" onClick={() => btnBuyClick1()}>近三個月內的訂單</a>
             <span> / </span>
-            <a href="#">全部訂單</a>
+            <a href="" onClick={() => btnBuyClick2()}>全部訂單</a>
         </div>
         <div className="orderC_btn-filter_An">
             <button className="orderC_filterbtn_An">
                 <span>排序 <i className="fas fa-caret-down"></i></span>
             </button>
             <div className="orderC_btn-filter-content_An">
-              <a href="#">由新到舊</a>
-              <a href="#">由舊到新</a>
+              <a href="" onClick={() => btnBuyClick3()}>由新到舊</a>
+              <a href="" onClick={() => btnBuyClick4()}>由舊到新</a>
             </div>
         </div>
     </div>
@@ -71,9 +89,9 @@ const mapStateToProps = (store) => {
   };
   const mapDispatchToProps = null;
 
-export default  connect(
+export default withRouter( connect(
     mapStateToProps, {
       getOrderId 
-    })(Order)
+    })(Order))
 
 //export default Order

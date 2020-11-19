@@ -47,7 +47,8 @@
     "redux-thunk": "^2.3.0",
     "resolve-url-loader": "^3.1.2",
     "sass-loader": "^10.0.5",
-    "social-share-react": "^1.1.2"
+    "social-share-react": "^1.1.2",
+    "yarn": "^1.22.10"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -4,6 +4,7 @@ import { withRouter} from 'react-router-dom';
 import "../../styles/membership/custom.scss";
 import {MEMBER_API_URL} from "../../actions/membership/actionTypes";
 import LogInInfo from './LogInInfo2';
+import DonateButton from '../common/DonateButton'
 
 
 function MemberInfo(props) {
@@ -20,7 +21,20 @@ function MemberInfo(props) {
   const [telephone , setTelephone] = useState("");
   const [email , setEmail] = useState("");
   const [address , setAddress] = useState("");
+  const [memberPic , setMemberPic] = useState("");
   const [password , setPassword] = useState("");
+  
+
+  //預覽上傳照片
+  const [file, setFile] = useState(null);
+  const fileHandler = event => {
+        console.log(event.target.files[0]);
+      let reader = new FileReader();
+        reader.onload = function(e) {
+          setFile(e.target.result);
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      };
 
   
   //預設會員資料
@@ -43,8 +57,13 @@ function MemberInfo(props) {
     setTelephone(rsObj.data[0].telephone)
     setEmail(rsObj.data[0].email)
     setAddress(rsObj.data[0].address)
+    setMemberPic(rsObj.data[0].memberPic)
+    setFile(rsObj.data[0].memberPic)
   }
 
+  const [ranCode , setRanCode] = useState(Math.floor(Math.random() * 1000000) + 100000);
+
+  //=========================================function=========================================
   async function updMyMemberInfo() {
     const url = MEMBER_API_URL + "/member/edit";
     const condition = { memberName , birthday , mobile , telephone , email , address , memberId: member.memberId , password };
@@ -76,6 +95,8 @@ return(
     setMember = {setMember}
     history = {props.history}
   />
+  <DonateButton />
+  
   <div className="memberInfoTopicGroup">
     <img className="memberInfoPetImg" src="../image/membership/catpls.png" alt="pet image" />
     <div className="topicStyle">能給我個家嗎? 爸脫~</div>
@@ -95,11 +116,13 @@ return(
     <form className="infoForm">
     <div className="wrapFlex1">
       <div className="form-group">
-        <label htmlFor="infoFormControlFile1" className="viewImg">請上傳個人照片</label>
-        <input 
-          type="file" 
-          className="form-control-file uploadImg" id="infoFormControlFile1"
-        />
+        <label for="memberUpLoadImg" >請上傳個人照片</label>
+          <div className="addNew">
+            <div className="viewImg">
+              <img src={file} alt={""} />
+            </div>
+            <input type="file" className="upLoadImg" onChange={fileHandler} />
+          </div>
       </div>
       
       <div className="wrapFlex2">
@@ -182,7 +205,7 @@ return(
         <label for="exampleInputPassword1">請輸入驗證碼：</label>
         <input type="password" className="form-control infoInput" id="checkCode1" placeholder="Enter Code"/>
       </div>
-      <div className="confirmCode">123456</div>
+      <div className="confirmCode">{ranCode}</div>
     </div>
     </form>
     <div className="btn-group memberInfoTop" role="group" aria-label="Basic example">

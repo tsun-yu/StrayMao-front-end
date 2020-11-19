@@ -6,8 +6,10 @@ import Moment from 'react-moment';
 
 function MyComment_card(props) {
   let info = props.info;
+  // const [info , setInfo] = useState(props.info)
   const [thiscomStars , setThisComStars] = useState(info.comStars);
-
+  const [thisComDesc , setThisComDesc] = useState(info.comDesc);
+  
   const commentStarGroup = {
     size: 20,
     count: 5,
@@ -20,9 +22,7 @@ function MyComment_card(props) {
     // halfIcon: <i className="fa fa-star-half-alt" />,
     filledIcon: <i className="fa fa-star" />,
     onChange: newValue => {
-      console.log("commentStars: new value is", newValue);
       setThisComStars(newValue);
-      // $("#comStars_" + info.orderId + info.goodsId + info.memberId).val(newValue);
     }
   };
 
@@ -42,30 +42,45 @@ return(
           className="form-control infoInput2 commentContent" 
           id={"comDescArea_" + info.orderId + info.goodsId + info.memberId} 
           rows="3"
-        >{info.comDesc}</textarea>
+          value={thisComDesc}
+          onChange={(event) => {
+            setThisComDesc(event.target.value);
+          }}
+        ></textarea>
       </div>
-      <input type="hidden" id={"comStars_" + info.orderId + info.goodsId + info.memberId} value=""  />
       <div className="commentDate">評價日期：
-      {(info.comDate=='') ? <Moment format="YYYY/MM/DD hh:mm:ss">{info.comDate}</Moment>:"尚未評價" }
+        {(info.comDate=='') ? "尚未評價" : <Moment format="YYYY/MM/DD hh:mm:ss">{info.comDate}</Moment> }
       </div>
     </div>
     
     <div className="commentBtnGroup">
     <button className="commentBtn"
       onClick={() => {
-        const id = "#comDescArea_" + info.orderId + info.goodsId + info.memberId;
-        // const comDesc = document.querySelector(id).innerHTML;
         const $comDesc2 = $("#comDescArea_" + info.orderId + info.goodsId + info.memberId);
         props.setDoSave({
           orderId: info.orderId,
           goodsId: info.goodsId,
           memberId: info.memberId,
           comStars: parseInt(thiscomStars),
-          comDesc: $comDesc2.val(),
+          comDesc: thisComDesc,
         });
       }}
-    > {(info.comDate=='') ? "儲存":"更新" }</button>
-    <button className="commentBtn">刪除</button>
+    > {(info.comDate == '') ? "儲存":"更新" }</button>
+    <button className="commentBtn" 
+      onClick={() => {
+        var yes = window.confirm('確定嗎？  喵~');
+        if (yes) {
+          props.setDoDelete({
+            orderId: info.orderId,
+            goodsId: info.goodsId,
+            memberId: info.memberId,
+          });
+        } else {
+          alert('好哩家在  喵~');
+        }
+        
+      }}
+    >刪除</button>
     </div>
   </div>
 </>

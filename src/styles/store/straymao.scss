@@ -24,6 +24,10 @@ img {
   width: 100%;
 }
 
+.test1 {
+  overflow: hidden;
+}
+
 .storeP1Background {
   background-image: url(/image/store/background.jpg);
   background-repeat: no-repeat;
@@ -116,10 +120,15 @@ img {
 
 .littleCardImg {
   max-width: 100px;
-  height: 50px;
+  height: 8vh; //my
+  
   // overflow: hidden;
   margin-right: 10px;
 }
+
+.littleCardImgLine{
+  margin: auto;
+}//1920
 
 .littleCardImg img {
   width: 100%;
@@ -366,8 +375,10 @@ img {
 #bigBtn {
   justify-content: center;
   width: 100vw;
-  height: 8vh;
-  margin: 15vh 0vh;
+  // height: 8vh; my
+  height: 0vh; //1920
+  // margin: 15vh 0vh; my
+  margin: 12vh 0vh;
 }
 
 .storeP1Btn {
@@ -375,6 +386,7 @@ img {
   background-position: right;
 
   width: 15.5vw;
+  height: 6vh; //1920
   margin: 0 2rem;
   padding: 0.5rem 3rem;
   border-radius: 4px;
@@ -444,6 +456,7 @@ img {
 
 .storeP1BccGreenDad {
   position: relative;
+  margin-bottom: 20vh; //1920
 }
 
 // 熱賣背景
@@ -460,7 +473,8 @@ img {
 .storeP1BccPeach {
   position: absolute;
   width: 100%;
-  height: 40vh;
+  //height: 40vh; //my
+  height: 30vh; //1920
   background-color: #fff1e6;
   bottom: 0px;
   opacity: 0.8;
@@ -469,7 +483,8 @@ img {
 .storeP1BccGreen {
   position: absolute;
   width: 100%;
-  height: 40vh;
+  // height: 40vh; my
+  height: 30vh; //1920
   background-color: #e1e1d5;
   bottom: 0px;
   opacity: 0.5;
@@ -478,7 +493,7 @@ img {
 /* 左右箭頭 */
 .storeP1Bottom {
   // position: relative;
-  margin-bottom: 15vh;
+  // margin-bottom: 15vh; 1920
 }
 
 .arrow {
@@ -497,7 +512,16 @@ img {
   font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
     monospace, serif;
   display: flex;
-  margin: 3vh auto 5vh;
+  // margin: 3vh auto 5vh; my
+  margin: 6vh auto 3vh; //1920
+}
+
+.storeP1Title2 {
+  font-family: "Microsoft JhengHei", "Noto_Serif_TC-Regular", "Roboto-Regular",
+    monospace, serif;
+  display: flex;
+  // margin: 3vh auto 5vh; my
+  margin: 12vh auto 3vh; //1920
 }
 
 .line1 {

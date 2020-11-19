@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 function Page4Card(props) {
-  const { cardClass, label, img, labelClass } = props
+  const { cardClass, label, img, labelClass, product } = props
   return (
     <>
       <div className={cardClass}>
@@ -18,7 +18,7 @@ function Page4Card(props) {
           </div>
           <div className="page4content d-flex flex-column justify-content-end">
             <div className="page4popular">本月品牌熱門</div>
-            <div className="page4item text-right">最方便自動餵食器</div>
+            <div className="page4item text-right">{product}</div>
           </div>
         </div>
       </div>

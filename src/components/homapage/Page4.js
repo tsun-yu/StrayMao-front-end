@@ -18,6 +18,7 @@ function Page4(props) {
             label="狗 狗 用 品"
             cardClass="col-lg-3 page4product hvr-float-shadow"
             labelClass="page4label label1 "
+            product="最方便自動餵食器"
           />
 
           <Page4Card
@@ -25,6 +26,7 @@ function Page4(props) {
             label="貓 咪 用 品"
             cardClass="hvr-float-shadow col-lg-3 page4product mt-5"
             labelClass="page4label label2 "
+            product="最好用貓砂盆"
           />
 
           <Page4Card
@@ -32,6 +34,7 @@ function Page4(props) {
             label="寵 物 玩 具"
             cardClass="hvr-float-shadow col-lg-3 page4product"
             labelClass="page4label label1"
+            product="最好玩布娃娃"
           />
 
           <Page4Card
@@ -39,6 +42,7 @@ function Page4(props) {
             label="寵 物 飼 料"
             cardClass="hvr-float-shadow col-lg-3 page4product mt-5"
             labelClass="page4label label2"
+            product="最營養的寵物飼料"
           />
         </div>
       </div>

@@ -7,8 +7,9 @@ import StoreCard from '../../components/store/StoreCard'
 import ChatRoomSvg from '../../components/store/ChatRoomSvg'
 // import StoreCardTest from '../../components/store/StoreCardTest'
 // import { getListAsync } from '../../actions/store/index'
-import { Link } from 'react-router-dom'
+import DonateButton from '../common/DonateButton'
 import StoreAnimation from '../../components/store/StoreAnimation'
+
 
 import {
   getListAsync,
@@ -188,9 +189,10 @@ function Storepage(props) {
 
   return (
     <>
+          <DonateButton />
       {/* 地板 */}
       {/* onMouseOver={(storeP1Background)=> */}
-      <section>
+      <section className="test1">
         <StoreAnimation />
       </section>
       <div className="container" data-speed="0">
@@ -255,7 +257,7 @@ function Storepage(props) {
       <div className="container">
         <div className="row">
           {/* <!-- 特價商品 --> */}
-          <div className="storeP1Title center">
+          <div className="storeP1Title2 center">
             <div className="line1"></div>
             <div className="storeP1GoodsWords">特價商品</div>
             <div className="line2"></div>
@@ -285,18 +287,7 @@ function Storepage(props) {
       <ChatRoomSvg />
 
       {/* <!-- 特價商品結束 --> */}
-      <aside>
-        {/* <!-- <div id="cartAndDonate" className="d-flex"> --> */}
-        <div className="circle-s circle-cart">
-          <div className="div-cart">
-            <i className="fas fa-shopping-cart" />
-          </div>
-        </div>
-        <div className="circle-l circle-donate">
-          <div>捐款</div>
-        </div>
-        {/* <!-- </div> --> */}
-      </aside>
+      
     </>
   )
 }
