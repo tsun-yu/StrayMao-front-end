@@ -120,10 +120,15 @@ img {
 
 .littleCardImg {
   max-width: 100px;
-  height: 50px; //my
+  height: 8vh; //my
+  
   // overflow: hidden;
   margin-right: 10px;
 }
+
+.littleCardImgLine{
+  margin: auto;
+}//1920
 
 .littleCardImg img {
   width: 100%;
@@ -508,7 +513,7 @@ img {
     monospace, serif;
   display: flex;
   // margin: 3vh auto 5vh; my
-  margin: 6vh auto 0vh; //1920
+  margin: 6vh auto 3vh; //1920
 }
 
 .storeP1Title2 {
@@ -516,7 +521,7 @@ img {
     monospace, serif;
   display: flex;
   // margin: 3vh auto 5vh; my
-  margin: 12vh auto 0vh; //1920
+  margin: 12vh auto 3vh; //1920
 }
 
 .line1 {
