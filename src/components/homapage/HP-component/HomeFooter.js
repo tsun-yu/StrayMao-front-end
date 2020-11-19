@@ -20,7 +20,7 @@ function HomeFooter() {
             </div>
           </div>
           <Parallax
-            animation={{ x: '400%', opacity: 1, playScale: [0, 1] }}
+            animation={{ x: '330%', opacity: 1, playScale: [0, 1] }}
             style={{ transform: 'translateX(-0)', opacity: 1 }}
             className="homeFtTruck position-absolute"
           />
