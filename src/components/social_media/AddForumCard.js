@@ -3,11 +3,13 @@ import React, { useState, useEffect, useCallback } from "react";
 import { connect } from 'react-redux';
 import { withRouter, useHistory } from 'react-router-dom';
 
-import { addForumCardAsync } from "../../actions/social_media/index";
+import { addForumCardAsync,getForumReplyAsync } from "../../actions/social_media/index";
 import { faWindows } from "@fortawesome/free-brands-svg-icons";
 import { doc } from "prettier";
 
+
 function AddForumCard(props) {
+
   const {current:formDatas}=React.useRef({});
   const [save,setSave]=useState("");
   const handleOnChange = React.useCallback(event=>{
@@ -21,12 +23,14 @@ const handleOnSubmit = (()=>{
       // formDatas.talkPic=formDatas.talkPic.split("\\")[2]
       console.log('formDatas:',formDatas.talkPic);
       props.addForumCardAsync(formDatas);
+          
   })
+  
 
   function validate(event) { 
     if(window.confirm(`確認送出嗎?`)) {
       handleOnSubmit()
-      props.history.push('/socialForum');
+      setTimeout(props.history.push('/socialForum'),1000)
     }else{
       event.preventDefault();
     }
@@ -121,4 +125,4 @@ const mapStateToProps = (store) => {
 };
 const mapDispatchToProps = null;
 
-export default withRouter(connect(mapStateToProps, {addForumCardAsync})(AddForumCard));
+export default withRouter(connect(mapStateToProps, {addForumCardAsync,getForumReplyAsync})(AddForumCard));

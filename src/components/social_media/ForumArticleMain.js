@@ -74,7 +74,7 @@ function ForumArticleMain(props) {
         <img
           className="forumArticleImg"
           src={
-            (props.test.talkPic===null)||(props.test.talkPic==="undefined")?
+            (props.test.talkPic==null)||(props.test.talkPic=="/image/socialmedia/forumimg/")?
             "/image/homepage/homepage-1.jpg"
             :props.test.talkPic
           }

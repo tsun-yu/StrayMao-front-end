@@ -10,6 +10,7 @@ import ArticleCardPagebar from "./ArticleCardPagebar";
 import ArticleDetailPage from "./ArticleDetailPage";
 import { gotoPage, setTotalPage,setArticleTotalPage, } from '../../actions/common/index';
 import { connect } from "react-redux";
+import DonateButton from '../common/DonateButton'
 
 import {
   getForumListAsync,
@@ -292,6 +293,7 @@ function SocialForum(props) {
 
   return (
     <>
+    <DonateButton />
       <div className="container">
         <div className="row">
           <span className="socialTitle header4">討論交流</span>
