@@ -61,6 +61,9 @@ function MemberInfo(props) {
     setFile(rsObj.data[0].memberPic)
   }
 
+  const [ranCode , setRanCode] = useState(Math.floor(Math.random() * 1000000) + 100000);
+
+  //=========================================function=========================================
   async function updMyMemberInfo() {
     const url = MEMBER_API_URL + "/member/edit";
     const condition = { memberName , birthday , mobile , telephone , email , address , memberId: member.memberId , password };
@@ -202,7 +205,7 @@ return(
         <label for="exampleInputPassword1">請輸入驗證碼：</label>
         <input type="password" className="form-control infoInput" id="checkCode1" placeholder="Enter Code"/>
       </div>
-      <div className="confirmCode">192388</div>
+      <div className="confirmCode">{ranCode}</div>
     </div>
     </form>
     <div className="btn-group memberInfoTop" role="group" aria-label="Basic example">
