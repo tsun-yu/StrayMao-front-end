@@ -10,9 +10,9 @@ import { withRouter, useHistory } from 'react-router-dom';
 import { getBuy, getBuyAsync, changeBuyAsync, updateOrderAsync } 
 from "../../actions/cart/index";
 function Buy(props) {
-    const [memberName, setMemberName] = useState(props.id[0].memberName)
-    const [mobile, setMobile] = useState(props.id[0].mobile)
-    const [address, setAddress] = useState(props.id[0].address)
+    const [memberName, setMemberName] = useState('')
+    const [mobile, setMobile] = useState('')
+    const [address, setAddress] = useState('')
 
     const [shipType, setShipType] = useState('便利商店取貨')
     const [paymentType, setPaymentType] = useState('貨到付款')
@@ -112,9 +112,12 @@ function Buy(props) {
 
 
     useEffect(() => {
-        setMemberName(props.id[0].memberName)
-        setMobile(props.id[0].mobile)
-        setAddress(props.id[0].address)
+        if(props.id[0]){
+            setMemberName(props.id[0].memberName)
+            setMobile(props.id[0].mobile)
+            setAddress(props.id[0].address)
+        }
+        
         totalCards = props.id;
         if (totalCards.length > 0 && props.id[0].memberName!=="") {
           // let tt = JSON.parse(totalCards[0]);

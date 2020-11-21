@@ -81,10 +81,11 @@ export const updateRecommandAsync = (value,cartId) => {
       const response = await fetch(request);
       const data = await response.json();
       // data會是一個物件值
-      console.log("data = ",data);
+      console.log("updateRecommandAsync updateRecommandAsync data = ",data);
 
       await dispatch(updateRecommand(data.data));
     } catch (error) {
+      console.log('error', error)
       //setError(error)
     }
   };
