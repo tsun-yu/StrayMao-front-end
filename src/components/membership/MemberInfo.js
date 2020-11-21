@@ -170,7 +170,7 @@ return(
       </div>
     </div>
 
-    <div c  lassName="wrapFlex2">
+    <div className="wrapFlex2">
       <div className="form-group fgFlex">
         <label for="infoInputEmail1">電&nbsp;子&nbsp;信&nbsp;箱：</label>
         <input type="email" className="form-control infoInput2" id="infoInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" readOnly
