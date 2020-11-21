@@ -15,18 +15,7 @@ function RegisteredForm(props) {
     const [mobile, setMobile] = useState('')
     const [email, setEmail] = useState('')
     const [address, setAddress] = useState('')
-    const [goAdd , setGoAdd] = useState(true);
-
-    const $password1 = document.querySelector("#exampleInputPassword1");
-    const $password2 = document.querySelector("#exampleInputPassword2");
-
-    // useEffect(() => {
-      
-    // },[password]);
-
-    // useEffect(() => {
-      
-    // },[password2]);
+    const [goAdd , setGoAdd] = useState(true);  //控制可否執行新增
 
     //預覽上傳照片
     const [file, setFile] = useState(null);
@@ -38,19 +27,20 @@ function RegisteredForm(props) {
           };
           reader.readAsDataURL(event.target.files[0]);
         };
-
-    async function checkPassword12(){
-      if($password1.value != $password2.value){
+    
+    //檢核密碼及確認密碼
+    useEffect(() => {
+      const $password2 = document.querySelector("#exampleInputPassword2");
+      if(password != password2){
         $password2.style.borderColor = "red";
         $password2.nextElementSibling.innerHTML = "不相符";
         setGoAdd(false);
-      }
-      else{
+      }else{
         $password2.style.borderColor = "";
         $password2.nextElementSibling.innerHTML = "";
         setGoAdd(true);
       }
-    }
+    },[password , password2])
 
     async function addUserToSever() {
       if(goAdd){
@@ -239,7 +229,7 @@ function RegisteredForm(props) {
                     value={password}
                     onChange={(event) => {
                       setPassword(event.target.value);
-                      checkPassword12();
+                      // checkPassword12();
                     }}
                     required/>
                 <br/>
@@ -257,7 +247,7 @@ function RegisteredForm(props) {
                     required
                     onChange={(event) => {
                       setPassword2(event.target.value);
-                      checkPassword12();
+                      // checkPassword12();
                     }}
                     />
                 <small class="form-text error-msg"></small>

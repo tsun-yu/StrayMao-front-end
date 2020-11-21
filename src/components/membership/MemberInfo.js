@@ -31,13 +31,13 @@ function MemberInfo(props) {
   //預覽上傳照片
   const [file, setFile] = useState(null);
   const fileHandler = event => {
-        console.log(event.target.files[0]);
-      let reader = new FileReader();
-        reader.onload = function(e) {
-          setFile(e.target.result);
-        };
-        reader.readAsDataURL(event.target.files[0]);
-      };
+    console.log(event.target.files[0]);
+    let reader = new FileReader();
+    reader.onload = function(e) {
+      setFile(e.target.result);
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
 
   
   //預設會員資料
